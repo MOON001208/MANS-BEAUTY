@@ -1,0 +1,549 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{python}
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+#  selenium의 webdriver를 사용하기 위한 import
+from selenium import webdriver
+# selenium으로 무엇인가 입력하기 위한 import
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+# 페이지 로딩을 기다리는데에 사용할 time 모듈 import
+import time
+from selenium.webdriver.chrome.options import Options
+import pandas as pd
+from pyshadow.main import Shadow
+
+
+options = Options()
+
+options.add_argument(
+    "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
+
+```
+
+
+```{python}
+from pyshadow.main import Shadow
+
+driver = webdriver.Chrome(options=options) 
+url = "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000198001&dispCatNo=1000001000700080011&trackingCd=Cat1000001000700080011_Small&t_page=%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%EA%B4%80&t_click=%EC%BF%A0%EC%85%98/%ED%8C%8C%EC%9A%B4%EB%8D%B0%EC%9D%B4%EC%85%98_%EC%A0%84%EC%B2%B4_%EA%B7%B8%EB%9D%BC%ED%8E%9C,%EB%8B%A4%EC%8A%88,%EB%91%90%EC%9E%89%EC%99%93,%EB%B9%84%EB%A0%88%EB%94%94,%EC%98%A4%EB%B8%8C%EC%A0%9C_%EC%83%81%ED%92%88%EC%83%81%EC%84%B8&t_number=1&tab=review"
+#크롬 드라이버에 url 주소 넣고 실행
+driver.get(url)
+
+# 페이지가 완전히 로딩되도록 3초동안 기다림
+time.sleep(3)
+
+shadow = Shadow(driver)
+```
+
+
+```{python}
+driver.execute_script('window.scrollBy(0, 3000);')
+time.sleep(3)
+```
+
+# 유저네임
+
+```{python}
+name = shadow.find_elements('div.inner oy-review-review-user div.info div.name')
+[n.text for n in name]
+```
+
+# 피부톤
+```{python}
+skin_type = shadow.find_elements('div.inner oy-review-review-user div.info div.skin-types')
+[s.text for s in skin_type]
+```
+
+```{python}
+# 1. 유저 정보가 들어있는 '부모 컨테이너'를 먼저 찾습니다. (항상 4개가 잡힐 것입니다)
+users = shadow.find_elements('div.inner oy-review-review-user div.info')
+
+name_list = []
+skin_list = []
+
+for user in users:
+    # 2. 부모 컨테이너 안에서 이름을 찾습니다.
+    # .find_elements(부모 안에서 찾기)를 사용하면 에러 없이 개수 체크가 가능합니다.
+    n_el = user.find_elements(By.CSS_SELECTOR, 'div.name')
+    name_list.append(n_el[0].text if n_el else "이름없음")
+
+    # 3. 부모 컨테이너 안에서 피부톤 정보를 찾습니다.
+    s_el = user.find_elements(By.CSS_SELECTOR, 'div.skin-types')
+    
+    if s_el:
+        # 정보가 있으면 텍스트 처리해서 추가
+        skin_list.append(s_el[0].text.replace('\n', ','))
+    else:
+        # 정보가 없으면 None 혹은 "결측"을 추가 (이게 핵심입니다!)
+        skin_list.append(None) 
+
+# 결과 확인
+print(len(name_list)) # 4
+print(len(skin_list)) # 4 (데이터 개수가 맞춰짐!)
+```
+
+# 별점
+```{python}
+star_rating = shadow.find_elements('div.inner div.rating oy-review-star-icon')
+```
+
+
+
+```{python}
+len(star_rating)
+```
+
+
+```{python}
+[s.text for s in star_rating]
+```
+
+# 리뷰날짜 
+```{python}
+date = shadow.find_elements('div.inner div.common-info span.date')
+[d.text for d in date]
+```
+
+# 리뷰내용 
+```{python}
+
+#text1 = shadow.find_elements('div.inner> oy-review-review-content > div div.content')
+text = shadow.find_elements('div.content')
+
+#text.text.replace('\n'," ")
+[t.text.replace('\n'," ") for t in text]
+#len(text)
+```
+
+```{python}
+text
+```
+
+# 상품옵션
+```{python}
+goods_option = shadow.find_elements('div.inner div.goods-option')
+[option.text for option in goods_option] 
+```
+
+
+```{python}
+driver.quit()
+```
+
+
+```{python}
+# 1. 부모 컨테이너 추출
+users = shadow.find_elements('div.inner')
+
+name_list = []
+skin_list = []
+star_list = []
+date_list = []
+good_list = []
+
+for user in users:
+    # --- 별점 추출 ---
+    # div.inner 바로 아래에 있으므로 user 객체에서 바로 찾습니다.
+    star_rating = user.find_elements(By.CSS_SELECTOR, "div.meta div.rating oy-review-star-icon")
+
+    # ---리뷰 날짜 ---
+    date = user.find_elements(By.CSS_SELECTOR,'div.common-info span.date')
+
+    # ---상품 옵션 ---
+    goods_option = user.find_elements(By.CSS_SELECTOR,'div.inner div.goods-option')
+
+    # --- 유저 정보 호스트 찾기 ---
+    # find_element 대신 find_elements를 써서 에러를 방지합니다.
+    user_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-user')
+    
+    if not user_hosts:
+        # 정보가 없는 빈 inner(주석 처리된 Placeholder 등)는 건너뜁니다.
+        continue
+        
+    user_host = user_hosts[0]
+    
+    try:
+        # Shadow Root 접근
+        user_shadow = driver.execute_script('return arguments[0].shadowRoot', user_host)
+        
+        if user_shadow:
+            # 이름 추출 (상대 경로 div.info div.name)
+            n_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.name')
+            name_list.append(n_el[0].text if n_el else "이름없음")
+
+            # 피부톤 추출 (상대 경로 div.info div.skin-types)
+            s_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.skin-types')
+            skin_list.append(s_el[0].text.replace('\n', ',') if s_el else None)
+            
+            # 유저 정보가 정상일 때만 별점 개수 추가 (데이터 짝 맞춤)
+            star_list.append(len(star_rating))
+
+            date_list.append(date[0].text)
+
+            good_list.append(goods_option[0].text)
+            
+    except Exception as e:
+        print(f"데이터 추출 중 오류 발생: {e}")
+        continue
+
+    # 루프 마지막에 불필요한 user[i] 접근 코드는 삭제했습니다.
+    time.sleep(0.5) # 성능을 위해 1초보다 조금 줄여도 무방합니다.
+
+# 데이터 확인
+print(f"이름: {len(name_list)}, 피부톤: {len(skin_list)}, 별점: {len(star_list)}")
+```
+
+
+
+
+```{python}
+user_host = users[0].find_element(By.CSS_SELECTOR, 'oy-review-review-user')
+user_shadow = user_host.shadow_root  # 자바스크립트 대신 이 속성 사용
+
+# 2. 내부 탐색
+n_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.name')
+name_list.append(n_el[0].text if n_el else "이름없음")
+```
+
+
+
+```{python}
+users = shadow.find_elements('div.inner')
+
+name_list = []
+skin_list = []
+star_list = []
+date_list = []
+good_list = []
+text_list = []
+
+
+for user in users:
+    # --- 별점 추출 ---
+    # div.inner 바로 아래에 있으므로 user 객체에서 바로 찾습니다.
+    star_rating = user.find_elements(By.CSS_SELECTOR, "div.meta div.rating oy-review-star-icon")
+
+    # ---리뷰 날짜 ---
+    date = user.find_elements(By.CSS_SELECTOR,'div.common-info span.date')
+
+    # ---상품 옵션 ---
+    goods_option = user.find_elements(By.CSS_SELECTOR,'div.inner div.goods-option')
+
+    # --- 유저 정보 호스트 찾기 ---
+    # find_element 대신 find_elements를 써서 에러를 방지합니다.
+    user_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-user')
+    text_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-content')
+    
+    if not user_hosts:
+        # 정보가 없는 빈 inner(주석 처리된 Placeholder 등)는 건너뜁니다.
+        continue
+        
+    user_host = user_hosts[0]
+    text_host = text_hosts[0]
+
+
+    try:
+        # Shadow Root 접근
+        user_shadow = user_host.shadow_root
+        text_shadow = text_host.shadow_root
+
+        if user_shadow:
+            # 이름 추출 (상대 경로 div.info div.name)
+            n_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.name')
+            name_list.append(n_el[0].text if n_el else "이름없음")
+
+            # 피부톤 추출 (상대 경로 div.info div.skin-types)
+            s_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.skin-types')
+            skin_list.append(s_el[0].text.replace('\n', ',') if s_el else None)
+
+            # 리뷰 추출
+            t_el = text_shadow.find_elements(By.CSS_SELECTOR, 'div.content')
+            text_list.append(t_el[0].text.replace('\n'," ") if t_el else None)
+            
+            # 유저 정보가 정상일 때만 별점 개수 추가 (데이터 짝 맞춤)
+            star_list.append(len(star_rating))
+
+            date_list.append(date[0].text)
+
+            good_list.append(goods_option[0].text)
+            
+    except Exception as e:
+        print(f"데이터 추출 중 오류 발생: {e}")
+        continue
+
+    # 루프 마지막에 불필요한 user[i] 접근 코드는 삭제했습니다.
+    time.sleep(0.5) # 성능을 위해 1초보다 조금 줄여도 무방합니다.
+
+# 데이터 확인
+print(f"이름: {len(name_list)}, 피부톤: {len(skin_list)}, 별점: {len(star_list)}, 날짜: {len(date_list)}, 옵션:{len(good_list)}, 리뷰: {len(text_list)}")
+```
+
+
+
+
+```{python}
+def scroll_and_crawl(driver, target_count=100):
+    name_list, skin_list, star_list = [], [], []
+    date_list, good_list, text_list = [], [], []
+    
+    # 중복 체크용 셋 (이미 수집한 리뷰의 텍스트를 저장)
+    collected_reviews = set()
+    
+    last_height = driver.execute_script("return document.body.scrollHeight")
+
+    while len(name_list) < target_count:
+        # 1. 현재 화면에 로드된 모든 'div.inner'를 가져옴
+        shadow= Shadow(driver)
+        users = shadow.find_elements('div.inner')
+        
+        for user in users:
+            try:
+                # --- [핵심] 호스트 존재 여부 확인 ---
+                user_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-user')
+                text_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-content')
+                
+                if not user_hosts or not text_hosts:
+                    continue
+                
+                # --- [핵심] 중복 체크 ---
+                # 리뷰 텍스트 내용으로 중복 여부를 판단합니다.
+                text_shadow = text_hosts[0].shadow_root
+                t_el = text_shadow.find_elements(By.CSS_SELECTOR, 'div.content')
+                review_text = t_el[0].text.strip() if t_el else ""
+                
+                if review_text in collected_reviews or not review_text:
+                    continue # 이미 수집했거나 비어있으면 패스
+                
+                # --- 데이터 추출 시작 ---
+                user_host = user_hosts[0]
+                user_shadow = user_host.shadow_root
+                
+                # 별점, 날짜, 옵션 (user 객체 기준)
+                star_rating = user.find_elements(By.CSS_SELECTOR, "div.meta div.rating oy-review-star-icon")
+                date = user.find_elements(By.CSS_SELECTOR, 'div.common-info span.date')
+                goods_option = user.find_elements(By.CSS_SELECTOR, 'div.goods-option') # 상대경로 수정
+
+                # 이름, 피부톤 (user_shadow 기준)
+                n_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.name')
+                s_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.skin-types')
+
+                # 리스트에 추가
+                name_list.append(n_el[0].text if n_el else "이름없음")
+                skin_list.append(s_el[0].text.replace('\n', ',') if s_el else None)
+                text_list.append(review_text.replace('\n', ' '))
+                star_list.append(len(star_rating))
+                date_list.append(date[0].text if date else None)
+                good_list.append(goods_option[0].text if goods_option else None)
+
+                # 중복 셋에 추가
+                collected_reviews.add(review_text)
+                
+                if len(name_list) >= target_count: break
+
+            except Exception as e:
+                continue
+
+        # 2. 스크롤 내리기 (약 1500px씩 아래로)
+        driver.execute_script("window.scrollBy(0, 1200);")
+        time.sleep(3) # 로딩 대기 (중요!)
+
+        # 3. 바닥 체크 (더 이상 스크롤이 안 내려가면 종료)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        curr_scroll = driver.execute_script("return window.pageYOffset + window.innerHeight")
+        if curr_scroll >= new_height:
+            print("더 이상 불러올 리뷰가 없습니다.")
+            break
+            
+        print(f"현재 수집된 리뷰: {len(name_list)}개...")
+
+    return name_list, skin_list, star_list, date_list, good_list, text_list
+
+```
+
+```{python}
+def scroll_and_crawl(driver, target_count=100):
+    name_list, skin_list, star_list = [], [], []
+    date_list, good_list, text_list = [], [], []
+    collected_reviews = set()
+    
+    # 바닥 확인 실패 횟수 카운트 (연속 3번 바닥이면 진짜 종료)
+    no_new_count = 0 
+    
+    while len(name_list) < target_count:
+        shadow = Shadow(driver)
+        users = shadow.find_elements('div.inner')
+        
+        initial_count = len(name_list) # 루프 시작 전 수집 개수
+        
+        for user in users:
+            try:
+                user_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-user')
+                text_hosts = user.find_elements(By.CSS_SELECTOR, 'oy-review-review-content')
+                
+                if not user_hosts or not text_hosts:
+                    continue
+                
+                text_shadow = text_hosts[0].shadow_root
+                t_el = text_shadow.find_elements(By.CSS_SELECTOR, 'div.content')
+                review_text = t_el[0].text.strip() if t_el else ""
+                
+                # 중복 체크 및 빈 내용 제외
+                if not review_text or review_text in collected_reviews:
+                    continue 
+                
+                # ... [데이터 추출 부분은 기존 코드와 동일] ...
+                user_host = user_hosts[0]
+                user_shadow = user_host.shadow_root
+                n_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.name')
+                s_el = user_shadow.find_elements(By.CSS_SELECTOR, 'div.info div.skin-types')
+                star_rating = user.find_elements(By.CSS_SELECTOR, "div.meta div.rating oy-review-star-icon")
+                date = user.find_elements(By.CSS_SELECTOR, 'div.common-info span.date')
+                goods_option = user.find_elements(By.CSS_SELECTOR, 'div.goods-option')
+
+                name_list.append(n_el[0].text if n_el else "이름없음")
+                skin_list.append(s_el[0].text.replace('\n', ',') if s_el else None)
+                text_list.append(review_text.replace('\n', ' '))
+                star_list.append(len(star_rating))
+                date_list.append(date[0].text if date else None)
+                good_list.append(goods_option[0].text if goods_option else None)
+
+                collected_reviews.add(review_text)
+                
+                if len(name_list) >= target_count: break
+            except:
+                continue
+
+        # --- 개선된 스크롤 및 바닥 체크 로직 ---
+        driver.execute_script("window.scrollBy(0, 2000);") # 스크롤 폭을 조금 더 크게
+        time.sleep(3) # 네트워크 속도에 따라 3~4초 권장
+        
+        # 수집된 개수가 늘지 않았다면?
+        if len(name_list) == initial_count:
+            no_new_count += 1
+            print(f"새로운 리뷰 로딩 대기 중... ({no_new_count}/3)")
+        else:
+            no_new_count = 0 # 새 데이터 수집되면 카운트 초기화
+            
+        if no_new_count >= 3: # 3번 연속으로 새 리뷰가 없으면 종료
+            print("더 이상 불러올 리뷰가 없어 수집을 종료합니다.")
+            break
+            
+        print(f"현재 수집된 리뷰: {len(name_list)}개...")
+
+    return name_list, skin_list, star_list, date_list, good_list, text_list
+```
+
+```{python}
+driver = webdriver.Chrome(options=options) 
+url = "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000198001&dispCatNo=1000001000700080011&trackingCd=Cat1000001000700080011_Small&t_page=%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%EA%B4%80&t_click=%EC%BF%A0%EC%85%98/%ED%8C%8C%EC%9A%B4%EB%8D%B0%EC%9D%B4%EC%85%98_%EC%A0%84%EC%B2%B4_%EA%B7%B8%EB%9D%BC%ED%8E%9C,%EB%8B%A4%EC%8A%88,%EB%91%90%EC%9E%89%EC%99%93,%EB%B9%84%EB%A0%88%EB%94%94,%EC%98%A4%EB%B8%8C%EC%A0%9C_%EC%83%81%ED%92%88%EC%83%81%EC%84%B8&t_number=1&tab=review"
+#크롬 드라이버에 url 주소 넣고 실행
+driver.get(url)
+time.sleep(3)
+#driver.execute_script('window.scrollBy(0, 3000);')
+#time.sleep(3)
+
+names, skins, stars, dates, goods, texts = scroll_and_crawl(driver = driver)
+```
+
+
+
+```{python}
+import pandas as pd
+
+data = {
+    '작성자': names, '날짜': dates, '옵션': goods,
+    '별점': stars, '피부타입': skins, '리뷰내용': texts
+}
+df = pd.DataFrame(data)
+df.head()
+```
+
+
+```{python}
+info = pd.read_csv('화장품정보.csv')
+```
+
+```{python}
+name2 = info.loc[:,'이름']
+```
+
+
+```{python}
+links = info.loc[:,'링크'] + ['&tab=review']
+```
+
+```{python}
+links
+```
+
+
+```{python}
+# .tolist()를 붙여서 순수한 숫자 리스트로 만듭니다.
+ratings = pd.read_csv('리뷰수.csv').loc[:,'리뷰수'].str.replace(",", "").str.extract('([0-9]+)')[0].astype(int).tolist()
+
+```
+
+
+
+
+# 사이트 순회
+```{python}
+all_data =[]
+
+link_list = links.to_list()
+name_list = name2.to_list()
+
+
+driver = webdriver.Chrome(options=options) 
+
+for name, link, rate in zip(name_list, link_list, ratings):
+    try:
+        print(f"\n >>> {name} 상품 수집 시작")
+        print(f"링크: {link}")
+        
+        # 해당 상품 페이지 접속
+        driver.get(link)
+        time.sleep(3) # 페이지 로딩 대기
+
+        # 3. 작성하신 함수 호출 (목표 개수 100개)
+        names, skins, stars, dates, goods, texts = scroll_and_crawl(driver, target_count=rate)
+
+        # 4. 수집된 데이터를 리스트에 임시 저장
+        for j in range(len(names)):
+            all_data.append({
+                '상품이름': name,
+                '상품링크': link,
+                '작성자': names[j],
+                '피부타입': skins[j],
+                '별점': stars[j],
+                '날짜': dates[j],
+                '옵션': goods[j],
+                '리뷰내용': texts[j]
+            })
+            
+        print(f"성공: {len(names)}개의 리뷰 수집 완료")
+            
+    except Exception as e:
+        print(f"오류 발생: {link}에서 데이터 수집 중 문제가 생겼습니다. {e}")
+        continue
+
+```
+
+
+```{python}
+df =pd.DataFrame(all_data)
+```
+
+
+```{python}
+df.loc[:,'상품이름'].value_counts()
+```
