@@ -97,7 +97,6 @@ star_rating = shadow.find_elements('div.inner div.rating oy-review-star-icon')
 ```
 
 
-
 ```{python}
 len(star_rating)
 ```
@@ -195,8 +194,8 @@ for user in users:
         print(f"데이터 추출 중 오류 발생: {e}")
         continue
 
-    # 루프 마지막에 불필요한 user[i] 접근 코드는 삭제했습니다.
-    time.sleep(0.5) # 성능을 위해 1초보다 조금 줄여도 무방합니다.
+    
+    time.sleep(0.5)
 
 # 데이터 확인
 print(f"이름: {len(name_list)}, 피부톤: {len(skin_list)}, 별점: {len(star_list)}")
