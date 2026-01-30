@@ -8,6 +8,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 from pathlib import Path
 import sys
 
@@ -211,10 +212,10 @@ def display_product_card(rec, rank, user_shade="23"):
 def show_data_insights(df_products, df_reviews):
     """데이터 인사이트 탭"""
     st.markdown("### 📊 데이터 분석 현황")
-    
+
     # 통계 카드
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
         st.metric("🛍️ 분석 제품 수", f"{len(df_products)}개")
     with col2:
@@ -227,47 +228,84 @@ def show_data_insights(df_products, df_reviews):
         if df_reviews is not None and 'attr_sentiment' in df_reviews.columns:
             positive_rate = (df_reviews['attr_sentiment'] == 'positive').mean() * 100
             st.metric("😊 긍정 리뷰 비율", f"{positive_rate:.1f}%")
-    
+
     st.divider()
-    
-    # 제품 유형 분포
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("#### 🎨 제품 유형 분포")
-        type_counts = df_products['product_type'].value_counts()
-        type_data = pd.DataFrame({
-            '유형': type_counts.index.map({'cushion': '쿠션', 'liquid': '리퀴드', 'stick': '스틱'}),
-            '개수': type_counts.values
-        })
-        st.bar_chart(type_data.set_index('유형'))
-    
-    with col2:
-        st.markdown("#### 📈 평균 속성 점수")
-        avg_scores = pd.DataFrame({
-            '속성': ['커버력', '지속력', '착용감'],
-            '평균점수': [
-                df_products['coverage_score'].mean(),
-                df_products['longevity_score'].mean(),
-                df_products['lightweight_score'].mean()
-            ]
-        })
-        st.bar_chart(avg_scores.set_index('속성'))
-    
-    # 감정 분포 (Gemini 추출 데이터)
-    if df_reviews is not None and 'attr_sentiment' in df_reviews.columns:
-        st.markdown("#### 💬 리뷰 감정 분석 (Gemini AI)")
-        sentiment_counts = df_reviews['attr_sentiment'].value_counts()
-        col1, col2, col3 = st.columns(3)
-        col1.metric("😊 긍정", f"{sentiment_counts.get('positive', 0):,}개", 
-                   delta=f"{sentiment_counts.get('positive', 0)/len(df_reviews)*100:.1f}%")
-        col2.metric("😐 중립", f"{sentiment_counts.get('neutral', 0):,}개",
-                   delta=f"{sentiment_counts.get('neutral', 0)/len(df_reviews)*100:.1f}%")
-        col3.metric("😞 부정", f"{sentiment_counts.get('negative', 0):,}개",
-                   delta=f"-{sentiment_counts.get('negative', 0)/len(df_reviews)*100:.1f}%")
-    
+
+    # ===== 브랜드 포지셔닝 맵 =====
+    st.markdown("### 🎯 브랜드 포지셔닝 맵")
+    st.caption("X축: 평균 커버력 | Y축: 평균 지속력 | 버블 크기: 리뷰 수 | 색상: 긍정 리뷰 비율")
+
+    if df_reviews is not None and 'attr_coverage' in df_reviews.columns:
+        # 브랜드별 통계 계산
+        brand_stats = df_reviews.groupby('브랜드').agg({
+            'attr_coverage': 'mean',
+            'attr_longevity': 'mean',
+            '별점': 'mean',
+            '작성자': 'count',
+            'attr_sentiment': lambda x: (x == 'positive').mean() * 100
+        }).reset_index()
+        brand_stats.columns = ['브랜드', '커버력', '지속력', '평균별점', '리뷰수', '긍정비율']
+
+        # 결측치 제거 및 최소 리뷰 수 필터
+        brand_stats = brand_stats.dropna()
+        brand_stats = brand_stats[brand_stats['리뷰수'] >= 100]
+
+        if len(brand_stats) > 0:
+            # Plotly 버블 차트
+            fig = px.scatter(
+                brand_stats,
+                x='커버력',
+                y='지속력',
+                size='리뷰수',
+                color='긍정비율',
+                hover_name='브랜드',
+                hover_data={
+                    '커버력': ':.2f',
+                    '지속력': ':.2f',
+                    '리뷰수': ':,',
+                    '긍정비율': ':.1f'
+                },
+                color_continuous_scale='RdYlGn',
+                size_max=60,
+                text='브랜드'
+            )
+
+            # 평균선 추가
+            avg_coverage = brand_stats['커버력'].mean()
+            avg_longevity = brand_stats['지속력'].mean()
+
+            fig.add_hline(y=avg_longevity, line_dash="dash", line_color="gray", opacity=0.5)
+            fig.add_vline(x=avg_coverage, line_dash="dash", line_color="gray", opacity=0.5)
+
+            # 레이아웃 설정
+            fig.update_traces(textposition='top center', textfont_size=10)
+            fig.update_layout(
+                xaxis_title="평균 커버력 점수",
+                yaxis_title="평균 지속력 점수",
+                coloraxis_colorbar_title="긍정비율(%)",
+                height=500,
+                showlegend=False
+            )
+
+            st.plotly_chart(fig, use_container_width=True)
+
+            # 사분면 해석
+            col1, col2 = st.columns(2)
+            with col1:
+                high_both = brand_stats[(brand_stats['커버력'] > avg_coverage) & (brand_stats['지속력'] > avg_longevity)]
+                if len(high_both) > 0:
+                    st.success(f"**🏆 고커버+고지속:** {', '.join(high_both['브랜드'].tolist())}")
+            with col2:
+                low_both = brand_stats[(brand_stats['커버력'] <= avg_coverage) & (brand_stats['지속력'] <= avg_longevity)]
+                if len(low_both) > 0:
+                    st.info(f"**🌿 자연스러운 연출:** {', '.join(low_both['브랜드'].tolist())}")
+        else:
+            st.warning("분석 가능한 브랜드 데이터가 부족합니다. (최소 100개 리뷰 필요)")
+    else:
+        st.warning("리뷰 속성 데이터가 없습니다.")
+
     st.divider()
-    
+
     # 인기 제품 순위
     st.markdown("### 🏆 리뷰 많은 인기 제품 TOP 10")
     top_products = df_products.nlargest(10, 'review_count')[
