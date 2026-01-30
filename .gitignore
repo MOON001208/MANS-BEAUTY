@@ -59,3 +59,7 @@ Thumbs.db
 # 체크포인트 파일
 *checkpoint*.plk
 *checkpoint*.pkl
+
+# md파일
+.md
+!README.md
