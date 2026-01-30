@@ -49,7 +49,7 @@ df_gifter_freq = pd.DataFrame(gifter_word_counts, columns=['Keyword', 'Frequency
 plt.figure(figsize=(12, 6))
 sns.barplot(x='Frequency', y='Keyword', data=df_gifter_freq, palette='viridis')
 plt.title('Top 20 Related Words for "Women Gifting to Men"', fontsize=15)
-plt.savefig(r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\code\gifter_words_analysis.png')
+plt.savefig(r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\outputs\gifter_words_analysis.png')
 print("Saved Task 1 visualization to gifter_words_analysis.png")
 
 
@@ -86,7 +86,7 @@ for product in top_products_list:
         plt.figure(figsize=(12, 6))
         sns.barplot(x='Frequency', y='Keyword', data=df_prod_freq, palette='Blues_r')
         plt.title(f'Satisfaction Keywords for #1 Product: {product}', fontsize=15)
-        plt.savefig(r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\code\men_satisfaction_keywords.png')
+        plt.savefig(r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\outputs\men_satisfaction_keywords.png')
         print(f"Saved keyword chart for {product} to men_satisfaction_keywords.png")
 
 
@@ -119,7 +119,7 @@ try:
     import pyLDAvis.sklearn
     pyLDAvis.enable_notebook()
     panel = pyLDAvis.sklearn.prepare(lda_model, X, vectorizer, mds='tsne')
-    output_html = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\code\lda_visualization.html'
+    output_html = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\outputs\lda_visualization.html'
     pyLDAvis.save_html(panel, output_html)
     print(f"Saved interactive LDA visualization to {output_html}")
 except Exception as e:
@@ -146,7 +146,7 @@ except Exception as e:
             ax.spines[i].set_visible(False)
     
     plt.subplots_adjust(top=0.90, bottom=0.05, wspace=0.90, hspace=0.3)
-    static_output = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\code\lda_topics_static.png'
+    static_output = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\outputs\lda_topics_static.png'
     plt.savefig(static_output)
     print(f"Saved static LDA topic plot to {static_output}")
 

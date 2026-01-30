@@ -95,7 +95,7 @@ def main():
             ax.text(0.5, 0.5, 'Not enough data', ha='center')
             
     plt.tight_layout()
-    save_img_path = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\code\persona_keywords_analysis.png'
+    save_img_path = r'c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\outputs\persona_keywords_analysis.png'
     plt.savefig(save_img_path)
     print(f"\nExample visualization saved to: {save_img_path}")
     

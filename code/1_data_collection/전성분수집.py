@@ -11,7 +11,7 @@ import time
 from tqdm import tqdm
 
 # 1. Load Data
-file_path = r"c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\final_review.plk"
+file_path = r"c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\data\final_review.plk"
 print(f"Loading data from {file_path}...")
 df = pd.read_pickle(file_path)
 
@@ -87,7 +87,7 @@ driver.quit()
 result_df = pd.DataFrame(results)
 
 # Save to the same directory
-output_path = r"c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\product_ingredients.csv"
+output_path = r"c:\Users\USER\Documents\웅진씽크빅kdt\남성화장품시장분석\data\product_ingredients.csv"
 result_df.to_csv(output_path, index=False, encoding='utf-8-sig') # utf-8-sig for Korean Excel compatibility
 
 print(f"Scraping completed. Saved to {output_path}")
