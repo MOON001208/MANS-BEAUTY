@@ -32,6 +32,7 @@ wheels/
 *.plk
 *.pkl
 !data/product_profiles.plk
+!data/review_attributes_gemini.plk
 
 *.csv
 *.xlsx
