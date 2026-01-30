@@ -31,6 +31,8 @@ wheels/
 # 데이터 파일
 *.plk
 *.pkl
+!data/product_profiles.pkl
+
 *.csv
 *.xlsx
 *.xls
