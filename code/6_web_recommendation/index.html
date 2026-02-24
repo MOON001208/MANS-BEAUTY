@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI 기반 남성 화장품 맞춤 추천 시스템 - 17,845개 리뷰 분석으로 나에게 딱 맞는 남성 파운데이션/쿠션/스틱을 추천합니다.">
+    <meta name="keywords" content="남성 화장품, 남자 쿠션, 남자 파운데이션, 추천, 올리브영, 그라펜, 비레디">
+    <title>남성 화장품 맞춤 추천 | MEN'S BEAUTY AI</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <!-- 폰트 preconnect + link 태그 (Gemini 성능 피드백 반영) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="header-top">
+            <a href="#" class="logo">
+                <div class="logo-icon">🎨</div>
+                <div class="logo-text">MEN'S <span>BEAUTY</span></div>
+            </a>
+            <span class="header-badge">🤖 AI POWERED · 17,845 리뷰 분석</span>
+        </div>
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="#" data-filter="all">
+                        📦 전체
+                        <span class="nav-count" data-type="all">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-filter="cushion">
+                        💄 쿠션
+                        <span class="nav-count" data-type="cushion">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-filter="liquid">
+                        🧴 리퀴드
+                        <span class="nav-count" data-type="liquid">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-filter="stick">
+                        📍 스틱
+                        <span class="nav-count" data-type="stick">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-container">
+
+        <!-- Filter Panel (Sidebar) -->
+        <aside class="filter-panel">
+            <div class="filter-header">
+                <span class="icon">🔬</span>
+                <h2>내 피부 정보 입력</h2>
+            </div>
+            <div class="filter-body">
+
+                <!-- 1. 피부 밝기 -->
+                <div class="filter-section">
+                    <div class="filter-label">
+                        <span class="num">1</span> 피부 밝기 (호수)
+                    </div>
+                    <div class="shade-options">
+                        <div class="shade-option">
+                            <input type="radio" name="shade" id="shade-21" value="21">
+                            <label for="shade-21">
+                                <div class="shade-chip shade-21"></div>
+                                21호 밝은톤
+                            </label>
+                        </div>
+                        <div class="shade-option">
+                            <input type="radio" name="shade" id="shade-23" value="23" checked>
+                            <label for="shade-23">
+                                <div class="shade-chip shade-23"></div>
+                                23호 중간톤
+                            </label>
+                        </div>
+                        <div class="shade-option">
+                            <input type="radio" name="shade" id="shade-25" value="25">
+                            <label for="shade-25">
+                                <div class="shade-chip shade-25"></div>
+                                25호 어두운톤
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 피부타입 -->
+                <div class="filter-section">
+                    <div class="filter-label">
+                        <span class="num">2</span> 피부타입
+                    </div>
+                    <div class="skin-type-grid">
+                        <div class="skin-type-option">
+                            <input type="radio" name="skin-type" id="skin-oily" value="oily">
+                            <label for="skin-oily">🛢️ 지성</label>
+                        </div>
+                        <div class="skin-type-option">
+                            <input type="radio" name="skin-type" id="skin-dry" value="dry">
+                            <label for="skin-dry">🏜️ 건성</label>
+                        </div>
+                        <div class="skin-type-option">
+                            <input type="radio" name="skin-type" id="skin-combination" value="combination" checked>
+                            <label for="skin-combination">🔀 복합성</label>
+                        </div>
+                        <div class="skin-type-option">
+                            <input type="radio" name="skin-type" id="skin-sensitive" value="sensitive">
+                            <label for="skin-sensitive">🌸 민감성</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 피부고민 -->
+                <div class="filter-section">
+                    <div class="filter-label">
+                        <span class="num">3</span> 피부고민 (복수 선택 가능)
+                    </div>
+                    <div class="concern-grid">
+                        <div class="concern-item">
+                            <input type="checkbox" name="concern" id="concern-acne" value="acne">
+                            <label for="concern-acne">🔴 여드름</label>
+                        </div>
+                        <div class="concern-item">
+                            <input type="checkbox" name="concern" id="concern-pore" value="pore">
+                            <label for="concern-pore">⭕ 모공</label>
+                        </div>
+                        <div class="concern-item">
+                            <input type="checkbox" name="concern" id="concern-spots" value="spots">
+                            <label for="concern-spots">🟤 잡티</label>
+                        </div>
+                        <div class="concern-item">
+                            <input type="checkbox" name="concern" id="concern-redness" value="redness">
+                            <label for="concern-redness">🩷 홍조</label>
+                        </div>
+                        <div class="concern-item">
+                            <input type="checkbox" name="concern" id="concern-wrinkle" value="wrinkle">
+                            <label for="concern-wrinkle">〰️ 주름</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- 4. 선호도 설정 -->
+                <div class="filter-section">
+                    <div class="filter-label">
+                        <span class="num">4</span> 선호도 설정
+                    </div>
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <span class="label">💪 커버력</span>
+                            <span class="value">3/5</span>
+                        </div>
+                        <input type="range" id="slider-coverage" class="slider-input" min="1" max="5" value="3">
+                        <div class="slider-labels">
+                            <span>내추럴</span>
+                            <span>풀커버</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <span class="label">⏰ 지속력</span>
+                            <span class="value">3/5</span>
+                        </div>
+                        <input type="range" id="slider-longevity" class="slider-input" min="1" max="5" value="3">
+                        <div class="slider-labels">
+                            <span>몇시간</span>
+                            <span>하루종일</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <span class="label">🪶 착용감</span>
+                            <span class="value">4/5</span>
+                        </div>
+                        <input type="range" id="slider-lightweight" class="slider-input" min="1" max="5" value="4">
+                        <div class="slider-labels">
+                            <span>밀착</span>
+                            <span>가벼움</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- 5. 제품 유형 -->
+                <div class="filter-section">
+                    <div class="filter-label">
+                        <span class="num">5</span> 제품 유형
+                    </div>
+                    <div class="type-options">
+                        <div class="type-option">
+                            <input type="radio" name="product-type" id="type-any" value="any" checked>
+                            <label for="type-any">🔄 상관없음</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" name="product-type" id="type-cushion" value="cushion">
+                            <label for="type-cushion">💄 쿠션</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" name="product-type" id="type-liquid" value="liquid">
+                            <label for="type-liquid">🧴 리퀴드</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" name="product-type" id="type-stick" value="stick">
+                            <label for="type-stick">📍 스틱</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 추천 & 초기화 버튼 -->
+                <button id="recommend-btn" class="recommend-btn">
+                    🔍 맞춤 추천받기
+                </button>
+                <button id="reset-btn" class="recommend-btn"
+                    style="background: transparent; color: var(--color-text-muted); box-shadow: none; border: 1.5px solid var(--color-border); margin-top: 8px; font-size: 13px; padding: 10px;">
+                    🔄 필터 초기화
+                </button>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <section id="content-area" class="content-area" data-mode="browse">
+            <!-- JS에서 동적으로 렌더링 -->
+        </section>
+
+    </main>
+
+    <!-- ===== Detail Modal ===== -->
+    <div id="detail-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-product-name">제품명</h3>
+                <button id="modal-close-btn" class="modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-scores" class="detail-scores"></div>
+
+                <div class="detail-section">
+                    <h4>📊 속성별 매칭 분석</h4>
+                    <div id="modal-match-bars"></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>✅ 추천 이유</h4>
+                    <div id="modal-reasons" class="match-reasons"></div>
+                </div>
+
+                <!-- 이전/다음 탐색 버튼 (Gemini 피드백 반영) -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border);">
+                    <button id="modal-prev-btn" class="btn-detail" style="display: none;">
+                        ← 이전 제품
+                    </button>
+                    <span id="modal-nav-info"
+                        style="font-size: 12px; color: var(--color-text-muted); font-weight: 600; display: none;"></span>
+                    <button id="modal-next-btn" class="btn-detail" style="display: none;">
+                        다음 제품 →
+                    </button>
+                </div>
+
+                <div style="margin-top: 16px; text-align: center;">
+                    <a id="modal-oliveyoung-link" href="#" target="_blank" rel="noopener" class="btn-oliveyoung"
+                        style="display: inline-flex;">
+                        🛒 올리브영에서 보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <p>🎨 MEN'S BEAUTY AI 추천 시스템 · 17,845개 리뷰 기반 콘텐츠 필터링 추천</p>
+        <p style="margin-top: 6px;">
+            데이터 출처: <a href="https://www.oliveyoung.co.kr" target="_blank">올리브영</a> |
+            GitHub Pages로 배포됨 · 서버 꺼짐 없이 항상 접근 가능
+        </p>
+    </footer>
+
+    <!-- Scripts (순서 중요: constants → data → recommender → app) -->
+    <script src="js/constants.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/recommender.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
