@@ -17,12 +17,12 @@ import pickle
 
 # ===== 속성별 가중치 =====
 WEIGHTS = {
-    "skin_brightness": 0.25,   # 피부 밝기 (호수)
-    "skin_concerns": 0.15,     # 피부고민
-    "skin_type": 0.15,         # 피부타입
-    "coverage": 0.25,          # 커버력 (강화)
-    "longevity": 0.10,         # 지속력
-    "lightweight": 0.10,       # 착용감
+    "skin_brightness": 0.15,   # 피부 밝기 (호수)
+    "skin_concerns": 0.35,     # 피부고민 (매우 높임: 35%)
+    "skin_type": 0.35,         # 피부타입 (매우 높임: 35%)
+    "coverage": 0.05,          # 커버력 등은 부수적
+    "longevity": 0.05,         # 지속력
+    "lightweight": 0.05,       # 착용감
 }
 
 
@@ -250,6 +250,15 @@ def recommend(user: UserProfile, products_df: pd.DataFrame, top_n: int = 5) -> L
             WEIGHTS['longevity'] * longevity_sim +
             WEIGHTS['lightweight'] * lightweight_sim
         )
+        
+        # 🚨 페널티: 피부 성분 호환성이 너무 낮으면 점수 극단적 삭감
+        if skin_type_sim < 0.35:
+            total_score *= 0.3 # 70% 감점
+            
+        # 리뷰 점수 반영 (인기도 편향을 억제하기 위해 극소량만 보너스 부여)
+        review_bonus = min(product.get('review_count', 0) / 2000, 1) * 0.02
+        rating_bonus = max(product.get('avg_rating', 0) - 4.0, 0) * 0.03
+        total_score += review_bonus + rating_bonus
         
         # 매칭 이유 생성
         reasons = generate_match_reasons(user, product.to_dict(), details)

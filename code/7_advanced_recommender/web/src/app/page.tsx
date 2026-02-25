@@ -51,42 +51,50 @@ function getCompatScore(product: Product, skinType: SkinType): number {
 
 function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], priority: PriorityAttr | null, userShade: ShadeChoice | null): number {
   let score = 0;
-  // 1. 피부 호환성 (30점)
-  score += getCompatScore(product, skinType) * 30;
+  // 1. 피부 호환성 (50점 배정으로 대폭 강화)
+  const compat = getCompatScore(product, skinType);
+  score += compat * 50;
 
-  // 2. 피부 고민 일치도 (20점)
+  // 🚨 페널티: 피부 성분 호환성이 현저하게 낮으면 최종 점수를 극단적 삭감 대기 (0.35 미만일 때)
+  const penalty = compat < 0.35;
+
+  // 2. 피부 고민 일치도 (40점 배정으로 상향)
   if (concerns.length > 0) {
     const matched = concerns.filter(c => (product.suitable_concerns ?? []).includes(c)).length;
-    score += (matched / concerns.length) * 20;
+    score += (matched / concerns.length) * 40;
   } else {
-    score += 10; // 선택한 고민이 없으면 중간 점수
+    score += 20; // 선택한 고민이 없으면 중간 점수
   }
 
-  // 3. 최우선 고려 속성 (20점)
-  if (priority === 'coverage') score += ((product.coverage_score ?? 3) / 5) * 20;
-  if (priority === 'longevity') score += ((product.longevity_score ?? 3) / 5) * 20;
-  if (priority === 'lightweight') score += ((product.lightweight_score ?? 3) / 5) * 20;
-  if (!priority) score += 10;
+  // 3. 최우선 고려 속성 (10점 부수적 요소로 강등)
+  if (priority === 'coverage') score += ((product.coverage_score ?? 3) / 5) * 10;
+  if (priority === 'longevity') score += ((product.longevity_score ?? 3) / 5) * 10;
+  if (priority === 'lightweight') score += ((product.lightweight_score ?? 3) / 5) * 10;
+  if (!priority) score += 5;
 
-  // 4. 호수 일치도 (20점 추가 - Python 'content_based_recommender.py' 로직)
+  // 4. 호수 일치도 (10점 강등)
   if (userShade && userShade !== 'any') {
     const pShades = product.suitable_shades || [];
     if (pShades.length === 0) {
-      score += 10; // 정보 없으면 중간 점수
+      score += 5; // 정보 없으면 중간 점수
     } else if (pShades.includes(userShade)) {
-      score += 20; // 정확히 일치하면 만점
+      score += 10; // 정확히 일치하면 만점
     } else {
       const order = ['21', '23', '25'];
       const uIdx = order.indexOf(userShade);
       const isAdj = pShades.some(p => Math.abs(uIdx - order.indexOf(p)) === 1);
-      if (isAdj) score += 10; // 인접 호수면 10점 (0.5 * 20)
+      if (isAdj) score += 5; // 인접 호수면 중간 점수
     }
   } else {
-    score += 15; // 호수 상관없으면 기본 15점 
+    score += 8; // 호수 상관없으면 무난
   }
 
-  // 5. 대중성 (10점 - 리뷰 로그 스케일)
-  score += Math.min(Math.log10((product.review_count || 0) + 1) / 4, 1) * 10;
+  // 5. 인기/대중성 방지 (리뷰 편향 억제를 위해 최대 2점만 추가)
+  score += Math.min(Math.log10((product.review_count || 0) + 1) / 4, 1) * 2;
+
+  // 🚨 최종 점수에 페널티 반영 (피부성분 꽝이면 70% 감점해서 무조건 순위밖으로)
+  if (penalty) score *= 0.3;
+
   return score;
 }
 
