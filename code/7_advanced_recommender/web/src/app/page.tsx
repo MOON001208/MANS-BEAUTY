@@ -233,7 +233,7 @@ function ProductCard({ product, skinType, priority, userShade, onClick, rank }: 
           <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
             <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>💡 구매 권장 옵션: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>
-              {recommendedShadeStr}호
+              {product.shade_options?.[recommendedShadeStr] || `${recommendedShadeStr}호`}
             </span>
             {userShade === 'any' && <span style={{ fontSize: '0.65rem', color: 'gray', marginLeft: '6px' }}>(가장 무난한 톤)</span>}
           </div>
