@@ -26,7 +26,16 @@ wheels/
 # 환경 변수 파일 (API 키 등 민감 정보)
 .env
 *.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 !.env.example
+
+# Next.js
+.next/
+out/
+node_modules/
 
 # 데이터 파일
 *.plk

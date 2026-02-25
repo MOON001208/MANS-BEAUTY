@@ -1,0 +1,52 @@
+﻿{
+  "reviewId": 53666862,
+  "content": "역시 유명하고 인기 있는 제품은 다 이유가 있구나 싶어요. 사용감 좋고 커버력도 아주 만족합니다~",
+  "goodsDto": {
+    "goodsNumber": "A000000198001",
+    "itemNumber": "002",
+    "legacyGoodsNumber": "8809567705357",
+    "goodsName": "[2월올영픽/1등파데] 오브제 내추럴 커버 파운데이션 기획세트(+클렌징폼 50ml)",
+    "optionName": "1호 기획(+클렌징폼 50ml)"
+  },
+  "reviewScore": 5,
+  "hasPhoto": true,
+  "isRepurchase": false,
+  "isMonthUseReview": false,
+  "isMonthOverReview": true,
+  "reviewType": "NORMAL",
+  "usefulPoint": 558.0,
+  "photoReviewList": [
+    {
+      "imageSequence": 1,
+      "imagePath": "2025/12/31/a25ff3c9c35348a6a91ebf54a9a232b41767111060432.png"
+    },
+    {
+      "imageSequence": 2,
+      "imagePath": "2025/12/31/fde4f8af9a0d4b56ba5050d08ec836e21767111069693.png"
+    },
+    {
+      "imageSequence": 3,
+      "imagePath": "2025/12/31/f7a9700fd03c4f45aee77cf519b1dec81767111079057.png"
+    }
+  ],
+  "profileDto": {
+    "memberNickname": "Silentcontrol",
+    "profileImageUrl": "2025/09/29/1759073500706.png",
+    "isShutterbrity": false,
+    "isTopReviewer": true,
+    "reviewerRank": 205,
+    "profileKey": "M29YM2hURHFMS0JEdHlPSXlNU1Uwdz09",
+    "skinType": "A03",
+    "skinTone": "B01",
+    "skinTrouble": [
+      "C02",
+      "C10"
+    ],
+    "isSkinTypeMatched": false,
+    "isSkinToneMatched": false
+  },
+  "createdDateTime": "2025.12.31",
+  "recommendCount": 3,
+  "isMyReview": false,
+  "isRecommended": false
+}

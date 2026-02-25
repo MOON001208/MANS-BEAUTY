@@ -1,0 +1,20 @@
+﻿[USEFUL_SCORE_DESC] status=200, reviews=3
+  first review ID: 55541784, date: 2026.02.13
+python : Traceback (most recent call last):
+At line:1 char:1
++ python debug_reviews.py 2>&1 | Out-File -FilePath
+ debug_sort.txt -Enc ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Trace 
+   back (most recent call last)::String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\USER\Documents\kdt-training\남성화장품시
+장분석\code\7_advanced_recommender\scraper\debug_revie
+ws.py", line 28, in <module>
+    print(f"[{sort_type}] status={res.status_code},
+ reviews={len(reviews)}")
+                                                   
+          ~~~^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()

@@ -1,0 +1,7 @@
+﻿Status: 200
+
+Top-level keys: ['status', 'code', 'message', 'pagination', 'data', 'totalCnt', 'pageData']
+data key type: <class 'list'>
+
+data is a list of 3 items
+First item keys: ['reviewId', 'content', 'goodsDto', 'reviewScore', 'hasPhoto', 'isRepurchase', 'isMonthUseReview', 'isMonthOverReview', 'reviewType', 'usefulPoint', 'photoReviewList', 'profileDto', 'createdDateTime', 'recommendCount', 'isMyReview', 'isRecommended']
