@@ -215,7 +215,10 @@ function ProductCard({ product, skinType, priority, userShade, onClick, rank }: 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-              <StarRating rating={product.star_rating || 0} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                <StarRating rating={product.star_rating || 0} />
+                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-primary)' }}>{product.star_rating?.toFixed(1) || '0.0'}</span>
+              </div>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>({(product.review_count || 0).toLocaleString()})</span>
             </div>
             <span style={{ fontSize: '1rem', fontWeight: 700, background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
