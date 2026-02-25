@@ -622,7 +622,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '10px', marginBottom: '22px' }}>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {[['all', '전체'], ['쿠션', '쿠션/파운데이션'], ['톤로션', '톤로션/BB']].map(([k, l]) => (
+              {[['all', '전체'], ['쿠션', '쿠션/파운데이션'], ['톤 로션', '톤 로션/BB']].map(([k, l]) => (
                 <button key={k} className={`filter-btn ${browseCategory === k ? 'active' : ''}`} onClick={() => setBrowseCategory(k)}>{l}</button>
               ))}
             </div>
