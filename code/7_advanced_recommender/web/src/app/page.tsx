@@ -49,7 +49,7 @@ function getCompatScore(product: Product, skinType: SkinType): number {
   return (product[col] as number | null) ?? 0.5;
 }
 
-function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], priority: PriorityAttr | null, userShade: ShadeChoice | null): number {
+function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], coveragePref: number, longevityPref: number, lightweightPref: number, userShade: ShadeChoice | null): number {
   let score = 0;
   // 1. 피부 호환성 (50점 배정으로 대폭 강화)
   const compat = getCompatScore(product, skinType);
@@ -66,11 +66,12 @@ function calcRecommendScore(product: Product, skinType: SkinType, concerns: Skin
     score += 20; // 선택한 고민이 없으면 중간 점수
   }
 
-  // 3. 최우선 고려 속성 (10점 부수적 요소로 강등)
-  if (priority === 'coverage') score += ((product.coverage_score ?? 3) / 5) * 10;
-  if (priority === 'longevity') score += ((product.longevity_score ?? 3) / 5) * 10;
-  if (priority === 'lightweight') score += ((product.lightweight_score ?? 3) / 5) * 10;
-  if (!priority) score += 5;
+  // 3. 선호도(슬라이더) 기반 유사도 일치 (1~5점 척도, 10점 만점)
+  const coverageSim = Math.max(0, 1 - Math.abs(coveragePref - (product.coverage_score || 3)) / 4);
+  const longevitySim = Math.max(0, 1 - Math.abs(longevityPref - (product.longevity_score || 3)) / 4);
+  const lightweightSim = Math.max(0, 1 - Math.abs(lightweightPref - (product.lightweight_score || 3)) / 4);
+
+  score += (coverageSim * 3.3) + (longevitySim * 3.3) + (lightweightSim * 3.4); // 총 10점 부여
 
   // 4. 호수 일치도 (10점 강등)
   if (userShade && userShade !== 'any') {
@@ -146,8 +147,8 @@ function IngredientBadge({ level }: { level: string | null }) {
 }
 
 // ─── 컴포넌트: 상품 카드 ─────────────────────────────────────────────────────
-function ProductCard({ product, skinType, priority, userShade, onClick, rank }: {
-  product: Product; skinType: SkinType; priority: PriorityAttr | null; userShade: ShadeChoice | null;
+function ProductCard({ product, skinType, userShade, onClick, rank }: {
+  product: Product; skinType: SkinType; userShade: ShadeChoice | null;
   onClick: () => void; rank: number;
 }) {
   const typeLabel: Record<string, string> = { cushion: '쿠션', liquid: '리퀴드', stick: '스틱', tone_lotion: '톤로션/BB' };
@@ -207,9 +208,9 @@ function ProductCard({ product, skinType, priority, userShade, onClick, rank }: 
         <h3 style={{ fontSize: '0.88rem', fontWeight: 600, lineHeight: 1.4, marginBottom: '10px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{product.name}</h3>
         {(product.coverage_score || product.longevity_score || product.lightweight_score) && (
           <div style={{ marginBottom: '10px' }}>
-            {(priority === 'coverage' || !priority) && <ScoreBar label="커버력" value={product.coverage_score} color="#a78bfa" />}
-            {(priority === 'longevity' || !priority) && <ScoreBar label="지속력" value={product.longevity_score} color="#60a5fa" />}
-            {(priority === 'lightweight' || !priority) && <ScoreBar label="착용감" value={product.lightweight_score} color="#34d399" />}
+            <ScoreBar label="커버력" value={product.coverage_score} color="#a78bfa" />
+            <ScoreBar label="지속력" value={product.longevity_score} color="#60a5fa" />
+            <ScoreBar label="착용감/가벼움" value={product.lightweight_score} color="#34d399" />
           </div>
         )}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -250,21 +251,23 @@ function ProductCard({ product, skinType, priority, userShade, onClick, rank }: 
 interface QuizState {
   skinType: SkinType | null;
   concerns: SkinConcern[];
-  priority: PriorityAttr | null;
+  coveragePref: number;
+  longevityPref: number;
+  lightweightPref: number;
   shade: ShadeChoice | null;
 }
 
 function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
   const [step, setStep] = useState(0);
-  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], priority: null, shade: null });
+  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: null });
 
   const steps = [
     { title: '피부 타입이 어떻게 되세요?', subtitle: '가장 가까운 항목을 선택해주세요' },
     { title: '고민이 있는 피부 문제가 있나요?', subtitle: '복수 선택 가능 · 없으면 다음으로' },
-    { title: '어떤 부분이 가장 중요하세요?', subtitle: '한 가지를 선택해주세요' },
+    { title: '제품의 기능 선호도를 조절해주세요', subtitle: '각 1~5점 (1: 신경안씀, 5: 매우 중요)' },
     { title: '주로 사용하는 호수가 있나요?', subtitle: '잘 모르면 "잘 모르겠어요" 선택' },
   ];
-  const canNext = [!!state.skinType, true, !!state.priority, !!state.shade];
+  const canNext = [!!state.skinType, true, true, !!state.shade];
 
   const btnBase = (selected: boolean): React.CSSProperties => ({
     borderRadius: '16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s',
@@ -314,19 +317,36 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
         </div>
       )}
 
-      {/* Step 2 */}
+      {/* Step 2 (Sliders) */}
       {step === 2 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {PRIORITY_OPTIONS.map(opt => (
-            <button key={opt.key} onClick={() => setState(s => ({ ...s, priority: opt.key }))}
-              style={{ ...btnBase(state.priority === opt.key), padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <span style={{ fontSize: '1.8rem' }}>{opt.icon}</span>
-              <div>
-                <div style={{ fontWeight: 700, color: state.priority === opt.key ? '#a5b4fc' : 'var(--text-primary)', marginBottom: '3px' }}>{opt.label}</div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{opt.desc}</div>
-              </div>
-            </button>
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', padding: '10px 0' }}>
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>커버력 선호도</span>
+              <span style={{ color: '#a5b4fc', fontWeight: 700 }}>{state.coveragePref}점</span>
+            </div>
+            <input type="range" min="1" max="5" step="1"
+              value={state.coveragePref} onChange={e => setState(s => ({ ...s, coveragePref: parseInt(e.target.value) }))}
+              style={{ width: '100%', accentColor: '#a78bfa', cursor: 'pointer' }} />
+          </div>
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>지속력 선호도</span>
+              <span style={{ color: '#60a5fa', fontWeight: 700 }}>{state.longevityPref}점</span>
+            </div>
+            <input type="range" min="1" max="5" step="1"
+              value={state.longevityPref} onChange={e => setState(s => ({ ...s, longevityPref: parseInt(e.target.value) }))}
+              style={{ width: '100%', accentColor: '#60a5fa', cursor: 'pointer' }} />
+          </div>
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>착용감/가벼움 선호도</span>
+              <span style={{ color: '#34d399', fontWeight: 700 }}>{state.lightweightPref}점</span>
+            </div>
+            <input type="range" min="1" max="5" step="1"
+              value={state.lightweightPref} onChange={e => setState(s => ({ ...s, lightweightPref: parseInt(e.target.value) }))}
+              style={{ width: '100%', accentColor: '#34d399', cursor: 'pointer' }} />
+          </div>
         </div>
       )}
 
@@ -525,7 +545,7 @@ export default function HomePage() {
     const { data } = await supabase.from('products').select('*').limit(200);
     if (data) {
       const scored = (data as Product[])
-        .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType!, quiz.concerns, quiz.priority, quiz.shade) }))
+        .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType!, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
         .sort((a: any, b: any) => b._score - a._score)
         .slice(0, 12);
       setProducts(scored);
@@ -604,7 +624,7 @@ export default function HomePage() {
             <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>추천 기준:</span>
             {quizResult.skinType && <span className="skin-tag">{SKIN_TYPE_OPTIONS.find(o => o.key === quizResult.skinType)?.label} 피부</span>}
             {quizResult.concerns.map(c => <span key={c} className="skin-tag">{CONCERN_OPTIONS.find(o => o.key === c)?.label}</span>)}
-            {quizResult.priority && <span className="skin-tag">{PRIORITY_OPTIONS.find(o => o.key === quizResult.priority)?.label} 중시</span>}
+            <span className="skin-tag">커버{quizResult.coveragePref} 유지{quizResult.longevityPref} 착용{quizResult.lightweightPref}</span>
             {quizResult.shade && quizResult.shade !== 'any' && <span className="skin-tag">{quizResult.shade}호</span>}
             <button onClick={() => setMode('quiz')} className="filter-btn" style={{ marginLeft: 'auto', fontSize: '0.78rem' }}>다시 선택</button>
           </div>
@@ -616,7 +636,7 @@ export default function HomePage() {
             {loading ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
               : products.map((p, i) => (
                 <ProductCard key={p.id} product={p} skinType={currentSkinType}
-                  priority={quizResult.priority} userShade={quizResult.shade} rank={i + 1} onClick={() => setSelectedProduct(p)} />
+                  userShade={quizResult.shade} rank={i + 1} onClick={() => setSelectedProduct(p)} />
               ))}
           </div>
         </section>
@@ -650,7 +670,7 @@ export default function HomePage() {
             {loading ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
               : products.map((p, i) => (
                 <ProductCard key={p.id} product={p} skinType="combination"
-                  priority={null} userShade={null} rank={i + 1} onClick={() => setSelectedProduct(p)} />
+                  userShade={null} rank={i + 1} onClick={() => setSelectedProduct(p)} />
               ))}
           </div>
         </section>
