@@ -51,3 +51,4 @@ export type SkinType = 'oily' | 'dry' | 'combination' | 'sensitive';
 export type SkinConcern = 'acne' | 'pore' | 'redness' | 'spots' | 'wrinkle';
 export type PriorityAttr = 'coverage' | 'longevity' | 'lightweight';
 export type ShadeChoice = '21' | '23' | '25' | 'any';
+export type ApplicationMethod = 'hand' | 'tool' | 'any';

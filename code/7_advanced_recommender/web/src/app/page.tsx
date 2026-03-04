@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { supabase, Product, Review, SkinType, SkinConcern, PriorityAttr, ShadeChoice } from '@/lib/supabase';
+import { supabase, Product, Review, SkinType, SkinConcern, PriorityAttr, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
 
 // ─── 상수 ──────────────────────────────────────────────────────────────────
 const SKIN_TYPE_OPTIONS: { key: SkinType; label: string; icon: string; desc: string }[] = [
@@ -30,6 +30,12 @@ const SHADE_OPTIONS: { key: ShadeChoice; label: string; desc: string; color?: st
   { key: '23', label: '23호 (표준 톤)', desc: '피부가 하얗지도 까맣지도 않은 대한민국 평균 남성 피부', color: '#E8CBAE' },
   { key: '25', label: '25호 (어두운 톤)', desc: '가무잡잡하고 건강한 피부. 평소 야외 활동을 즐기는 편', color: '#D2AA85' },
   { key: 'any', label: '잘 몰라요', desc: '내 톤을 모르겠다 (무난한 제품 위주로 추천)', color: 'transparent' },
+];
+
+const APPLICATION_OPTIONS: { key: ApplicationMethod; label: string; icon: string; desc: string }[] = [
+  { key: 'hand', label: '손으로 간편하게', icon: '✋', desc: '도구 없이 손으로 빠르게 발라요 (톤로션/BB 추천)' },
+  { key: 'tool', label: '도구로 꼼꼼하게', icon: '🖌️', desc: '퍼프나 브러시로 정교하게 발라요 (쿠션/파운데이션 추천)' },
+  { key: 'any', label: '상관없어요', icon: '🤷‍♂️', desc: '발린다면 어떤 방법이든!' },
 ];
 
 const SKIN_TYPE_COMPAT_COL: Record<SkinType, keyof Product> = {
@@ -255,19 +261,21 @@ interface QuizState {
   longevityPref: number;
   lightweightPref: number;
   shade: ShadeChoice | null;
+  applicationMethod: ApplicationMethod | null;
 }
 
 function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
   const [step, setStep] = useState(0);
-  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: null });
+  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: null, applicationMethod: null });
 
   const steps = [
     { title: '피부 타입이 어떻게 되세요?', subtitle: '가장 가까운 항목을 선택해주세요' },
     { title: '고민이 있는 피부 문제가 있나요?', subtitle: '복수 선택 가능 · 없으면 다음으로' },
     { title: '제품의 기능 선호도를 조절해주세요', subtitle: '각 1~5점 (1: 신경안씀, 5: 매우 중요)' },
     { title: '주로 사용하는 호수가 있나요?', subtitle: '잘 모르면 "잘 모르겠어요" 선택' },
+    { title: '어떤 방식으로 바르고 싶으세요?', subtitle: '선호하는 사용 방식을 선택해주세요' },
   ];
-  const canNext = [!!state.skinType, true, true, !!state.shade];
+  const canNext = [!!state.skinType, true, true, !!state.shade, !!state.applicationMethod];
 
   const btnBase = (selected: boolean): React.CSSProperties => ({
     borderRadius: '16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s',
@@ -377,6 +385,33 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
         </div>
       )}
 
+      {/* Step 4 */}
+      {step === 4 && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
+          {APPLICATION_OPTIONS.map(opt => (
+            <button key={opt.key} onClick={() => setState(s => ({ ...s, applicationMethod: opt.key }))}
+              style={{ ...btnBase(state.applicationMethod === opt.key), padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{
+                width: '42px', height: '42px', borderRadius: '50%', flexShrink: 0,
+                background: state.applicationMethod === opt.key ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem',
+              }}>
+                {opt.icon}
+              </div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '1.05rem', color: state.applicationMethod === opt.key ? '#a5b4fc' : 'var(--text-primary)', marginBottom: '4px' }}>
+                  {opt.label}
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
+                  {opt.desc}
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* 버튼 */}
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '32px' }}>
         {step > 0
@@ -384,7 +419,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
           : <div />
         }
         <button
-          onClick={() => { if (step === 3) onComplete(state); else setStep(s => s + 1); }}
+          onClick={() => { if (step === 4) onComplete(state); else setStep(s => s + 1); }}
           disabled={!canNext[step]}
           style={{
             padding: '12px 28px', borderRadius: '14px', fontWeight: 700, fontSize: '0.95rem',
@@ -392,7 +427,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
             color: canNext[step] ? '#fff' : 'var(--text-muted)',
             border: 'none', cursor: canNext[step] ? 'pointer' : 'not-allowed', transition: 'all 0.2s',
           }}>
-          {step === 3 ? '✨ 추천 받기' : '다음 →'}
+          {step === 4 ? '✨ 추천 받기' : '다음 →'}
         </button>
       </div>
     </div>
@@ -541,8 +576,15 @@ export default function HomePage() {
 
   const fetchRecommendations = useCallback(async (quiz: QuizState) => {
     setLoading(true);
-    // Python 로직처럼 DB에서 넉넉하게 긁어온 다음, 프론트에서 가중치 점수로 정렬 (strict 필터링 제거)
-    const { data } = await supabase.from('products').select('*').limit(200);
+    // DB에서 리뷰 200개 이상인 상품만 가져옴 (신뢰도 높은 추천을 위해)
+    let query = supabase.from('products').select('*').gte('review_count', 200);
+    // 편의성(사용 방식) 필터
+    if (quiz.applicationMethod === 'hand') {
+      query = query.ilike('category', '%톤 로션%');
+    } else if (quiz.applicationMethod === 'tool') {
+      query = query.ilike('category', '%쿠션%');
+    }
+    const { data } = await query.limit(200);
     if (data) {
       const scored = (data as Product[])
         .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType!, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
@@ -626,6 +668,7 @@ export default function HomePage() {
             {quizResult.concerns.map(c => <span key={c} className="skin-tag">{CONCERN_OPTIONS.find(o => o.key === c)?.label}</span>)}
             <span className="skin-tag">커버{quizResult.coveragePref} 유지{quizResult.longevityPref} 착용{quizResult.lightweightPref}</span>
             {quizResult.shade && quizResult.shade !== 'any' && <span className="skin-tag">{quizResult.shade}호</span>}
+            {quizResult.applicationMethod && quizResult.applicationMethod !== 'any' && <span className="skin-tag">{APPLICATION_OPTIONS.find(o => o.key === quizResult.applicationMethod)?.label}</span>}
             <button onClick={() => setMode('quiz')} className="filter-btn" style={{ marginLeft: 'auto', fontSize: '0.78rem' }}>다시 선택</button>
           </div>
           <h2 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '4px' }}>🏅 맞춤 추천 결과</h2>
