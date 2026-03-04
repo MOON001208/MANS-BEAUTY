@@ -71,3 +71,14 @@ Thumbs.db
 # md파일
 .md
 !README.md
+
+# 현재 진행 중이거나 임시 보관 중인 스크립트/파일/폴더 제외
+code/1_data_collection/enhanced_crawler.py
+code/1_data_collection/http_crawler/
+code/6_web_recommendation/review_result*.txt
+code/lib/
+gemini_reviewer.py
+generate_ppt.py
+update_plk_data.py
+서하님이 주신 http코드/
+올리브영데이터분석.pdf
