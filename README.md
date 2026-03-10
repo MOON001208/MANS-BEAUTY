@@ -164,7 +164,7 @@ Gemini를 활용하여 리뷰 데이터를 분석, 4가지 핵심 페르소나�
 
 **남성 화장품 맞춤형 추천 시스템**을 직접 체험해보세요!
 
-👉 **[https://mans-beauty-recommendation.streamlit.app/](https://mans-beauty-recommendation.streamlit.app/)**
+👉 **[https://mans-beauty.vercel.app/](https://mans-beauty.vercel.app/)**
 
 ---
 
