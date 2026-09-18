@@ -1,4 +1,5 @@
 import copy
+import json
 import sys
 from collections import Counter
 from unittest import mock
@@ -276,3 +277,34 @@ class ShadeMappingTests(unittest.TestCase):
     def test_order_must_not_invert(self):
         # A lower brand number resolving darker than a higher one is incoherent.
         self.assertIsNone(summarise({1: [25] * 6, 2: [21] * 6}))
+
+
+class AtomicWriteTests(unittest.TestCase):
+    def test_write_retries_while_a_reader_holds_the_file(self):
+        from shared import write_json
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / 'report.json'
+            write_json(target, {'a': 1})
+            calls = {'n': 0}
+            real = Path.replace
+
+            def flaky(self, other):
+                calls['n'] += 1
+                if calls['n'] == 1:
+                    raise PermissionError(5, 'in use')
+                return real(self, other)
+
+            with mock.patch.object(Path, 'replace', flaky):
+                write_json(target, {'a': 2})
+            self.assertEqual(json.loads(target.read_text(encoding='utf-8')), {'a': 2})
+            self.assertEqual(calls['n'], 2)
+
+    def test_write_gives_up_after_repeated_refusals(self):
+        from shared import write_json
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / 'report.json'
+            with mock.patch.object(Path, 'replace', side_effect=PermissionError(5, 'in use')):
+                with self.assertRaises(PermissionError):
+                    write_json(target, {'a': 1}, attempts=2)

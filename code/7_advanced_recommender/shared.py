@@ -52,11 +52,26 @@ def read_all(db, table, columns='*', filters=None):
             raise RuntimeError('DB 페이지 커서가 진행하지 않습니다.')
         last_id = rows[-1]['id']
 
-def write_json(path, value):
+def write_json(path, value, attempts=5):
+    """Atomic write that survives a concurrent reader.
+
+    On Windows the replace fails with PermissionError while another process has
+    the destination open, which is exactly what happens when someone tails a
+    progress report. Losing a long crawl to that is not acceptable, so the
+    replace is retried briefly before giving up.
+    """
+    import time
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + '.tmp')
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding='utf-8')
-    temporary.replace(path)
+    for attempt in range(attempts):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(0.2 * (attempt + 1))
 
 def read_json(path, default):
     return json.loads(path.read_text(encoding='utf-8')) if path.exists() else default
