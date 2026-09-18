@@ -5,6 +5,14 @@
 
 작업 시작 전 이 문서와 `docs/작업보드.md`를 읽는다.
 
+```
+cd code/7_advanced_recommender
+python ops.py status      # 지금 데이터가 어떤 상태인지
+python ops.py verify      # 넘겨받은 코드가 통과 상태인지
+```
+
+`verify`가 실패한 채로 넘어왔으면 그것부터 고친다. 새 작업을 얹지 않는다.
+
 ## 1. 이 프로젝트가 하는 일
 
 올리브영에서 **남성 베이스 메이크업** 상품과 리뷰를 수집해 Supabase에 적재하고,
