@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
-const product = { id: '1', name: '테스트', brand: '브랜드', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
+const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
 const score = (p, longevity) => calcRecommendScore(p, 'oily', [], 3, longevity, 3, '23');
 
 test('unimportant longevity never rewards poor longevity', () => {
@@ -78,4 +78,12 @@ test('stated 21/23/25 shades still win over the relative fallback', () => {
 });
 test('a legacy profile exposes no lineup', () => {
   assert.equal(bestShadeOption({ ...two, profile_metadata: { ...two.profile_metadata, version: 'old' } }, '21'), null);
+});
+
+test('a concealer is not an answer to the full-face quiz', () => {
+  const concealer = withType('con', 'concealer');
+  const cushion = withType('cus', 'cushion');
+  assert.deepEqual(selectRecommendations([concealer, cushion], quiz).map(p => p.id), ['cus']);
+  // Nor when the tool answer would otherwise sweep in everything but tone lotion.
+  assert.deepEqual(selectRecommendations([concealer, cushion], { ...quiz, applicationMethod: 'tool' }).map(p => p.id), ['cus']);
 });

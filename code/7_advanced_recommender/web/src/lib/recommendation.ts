@@ -83,10 +83,17 @@ export interface QuizAnswers {
 export const MIN_ANALYZED_REVIEWS = 5;
 export const RESULT_LIMIT = 12;
 
+// The quiz asks how to cover the whole face and which tone to match, so it
+// ranks full-face base makeup. A concealer answers a different question -
+// hiding one spot - and its review scores describe that job, not this one.
+// Concealers stay in the catalog; they are just not an answer to this quiz.
+const RECOMMENDABLE_TYPES = new Set(['cushion', 'liquid', 'stick', 'tone_lotion']);
+
 /** The ranking the site shows. Kept here so the offline evaluation scores the same list. */
 export function selectRecommendations(products: Product[], quiz: QuizAnswers): (Product & { _score: number })[] {
   return products
     .filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= MIN_ANALYZED_REVIEWS)
+    .filter(p => RECOMMENDABLE_TYPES.has(p.product_type ?? ''))
     .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
     .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
     .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))
