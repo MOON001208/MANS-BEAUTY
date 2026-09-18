@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-09-18T17:39:32.531Z",
+  "captured_at": "2026-09-18T17:47:13.511Z",
   "count": 83,
   "products": [
     {
@@ -1113,7 +1113,7 @@
       "product_type": "cushion",
       "star_rating": 4.9,
       "review_count": 24,
-      "coverage_score": null,
+      "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -1126,28 +1126,44 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "9d38778ffbd1b76202697f4ad615529fad0feadfa7c0f273fa2dad380e2c3d8e",
-        "analyzed_at": "2026-09-18T17:19:47.068657+00:00",
+        "input_hash": "0ab1ddecc8105c4faf137e4c789600534afcea97e2ab6315f52fd8ecee3abb47",
+        "analyzed_at": "2026-09-18T17:46:16.842551+00:00",
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 0,
+        "analyzed_count": 11,
         "evidence_counts": {
-          "coverage": 0,
+          "coverage": 3,
           "longevity": 0,
           "lightweight": 0
         },
         "skin_review_counts": {
-          "dry": 0,
+          "dry": 2,
           "oily": 0,
           "sensitive": 0,
-          "combination": 0
+          "combination": 2
         },
-        "evidence_review_ids": {},
-        "concern_evidence_ids": {},
+        "evidence_review_ids": {
+          "coverage": [
+            "16427055",
+            "36697373",
+            "37836382"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "31735479"
+          ],
+          "spots": [
+            "31735479"
+          ]
+        },
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {
+          "pore": 1,
+          "spots": 1
+        }
       },
-      "last_updated_at": "2026-09-18T17:28:36.138185+00:00"
+      "last_updated_at": "2026-09-18T17:44:55.831458+00:00"
     },
     {
       "id": "A000000143170",
@@ -1170,28 +1186,38 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "592eccd7146c769604b9563886175d9ea2c4e72972e55367cf41679c1847e248",
-        "analyzed_at": "2026-09-18T17:19:47.403399+00:00",
+        "input_hash": "728788e414dc1e271d68589dcce0c9b4f90255ce6104adffb72043af7364c1c8",
+        "analyzed_at": "2026-09-18T17:46:17.394514+00:00",
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 0,
+        "analyzed_count": 10,
         "evidence_counts": {
-          "coverage": 0,
+          "coverage": 1,
           "longevity": 0,
           "lightweight": 0
         },
         "skin_review_counts": {
-          "dry": 0,
+          "dry": 1,
           "oily": 0,
           "sensitive": 0,
-          "combination": 0
+          "combination": 2
         },
-        "evidence_review_ids": {},
-        "concern_evidence_ids": {},
+        "evidence_review_ids": {
+          "coverage": [
+            "16209304"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "8902431"
+          ]
+        },
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {
+          "acne": 1
+        }
       },
-      "last_updated_at": "2026-09-18T17:28:28.640173+00:00"
+      "last_updated_at": "2026-09-18T17:44:38.325842+00:00"
     },
     {
       "id": "A000000161010",
@@ -1270,7 +1296,7 @@
       "star_rating": 4.8,
       "review_count": 734,
       "coverage_score": 3.9,
-      "longevity_score": 3.71,
+      "longevity_score": 3.75,
       "lightweight_score": 3.2,
       "suitable_shades": [],
       "suitable_skin_types": [
@@ -1283,15 +1309,15 @@
         "pore",
         "spots"
       ],
-      "compat_oily": 0.883,
-      "compat_dry": 0.824,
+      "compat_oily": 0.89,
+      "compat_dry": 0.864,
       "compat_sensitive": null,
-      "compat_combination": 0.924,
+      "compat_combination": 0.932,
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ed54c31d26b7460a918131db150643e6db167b78da0946b661ad9eece0ea0d2e",
-        "analyzed_at": "2026-09-18T17:19:49.237488+00:00",
+        "input_hash": "28854c7931ba3c72661467cd1a8b8fac2cb6d2d8ce57286c122429d49322519f",
+        "analyzed_at": "2026-09-18T17:46:19.666680+00:00",
         "shade_lineup": {
           "basis": "brightness_words",
           "options": [
@@ -1310,17 +1336,17 @@
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 591,
+        "analyzed_count": 724,
         "evidence_counts": {
-          "coverage": 84,
-          "longevity": 28,
+          "coverage": 102,
+          "longevity": 32,
           "lightweight": 5
         },
         "skin_review_counts": {
-          "dry": 22,
-          "oily": 25,
+          "dry": 30,
+          "oily": 29,
           "sensitive": 0,
-          "combination": 61
+          "combination": 76
         },
         "evidence_review_ids": {
           "coverage": [
@@ -1371,17 +1397,17 @@
           ]
         },
         "negative_concern_counts": {
-          "acne": 3,
-          "spots": 3
+          "acne": 5,
+          "spots": 5
         },
         "positive_concern_counts": {
-          "acne": 20,
+          "acne": 24,
           "pore": 4,
-          "spots": 47,
+          "spots": 61,
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:28:21.12902+00:00"
+      "last_updated_at": "2026-09-18T17:42:50.813109+00:00"
     },
     {
       "id": "A000000178092",
