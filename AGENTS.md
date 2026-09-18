@@ -168,8 +168,15 @@ python ops.py crosscheck --base main  # 기준 변경
 네이티브 도구로 잡힌다 (첫 사용 시 승인을 묻는다). 아직 실제로 붙여서 확인하지는 않았다.
 
 **Antigravity는 이 고리에 들어오지 못한다.** `antigravity chat --mode agent "<프롬프트>"`는
-GUI 창에 프롬프트를 던질 뿐 결과를 호출자에게 돌려주지 않는다. VS Code 포크라 헤드리스
-에이전트 모드가 없다. 사람이 직접 쓰는 IDE로만 참여한다.
+GUI 창에 프롬프트를 던질 뿐 결과를 호출자에게 돌려주지 않는다. 서브커맨드가 `chat`·`serve-web`·
+`tunnel` 셋뿐이고 나머지는 VS Code 포크의 에디터 옵션이라, 헤드리스 에이전트 모드가 없다.
+사람이 직접 쓰는 IDE로만 참여한다.
+
+이 PC에 설치된 오케스트레이션 런타임 **Orca(1.4.205)도 마찬가지**다. 명령 스키마 234개 전체에
+antigravity가 한 번도 나오지 않고, `orchestration worker-start`의 `--model`은 Claude·Codex·Cursor만
+받는다고 문서화돼 있다. Orca가 가진 것은 감독 터미널로 에이전트를 띄우고 출력을 읽는 구조
+(`worker-start` / `worker-read`), 에이전트 간 메시지와 결정 게이트다. Antigravity를 돌리려면
+`serve-web`으로 띄운 UI를 브라우저 자동화로 조작하는 우회뿐인데, 확인된 지원 경로는 아니다.
 
 권장 고리: **Claude가 작업 → `ops.py verify` → `ops.py crosscheck`로 Codex 검수 →
 지적사항 반영 → 다시 `verify` → 커밋·푸시.** 작성자와 검수자가 다른 모델이라 5.6의 목적이 자동으로 달성된다.
