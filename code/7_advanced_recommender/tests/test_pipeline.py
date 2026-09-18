@@ -1,5 +1,6 @@
 import copy
 import sys
+from collections import Counter
 from unittest import mock
 import unittest
 from pathlib import Path
@@ -7,7 +8,7 @@ from types import SimpleNamespace
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper.crawler import harvest_reviews, normalize_review, is_target, parse_ingredients, product_from_detail, SourceError
 from pipeline import profiles
-from pipeline.profiles import build_profile, extract_attributes, get_shade_from_option, input_hash
+from pipeline.profiles import build_profile, extract_attributes, get_shade_from_option, input_hash, shade_lineup
 from shared import read_all
 
 def raw(rid, **kwargs):
@@ -136,6 +137,43 @@ class ProfileTests(unittest.TestCase):
             self.assertIsNone(get_shade_from_option(name), name)
         for name in ['21호', '21N1', '23 내추럴', '25호 기획']:
             self.assertIsNotNone(get_shade_from_option(name), name)
+
+    def test_lineup_orders_brand_numbering_without_claiming_a_cushion_shade(self):
+        lineup = shade_lineup(Counter({'[본품+10ml 증정] 02 내추럴베이지': 213, '[본품] 01 라이트베이지': 39}))
+        self.assertEqual(lineup['basis'], 'number')
+        self.assertEqual([o['label'] for o in lineup['options']], ['01 라이트베이지', '02 내추럴베이지'])
+        self.assertEqual([o['position'] for o in lineup['options']], [0.0, 1.0])
+        # The brand's own numbering must never be reported as a 21/23/25 shade.
+        self.assertIsNone(get_shade_from_option('01 라이트베이지'))
+
+    def test_lineup_orders_colour_names_only_when_each_is_a_distinct_brightness(self):
+        ordered = shade_lineup(Counter({'매치업 샌드': 5, '매치업 베이지': 7, '매치업 탄': 2}))
+        self.assertEqual([o['label'] for o in ordered['options']], ['매치업 베이지', '매치업 샌드', '매치업 탄'])
+        # Salmon and green are tint purposes, not a light-to-dark range.
+        self.assertIsNone(shade_lineup(Counter({'살몬 베이지': 4, '그린 베이지': 3})))
+
+    def test_numbering_alone_is_not_a_shade(self):
+        # 01/02/03 here number product variants, so no tone order may be claimed.
+        self.assertIsNone(shade_lineup(Counter({'01 코어썸': 9, '02 네추럴썸': 7, '03 체인지썸': 4})))
+
+    def test_packaging_variants_of_one_shade_share_a_rung(self):
+        lineup = shade_lineup(Counter({'[본품]1호': 20, '본품 1호': 9, '[본품]2호': 19, '본품 2호': 12}))
+        self.assertEqual([o['position'] for o in lineup['options']], [0.0, 1.0])
+        self.assertEqual([o['label'] for o in lineup['options']], ['1호', '2호'])
+
+    def test_lineup_rejects_volume_and_bundle_variants(self):
+        self.assertIsNone(shade_lineup(Counter({'트루 톤 로션 오리지널': 8, '트루 톤 로션 오리지널+10ml 증정기획': 4})))
+        self.assertIsNone(shade_lineup(Counter({'[단품]55ml 스킨톤 필터로션': 3, '[기획]55ml+10ml 스킨톤 필터로션': 2})))
+
+    def test_lineup_needs_at_least_two_distinct_shades(self):
+        self.assertIsNone(shade_lineup(Counter({'1호': 5})))
+        # Packaging differences collapse to one shade, which offers no choice.
+        self.assertIsNone(shade_lineup(Counter({'[본품] 1호': 5, '[기획] 1호': 3})))
+
+    def test_sold_out_catalog_options_stay_out_of_the_lineup(self):
+        product = {'id': 'p', 'source_options': [
+            {'name': '1호', 'sold_out': False}, {'name': '2호', 'sold_out': True}]}
+        self.assertIsNone(build_profile(product, [])['profile_metadata']['shade_lineup'])
 
     def test_source_options_override_old_reviews(self):
         p = build_profile({'id': 'p', 'source_options': [{'name': '23호', 'sold_out': False}, {'name': '25호', 'sold_out': True}]}, [{'id': '1', 'option_name': '21호'}])

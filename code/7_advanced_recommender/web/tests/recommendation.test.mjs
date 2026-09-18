@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calcRecommendScore, searchProducts, selectRecommendations, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
+import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
 const product = { id: '1', name: '테스트', brand: '브랜드', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
@@ -49,4 +49,33 @@ test('application method excludes the wrong product type', () => {
 test('equal scores break ties by id, so the order never wobbles between runs', () => {
   const catalog = [withType('b', 'cushion'), withType('a', 'cushion')];
   assert.deepEqual(selectRecommendations(catalog, quiz).map(p => p.id), ['a', 'b']);
+});
+
+const lined = options => ({ ...product, suitable_shades: [], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30, shade_lineup: { basis: 'number', options } } });
+const two = lined([{ name: '01 라이트베이지', label: '01 라이트베이지', position: 0 }, { name: '02 내추럴베이지', label: '02 내추럴베이지', position: 1 }]);
+const three = lined([{ name: '1호', label: '1호', position: 0 }, { name: '2호', label: '2호', position: 0.5 }, { name: '3호', label: '3호', position: 1 }]);
+const shadeScore = (p, choice) => calcRecommendScore(p, 'oily', [], 3, 3, 3, choice);
+
+test('a brand line suggests its lightest option for a light tone', () => {
+  assert.equal(bestShadeOption(two, '21').label, '01 라이트베이지');
+  assert.equal(bestShadeOption(two, '25').label, '02 내추럴베이지');
+  assert.equal(bestShadeOption(three, '23').label, '2호');
+});
+test('brand numbering is never reported as a 21/23/25 shade', () => {
+  assert.deepEqual(two.suitable_shades, []);
+  assert.equal(bestShadeOption(two, 'any'), null);
+});
+test('a three shade line serves a standard tone better than a two shade line', () => {
+  assert.ok(shadeScore(three, '23') > shadeScore(two, '23'));
+  // At the extremes both lines have an exact option, so neither is favoured.
+  assert.equal(shadeScore(three, '21'), shadeScore(two, '21'));
+});
+test('stated 21/23/25 shades still win over the relative fallback', () => {
+  const stated = { ...product, suitable_shades: ['21'] };
+  assert.ok(shadeScore(stated, '21') > shadeScore(two, '21'));
+  // A product whose stated shades exclude the request is still penalised.
+  assert.ok(shadeScore({ ...product, suitable_shades: ['25'] }, '21') < shadeScore(two, '21'));
+});
+test('a legacy profile exposes no lineup', () => {
+  assert.equal(bestShadeOption({ ...two, profile_metadata: { ...two.profile_metadata, version: 'old' } }, '21'), null);
 });

@@ -1,9 +1,25 @@
-import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from './supabase';
+import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod, ShadeLineup } from './supabase';
 
 export const PROFILE_VERSION = 'rules-ko-v1';
 export const SKIN_TYPE_COMPAT_COL = {
   oily: 'compat_oily', dry: 'compat_dry', sensitive: 'compat_sensitive', combination: 'compat_combination',
 } as const;
+
+/** Where each quiz tone sits on a product's own light-to-dark range. */
+export const SHADE_TARGET: Record<'21' | '23' | '25', number> = { '21': 0, '23': 0.5, '25': 1 };
+
+export function shadeLineup(product: Product): ShadeLineup | null {
+  return (hasCurrentProfile(product) ? product.profile_metadata?.shade_lineup : null) ?? null;
+}
+
+/** The option of this product closest to the requested tone, or null if it states none. */
+export function bestShadeOption(product: Product, shade: ShadeChoice | null) {
+  if (!shade || shade === 'any') return null;
+  const options = shadeLineup(product)?.options;
+  if (!options?.length) return null;
+  const target = SHADE_TARGET[shade];
+  return options.reduce((best, o) => Math.abs(o.position - target) < Math.abs(best.position - target) ? o : best);
+}
 
 export function hasCurrentProfile(product: Product): boolean {
   return product.profile_metadata?.version === PROFILE_VERSION;
@@ -30,8 +46,18 @@ export function calcRecommendScore(product: Product, skinType: SkinType, concern
     score += pairs.reduce((n, [importance, value]) => n + Math.max(0, (importance ?? 1) - 1) * (value == null ? 0 : Math.max(0, Math.min(1, (value - 1) / 4))), 0) / totalWeight * 30;
   }
   if (shade && shade !== 'any') {
-    if (product.suitable_shades?.includes(shade)) score += 15;
-    else if (product.suitable_shades?.length) score -= 20;
+    if (product.suitable_shades?.length) {
+      if (product.suitable_shades.includes(shade)) score += 15;
+      else score -= 20;
+    } else {
+      // No 21/23/25 shade stated, but the product's own options may run light to
+      // dark. Credit how closely its nearest option sits to the requested tone:
+      // a three-shade line serves a standard tone better than a two-shade one.
+      // Capped below the stated-shade bonus: "the lighter of two" is weaker
+      // evidence than a shade named on the same scale the user answered on.
+      const option = bestShadeOption(product, shade);
+      if (option) score += 10 * (1 - Math.abs(option.position - SHADE_TARGET[shade]));
+    }
   }
   // Small confidence adjustment uses analyzed reviews, never source site's total count.
   score += Math.min(Math.log10((product.profile_metadata?.analyzed_count ?? 0) + 1), 3) / 3 * 5;

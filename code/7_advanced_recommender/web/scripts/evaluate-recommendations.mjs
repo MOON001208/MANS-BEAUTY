@@ -5,7 +5,7 @@
 // there are no human relevance labels or click logs yet, so NDCG/Recall would be
 // unfounded here. Ranks the same list the site ranks, via selectRecommendations.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { selectRecommendations, hasCurrentProfile, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
+import { selectRecommendations, hasCurrentProfile, bestShadeOption, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 
 const read = name => JSON.parse(readFileSync(new URL(`../tests/fixtures/${name}`, import.meta.url), 'utf-8'));
 const snapshot = read('catalog-snapshot.json');
@@ -31,6 +31,9 @@ function evaluate(persona) {
   }
 
   const shadeKnown = results.filter(p => p.suitable_shades?.length);
+  // A product serves the tone if it states a matching shade or its own options
+  // run light to dark, so the buyer can pick the right one.
+  const viaLineup = wantsShade ? results.filter(p => !p.suitable_shades?.length && bestShadeOption(p, persona.shade)) : [];
   const adverse = results.filter(p => persona.concerns.some(c =>
     (meta(p).negative_concern_counts?.[c] ?? 0) >= 3 &&
     (meta(p).negative_concern_counts?.[c] ?? 0) > (meta(p).positive_concern_counts?.[c] ?? 0)));
@@ -55,7 +58,8 @@ function evaluate(persona) {
     // Requested shade is unavailable on some products; only a product that lists
     // shades and omits the requested one is a real conflict.
     shade_conflict_rate: wantsShade ? share(shadeKnown.filter(p => !p.suitable_shades.includes(persona.shade)).length, shadeKnown.length) : null,
-    shade_unknown_rate: wantsShade ? share(results.length - shadeKnown.length, results.length) : null,
+    shade_lineup_rate: wantsShade ? share(viaLineup.length, results.length) : null,
+    shade_unknown_rate: wantsShade ? share(results.length - shadeKnown.length - viaLineup.length, results.length) : null,
     concern_hit_rate: persona.concerns.length ? share(results.filter(p => persona.concerns.some(c => p.suitable_concerns?.includes(c))).length, results.length) : null,
     adverse_rate: persona.concerns.length ? share(adverse.length, results.length) : null,
     traceable_rate: share(traceable.length, claiming.length),
@@ -83,22 +87,23 @@ const report = {
     mean_traceable_rate: mean('traceable_rate'),
     mean_no_claim_rate: mean('no_claim_rate'),
     mean_shade_unknown_rate: mean('shade_unknown_rate'),
+    mean_shade_lineup_rate: mean('shade_lineup_rate'),
   },
   rows,
 };
 
 console.log(`카탈로그 ${report.catalog_size}개 · 페르소나 ${report.personas}명 (스냅샷 ${snapshot.captured_at.slice(0, 10)})\n`);
-console.log('페르소나                                   결과  호수충돌  호수없음  고민적중  부작용  근거추적  주장없음');
+console.log('페르소나                                   결과  호수충돌  자체호수  호수없음  고민적중  부작용  근거추적  주장없음');
 for (const r of rows) {
   console.log(
     `${r.label.padEnd(42)} ${String(r.returned).padStart(2)}건  ${pct(r.shade_conflict_rate).padStart(7)}  ` +
-    `${pct(r.shade_unknown_rate).padStart(7)}  ${pct(r.concern_hit_rate).padStart(7)}  ${pct(r.adverse_rate).padStart(6)}  ` +
+    `${pct(r.shade_lineup_rate).padStart(7)}  ${pct(r.shade_unknown_rate).padStart(7)}  ${pct(r.concern_hit_rate).padStart(7)}  ${pct(r.adverse_rate).padStart(6)}  ` +
     `${pct(r.traceable_rate).padStart(7)}  ${pct(r.no_claim_rate).padStart(7)}`);
   for (const v of r.violations) console.log(`    위반: ${v}`);
 }
 const s = report.summary;
 console.log(`
-평균: 호수충돌 ${pct(s.mean_shade_conflict_rate)} · 호수없음 ${pct(s.mean_shade_unknown_rate)} · 고민적중 ${pct(s.mean_concern_hit_rate)}`);
+평균: 호수충돌 ${pct(s.mean_shade_conflict_rate)} · 자체호수 ${pct(s.mean_shade_lineup_rate)} · 호수없음 ${pct(s.mean_shade_unknown_rate)} · 고민적중 ${pct(s.mean_concern_hit_rate)}`);
 console.log(`      부작용 ${pct(s.mean_adverse_rate)} · 근거추적 ${pct(s.mean_traceable_rate)} · 주장없음 ${pct(s.mean_no_claim_rate)}`);
 console.log(`하드 조건 위반 ${s.total_violations}건 · 결과 0건인 페르소나 ${s.empty_results}명`);
 

@@ -14,7 +14,7 @@ from shared import product_type
 VERSION = 'rules-ko-v1'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 2
+METADATA_REVISION = 3
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -67,6 +67,77 @@ def get_shade_from_option(option):
     matches = set(re.findall(r'(?<!\d)(21|23|25)(?=\s*호|[NnCcWw](?:\d)?\b|\b)', option or ''))
     return next(iter(matches)) if len(matches) == 1 else None
 
+# Packaging, volume and bundle wording is not part of a shade name.
+SHADE_NOISE = re.compile(r'\[[^\]]*\]|\([^)]*\)|\d+\s*(?:ml|mL|g|매|개입|종|입)|[+＋].*$')
+SHADE_NUMBER = re.compile(r'(?<!\d)(\d{1,2})\s*호')
+# Ordered light to dark. The first match wins, so 라이트베이지 is light, not mid.
+BRIGHTNESS_WORDS = [
+    re.compile(r'라이트|light|밝은\s*피부|아이보리|ivory|페어|fair'),
+    re.compile(r'내추럴|natural|미디엄|medium|뉴트럴'),
+    re.compile(r'베이지|beige'),
+    re.compile(r'샌드|sand|앰버|amber'),
+    re.compile(r'탄\b|tan|딥|deep|어두운\s*피부|다크|dark'),
+]
+
+def _clean_option(name):
+    return re.sub(r'\s+', ' ', SHADE_NOISE.sub(' ', name or '')).strip()
+
+def _is_shade_name(text):
+    """A number alone does not make an option a shade: 01 코어썸 numbers a
+    variant, not a tone. Require the 호 marker, a bare numeric code, or a
+    colour/brightness word alongside it."""
+    return bool(re.search(r'\d\s*호', text) or re.fullmatch(r'0*\d{1,3}', text)
+                or _brightness_level(text) is not None)
+
+def _option_number(text):
+    """Brand shade numbering: 1호, 21호, 02, 001. Not converted to a 21/23/25 shade."""
+    match = SHADE_NUMBER.search(text)
+    if match:
+        return int(match.group(1))
+    match = re.fullmatch(r'0*(\d{1,3})', text)
+    if match:
+        return int(match.group(1))
+    match = re.match(r'0(\d)(?!\d)', text)
+    return int(match.group(1)) if match else None
+
+def _brightness_level(text):
+    for level, pattern in enumerate(BRIGHTNESS_WORDS):
+        if pattern.search(text):
+            return level
+    return None
+
+def shade_lineup(option_counts):
+    """Order a product's own shade options from lightest to darkest.
+
+    Uses only what the option names state: brand numbering, or brightness words
+    when the options land on distinct levels. A brand's 1호 is never claimed to
+    equal the 21호 of the cushion scale; only the order within this product is
+    asserted. Packaging variants of one shade collapse onto a single rung, and
+    names that state no shade at all are dropped. Returns None when fewer than
+    two rungs survive, which is what volume-only and tint-purpose options do.
+    """
+    cleaned = defaultdict(Counter)
+    for name, count in option_counts.items():
+        text = _clean_option(name)
+        if text:
+            cleaned[text][name] += count
+    for basis, resolve in [('number', _option_number), ('brightness_words', _brightness_level)]:
+        rungs = defaultdict(Counter)
+        for text, names in cleaned.items():
+            level = resolve(text)
+            if level is not None and (basis != 'number' or _is_shade_name(text)):
+                rungs[level].update(names)
+        if len(rungs) < 2:
+            continue
+        ordered = sorted(rungs)
+        last = len(ordered) - 1
+        options = []
+        for index, level in enumerate(ordered):
+            name = rungs[level].most_common(1)[0][0]
+            options.append({'name': name, 'label': _clean_option(name), 'position': round(index / last, 3)})
+        return {'basis': basis, 'options': options}
+    return None
+
 def input_hash(product, reviews):
     source = {k: product.get(k) for k in ['id', 'name', 'category', 'ingredients_raw', 'source_options']}
     data = [{k: r.get(k) for k in ['id', 'content', 'rating', 'skin_type', 'option_name']} for r in reviews]
@@ -78,7 +149,7 @@ def build_profile(product, reviews):
     reviews = list({r['id']: r for r in reviews}.values())
     scores, evidence_ids, concern_ids = defaultdict(list), defaultdict(list), defaultdict(list)
     good, bad, skin_ratings = Counter(), Counter(), defaultdict(list)
-    options = defaultdict(Counter)
+    options, option_names = defaultdict(Counter), Counter()
     for review in reviews:
         attr = extract_attributes(review)
         for name in ATTRIBUTES:
@@ -97,17 +168,23 @@ def build_profile(product, reviews):
             # Smoothed review satisfaction index, not skin safety probability.
             skin_ratings[skin].append(rating)
         option = review.get('option_name') or ''
+        if option.strip():
+            option_names[option] += 1
         shade = get_shade_from_option(option)
         if shade:
             options[shade][option] += 1
     # Prefer current source options; omit sold-out options and never synthesize unavailable shades.
     source_options = product.get('source_options')
     if source_options is not None:
-        options = defaultdict(Counter)
+        options, option_names = defaultdict(Counter), Counter()
         for option in source_options:
-            shade = get_shade_from_option(option.get('name'))
-            if shade and not option.get('sold_out'):
-                options[shade][option['name']] += 1
+            name = option.get('name') or ''
+            if option.get('sold_out') or not name.strip():
+                continue
+            option_names[name] += 1
+            shade = get_shade_from_option(name)
+            if shade:
+                options[shade][name] += 1
     profile = {name + '_score': round(mean(scores[name]), 2) if len(scores[name]) >= 3 else None for name in ATTRIBUTES}
     for skin in ['oily', 'dry', 'combination', 'sensitive']:
         vals = skin_ratings[skin]
@@ -126,6 +203,8 @@ def build_profile(product, reviews):
             'skin_review_counts': {k: len(v) for k, v in skin_ratings.items()},
             'positive_concern_counts': dict(good), 'negative_concern_counts': dict(bad),
             'shade_source': 'catalog' if source_options is not None else 'historical_reviews',
+            # Order within this product only; a brand's 1호 is not the 21호 of the cushion scale.
+            'shade_lineup': shade_lineup(option_names),
         },
     })
     return profile

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
-import { getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations } from '@/lib/recommendation';
+import { bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
 import { loadCatalog } from '@/lib/catalog';
 import Image from 'next/image';
 
@@ -97,6 +97,9 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
 
   // Only display an exact known shade; never invent an adjacent or default shade.
   const recommendedShadeStr = userShade && userShade !== 'any' && product.suitable_shades?.includes(userShade) ? userShade : '';
+  const lineup = shadeLineup(product);
+  const lineupOption = product.suitable_shades?.length ? null : bestShadeOption(product, userShade);
+  const lineupPlace = !lineupOption ? '' : lineupOption.position === 0 ? '가장 밝은 쪽' : lineupOption.position === 1 ? '가장 어두운 쪽' : '중간';
 
   return (
     <div className="product-card animate-fadeInUp" onClick={onClick} style={{ cursor: 'pointer', position: 'relative' }}>
@@ -153,13 +156,21 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
             </div>
           </div>
         </div>
-        {product.suitable_shades && product.suitable_shades.length > 0 && recommendedShadeStr && (
+        {recommendedShadeStr && (
           <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
             <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>💡 선택 호수와 일치하는 옵션: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>
               {product.shade_options?.[recommendedShadeStr] || `${recommendedShadeStr}호`}
             </span>
-            {userShade === 'any' && <span style={{ fontSize: '0.65rem', color: 'gray', marginLeft: '6px' }}>(가장 무난한 톤)</span>}
+          </div>
+        )}
+        {lineupOption && lineup && (
+          <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
+            <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>🎨 이 제품에서 고를 옵션: </span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>{lineupOption.label}</span>
+            <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginLeft: '6px' }}>
+              ({lineup.options.length}종 중 {lineupPlace})
+            </span>
           </div>
         )}
       </div>
@@ -349,7 +360,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
 }
 
 // ─── 컴포넌트: 모달 ─────────────────────────────────────────────────────────
-function ProductModal({ product, skinType, onClose }: { product: Product; skinType: SkinType; onClose: () => void }) {
+function ProductModal({ product, skinType, userShade, onClose }: { product: Product; skinType: SkinType; userShade: ShadeChoice | null; onClose: () => void }) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
   const [reviewError, setReviewError] = useState('');
@@ -390,6 +401,9 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
       });
     return () => controller.abort();
   }, [evidenceIds]);
+
+  const modalLineup = shadeLineup(product);
+  const modalPick = bestShadeOption(product, userShade);
 
   const renderEvidence = (key: string, ids?: string[]) => {
     const found = (ids ?? []).map(id => evidenceById.get(id)).filter((r): r is Review => !!r);
@@ -484,6 +498,30 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
                     {product.shade_options?.[s] || `${s}호`}
                   </span>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {!product.suitable_shades?.length && modalLineup && (
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '6px' }}>🎨 이 제품의 호수 (밝은 순)</h3>
+              <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
+                브랜드가 표기한 순서입니다. 21/23/25 기준과 직접 대응하지는 않습니다. 재고는 판매처에서 확인하세요.
+              </p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                {modalLineup.options.map(option => {
+                  const picked = option.name === modalPick?.name;
+                  return (
+                    <span key={option.name} style={{
+                      padding: '6px 14px', borderRadius: '8px', fontSize: '0.82rem', fontWeight: picked ? 700 : 500,
+                      background: picked ? 'rgba(99,102,241,0.18)' : 'rgba(255,255,255,0.04)',
+                      color: picked ? '#a5b4fc' : 'var(--text-secondary)',
+                      border: `1px solid ${picked ? 'rgba(99,102,241,0.4)' : 'var(--border-color)'}`,
+                    }}>
+                      {option.label}{picked && ' ← 선택한 톤에 가장 가까움'}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -701,7 +739,8 @@ export default function HomePage() {
       </footer>
 
       {selectedProduct && (
-        <ProductModal key={selectedProduct.id} product={selectedProduct} skinType={currentSkinType} onClose={() => setSelectedProduct(null)} />
+        <ProductModal key={selectedProduct.id} product={selectedProduct} skinType={currentSkinType}
+          userShade={quizResult?.shade ?? null} onClose={() => setSelectedProduct(null)} />
       )}
     </main>
   );

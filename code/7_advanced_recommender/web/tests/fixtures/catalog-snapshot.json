@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-09-18T15:01:24.413Z",
+  "captured_at": "2026-09-18T15:32:18.102Z",
   "count": 59,
   "products": [
     {
@@ -25,8 +25,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "fbda28a195fca87eb78b7db7fb215d056a17ae5c6a825ddb76c5d6bb6b20c5af",
-        "analyzed_at": "2026-09-18T14:54:36.918036+00:00",
+        "input_hash": "049037e67f487eda5da18cac4d1b9ee5703a91ebd6b35fab13438b21850390e9",
+        "analyzed_at": "2026-09-18T15:28:16.461760+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 106,
         "evidence_counts": {
@@ -84,8 +85,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "87efd149407c76b91fceb3f114308fbdb946e7af0dc03c0de7c14ca6fe17af68",
-        "analyzed_at": "2026-09-18T14:54:38.408195+00:00",
+        "input_hash": "672edfedb1bdbe9af347482ee522d504be6b01b0cdd2e03ee37e19930cc93257",
+        "analyzed_at": "2026-09-18T15:28:17.038287+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 65,
         "evidence_counts": {
@@ -136,8 +138,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "3900b12e6f24b99c954f9d56186a5d33a4c41a6f31e752549e7db623aadf0599",
-        "analyzed_at": "2026-09-18T14:54:39.971666+00:00",
+        "input_hash": "37a1b91e2841197c5f2117d7dda27f56a6a44c55b3f183e49cd6d6c188953068",
+        "analyzed_at": "2026-09-18T15:28:17.618804+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 92,
         "evidence_counts": {
@@ -209,8 +212,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e19341264b1113e32090a69a245579b2952507679455eae28094af110fff10a9",
-        "analyzed_at": "2026-09-18T14:54:40.825964+00:00",
+        "input_hash": "e01cca32a75fd2bffe595a51e9adeacc055c31964ed788b062622c2ad18c9bee",
+        "analyzed_at": "2026-09-18T15:28:18.179213+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 115,
         "evidence_counts": {
@@ -294,8 +298,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "625dda1deea3298191315f63545cdbf94a6cdacb65b139908543003a87e70e34",
-        "analyzed_at": "2026-09-18T14:54:41.712765+00:00",
+        "input_hash": "8bb99d763dfb47c52a39d88220522cc2a7cb8a4cd5fb59b588e175fbdedc4278",
+        "analyzed_at": "2026-09-18T15:28:19.070045+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "핸섬커버쿠션 1호",
+              "label": "핸섬커버쿠션 1호",
+              "position": 0
+            },
+            {
+              "name": "핸섬커버쿠션 3호",
+              "label": "핸섬커버쿠션 3호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 461,
         "evidence_counts": {
@@ -395,8 +414,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2237e6d2ef54638b12cb75122bf3a234c017be2f952014a65c1ec9004577d62c",
-        "analyzed_at": "2026-09-18T14:54:42.528439+00:00",
+        "input_hash": "556f57f272d48d9c288688baaa0bc6c65efa63c90009540676ca651ea4519313",
+        "analyzed_at": "2026-09-18T15:28:19.807377+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
+              "label": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
+              "position": 0
+            },
+            {
+              "name": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
+              "label": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
+              "position": 0.5
+            },
+            {
+              "name": "라끌랑 슈퍼쉴드 옴므쿠션 3호",
+              "label": "라끌랑 슈퍼쉴드 옴므쿠션 3호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 456,
         "evidence_counts": {
@@ -491,8 +530,33 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b6bff42e024067713780c308b9ccd82a90cc0bf2e0f419bb9ed79e8775f52b96",
-        "analyzed_at": "2026-09-18T14:54:43.371029+00:00",
+        "input_hash": "1e77028b58c8a53076f31d1ab39e239bd8c30d4c2ec86b1b5c209f93c5b81e1b",
+        "analyzed_at": "2026-09-18T15:28:20.641261+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "내추럴 커버 옴므쿠션 1호",
+              "label": "내추럴 커버 옴므쿠션 1호",
+              "position": 0
+            },
+            {
+              "name": "내추럴 커버 옴므쿠션 2호",
+              "label": "내추럴 커버 옴므쿠션 2호",
+              "position": 0.333
+            },
+            {
+              "name": "내추럴 커버 옴므쿠션 3호",
+              "label": "내추럴 커버 옴므쿠션 3호",
+              "position": 0.667
+            },
+            {
+              "name": "내추럴 커버 옴므쿠션 4호",
+              "label": "내추럴 커버 옴므쿠션 4호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 421,
         "evidence_counts": {
@@ -590,8 +654,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "c9586e385939500978ab4a371d975e549645a48e30ad22f124a6ca572ebb754a",
-        "analyzed_at": "2026-09-18T14:54:45.048957+00:00",
+        "input_hash": "3527ffe81021cbed19b494aa7eb617d7ca5274504c35cc21358134867baee332",
+        "analyzed_at": "2026-09-18T15:28:21.414443+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 377,
         "evidence_counts": {
@@ -671,8 +736,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2cab34f1fe1fc79fddaa119a6133cdc133b86c4c2ca78eb0f2b3b5792a82ee9c",
-        "analyzed_at": "2026-09-18T14:54:45.925603+00:00",
+        "input_hash": "a1654a59e2ab7276acaed655809a8ad50e492367cf8410ac0c47d11ead419340",
+        "analyzed_at": "2026-09-18T15:28:21.961749+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 64,
         "evidence_counts": {
@@ -741,8 +807,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1c0454a8bf04a3ccfc7b14143c4e4724a4a6c9c445b74062fe5fd50a6dea861e",
-        "analyzed_at": "2026-09-18T14:54:47.363655+00:00",
+        "input_hash": "1a0e6074ad7853de6fd5bffb6f325d2a2aa6e26a042b291268087546a2bdbccf",
+        "analyzed_at": "2026-09-18T15:28:22.709048+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 206,
         "evidence_counts": {
@@ -801,8 +868,33 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8a467094ff975986cd7ae22b0d08f7ca1fa6475260e6f687e03b6056203157be",
-        "analyzed_at": "2026-09-18T14:54:48.117479+00:00",
+        "input_hash": "b8be45730f57732396ec96b0b7cbbd359518ca0e08c8ddce5cded9acad93f845",
+        "analyzed_at": "2026-09-18T15:28:23.464487+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "매치업 아이보리",
+              "label": "매치업 아이보리",
+              "position": 0
+            },
+            {
+              "name": "매치업 베이지",
+              "label": "매치업 베이지",
+              "position": 0.333
+            },
+            {
+              "name": "매치업 샌드",
+              "label": "매치업 샌드",
+              "position": 0.667
+            },
+            {
+              "name": "매치업 탄",
+              "label": "매치업 탄",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 223,
         "evidence_counts": {
@@ -891,8 +983,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b63167cdb7cb198d0e093584c43b338f5cd44ccd12cef56506048fac815c2647",
-        "analyzed_at": "2026-09-18T14:54:48.701304+00:00",
+        "input_hash": "5c2800564c1f0aa3d88059b18c2945bc7c719c8468d53279c365a5d1ad9e0967",
+        "analyzed_at": "2026-09-18T15:28:23.991589+00:00",
+        "shade_lineup": null,
         "shade_source": "catalog",
         "analyzed_count": 3,
         "evidence_counts": {
@@ -944,8 +1037,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "47dd86a3f40fa7fb7aeebe72c26daf6dfed465f5356dcbed9acacc331f6f0134",
-        "analyzed_at": "2026-09-18T14:54:49.661774+00:00",
+        "input_hash": "e2d525b48a3c5bf5633b6641ac07a6eca3f3f54be7e1ba2a229e67f149d25b49",
+        "analyzed_at": "2026-09-18T15:28:24.991285+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "라이트베이지",
+              "label": "라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "미디엄베이지",
+              "label": "미디엄베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 591,
         "evidence_counts": {
@@ -1049,8 +1157,38 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1d92c0755b487480779c2f567205fa70fa0120914b45f5d4e573abbc9274281e",
-        "analyzed_at": "2026-09-18T14:54:50.783859+00:00",
+        "input_hash": "8f2020c580dc90b740e965f140aac7005843dbc1ac9c86b609b46bd8a0ee1aaf",
+        "analyzed_at": "2026-09-18T15:28:26.070577+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호",
+              "label": "1호",
+              "position": 0
+            },
+            {
+              "name": "2호",
+              "label": "2호",
+              "position": 0.25
+            },
+            {
+              "name": "3호",
+              "label": "3호",
+              "position": 0.5
+            },
+            {
+              "name": "4호",
+              "label": "4호",
+              "position": 0.75
+            },
+            {
+              "name": "5호",
+              "label": "5호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 963,
         "evidence_counts": {
@@ -1139,8 +1277,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "22b373f235bd9582af476f1fcaaaed52ae0c1ff33ca8de789803b3cadcda0d43",
-        "analyzed_at": "2026-09-18T14:54:51.402871+00:00",
+        "input_hash": "45cd103e73d24c858194392154bc340e4b7b2c632b4dfc0a21c420c410af4bbc",
+        "analyzed_at": "2026-09-18T15:28:26.632736+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 1,
         "evidence_counts": {
@@ -1185,8 +1324,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ad9eea9eabab1583cb6180ba1d7051c3e4fe08b16a805afe1c1410f75ae29baa",
-        "analyzed_at": "2026-09-18T14:54:51.951060+00:00",
+        "input_hash": "a6093c447faed9e6a91b00743d522280e08e8e76de971c61fc60c162a085f728",
+        "analyzed_at": "2026-09-18T15:28:27.210740+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호",
+              "label": "1호",
+              "position": 0
+            },
+            {
+              "name": "2호",
+              "label": "2호",
+              "position": 0.5
+            },
+            {
+              "name": "3호",
+              "label": "3호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 106,
         "evidence_counts": {
@@ -1266,8 +1425,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8a001f72b9cebb2815e1d5907b371b7fa7bb6d13ead1845a572b0cc0def3ad75",
-        "analyzed_at": "2026-09-18T14:54:52.496021+00:00",
+        "input_hash": "f3d9775ac3d4be9940f09c7ef1dd62ce3b0caa539393834ab58ba9a57a9b1324",
+        "analyzed_at": "2026-09-18T15:28:27.887328+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 92,
         "evidence_counts": {
@@ -1337,8 +1497,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2b5cad5edb9b572657524f944d3358851fff1ddc84cee74a4120700771d3f6b0",
-        "analyzed_at": "2026-09-18T14:54:53.089834+00:00",
+        "input_hash": "817fd0f63ac175cc51438e99c17158661ad0567255243266b9544f3685913a5f",
+        "analyzed_at": "2026-09-18T15:28:28.551156+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 10,
         "evidence_counts": {
@@ -1386,8 +1547,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "9cb4cfc26898679a621d779de05c26ccb21e0deb081213c0bfa87d823bf6c24f",
-        "analyzed_at": "2026-09-18T14:54:53.968582+00:00",
+        "input_hash": "04e3336299959ecbbaf90f8219a342a61717748c11a22be4ae8e178f4fcdf0ea",
+        "analyzed_at": "2026-09-18T15:28:29.182110+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 4,
         "evidence_counts": {
@@ -1433,8 +1595,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "c921d2baea7bed05b1715d96ba61c5ca3580f36133f1d890c621dd6021b943c2",
-        "analyzed_at": "2026-09-18T14:54:54.588311+00:00",
+        "input_hash": "767d86f15f4fccf647e2823ea78de57715d07c255ea44d31fb00409a556d06b7",
+        "analyzed_at": "2026-09-18T15:28:29.749112+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 87,
         "evidence_counts": {
@@ -1494,8 +1657,9 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b510ffabcc86c8e67ac2b402dddad837c6db83133bb1a609eb0d18c9fc359da9",
-        "analyzed_at": "2026-09-18T14:54:55.292228+00:00",
+        "input_hash": "65225739369bea5cfe0a9694b5a7cbea3f77311ee451ea4b6258bb578c2af917",
+        "analyzed_at": "2026-09-18T15:28:30.211108+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 0,
         "evidence_counts": {
@@ -1547,8 +1711,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "907b03459ada6df02856ce1cff362ff4c6f206a635bfb958e03ebae5ef1d4f68",
-        "analyzed_at": "2026-09-18T14:54:56.921476+00:00",
+        "input_hash": "549d5c69bda7e4bb18ed8fa6209c9a9a24f0b720fea2d2c9086da09aeffcea6f",
+        "analyzed_at": "2026-09-18T15:28:32.438320+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[기획] 1호 (+클렌징폼 50ml)",
+              "label": "1호",
+              "position": 0
+            },
+            {
+              "name": "[기획] 3호 (+클렌징폼 50ml)",
+              "label": "3호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "catalog",
         "analyzed_count": 1263,
         "evidence_counts": {
@@ -1662,8 +1841,33 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b66609bc6f31b9d579d611fcc5d7f5aaacdce175f4cc4115f6325ffc18a07049",
-        "analyzed_at": "2026-09-18T14:54:57.623237+00:00",
+        "input_hash": "ffaf5f5878ab88bf1d064637a0b5b5a4c17f320c8909ba7516f742e15fc51c5e",
+        "analyzed_at": "2026-09-18T15:28:33.195320+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 라이트베이지",
+              "label": "1호 라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "2호 베이지+퍼프2개입 기획",
+              "label": "2호 베이지",
+              "position": 0.333
+            },
+            {
+              "name": "3호 샌드+퍼프2개입 기획",
+              "label": "3호 샌드",
+              "position": 0.667
+            },
+            {
+              "name": "4호 모카",
+              "label": "4호 모카",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 221,
         "evidence_counts": {
@@ -1747,8 +1951,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "f537bb2bb176f0f947982729045eb977cfd54342561d7e2d6e3f07be26825f94",
-        "analyzed_at": "2026-09-18T14:54:58.189632+00:00",
+        "input_hash": "9f93dd3895e86322c2027efdba28df905e311c93cb97f0304dbb547d61e36075",
+        "analyzed_at": "2026-09-18T15:28:33.773778+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 밝은피부용(23-25호)",
+              "label": "1호 밝은피부용",
+              "position": 0
+            },
+            {
+              "name": "2호 보통피부용(27-29호)",
+              "label": "2호 보통피부용",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 45,
         "evidence_counts": {
@@ -1823,8 +2042,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "f2c3a9673dc945ec1ddf27a8e3f71dd78b94251fdc157ad3f2685fd8de6b274c",
-        "analyzed_at": "2026-09-18T14:54:59.901491+00:00",
+        "input_hash": "ecd0d133f1f22a3def48896ffeac9226f99dc9bc31ac07fe57fefaf82886047d",
+        "analyzed_at": "2026-09-18T15:28:35.381992+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 941,
         "evidence_counts": {
@@ -1937,8 +2157,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "14c786d18c094273f0fab4e6f5695db9a5d64efcbb848e753e9122080789d91e",
-        "analyzed_at": "2026-09-18T14:55:00.864870+00:00",
+        "input_hash": "1811b1bcc52515b56c16f2828e29dc63c0e057553fd1aac3c5ce2772e5073eaf",
+        "analyzed_at": "2026-09-18T15:28:36.091591+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 359,
         "evidence_counts": {
@@ -2036,8 +2257,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "558951b9d82b40fc9ceeb0f291299acd21a019353468aea7e48bf9f89c82f240",
-        "analyzed_at": "2026-09-18T14:55:01.496424+00:00",
+        "input_hash": "b8d3d4562eebd7859b6d1b03809a5c39d2a2f9707dab958103d1b206ffc5f0b1",
+        "analyzed_at": "2026-09-18T15:28:36.651241+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 110,
         "evidence_counts": {
@@ -2105,8 +2327,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "274fdeb4cc5a7491af59f9843c0456b04d309f18871ee6e6d054ebf1fe09b28f",
-        "analyzed_at": "2026-09-18T14:55:02.389384+00:00",
+        "input_hash": "ddb726a9e9dea504b975e149262bfdb0237737ed05fcd70ee36e55b1791f6414",
+        "analyzed_at": "2026-09-18T15:28:37.602028+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "02호 뉴트럴베이지",
+              "label": "02호 뉴트럴베이지",
+              "position": 0
+            },
+            {
+              "name": "03호 샌드베이지",
+              "label": "03호 샌드베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 307,
         "evidence_counts": {
@@ -2199,8 +2436,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2411a145d5758cc618515d49330d3a892f6e84d085affd21b60c1288850c7f0f",
-        "analyzed_at": "2026-09-18T14:55:02.948457+00:00",
+        "input_hash": "1c5c12a54096eca187865a5edb05da779b758f2d03bc6d5f101bd98661715b0e",
+        "analyzed_at": "2026-09-18T15:28:38.280864+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 163,
         "evidence_counts": {
@@ -2259,8 +2497,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "52733a3015f3e3ea50086318710d859d9e544b693f847377299e7debe18ec634",
-        "analyzed_at": "2026-09-18T14:55:05.146402+00:00",
+        "input_hash": "cb8e0346cf2ff79cb9ee336c5d17b01b74581d42a8a1d06b68fcc281bdb9d593",
+        "analyzed_at": "2026-09-18T15:28:40.431809+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "001",
+              "label": "001",
+              "position": 0
+            },
+            {
+              "name": "002",
+              "label": "002",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 1174,
         "evidence_counts": {
@@ -2380,8 +2633,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b627182775f51a26de7ba317d05dfcddcbf1fad21e72eae2463b7c29799c10b7",
-        "analyzed_at": "2026-09-18T14:55:07.055093+00:00",
+        "input_hash": "e02a81098e388c17426fb7520c8bb470e3dd8659a2bc61caab83a85473d7932f",
+        "analyzed_at": "2026-09-18T15:28:42.062061+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "톤커버로션 시카그린 라이트 50ml+10",
+              "label": "톤커버로션 시카그린 라이트",
+              "position": 0
+            },
+            {
+              "name": "톤커버로션 시카그린 샌드 50ml+10m",
+              "label": "톤커버로션 시카그린 샌드",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 1280,
         "evidence_counts": {
@@ -2499,8 +2767,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "98518fd52c02dd1e4f90b0d55307e05601b2fb92035443d7f226d36d42e46cac",
-        "analyzed_at": "2026-09-18T14:55:08.488322+00:00",
+        "input_hash": "e7a55f1ddc7e0cf745ae6c5d08ba3f712713660066d2e6f2878919f41e6bad35",
+        "analyzed_at": "2026-09-18T15:28:43.481353+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 966,
         "evidence_counts": {
@@ -2598,8 +2867,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2f932be7ff8ea3c261d114153991e2e5e73dbd5fd35cadc42fc9ed882b92eda8",
-        "analyzed_at": "2026-09-18T14:55:09.058079+00:00",
+        "input_hash": "763c43a62819e6b5ffae7b6d4ae14ae1106d0a6f75890337a0532acd9ab13ba2",
+        "analyzed_at": "2026-09-18T15:28:44.142382+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 라이트베이지",
+              "label": "1호 라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "2호 내추럴베이지",
+              "label": "2호 내추럴베이지",
+              "position": 0.5
+            },
+            {
+              "name": "3호 베이지",
+              "label": "3호 베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 24,
         "evidence_counts": {
@@ -2652,8 +2941,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "56f1befa806262c1158bddb4631619c98286c7746aaf0fb48b2e05b49275e5d1",
-        "analyzed_at": "2026-09-18T14:55:09.643883+00:00",
+        "input_hash": "cdd92a5a4d883824ac3072aa27f2090d84f47f2f830529de0b2a2eedfd2740a7",
+        "analyzed_at": "2026-09-18T15:28:44.695009+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 5,
         "evidence_counts": {
@@ -2695,8 +2985,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "39822831792aa5f4f27bcdf7f782f22ff0ae46bf517ffc4f3c5075b14bc3da28",
-        "analyzed_at": "2026-09-18T14:55:10.006343+00:00",
+        "input_hash": "6e62e5d6794ed6ab029f96dc055b7a336fdddd0a38eff2d3d6fa3c9f34e1509e",
+        "analyzed_at": "2026-09-18T15:28:45.059473+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 0,
         "evidence_counts": {
@@ -2748,8 +3039,38 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2e669bcfe126f0351ef81b097f6b786deacb995e30b0976bba989c47c6182b77",
-        "analyzed_at": "2026-09-18T14:55:13.927162+00:00",
+        "input_hash": "94206d750530108d271041811e65264222f502e0f66049114b70da553f0d2282",
+        "analyzed_at": "2026-09-18T15:28:49.312822+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[본품]1호",
+              "label": "1호",
+              "position": 0
+            },
+            {
+              "name": "[본품]2호",
+              "label": "2호",
+              "position": 0.25
+            },
+            {
+              "name": "본품 3호",
+              "label": "본품 3호",
+              "position": 0.5
+            },
+            {
+              "name": "본품 4호",
+              "label": "본품 4호",
+              "position": 0.75
+            },
+            {
+              "name": "[본품]5호",
+              "label": "5호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 3837,
         "evidence_counts": {
@@ -2860,8 +3181,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "5b05f454ccbea9380377e4ae60f85e78481d21d2f5173d065d8608c159ca7860",
-        "analyzed_at": "2026-09-18T14:55:14.700203+00:00",
+        "input_hash": "27483415caa115e6ea451e00fae8e41ac41adb2ce8a560496e95e94e86079bce",
+        "analyzed_at": "2026-09-18T15:28:50.090645+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "[커버로션10ml 증정기획] 아이보리",
+              "label": "아이보리",
+              "position": 0
+            },
+            {
+              "name": "[커버로션10ml 증정기획] 베이지",
+              "label": "베이지",
+              "position": 0.5
+            },
+            {
+              "name": "[커버로션10ml 증정기획] 샌드",
+              "label": "샌드",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 255,
         "evidence_counts": {
@@ -2960,8 +3301,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "c1ce291a989a99495dc97bd7bac6c65486dd42a4255bde9c52934e9b6f332511",
-        "analyzed_at": "2026-09-18T14:55:15.262494+00:00",
+        "input_hash": "d687f7bb0d87e8aeb27b1dc898b225d991c8810b50eee7bc0240f405b262979d",
+        "analyzed_at": "2026-09-18T15:28:50.636570+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 67,
         "evidence_counts": {
@@ -3042,8 +3384,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "846bd44e28ae5c098ba4a3887ad96c35a894968b3961d1cd42d8452af7e6af84",
-        "analyzed_at": "2026-09-18T14:55:16.004539+00:00",
+        "input_hash": "ff1ed0e0487a7b92afd590be2f587a9315f19a2cf8e13315ce49205181da2d7f",
+        "analyzed_at": "2026-09-18T15:28:51.399084+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 베이지",
+              "label": "1호 베이지",
+              "position": 0
+            },
+            {
+              "name": "2호 샌드베이지",
+              "label": "2호 샌드베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 254,
         "evidence_counts": {
@@ -3139,8 +3496,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "05456eb8a7960f625a5ed52753ba03b4aa27b4574fd0d03f2d4c74ccb6a618c0",
-        "analyzed_at": "2026-09-18T14:55:16.742266+00:00",
+        "input_hash": "8b370c524a7cbb5a219ed4dfe76fba63a2b6dfe9ca07dcc143de5a886b60de9b",
+        "analyzed_at": "2026-09-18T15:28:52.176842+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 200,
         "evidence_counts": {
@@ -3226,8 +3584,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "da261a126ea597092497b2ba09c1557c5da645df24387e9afa312d94f97bb64a",
-        "analyzed_at": "2026-09-18T14:55:17.311777+00:00",
+        "input_hash": "7d186ff00849aac3a68a1d3f956c1b384c90e213dbacd95973e0afa28339c67c",
+        "analyzed_at": "2026-09-18T15:28:52.716556+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "01 아이보리",
+              "label": "01 아이보리",
+              "position": 0
+            },
+            {
+              "name": "02 베이지",
+              "label": "02 베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 29,
         "evidence_counts": {
@@ -3324,8 +3697,9 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e36c52cc2b5d281485a70eabb289ec7192d014eb07724a035d91c9ce6a41cf98",
-        "analyzed_at": "2026-09-18T14:55:19.637415+00:00",
+        "input_hash": "b84a275289d4fbc55c03006b370aaf42520fd5e7524c122dce6c5f8b4bbf0021",
+        "analyzed_at": "2026-09-18T15:28:54.979829+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 1690,
         "evidence_counts": {
@@ -3439,8 +3813,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "f8a2ba98dde3fd9e39f1d45d32c4e1e480e7dc43fbdd5bff5b4d593ffcada91a",
-        "analyzed_at": "2026-09-18T14:55:20.748113+00:00",
+        "input_hash": "fd5bee34a0fa386a68492b5524522a78e32d9583c117596f6ac65c5abe9a09c9",
+        "analyzed_at": "2026-09-18T15:28:56.073220+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[밝은피부용] 21호 라이트베이지",
+              "label": "21호 라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "[어두운피부용] 23호 샌드",
+              "label": "23호 샌드",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 576,
         "evidence_counts": {
@@ -3543,8 +3932,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "736daa5bb7433db71e214088eb96d148919d546021694fa38529c2fa54743a25",
-        "analyzed_at": "2026-09-18T14:55:21.436907+00:00",
+        "input_hash": "1d365f7a8eb32b68026128618c85feb9607f74d4514780a6e57325d22040b6a7",
+        "analyzed_at": "2026-09-18T15:28:56.691180+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "톤커버로션 시카그린 라이트 50+10ml",
+              "label": "톤커버로션 시카그린 라이트 50",
+              "position": 0
+            },
+            {
+              "name": "톤커버로션 시카그린 샌드 50+10ml",
+              "label": "톤커버로션 시카그린 샌드 50",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 80,
         "evidence_counts": {
@@ -3623,8 +4027,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ed537fe31518db3347041d4a7da4c7be254692cfe0596af886afcbd92eae26cc",
-        "analyzed_at": "2026-09-18T14:55:22.210782+00:00",
+        "input_hash": "09d67da0f4e947b0fa0fa02ba2ac2f9cf890bad6298af1633e5801712b60325f",
+        "analyzed_at": "2026-09-18T15:28:57.469916+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[본품+10ml 증정] 01 라이트베이지",
+              "label": "01 라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "[본품+10ml 증정] 02 내추럴베이지",
+              "label": "02 내추럴베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 463,
         "evidence_counts": {
@@ -3723,8 +4142,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "3c52db554a87f8baabc2d202d87100b0f92e83685265ce7a872ec4ac0056cc83",
-        "analyzed_at": "2026-09-18T14:55:23.014505+00:00",
+        "input_hash": "7528b8bef8f7355005cbc7d30da9956421701cef806bb3ddeca677268d78445e",
+        "analyzed_at": "2026-09-18T15:28:58.276134+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "01 아이보리",
+              "label": "01 아이보리",
+              "position": 0
+            },
+            {
+              "name": "02 베이지",
+              "label": "02 베이지",
+              "position": 0.5
+            },
+            {
+              "name": "03 샌드",
+              "label": "03 샌드",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 137,
         "evidence_counts": {
@@ -3810,8 +4249,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "4ed832488ed7a5e368a726d39942dda66465b89272ce9953d533d6c1d3b58036",
-        "analyzed_at": "2026-09-18T14:55:23.579568+00:00",
+        "input_hash": "22fed27f5f489d81a0951ccbb7ffbbdafdf36050300c58a26b2f5933bb811503",
+        "analyzed_at": "2026-09-18T15:28:58.842919+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 63,
         "evidence_counts": {
@@ -3872,8 +4312,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8135310652b9e1b72d86a72abcc576d1a4dbce18b24ea0ba4e5de3409f7148ee",
-        "analyzed_at": "2026-09-18T14:55:24.659899+00:00",
+        "input_hash": "1d0c89295dccdbe6bffc19a9ef8bdf2a12890dc6afe8ffac0312e32dd2f34c4a",
+        "analyzed_at": "2026-09-18T15:28:59.924826+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "01 라이트베이지",
+              "label": "01 라이트베이지",
+              "position": 0
+            },
+            {
+              "name": "02 뉴트럴베이지",
+              "label": "02 뉴트럴베이지",
+              "position": 0.5
+            },
+            {
+              "name": "03 샌드베이지",
+              "label": "03 샌드베이지",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 689,
         "evidence_counts": {
@@ -3977,8 +4437,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "c0ad20985d439d678143d26ace537afc942d5bae85e8575f599e47259d6c20a3",
-        "analyzed_at": "2026-09-18T14:55:25.579386+00:00",
+        "input_hash": "1b6e3b3a9b62e502bef96604c81a48abc3116b2e95aa35cc94efc34256698f8f",
+        "analyzed_at": "2026-09-18T15:29:00.841480+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 485,
         "evidence_counts": {
@@ -4076,8 +4537,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "a9bcc6da5c8bf140294e8b1e180ff081b32386b03eb3139aebb3e9cd0c57e867",
-        "analyzed_at": "2026-09-18T14:55:26.117583+00:00",
+        "input_hash": "7d9991fbd9d9cb90cd5d52234b34dd89fc0bb5299d76caeceeddf0dbd320796e",
+        "analyzed_at": "2026-09-18T15:29:01.451149+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 57,
         "evidence_counts": {
@@ -4149,8 +4611,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "c242969203a5cc73b7f9ae9a822bc00fb4ba1a8d0ce42857e9e4dc322d64037c",
-        "analyzed_at": "2026-09-18T14:55:27.604016+00:00",
+        "input_hash": "93841693afa745550770e64900a2e5376785b8dc7b163bad38a91044f8b2e30d",
+        "analyzed_at": "2026-09-18T15:29:02.890285+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 아이보리15g",
+              "label": "1호 아이보리",
+              "position": 0
+            },
+            {
+              "name": "2호 베이지15g",
+              "label": "2호 베이지",
+              "position": 0.5
+            },
+            {
+              "name": "3호 샌드15g",
+              "label": "3호 샌드",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "historical_reviews",
         "analyzed_count": 1067,
         "evidence_counts": {
@@ -4249,8 +4731,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "fcb1b8729c1c73f574034225d358a3d268198b6ecd6eaa7f2830c784628708cf",
-        "analyzed_at": "2026-09-18T14:55:28.218729+00:00",
+        "input_hash": "824244b514f48cb7044aa55caa7cb7e6f46604c52fa1105833f54994c8c92747",
+        "analyzed_at": "2026-09-18T15:29:03.468649+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 90,
         "evidence_counts": {
@@ -4327,8 +4810,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "4c6b5c7941cc39b9bcb2bc2912e84a0961fa1110c2980d41fed5be9e14ab5454",
-        "analyzed_at": "2026-09-18T14:55:32.127182+00:00",
+        "input_hash": "2b31de07f2f27b9103b84fb0a3bbd163621e089c83044013d846f257dcbe51fd",
+        "analyzed_at": "2026-09-18T15:29:07.503152+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 4117,
         "evidence_counts": {
@@ -4440,8 +4924,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "16f539535fc5a4304f9a9c760b110265830f9e66edd2201b70cb6563fe25c737",
-        "analyzed_at": "2026-09-18T14:55:32.916160+00:00",
+        "input_hash": "7f0045d557d88099a8404f20bb391623ecda953b7e16f13cfe9181d50161e4e9",
+        "analyzed_at": "2026-09-18T15:29:08.278276+00:00",
+        "shade_lineup": null,
         "shade_source": "catalog",
         "analyzed_count": 123,
         "evidence_counts": {
@@ -4533,8 +5018,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "101c42d6ebc116ae0a855460d09b2aab12b18b28e15f65997c3351153a9cbf1f",
-        "analyzed_at": "2026-09-18T14:55:33.653460+00:00",
+        "input_hash": "37eb4124aac233da28fdc708a11e3d1fe8fb5dcab102ee9fc333bfc88dfad49f",
+        "analyzed_at": "2026-09-18T15:29:09.116195+00:00",
+        "shade_lineup": null,
         "shade_source": "catalog",
         "analyzed_count": 78,
         "evidence_counts": {
@@ -4626,8 +5112,23 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "494edf3e6aad020541efa334890fce84388adc84094a671b94f40d262a92a303",
-        "analyzed_at": "2026-09-18T14:55:34.028223+00:00",
+        "input_hash": "19b220cfb02f79c85138012cd46fca90d946eb2190a9dd443a2d47ea8e637473",
+        "analyzed_at": "2026-09-18T15:29:09.534908+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[기획/10ml증정] 1호(밝은피부)",
+              "label": "1호",
+              "position": 0
+            },
+            {
+              "name": "[기획/10ml증정] 2호(어두운피부)",
+              "label": "2호",
+              "position": 1
+            }
+          ]
+        },
         "shade_source": "catalog",
         "analyzed_count": 0,
         "evidence_counts": {
@@ -4669,8 +5170,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1bf567e2b84102d2398993fdcd01b26cfea93d5eb2d061b6d8e9482eb8449f9c",
-        "analyzed_at": "2026-09-18T14:55:34.640616+00:00",
+        "input_hash": "f93656caa1405c619208878332d6fe7cd136d70c48051a1c9aa3f7a2aa4c7ef1",
+        "analyzed_at": "2026-09-18T15:29:10.148251+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 6,
         "evidence_counts": {
@@ -4712,8 +5214,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "6afbd3a7b73490194f6076dbde7c2d7c0051bcc3966dabcce2e819db344d7f4a",
-        "analyzed_at": "2026-09-18T14:55:35.062249+00:00",
+        "input_hash": "3db02e74eee5e7d64048b11d32da83c915c5cd116fa33dd1332ca836fd8784b3",
+        "analyzed_at": "2026-09-18T15:29:10.532546+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 0,
         "evidence_counts": {
@@ -4755,8 +5258,9 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b2d611e262a66af3e1c19e2fce1e01bb800a3421d299af5fe412f2802ccfe748",
-        "analyzed_at": "2026-09-18T14:55:35.446236+00:00",
+        "input_hash": "3a053128ecc2b73f66cf285879ac95a2ea26bc74fc7307b4a08aad1be8e5bf34",
+        "analyzed_at": "2026-09-18T15:29:10.897674+00:00",
+        "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 0,
         "evidence_counts": {

@@ -5,6 +5,13 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || proc
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, { auth: { persistSession: false, autoRefreshToken: false } });
 
+/** A product's own options ordered light to dark. Position 0 is the lightest
+ *  option of this product, not a claim that it equals 21호. */
+export interface ShadeLineup {
+  basis: 'number' | 'brightness_words';
+  options: { name: string; label: string; position: number }[];
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -31,7 +38,7 @@ export interface Product {
   compat_sensitive: number | null;
   compat_combination: number | null;
   last_updated_at: string;
-  profile_metadata?: { version?: string; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]> } | null;
+  profile_metadata?: { version?: string; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]>; shade_lineup?: ShadeLineup | null } | null;
   reviews?: { count: number }[];
 }
 
