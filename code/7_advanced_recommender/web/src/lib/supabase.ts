@@ -1,9 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, { auth: { persistSession: false, autoRefreshToken: false } });
 
 export interface Product {
   id: string;
@@ -11,10 +11,10 @@ export interface Product {
   brand: string;
   category: string;
   product_type: string | null;
-  price: number;
-  original_price: number;
-  star_rating: number;
-  review_count: number;
+  price: number | null;
+  original_price: number | null;
+  star_rating: number | null;
+  review_count: number | null;
   thumbnail_url: string;
   product_url: string;
   ingredients_raw: string | null;
@@ -31,12 +31,13 @@ export interface Product {
   compat_sensitive: number | null;
   compat_combination: number | null;
   last_updated_at: string;
+  profile_metadata?: { version?: string; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number> } | null;
+  reviews?: { count: number }[];
 }
 
 export interface Review {
   id: string;
   product_id: string;
-  author: string;
   rating: number;
   content: string;
   skin_type: string;

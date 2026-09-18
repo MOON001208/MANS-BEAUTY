@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: 'npm'
           cache-dependency-path: 'code/7_advanced_recommender/web/package-lock.json'
           
@@ -41,7 +41,8 @@ jobs:
         # .env 로 주입하기 위해 Secrets 값을 NEXT_PUBLIC 환경변수로 전달
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_KEY }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          DEPLOY_TARGET: github-pages
         run: npm run build
         
       - name: Upload artifact

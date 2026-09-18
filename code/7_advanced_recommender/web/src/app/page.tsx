@@ -1,7 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import { supabase, Product, Review, SkinType, SkinConcern, PriorityAttr, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
+import { useState, useEffect, useMemo } from 'react';
+import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
+import { calcRecommendScore, getCompatScore, hasCurrentProfile, searchProducts } from '@/lib/recommendation';
+import { loadCatalog } from '@/lib/catalog';
+import Image from 'next/image';
 
 // ─── 상수 ──────────────────────────────────────────────────────────────────
 const SKIN_TYPE_OPTIONS: { key: SkinType; label: string; icon: string; desc: string }[] = [
@@ -19,17 +22,11 @@ const CONCERN_OPTIONS: { key: SkinConcern; label: string; icon: string }[] = [
   { key: 'wrinkle', label: '주름', icon: '〰️' },
 ];
 
-const PRIORITY_OPTIONS: { key: PriorityAttr; label: string; icon: string; desc: string }[] = [
-  { key: 'coverage', label: '커버력', icon: '🎭', desc: '잡티·트러블을 확실히 가리고 싶음' },
-  { key: 'longevity', label: '지속력', icon: '⏱️', desc: '하루종일 무너지지 않길 원함' },
-  { key: 'lightweight', label: '가벼운 착용감', icon: '💨', desc: '바른 것 같지 않은 자연스러운 느낌' },
-];
-
 const SHADE_OPTIONS: { key: ShadeChoice; label: string; desc: string; color?: string }[] = [
   { key: '21', label: '21호 (밝은 톤)', desc: '"피부 하얗네?" 라는 말을 종종 듣는 편. 밝은 아이보리 계열', color: '#FADAC1' },
-  { key: '23', label: '23호 (표준 톤)', desc: '피부가 하얗지도 까맣지도 않은 대한민국 평균 남성 피부', color: '#E8CBAE' },
+  { key: '23', label: '23호 (표준 톤)', desc: '평소 사용하는 제품의 23호와 비교해요', color: '#E8CBAE' },
   { key: '25', label: '25호 (어두운 톤)', desc: '가무잡잡하고 건강한 피부. 평소 야외 활동을 즐기는 편', color: '#D2AA85' },
-  { key: 'any', label: '잘 몰라요', desc: '내 톤을 모르겠다 (무난한 제품 위주로 추천)', color: 'transparent' },
+  { key: 'any', label: '잘 몰라요', desc: '호수 가중치 없이 다른 조건으로 비교해요', color: 'transparent' },
 ];
 
 const APPLICATION_OPTIONS: { key: ApplicationMethod; label: string; icon: string; desc: string }[] = [
@@ -38,72 +35,9 @@ const APPLICATION_OPTIONS: { key: ApplicationMethod; label: string; icon: string
   { key: 'any', label: '상관없어요', icon: '🤷‍♂️', desc: '발린다면 어떤 방법이든!' },
 ];
 
-const SKIN_TYPE_COMPAT_COL: Record<SkinType, keyof Product> = {
-  oily: 'compat_oily',
-  dry: 'compat_dry',
-  sensitive: 'compat_sensitive',
-  combination: 'compat_combination',
-};
-
 const CONCERN_LABEL: Record<SkinConcern, string> = {
   acne: '여드름', pore: '모공', redness: '홍조', spots: '잡티', wrinkle: '주름',
 };
-
-// ─── 유틸 ───────────────────────────────────────────────────────────────────
-function getCompatScore(product: Product, skinType: SkinType): number {
-  const col = SKIN_TYPE_COMPAT_COL[skinType];
-  return (product[col] as number | null) ?? 0.5;
-}
-
-function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], coveragePref: number, longevityPref: number, lightweightPref: number, userShade: ShadeChoice | null): number {
-  let score = 0;
-  // 1. 피부 호환성 (50점 배정으로 대폭 강화)
-  const compat = getCompatScore(product, skinType);
-  score += compat * 50;
-
-  // 🚨 페널티: 피부 성분 호환성이 현저하게 낮으면 최종 점수를 극단적 삭감 대기 (0.35 미만일 때)
-  const penalty = compat < 0.35;
-
-  // 2. 피부 고민 일치도 (40점 배정으로 상향)
-  if (concerns.length > 0) {
-    const matched = concerns.filter(c => (product.suitable_concerns ?? []).includes(c)).length;
-    score += (matched / concerns.length) * 40;
-  } else {
-    score += 20; // 선택한 고민이 없으면 중간 점수
-  }
-
-  // 3. 선호도(슬라이더) 기반 유사도 일치 (1~5점 척도, 10점 만점)
-  const coverageSim = Math.max(0, 1 - Math.abs(coveragePref - (product.coverage_score || 3)) / 4);
-  const longevitySim = Math.max(0, 1 - Math.abs(longevityPref - (product.longevity_score || 3)) / 4);
-  const lightweightSim = Math.max(0, 1 - Math.abs(lightweightPref - (product.lightweight_score || 3)) / 4);
-
-  score += (coverageSim * 3.3) + (longevitySim * 3.3) + (lightweightSim * 3.4); // 총 10점 부여
-
-  // 4. 호수 일치도 (10점 강등)
-  if (userShade && userShade !== 'any') {
-    const pShades = product.suitable_shades || [];
-    if (pShades.length === 0) {
-      score += 5; // 정보 없으면 중간 점수
-    } else if (pShades.includes(userShade)) {
-      score += 10; // 정확히 일치하면 만점
-    } else {
-      const order = ['21', '23', '25'];
-      const uIdx = order.indexOf(userShade);
-      const isAdj = pShades.some(p => Math.abs(uIdx - order.indexOf(p)) === 1);
-      if (isAdj) score += 5; // 인접 호수면 중간 점수
-    }
-  } else {
-    score += 8; // 호수 상관없으면 무난
-  }
-
-  // 5. 인기/대중성 방지 (리뷰 편향 억제를 위해 최대 2점만 추가)
-  score += Math.min(Math.log10((product.review_count || 0) + 1) / 4, 1) * 2;
-
-  // 🚨 최종 점수에 페널티 반영 (피부성분 꽝이면 70% 감점해서 무조건 순위밖으로)
-  if (penalty) score *= 0.3;
-
-  return score;
-}
 
 // ─── 컴포넌트: 별점 ─────────────────────────────────────────────────────────
 function StarRating({ rating }: { rating: number }) {
@@ -122,12 +56,12 @@ function StarRating({ rating }: { rating: number }) {
 
 // ─── 컴포넌트: 점수 바 ───────────────────────────────────────────────────────
 function ScoreBar({ label, value, color }: { label: string; value: number | null; color: string }) {
-  const pct = value ? ((value - 1) / 4) * 100 : 0;
+  const pct = value == null ? 0 : Math.max(0, Math.min(100, ((value - 1) / 4) * 100));
   return (
     <div style={{ marginBottom: '8px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
         <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{label}</span>
-        <span style={{ fontSize: '0.75rem', fontWeight: 600, color }}>{value?.toFixed(1) ?? '—'}</span>
+        <span style={{ fontSize: '0.75rem', fontWeight: 600, color }}>{value?.toFixed(1) ?? '정보 부족'}</span>
       </div>
       <div style={{ height: '6px', borderRadius: '3px', background: 'rgba(255,255,255,0.08)', overflow: 'hidden' }}>
         <div style={{ height: '100%', borderRadius: '3px', width: value ? `${pct}%` : '0%', background: color, transition: 'width 0.6s ease' }} />
@@ -140,7 +74,7 @@ function ScoreBar({ label, value, color }: { label: string; value: number | null
 function IngredientBadge({ level }: { level: string | null }) {
   if (!level) return null;
   const config: Record<string, { color: string; bg: string }> = {
-    '자연유래': { color: '#4ade80', bg: 'rgba(74,222,128,0.12)' },
+    '성분 확인': { color: '#4ade80', bg: 'rgba(74,222,128,0.12)' },
     '저자극': { color: '#60a5fa', bg: 'rgba(96,165,250,0.12)' },
     '일반': { color: '#94a3b8', bg: 'rgba(148,163,184,0.12)' },
   };
@@ -157,32 +91,12 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
   product: Product; skinType: SkinType; userShade: ShadeChoice | null;
   onClick: () => void; rank: number;
 }) {
-  const typeLabel: Record<string, string> = { cushion: '쿠션', liquid: '리퀴드', stick: '스틱', tone_lotion: '톤로션/BB' };
+  const typeLabel: Record<string, string> = { cushion: '쿠션', liquid: '리퀴드', stick: '스틱', tone_lotion: '톤로션/BB', concealer: '컨실러' };
   const compatScore = getCompatScore(product, skinType);
   const rankColors = ['', 'linear-gradient(135deg,#ffd700,#ff8c00)', 'linear-gradient(135deg,#c0c0c0,#808080)', 'linear-gradient(135deg,#cd7f32,#8b4500)'];
 
-  // 단일 호수 추천 계산 로직
-  let recommendedShadeStr = '';
-  if (product.suitable_shades && product.suitable_shades.length > 0) {
-    if (userShade && userShade !== 'any' && product.suitable_shades.includes(userShade)) {
-      recommendedShadeStr = userShade;
-    } else if (userShade && userShade !== 'any') {
-      // 가장 가까운 호수 찾기
-      const order = ['21', '23', '25'];
-      const uIdx = order.indexOf(userShade);
-      // pIdx 정렬 후 uIdx 와 인접한 것 찾기
-      const availableIdxs = product.suitable_shades.map(s => order.indexOf(s)).filter(i => i !== -1);
-      if (availableIdxs.length > 0) {
-        availableIdxs.sort((a, b) => Math.abs(a - uIdx) - Math.abs(b - uIdx));
-        recommendedShadeStr = order[availableIdxs[0]];
-      } else {
-        recommendedShadeStr = product.suitable_shades[0];
-      }
-    } else {
-      // 사용자가 '잘 몰라요' 선택했을 경우 제품의 가장 무난한 추천인 중간값이나 23호
-      recommendedShadeStr = product.suitable_shades.includes('23') ? '23' : product.suitable_shades[0];
-    }
-  }
+  // Only display an exact known shade; never invent an adjacent or default shade.
+  const recommendedShadeStr = userShade && userShade !== 'any' && product.suitable_shades?.includes(userShade) ? userShade : '';
 
   return (
     <div className="product-card animate-fadeInUp" onClick={onClick} style={{ cursor: 'pointer', position: 'relative' }}>
@@ -196,7 +110,7 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
       )}
       <div className="image-wrapper">
         {product.thumbnail_url
-          ? <img src={product.thumbnail_url} alt={product.name} loading="lazy" />
+          ? <Image src={product.thumbnail_url} alt={product.name} width={400} height={400} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem', opacity: 0.15 }}>🧴</div>
         }
         <div style={{ position: 'absolute', top: '12px', left: '12px' }}>
@@ -214,9 +128,9 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
         <h3 style={{ fontSize: '0.88rem', fontWeight: 600, lineHeight: 1.4, marginBottom: '10px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{product.name}</h3>
         {(product.coverage_score || product.longevity_score || product.lightweight_score) && (
           <div style={{ marginBottom: '10px' }}>
-            <ScoreBar label="커버력" value={product.coverage_score} color="#a78bfa" />
-            <ScoreBar label="지속력" value={product.longevity_score} color="#60a5fa" />
-            <ScoreBar label="착용감/가벼움" value={product.lightweight_score} color="#34d399" />
+            <ScoreBar label="커버력" value={hasCurrentProfile(product) ? product.coverage_score : null} color="#a78bfa" />
+            <ScoreBar label="지속력" value={hasCurrentProfile(product) ? product.longevity_score : null} color="#60a5fa" />
+            <ScoreBar label="착용감/가벼움" value={hasCurrentProfile(product) ? product.lightweight_score : null} color="#34d399" />
           </div>
         )}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -224,24 +138,24 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                 <StarRating rating={product.star_rating || 0} />
-                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-primary)' }}>{product.star_rating?.toFixed(1) || '0.0'}</span>
+                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-primary)' }}>{product.star_rating?.toFixed(1) ?? '평점 정보 없음'}</span>
               </div>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>({(product.review_count || 0).toLocaleString()})</span>
             </div>
             <span style={{ fontSize: '1rem', fontWeight: 700, background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              {product.price?.toLocaleString()}원
+              {product.price == null ? '가격 정보 없음' : product.price.toLocaleString() + '원'}
             </span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-            <IngredientBadge level={product.ingredient_level} />
-            <div style={{ fontSize: '0.65rem', color: compatScore >= 0.7 ? '#4ade80' : compatScore >= 0.5 ? '#fbbf24' : '#f87171' }}>
-              {skinType === 'oily' ? '지성' : skinType === 'dry' ? '건성' : skinType === 'sensitive' ? '민감성' : '복합성'} 호환 {Math.round(compatScore * 100)}%
+            <IngredientBadge level={hasCurrentProfile(product) ? product.ingredient_level : null} />
+            <div style={{ fontSize: '0.65rem', color: compatScore !== null && compatScore >= 0.7 ? '#4ade80' : compatScore !== null && compatScore >= 0.5 ? '#fbbf24' : '#f87171' }}>
+              {skinType === 'oily' ? '지성' : skinType === 'dry' ? '건성' : skinType === 'sensitive' ? '민감성' : '복합성'} 리뷰 {compatScore == null ? '정보 부족' : `${(1 + compatScore * 4).toFixed(1)}/5`}
             </div>
           </div>
         </div>
         {product.suitable_shades && product.suitable_shades.length > 0 && recommendedShadeStr && (
           <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
-            <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>💡 구매 권장 옵션: </span>
+            <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>💡 선택 호수와 일치하는 옵션: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>
               {product.shade_options?.[recommendedShadeStr] || `${recommendedShadeStr}호`}
             </span>
@@ -271,7 +185,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
   const steps = [
     { title: '피부 타입이 어떻게 되세요?', subtitle: '가장 가까운 항목을 선택해주세요' },
     { title: '고민이 있는 피부 문제가 있나요?', subtitle: '복수 선택 가능 · 없으면 다음으로' },
-    { title: '제품의 기능 선호도를 조절해주세요', subtitle: '각 1~5점 (1: 신경안씀, 5: 매우 중요)' },
+    { title: '각 기능이 얼마나 중요한가요?', subtitle: '각 1~5점 (1: 신경안씀, 5: 매우 중요)' },
     { title: '주로 사용하는 호수가 있나요?', subtitle: '잘 모르면 "잘 모르겠어요" 선택' },
     { title: '어떤 방식으로 바르고 싶으세요?', subtitle: '선호하는 사용 방식을 선택해주세요' },
   ];
@@ -330,7 +244,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', padding: '10px 0' }}>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>커버력 선호도</span>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>커버력 중요도</span>
               <span style={{ color: '#a5b4fc', fontWeight: 700 }}>{state.coveragePref}점</span>
             </div>
             <input type="range" min="1" max="5" step="1"
@@ -339,7 +253,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
           </div>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>지속력 선호도</span>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>지속력 중요도</span>
               <span style={{ color: '#60a5fa', fontWeight: 700 }}>{state.longevityPref}점</span>
             </div>
             <input type="range" min="1" max="5" step="1"
@@ -348,7 +262,7 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
           </div>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>착용감/가벼움 선호도</span>
+              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>착용감/가벼움 중요도</span>
               <span style={{ color: '#34d399', fontWeight: 700 }}>{state.lightweightPref}점</span>
             </div>
             <input type="range" min="1" max="5" step="1"
@@ -438,11 +352,19 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
 function ProductModal({ product, skinType, onClose }: { product: Product; skinType: SkinType; onClose: () => void }) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
+  const [reviewError, setReviewError] = useState('');
 
   useEffect(() => {
-    supabase.from('reviews').select('*').eq('product_id', product.id)
-      .order('is_best', { ascending: false }).order('rating', { ascending: false }).limit(15)
-      .then(({ data }) => { setReviews(data || []); setLoadingReviews(false); });
+    const controller = new AbortController();
+    supabase.from('reviews').select('id,product_id,rating,content,skin_type,skin_tone,skin_trouble,option_name,created_at,is_best')
+      .eq('product_id', product.id).order('created_at', { ascending: false }).limit(30).abortSignal(controller.signal)
+      .then(({ data, error }) => {
+        if (controller.signal.aborted) return;
+        setReviews((data || []) as Review[]);
+        setReviewError(error ? '리뷰를 불러오지 못했습니다.' : '');
+        setLoadingReviews(false);
+      });
+    return () => controller.abort();
   }, [product.id]);
 
   return (
@@ -453,14 +375,14 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                 <p style={{ fontSize: '0.72rem', color: '#a5b4fc', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{product.brand}</p>
-                <IngredientBadge level={product.ingredient_level} />
+                <IngredientBadge level={hasCurrentProfile(product) ? product.ingredient_level : null} />
               </div>
               <h2 style={{ fontSize: '1.15rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '10px' }}>{product.name}</h2>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <StarRating rating={product.star_rating || 0} />
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>리뷰 {product.review_count?.toLocaleString()}개</span>
                 <span style={{ fontSize: '1.05rem', fontWeight: 800, background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  {product.price?.toLocaleString()}원
+                  {product.price == null ? '가격 정보 없음' : product.price.toLocaleString() + '원'}
                 </span>
               </div>
             </div>
@@ -470,24 +392,25 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
 
         <div style={{ padding: '20px 28px 28px', overflowY: 'auto', maxHeight: 'calc(90vh - 140px)' }}>
           <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>🤖 AI 분析 점수</h3>
-            <ScoreBar label="커버력" value={product.coverage_score} color="#a78bfa" />
-            <ScoreBar label="지속력" value={product.longevity_score} color="#60a5fa" />
-            <ScoreBar label="착용감" value={product.lightweight_score} color="#34d399" />
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>📊 리뷰 표현 기반 점수</h3>
+            <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: 12 }}>분석 리뷰 {product.profile_metadata?.analyzed_count?.toLocaleString() ?? 0}개 · 점수는 수집된 리뷰의 표현을 요약합니다. 근거가 부족한 항목은 정보 부족으로 표시합니다.</p>
+            <ScoreBar label="커버력" value={hasCurrentProfile(product) ? product.coverage_score : null} color="#a78bfa" />
+            <ScoreBar label="지속력" value={hasCurrentProfile(product) ? product.longevity_score : null} color="#60a5fa" />
+            <ScoreBar label="착용감" value={hasCurrentProfile(product) ? product.lightweight_score : null} color="#34d399" />
           </div>
 
           <div style={{ marginBottom: '20px', padding: '14px', borderRadius: '12px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
-            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>🧬 피부 호환성</h3>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>🧬 같은 피부타입 구매자의 평점 지표</h3>
             {([['oily', '지성'], ['dry', '건성'], ['sensitive', '민감성'], ['combination', '복합성']] as [SkinType, string][]).map(([type, label]) => (
               <ScoreBar key={type} label={label}
-                value={((product[SKIN_TYPE_COMPAT_COL[type]] as number | null) ?? 0.5) * 5}
+                value={getCompatScore(product, type) == null ? null : 1 + getCompatScore(product, type)! * 4}
                 color={type === skinType ? '#f59e0b' : '#6b7280'} />
             ))}
           </div>
 
           {product.suitable_concerns && product.suitable_concerns.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>💊 적합 피부고민</h3>
+              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>리뷰에서 긍정적으로 언급된 고민</h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {product.suitable_concerns.map(c => <span key={c} className="skin-tag">{CONCERN_LABEL[c as SkinConcern] ?? c}</span>)}
               </div>
@@ -496,7 +419,7 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
 
           {product.suitable_shades && product.suitable_shades.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>🎨 구매 가능 옵션 (AI 추천 호수)</h3>
+              <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>🎨 확인된 호수 (재고는 판매처에서 확인)</h3>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {product.suitable_shades.map(s => (
                   <span key={s} style={{ padding: '6px 14px', borderRadius: '8px', fontSize: '0.82rem', fontWeight: 600, background: 'rgba(99,102,241,0.15)', color: '#a5b4fc', border: '1px solid rgba(99,102,241,0.3)' }}>
@@ -515,6 +438,7 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
           )}
 
           <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>💬 실제 구매 리뷰</h3>
+          {reviewError && <p role="alert">{reviewError}</p>}
           {loadingReviews
             ? <div style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '20px' }}>로딩 중...</div>
             : reviews.length === 0
@@ -568,60 +492,57 @@ export default function HomePage() {
   const [mode, setMode] = useState<'quiz' | 'result' | 'browse'>('quiz');
   const [quizResult, setQuizResult] = useState<QuizState | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
+  const [retry, setRetry] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [browseCategory, setBrowseCategory] = useState('all');
   const [browseSort, setBrowseSort] = useState<'review_count' | 'star_rating' | 'price_asc'>('review_count');
   const [browseSearch, setBrowseSearch] = useState('');
 
-  const fetchRecommendations = useCallback(async (quiz: QuizState) => {
-    setLoading(true);
-    // DB에서 리뷰 200개 이상인 상품만 가져옴 (신뢰도 높은 추천을 위해)
-    let query = supabase.from('products').select('*').gte('review_count', 200);
-    // 편의성(사용 방식) 필터
-    if (quiz.applicationMethod === 'hand') {
-      query = query.ilike('category', '%톤 로션%');
-    } else if (quiz.applicationMethod === 'tool') {
-      query = query.ilike('category', '%쿠션%');
-    }
-    const { data } = await query.limit(200);
-    if (data) {
-      const scored = (data as Product[])
+  useEffect(() => {
+    const controller = new AbortController();
+    loadCatalog(controller.signal).then(data => {
+      if (controller.signal.aborted) return;
+      setProducts(data);
+      setLoadError('');
+      setLoading(false);
+    }).catch(() => {
+      if (controller.signal.aborted) return;
+      setProducts([]);
+      setLoadError('상품을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      setLoading(false);
+    });
+    return () => controller.abort();
+  }, [retry]);
+
+  const displayProducts = useMemo(() => {
+    if (mode === 'result' && quizResult?.skinType) {
+      const quiz = quizResult;
+      return products.filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= 5)
+        .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
         .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType!, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
-        .sort((a: any, b: any) => b._score - a._score)
-        .slice(0, 12);
-      setProducts(scored);
+        .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id)).slice(0, 12);
     }
-    setLoading(false);
-  }, []);
-
-  const fetchBrowse = useCallback(async () => {
-    setLoading(true);
-    let query = supabase.from('products').select('*');
-    if (browseCategory !== 'all') query = query.ilike('category', `%${browseCategory}%`);
-    if (browseSearch.trim()) query = query.or(`name.ilike.%${browseSearch}%,brand.ilike.%${browseSearch}%`);
-    switch (browseSort) {
-      case 'review_count': query = query.order('review_count', { ascending: false }); break;
-      case 'star_rating': query = query.order('star_rating', { ascending: false }); break;
-      case 'price_asc': query = query.order('price', { ascending: true }); break;
-    }
-    const { data } = await query.limit(55);
-    setProducts(data as Product[] || []);
-    setLoading(false);
-  }, [browseCategory, browseSort, browseSearch]);
-
-  useEffect(() => { if (mode === 'browse') fetchBrowse(); }, [mode, fetchBrowse]);
+    const filtered = searchProducts(products, browseSearch).filter(p => browseCategory === 'all' || p.category?.includes(browseCategory));
+    return filtered.sort((a, b) => browseSort === 'price_asc' ? (a.price ?? Infinity) - (b.price ?? Infinity) : browseSort === 'star_rating' ? (b.star_rating ?? 0) - (a.star_rating ?? 0) : (b.review_count ?? 0) - (a.review_count ?? 0));
+  }, [products, mode, quizResult, browseSearch, browseCategory, browseSort]);
 
   const handleQuizComplete = (state: QuizState) => {
     setQuizResult(state);
     setMode('result');
-    fetchRecommendations(state);
   };
+  const storedReviewCount = products.reduce((n, p) => n + (p.profile_metadata?.analyzed_count ?? 0), 0);
+  const latestUpdate = products.map(p => p.last_updated_at).filter(Boolean).sort().at(-1);
 
   const currentSkinType: SkinType = quizResult?.skinType ?? 'combination';
 
   return (
     <main>
+      {loadError && <div role="alert" style={{ padding: 24, textAlign: 'center' }}>
+        {loadError} <button className="filter-btn" onClick={() => { setLoading(true); setRetry(n => n + 1); }}>다시 시도</button>
+      </div>}
+      {!loading && !loadError && mode !== 'quiz' && displayProducts.length === 0 && <p role="status" style={{ padding: 24, textAlign: 'center' }}>조건에 맞는 분석 자료가 아직 충분하지 않습니다. 전체 보기에서 상품을 확인해 주세요.</p>}
       {/* Hero */}
       <section className="hero-gradient" style={{ padding: '52px 24px 36px', textAlign: 'center' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
@@ -629,7 +550,7 @@ export default function HomePage() {
             display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '20px', marginBottom: '18px',
             background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)', fontSize: '0.78rem', color: '#a5b4fc',
           }}>
-            ✨ AI 기반 맞춤 추천 · 올리브영 24,934개 실 리뷰 분석
+            ✨ 리뷰 기반 맞춤 추천 · 분석 리뷰 {storedReviewCount.toLocaleString()}개
           </div>
           <h1 style={{
             fontSize: 'clamp(1.8rem, 5vw, 3.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '14px',
@@ -639,7 +560,7 @@ export default function HomePage() {
             내 피부에 딱 맞는<br />남성 화장품 찾기
           </h1>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '28px', lineHeight: 1.6 }}>
-            피부타입과 고민을 입력하면 AI가 최적의 제품을 추천해드립니다.
+            피부타입과 고민, 중요하게 생각하는 기능을 기준으로 제품을 비교해보세요.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
             {[['quiz', '🎯 맞춤 추천'], ['browse', '📋 전체 보기']].map(([m, label]) => (
@@ -673,11 +594,11 @@ export default function HomePage() {
           </div>
           <h2 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '4px' }}>🏅 맞춤 추천 결과</h2>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '22px' }}>
-            {loading ? '분석 중...' : `총 ${products.length}개의 맞춤 추천 제품 (관련도 순)`}
+            {loading ? '분석 중...' : `총 ${displayProducts.length}개의 맞춤 추천 제품 (관련도 순)`}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
             {loading ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
-              : products.map((p, i) => (
+              : displayProducts.map((p, i) => (
                 <ProductCard key={p.id} product={p} skinType={currentSkinType}
                   userShade={quizResult.shade} rank={i + 1} onClick={() => setSelectedProduct(p)} />
               ))}
@@ -707,11 +628,11 @@ export default function HomePage() {
             </div>
           </div>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '18px' }}>
-            {loading ? '로딩 중...' : `총 ${products.length}개 상품`}
+            {loading ? '로딩 중...' : `총 ${displayProducts.length}개 상품`}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
             {loading ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
-              : products.map((p, i) => (
+              : displayProducts.map((p, i) => (
                 <ProductCard key={p.id} product={p} skinType="combination"
                   userShade={null} rank={i + 1} onClick={() => setSelectedProduct(p)} />
               ))}
@@ -720,12 +641,13 @@ export default function HomePage() {
       )}
 
       <footer style={{ padding: '28px 24px', textAlign: 'center', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.78rem' }}>
-        <p>MEN&apos;S BEAUTY PICK — 올리브영 24,934개 리뷰 · Gemini AI 분석 기반 남성 화장품 추천 시스템</p>
+        <p>MEN&apos;S BEAUTY PICK — 분석 리뷰 {storedReviewCount.toLocaleString()}개 · 근거를 확인하는 남성 화장품 추천</p>
+        <p>마지막 상품 갱신: {latestUpdate ? new Date(latestUpdate).toLocaleDateString('ko-KR') : '확인 중'}</p>
         <p style={{ marginTop: '4px', opacity: 0.5 }}>교육 목적으로 제작 · 상업적 이용 불가</p>
       </footer>
 
       {selectedProduct && (
-        <ProductModal product={selectedProduct} skinType={currentSkinType} onClose={() => setSelectedProduct(null)} />
+        <ProductModal key={selectedProduct.id} product={selectedProduct} skinType={currentSkinType} onClose={() => setSelectedProduct(null)} />
       )}
     </main>
   );
