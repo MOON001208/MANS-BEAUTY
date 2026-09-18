@@ -191,10 +191,23 @@ class ProfileTests(unittest.TestCase):
         # Packaging differences collapse to one shade, which offers no choice.
         self.assertIsNone(shade_lineup(Counter({'[본품] 1호': 5, '[기획] 1호': 3})))
 
-    def test_sold_out_catalog_options_stay_out_of_the_lineup(self):
+    def test_sold_out_options_stay_in_the_lineup_but_are_marked(self):
+        # Out of stock is not the same as not existing. Hiding the range would
+        # tell a buyer less about the product than the shelf does.
         product = {'id': 'p', 'source_options': [
             {'name': '1호', 'sold_out': False}, {'name': '2호', 'sold_out': True}]}
-        self.assertIsNone(build_profile(product, [])['profile_metadata']['shade_lineup'])
+        profile = build_profile(product, [])
+        lineup = profile['profile_metadata']['shade_lineup']
+        self.assertEqual([(o['label'], o['sold_out']) for o in lineup['options']],
+                         [('1호', False), ('2호', True)])
+
+    def test_a_sold_out_option_never_claims_a_cushion_shade(self):
+        # suitable_shades drives the quiz's 21/23/25 match, so it stays buyable-only.
+        product = {'id': 'p', 'source_options': [
+            {'name': '21호 라이트', 'sold_out': True}, {'name': '23호 샌드', 'sold_out': False}]}
+        profile = build_profile(product, [])
+        self.assertEqual(profile['suitable_shades'], ['23'])
+        self.assertEqual(len(profile['profile_metadata']['shade_lineup']['options']), 2)
 
     def test_source_options_override_old_reviews(self):
         p = build_profile({'id': 'p', 'source_options': [{'name': '23호', 'sold_out': False}, {'name': '25호', 'sold_out': True}]}, [{'id': '1', 'option_name': '21호'}])

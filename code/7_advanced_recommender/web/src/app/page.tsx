@@ -169,7 +169,7 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
             <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>🎨 이 제품에서 고를 옵션: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>{lineupOption.label}</span>
             <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginLeft: '6px' }}>
-              ({lineup.options.length}종 중 {lineupPlace})
+              ({lineup.options.length}종 중 {lineupPlace}{lineupOption.sold_out ? ', 현재 품절' : ''})
             </span>
           </div>
         )}
@@ -515,10 +515,11 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
                     <span key={option.name} style={{
                       padding: '6px 14px', borderRadius: '8px', fontSize: '0.82rem', fontWeight: picked ? 700 : 500,
                       background: picked ? 'rgba(99,102,241,0.18)' : 'rgba(255,255,255,0.04)',
-                      color: picked ? '#a5b4fc' : 'var(--text-secondary)',
+                      color: picked ? '#a5b4fc' : option.sold_out ? 'var(--text-muted)' : 'var(--text-secondary)',
+                      textDecoration: option.sold_out ? 'line-through' : 'none',
                       border: `1px solid ${picked ? 'rgba(99,102,241,0.4)' : 'var(--border-color)'}`,
                     }}>
-                      {option.label}{picked && ' ← 선택한 톤에 가장 가까움'}
+                      {option.label}{option.sold_out && ' (품절)'}{picked && ' ← 선택한 톤에 가장 가까움'}
                     </span>
                   );
                 })}

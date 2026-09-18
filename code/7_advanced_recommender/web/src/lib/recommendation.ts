@@ -12,13 +12,19 @@ export function shadeLineup(product: Product): ShadeLineup | null {
   return (hasCurrentProfile(product) ? product.profile_metadata?.shade_lineup : null) ?? null;
 }
 
-/** The option of this product closest to the requested tone, or null if it states none. */
+/** The option of this product closest to the requested tone, or null if it states none.
+ *  Buyable options win: naming a shade the shop cannot sell today helps nobody.
+ *  When every option is out of stock the nearest one is still returned, so the
+ *  page can name it and say it is unavailable. */
 export function bestShadeOption(product: Product, shade: ShadeChoice | null) {
   if (!shade || shade === 'any') return null;
   const options = shadeLineup(product)?.options;
   if (!options?.length) return null;
   const target = SHADE_TARGET[shade];
-  return options.reduce((best, o) => Math.abs(o.position - target) < Math.abs(best.position - target) ? o : best);
+  const nearest = (list: typeof options) =>
+    list.reduce((best, o) => Math.abs(o.position - target) < Math.abs(best.position - target) ? o : best);
+  const inStock = options.filter(o => !o.sold_out);
+  return nearest(inStock.length ? inStock : options);
 }
 
 export function hasCurrentProfile(product: Product): boolean {

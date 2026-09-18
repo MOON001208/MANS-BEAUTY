@@ -14,7 +14,7 @@ from shared import product_type
 VERSION = 'rules-ko-v1'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 4
+METADATA_REVISION = 5
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -109,7 +109,7 @@ def _brightness_level(text):
             return level
     return None
 
-def shade_lineup(option_counts):
+def shade_lineup(option_counts, unavailable=()):
     """Order a product's own shade options from lightest to darkest.
 
     Uses only what the option names state: brand numbering, or brightness words
@@ -118,12 +118,20 @@ def shade_lineup(option_counts):
     asserted. Packaging variants of one shade collapse onto a single rung, and
     names that state no shade at all are dropped. Returns None when fewer than
     two rungs survive, which is what volume-only and tint-purpose options do.
+
+    Options in `unavailable` still shape the range and are marked sold_out.
+    Being out of stock is not the same as not existing, and hiding the range
+    leaves a buyer knowing less about the product than the shelf would tell
+    them. Availability is reported next to the shade, not instead of it.
     """
     cleaned = defaultdict(Counter)
+    sold_out = set()
     for name, count in option_counts.items():
         text = _clean_option(name)
         if text:
             cleaned[text][name] += count
+            if name in unavailable:
+                sold_out.add(text)
     for basis, resolve in [('number', _option_number), ('brightness_words', _brightness_level)]:
         rungs = defaultdict(Counter)
         for text, names in cleaned.items():
@@ -137,7 +145,9 @@ def shade_lineup(option_counts):
         options = []
         for index, level in enumerate(ordered):
             name = rungs[level].most_common(1)[0][0]
-            options.append({'name': name, 'label': _clean_option(name), 'position': round(index / last, 3)})
+            label = _clean_option(name)
+            options.append({'name': name, 'label': label, 'position': round(index / last, 3),
+                            'sold_out': label in sold_out})
         return {'basis': basis, 'options': options}
     return None
 
@@ -176,15 +186,23 @@ def build_profile(product, reviews):
         shade = get_shade_from_option(option)
         if shade:
             options[shade][option] += 1
-    # Prefer current source options; omit sold-out options and never synthesize unavailable shades.
+    # Prefer the current catalog over option names remembered from old reviews, so
+    # a discontinued shade is never offered. Sold-out options stay in the lineup
+    # and are marked: they are on the shelf, just not buyable today, and dropping
+    # them hid the shade range of eight products entirely.
     source_options = product.get('source_options')
+    unavailable = set()
     if source_options is not None:
         options, option_names = defaultdict(Counter), Counter()
         for option in source_options:
             name = option.get('name') or ''
-            if option.get('sold_out') or not name.strip():
+            if not name.strip():
                 continue
             option_names[name] += 1
+            if option.get('sold_out'):
+                unavailable.add(name)
+                continue
+            # Only a buyable option may claim a 21/23/25 shade the quiz matches on.
             shade = get_shade_from_option(name)
             if shade:
                 options[shade][name] += 1
@@ -207,7 +225,7 @@ def build_profile(product, reviews):
             'positive_concern_counts': dict(good), 'negative_concern_counts': dict(bad),
             'shade_source': 'catalog' if source_options is not None else 'historical_reviews',
             # Order within this product only; a brand's 1호 is not the 21호 of the cushion scale.
-            'shade_lineup': shade_lineup(option_names),
+            'shade_lineup': shade_lineup(option_names, unavailable),
         },
     })
     return profile

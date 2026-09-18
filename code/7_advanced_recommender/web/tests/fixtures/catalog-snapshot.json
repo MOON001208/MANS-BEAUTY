@@ -1,6 +1,6 @@
 {
-  "captured_at": "2026-09-18T15:32:18.102Z",
-  "count": 59,
+  "captured_at": "2026-09-18T17:22:20.723Z",
+  "count": 83,
   "products": [
     {
       "id": "A000000011081",
@@ -9,7 +9,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.6,
-      "review_count": 118,
+      "review_count": 122,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -25,10 +25,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "049037e67f487eda5da18cac4d1b9ee5703a91ebd6b35fab13438b21850390e9",
-        "analyzed_at": "2026-09-18T15:28:16.461760+00:00",
+        "input_hash": "cd8a307b256a5759886db2db9c4252677384d07231bdcd9af052e42ff5200eae",
+        "analyzed_at": "2026-09-18T17:19:39.319533+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 106,
         "evidence_counts": {
           "coverage": 6,
@@ -62,7 +62,95 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:37:28.586682+00:00"
+      "last_updated_at": "2026-09-18T17:01:13.824062+00:00"
+    },
+    {
+      "id": "A000000011082",
+      "name": "엠도씨 스킨 포어 프라이머 15g",
+      "brand": "엠도씨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.6,
+      "review_count": 106,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "fa1a560b6b81225cb13584529b4f5ed5581ae579033c2094463dc2c7c7b25f5f",
+        "analyzed_at": "2026-09-18T17:19:39.692774+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:01:06.324577+00:00"
+    },
+    {
+      "id": "A000000011083",
+      "name": "엠도씨 세붐 스트라이크 HD 파우더 4g",
+      "brand": "엠도씨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 56,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "8da8699f4b51e5a845c7061e7719d0bf2333c4162e065a1214be338d28b08c90",
+        "analyzed_at": "2026-09-18T17:19:40.039659+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:00:58.81696+00:00"
     },
     {
       "id": "A000000107838",
@@ -71,7 +159,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.6,
-      "review_count": 75,
+      "review_count": 68,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -85,10 +173,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "672edfedb1bdbe9af347482ee522d504be6b01b0cdd2e03ee37e19930cc93257",
-        "analyzed_at": "2026-09-18T15:28:17.038287+00:00",
+        "input_hash": "8d959b5a5b76169aada4cffcd98f38d6caf01a9094b6b9b86dbc3fb5bd7d42c7",
+        "analyzed_at": "2026-09-18T17:19:40.549819+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 65,
         "evidence_counts": {
           "coverage": 3,
@@ -115,7 +203,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:39:17.74923+00:00"
+      "last_updated_at": "2026-09-18T17:00:31.304366+00:00"
     },
     {
       "id": "A000000122217",
@@ -124,7 +212,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 102,
+      "review_count": 105,
       "coverage_score": 3.5,
       "longevity_score": null,
       "lightweight_score": null,
@@ -138,10 +226,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "37a1b91e2841197c5f2117d7dda27f56a6a44c55b3f183e49cd6d6c188953068",
-        "analyzed_at": "2026-09-18T15:28:17.618804+00:00",
+        "input_hash": "6a631f47075f845bd7b425442bd3d141227db5a6abf06f18abba733beba3d990",
+        "analyzed_at": "2026-09-18T17:19:41.073698+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 92,
         "evidence_counts": {
           "coverage": 4,
@@ -185,16 +273,16 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-02-25T08:37:39.307801+00:00"
+      "last_updated_at": "2026-09-18T17:00:11.3157+00:00"
     },
     {
       "id": "A000000122221",
       "name": "다슈 맨즈 퍼펙트 커버 컨실러",
       "brand": "다슈",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
-      "star_rating": 4.5,
-      "review_count": 125,
+      "star_rating": 4.6,
+      "review_count": 135,
       "coverage_score": 3,
       "longevity_score": 3.33,
       "lightweight_score": null,
@@ -212,10 +300,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e01cca32a75fd2bffe595a51e9adeacc055c31964ed788b062622c2ad18c9bee",
-        "analyzed_at": "2026-09-18T15:28:18.179213+00:00",
+        "input_hash": "d7ad4fcc0ad1ac4ba60f11422fe9c158abd7f6caec22c1949ac283814f7844ce",
+        "analyzed_at": "2026-09-18T17:19:41.598002+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 115,
         "evidence_counts": {
           "coverage": 16,
@@ -268,7 +356,7 @@
           "spots": 6
         }
       },
-      "last_updated_at": "2026-02-25T08:42:15.116507+00:00"
+      "last_updated_at": "2026-09-18T17:00:03.817496+00:00"
     },
     {
       "id": "A000000129149",
@@ -276,8 +364,8 @@
       "brand": "그라펜",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
-      "star_rating": 4.7,
-      "review_count": 473,
+      "star_rating": 4.8,
+      "review_count": 531,
       "coverage_score": 3.91,
       "longevity_score": 3.85,
       "lightweight_score": null,
@@ -298,24 +386,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8bb99d763dfb47c52a39d88220522cc2a7cb8a4cd5fb59b588e175fbdedc4278",
-        "analyzed_at": "2026-09-18T15:28:19.070045+00:00",
+        "input_hash": "dcd0bd3c54694736a3f006fdb01a80dd69884f9c6908a54c110c5f7d9b104633",
+        "analyzed_at": "2026-09-18T17:19:42.427097+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "핸섬커버쿠션 1호",
               "label": "핸섬커버쿠션 1호",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "핸섬커버쿠션 3호",
               "label": "핸섬커버쿠션 3호",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 461,
         "evidence_counts": {
           "coverage": 46,
@@ -385,7 +475,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:40:02.578952+00:00"
+      "last_updated_at": "2026-09-18T16:59:41.393292+00:00"
     },
     {
       "id": "A000000130798",
@@ -394,7 +484,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.7,
-      "review_count": 466,
+      "review_count": 495,
       "coverage_score": 3.94,
       "longevity_score": 3.89,
       "lightweight_score": 2.67,
@@ -414,29 +504,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "556f57f272d48d9c288688baaa0bc6c65efa63c90009540676ca651ea4519313",
-        "analyzed_at": "2026-09-18T15:28:19.807377+00:00",
+        "input_hash": "3bb9156a68224835467f9dfc054b848fb065d006a9cb44cbb72d35b6c2285474",
+        "analyzed_at": "2026-09-18T17:19:43.118349+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
               "label": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
               "label": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
-              "position": 0.5
-            },
-            {
-              "name": "라끌랑 슈퍼쉴드 옴므쿠션 3호",
-              "label": "라끌랑 슈퍼쉴드 옴므쿠션 3호",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 456,
         "evidence_counts": {
           "coverage": 34,
@@ -500,16 +587,16 @@
           "redness": 2
         }
       },
-      "last_updated_at": "2026-02-25T09:36:18.913004+00:00"
+      "last_updated_at": "2026-09-18T16:59:33.810243+00:00"
     },
     {
       "id": "A000000130814",
-      "name": "라끌랑 내츄럴 커버 옴므쿠션 3종 택1",
+      "name": "라끌랑 내츄럴 커버 옴므쿠션 2종 택1",
       "brand": "라끌랑",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 434,
+      "review_count": 446,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": 4,
@@ -530,34 +617,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1e77028b58c8a53076f31d1ab39e239bd8c30d4c2ec86b1b5c209f93c5b81e1b",
-        "analyzed_at": "2026-09-18T15:28:20.641261+00:00",
+        "input_hash": "86e8d3369242007c8798d46eb1e7563317dc4e3c44a20304750a8dd4457455cd",
+        "analyzed_at": "2026-09-18T17:19:43.832183+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "내추럴 커버 옴므쿠션 1호",
               "label": "내추럴 커버 옴므쿠션 1호",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "내추럴 커버 옴므쿠션 2호",
               "label": "내추럴 커버 옴므쿠션 2호",
-              "position": 0.333
-            },
-            {
-              "name": "내추럴 커버 옴므쿠션 3호",
-              "label": "내추럴 커버 옴므쿠션 3호",
-              "position": 0.667
-            },
-            {
-              "name": "내추럴 커버 옴므쿠션 4호",
-              "label": "내추럴 커버 옴므쿠션 4호",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 421,
         "evidence_counts": {
           "coverage": 36,
@@ -625,7 +704,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:40:25.601786+00:00"
+      "last_updated_at": "2026-09-18T16:59:26.314106+00:00"
     },
     {
       "id": "A000000130815",
@@ -634,7 +713,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 388,
+      "review_count": 398,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": null,
@@ -654,10 +733,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "3527ffe81021cbed19b494aa7eb617d7ca5274504c35cc21358134867baee332",
-        "analyzed_at": "2026-09-18T15:28:21.414443+00:00",
+        "input_hash": "79ca80f3bcd181de715e8533c6051673d0bbaa225d0a985ac1ffbfe585271e53",
+        "analyzed_at": "2026-09-18T17:19:44.498898+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 377,
         "evidence_counts": {
           "coverage": 34,
@@ -713,7 +792,67 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-02-25T08:39:22.536135+00:00"
+      "last_updated_at": "2026-09-18T16:59:18.804056+00:00"
+    },
+    {
+      "id": "A000000131799",
+      "name": "다슈 맨즈 듀얼 트릭 스틱 2color (컨실러+쉐딩 2 in 1)",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "concealer",
+      "star_rating": 4.7,
+      "review_count": 693,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "e3444ad05fef72933b3f0cada2bb2bb6f2770f9aeabde281e1e9fc8eca0fc197",
+        "analyzed_at": "2026-09-18T17:19:44.845403+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "라이트",
+              "label": "라이트",
+              "position": 0,
+              "sold_out": false
+            },
+            {
+              "name": "샌드",
+              "label": "샌드",
+              "position": 1,
+              "sold_out": false
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T16:58:51.304001+00:00"
     },
     {
       "id": "A000000131803",
@@ -722,7 +861,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.6,
-      "review_count": 92,
+      "review_count": 61,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -736,10 +875,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "a1654a59e2ab7276acaed655809a8ad50e492367cf8410ac0c47d11ead419340",
-        "analyzed_at": "2026-09-18T15:28:21.961749+00:00",
+        "input_hash": "1e91c5f1eb3d6f90b6f48d2fb0b07de3e1ad264b622ad10e08550b46aca0fc43",
+        "analyzed_at": "2026-09-18T17:19:45.389723+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 64,
         "evidence_counts": {
           "coverage": 5,
@@ -780,7 +919,7 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:40:46.838107+00:00"
+      "last_updated_at": "2026-09-18T17:07:06.363448+00:00"
     },
     {
       "id": "A000000138949",
@@ -807,10 +946,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1a0e6074ad7853de6fd5bffb6f325d2a2aa6e26a042b291268087546a2bdbccf",
-        "analyzed_at": "2026-09-18T15:28:22.709048+00:00",
+        "input_hash": "0b877517110d2808e772140b7a58ca84c5feadd139569156086878f5e78ac411",
+        "analyzed_at": "2026-09-18T17:19:46.035510+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 206,
         "evidence_counts": {
           "coverage": 2,
@@ -839,7 +978,7 @@
         },
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:38:34.073593+00:00"
+      "last_updated_at": "2026-09-18T17:06:58.865952+00:00"
     },
     {
       "id": "A000000142173",
@@ -868,30 +1007,34 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b8be45730f57732396ec96b0b7cbbd359518ca0e08c8ddce5cded9acad93f845",
-        "analyzed_at": "2026-09-18T15:28:23.464487+00:00",
+        "input_hash": "abc11593ec942bb2c105c31d6ef6d67bfa00a11457e429eb8f53279691cb8ea6",
+        "analyzed_at": "2026-09-18T17:19:46.726465+00:00",
         "shade_lineup": {
           "basis": "brightness_words",
           "options": [
             {
               "name": "매치업 아이보리",
               "label": "매치업 아이보리",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "매치업 베이지",
               "label": "매치업 베이지",
-              "position": 0.333
+              "position": 0.333,
+              "sold_out": false
             },
             {
               "name": "매치업 샌드",
               "label": "매치업 샌드",
-              "position": 0.667
+              "position": 0.667,
+              "sold_out": false
             },
             {
               "name": "매치업 탄",
               "label": "매치업 탄",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
@@ -963,13 +1106,13 @@
       "last_updated_at": "2026-02-25T09:42:20.62632+00:00"
     },
     {
-      "id": "A000000161010",
-      "name": "[덱스 PICK] 오브제 내추럴 커버 파운데이션 13g (SPF50+, PA++++)",
-      "brand": "오브제",
+      "id": "A000000143169",
+      "name": "다슈 맨즈 아쿠아 매트 비비 쿠션 (리필용)",
+      "brand": "다슈",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
-      "star_rating": null,
-      "review_count": null,
+      "star_rating": 4.9,
+      "review_count": 24,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -983,9 +1126,119 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "5c2800564c1f0aa3d88059b18c2945bc7c719c8468d53279c365a5d1ad9e0967",
-        "analyzed_at": "2026-09-18T15:28:23.991589+00:00",
+        "input_hash": "9d38778ffbd1b76202697f4ad615529fad0feadfa7c0f273fa2dad380e2c3d8e",
+        "analyzed_at": "2026-09-18T17:19:47.068657+00:00",
         "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T16:57:53.797745+00:00"
+    },
+    {
+      "id": "A000000143170",
+      "name": "다슈 맨즈 아쿠아 매트 비비쿠션 (본품+리필)",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.7,
+      "review_count": 10,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "592eccd7146c769604b9563886175d9ea2c4e72972e55367cf41679c1847e248",
+        "analyzed_at": "2026-09-18T17:19:47.403399+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T16:57:46.295335+00:00"
+    },
+    {
+      "id": "A000000161010",
+      "name": "[덱스 PICK] 오브제 내추럴 커버 파운데이션 13g (SPF50+, PA++++)",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 3872,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c1334e2b13f7f16bc717ce8244269a5e7781e8c8a67d7d54f0a1129412f41c4d",
+        "analyzed_at": "2026-09-18T17:19:48.359401+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[단품] 1호 아이보리13g",
+              "label": "1호 아이보리",
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "[단품] 2호 베이지 13g",
+              "label": "2호 베이지",
+              "position": 0.5,
+              "sold_out": true
+            },
+            {
+              "name": "[단품] 3호 샌드 13g",
+              "label": "3호 샌드",
+              "position": 1,
+              "sold_out": false
+            }
+          ]
+        },
         "shade_source": "catalog",
         "analyzed_count": 3,
         "evidence_counts": {
@@ -1006,16 +1259,16 @@
         },
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T14:32:06.040989+00:00"
+      "last_updated_at": "2026-09-18T17:07:23.868415+00:00"
     },
     {
       "id": "A000000161093",
       "name": "[덱스 PICK]오브제 씬 스틸 컨실러 5g",
       "brand": "오브제",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
       "star_rating": 4.8,
-      "review_count": 605,
+      "review_count": 734,
       "coverage_score": 3.9,
       "longevity_score": 3.71,
       "lightweight_score": 3.2,
@@ -1037,24 +1290,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e2d525b48a3c5bf5633b6641ac07a6eca3f3f54be7e1ba2a229e67f149d25b49",
-        "analyzed_at": "2026-09-18T15:28:24.991285+00:00",
+        "input_hash": "ed54c31d26b7460a918131db150643e6db167b78da0946b661ad9eece0ea0d2e",
+        "analyzed_at": "2026-09-18T17:19:49.237488+00:00",
         "shade_lineup": {
           "basis": "brightness_words",
           "options": [
             {
               "name": "라이트베이지",
               "label": "라이트베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "미디엄베이지",
               "label": "미디엄베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 591,
         "evidence_counts": {
           "coverage": 84,
@@ -1126,16 +1381,16 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:38:45.383781+00:00"
+      "last_updated_at": "2026-09-18T16:56:08.785909+00:00"
     },
     {
       "id": "A000000178092",
-      "name": "비레디 블루 파운데이션 35ml",
+      "name": "[남성파데1위] 비레디 블루 파운데이션 35ml",
       "brand": "비레디",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 987,
+      "review_count": 1222,
       "coverage_score": 4,
       "longevity_score": 3.79,
       "lightweight_score": 2,
@@ -1157,39 +1412,44 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8f2020c580dc90b740e965f140aac7005843dbc1ac9c86b609b46bd8a0ee1aaf",
-        "analyzed_at": "2026-09-18T15:28:26.070577+00:00",
+        "input_hash": "1ba9157f230158358684436badb05a30e1bb1206916029c27af599dac4954447",
+        "analyzed_at": "2026-09-18T17:19:50.264472+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호",
               "label": "1호",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "2호",
               "label": "2호",
-              "position": 0.25
+              "position": 0.25,
+              "sold_out": false
             },
             {
               "name": "3호",
               "label": "3호",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
               "name": "4호",
               "label": "4호",
-              "position": 0.75
+              "position": 0.75,
+              "sold_out": false
             },
             {
               "name": "5호",
               "label": "5호",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 963,
         "evidence_counts": {
           "coverage": 63,
@@ -1254,16 +1514,16 @@
           "spots": 10
         }
       },
-      "last_updated_at": "2026-02-25T09:26:21.803354+00:00"
+      "last_updated_at": "2026-09-18T17:14:03.920279+00:00"
     },
     {
       "id": "A000000182290",
-      "name": "다슈 맨즈 멀티 커버 스틱 파운데이션 12g 뉴트럴베이지 기획(+미니 톤 컨트롤 로션)",
+      "name": " 다슈 맨즈 멀티 커버 스틱 파운데이션 12g 뉴트럴베이지 기획(+미니 톤 컨트롤 로션)",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 714,
+      "review_count": 850,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -1277,10 +1537,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "45cd103e73d24c858194392154bc340e4b7b2c632b4dfc0a21c420c410af4bbc",
-        "analyzed_at": "2026-09-18T15:28:26.632736+00:00",
+        "input_hash": "983614b773a9a07b10a707d6ae844dab6d481d36cc8100e923876e901523405a",
+        "analyzed_at": "2026-09-18T17:19:50.781094+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 1,
         "evidence_counts": {
           "coverage": 0,
@@ -1298,7 +1558,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T09:40:52.185235+00:00"
+      "last_updated_at": "2026-09-18T17:07:31.367353+00:00"
     },
     {
       "id": "A000000184127",
@@ -1307,7 +1567,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.9,
-      "review_count": 115,
+      "review_count": 132,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": 3.5,
@@ -1324,29 +1584,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "a6093c447faed9e6a91b00743d522280e08e8e76de971c61fc60c162a085f728",
-        "analyzed_at": "2026-09-18T15:28:27.210740+00:00",
+        "input_hash": "3db8bfdffa4382f38564842dfe73a3a0a87bc2c5a63b10dc0c6fe8f1e4a6aac3",
+        "analyzed_at": "2026-09-18T17:19:51.321873+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호",
               "label": "1호",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "2호",
               "label": "2호",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
               "name": "3호",
               "label": "3호",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 106,
         "evidence_counts": {
           "coverage": 6,
@@ -1397,7 +1660,51 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:41:26.532793+00:00"
+      "last_updated_at": "2026-09-18T17:13:56.418325+00:00"
+    },
+    {
+      "id": "A000000186336",
+      "name": "[문장군 공동개발/유분 컨트롤] 비레디 블루 세범 파우더 7g",
+      "brand": "비레디",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 130,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "88d94a4f7e82587d7625700ad0f38d1808b319c3dcfe9b68580c4bf61caae9d3",
+        "analyzed_at": "2026-09-18T17:19:51.663136+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:13:48.914756+00:00"
     },
     {
       "id": "A000000187410",
@@ -1406,7 +1713,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 103,
+      "review_count": 113,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": null,
@@ -1425,10 +1732,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "f3d9775ac3d4be9940f09c7ef1dd62ce3b0caa539393834ab58ba9a57a9b1324",
-        "analyzed_at": "2026-09-18T15:28:27.887328+00:00",
+        "input_hash": "72deaa98b122276a47c680bc2f4b4811019f96b8f34f3abf8ce550bfc72376a5",
+        "analyzed_at": "2026-09-18T17:19:52.174428+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 92,
         "evidence_counts": {
           "coverage": 4,
@@ -1474,16 +1781,16 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:39:41.760076+00:00"
+      "last_updated_at": "2026-09-18T17:13:41.408902+00:00"
     },
     {
       "id": "A000000187413",
-      "name": "무칸 옴므 퍼펙트 스팟 컨실러 2ml",
+      "name": "무칸 옴므 퍼펙트 스팟 컨실러 2ml ",
       "brand": "무칸",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
-      "star_rating": 4.4,
-      "review_count": 20,
+      "star_rating": 4.2,
+      "review_count": 23,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -1497,10 +1804,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "817fd0f63ac175cc51438e99c17158661ad0567255243266b9544f3685913a5f",
-        "analyzed_at": "2026-09-18T15:28:28.551156+00:00",
+        "input_hash": "f51e07a376cc4496a7d0dfc5c75fba6b7f37a024fa04f1b914aeb120ea57edcc",
+        "analyzed_at": "2026-09-18T17:19:52.676751+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 10,
         "evidence_counts": {
           "coverage": 0,
@@ -1524,16 +1831,16 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:39:47.950307+00:00"
+      "last_updated_at": "2026-09-18T17:13:33.916589+00:00"
     },
     {
       "id": "A000000187415",
       "name": "무칸 옴므 포어커버 프라이머 30ml",
       "brand": "무칸",
-      "category": "톤 로션/BB",
-      "product_type": "tone_lotion",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
       "star_rating": 4.6,
-      "review_count": 14,
+      "review_count": 15,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -1547,10 +1854,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "04e3336299959ecbbaf90f8219a342a61717748c11a22be4ae8e178f4fcdf0ea",
-        "analyzed_at": "2026-09-18T15:28:29.182110+00:00",
+        "input_hash": "1fbae1ade2aeae56378503ce2766d6a9ea9cc38b8f320006d2be756b665b9ad8",
+        "analyzed_at": "2026-09-18T17:19:53.199691+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 4,
         "evidence_counts": {
           "coverage": 0,
@@ -1568,7 +1875,51 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:39:49.790732+00:00"
+      "last_updated_at": "2026-09-18T17:13:26.421716+00:00"
+    },
+    {
+      "id": "A000000189059",
+      "name": "다슈 맨즈 오일컷 노세범 파우더 5g",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 537,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "83beed2d566618ccd4aacf2eb59eb8f202ce40cbd447fed69444745f26254a95",
+        "analyzed_at": "2026-09-18T17:19:53.537753+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:13:18.917613+00:00"
     },
     {
       "id": "A000000191833",
@@ -1577,7 +1928,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.6,
-      "review_count": 97,
+      "review_count": 98,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -1595,10 +1946,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "767d86f15f4fccf647e2823ea78de57715d07c255ea44d31fb00409a556d06b7",
-        "analyzed_at": "2026-09-18T15:28:29.749112+00:00",
+        "input_hash": "045342f6e3901bda1e27e81e7cf860685d63f290501457ef2323e3db436a069a",
+        "analyzed_at": "2026-09-18T17:19:54.088460+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 87,
         "evidence_counts": {
           "coverage": 2,
@@ -1634,7 +1985,7 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-02-25T08:39:51.449487+00:00"
+      "last_updated_at": "2026-09-18T17:13:11.409255+00:00"
     },
     {
       "id": "A000000192866",
@@ -1657,8 +2008,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "65225739369bea5cfe0a9694b5a7cbea3f77311ee451ea4b6258bb578c2af917",
-        "analyzed_at": "2026-09-18T15:28:30.211108+00:00",
+        "input_hash": "921a95ce58ff4e6ff2df54b41d51016a7eb3f0a640503e15cbe6fddf64082c97",
+        "analyzed_at": "2026-09-18T17:19:54.429686+00:00",
         "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 0,
@@ -1679,6 +2030,50 @@
         "positive_concern_counts": {}
       },
       "last_updated_at": "2026-02-25T08:42:48.346423+00:00"
+    },
+    {
+      "id": "A000000196122",
+      "name": "오브제 페이스 라인 스틱 1.3g",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 328,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b15a447afb15250d4d69896e86a8df9d7e3c95bdd8cfaf89338e373a9616002f",
+        "analyzed_at": "2026-09-18T17:19:54.775994+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:13:03.910503+00:00"
     },
     {
       "id": "A000000198001",
@@ -1711,20 +2106,28 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "549d5c69bda7e4bb18ed8fa6209c9a9a24f0b720fea2d2c9086da09aeffcea6f",
-        "analyzed_at": "2026-09-18T15:28:32.438320+00:00",
+        "input_hash": "65080d4c309f88f1046c6b36720ae307124fdbd82e5855200f9c75fe4a4524f6",
+        "analyzed_at": "2026-09-18T17:19:56.638498+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "[기획] 1호 (+클렌징폼 50ml)",
               "label": "1호",
-              "position": 0
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "[기획] 2호 (+클렌징폼 50ml)",
+              "label": "2호",
+              "position": 0.5,
+              "sold_out": true
             },
             {
               "name": "[기획] 3호 (+클렌징폼 50ml)",
               "label": "3호",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
@@ -1811,7 +2214,7 @@
           "wrinkle": 2
         }
       },
-      "last_updated_at": "2026-09-18T14:31:50.081836+00:00"
+      "last_updated_at": "2026-09-18T17:12:56.414864+00:00"
     },
     {
       "id": "A000000200388",
@@ -1820,7 +2223,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 231,
+      "review_count": 277,
       "coverage_score": 3.9,
       "longevity_score": 4,
       "lightweight_score": null,
@@ -1841,34 +2244,38 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ffaf5f5878ab88bf1d064637a0b5b5a4c17f320c8909ba7516f742e15fc51c5e",
-        "analyzed_at": "2026-09-18T15:28:33.195320+00:00",
+        "input_hash": "81f1c56707c11cd7966ce758d6c224459b5b7790895171711f9b6a89ffdef51d",
+        "analyzed_at": "2026-09-18T17:19:57.323314+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "2호 베이지+퍼프2개입 기획",
               "label": "2호 베이지",
-              "position": 0.333
+              "position": 0.333,
+              "sold_out": true
             },
             {
               "name": "3호 샌드+퍼프2개입 기획",
               "label": "3호 샌드",
-              "position": 0.667
+              "position": 0.667,
+              "sold_out": true
             },
             {
               "name": "4호 모카",
               "label": "4호 모카",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 221,
         "evidence_counts": {
           "coverage": 21,
@@ -1928,7 +2335,7 @@
           "spots": 6
         }
       },
-      "last_updated_at": "2026-02-25T09:36:03.115956+00:00"
+      "last_updated_at": "2026-09-18T17:05:28.855385+00:00"
     },
     {
       "id": "A000000203000",
@@ -1951,20 +2358,22 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "9f93dd3895e86322c2027efdba28df905e311c93cb97f0304dbb547d61e36075",
-        "analyzed_at": "2026-09-18T15:28:33.773778+00:00",
+        "input_hash": "8b0f445298e73e3f9b242a3fc1a4d0a7bcff7efce5d5ff99aff9385a44ca6dea",
+        "analyzed_at": "2026-09-18T17:19:57.824985+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호 밝은피부용(23-25호)",
               "label": "1호 밝은피부용",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "2호 보통피부용(27-29호)",
               "label": "2호 보통피부용",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
@@ -2018,7 +2427,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 5,
-      "review_count": 1802,
+      "review_count": 849,
       "coverage_score": 3.94,
       "longevity_score": 3.9,
       "lightweight_score": 2.88,
@@ -2042,10 +2451,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ecd0d133f1f22a3def48896ffeac9226f99dc9bc31ac07fe57fefaf82886047d",
-        "analyzed_at": "2026-09-18T15:28:35.381992+00:00",
+        "input_hash": "7d37efe11a0015625012ff55c54038b91515c6eb4dd9062a3b119bc68ed72313",
+        "analyzed_at": "2026-09-18T17:19:59.414212+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 941,
         "evidence_counts": {
           "coverage": 126,
@@ -2126,7 +2535,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:41:32.809829+00:00"
+      "last_updated_at": "2026-09-18T17:12:48.905346+00:00"
     },
     {
       "id": "A000000204828",
@@ -2135,7 +2544,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 458,
+      "review_count": 479,
       "coverage_score": 3.83,
       "longevity_score": 3.86,
       "lightweight_score": 3.33,
@@ -2157,10 +2566,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1811b1bcc52515b56c16f2828e29dc63c0e057553fd1aac3c5ce2772e5073eaf",
-        "analyzed_at": "2026-09-18T15:28:36.091591+00:00",
+        "input_hash": "d1cf00bef12fcff204848f14ff340ae5ab6101927702818029a32bee1d41556f",
+        "analyzed_at": "2026-09-18T17:20:00.274663+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 359,
         "evidence_counts": {
           "coverage": 12,
@@ -2231,7 +2640,139 @@
           "wrinkle": 6
         }
       },
-      "last_updated_at": "2026-02-25T08:39:57.111026+00:00"
+      "last_updated_at": "2026-09-18T17:12:41.409144+00:00"
+    },
+    {
+      "id": "A000000204975",
+      "name": "[NEW 보송버전 출시] [덱스PICK] 오브제 내추럴 커버 로션 50g 단품/기획(+미니어처 10ml)",
+      "brand": "오브제",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 5977,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "764b012c00a190ebd03d8f0fc5f9f9714973488a52d7bf84b6521fe470e4929a",
+        "analyzed_at": "2026-09-18T17:20:00.622447+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:12:33.898469+00:00"
+    },
+    {
+      "id": "A000000205624",
+      "name": "[올인원 파우더]아이디얼 포 맨 노세범 이지 파우더 5g",
+      "brand": "아이디얼포맨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 206,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "93296829e6968802dc3a80afdf3277100fad96efd24dd3ba7168cf0a4051b342",
+        "analyzed_at": "2026-09-18T17:20:00.967769+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:04:56.354974+00:00"
+    },
+    {
+      "id": "A000000205935",
+      "name": "[윤곽창조] 그라펜 매치업 쉐딩 스틱 1.8g (뉴트럴 브라운)",
+      "brand": "그라펜",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 141,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "399b45374ceca8362a19ce7bb3abfbf79d886c7a9811958770b8b9cdf7762310",
+        "analyzed_at": "2026-09-18T17:20:01.318157+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:12:26.404646+00:00"
     },
     {
       "id": "A000000205969",
@@ -2240,7 +2781,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 121,
+      "review_count": 151,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": 4,
@@ -2257,10 +2798,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b8d3d4562eebd7859b6d1b03809a5c39d2a2f9707dab958103d1b206ffc5f0b1",
-        "analyzed_at": "2026-09-18T15:28:36.651241+00:00",
+        "input_hash": "6dd6674dd3d8eb6aee98be697724b9995aca98557eab0b86bbf3e3e3309ef70a",
+        "analyzed_at": "2026-09-18T17:20:01.821954+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 110,
         "evidence_counts": {
           "coverage": 1,
@@ -2297,7 +2838,7 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:40:22.771173+00:00"
+      "last_updated_at": "2026-09-18T17:12:18.906501+00:00"
     },
     {
       "id": "A000000205970",
@@ -2306,7 +2847,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 317,
+      "review_count": 367,
       "coverage_score": 3.57,
       "longevity_score": 3.5,
       "lightweight_score": 2.86,
@@ -2327,24 +2868,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ddb726a9e9dea504b975e149262bfdb0237737ed05fcd70ee36e55b1791f6414",
-        "analyzed_at": "2026-09-18T15:28:37.602028+00:00",
+        "input_hash": "72a93e9bf06bc3a0c4b48327d29a75f4508caf347d834e01214180273ea3b8e8",
+        "analyzed_at": "2026-09-18T17:20:02.673779+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "02호 뉴트럴베이지",
               "label": "02호 뉴트럴베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "03호 샌드베이지",
               "label": "03호 샌드베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 307,
         "evidence_counts": {
           "coverage": 14,
@@ -2409,7 +2952,7 @@
           "spots": 9
         }
       },
-      "last_updated_at": "2026-02-25T08:38:13.052293+00:00"
+      "last_updated_at": "2026-09-18T17:04:48.844964+00:00"
     },
     {
       "id": "A000000206008",
@@ -2418,7 +2961,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.9,
-      "review_count": 175,
+      "review_count": 260,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -2436,10 +2979,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1c5c12a54096eca187865a5edb05da779b758f2d03bc6d5f101bd98661715b0e",
-        "analyzed_at": "2026-09-18T15:28:38.280864+00:00",
+        "input_hash": "92ba3791467429c55c0f740e9c193dc47756e33b797b9c58f4d346005f2a0574",
+        "analyzed_at": "2026-09-18T17:20:03.211827+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 163,
         "evidence_counts": {
           "coverage": 0,
@@ -2464,16 +3007,16 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-02-25T08:37:49.948653+00:00"
+      "last_updated_at": "2026-09-18T17:07:43.861563+00:00"
     },
     {
       "id": "A000000206573",
-      "name": "[하루종일 착붙] 원오브뎀 드 뗑 쿠션 12g(1호, 2호)",
+      "name": "[바른티 안나는] 원오브뎀 드 뗑 쿠션 12g(1호, 2호)",
       "brand": "원오브뎀",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 5,
-      "review_count": 1182,
+      "review_count": 1179,
       "coverage_score": 3.95,
       "longevity_score": 3.72,
       "lightweight_score": 2.65,
@@ -2497,24 +3040,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "cb8e0346cf2ff79cb9ee336c5d17b01b74581d42a8a1d06b68fcc281bdb9d593",
-        "analyzed_at": "2026-09-18T15:28:40.431809+00:00",
+        "input_hash": "3c15706833e8a38888106e16fb75846a54d65d23cf6e756b605213b9e9ba7bb6",
+        "analyzed_at": "2026-09-18T17:20:05.252973+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "001",
               "label": "001",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "002",
               "label": "002",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 1174,
         "evidence_counts": {
           "coverage": 208,
@@ -2600,7 +3145,7 @@
           "wrinkle": 4
         }
       },
-      "last_updated_at": "2026-02-25T09:38:17.416271+00:00"
+      "last_updated_at": "2026-09-18T17:12:11.408492+00:00"
     },
     {
       "id": "A000000207177",
@@ -2633,20 +3178,22 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e02a81098e388c17426fb7520c8bb470e3dd8659a2bc61caab83a85473d7932f",
-        "analyzed_at": "2026-09-18T15:28:42.062061+00:00",
+        "input_hash": "376259d96d26df44fc6a7915ff33a3802cdc1bf9539278f4e0fb8a879131bd3b",
+        "analyzed_at": "2026-09-18T17:20:07.046865+00:00",
         "shade_lineup": {
           "basis": "brightness_words",
           "options": [
             {
               "name": "톤커버로션 시카그린 라이트 50ml+10",
               "label": "톤커버로션 시카그린 라이트",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "톤커버로션 시카그린 샌드 50ml+10m",
               "label": "톤커버로션 시카그린 샌드",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
@@ -2740,12 +3287,12 @@
     },
     {
       "id": "A000000207369",
-      "name": "두잉왓 스킨톤 필터 로션 55ml(기획/단품)",
+      "name": "[관하살PICK] 두잉왓 스킨톤 필터 로션 55ml(기획/단품)",
       "brand": "두잉왓",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.9,
-      "review_count": 979,
+      "review_count": 1115,
       "coverage_score": 3.76,
       "longevity_score": 3.75,
       "lightweight_score": 4,
@@ -2767,10 +3314,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "e7a55f1ddc7e0cf745ae6c5d08ba3f712713660066d2e6f2878919f41e6bad35",
-        "analyzed_at": "2026-09-18T15:28:43.481353+00:00",
+        "input_hash": "005245e9ce835bf41ade343f282153a97f1d651077715dbd8a7392d9d627c4f5",
+        "analyzed_at": "2026-09-18T17:20:08.588035+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 966,
         "evidence_counts": {
           "coverage": 41,
@@ -2844,7 +3391,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:35:16.995262+00:00"
+      "last_updated_at": "2026-09-18T17:12:03.894712+00:00"
     },
     {
       "id": "A000000207759",
@@ -2852,8 +3399,8 @@
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
-      "star_rating": 4.9,
-      "review_count": 33,
+      "star_rating": 4.8,
+      "review_count": 44,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -2867,29 +3414,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "763c43a62819e6b5ffae7b6d4ae14ae1106d0a6f75890337a0532acd9ab13ba2",
-        "analyzed_at": "2026-09-18T15:28:44.142382+00:00",
+        "input_hash": "c0c2415c24d26b05e5f4bad1107e94b871d6f17e748f97751c31bb8e1c2b44b8",
+        "analyzed_at": "2026-09-18T17:20:09.436413+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "2호 내추럴베이지",
               "label": "2호 내추럴베이지",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
               "name": "3호 베이지",
               "label": "3호 베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 24,
         "evidence_counts": {
           "coverage": 2,
@@ -2918,16 +3468,16 @@
           "acne": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:42:17.972441+00:00"
+      "last_updated_at": "2026-09-18T17:11:56.395501+00:00"
     },
     {
-      "id": "A000000208723",
-      "name": "스콧해미쉬 비브레이브 올인원 비비 에센스 80ml",
-      "brand": "스콧해미쉬",
-      "category": "톤 로션/BB",
-      "product_type": "tone_lotion",
-      "star_rating": 4.7,
-      "review_count": 15,
+      "id": "A000000207762",
+      "name": "엠도씨 엔드 핏 프라이머 팩트 10g (라이트베이지/내추럴베이지)",
+      "brand": "엠도씨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 3.7,
+      "review_count": 6,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -2941,10 +3491,70 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "cdd92a5a4d883824ac3072aa27f2090d84f47f2f830529de0b2a2eedfd2740a7",
-        "analyzed_at": "2026-09-18T15:28:44.695009+00:00",
+        "input_hash": "4510830791bc6af0325940045a31ed95d687f8816a397df212f03fdc6369f540",
+        "analyzed_at": "2026-09-18T17:20:10.114337+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 라이트베이지",
+              "label": "1호 라이트베이지",
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "2호 내추럴베이지",
+              "label": "2호 내추럴베이지",
+              "position": 1,
+              "sold_out": true
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:04:28.83988+00:00"
+    },
+    {
+      "id": "A000000208723",
+      "name": "스콧해미쉬 비브레이브 올인원 비비 에센스 80ml",
+      "brand": "스콧해미쉬",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.7,
+      "review_count": 19,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "dc99f3c5d4f0ff1ff87ef26b30ade157a6ee89da9d7a7004d89aed1d518d38e7",
+        "analyzed_at": "2026-09-18T17:20:10.643547+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 5,
         "evidence_counts": {
           "coverage": 0,
@@ -2962,7 +3572,51 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:40:29.27168+00:00"
+      "last_updated_at": "2026-09-18T17:11:48.895919+00:00"
+    },
+    {
+      "id": "A000000210307",
+      "name": "듀이셀 트루빔 파운데이션 12g 기획(+토너패드 20매)",
+      "brand": "듀이셀",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 975,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "3324ff32a5663ae04e762c71da4a36600ac69a06a9ab2d18d3b1afb1ffd326db",
+        "analyzed_at": "2026-09-18T17:20:11.009453+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:11:41.39496+00:00"
     },
     {
       "id": "A000000210921",
@@ -2985,10 +3639,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "6e62e5d6794ed6ab029f96dc055b7a336fdddd0a38eff2d3d6fa3c9f34e1509e",
-        "analyzed_at": "2026-09-18T15:28:45.059473+00:00",
+        "input_hash": "dc71d69aea1f090a0952be421c8ad81ff97df1400c47ef046c31385246fe2db8",
+        "analyzed_at": "2026-09-18T17:20:11.362948+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 0,
         "evidence_counts": {
           "coverage": 0,
@@ -3006,16 +3660,16 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:40:30.991728+00:00"
+      "last_updated_at": "2026-09-18T17:11:33.894357+00:00"
     },
     {
       "id": "A000000212063",
-      "name": "비레디 블루 쿠션 4세대 15g(SPF 34 PA++)",
+      "name": "[맨즈 1위 쿠션/124만개 판매] 비레디 임수빈 PICK 블루 쿠션",
       "brand": "비레디",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 5292,
+      "review_count": 3848,
       "coverage_score": 3.88,
       "longevity_score": 3.87,
       "lightweight_score": 2.77,
@@ -3039,39 +3693,44 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "94206d750530108d271041811e65264222f502e0f66049114b70da553f0d2282",
-        "analyzed_at": "2026-09-18T15:28:49.312822+00:00",
+        "input_hash": "b945cefb38930ca79c1419530d87990615d0b4cd643137db20d3f44d147c6779",
+        "analyzed_at": "2026-09-18T17:20:14.202107+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "[본품]1호",
               "label": "1호",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "[본품]2호",
               "label": "2호",
-              "position": 0.25
+              "position": 0.25,
+              "sold_out": false
             },
             {
-              "name": "본품 3호",
-              "label": "본품 3호",
-              "position": 0.5
+              "name": "[본품]3호",
+              "label": "3호",
+              "position": 0.5,
+              "sold_out": false
             },
             {
-              "name": "본품 4호",
-              "label": "본품 4호",
-              "position": 0.75
+              "name": "[본품]4호",
+              "label": "4호",
+              "position": 0.75,
+              "sold_out": false
             },
             {
               "name": "[본품]5호",
               "label": "5호",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 3837,
         "evidence_counts": {
           "coverage": 276,
@@ -3150,7 +3809,7 @@
           "redness": 13
         }
       },
-      "last_updated_at": "2026-02-25T09:31:24.923215+00:00"
+      "last_updated_at": "2026-09-18T17:11:26.398248+00:00"
     },
     {
       "id": "A000000212991",
@@ -3159,7 +3818,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.9,
-      "review_count": 266,
+      "review_count": 313,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": 4,
@@ -3181,29 +3840,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "27483415caa115e6ea451e00fae8e41ac41adb2ce8a560496e95e94e86079bce",
-        "analyzed_at": "2026-09-18T15:28:50.090645+00:00",
+        "input_hash": "e089c25571c2c9a194899b3c7e256807a2c9c66abcfcd6acc0fa599370acb92e",
+        "analyzed_at": "2026-09-18T17:20:14.982431+00:00",
         "shade_lineup": {
           "basis": "brightness_words",
           "options": [
             {
-              "name": "[커버로션10ml 증정기획] 아이보리",
+              "name": "[본품] 아이보리",
               "label": "아이보리",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
-              "name": "[커버로션10ml 증정기획] 베이지",
+              "name": "[본품] 베이지",
               "label": "베이지",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
-              "name": "[커버로션10ml 증정기획] 샌드",
+              "name": "[본품] 샌드",
               "label": "샌드",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 255,
         "evidence_counts": {
           "coverage": 35,
@@ -3273,16 +3935,16 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:37:59.427246+00:00"
+      "last_updated_at": "2026-09-18T17:11:18.897798+00:00"
     },
     {
       "id": "A000000212998",
       "name": "[투톤커버/다크서클고민템] 정샘물 맨 다크존 컨실러 1.1g 2종",
       "brand": "정샘물",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
-      "star_rating": 4.7,
-      "review_count": 80,
+      "star_rating": 4.6,
+      "review_count": 121,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -3301,10 +3963,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "d687f7bb0d87e8aeb27b1dc898b225d991c8810b50eee7bc0240f405b262979d",
-        "analyzed_at": "2026-09-18T15:28:50.636570+00:00",
+        "input_hash": "cc47f4135f6b302949cea7a2c3a5abf79daaec036f7f83799d7fbf7223d26c08",
+        "analyzed_at": "2026-09-18T17:20:15.516291+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 67,
         "evidence_counts": {
           "coverage": 4,
@@ -3353,7 +4015,7 @@
           "spots": 11
         }
       },
-      "last_updated_at": "2026-02-25T08:37:34.853599+00:00"
+      "last_updated_at": "2026-09-18T17:11:11.387054+00:00"
     },
     {
       "id": "A000000213066",
@@ -3362,7 +4024,7 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.9,
-      "review_count": 263,
+      "review_count": 269,
       "coverage_score": 3.96,
       "longevity_score": 4,
       "lightweight_score": null,
@@ -3384,24 +4046,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "ff1ed0e0487a7b92afd590be2f587a9315f19a2cf8e13315ce49205181da2d7f",
-        "analyzed_at": "2026-09-18T15:28:51.399084+00:00",
+        "input_hash": "c51a77866efc1bff79e00c30778903e9810ac8d9b9b6202502cbc3197245d8f9",
+        "analyzed_at": "2026-09-18T17:20:16.228704+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "1호 베이지",
               "label": "1호 베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "2호 샌드베이지",
               "label": "2호 샌드베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 254,
         "evidence_counts": {
           "coverage": 45,
@@ -3466,7 +4130,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:39:18.817847+00:00"
+      "last_updated_at": "2026-09-18T17:11:03.895021+00:00"
     },
     {
       "id": "A000000213068",
@@ -3475,7 +4139,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 5,
-      "review_count": 210,
+      "review_count": 213,
       "coverage_score": 4,
       "longevity_score": 4,
       "lightweight_score": null,
@@ -3496,10 +4160,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "8b370c524a7cbb5a219ed4dfe76fba63a2b6dfe9ca07dcc143de5a886b60de9b",
-        "analyzed_at": "2026-09-18T15:28:52.176842+00:00",
+        "input_hash": "af7ac1d48602355468688a3920d765351303198f8b938cd153efee7281e9d7d8",
+        "analyzed_at": "2026-09-18T17:20:16.790577+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 200,
         "evidence_counts": {
           "coverage": 17,
@@ -3558,7 +4222,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:40:32.07063+00:00"
+      "last_updated_at": "2026-09-18T17:10:56.392231+00:00"
     },
     {
       "id": "A000000214028",
@@ -3584,24 +4248,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "7d186ff00849aac3a68a1d3f956c1b384c90e213dbacd95973e0afa28339c67c",
-        "analyzed_at": "2026-09-18T15:28:52.716556+00:00",
+        "input_hash": "c9adc1a13012dcf51428f98d39ae884aa38a5ee57f3822ede52646db52bdd219",
+        "analyzed_at": "2026-09-18T17:20:17.325719+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "01 아이보리",
               "label": "01 아이보리",
-              "position": 0
+              "position": 0,
+              "sold_out": true
             },
             {
               "name": "02 베이지",
               "label": "02 베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": true
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 29,
         "evidence_counts": {
           "coverage": 9,
@@ -3665,7 +4331,85 @@
           "redness": 2
         }
       },
-      "last_updated_at": "2026-02-25T09:42:36.366998+00:00"
+      "last_updated_at": "2026-09-18T17:03:51.342052+00:00"
+    },
+    {
+      "id": "A000000217042",
+      "name": "비레디 블루 쿠션 4세대 리필 15g ",
+      "brand": "비레디",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 2251,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "5d6b9cee7610c46653472aa46027519638abba1f9ce1934c2c6aeed1d30bf9b1",
+        "analyzed_at": "2026-09-18T17:20:17.684552+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "1호 스톤 리필",
+              "label": "1호 스톤 리필",
+              "position": 0,
+              "sold_out": false
+            },
+            {
+              "name": "2호 라이언 리필",
+              "label": "2호 라이언 리필",
+              "position": 0.25,
+              "sold_out": true
+            },
+            {
+              "name": "3호 제프리 리필",
+              "label": "3호 제프리 리필",
+              "position": 0.5,
+              "sold_out": false
+            },
+            {
+              "name": "4호 다미엔 리필",
+              "label": "4호 다미엔 리필",
+              "position": 0.75,
+              "sold_out": true
+            },
+            {
+              "name": "5호 오웬 리필",
+              "label": "5호 오웬 리필",
+              "position": 1,
+              "sold_out": true
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:10:48.891483+00:00"
     },
     {
       "id": "A000000217784",
@@ -3674,7 +4418,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.7,
-      "review_count": 1700,
+      "review_count": 1712,
       "coverage_score": 3.79,
       "longevity_score": 3.88,
       "lightweight_score": 3.88,
@@ -3697,10 +4441,10 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "b84a275289d4fbc55c03006b370aaf42520fd5e7524c122dce6c5f8b4bbf0021",
-        "analyzed_at": "2026-09-18T15:28:54.979829+00:00",
+        "input_hash": "dac01a8063628adffd053bf705781bf685e19a82baba7f1b43895d2585e26afa",
+        "analyzed_at": "2026-09-18T17:20:19.874301+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 1690,
         "evidence_counts": {
           "coverage": 48,
@@ -3778,16 +4522,16 @@
           "redness": 8
         }
       },
-      "last_updated_at": "2026-02-25T08:44:28.006074+00:00"
+      "last_updated_at": "2026-09-18T17:03:28.83556+00:00"
     },
     {
       "id": "A000000222827",
-      "name": "[1위파데] 그라펜 팁 스케치 멀티 커버 파운데이션 20ml",
+      "name": "[1위파데] 그라펜 팁 스케치 멀티 커버 파운데이션 20ml 기획 (+팩클렌저 30ml)",
       "brand": "그라펜",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.9,
-      "review_count": 586,
+      "review_count": 668,
       "coverage_score": 3.79,
       "longevity_score": 3.88,
       "lightweight_score": 2.75,
@@ -3813,24 +4557,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "fd5bee34a0fa386a68492b5524522a78e32d9583c117596f6ac65c5abe9a09c9",
-        "analyzed_at": "2026-09-18T15:28:56.073220+00:00",
+        "input_hash": "44378bea40f3184e6adeca916feee7bc5eec810adc88e8b97c7069d2382c5496",
+        "analyzed_at": "2026-09-18T17:20:20.930167+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
-              "name": "[밝은피부용] 21호 라이트베이지",
-              "label": "21호 라이트베이지",
-              "position": 0
+              "name": "[기획/팩클렌저 증정] 팁스케치 21호",
+              "label": "팁스케치 21호",
+              "position": 0,
+              "sold_out": false
             },
             {
-              "name": "[어두운피부용] 23호 샌드",
-              "label": "23호 샌드",
-              "position": 1
+              "name": "[기획/팩클렌저 증정] 팁스케치 23호",
+              "label": "팁스케치 23호",
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 576,
         "evidence_counts": {
           "coverage": 38,
@@ -3905,16 +4651,16 @@
           "redness": 4
         }
       },
-      "last_updated_at": "2026-02-25T09:39:32.954105+00:00"
+      "last_updated_at": "2026-09-18T17:10:41.392115+00:00"
     },
     {
       "id": "A000000222829",
-      "name": "[민감성/자연스러운] 그라펜 매치업 톤 커버 로션 시카그린 50ml 단품/기획",
+      "name": "[민감성/자연스러운] 그라펜 매치업 톤 커버 로션 시카그린 샌드 50ml 단품/기획",
       "brand": "그라펜",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.9,
-      "review_count": 1366,
+      "review_count": 1414,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -3932,24 +4678,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1d365f7a8eb32b68026128618c85feb9607f74d4514780a6e57325d22040b6a7",
-        "analyzed_at": "2026-09-18T15:28:56.691180+00:00",
-        "shade_lineup": {
-          "basis": "brightness_words",
-          "options": [
-            {
-              "name": "톤커버로션 시카그린 라이트 50+10ml",
-              "label": "톤커버로션 시카그린 라이트 50",
-              "position": 0
-            },
-            {
-              "name": "톤커버로션 시카그린 샌드 50+10ml",
-              "label": "톤커버로션 시카그린 샌드 50",
-              "position": 1
-            }
-          ]
-        },
-        "shade_source": "historical_reviews",
+        "input_hash": "b26a59d6d7b23b49c53cf4b108d0f44e0c6a51d7ade4f49340f1e4db572734c5",
+        "analyzed_at": "2026-09-18T17:20:21.456796+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
         "analyzed_count": 80,
         "evidence_counts": {
           "coverage": 4,
@@ -3996,16 +4728,16 @@
           "redness": 3
         }
       },
-      "last_updated_at": "2026-02-25T08:36:11.470522+00:00"
+      "last_updated_at": "2026-09-18T17:10:33.884774+00:00"
     },
     {
       "id": "A000000223633",
-      "name": "미닉 미니멀 커버 로션 40ml (라이트베이지/내추럴베이지)단품/기획",
+      "name": "[모공&잡티 완벽커버] 미닉 미니멀 커버 로션 40ml (라이트베이지/내추럴베이지) 단품/단독기획",
       "brand": "미닉",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 484,
+      "review_count": 770,
       "coverage_score": 3.84,
       "longevity_score": 3.6,
       "lightweight_score": 3.2,
@@ -4027,24 +4759,26 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "09d67da0f4e947b0fa0fa02ba2ac2f9cf890bad6298af1633e5801712b60325f",
-        "analyzed_at": "2026-09-18T15:28:57.469916+00:00",
+        "input_hash": "c639dfebc1fa96ee53425ef81a4cb1384f333c5621d2889c5790ac86a78b22f4",
+        "analyzed_at": "2026-09-18T17:20:22.180288+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "[본품+10ml 증정] 01 라이트베이지",
               "label": "01 라이트베이지",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "[본품+10ml 증정] 02 내추럴베이지",
               "label": "02 내추럴베이지",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 463,
         "evidence_counts": {
           "coverage": 38,
@@ -4115,16 +4849,16 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:34:26.531044+00:00"
+      "last_updated_at": "2026-09-18T17:10:26.386557+00:00"
     },
     {
       "id": "A000000225422",
-      "name": "[밀착쿠션/OY단독기획/전용퍼프2P 증정] 정샘물 맨 슬림핏 누더 쿠션 (기획/단품)",
+      "name": "[OY단독/밀착쿠션] 정샘물 맨 슬림핏 누더 쿠션 (본품+리필)",
       "brand": "정샘물",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 151,
+      "review_count": 249,
       "coverage_score": 4,
       "longevity_score": 3.5,
       "lightweight_score": null,
@@ -4142,29 +4876,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "7528b8bef8f7355005cbc7d30da9956421701cef806bb3ddeca677268d78445e",
-        "analyzed_at": "2026-09-18T15:28:58.276134+00:00",
+        "input_hash": "44d3577f668a4beee72622f11dba5e167a756b09dcce0dcb41dabfac998587d0",
+        "analyzed_at": "2026-09-18T17:20:22.868816+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
-              "name": "01 아이보리",
+              "name": "[본품+리필] 01 아이보리",
               "label": "01 아이보리",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
-              "name": "02 베이지",
+              "name": "[본품+리필] 02 베이지",
               "label": "02 베이지",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
-              "name": "03 샌드",
+              "name": "[본품+리필] 03 샌드",
               "label": "03 샌드",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 137,
         "evidence_counts": {
           "coverage": 9,
@@ -4223,7 +4960,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:37:33.968052+00:00"
+      "last_updated_at": "2026-09-18T17:10:03.887191+00:00"
     },
     {
       "id": "A000000227219",
@@ -4249,10 +4986,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "22fed27f5f489d81a0951ccbb7ffbbdafdf36050300c58a26b2f5933bb811503",
-        "analyzed_at": "2026-09-18T15:28:58.842919+00:00",
+        "input_hash": "d13681fb011e796da6e9b31867808dbcff52ca2409fffb806d1619c054e80416",
+        "analyzed_at": "2026-09-18T17:20:23.411129+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 63,
         "evidence_counts": {
           "coverage": 1,
@@ -4280,16 +5017,16 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:40:48.438929+00:00"
+      "last_updated_at": "2026-09-18T17:09:56.380595+00:00"
     },
     {
       "id": "A000000229158",
-      "name": "다슈 맨즈 멀티 커버 스틱 파운데이션 ( 단품/기획 )",
+      "name": "[누적판매 26만개] 다슈 맨즈 멀티 커버 스틱 파운데이션",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 714,
+      "review_count": 850,
       "coverage_score": 3.95,
       "longevity_score": 3.67,
       "lightweight_score": 3,
@@ -4312,29 +5049,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1d0c89295dccdbe6bffc19a9ef8bdf2a12890dc6afe8ffac0312e32dd2f34c4a",
-        "analyzed_at": "2026-09-18T15:28:59.924826+00:00",
+        "input_hash": "6b6efbec5078fe97f301a85a5435ba19c8da9bfda14314c7a958ba2f01ad0ef4",
+        "analyzed_at": "2026-09-18T17:20:24.425010+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
-              "name": "01 라이트베이지",
-              "label": "01 라이트베이지",
-              "position": 0
+              "name": "파운데이션 1호",
+              "label": "파운데이션 1호",
+              "position": 0,
+              "sold_out": false
             },
             {
-              "name": "02 뉴트럴베이지",
-              "label": "02 뉴트럴베이지",
-              "position": 0.5
+              "name": "파운데이션 2호",
+              "label": "파운데이션 2호",
+              "position": 0.5,
+              "sold_out": true
             },
             {
-              "name": "03 샌드베이지",
-              "label": "03 샌드베이지",
-              "position": 1
+              "name": "파운데이션 3호",
+              "label": "파운데이션 3호",
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 689,
         "evidence_counts": {
           "coverage": 42,
@@ -4407,16 +5147,60 @@
           "redness": 3
         }
       },
-      "last_updated_at": "2026-02-25T09:37:42.278699+00:00"
+      "last_updated_at": "2026-09-18T17:09:48.886829+00:00"
+    },
+    {
+      "id": "A000000230739",
+      "name": "[유분순삭/보송] 미닉 노세범 멀티 파우더 5g",
+      "brand": "미닉",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.7,
+      "review_count": 69,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "191aac12fa684ad0a5c8221a3dfc3be234633def4e836fbd1f44429042f5987b",
+        "analyzed_at": "2026-09-18T17:20:24.787773+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:09:41.382954+00:00"
     },
     {
       "id": "A000000233178",
-      "name": "비레디 트루 톤 로션 하이드로/에어리 40ml 기획 (+20ml 추가 증정)",
+      "name": "[임수빈 PICK] 비레디 트루톤 로션 40ml + 20ml 추가증정 기획",
       "brand": "비레디",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.8,
-      "review_count": 503,
+      "review_count": 872,
       "coverage_score": 3.73,
       "longevity_score": 4,
       "lightweight_score": 4,
@@ -4437,10 +5221,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "1b6e3b3a9b62e502bef96604c81a48abc3116b2e95aa35cc94efc34256698f8f",
-        "analyzed_at": "2026-09-18T15:29:00.841480+00:00",
+        "input_hash": "71ea5ca3d873cb8ba9861356ff154ee191141b18933bea2c624b28507877a2d3",
+        "analyzed_at": "2026-09-18T17:20:25.634950+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 485,
         "evidence_counts": {
           "coverage": 15,
@@ -4512,7 +5296,51 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-02-25T08:34:49.317233+00:00"
+      "last_updated_at": "2026-09-18T17:09:33.93851+00:00"
+    },
+    {
+      "id": "A000000238631",
+      "name": "엠도씨 엔드 핏 프라이머 팩트 10g 01 라이트베이지",
+      "brand": "엠도씨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 3.7,
+      "review_count": 6,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "25e5881f671c3bb720201004e5eda9d187c62e231050b27fc0122391aa9cfe33",
+        "analyzed_at": "2026-09-18T17:20:25.990321+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:01:58.82578+00:00"
     },
     {
       "id": "A000000240089",
@@ -4521,7 +5349,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 5,
-      "review_count": 66,
+      "review_count": 77,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -4537,10 +5365,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "7d9991fbd9d9cb90cd5d52234b34dd89fc0bb5299d76caeceeddf0dbd320796e",
-        "analyzed_at": "2026-09-18T15:29:01.451149+00:00",
+        "input_hash": "b08168b688f65c351bb84451a23a2a1d1b6728736ee13addb0cd31c09e84f809",
+        "analyzed_at": "2026-09-18T17:20:26.511463+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 57,
         "evidence_counts": {
           "coverage": 2,
@@ -4581,7 +5409,51 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-02-25T08:40:52.967115+00:00"
+      "last_updated_at": "2026-09-18T17:09:26.381271+00:00"
+    },
+    {
+      "id": "A000000246600",
+      "name": "[1등 보송젤파우더] 오브제 오일 컨트롤 피니셔 5g 단품",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.5,
+      "review_count": 1943,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "693ed41d25a931a259a0502c59b11db64abdc3faec0c1fdbf4da1a63ce616f88",
+        "analyzed_at": "2026-09-18T17:20:26.855551+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:09:18.869188+00:00"
     },
     {
       "id": "A000000246705",
@@ -4590,11 +5462,15 @@
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
       "star_rating": 4.8,
-      "review_count": 1077,
+      "review_count": 1487,
       "coverage_score": 3.98,
       "longevity_score": 3.94,
       "lightweight_score": 2,
-      "suitable_shades": [],
+      "suitable_shades": [
+        "21",
+        "23",
+        "25"
+      ],
       "suitable_skin_types": [
         "combination",
         "oily",
@@ -4611,29 +5487,32 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "93841693afa745550770e64900a2e5376785b8dc7b163bad38a91044f8b2e30d",
-        "analyzed_at": "2026-09-18T15:29:02.890285+00:00",
+        "input_hash": "ca29dd9de98d09d8723850f2fbd116de0dadca38d4cde7242d45230432d43716",
+        "analyzed_at": "2026-09-18T17:20:28.234156+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
-              "name": "1호 아이보리15g",
+              "name": "1호 아이보리 (21호 추천)",
               "label": "1호 아이보리",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
-              "name": "2호 베이지15g",
+              "name": "2호 베이지 (22~23호 추천)",
               "label": "2호 베이지",
-              "position": 0.5
+              "position": 0.5,
+              "sold_out": false
             },
             {
-              "name": "3호 샌드15g",
+              "name": "3호 샌드 (24~25호 추천)",
               "label": "3호 샌드",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 1067,
         "evidence_counts": {
           "coverage": 93,
@@ -4706,7 +5585,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-02-25T09:27:14.496113+00:00"
+      "last_updated_at": "2026-09-18T17:09:11.374267+00:00"
     },
     {
       "id": "A000000246737",
@@ -4715,7 +5594,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 5,
-      "review_count": 119,
+      "review_count": 256,
       "coverage_score": 4,
       "longevity_score": null,
       "lightweight_score": null,
@@ -4731,10 +5610,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "824244b514f48cb7044aa55caa7cb7e6f46604c52fa1105833f54994c8c92747",
-        "analyzed_at": "2026-09-18T15:29:03.468649+00:00",
+        "input_hash": "18378b7874320829b2a61aa7404fb1dbcbd32f1b3596cc4070e2b187741c7bca",
+        "analyzed_at": "2026-09-18T17:20:28.772853+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 90,
         "evidence_counts": {
           "coverage": 4,
@@ -4778,7 +5657,7 @@
           "spots": 4
         }
       },
-      "last_updated_at": "2026-02-25T08:37:44.996479+00:00"
+      "last_updated_at": "2026-09-18T17:07:53.872008+00:00"
     },
     {
       "id": "A000000249090",
@@ -4810,8 +5689,8 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "2b31de07f2f27b9103b84fb0a3bbd163621e089c83044013d846f257dcbe51fd",
-        "analyzed_at": "2026-09-18T15:29:07.503152+00:00",
+        "input_hash": "28aa0d771c112293584169075935dd184ffa9a4db8896c4c7f0c1926cd1e37af",
+        "analyzed_at": "2026-09-18T17:20:32.463318+00:00",
         "shade_lineup": null,
         "shade_source": "historical_reviews",
         "analyzed_count": 4117,
@@ -4899,6 +5778,308 @@
       "last_updated_at": "2026-03-04T05:01:16.293412+00:00"
     },
     {
+      "id": "A000000249713",
+      "name": "[기프트패키지] [맨즈선물NO.1] 오브제 베스트커버 2종 기획 (커버 로션+무드체인지 레드립밤)",
+      "brand": "오브제",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 17192,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b08414c18022b7233a49df46c578b115ffa70bd2f9f8565bac76f88cf8ef7b22",
+        "analyzed_at": "2026-09-18T17:20:32.824332+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:09:03.879797+00:00"
+    },
+    {
+      "id": "A000000249714",
+      "name": "[기프트패키지] [맨즈 메이크업 NO.1] 오브제 보송커버 2종 기획 (파운데이션 2호 + 오일 컨트롤 피니셔)",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 6344,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "a302b3f114b5f346feadd7b659b55525f2184f8484af8b5108211e52e5ee6076",
+        "analyzed_at": "2026-09-18T17:20:33.170407+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:08:56.380497+00:00"
+    },
+    {
+      "id": "A000000249774",
+      "name": "[기프트세트] 다슈 맨즈 톤 컨트롤 로션 02 뉴트럴 베이지 + 다슈 맨즈 워터 스냅 컬러 립밤 4g",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 646,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "a201548f5e7b75b097109e85891967f2dc60489a3c8e2b2098e796f2988c1b48",
+        "analyzed_at": "2026-09-18T17:20:33.508557+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:08:48.873849+00:00"
+    },
+    {
+      "id": "A000000249778",
+      "name": "[기프트세트] 다슈 맨즈 멀티 커버 스틱 파운데이션 2호 + 다슈 맨즈 컬러체인지 립밤 (쿨레드)",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 4288,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "fa5594790bdc4860cd757e3e5cc398ffcec58391943ac2cf2f8ecd3b776e7d9c",
+        "analyzed_at": "2026-09-18T17:20:33.866391+00:00",
+        "shade_lineup": null,
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:08:41.383868+00:00"
+    },
+    {
+      "id": "A000000251853",
+      "name": "[잡티 완벽커버] 미닉 미니멀 스팟 컨실러 5g (라이트베이지/내추럴베이지)",
+      "brand": "미닉",
+      "category": "쿠션/파운데이션",
+      "product_type": "concealer",
+      "star_rating": 4.6,
+      "review_count": 34,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "8f080079c4a0ec583ef37e8eca6df7d4669a68ac60657d5d4317dc7decdf0b10",
+        "analyzed_at": "2026-09-18T17:20:34.197366+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[단품/밝은 피부] 01호 라이트베이지",
+              "label": "01호 라이트베이지",
+              "position": 0,
+              "sold_out": false
+            },
+            {
+              "name": "[단품/보통피부] 02호 내추럴베이지",
+              "label": "02호 내추럴베이지",
+              "position": 1,
+              "sold_out": false
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:08:33.873397+00:00"
+    },
+    {
+      "id": "A000000258285",
+      "name": "[1등파데 리뉴얼] 오브제 내추럴 커버 파운데이션 PRO 14g 단품/기획 (+올인원 30ml 증정)",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 8210,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "e893438f83092d3b1a958fd0a30cce7b5acf79f2f37612a2946e115ccc9355c3",
+        "analyzed_at": "2026-09-18T17:20:34.548569+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[기획] 프로 1호 (+올인원 30ml)",
+              "label": "프로 1호",
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "[기획] 프로 2호 (+올인원 30ml)",
+              "label": "프로 2호",
+              "position": 0.5,
+              "sold_out": false
+            },
+            {
+              "name": "[기획] 프로 3호 (+올인원 30ml)",
+              "label": "프로 3호",
+              "position": 1,
+              "sold_out": false
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:08:26.371621+00:00"
+    },
+    {
       "id": "A000000261435",
       "name": "[하나로 끝내는] 원오브뎀 드 뗑 톤 로션 50ml 기획(+톤 로션 10ml)",
       "brand": "원오브뎀",
@@ -4924,8 +6105,8 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "7f0045d557d88099a8404f20bb391623ecda953b7e16f13cfe9181d50161e4e9",
-        "analyzed_at": "2026-09-18T15:29:08.278276+00:00",
+        "input_hash": "842bcb3fcae658f018a38ae1690340e9147736dbf1e471d04842aa6a3261e180",
+        "analyzed_at": "2026-09-18T17:20:35.262630+00:00",
         "shade_lineup": null,
         "shade_source": "catalog",
         "analyzed_count": 123,
@@ -4989,7 +6170,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-17T14:31:03.399999+00:00"
+      "last_updated_at": "2026-09-18T17:08:18.875197+00:00"
     },
     {
       "id": "A000000261765",
@@ -5018,8 +6199,8 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "37eb4124aac233da28fdc708a11e3d1fe8fb5dcab102ee9fc333bfc88dfad49f",
-        "analyzed_at": "2026-09-18T15:29:09.116195+00:00",
+        "input_hash": "208387179362a6a50d789bb32c4af1b66003008f561b98a72dc8c7840a74e464",
+        "analyzed_at": "2026-09-18T17:20:35.941820+00:00",
         "shade_lineup": null,
         "shade_source": "catalog",
         "analyzed_count": 78,
@@ -5089,7 +6270,7 @@
           "redness": 6
         }
       },
-      "last_updated_at": "2026-09-17T14:30:31.669851+00:00"
+      "last_updated_at": "2026-09-18T17:08:11.379758+00:00"
     },
     {
       "id": "A000000267995",
@@ -5097,8 +6278,8 @@
       "brand": "비레디",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 0,
-      "review_count": 0,
+      "star_rating": 5,
+      "review_count": 7,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -5112,20 +6293,22 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "19b220cfb02f79c85138012cd46fca90d946eb2190a9dd443a2d47ea8e637473",
-        "analyzed_at": "2026-09-18T15:29:09.534908+00:00",
+        "input_hash": "4f97bcc5ab43fe7dc44cd106f88c1dd38cd50200c89eecde72d5f00058c2478e",
+        "analyzed_at": "2026-09-18T17:20:36.283404+00:00",
         "shade_lineup": {
           "basis": "number",
           "options": [
             {
               "name": "[기획/10ml증정] 1호(밝은피부)",
               "label": "1호",
-              "position": 0
+              "position": 0,
+              "sold_out": false
             },
             {
               "name": "[기획/10ml증정] 2호(어두운피부)",
               "label": "2호",
-              "position": 1
+              "position": 1,
+              "sold_out": false
             }
           ]
         },
@@ -5147,16 +6330,16 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-17T14:29:47.810636+00:00"
+      "last_updated_at": "2026-09-18T17:08:03.869441+00:00"
     },
     {
-      "id": "B000000223838",
-      "name": "블랙몬스터 내추럴 밀착커버 비비크림 2종 (샌드베이지/앰버베이지)",
-      "brand": "블랙몬스터",
-      "category": "톤 로션/BB",
-      "product_type": "tone_lotion",
-      "star_rating": 5,
-      "review_count": 16,
+      "id": "A000000268424",
+      "name": "[2026리뉴얼] 두잉왓 소프트 블러링 필터 쿠션 15g (3 Color)",
+      "brand": "두잉왓",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 277,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -5170,10 +6353,92 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "f93656caa1405c619208878332d6fe7cd136d70c48051a1c9aa3f7a2aa4c7ef1",
-        "analyzed_at": "2026-09-18T15:29:10.148251+00:00",
-        "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "input_hash": "ed4098fc95c86e2cf959632697332eccdedf5fd9f043fecf32147a23641cbe9a",
+        "analyzed_at": "2026-09-18T17:20:36.630815+00:00",
+        "shade_lineup": {
+          "basis": "number",
+          "options": [
+            {
+              "name": "[20~21호] 1호 라이트베이지",
+              "label": "1호 라이트베이지",
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "[22~24호] 2호 베이지",
+              "label": "2호 베이지",
+              "position": 0.5,
+              "sold_out": true
+            },
+            {
+              "name": "[25~26호] 3호 샌드",
+              "label": "3호 샌드",
+              "position": 1,
+              "sold_out": true
+            }
+          ]
+        },
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T17:01:21.325331+00:00"
+    },
+    {
+      "id": "B000000223838",
+      "name": "블랙몬스터 내추럴 밀착커버 비비크림 2종 (샌드베이지/앰버베이지)",
+      "brand": "블랙몬스터",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 28,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "ed697be8174769a153cf7c89579f40afcf256c51ad0504389216a0a7f6f3add8",
+        "analyzed_at": "2026-09-18T17:20:37.144978+00:00",
+        "shade_lineup": {
+          "basis": "brightness_words",
+          "options": [
+            {
+              "name": "샌드 베이지",
+              "label": "샌드 베이지",
+              "position": 0,
+              "sold_out": true
+            },
+            {
+              "name": "앰버 베이지",
+              "label": "앰버 베이지",
+              "position": 1,
+              "sold_out": true
+            }
+          ]
+        },
+        "shade_source": "catalog",
         "analyzed_count": 6,
         "evidence_counts": {
           "coverage": 0,
@@ -5191,16 +6456,16 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:38:32.468835+00:00"
+      "last_updated_at": "2026-09-18T17:03:01.33574+00:00"
     },
     {
       "id": "B000000223860",
       "name": "블랙몬스터 다크서클 커버 데이&나이트 컨실러",
       "brand": "블랙몬스터",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
       "star_rating": 5,
-      "review_count": 2,
+      "review_count": 13,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -5214,10 +6479,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "3db02e74eee5e7d64048b11d32da83c915c5cd116fa33dd1332ca836fd8784b3",
-        "analyzed_at": "2026-09-18T15:29:10.532546+00:00",
+        "input_hash": "3db784848193f9d4f8a01e5093ed36cc04b7f32190119c4e9e7a33dfab004e79",
+        "analyzed_at": "2026-09-18T17:20:37.492891+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 0,
         "evidence_counts": {
           "coverage": 0,
@@ -5235,16 +6500,16 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:40:59.345652+00:00"
+      "last_updated_at": "2026-09-18T17:10:18.885991+00:00"
     },
     {
       "id": "B000000223861",
       "name": "블랙몬스터 이레이징 컨실러 펜",
       "brand": "블랙몬스터",
-      "category": "톤 로션/BB",
+      "category": "쿠션/파운데이션",
       "product_type": "concealer",
       "star_rating": 5,
-      "review_count": 3,
+      "review_count": 7,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -5258,10 +6523,10 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v1",
-        "input_hash": "3a053128ecc2b73f66cf285879ac95a2ea26bc74fc7307b4a08aad1be8e5bf34",
-        "analyzed_at": "2026-09-18T15:29:10.897674+00:00",
+        "input_hash": "eddf1c385d8b958cb1edeece3d443f08387cd2c7c40edf83b97934578bd89729",
+        "analyzed_at": "2026-09-18T17:20:37.837626+00:00",
         "shade_lineup": null,
-        "shade_source": "historical_reviews",
+        "shade_source": "catalog",
         "analyzed_count": 0,
         "evidence_counts": {
           "coverage": 0,
@@ -5279,7 +6544,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-02-25T08:41:00.702377+00:00"
+      "last_updated_at": "2026-09-18T17:10:11.389157+00:00"
     }
   ]
 }

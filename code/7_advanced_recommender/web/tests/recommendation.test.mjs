@@ -87,3 +87,18 @@ test('a concealer is not an answer to the full-face quiz', () => {
   // Nor when the tool answer would otherwise sweep in everything but tone lotion.
   assert.deepEqual(selectRecommendations([concealer, cushion], { ...quiz, applicationMethod: 'tool' }).map(p => p.id), ['cus']);
 });
+
+test('a buyable option is preferred over a nearer sold-out one', () => {
+  const line = lined([
+    { name: '1호', label: '1호', position: 0, sold_out: true },
+    { name: '2호', label: '2호', position: 1, sold_out: false },
+  ]);
+  assert.equal(bestShadeOption(line, '21').label, '2호');
+});
+test('when every option is sold out the nearest is still named', () => {
+  const line = lined([
+    { name: '1호', label: '1호', position: 0, sold_out: true },
+    { name: '2호', label: '2호', position: 1, sold_out: true },
+  ]);
+  assert.equal(bestShadeOption(line, '21').label, '1호');
+});

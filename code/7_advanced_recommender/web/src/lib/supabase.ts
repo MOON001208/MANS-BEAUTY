@@ -9,7 +9,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, { auth: { per
  *  option of this product, not a claim that it equals 21호. */
 export interface ShadeLineup {
   basis: 'number' | 'brightness_words';
-  options: { name: string; label: string; position: number }[];
+  options: { name: string; label: string; position: number; sold_out?: boolean }[];
 }
 
 export interface Product {
