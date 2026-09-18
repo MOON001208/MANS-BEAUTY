@@ -1,0 +1,29 @@
+{
+  "note": "제약조건 충족률 평가용 페르소나. 관련도 정답(relevance label)이 아니라, 사용자가 건 조건을 결과가 지키는지 측정하기 위한 입력 집합입니다.",
+  "personas": [
+    { "id": "oily-pore-tool-23", "label": "지성 · 모공 · 도구 · 23호",
+      "skinType": "oily", "concerns": ["pore"], "coveragePref": 4, "longevityPref": 5, "lightweightPref": 2, "shade": "23", "applicationMethod": "tool" },
+    { "id": "oily-acne-hand-21", "label": "지성 · 여드름 · 손 · 21호",
+      "skinType": "oily", "concerns": ["acne"], "coveragePref": 3, "longevityPref": 3, "lightweightPref": 5, "shade": "21", "applicationMethod": "hand" },
+    { "id": "dry-none-any-25", "label": "건성 · 고민없음 · 무관 · 25호",
+      "skinType": "dry", "concerns": [], "coveragePref": 2, "longevityPref": 2, "lightweightPref": 4, "shade": "25", "applicationMethod": "any" },
+    { "id": "dry-wrinkle-tool-any", "label": "건성 · 주름 · 도구 · 호수모름",
+      "skinType": "dry", "concerns": ["wrinkle"], "coveragePref": 4, "longevityPref": 4, "lightweightPref": 3, "shade": "any", "applicationMethod": "tool" },
+    { "id": "sensitive-redness-hand-21", "label": "민감성 · 홍조 · 손 · 21호",
+      "skinType": "sensitive", "concerns": ["redness"], "coveragePref": 5, "longevityPref": 2, "lightweightPref": 4, "shade": "21", "applicationMethod": "hand" },
+    { "id": "sensitive-acne-redness-any", "label": "민감성 · 여드름+홍조 · 무관 · 호수모름",
+      "skinType": "sensitive", "concerns": ["acne", "redness"], "coveragePref": 3, "longevityPref": 3, "lightweightPref": 3, "shade": "any", "applicationMethod": "any" },
+    { "id": "combination-spots-tool-23", "label": "복합성 · 잡티 · 도구 · 23호",
+      "skinType": "combination", "concerns": ["spots"], "coveragePref": 5, "longevityPref": 4, "lightweightPref": 2, "shade": "23", "applicationMethod": "tool" },
+    { "id": "combination-pore-spots-hand-23", "label": "복합성 · 모공+잡티 · 손 · 23호",
+      "skinType": "combination", "concerns": ["pore", "spots"], "coveragePref": 4, "longevityPref": 3, "lightweightPref": 4, "shade": "23", "applicationMethod": "hand" },
+    { "id": "oily-all-concerns-any", "label": "지성 · 고민 5개 전부 · 무관 · 호수모름",
+      "skinType": "oily", "concerns": ["acne", "pore", "redness", "spots", "wrinkle"], "coveragePref": 5, "longevityPref": 5, "lightweightPref": 5, "shade": "any", "applicationMethod": "any" },
+    { "id": "dry-indifferent-any", "label": "건성 · 고민없음 · 전 항목 중요도 1 (가중치 0)",
+      "skinType": "dry", "concerns": [], "coveragePref": 1, "longevityPref": 1, "lightweightPref": 1, "shade": "any", "applicationMethod": "any" },
+    { "id": "combination-lightweight-hand-25", "label": "복합성 · 고민없음 · 손 · 25호 · 가벼움 최우선",
+      "skinType": "combination", "concerns": [], "coveragePref": 1, "longevityPref": 2, "lightweightPref": 5, "shade": "25", "applicationMethod": "hand" },
+    { "id": "sensitive-none-tool-any", "label": "민감성 · 고민없음 · 도구 · 호수모름",
+      "skinType": "sensitive", "concerns": [], "coveragePref": 3, "longevityPref": 5, "lightweightPref": 1, "shade": "any", "applicationMethod": "tool" }
+  ]
+}

@@ -12,6 +12,9 @@ from statistics import mean
 from shared import product_type
 
 VERSION = 'rules-ko-v1'
+# Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
+# without changing VERSION, so the deployed site keeps reading current profiles.
+METADATA_REVISION = 2
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -67,13 +70,13 @@ def get_shade_from_option(option):
 def input_hash(product, reviews):
     source = {k: product.get(k) for k in ['id', 'name', 'category', 'ingredients_raw', 'source_options']}
     data = [{k: r.get(k) for k in ['id', 'content', 'rating', 'skin_type', 'option_name']} for r in reviews]
-    raw = json.dumps([VERSION, source, sorted(data, key=lambda r: r['id'])], ensure_ascii=False, sort_keys=True)
+    raw = json.dumps([VERSION, METADATA_REVISION, source, sorted(data, key=lambda r: r['id'])], ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(raw.encode()).hexdigest()
 
 def build_profile(product, reviews):
     # A review ID contributes at most once, regardless of crawl sort.
     reviews = list({r['id']: r for r in reviews}.values())
-    scores, evidence_ids = defaultdict(list), defaultdict(list)
+    scores, evidence_ids, concern_ids = defaultdict(list), defaultdict(list), defaultdict(list)
     good, bad, skin_ratings = Counter(), Counter(), defaultdict(list)
     options = defaultdict(Counter)
     for review in reviews:
@@ -85,6 +88,9 @@ def build_profile(product, reviews):
                     evidence_ids[name].append(review['id'])
         good.update(attr['positive_concerns'])
         bad.update(attr['negative_concerns'])
+        for concern in attr['positive_concerns']:
+            if len(concern_ids[concern]) < 5:
+                concern_ids[concern].append(review['id'])
         skin = SKIN_TYPES.get(review.get('skin_type'))
         rating = review.get('rating')
         if skin and isinstance(rating, (int, float)) and 1 <= rating <= 5:
@@ -116,6 +122,7 @@ def build_profile(product, reviews):
         'profile_metadata': {
             'version': VERSION, 'analyzed_count': len(reviews), 'input_hash': input_hash(product, reviews),
             'evidence_counts': {k: len(scores[k]) for k in ATTRIBUTES}, 'evidence_review_ids': dict(evidence_ids),
+            'concern_evidence_ids': dict(concern_ids),
             'skin_review_counts': {k: len(v) for k, v in skin_ratings.items()},
             'positive_concern_counts': dict(good), 'negative_concern_counts': dict(bad),
             'shade_source': 'catalog' if source_options is not None else 'historical_reviews',

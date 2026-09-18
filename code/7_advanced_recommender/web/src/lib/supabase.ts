@@ -31,7 +31,7 @@ export interface Product {
   compat_sensitive: number | null;
   compat_combination: number | null;
   last_updated_at: string;
-  profile_metadata?: { version?: string; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number> } | null;
+  profile_metadata?: { version?: string; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]> } | null;
   reviews?: { count: number }[];
 }
 

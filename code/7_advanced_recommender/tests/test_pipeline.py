@@ -1,10 +1,12 @@
 import copy
 import sys
+from unittest import mock
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper.crawler import harvest_reviews, normalize_review, is_target, parse_ingredients, product_from_detail, SourceError
+from pipeline import profiles
 from pipeline.profiles import build_profile, extract_attributes, get_shade_from_option, input_hash
 from shared import read_all
 
@@ -148,6 +150,26 @@ class ProfileTests(unittest.TestCase):
     def test_edits_invalidate_fingerprint(self):
         a = input_hash({'id': 'p'}, [{'id': 'r', 'content': 'a'}])
         self.assertNotEqual(a, input_hash({'id': 'p'}, [{'id': 'r', 'content': 'b'}]))
+
+    def test_metadata_shape_change_invalidates_fingerprint(self):
+        # A stored profile missing newly added metadata must not be skipped as unchanged.
+        product, reviews = {'id': 'p'}, [{'id': 'r', 'content': 'a'}]
+        stored = input_hash(product, reviews)
+        with mock.patch.object(profiles, 'METADATA_REVISION', profiles.METADATA_REVISION + 1):
+            self.assertNotEqual(stored, profiles.input_hash(product, reviews))
+
+    def test_suitable_concern_names_its_evidence_reviews(self):
+        reviews = [{'id': str(i), 'content': '모공을 잘 가려줘요', 'rating': 5} for i in range(4)]
+        p = build_profile({'id': 'p'}, reviews)
+        self.assertIn('pore', p['suitable_concerns'])
+        self.assertEqual(p['profile_metadata']['concern_evidence_ids']['pore'], ['0', '1', '2', '3'])
+
+    def test_concern_evidence_is_capped_and_never_from_negative_reviews(self):
+        good = [{'id': 'g%d' % i, 'content': '모공을 잘 가려줘요', 'rating': 5} for i in range(9)]
+        bad = [{'id': 'b1', 'content': '모공이 더 심해졌어요', 'rating': 1}]
+        ids = build_profile({'id': 'p'}, good + bad)['profile_metadata']['concern_evidence_ids']['pore']
+        self.assertEqual(len(ids), 5)
+        self.assertNotIn('b1', ids)
 
 class PaginationTests(unittest.TestCase):
     def test_reads_beyond_server_row_cap(self):

@@ -1,0 +1,4781 @@
+{
+  "captured_at": "2026-09-18T15:01:24.413Z",
+  "count": 59,
+  "products": [
+    {
+      "id": "A000000011081",
+      "name": "엠도씨 맨즈 비비 크림 50g",
+      "brand": "엠도씨",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.6,
+      "review_count": 118,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.786,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "fbda28a195fca87eb78b7db7fb215d056a17ae5c6a825ddb76c5d6bb6b20c5af",
+        "analyzed_at": "2026-09-18T14:54:36.918036+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 106,
+        "evidence_counts": {
+          "coverage": 6,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 9
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "15136495",
+            "2777486",
+            "2779945",
+            "33989845",
+            "35425848"
+          ]
+        },
+        "concern_evidence_ids": {
+          "spots": [
+            "1531939"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {
+          "spots": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:28.586682+00:00"
+    },
+    {
+      "id": "A000000107838",
+      "name": "미프 미남프로젝트 미남크림 썬비비 50ml(NEW)",
+      "brand": "미프",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.6,
+      "review_count": 75,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "87efd149407c76b91fceb3f114308fbdb946e7af0dc03c0de7c14ca6fe17af68",
+        "analyzed_at": "2026-09-18T14:54:38.408195+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 65,
+        "evidence_counts": {
+          "coverage": 3,
+          "longevity": 1,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 2,
+          "sensitive": 0,
+          "combination": 3
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "16928032",
+            "19627717",
+            "22513958"
+          ],
+          "longevity": [
+            "7061082"
+          ]
+        },
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:39:17.74923+00:00"
+    },
+    {
+      "id": "A000000122217",
+      "name": "다슈 맨즈 아쿠아 톤업 비비로션 40ml",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 102,
+      "coverage_score": 3.5,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "3900b12e6f24b99c954f9d56186a5d33a4c41a6f31e752549e7db623aadf0599",
+        "analyzed_at": "2026-09-18T14:54:39.971666+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 92,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 0,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 1,
+          "oily": 1,
+          "sensitive": 0,
+          "combination": 4
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "15896319",
+            "17181217",
+            "18578499",
+            "19991120"
+          ],
+          "lightweight": [
+            "46310834"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "17229745"
+          ],
+          "pore": [
+            "17229745",
+            "19991120"
+          ],
+          "spots": [
+            "15056452",
+            "19991120"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 2,
+          "spots": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:39.307801+00:00"
+    },
+    {
+      "id": "A000000122221",
+      "name": "다슈 맨즈 퍼펙트 커버 컨실러",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 4.5,
+      "review_count": 125,
+      "coverage_score": 3,
+      "longevity_score": 3.33,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [
+        "acne"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.8,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "e19341264b1113e32090a69a245579b2952507679455eae28094af110fff10a9",
+        "analyzed_at": "2026-09-18T14:54:40.825964+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 115,
+        "evidence_counts": {
+          "coverage": 16,
+          "longevity": 3,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 4,
+          "sensitive": 0,
+          "combination": 10
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "11118908",
+            "15033490",
+            "19379990",
+            "19685670",
+            "20612719"
+          ],
+          "longevity": [
+            "14717610",
+            "20516730",
+            "28102580"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "13784187",
+            "19921949",
+            "21124323",
+            "25958411",
+            "27253594"
+          ],
+          "spots": [
+            "18761909",
+            "20667913",
+            "21124323",
+            "25152941",
+            "28102580"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "pore": 1,
+          "spots": 5
+        },
+        "positive_concern_counts": {
+          "acne": 6,
+          "spots": 6
+        }
+      },
+      "last_updated_at": "2026-02-25T08:42:15.116507+00:00"
+    },
+    {
+      "id": "A000000129149",
+      "name": "[착붙쿠션] 그라펜 핸섬 커버쿠션 2종 택1",
+      "brand": "그라펜",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.7,
+      "review_count": 473,
+      "coverage_score": 3.91,
+      "longevity_score": 3.85,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "spots"
+      ],
+      "compat_oily": 0.848,
+      "compat_dry": 0.81,
+      "compat_sensitive": null,
+      "compat_combination": 0.915,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "625dda1deea3298191315f63545cdbf94a6cdacb65b139908543003a87e70e34",
+        "analyzed_at": "2026-09-18T14:54:41.712765+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 461,
+        "evidence_counts": {
+          "coverage": 46,
+          "longevity": 13,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 16,
+          "oily": 18,
+          "sensitive": 0,
+          "combination": 63
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "10627059",
+            "12486632",
+            "13448896",
+            "14326449",
+            "14352902"
+          ],
+          "longevity": [
+            "12004247",
+            "12852638",
+            "13448896",
+            "14352902",
+            "15100511"
+          ],
+          "lightweight": [
+            "9275720"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "11032026",
+            "14352902",
+            "15100511",
+            "15157186",
+            "16310690"
+          ],
+          "pore": [
+            "12486632",
+            "14234203"
+          ],
+          "spots": [
+            "11609593",
+            "14234203",
+            "16669731",
+            "2074979",
+            "21728045"
+          ],
+          "redness": [
+            "12332171",
+            "13448896"
+          ],
+          "wrinkle": [
+            "14234203"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {
+          "acne": 11,
+          "pore": 2,
+          "spots": 11,
+          "redness": 2,
+          "wrinkle": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:40:02.578952+00:00"
+    },
+    {
+      "id": "A000000130798",
+      "name": "라끌랑 슈퍼쉴드 옴므쿠션 2종 택1",
+      "brand": "라끌랑",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.7,
+      "review_count": 466,
+      "coverage_score": 3.94,
+      "longevity_score": 3.89,
+      "lightweight_score": 2.67,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "spots"
+      ],
+      "compat_oily": 0.833,
+      "compat_dry": 0.765,
+      "compat_sensitive": null,
+      "compat_combination": 0.893,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2237e6d2ef54638b12cb75122bf3a234c017be2f952014a65c1ec9004577d62c",
+        "analyzed_at": "2026-09-18T14:54:42.528439+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 456,
+        "evidence_counts": {
+          "coverage": 34,
+          "longevity": 19,
+          "lightweight": 3
+        },
+        "skin_review_counts": {
+          "dry": 12,
+          "oily": 13,
+          "sensitive": 0,
+          "combination": 44
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "10081010",
+            "11505804",
+            "13712855",
+            "14879469",
+            "16134142"
+          ],
+          "longevity": [
+            "11505804",
+            "13712855",
+            "13904941",
+            "17508241",
+            "2375112"
+          ],
+          "lightweight": [
+            "13204075",
+            "4588878",
+            "8746350"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "14074999",
+            "18120389"
+          ],
+          "pore": [
+            "11048268",
+            "14507067",
+            "30477334"
+          ],
+          "spots": [
+            "14879469",
+            "18688397",
+            "40026243"
+          ],
+          "redness": [
+            "11505804",
+            "8953419"
+          ]
+        },
+        "negative_concern_counts": {
+          "pore": 2
+        },
+        "positive_concern_counts": {
+          "acne": 2,
+          "pore": 3,
+          "spots": 3,
+          "redness": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T09:36:18.913004+00:00"
+    },
+    {
+      "id": "A000000130814",
+      "name": "라끌랑 내츄럴 커버 옴므쿠션 3종 택1",
+      "brand": "라끌랑",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 434,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": 4,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "spots"
+      ],
+      "compat_oily": 0.824,
+      "compat_dry": 0.714,
+      "compat_sensitive": null,
+      "compat_combination": 0.857,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b6bff42e024067713780c308b9ccd82a90cc0bf2e0f419bb9ed79e8775f52b96",
+        "analyzed_at": "2026-09-18T14:54:43.371029+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 421,
+        "evidence_counts": {
+          "coverage": 36,
+          "longevity": 30,
+          "lightweight": 3
+        },
+        "skin_review_counts": {
+          "dry": 9,
+          "oily": 12,
+          "sensitive": 0,
+          "combination": 30
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "10105417",
+            "11645642",
+            "12209875",
+            "12771023",
+            "12858808"
+          ],
+          "longevity": [
+            "11827941",
+            "12944356",
+            "13180764",
+            "14406961",
+            "17369225"
+          ],
+          "lightweight": [
+            "17369225",
+            "3956158",
+            "8890247"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "14828350",
+            "16194838",
+            "19082909",
+            "20848560",
+            "21154622"
+          ],
+          "pore": [
+            "12858808",
+            "39408758"
+          ],
+          "spots": [
+            "10461259",
+            "14828350",
+            "15165031",
+            "16194838",
+            "2334491"
+          ],
+          "redness": [
+            "12209875"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "wrinkle": 1
+        },
+        "positive_concern_counts": {
+          "acne": 41,
+          "pore": 2,
+          "spots": 12,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:40:25.601786+00:00"
+    },
+    {
+      "id": "A000000130815",
+      "name": "라끌랑 쫀쫀밀착 비비옴므",
+      "brand": "라끌랑",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 388,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne"
+      ],
+      "compat_oily": 0.75,
+      "compat_dry": 0.853,
+      "compat_sensitive": null,
+      "compat_combination": 0.781,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c9586e385939500978ab4a371d975e549645a48e30ad22f124a6ca572ebb754a",
+        "analyzed_at": "2026-09-18T14:54:45.048957+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 377,
+        "evidence_counts": {
+          "coverage": 34,
+          "longevity": 13,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 12,
+          "oily": 7,
+          "sensitive": 0,
+          "combination": 11
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "10219715",
+            "13125671",
+            "13174607",
+            "14447143",
+            "17563297"
+          ],
+          "longevity": [
+            "19426984",
+            "25225576",
+            "28244032",
+            "31340207",
+            "3161761"
+          ],
+          "lightweight": [
+            "35156221",
+            "38877174"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "17010059",
+            "25225576",
+            "31340207",
+            "32406456",
+            "33200826"
+          ],
+          "pore": [
+            "55490581"
+          ],
+          "spots": [
+            "24541581",
+            "7461814"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 10,
+          "pore": 1,
+          "spots": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T08:39:22.536135+00:00"
+    },
+    {
+      "id": "A000000131803",
+      "name": "다슈 맨즈 아쿠아 매트 비비 쿠션 15g",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.6,
+      "review_count": 92,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2cab34f1fe1fc79fddaa119a6133cdc133b86c4c2ca78eb0f2b3b5792a82ee9c",
+        "analyzed_at": "2026-09-18T14:54:45.925603+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 64,
+        "evidence_counts": {
+          "coverage": 5,
+          "longevity": 1,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 1,
+          "oily": 3,
+          "sensitive": 0,
+          "combination": 3
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "15074028",
+            "17250452",
+            "29827261",
+            "32935424",
+            "35464282"
+          ],
+          "longevity": [
+            "20650251"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "32935424"
+          ],
+          "pore": [
+            "32935424"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 2
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:40:46.838107+00:00"
+    },
+    {
+      "id": "A000000138949",
+      "name": "다슈 맨즈 비타붐 톤업크림 50ml",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.7,
+      "review_count": 216,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.869,
+      "compat_dry": 0.821,
+      "compat_sensitive": null,
+      "compat_combination": 0.845,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "1c0454a8bf04a3ccfc7b14143c4e4724a4a6c9c445b74062fe5fd50a6dea861e",
+        "analyzed_at": "2026-09-18T14:54:47.363655+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 206,
+        "evidence_counts": {
+          "coverage": 2,
+          "longevity": 0,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 9,
+          "oily": 16,
+          "sensitive": 0,
+          "combination": 16
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "15573463",
+            "8642227"
+          ],
+          "lightweight": [
+            "32951427",
+            "38856143"
+          ]
+        },
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:38:34.073593+00:00"
+    },
+    {
+      "id": "A000000142173",
+      "name": "[피부착붙컬러] 그라펜 매치업 파운데이션 40ml 단품/기획",
+      "brand": "그라펜",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 233,
+      "coverage_score": 3.87,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore"
+      ],
+      "compat_oily": 0.75,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.885,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "8a467094ff975986cd7ae22b0d08f7ca1fa6475260e6f687e03b6056203157be",
+        "analyzed_at": "2026-09-18T14:54:48.117479+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 223,
+        "evidence_counts": {
+          "coverage": 15,
+          "longevity": 7,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 4,
+          "oily": 5,
+          "sensitive": 0,
+          "combination": 19
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "10183963",
+            "11650689",
+            "11873751",
+            "12066892",
+            "14682632"
+          ],
+          "longevity": [
+            "11555175",
+            "14362039",
+            "15493214",
+            "19994778",
+            "21968677"
+          ],
+          "lightweight": [
+            "14398385",
+            "32574661"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "15162919",
+            "15212806",
+            "15533296",
+            "15652853",
+            "8708512"
+          ],
+          "pore": [
+            "14682632",
+            "16525817",
+            "28465032",
+            "8708512"
+          ],
+          "spots": [
+            "18165565",
+            "18165579"
+          ],
+          "redness": [
+            "14682632"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {
+          "acne": 5,
+          "pore": 4,
+          "spots": 2,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:42:20.62632+00:00"
+    },
+    {
+      "id": "A000000161010",
+      "name": "[덱스 PICK] 오브제 내추럴 커버 파운데이션 13g (SPF50+, PA++++)",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": null,
+      "review_count": null,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b63167cdb7cb198d0e093584c43b338f5cd44ccd12cef56506048fac815c2647",
+        "analyzed_at": "2026-09-18T14:54:48.701304+00:00",
+        "shade_source": "catalog",
+        "analyzed_count": 3,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 1,
+          "combination": 1
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-18T14:32:06.040989+00:00"
+    },
+    {
+      "id": "A000000161093",
+      "name": "[덱스 PICK]오브제 씬 스틸 컨실러 5g",
+      "brand": "오브제",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 4.8,
+      "review_count": 605,
+      "coverage_score": 3.9,
+      "longevity_score": 3.71,
+      "lightweight_score": 3.2,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.883,
+      "compat_dry": 0.824,
+      "compat_sensitive": null,
+      "compat_combination": 0.924,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "47dd86a3f40fa7fb7aeebe72c26daf6dfed465f5356dcbed9acacc331f6f0134",
+        "analyzed_at": "2026-09-18T14:54:49.661774+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 591,
+        "evidence_counts": {
+          "coverage": 84,
+          "longevity": 28,
+          "lightweight": 5
+        },
+        "skin_review_counts": {
+          "dry": 22,
+          "oily": 25,
+          "sensitive": 0,
+          "combination": 61
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "14365493",
+            "14367595",
+            "14589192",
+            "14764676",
+            "15700734"
+          ],
+          "longevity": [
+            "16087508",
+            "18711075",
+            "19340330",
+            "19619058",
+            "19825229"
+          ],
+          "lightweight": [
+            "36184542",
+            "37631329",
+            "38305163",
+            "38922807",
+            "40129799"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "14764676",
+            "16143217",
+            "20070590",
+            "20260034",
+            "20326709"
+          ],
+          "pore": [
+            "20070590",
+            "28418523",
+            "32985677",
+            "51711639"
+          ],
+          "spots": [
+            "14367595",
+            "14589192",
+            "14764676",
+            "15700734",
+            "15968000"
+          ],
+          "redness": [
+            "37897412"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 3,
+          "spots": 3
+        },
+        "positive_concern_counts": {
+          "acne": 20,
+          "pore": 4,
+          "spots": 47,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:38:45.383781+00:00"
+    },
+    {
+      "id": "A000000178092",
+      "name": "비레디 블루 파운데이션 35ml",
+      "brand": "비레디",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 987,
+      "coverage_score": 4,
+      "longevity_score": 3.79,
+      "lightweight_score": 2,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.895,
+      "compat_dry": 0.875,
+      "compat_sensitive": 0.727,
+      "compat_combination": 0.924,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "1d92c0755b487480779c2f567205fa70fa0120914b45f5d4e573abbc9274281e",
+        "analyzed_at": "2026-09-18T14:54:50.783859+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 963,
+        "evidence_counts": {
+          "coverage": 63,
+          "longevity": 28,
+          "lightweight": 3
+        },
+        "skin_review_counts": {
+          "dry": 27,
+          "oily": 38,
+          "sensitive": 6,
+          "combination": 129
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "17557444",
+            "17577736",
+            "18073394",
+            "18421669",
+            "18759186"
+          ],
+          "longevity": [
+            "17247821",
+            "19277149",
+            "19715202",
+            "20985750",
+            "20994102"
+          ],
+          "lightweight": [
+            "20391409",
+            "28433018",
+            "56004875"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "18862208",
+            "23479255"
+          ],
+          "pore": [
+            "16916097",
+            "17904177",
+            "18073394",
+            "18862208",
+            "19976632"
+          ],
+          "spots": [
+            "17247821",
+            "17904177",
+            "18073394",
+            "20009824",
+            "23524541"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 4,
+          "pore": 3,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "acne": 2,
+          "pore": 16,
+          "spots": 10
+        }
+      },
+      "last_updated_at": "2026-02-25T09:26:21.803354+00:00"
+    },
+    {
+      "id": "A000000182290",
+      "name": "다슈 맨즈 멀티 커버 스틱 파운데이션 12g 뉴트럴베이지 기획(+미니 톤 컨트롤 로션)",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 714,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "22b373f235bd9582af476f1fcaaaed52ae0c1ff33ca8de789803b3cadcda0d43",
+        "analyzed_at": "2026-09-18T14:54:51.402871+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 1,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 1
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T09:40:52.185235+00:00"
+    },
+    {
+      "id": "A000000184127",
+      "name": "라끌랑 올데이 파워 픽스쿠션 3종 택1",
+      "brand": "라끌랑",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 115,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": 3.5,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": 0.75,
+      "compat_sensitive": null,
+      "compat_combination": 0.844,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "ad9eea9eabab1583cb6180ba1d7051c3e4fe08b16a805afe1c1410f75ae29baa",
+        "analyzed_at": "2026-09-18T14:54:51.951060+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 106,
+        "evidence_counts": {
+          "coverage": 6,
+          "longevity": 3,
+          "lightweight": 4
+        },
+        "skin_review_counts": {
+          "dry": 7,
+          "oily": 3,
+          "sensitive": 0,
+          "combination": 11
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "22204794",
+            "28652901",
+            "33523241",
+            "35635014",
+            "35636164"
+          ],
+          "longevity": [
+            "28324301",
+            "34418671",
+            "35541678"
+          ],
+          "lightweight": [
+            "29280965",
+            "33089071",
+            "34403436",
+            "35635014"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "29278215"
+          ],
+          "pore": [
+            "29278215"
+          ],
+          "spots": [
+            "29278215"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 1,
+          "spots": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:41:26.532793+00:00"
+    },
+    {
+      "id": "A000000187410",
+      "name": "[촉촉톤업] 무칸 수분 젤 톤케어 크림 50ml 2종(23호/25호) 택1",
+      "brand": "무칸",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 103,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [
+        "23",
+        "25"
+      ],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.708,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "8a001f72b9cebb2815e1d5907b371b7fa7bb6d13ead1845a572b0cc0def3ad75",
+        "analyzed_at": "2026-09-18T14:54:52.496021+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 92,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 4,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 1,
+          "sensitive": 0,
+          "combination": 7
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "26435713",
+            "30718958",
+            "32381782",
+            "33295868"
+          ],
+          "longevity": [
+            "20863221",
+            "21507885",
+            "30718958",
+            "45298815"
+          ],
+          "lightweight": [
+            "21214515"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "21587173"
+          ],
+          "spots": [
+            "21035991"
+          ]
+        },
+        "negative_concern_counts": {
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "spots": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:39:41.760076+00:00"
+    },
+    {
+      "id": "A000000187413",
+      "name": "무칸 옴므 퍼펙트 스팟 컨실러 2ml",
+      "brand": "무칸",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 4.4,
+      "review_count": 20,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2b5cad5edb9b572657524f944d3358851fff1ddc84cee74a4120700771d3f6b0",
+        "analyzed_at": "2026-09-18T14:54:53.089834+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 10,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {
+          "spots": [
+            "26277779"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "spots": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:39:47.950307+00:00"
+    },
+    {
+      "id": "A000000187415",
+      "name": "무칸 옴므 포어커버 프라이머 30ml",
+      "brand": "무칸",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.6,
+      "review_count": 14,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "9cb4cfc26898679a621d779de05c26ccb21e0deb081213c0bfa87d823bf6c24f",
+        "analyzed_at": "2026-09-18T14:54:53.968582+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 4,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:39:49.790732+00:00"
+    },
+    {
+      "id": "A000000191833",
+      "name": "듀이셀 큐라톤즈 모이스쳐 40ml",
+      "brand": "듀이셀",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.6,
+      "review_count": 97,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "oily",
+        "combination"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.729,
+      "compat_dry": 0.886,
+      "compat_sensitive": null,
+      "compat_combination": 0.688,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c921d2baea7bed05b1715d96ba61c5ca3580f36133f1d890c621dd6021b943c2",
+        "analyzed_at": "2026-09-18T14:54:54.588311+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 87,
+        "evidence_counts": {
+          "coverage": 2,
+          "longevity": 1,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 17,
+          "oily": 7,
+          "sensitive": 3,
+          "combination": 11
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "24239303",
+            "25818292"
+          ],
+          "longevity": [
+            "25295575"
+          ],
+          "lightweight": [
+            "26018485"
+          ]
+        },
+        "concern_evidence_ids": {
+          "spots": [
+            "25818292",
+            "26010218"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "spots": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T08:39:51.449487+00:00"
+    },
+    {
+      "id": "A000000192866",
+      "name": "비레디 트루 톤 로션 33ml+33ml 리필 기획 2종 택1",
+      "brand": "비레디",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.7,
+      "review_count": 2097,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": "성분 확인",
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b510ffabcc86c8e67ac2b402dddad837c6db83133bb1a609eb0d18c9fc359da9",
+        "analyzed_at": "2026-09-18T14:54:55.292228+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:42:48.346423+00:00"
+    },
+    {
+      "id": "A000000198001",
+      "name": "[1등파데] 오브제 내추럴 커버 파운데이션 단품/기획(+클렌징폼 50ml)",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 7843,
+      "coverage_score": 3.93,
+      "longevity_score": 3.96,
+      "lightweight_score": 2.17,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.928,
+      "compat_dry": 0.927,
+      "compat_sensitive": 0.808,
+      "compat_combination": 0.957,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "907b03459ada6df02856ce1cff362ff4c6f206a635bfb958e03ebae5ef1d4f68",
+        "analyzed_at": "2026-09-18T14:54:56.921476+00:00",
+        "shade_source": "catalog",
+        "analyzed_count": 1263,
+        "evidence_counts": {
+          "coverage": 117,
+          "longevity": 46,
+          "lightweight": 23
+        },
+        "skin_review_counts": {
+          "dry": 74,
+          "oily": 116,
+          "sensitive": 8,
+          "combination": 308
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "12246178",
+            "13814068",
+            "16057684",
+            "16058487",
+            "16058528"
+          ],
+          "longevity": [
+            "13814068",
+            "14944999",
+            "15008517",
+            "16058528",
+            "16708703"
+          ],
+          "lightweight": [
+            "12947568",
+            "13610595",
+            "16058487",
+            "17931728",
+            "18581539"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "18581539",
+            "18581611",
+            "19534198",
+            "19534239",
+            "21577276"
+          ],
+          "pore": [
+            "12216128",
+            "17227840",
+            "18286394",
+            "18581539",
+            "18581611"
+          ],
+          "spots": [
+            "12216128",
+            "15062849",
+            "16058528",
+            "17227840",
+            "21623962"
+          ],
+          "redness": [
+            "23722130",
+            "23747763",
+            "45711473",
+            "45743925",
+            "47380521"
+          ],
+          "wrinkle": [
+            "13814068",
+            "25342105"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 5,
+          "pore": 3,
+          "spots": 6
+        },
+        "positive_concern_counts": {
+          "acne": 17,
+          "pore": 54,
+          "spots": 43,
+          "redness": 6,
+          "wrinkle": 2
+        }
+      },
+      "last_updated_at": "2026-09-18T14:31:50.081836+00:00"
+    },
+    {
+      "id": "A000000200388",
+      "name": "두잉왓 소프트 블러링 필터 쿠션 15g 단품/기획",
+      "brand": "두잉왓",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 231,
+      "coverage_score": 3.9,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.848,
+      "compat_dry": 0.762,
+      "compat_sensitive": null,
+      "compat_combination": 0.869,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b66609bc6f31b9d579d611fcc5d7f5aaacdce175f4cc4115f6325ffc18a07049",
+        "analyzed_at": "2026-09-18T14:54:57.623237+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 221,
+        "evidence_counts": {
+          "coverage": 21,
+          "longevity": 5,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 16,
+          "oily": 18,
+          "sensitive": 2,
+          "combination": 35
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "26159971",
+            "26184745",
+            "26195325",
+            "26243074",
+            "26398172"
+          ],
+          "longevity": [
+            "26159971",
+            "26355323",
+            "31738944",
+            "33806862",
+            "49371314"
+          ],
+          "lightweight": [
+            "26652531"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "26184745",
+            "26287996",
+            "26398172"
+          ],
+          "pore": [
+            "26560647",
+            "26909510",
+            "48490689"
+          ],
+          "spots": [
+            "26398172",
+            "26555774",
+            "26909510",
+            "33338581",
+            "45455414"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 3
+        },
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 3,
+          "spots": 6
+        }
+      },
+      "last_updated_at": "2026-02-25T09:36:03.115956+00:00"
+    },
+    {
+      "id": "A000000203000",
+      "name": "라끌랑 올데이 픽싱 커버 파운데이션 30ml (1호/2호) 2종 택1",
+      "brand": "라끌랑",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 55,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "f537bb2bb176f0f947982729045eb977cfd54342561d7e2d6e3f07be26825f94",
+        "analyzed_at": "2026-09-18T14:54:58.189632+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 45,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 4,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "37985214",
+            "37985329",
+            "37986920",
+            "37989128"
+          ],
+          "longevity": [
+            "37985214",
+            "37985219",
+            "37985329",
+            "37986925"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "46898234"
+          ],
+          "spots": [
+            "37985329"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "pore": 1,
+          "spots": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:42:32.628173+00:00"
+    },
+    {
+      "id": "A000000204825",
+      "name": "듀이셀 트루빔 파운데이션 12g",
+      "brand": "듀이셀",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 5,
+      "review_count": 1802,
+      "coverage_score": 3.94,
+      "longevity_score": 3.9,
+      "lightweight_score": 2.88,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "sensitive",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.935,
+      "compat_dry": 0.921,
+      "compat_sensitive": 0.792,
+      "compat_combination": 0.956,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "f2c3a9673dc945ec1ddf27a8e3f71dd78b94251fdc157ad3f2685fd8de6b274c",
+        "analyzed_at": "2026-09-18T14:54:59.901491+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 941,
+        "evidence_counts": {
+          "coverage": 126,
+          "longevity": 60,
+          "lightweight": 25
+        },
+        "skin_review_counts": {
+          "dry": 33,
+          "oily": 49,
+          "sensitive": 7,
+          "combination": 104
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "27852800",
+            "28334765",
+            "28334817",
+            "28341954",
+            "28358944"
+          ],
+          "longevity": [
+            "27990881",
+            "28050609",
+            "28050874",
+            "28106886",
+            "28358892"
+          ],
+          "lightweight": [
+            "28341954",
+            "28379676",
+            "29186974",
+            "29801884",
+            "30104875"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "28105855",
+            "28106886",
+            "28402491",
+            "29156168",
+            "29183767"
+          ],
+          "pore": [
+            "27852800",
+            "27927010",
+            "28106886",
+            "28148972",
+            "28312877"
+          ],
+          "spots": [
+            "27852800",
+            "27927010",
+            "28106886",
+            "28334765",
+            "28334817"
+          ],
+          "redness": [
+            "30268510",
+            "30559238",
+            "30591266",
+            "30895365"
+          ],
+          "wrinkle": [
+            "30695081"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 10,
+          "pore": 4,
+          "spots": 12
+        },
+        "positive_concern_counts": {
+          "acne": 39,
+          "pore": 87,
+          "spots": 95,
+          "redness": 4,
+          "wrinkle": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:41:32.809829+00:00"
+    },
+    {
+      "id": "A000000204828",
+      "name": "듀이셀 큐라톤즈 모이스처 40ml 기획",
+      "brand": "듀이셀",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 458,
+      "coverage_score": 3.83,
+      "longevity_score": 3.86,
+      "lightweight_score": 3.33,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "oily",
+        "combination"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "spots",
+        "wrinkle"
+      ],
+      "compat_oily": 0.859,
+      "compat_dry": 0.855,
+      "compat_sensitive": null,
+      "compat_combination": 0.909,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "14c786d18c094273f0fab4e6f5695db9a5d64efcbb848e753e9122080789d91e",
+        "analyzed_at": "2026-09-18T14:55:00.864870+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 359,
+        "evidence_counts": {
+          "coverage": 12,
+          "longevity": 14,
+          "lightweight": 3
+        },
+        "skin_review_counts": {
+          "dry": 14,
+          "oily": 18,
+          "sensitive": 2,
+          "combination": 28
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "27917105",
+            "27949778",
+            "28050650",
+            "28263104",
+            "28337047"
+          ],
+          "longevity": [
+            "25339344",
+            "25641137",
+            "25752640",
+            "26034886",
+            "26404287"
+          ],
+          "lightweight": [
+            "28343333",
+            "28362650",
+            "33124683"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "27970255",
+            "28306668",
+            "28314490",
+            "28314683",
+            "33128089"
+          ],
+          "pore": [
+            "27917105",
+            "28222881"
+          ],
+          "spots": [
+            "25391708",
+            "28050650",
+            "28106697",
+            "28238430",
+            "28314490"
+          ],
+          "wrinkle": [
+            "27917105",
+            "27928878",
+            "27970255",
+            "28106697",
+            "28237029"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 3
+        },
+        "positive_concern_counts": {
+          "acne": 7,
+          "pore": 2,
+          "spots": 8,
+          "wrinkle": 6
+        }
+      },
+      "last_updated_at": "2026-02-25T08:39:57.111026+00:00"
+    },
+    {
+      "id": "A000000205969",
+      "name": "다슈 맨즈 브라이트닝 톤업 로션 50g",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 121,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": 4,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.808,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.898,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "558951b9d82b40fc9ceeb0f291299acd21a019353468aea7e48bf9f89c82f240",
+        "analyzed_at": "2026-09-18T14:55:01.496424+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 110,
+        "evidence_counts": {
+          "coverage": 1,
+          "longevity": 1,
+          "lightweight": 4
+        },
+        "skin_review_counts": {
+          "dry": 4,
+          "oily": 8,
+          "sensitive": 4,
+          "combination": 39
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "35505704"
+          ],
+          "longevity": [
+            "35392482"
+          ],
+          "lightweight": [
+            "30779795",
+            "35598851",
+            "38191424",
+            "47917098"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "38191424"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "pore": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:40:22.771173+00:00"
+    },
+    {
+      "id": "A000000205970",
+      "name": "다슈 맨즈 톤 컨트롤 커버로션 65ml 기획 (+클렌징오일 20ml) 2종",
+      "brand": "다슈",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 317,
+      "coverage_score": 3.57,
+      "longevity_score": 3.5,
+      "lightweight_score": 2.86,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.869,
+      "compat_dry": 0.812,
+      "compat_sensitive": null,
+      "compat_combination": 0.917,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "274fdeb4cc5a7491af59f9843c0456b04d309f18871ee6e6d054ebf1fe09b28f",
+        "analyzed_at": "2026-09-18T14:55:02.389384+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 307,
+        "evidence_counts": {
+          "coverage": 14,
+          "longevity": 8,
+          "lightweight": 7
+        },
+        "skin_review_counts": {
+          "dry": 23,
+          "oily": 16,
+          "sensitive": 0,
+          "combination": 37
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "28996236",
+            "31894838",
+            "32013485",
+            "32271172",
+            "32385803"
+          ],
+          "longevity": [
+            "31880197",
+            "31880256",
+            "32037524",
+            "32075313",
+            "33128255"
+          ],
+          "lightweight": [
+            "31880197",
+            "31912006",
+            "31978914",
+            "32005933",
+            "32027852"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "31960337"
+          ],
+          "pore": [
+            "28794656",
+            "29440790",
+            "31894810",
+            "32008463",
+            "32013485"
+          ],
+          "spots": [
+            "28996236",
+            "31894838",
+            "32027883",
+            "32031786",
+            "32109331"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 8,
+          "spots": 9
+        }
+      },
+      "last_updated_at": "2026-02-25T08:38:13.052293+00:00"
+    },
+    {
+      "id": "A000000206008",
+      "name": "아이오페 맨 올데이 퍼펙트 톤업 올인원 120ml 기획(+30ml)",
+      "brand": "아이오페",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 175,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "combination",
+        "oily"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.75,
+      "compat_dry": 0.821,
+      "compat_sensitive": null,
+      "compat_combination": 0.881,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2411a145d5758cc618515d49330d3a892f6e84d085affd21b60c1288850c7f0f",
+        "analyzed_at": "2026-09-18T14:55:02.948457+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 163,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 9,
+          "oily": 5,
+          "sensitive": 0,
+          "combination": 16
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {
+          "spots": [
+            "34437261",
+            "52103251"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "spots": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:49.948653+00:00"
+    },
+    {
+      "id": "A000000206573",
+      "name": "[하루종일 착붙] 원오브뎀 드 뗑 쿠션 12g(1호, 2호)",
+      "brand": "원오브뎀",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 5,
+      "review_count": 1182,
+      "coverage_score": 3.95,
+      "longevity_score": 3.72,
+      "lightweight_score": 2.65,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "combination",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots",
+        "wrinkle"
+      ],
+      "compat_oily": 0.966,
+      "compat_dry": 0.919,
+      "compat_sensitive": null,
+      "compat_combination": 0.979,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "52733a3015f3e3ea50086318710d859d9e544b693f847377299e7debe18ec634",
+        "analyzed_at": "2026-09-18T14:55:05.146402+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 1174,
+        "evidence_counts": {
+          "coverage": 208,
+          "longevity": 64,
+          "lightweight": 37
+        },
+        "skin_review_counts": {
+          "dry": 35,
+          "oily": 76,
+          "sensitive": 1,
+          "combination": 126
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "29406339",
+            "29480366",
+            "29507733",
+            "29521765",
+            "29534668"
+          ],
+          "longevity": [
+            "29519037",
+            "29548690",
+            "30461681",
+            "30471355",
+            "30500314"
+          ],
+          "lightweight": [
+            "29407134",
+            "29566905",
+            "30496546",
+            "30595147",
+            "30694828"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "29450470",
+            "29481576",
+            "30472216",
+            "30481035",
+            "30497248"
+          ],
+          "pore": [
+            "29387587",
+            "29407134",
+            "29450470",
+            "29481576",
+            "29524743"
+          ],
+          "spots": [
+            "29368952",
+            "29376017",
+            "29387587",
+            "29406339",
+            "29407134"
+          ],
+          "redness": [
+            "40185476",
+            "40392356",
+            "40483212",
+            "43431142",
+            "44058399"
+          ],
+          "wrinkle": [
+            "44877112",
+            "47006003",
+            "47034108",
+            "47434970"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 10,
+          "pore": 9,
+          "spots": 12,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 42,
+          "pore": 85,
+          "spots": 145,
+          "redness": 12,
+          "wrinkle": 4
+        }
+      },
+      "last_updated_at": "2026-02-25T09:38:17.416271+00:00"
+    },
+    {
+      "id": "A000000207177",
+      "name": "[리뉴얼/민감성]그라펜 매치업 톤 커버 로션 시카그린 라이트 50ml 기획 (+미니어처 10ml)",
+      "brand": "그라펜",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 1288,
+      "coverage_score": 3.95,
+      "longevity_score": 4,
+      "lightweight_score": 2.9,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "oily",
+        "combination"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots",
+        "wrinkle"
+      ],
+      "compat_oily": 0.965,
+      "compat_dry": 0.964,
+      "compat_sensitive": null,
+      "compat_combination": 0.967,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b627182775f51a26de7ba317d05dfcddcbf1fad21e72eae2463b7c29799c10b7",
+        "analyzed_at": "2026-09-18T14:55:07.055093+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 1280,
+        "evidence_counts": {
+          "coverage": 119,
+          "longevity": 26,
+          "lightweight": 20
+        },
+        "skin_review_counts": {
+          "dry": 65,
+          "oily": 87,
+          "sensitive": 2,
+          "combination": 86
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "29616167",
+            "29657050",
+            "29781926",
+            "29783327",
+            "29828388"
+          ],
+          "longevity": [
+            "29630906",
+            "29653454",
+            "29710789",
+            "29838921",
+            "29937403"
+          ],
+          "lightweight": [
+            "29776948",
+            "29855775",
+            "29929713",
+            "29978801",
+            "30049492"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "29815143",
+            "29815829",
+            "29860853",
+            "29888904",
+            "29954606"
+          ],
+          "pore": [
+            "29568895",
+            "29667824",
+            "29671932",
+            "29682205",
+            "29698498"
+          ],
+          "spots": [
+            "29568895",
+            "29580146",
+            "29615768",
+            "29653454",
+            "29667577"
+          ],
+          "redness": [
+            "29568895",
+            "29653454",
+            "29671932",
+            "29682205",
+            "29698498"
+          ],
+          "wrinkle": [
+            "29616167",
+            "30066836",
+            "30258594",
+            "30310540"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "pore": 2,
+          "spots": 6,
+          "redness": 8
+        },
+        "positive_concern_counts": {
+          "acne": 17,
+          "pore": 133,
+          "spots": 111,
+          "redness": 88,
+          "wrinkle": 4
+        }
+      },
+      "last_updated_at": "2026-02-25T08:41:01.977408+00:00"
+    },
+    {
+      "id": "A000000207369",
+      "name": "두잉왓 스킨톤 필터 로션 55ml(기획/단품)",
+      "brand": "두잉왓",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 979,
+      "coverage_score": 3.76,
+      "longevity_score": 3.75,
+      "lightweight_score": 4,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.906,
+      "compat_dry": 0.927,
+      "compat_sensitive": null,
+      "compat_combination": 0.942,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "98518fd52c02dd1e4f90b0d55307e05601b2fb92035443d7f226d36d42e46cac",
+        "analyzed_at": "2026-09-18T14:55:08.488322+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 966,
+        "evidence_counts": {
+          "coverage": 41,
+          "longevity": 16,
+          "lightweight": 6
+        },
+        "skin_review_counts": {
+          "dry": 43,
+          "oily": 35,
+          "sensitive": 0,
+          "combination": 90
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "29482589",
+            "29501197",
+            "29537722",
+            "29586171",
+            "29591867"
+          ],
+          "longevity": [
+            "29521109",
+            "29598236",
+            "29747004",
+            "31540317",
+            "32753866"
+          ],
+          "lightweight": [
+            "29521703",
+            "29591867",
+            "29736875",
+            "32770215",
+            "35542070"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "29630887",
+            "29632694",
+            "32591777",
+            "32647949",
+            "33024886"
+          ],
+          "pore": [
+            "29473831",
+            "29478232",
+            "29667131",
+            "30343916",
+            "32687738"
+          ],
+          "spots": [
+            "29473831",
+            "29479756",
+            "29482408",
+            "29491327",
+            "29516058"
+          ],
+          "redness": [
+            "31049749"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 3,
+          "pore": 1,
+          "spots": 2
+        },
+        "positive_concern_counts": {
+          "acne": 6,
+          "pore": 15,
+          "spots": 22,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:35:16.995262+00:00"
+    },
+    {
+      "id": "A000000207759",
+      "name": "엠도씨 엔드 핏 스틱 비비 파운데이션 13g (1호/2호/3호)",
+      "brand": "엠도씨",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 33,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2f932be7ff8ea3c261d114153991e2e5e73dbd5fd35cadc42fc9ed882b92eda8",
+        "analyzed_at": "2026-09-18T14:55:09.058079+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 24,
+        "evidence_counts": {
+          "coverage": 2,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 3
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "37094264",
+            "46073782"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "43547024"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:42:17.972441+00:00"
+    },
+    {
+      "id": "A000000208723",
+      "name": "스콧해미쉬 비브레이브 올인원 비비 에센스 80ml",
+      "brand": "스콧해미쉬",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.7,
+      "review_count": 15,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "56f1befa806262c1158bddb4631619c98286c7746aaf0fb48b2e05b49275e5d1",
+        "analyzed_at": "2026-09-18T14:55:09.643883+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 5,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:40:29.27168+00:00"
+    },
+    {
+      "id": "A000000210921",
+      "name": "더페이스샵 스피프코드 커버 비비 크림 50ml",
+      "brand": "더페이스샵",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.3,
+      "review_count": 9,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "39822831792aa5f4f27bcdf7f782f22ff0ae46bf517ffc4f3c5075b14bc3da28",
+        "analyzed_at": "2026-09-18T14:55:10.006343+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:40:30.991728+00:00"
+    },
+    {
+      "id": "A000000212063",
+      "name": "비레디 블루 쿠션 4세대 15g(SPF 34 PA++)",
+      "brand": "비레디",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 5292,
+      "coverage_score": 3.88,
+      "longevity_score": 3.87,
+      "lightweight_score": 2.77,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.963,
+      "compat_dry": 0.955,
+      "compat_sensitive": 0.868,
+      "compat_combination": 0.96,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "2e669bcfe126f0351ef81b097f6b786deacb995e30b0976bba989c47c6182b77",
+        "analyzed_at": "2026-09-18T14:55:13.927162+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 3837,
+        "evidence_counts": {
+          "coverage": 276,
+          "longevity": 151,
+          "lightweight": 31
+        },
+        "skin_review_counts": {
+          "dry": 197,
+          "oily": 192,
+          "sensitive": 14,
+          "combination": 614
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "13421265",
+            "14201685",
+            "14498656",
+            "14508357",
+            "14537557"
+          ],
+          "longevity": [
+            "13321731",
+            "13881900",
+            "13884294",
+            "14017097",
+            "14537557"
+          ],
+          "lightweight": [
+            "13620197",
+            "14073834",
+            "14147820",
+            "15191844",
+            "15718663"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "14106025",
+            "14672634",
+            "14694319",
+            "15106315",
+            "16285230"
+          ],
+          "pore": [
+            "13443451",
+            "14420059",
+            "14498656",
+            "14566852",
+            "14694319"
+          ],
+          "spots": [
+            "13663921",
+            "14310071",
+            "14566852",
+            "14672634",
+            "15164386"
+          ],
+          "redness": [
+            "19566490",
+            "23043645",
+            "23078338",
+            "26410193",
+            "27773294"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 20,
+          "pore": 12,
+          "spots": 8,
+          "wrinkle": 3
+        },
+        "positive_concern_counts": {
+          "acne": 62,
+          "pore": 96,
+          "spots": 51,
+          "redness": 13
+        }
+      },
+      "last_updated_at": "2026-02-25T09:31:24.923215+00:00"
+    },
+    {
+      "id": "A000000212991",
+      "name": "[올인원커버/자연피부톤보정] 정샘물 맨 슬림핏 커버 로션",
+      "brand": "정샘물",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 266,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": 4,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.819,
+      "compat_dry": 0.917,
+      "compat_sensitive": null,
+      "compat_combination": 0.923,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "5b05f454ccbea9380377e4ae60f85e78481d21d2f5173d065d8608c159ca7860",
+        "analyzed_at": "2026-09-18T14:55:14.700203+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 255,
+        "evidence_counts": {
+          "coverage": 35,
+          "longevity": 3,
+          "lightweight": 3
+        },
+        "skin_review_counts": {
+          "dry": 31,
+          "oily": 13,
+          "sensitive": 2,
+          "combination": 50
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "36557077",
+            "36562584",
+            "36563895",
+            "36605568",
+            "36686645"
+          ],
+          "longevity": [
+            "36557077",
+            "36605568",
+            "38468928"
+          ],
+          "lightweight": [
+            "35235253",
+            "43994240",
+            "54863561"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "36747321",
+            "36890620",
+            "36897280",
+            "38625479"
+          ],
+          "pore": [
+            "36598373",
+            "36605568",
+            "36664091",
+            "36678036",
+            "36759401"
+          ],
+          "spots": [
+            "36598250",
+            "36598373",
+            "36664091",
+            "36678036",
+            "36747321"
+          ],
+          "redness": [
+            "36602483"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 2,
+          "pore": 2,
+          "spots": 1,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 4,
+          "pore": 13,
+          "spots": 12,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:59.427246+00:00"
+    },
+    {
+      "id": "A000000212998",
+      "name": "[투톤커버/다크서클고민템] 정샘물 맨 다크존 컨실러 1.1g 2종",
+      "brand": "정샘물",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 4.7,
+      "review_count": 80,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "spots"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.7,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c1ce291a989a99495dc97bd7bac6c65486dd42a4255bde9c52934e9b6f332511",
+        "analyzed_at": "2026-09-18T14:55:15.262494+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 67,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 2,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 2,
+          "oily": 4,
+          "sensitive": 0,
+          "combination": 5
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "34272579",
+            "36296134",
+            "38138413",
+            "48711235"
+          ],
+          "longevity": [
+            "36296432",
+            "37988593"
+          ],
+          "lightweight": [
+            "37988593"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "38205416",
+            "46908673",
+            "49818922",
+            "55400229"
+          ],
+          "spots": [
+            "34272462",
+            "35233942",
+            "36296432",
+            "37988593",
+            "46030585"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 4,
+          "spots": 11
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:34.853599+00:00"
+    },
+    {
+      "id": "A000000213066",
+      "name": "[올인원 완벽커버] 스웨거 톤 커버 파운데이션 스틱 [1호/2호]",
+      "brand": "스웨거",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 263,
+      "coverage_score": 3.96,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "oily",
+        "dry",
+        "combination"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.875,
+      "compat_dry": 0.804,
+      "compat_sensitive": null,
+      "compat_combination": 0.821,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "846bd44e28ae5c098ba4a3887ad96c35a894968b3961d1cd42d8452af7e6af84",
+        "analyzed_at": "2026-09-18T14:55:16.004539+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 254,
+        "evidence_counts": {
+          "coverage": 45,
+          "longevity": 10,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 9,
+          "oily": 19,
+          "sensitive": 1,
+          "combination": 9
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "33447734",
+            "33485797",
+            "33486763",
+            "33525268",
+            "33537322"
+          ],
+          "longevity": [
+            "33523065",
+            "35853095",
+            "37325936",
+            "37338447",
+            "37700271"
+          ],
+          "lightweight": [
+            "37345569",
+            "37723154"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "33447734",
+            "38346552",
+            "39236139"
+          ],
+          "pore": [
+            "33486763",
+            "33571199",
+            "33583487",
+            "33589582",
+            "33694883"
+          ],
+          "spots": [
+            "33485797",
+            "33495073",
+            "33501284",
+            "33522345",
+            "33551698"
+          ],
+          "wrinkle": [
+            "33551698"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 21,
+          "spots": 24,
+          "wrinkle": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:39:18.817847+00:00"
+    },
+    {
+      "id": "A000000213068",
+      "name": "[올인원 커버로션] 스웨거 이지 톤 로션 40ml",
+      "brand": "스웨거",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 210,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "oily",
+        "combination"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.833,
+      "compat_dry": 0.844,
+      "compat_sensitive": null,
+      "compat_combination": 0.87,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "05456eb8a7960f625a5ed52753ba03b4aa27b4574fd0d03f2d4c74ccb6a618c0",
+        "analyzed_at": "2026-09-18T14:55:16.742266+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 200,
+        "evidence_counts": {
+          "coverage": 17,
+          "longevity": 4,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 11,
+          "oily": 10,
+          "sensitive": 0,
+          "combination": 18
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "33303156",
+            "33587957",
+            "33592169",
+            "33985014",
+            "34881147"
+          ],
+          "longevity": [
+            "33350464",
+            "33918457",
+            "34881147",
+            "37385638"
+          ],
+          "lightweight": [
+            "33845462",
+            "34828552"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "33555068",
+            "33749547",
+            "33849383",
+            "46504844"
+          ],
+          "spots": [
+            "33285379",
+            "33555046",
+            "33555068",
+            "33758955",
+            "33772090"
+          ],
+          "redness": [
+            "38127342"
+          ]
+        },
+        "negative_concern_counts": {
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "pore": 4,
+          "spots": 7,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:40:32.07063+00:00"
+    },
+    {
+      "id": "A000000214028",
+      "name": "듀이셀 유브이 트루 커버 쿠션 15g 2종 택 1",
+      "brand": "듀이셀",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 39,
+      "coverage_score": 4,
+      "longevity_score": 4,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "da261a126ea597092497b2ba09c1557c5da645df24387e9afa312d94f97bb64a",
+        "analyzed_at": "2026-09-18T14:55:17.311777+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 29,
+        "evidence_counts": {
+          "coverage": 9,
+          "longevity": 3,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 3,
+          "sensitive": 0,
+          "combination": 2
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "34354398",
+            "34479930",
+            "34510594",
+            "34783671",
+            "38648694"
+          ],
+          "longevity": [
+            "51138885",
+            "53292534",
+            "53351616"
+          ],
+          "lightweight": [
+            "34361028"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "34438978"
+          ],
+          "pore": [
+            "34354398",
+            "34438978",
+            "34476628",
+            "34510594",
+            "34589471"
+          ],
+          "spots": [
+            "34476628",
+            "34479930",
+            "34589471",
+            "53351616"
+          ],
+          "redness": [
+            "34438978",
+            "34476628"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "pore": 1,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 7,
+          "spots": 4,
+          "redness": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T09:42:36.366998+00:00"
+    },
+    {
+      "id": "A000000217784",
+      "name": "비레디 트루 톤 로션 33ml 1+1 기획 2종 택1 (오리지널/에어리)",
+      "brand": "비레디",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.7,
+      "review_count": 1700,
+      "coverage_score": 3.79,
+      "longevity_score": 3.88,
+      "lightweight_score": 3.88,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.92,
+      "compat_dry": 0.922,
+      "compat_sensitive": 0.844,
+      "compat_combination": 0.921,
+      "ingredient_level": "성분 확인",
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "e36c52cc2b5d281485a70eabb289ec7192d014eb07724a035d91c9ce6a41cf98",
+        "analyzed_at": "2026-09-18T14:55:19.637415+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 1690,
+        "evidence_counts": {
+          "coverage": 48,
+          "longevity": 16,
+          "lightweight": 16
+        },
+        "skin_review_counts": {
+          "dry": 101,
+          "oily": 110,
+          "sensitive": 11,
+          "combination": 297
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "20883146",
+            "21059378",
+            "22213992",
+            "22238335",
+            "22281110"
+          ],
+          "longevity": [
+            "21583627",
+            "22475906",
+            "26292572",
+            "27357810",
+            "30733773"
+          ],
+          "lightweight": [
+            "21664738",
+            "22353399",
+            "24283955",
+            "24351853",
+            "29628049"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "22176371",
+            "32814910",
+            "35591190",
+            "36831277",
+            "37991314"
+          ],
+          "pore": [
+            "21485709",
+            "22238335",
+            "22642356",
+            "23463780",
+            "23544213"
+          ],
+          "spots": [
+            "21060439",
+            "22438461",
+            "23302527",
+            "23395180",
+            "23895307"
+          ],
+          "redness": [
+            "23544213",
+            "26507523",
+            "29684403",
+            "37519423",
+            "38172044"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 8,
+          "pore": 3,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 10,
+          "pore": 23,
+          "spots": 27,
+          "redness": 8
+        }
+      },
+      "last_updated_at": "2026-02-25T08:44:28.006074+00:00"
+    },
+    {
+      "id": "A000000222827",
+      "name": "[1위파데] 그라펜 팁 스케치 멀티 커버 파운데이션 20ml",
+      "brand": "그라펜",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.9,
+      "review_count": 586,
+      "coverage_score": 3.79,
+      "longevity_score": 3.88,
+      "lightweight_score": 2.75,
+      "suitable_shades": [
+        "21",
+        "23"
+      ],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.96,
+      "compat_dry": 0.87,
+      "compat_sensitive": 0.75,
+      "compat_combination": 0.858,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "f8a2ba98dde3fd9e39f1d45d32c4e1e480e7dc43fbdd5bff5b4d593ffcada91a",
+        "analyzed_at": "2026-09-18T14:55:20.748113+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 576,
+        "evidence_counts": {
+          "coverage": 38,
+          "longevity": 17,
+          "lightweight": 16
+        },
+        "skin_review_counts": {
+          "dry": 18,
+          "oily": 58,
+          "sensitive": 5,
+          "combination": 25
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "38699145",
+            "38703825",
+            "38706874",
+            "38707717",
+            "38745000"
+          ],
+          "longevity": [
+            "38707717",
+            "38709587",
+            "38812107",
+            "38887781",
+            "38899014"
+          ],
+          "lightweight": [
+            "38710391",
+            "38727874",
+            "38727930",
+            "38732606",
+            "38759045"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "38894390",
+            "38935234",
+            "39665246"
+          ],
+          "pore": [
+            "38757929",
+            "38826504",
+            "38859733",
+            "38914955",
+            "39238702"
+          ],
+          "spots": [
+            "38707717",
+            "38723771",
+            "38737966",
+            "38745000",
+            "38770717"
+          ],
+          "redness": [
+            "38894390",
+            "39055384",
+            "39743475",
+            "43924482"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 4,
+          "pore": 1,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 7,
+          "spots": 11,
+          "redness": 4
+        }
+      },
+      "last_updated_at": "2026-02-25T09:39:32.954105+00:00"
+    },
+    {
+      "id": "A000000222829",
+      "name": "[민감성/자연스러운] 그라펜 매치업 톤 커버 로션 시카그린 50ml 단품/기획",
+      "brand": "그라펜",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 1366,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [
+        "redness"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.825,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "736daa5bb7433db71e214088eb96d148919d546021694fa38529c2fa54743a25",
+        "analyzed_at": "2026-09-18T14:55:21.436907+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 80,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 2,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 4,
+          "oily": 4,
+          "sensitive": 1,
+          "combination": 15
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "38899225",
+            "46650316",
+            "47054007",
+            "51894420"
+          ],
+          "longevity": [
+            "30548626",
+            "31133145"
+          ],
+          "lightweight": [
+            "39327574"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "38896249",
+            "38899525"
+          ],
+          "redness": [
+            "30468683",
+            "30525506",
+            "44912950"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1
+        },
+        "positive_concern_counts": {
+          "pore": 2,
+          "redness": 3
+        }
+      },
+      "last_updated_at": "2026-02-25T08:36:11.470522+00:00"
+    },
+    {
+      "id": "A000000223633",
+      "name": "미닉 미니멀 커버 로션 40ml (라이트베이지/내추럴베이지)단품/기획",
+      "brand": "미닉",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 484,
+      "coverage_score": 3.84,
+      "longevity_score": 3.6,
+      "lightweight_score": 3.2,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "oily",
+        "combination",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.905,
+      "compat_dry": 0.88,
+      "compat_sensitive": 0.792,
+      "compat_combination": 0.946,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "ed537fe31518db3347041d4a7da4c7be254692cfe0596af886afcbd92eae26cc",
+        "analyzed_at": "2026-09-18T14:55:22.210782+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 463,
+        "evidence_counts": {
+          "coverage": 38,
+          "longevity": 5,
+          "lightweight": 10
+        },
+        "skin_review_counts": {
+          "dry": 20,
+          "oily": 24,
+          "sensitive": 7,
+          "combination": 64
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "40434614",
+            "40495406",
+            "40495475",
+            "43406075",
+            "43501939"
+          ],
+          "longevity": [
+            "43406075",
+            "44691696",
+            "49325898",
+            "49840849",
+            "51258680"
+          ],
+          "lightweight": [
+            "40471447",
+            "43501939",
+            "43531088",
+            "47985822",
+            "47989254"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "40515473",
+            "45180869",
+            "51340192"
+          ],
+          "pore": [
+            "38481412",
+            "38492506",
+            "43555117",
+            "44264333",
+            "44438245"
+          ],
+          "spots": [
+            "40511712",
+            "43501939",
+            "48575517",
+            "48711574",
+            "49014637"
+          ],
+          "redness": [
+            "51424621"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 3,
+          "pore": 3
+        },
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 14,
+          "spots": 11,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:34:26.531044+00:00"
+    },
+    {
+      "id": "A000000225422",
+      "name": "[밀착쿠션/OY단독기획/전용퍼프2P 증정] 정샘물 맨 슬림핏 누더 쿠션 (기획/단품)",
+      "brand": "정샘물",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 151,
+      "coverage_score": 4,
+      "longevity_score": 3.5,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "dry",
+        "oily"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.863,
+      "compat_dry": 0.817,
+      "compat_sensitive": null,
+      "compat_combination": 0.889,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "3c52db554a87f8baabc2d202d87100b0f92e83685265ce7a872ec4ac0056cc83",
+        "analyzed_at": "2026-09-18T14:55:23.014505+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 137,
+        "evidence_counts": {
+          "coverage": 9,
+          "longevity": 4,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 10,
+          "oily": 15,
+          "sensitive": 0,
+          "combination": 31
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "40203439",
+            "44032584",
+            "45786732",
+            "46677166",
+            "46933824"
+          ],
+          "longevity": [
+            "45929331",
+            "46289980",
+            "48498757",
+            "50026689"
+          ],
+          "lightweight": [
+            "46706558"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "46706558",
+            "47156660"
+          ],
+          "pore": [
+            "45576189",
+            "45665746"
+          ],
+          "spots": [
+            "46289980",
+            "46706558"
+          ],
+          "redness": [
+            "45786732"
+          ]
+        },
+        "negative_concern_counts": {
+          "pore": 1,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 2,
+          "pore": 2,
+          "spots": 2,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:37:33.968052+00:00"
+    },
+    {
+      "id": "A000000227219",
+      "name": "브리올옴므 NW 내츄럴 화이트닝 톤업 크림 50ml",
+      "brand": "브리올옴므",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 73,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "oily",
+        "combination"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": 0.808,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.75,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "4ed832488ed7a5e368a726d39942dda66465b89272ce9953d533d6c1d3b58036",
+        "analyzed_at": "2026-09-18T14:55:23.579568+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 63,
+        "evidence_counts": {
+          "coverage": 1,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 2,
+          "oily": 8,
+          "sensitive": 1,
+          "combination": 5
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "45252710"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "44480800"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "pore": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:40:48.438929+00:00"
+    },
+    {
+      "id": "A000000229158",
+      "name": "다슈 맨즈 멀티 커버 스틱 파운데이션 ( 단품/기획 )",
+      "brand": "다슈",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 714,
+      "coverage_score": 3.95,
+      "longevity_score": 3.67,
+      "lightweight_score": 3,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "dry",
+        "combination",
+        "oily"
+      ],
+      "suitable_concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.861,
+      "compat_dry": 0.872,
+      "compat_sensitive": null,
+      "compat_combination": 0.907,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "8135310652b9e1b72d86a72abcc576d1a4dbce18b24ea0ba4e5de3409f7148ee",
+        "analyzed_at": "2026-09-18T14:55:24.659899+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 689,
+        "evidence_counts": {
+          "coverage": 42,
+          "longevity": 18,
+          "lightweight": 4
+        },
+        "skin_review_counts": {
+          "dry": 34,
+          "oily": 31,
+          "sensitive": 2,
+          "combination": 62
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "19839850",
+            "19940677",
+            "20862323",
+            "21037461",
+            "21619047"
+          ],
+          "longevity": [
+            "21771755",
+            "23434566",
+            "24192126",
+            "24357119",
+            "26062802"
+          ],
+          "lightweight": [
+            "19078801",
+            "23211219",
+            "40198554",
+            "48366683"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "29851979",
+            "45302399",
+            "46025803"
+          ],
+          "pore": [
+            "21619047",
+            "22290298",
+            "24240186",
+            "25846413",
+            "27301207"
+          ],
+          "spots": [
+            "18971868",
+            "19135421",
+            "20013579",
+            "22766710",
+            "24884006"
+          ],
+          "redness": [
+            "22290298",
+            "31512417",
+            "53618060"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "spots": 2,
+          "wrinkle": 1
+        },
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 14,
+          "spots": 18,
+          "redness": 3
+        }
+      },
+      "last_updated_at": "2026-02-25T09:37:42.278699+00:00"
+    },
+    {
+      "id": "A000000233178",
+      "name": "비레디 트루 톤 로션 하이드로/에어리 40ml 기획 (+20ml 추가 증정)",
+      "brand": "비레디",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.8,
+      "review_count": 503,
+      "coverage_score": 3.73,
+      "longevity_score": 4,
+      "lightweight_score": 4,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.921,
+      "compat_dry": 0.911,
+      "compat_sensitive": null,
+      "compat_combination": 0.953,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c0ad20985d439d678143d26ace537afc942d5bae85e8575f599e47259d6c20a3",
+        "analyzed_at": "2026-09-18T14:55:25.579386+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 485,
+        "evidence_counts": {
+          "coverage": 15,
+          "longevity": 8,
+          "lightweight": 5
+        },
+        "skin_review_counts": {
+          "dry": 26,
+          "oily": 30,
+          "sensitive": 4,
+          "combination": 102
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "46832863",
+            "46942033",
+            "47050351",
+            "48009364",
+            "48013968"
+          ],
+          "longevity": [
+            "46942140",
+            "46963906",
+            "47921549",
+            "49319949",
+            "50118641"
+          ],
+          "lightweight": [
+            "46915939",
+            "47024470",
+            "47201491",
+            "47315355",
+            "52949317"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "48017253",
+            "54907160",
+            "55220605"
+          ],
+          "pore": [
+            "46911751",
+            "46922959",
+            "49482102",
+            "51054506",
+            "51714853"
+          ],
+          "spots": [
+            "46911751",
+            "48015058",
+            "48015576",
+            "48017253",
+            "51054506"
+          ],
+          "wrinkle": [
+            "46963118"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 2,
+          "spots": 2,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 3,
+          "pore": 7,
+          "spots": 6,
+          "wrinkle": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T08:34:49.317233+00:00"
+    },
+    {
+      "id": "A000000240089",
+      "name": "라끄베르 옴므리차지 데일리 톤 커버 올인원 로션 50ml",
+      "brand": "라끄베르",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 66,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.853,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "a9bcc6da5c8bf140294e8b1e180ff081b32386b03eb3139aebb3e9cd0c57e867",
+        "analyzed_at": "2026-09-18T14:55:26.117583+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 57,
+        "evidence_counts": {
+          "coverage": 2,
+          "longevity": 2,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 2,
+          "oily": 3,
+          "sensitive": 0,
+          "combination": 12
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "52391267",
+            "52677673"
+          ],
+          "longevity": [
+            "52385288",
+            "52391267"
+          ],
+          "lightweight": [
+            "54991424"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "51953500"
+          ],
+          "spots": [
+            "52390854",
+            "52677673"
+          ]
+        },
+        "negative_concern_counts": {},
+        "positive_concern_counts": {
+          "acne": 1,
+          "spots": 2
+        }
+      },
+      "last_updated_at": "2026-02-25T08:40:52.967115+00:00"
+    },
+    {
+      "id": "A000000246705",
+      "name": "[NEW/덱스PICK] 오브제 퍼펙트 커버 쿠션 15g",
+      "brand": "오브제",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 4.8,
+      "review_count": 1077,
+      "coverage_score": 3.98,
+      "longevity_score": 3.94,
+      "lightweight_score": 2,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.948,
+      "compat_dry": 0.875,
+      "compat_sensitive": null,
+      "compat_combination": 0.935,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "c242969203a5cc73b7f9ae9a822bc00fb4ba1a8d0ce42857e9e4dc322d64037c",
+        "analyzed_at": "2026-09-18T14:55:27.604016+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 1067,
+        "evidence_counts": {
+          "coverage": 93,
+          "longevity": 36,
+          "lightweight": 6
+        },
+        "skin_review_counts": {
+          "dry": 37,
+          "oily": 53,
+          "sensitive": 4,
+          "combination": 121
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "12270897",
+            "14741717",
+            "15289580",
+            "15408979",
+            "15621503"
+          ],
+          "longevity": [
+            "16040937",
+            "17104117",
+            "17369782",
+            "19328013",
+            "21603650"
+          ],
+          "lightweight": [
+            "15700708",
+            "28452743",
+            "43764631",
+            "45578343",
+            "48135870"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "15700708",
+            "17869558",
+            "27914810",
+            "32387695",
+            "38416897"
+          ],
+          "pore": [
+            "16602471",
+            "17507702",
+            "17645202",
+            "20474084",
+            "21642362"
+          ],
+          "spots": [
+            "14741717",
+            "27266800",
+            "27431723",
+            "29239839",
+            "33035578"
+          ],
+          "redness": [
+            "20041447"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 6,
+          "pore": 2
+        },
+        "positive_concern_counts": {
+          "acne": 8,
+          "pore": 16,
+          "spots": 10,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-02-25T09:27:14.496113+00:00"
+    },
+    {
+      "id": "A000000246737",
+      "name": "바우로 올인원 톤업크림 30g",
+      "brand": "바우로",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 119,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [
+        "spots"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "fcb1b8729c1c73f574034225d358a3d268198b6ecd6eaa7f2830c784628708cf",
+        "analyzed_at": "2026-09-18T14:55:28.218729+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 90,
+        "evidence_counts": {
+          "coverage": 4,
+          "longevity": 0,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 2,
+          "oily": 4,
+          "sensitive": 0,
+          "combination": 3
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "55791557",
+            "55809885",
+            "55902783",
+            "55905263"
+          ],
+          "lightweight": [
+            "55967037"
+          ]
+        },
+        "concern_evidence_ids": {
+          "pore": [
+            "55888002"
+          ],
+          "spots": [
+            "55541434",
+            "55809885",
+            "55888002",
+            "55945880"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "pore": 1,
+          "spots": 4
+        }
+      },
+      "last_updated_at": "2026-02-25T08:37:44.996479+00:00"
+    },
+    {
+      "id": "A000000249090",
+      "name": "[스테디셀러특가] [단독기획] 오브제 내추럴 커버 로션 50g 단품/기획(+미니어처 10ml)",
+      "brand": "오브제",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 4.9,
+      "review_count": 8010,
+      "coverage_score": 3.84,
+      "longevity_score": 3.85,
+      "lightweight_score": 3.64,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination",
+        "oily",
+        "dry",
+        "sensitive"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": 0.959,
+      "compat_dry": 0.965,
+      "compat_sensitive": 0.727,
+      "compat_combination": 0.966,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "4c6b5c7941cc39b9bcb2bc2912e84a0961fa1110c2980d41fed5be9e14ab5454",
+        "analyzed_at": "2026-09-18T14:55:32.127182+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 4117,
+        "evidence_counts": {
+          "coverage": 195,
+          "longevity": 66,
+          "lightweight": 61
+        },
+        "skin_review_counts": {
+          "dry": 130,
+          "oily": 155,
+          "sensitive": 6,
+          "combination": 503
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "27798298",
+            "27809751",
+            "27837295",
+            "27841443",
+            "27860481"
+          ],
+          "longevity": [
+            "27876806",
+            "27926297",
+            "27957566",
+            "29010686",
+            "29551514"
+          ],
+          "lightweight": [
+            "27859183",
+            "27869014",
+            "27910094",
+            "27952169",
+            "27957232"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "27798298",
+            "32520783",
+            "32735458",
+            "33454331",
+            "35499270"
+          ],
+          "pore": [
+            "27798298",
+            "27837295",
+            "27839474",
+            "27853182",
+            "27864904"
+          ],
+          "spots": [
+            "27843004",
+            "27857446",
+            "27865925",
+            "27865967",
+            "27922843"
+          ],
+          "redness": [
+            "27869014",
+            "27982582",
+            "27995165",
+            "28004859",
+            "35793483"
+          ],
+          "wrinkle": [
+            "39058642"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 14,
+          "pore": 4,
+          "spots": 6,
+          "redness": 1
+        },
+        "positive_concern_counts": {
+          "acne": 21,
+          "pore": 70,
+          "spots": 85,
+          "redness": 12,
+          "wrinkle": 1
+        }
+      },
+      "last_updated_at": "2026-03-04T05:01:16.293412+00:00"
+    },
+    {
+      "id": "A000000261435",
+      "name": "[하나로 끝내는] 원오브뎀 드 뗑 톤 로션 50ml 기획(+톤 로션 10ml)",
+      "brand": "원오브뎀",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 179,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "oily"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "spots"
+      ],
+      "compat_oily": 0.821,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "16f539535fc5a4304f9a9c760b110265830f9e66edd2201b70cb6563fe25c737",
+        "analyzed_at": "2026-09-18T14:55:32.916160+00:00",
+        "shade_source": "catalog",
+        "analyzed_count": 123,
+        "evidence_counts": {
+          "coverage": 10,
+          "longevity": 2,
+          "lightweight": 1
+        },
+        "skin_review_counts": {
+          "dry": 2,
+          "oily": 9,
+          "sensitive": 1,
+          "combination": 3
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "63436527",
+            "63557381",
+            "63720512",
+            "63721621",
+            "63744564"
+          ],
+          "longevity": [
+            "63559508",
+            "66415619"
+          ],
+          "lightweight": [
+            "63902347"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "63727366"
+          ],
+          "pore": [
+            "63437318",
+            "63455735",
+            "63557381",
+            "63595692",
+            "63671281"
+          ],
+          "spots": [
+            "63415982",
+            "63436527",
+            "63437318",
+            "63455735",
+            "63744564"
+          ],
+          "redness": [
+            "63557381"
+          ]
+        },
+        "negative_concern_counts": {
+          "pore": 1,
+          "spots": 1
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 6,
+          "spots": 6,
+          "redness": 1
+        }
+      },
+      "last_updated_at": "2026-09-17T14:31:03.399999+00:00"
+    },
+    {
+      "id": "A000000261765",
+      "name": "보호 하이퍼 내추럴 커버 스틱 12g",
+      "brand": "BOHO",
+      "category": "쿠션/파운데이션",
+      "product_type": "cushion",
+      "star_rating": 5,
+      "review_count": 78,
+      "coverage_score": 4,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [
+        "combination"
+      ],
+      "suitable_concerns": [
+        "pore",
+        "redness",
+        "spots"
+      ],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": 0.844,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "101c42d6ebc116ae0a855460d09b2aab12b18b28e15f65997c3351153a9cbf1f",
+        "analyzed_at": "2026-09-18T14:55:33.653460+00:00",
+        "shade_source": "catalog",
+        "analyzed_count": 78,
+        "evidence_counts": {
+          "coverage": 8,
+          "longevity": 2,
+          "lightweight": 2
+        },
+        "skin_review_counts": {
+          "dry": 3,
+          "oily": 4,
+          "sensitive": 0,
+          "combination": 11
+        },
+        "evidence_review_ids": {
+          "coverage": [
+            "63238852",
+            "63270239",
+            "63345787",
+            "63358012",
+            "63414689"
+          ],
+          "longevity": [
+            "63414689",
+            "63441884"
+          ],
+          "lightweight": [
+            "63234045",
+            "63392637"
+          ]
+        },
+        "concern_evidence_ids": {
+          "acne": [
+            "63234486"
+          ],
+          "pore": [
+            "63238852",
+            "63303905",
+            "63358012",
+            "63420962",
+            "63483110"
+          ],
+          "spots": [
+            "63203386",
+            "63214869",
+            "63215839",
+            "63216043",
+            "63324896"
+          ],
+          "redness": [
+            "63203386",
+            "63238852",
+            "63419402",
+            "63524258",
+            "63528973"
+          ]
+        },
+        "negative_concern_counts": {
+          "acne": 1,
+          "pore": 1,
+          "spots": 2
+        },
+        "positive_concern_counts": {
+          "acne": 1,
+          "pore": 6,
+          "spots": 13,
+          "redness": 6
+        }
+      },
+      "last_updated_at": "2026-09-17T14:30:31.669851+00:00"
+    },
+    {
+      "id": "A000000267995",
+      "name": "[티벳동생 PICK/30ml 추가 증정]비레디 트루톤 커버로션 24H 40ml ",
+      "brand": "비레디",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 0,
+      "review_count": 0,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "494edf3e6aad020541efa334890fce84388adc84094a671b94f40d262a92a303",
+        "analyzed_at": "2026-09-18T14:55:34.028223+00:00",
+        "shade_source": "catalog",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-09-17T14:29:47.810636+00:00"
+    },
+    {
+      "id": "B000000223838",
+      "name": "블랙몬스터 내추럴 밀착커버 비비크림 2종 (샌드베이지/앰버베이지)",
+      "brand": "블랙몬스터",
+      "category": "톤 로션/BB",
+      "product_type": "tone_lotion",
+      "star_rating": 5,
+      "review_count": 16,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "1bf567e2b84102d2398993fdcd01b26cfea93d5eb2d061b6d8e9482eb8449f9c",
+        "analyzed_at": "2026-09-18T14:55:34.640616+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 6,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:38:32.468835+00:00"
+    },
+    {
+      "id": "B000000223860",
+      "name": "블랙몬스터 다크서클 커버 데이&나이트 컨실러",
+      "brand": "블랙몬스터",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 5,
+      "review_count": 2,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "6afbd3a7b73490194f6076dbde7c2d7c0051bcc3966dabcce2e819db344d7f4a",
+        "analyzed_at": "2026-09-18T14:55:35.062249+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:40:59.345652+00:00"
+    },
+    {
+      "id": "B000000223861",
+      "name": "블랙몬스터 이레이징 컨실러 펜",
+      "brand": "블랙몬스터",
+      "category": "톤 로션/BB",
+      "product_type": "concealer",
+      "star_rating": 5,
+      "review_count": 3,
+      "coverage_score": null,
+      "longevity_score": null,
+      "lightweight_score": null,
+      "suitable_shades": [],
+      "suitable_skin_types": [],
+      "suitable_concerns": [],
+      "compat_oily": null,
+      "compat_dry": null,
+      "compat_sensitive": null,
+      "compat_combination": null,
+      "ingredient_level": null,
+      "profile_metadata": {
+        "version": "rules-ko-v1",
+        "input_hash": "b2d611e262a66af3e1c19e2fce1e01bb800a3421d299af5fe412f2802ccfe748",
+        "analyzed_at": "2026-09-18T14:55:35.446236+00:00",
+        "shade_source": "historical_reviews",
+        "analyzed_count": 0,
+        "evidence_counts": {
+          "coverage": 0,
+          "longevity": 0,
+          "lightweight": 0
+        },
+        "skin_review_counts": {
+          "dry": 0,
+          "oily": 0,
+          "sensitive": 0,
+          "combination": 0
+        },
+        "evidence_review_ids": {},
+        "concern_evidence_ids": {},
+        "negative_concern_counts": {},
+        "positive_concern_counts": {}
+      },
+      "last_updated_at": "2026-02-25T08:41:00.702377+00:00"
+    }
+  ]
+}

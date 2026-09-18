@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
-import { calcRecommendScore, getCompatScore, hasCurrentProfile, searchProducts } from '@/lib/recommendation';
+import { getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations } from '@/lib/recommendation';
 import { loadCatalog } from '@/lib/catalog';
 import Image from 'next/image';
 
@@ -353,6 +353,9 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
   const [reviewError, setReviewError] = useState('');
+  const [evidenceById, setEvidenceById] = useState<Map<string, Review>>(new Map());
+  const [evidenceError, setEvidenceError] = useState('');
+  const [openEvidence, setOpenEvidence] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -366,6 +369,54 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
       });
     return () => controller.abort();
   }, [product.id]);
+
+  // Reviews that produced each score and concern tag, so a claim can be traced to its source.
+  const meta = hasCurrentProfile(product) ? product.profile_metadata : null;
+  const evidenceIds = useMemo(() => [...new Set([
+    ...Object.values(meta?.evidence_review_ids ?? {}).flat(),
+    ...Object.values(meta?.concern_evidence_ids ?? {}).flat(),
+  ])], [meta]);
+
+  useEffect(() => {
+    if (!evidenceIds.length) return;
+    const controller = new AbortController();
+    supabase.from('reviews').select('id,product_id,rating,content,skin_type,skin_tone,skin_trouble,option_name,created_at,is_best')
+      .in('id', evidenceIds).abortSignal(controller.signal)
+      .then(({ data, error }) => {
+        if (controller.signal.aborted) return;
+        setEvidenceById(new Map(((data || []) as Review[]).map(r => [r.id, r])));
+        // Silence would be indistinguishable from a product that simply has no evidence.
+        setEvidenceError(error ? '근거 리뷰를 불러오지 못했습니다.' : '');
+      });
+    return () => controller.abort();
+  }, [evidenceIds]);
+
+  const renderEvidence = (key: string, ids?: string[]) => {
+    const found = (ids ?? []).map(id => evidenceById.get(id)).filter((r): r is Review => !!r);
+    if (!found.length) return null;
+    const open = openEvidence === key;
+    return (
+      <div style={{ marginBottom: '10px' }}>
+        <button onClick={() => setOpenEvidence(open ? null : key)} aria-expanded={open}
+          style={{ background: 'none', border: 'none', padding: '2px 0', color: '#a5b4fc', fontSize: '0.7rem', cursor: 'pointer' }}>
+          {open ? '근거 리뷰 닫기 ▲' : `근거 리뷰 ${found.length}건 보기 ▼`}
+        </button>
+        {open && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '6px' }}>
+            {found.map(r => (
+              <div key={r.id} style={{ padding: '8px 10px', borderRadius: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                  <StarRating rating={r.rating} />
+                  {r.skin_type && <span className="skin-tag">{r.skin_type}</span>}
+                </div>
+                <p style={{ fontSize: '0.78rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>{r.content}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -394,9 +445,13 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
           <div style={{ marginBottom: '20px' }}>
             <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>📊 리뷰 표현 기반 점수</h3>
             <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: 12 }}>분석 리뷰 {product.profile_metadata?.analyzed_count?.toLocaleString() ?? 0}개 · 점수는 수집된 리뷰의 표현을 요약합니다. 근거가 부족한 항목은 정보 부족으로 표시합니다.</p>
-            <ScoreBar label="커버력" value={hasCurrentProfile(product) ? product.coverage_score : null} color="#a78bfa" />
-            <ScoreBar label="지속력" value={hasCurrentProfile(product) ? product.longevity_score : null} color="#60a5fa" />
-            <ScoreBar label="착용감" value={hasCurrentProfile(product) ? product.lightweight_score : null} color="#34d399" />
+            {evidenceError && <p role="alert" style={{ fontSize: '0.72rem', color: '#f87171', marginBottom: 8 }}>{evidenceError}</p>}
+            {([['coverage', '커버력', '#a78bfa', product.coverage_score], ['longevity', '지속력', '#60a5fa', product.longevity_score], ['lightweight', '착용감', '#34d399', product.lightweight_score]] as [string, string, string, number | null][]).map(([key, label, color, value]) => (
+              <div key={key}>
+                <ScoreBar label={label} value={hasCurrentProfile(product) ? value : null} color={color} />
+                {renderEvidence(key, meta?.evidence_review_ids?.[key])}
+              </div>
+            ))}
           </div>
 
           <div style={{ marginBottom: '20px', padding: '14px', borderRadius: '12px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
@@ -411,9 +466,12 @@ function ProductModal({ product, skinType, onClose }: { product: Product; skinTy
           {product.suitable_concerns && product.suitable_concerns.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>리뷰에서 긍정적으로 언급된 고민</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {product.suitable_concerns.map(c => <span key={c} className="skin-tag">{CONCERN_LABEL[c as SkinConcern] ?? c}</span>)}
-              </div>
+              {product.suitable_concerns.map(c => (
+                <div key={c} style={{ marginBottom: '6px' }}>
+                  <div style={{ marginBottom: '4px' }}><span className="skin-tag">{CONCERN_LABEL[c as SkinConcern] ?? c}</span></div>
+                  {renderEvidence('concern:' + c, meta?.concern_evidence_ids?.[c])}
+                </div>
+              ))}
             </div>
           )}
 
@@ -518,11 +576,7 @@ export default function HomePage() {
 
   const displayProducts = useMemo(() => {
     if (mode === 'result' && quizResult?.skinType) {
-      const quiz = quizResult;
-      return products.filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= 5)
-        .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
-        .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType!, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
-        .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id)).slice(0, 12);
+      return selectRecommendations(products, { ...quizResult, skinType: quizResult.skinType });
     }
     const filtered = searchProducts(products, browseSearch).filter(p => browseCategory === 'all' || p.category?.includes(browseCategory));
     return filtered.sort((a, b) => browseSort === 'price_asc' ? (a.price ?? Infinity) - (b.price ?? Infinity) : browseSort === 'star_rating' ? (b.star_rating ?? 0) - (a.star_rating ?? 0) : (b.review_count ?? 0) - (a.review_count ?? 0));

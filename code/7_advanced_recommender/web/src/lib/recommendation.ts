@@ -1,4 +1,4 @@
-import type { Product, SkinType, SkinConcern, ShadeChoice } from './supabase';
+import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from './supabase';
 
 export const PROFILE_VERSION = 'rules-ko-v1';
 export const SKIN_TYPE_COMPAT_COL = {
@@ -41,4 +41,28 @@ export function calcRecommendScore(product: Product, skinType: SkinType, concern
 export function searchProducts(products: Product[], search: string): Product[] {
   const term = search.trim().toLocaleLowerCase();
   return term ? products.filter(p => `${p.name} ${p.brand}`.toLocaleLowerCase().includes(term)) : products;
+}
+
+export interface QuizAnswers {
+  skinType: SkinType;
+  concerns: SkinConcern[];
+  coveragePref: number;
+  longevityPref: number;
+  lightweightPref: number;
+  shade: ShadeChoice | null;
+  applicationMethod: ApplicationMethod | null;
+}
+
+// A product needs enough analyzed reviews before its profile is allowed to rank.
+export const MIN_ANALYZED_REVIEWS = 5;
+export const RESULT_LIMIT = 12;
+
+/** The ranking the site shows. Kept here so the offline evaluation scores the same list. */
+export function selectRecommendations(products: Product[], quiz: QuizAnswers): (Product & { _score: number })[] {
+  return products
+    .filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= MIN_ANALYZED_REVIEWS)
+    .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
+    .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
+    .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))
+    .slice(0, RESULT_LIMIT);
 }

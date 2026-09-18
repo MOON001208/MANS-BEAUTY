@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calcRecommendScore, searchProducts } from '../src/lib/recommendation.ts';
+import { calcRecommendScore, searchProducts, selectRecommendations, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
 const product = { id: '1', name: '테스트', brand: '브랜드', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
@@ -28,4 +28,25 @@ test('service role and secret keys are rejected', () => {
   assert.equal(isPublicKey(jwt('anon')), true);
   assert.throws(() => validatePublicEnv({ NEXT_PUBLIC_SUPABASE_URL: 'https://test.supabase.co', NEXT_PUBLIC_SUPABASE_ANON_KEY: jwt('service_role') }));
   assert.throws(() => validatePublicEnv({ NEXT_PUBLIC_SUPABASE_URL: 'https://test.supabase.co', NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_test', NEXT_PUBLIC_OTHER: jwt('service_role') }));
+});
+
+const quiz = { skinType: 'oily', concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: 'any', applicationMethod: 'any' };
+const withType = (id, product_type, extra = {}) => ({ ...product, id, product_type, ...extra });
+
+test('thinly analyzed profiles are excluded, not merely ranked lower', () => {
+  const thin = { ...product, id: 'thin', profile_metadata: { version: 'rules-ko-v1', analyzed_count: MIN_ANALYZED_REVIEWS - 1 } };
+  const ids = selectRecommendations([product, thin], quiz).map(p => p.id);
+  assert.deepEqual(ids, ['1']);
+});
+test('legacy profiles never reach the ranked list', () => {
+  assert.deepEqual(selectRecommendations([{ ...product, profile_metadata: null }], quiz), []);
+});
+test('application method excludes the wrong product type', () => {
+  const catalog = [withType('lotion', 'tone_lotion'), withType('cushion', 'cushion')];
+  assert.deepEqual(selectRecommendations(catalog, { ...quiz, applicationMethod: 'hand' }).map(p => p.id), ['lotion']);
+  assert.deepEqual(selectRecommendations(catalog, { ...quiz, applicationMethod: 'tool' }).map(p => p.id), ['cushion']);
+});
+test('equal scores break ties by id, so the order never wobbles between runs', () => {
+  const catalog = [withType('b', 'cushion'), withType('a', 'cushion')];
+  assert.deepEqual(selectRecommendations(catalog, quiz).map(p => p.id), ['a', 'b']);
 });

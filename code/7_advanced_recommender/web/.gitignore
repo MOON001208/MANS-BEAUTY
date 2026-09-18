@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 !.env.example
+
+# generated each run; regenerate with npm run eval
+tests/fixtures/evaluation-report.json
