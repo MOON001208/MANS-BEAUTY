@@ -168,6 +168,9 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual([o['label'] for o in ordered['options']], ['매치업 베이지', '매치업 샌드', '매치업 탄'])
         # Salmon and green are tint purposes, not a light-to-dark range.
         self.assertIsNone(shade_lineup(Counter({'살몬 베이지': 4, '그린 베이지': 3})))
+        # Amber is the deeper of the two golden tones, so the pair does order.
+        amber = shade_lineup(Counter({'앰버베이지': 3, '샌드 베이지': 6}))
+        self.assertEqual([o['label'] for o in amber['options']], ['샌드 베이지', '앰버베이지'])
 
     def test_numbering_alone_is_not_a_shade(self):
         # 01/02/03 here number product variants, so no tone order may be claimed.

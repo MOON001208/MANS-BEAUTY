@@ -14,7 +14,7 @@ from shared import product_type
 VERSION = 'rules-ko-v1'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 3
+METADATA_REVISION = 4
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -71,12 +71,15 @@ def get_shade_from_option(option):
 SHADE_NOISE = re.compile(r'\[[^\]]*\]|\([^)]*\)|\d+\s*(?:ml|mL|g|매|개입|종|입)|[+＋].*$')
 SHADE_NUMBER = re.compile(r'(?<!\d)(\d{1,2})\s*호')
 # Ordered light to dark. The first match wins, so 라이트베이지 is light, not mid.
+# (단계, 패턴). Specific tone words are matched before the generic 베이지, so
+# 샌드 베이지 is sand rather than plain beige; the level is stated, not positional.
 BRIGHTNESS_WORDS = [
-    re.compile(r'라이트|light|밝은\s*피부|아이보리|ivory|페어|fair'),
-    re.compile(r'내추럴|natural|미디엄|medium|뉴트럴'),
-    re.compile(r'베이지|beige'),
-    re.compile(r'샌드|sand|앰버|amber'),
-    re.compile(r'탄\b|tan|딥|deep|어두운\s*피부|다크|dark'),
+    (0, re.compile(r'라이트|light|밝은\s*피부|아이보리|ivory|페어|fair')),
+    (1, re.compile(r'내추럴|natural|미디엄|medium|뉴트럴')),
+    (3, re.compile(r'샌드|sand')),
+    (4, re.compile(r'앰버|amber')),
+    (5, re.compile(r'탄\b|tan|딥|deep|어두운\s*피부|다크|dark')),
+    (2, re.compile(r'베이지|beige')),
 ]
 
 def _clean_option(name):
@@ -101,7 +104,7 @@ def _option_number(text):
     return int(match.group(1)) if match else None
 
 def _brightness_level(text):
-    for level, pattern in enumerate(BRIGHTNESS_WORDS):
+    for level, pattern in BRIGHTNESS_WORDS:
         if pattern.search(text):
             return level
     return None
