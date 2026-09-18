@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-09-18T17:22:20.723Z",
+  "captured_at": "2026-09-18T17:39:32.531Z",
   "count": 83,
   "products": [
     {
@@ -62,14 +62,14 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:01:13.824062+00:00"
+      "last_updated_at": "2026-09-18T17:29:58.525793+00:00"
     },
     {
       "id": "A000000011082",
       "name": "엠도씨 스킨 포어 프라이머 15g",
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.6,
       "review_count": 106,
       "coverage_score": null,
@@ -106,14 +106,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:01:06.324577+00:00"
+      "last_updated_at": "2026-09-18T17:29:51.022026+00:00"
     },
     {
       "id": "A000000011083",
       "name": "엠도씨 세붐 스트라이크 HD 파우더 4g",
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 56,
       "coverage_score": null,
@@ -150,7 +150,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:00:58.81696+00:00"
+      "last_updated_at": "2026-09-18T17:29:43.63742+00:00"
     },
     {
       "id": "A000000107838",
@@ -203,7 +203,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:00:31.304366+00:00"
+      "last_updated_at": "2026-09-18T17:29:36.01953+00:00"
     },
     {
       "id": "A000000122217",
@@ -273,7 +273,7 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:00:11.3157+00:00"
+      "last_updated_at": "2026-09-18T17:29:28.519544+00:00"
     },
     {
       "id": "A000000122221",
@@ -356,7 +356,7 @@
           "spots": 6
         }
       },
-      "last_updated_at": "2026-09-18T17:00:03.817496+00:00"
+      "last_updated_at": "2026-09-18T17:29:21.021476+00:00"
     },
     {
       "id": "A000000129149",
@@ -475,7 +475,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-09-18T16:59:41.393292+00:00"
+      "last_updated_at": "2026-09-18T17:29:13.51243+00:00"
     },
     {
       "id": "A000000130798",
@@ -587,7 +587,7 @@
           "redness": 2
         }
       },
-      "last_updated_at": "2026-09-18T16:59:33.810243+00:00"
+      "last_updated_at": "2026-09-18T17:29:06.022479+00:00"
     },
     {
       "id": "A000000130814",
@@ -704,7 +704,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T16:59:26.314106+00:00"
+      "last_updated_at": "2026-09-18T17:28:58.636023+00:00"
     },
     {
       "id": "A000000130815",
@@ -792,7 +792,7 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-09-18T16:59:18.804056+00:00"
+      "last_updated_at": "2026-09-18T17:28:51.129634+00:00"
     },
     {
       "id": "A000000131799",
@@ -852,7 +852,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T16:58:51.304001+00:00"
+      "last_updated_at": "2026-09-18T17:28:43.644194+00:00"
     },
     {
       "id": "A000000131803",
@@ -919,7 +919,7 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:07:06.363448+00:00"
+      "last_updated_at": "2026-09-18T17:31:18.531564+00:00"
     },
     {
       "id": "A000000138949",
@@ -978,7 +978,7 @@
         },
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:06:58.865952+00:00"
+      "last_updated_at": "2026-09-18T17:31:11.032252+00:00"
     },
     {
       "id": "A000000142173",
@@ -1147,7 +1147,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T16:57:53.797745+00:00"
+      "last_updated_at": "2026-09-18T17:28:36.138185+00:00"
     },
     {
       "id": "A000000143170",
@@ -1191,14 +1191,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T16:57:46.295335+00:00"
+      "last_updated_at": "2026-09-18T17:28:28.640173+00:00"
     },
     {
       "id": "A000000161010",
       "name": "[덱스 PICK] 오브제 내추럴 커버 파운데이션 13g (SPF50+, PA++++)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 3872,
       "coverage_score": null,
@@ -1259,7 +1259,7 @@
         },
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:07:23.868415+00:00"
+      "last_updated_at": "2026-09-18T17:31:26.034405+00:00"
     },
     {
       "id": "A000000161093",
@@ -1381,14 +1381,14 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T16:56:08.785909+00:00"
+      "last_updated_at": "2026-09-18T17:28:21.12902+00:00"
     },
     {
       "id": "A000000178092",
       "name": "[남성파데1위] 비레디 블루 파운데이션 35ml",
       "brand": "비레디",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 1222,
       "coverage_score": 4,
@@ -1514,14 +1514,14 @@
           "spots": 10
         }
       },
-      "last_updated_at": "2026-09-18T17:14:03.920279+00:00"
+      "last_updated_at": "2026-09-18T17:37:56.082077+00:00"
     },
     {
       "id": "A000000182290",
       "name": " 다슈 맨즈 멀티 커버 스틱 파운데이션 12g 뉴트럴베이지 기획(+미니 톤 컨트롤 로션)",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 850,
       "coverage_score": null,
@@ -1558,7 +1558,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:07:31.367353+00:00"
+      "last_updated_at": "2026-09-18T17:31:33.534322+00:00"
     },
     {
       "id": "A000000184127",
@@ -1660,14 +1660,14 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:13:56.418325+00:00"
+      "last_updated_at": "2026-09-18T17:37:48.580253+00:00"
     },
     {
       "id": "A000000186336",
       "name": "[문장군 공동개발/유분 컨트롤] 비레디 블루 세범 파우더 7g",
       "brand": "비레디",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 130,
       "coverage_score": null,
@@ -1704,7 +1704,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:13:48.914756+00:00"
+      "last_updated_at": "2026-09-18T17:37:41.078003+00:00"
     },
     {
       "id": "A000000187410",
@@ -1781,7 +1781,7 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:13:41.408902+00:00"
+      "last_updated_at": "2026-09-18T17:37:33.582239+00:00"
     },
     {
       "id": "A000000187413",
@@ -1831,14 +1831,14 @@
           "spots": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:13:33.916589+00:00"
+      "last_updated_at": "2026-09-18T17:37:26.071476+00:00"
     },
     {
       "id": "A000000187415",
       "name": "무칸 옴므 포어커버 프라이머 30ml",
       "brand": "무칸",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.6,
       "review_count": 15,
       "coverage_score": null,
@@ -1875,14 +1875,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:13:26.421716+00:00"
+      "last_updated_at": "2026-09-18T17:37:18.573865+00:00"
     },
     {
       "id": "A000000189059",
       "name": "다슈 맨즈 오일컷 노세범 파우더 5g",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 537,
       "coverage_score": null,
@@ -1919,7 +1919,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:13:18.917613+00:00"
+      "last_updated_at": "2026-09-18T17:37:11.076295+00:00"
     },
     {
       "id": "A000000191833",
@@ -1985,7 +1985,7 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:13:11.409255+00:00"
+      "last_updated_at": "2026-09-18T17:37:03.574417+00:00"
     },
     {
       "id": "A000000192866",
@@ -2036,7 +2036,7 @@
       "name": "오브제 페이스 라인 스틱 1.3g",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 328,
       "coverage_score": null,
@@ -2073,14 +2073,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:13:03.910503+00:00"
+      "last_updated_at": "2026-09-18T17:36:56.068628+00:00"
     },
     {
       "id": "A000000198001",
       "name": "[1등파데] 오브제 내추럴 커버 파운데이션 단품/기획(+클렌징폼 50ml)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 7843,
       "coverage_score": 3.93,
@@ -2214,7 +2214,7 @@
           "wrinkle": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:12:56.414864+00:00"
+      "last_updated_at": "2026-09-18T17:36:48.570182+00:00"
     },
     {
       "id": "A000000200388",
@@ -2335,7 +2335,7 @@
           "spots": 6
         }
       },
-      "last_updated_at": "2026-09-18T17:05:28.855385+00:00"
+      "last_updated_at": "2026-09-18T17:31:03.529214+00:00"
     },
     {
       "id": "A000000203000",
@@ -2425,7 +2425,7 @@
       "name": "듀이셀 트루빔 파운데이션 12g",
       "brand": "듀이셀",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 5,
       "review_count": 849,
       "coverage_score": 3.94,
@@ -2535,7 +2535,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:12:48.905346+00:00"
+      "last_updated_at": "2026-09-18T17:36:41.069385+00:00"
     },
     {
       "id": "A000000204828",
@@ -2640,7 +2640,7 @@
           "wrinkle": 6
         }
       },
-      "last_updated_at": "2026-09-18T17:12:41.409144+00:00"
+      "last_updated_at": "2026-09-18T17:36:33.565099+00:00"
     },
     {
       "id": "A000000204975",
@@ -2684,14 +2684,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:12:33.898469+00:00"
+      "last_updated_at": "2026-09-18T17:36:26.061461+00:00"
     },
     {
       "id": "A000000205624",
       "name": "[올인원 파우더]아이디얼 포 맨 노세범 이지 파우더 5g",
       "brand": "아이디얼포맨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 206,
       "coverage_score": null,
@@ -2728,14 +2728,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:04:56.354974+00:00"
+      "last_updated_at": "2026-09-18T17:30:56.029236+00:00"
     },
     {
       "id": "A000000205935",
       "name": "[윤곽창조] 그라펜 매치업 쉐딩 스틱 1.8g (뉴트럴 브라운)",
       "brand": "그라펜",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.9,
       "review_count": 141,
       "coverage_score": null,
@@ -2772,7 +2772,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:12:26.404646+00:00"
+      "last_updated_at": "2026-09-18T17:36:18.565193+00:00"
     },
     {
       "id": "A000000205969",
@@ -2838,7 +2838,7 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:12:18.906501+00:00"
+      "last_updated_at": "2026-09-18T17:36:11.062252+00:00"
     },
     {
       "id": "A000000205970",
@@ -2952,7 +2952,7 @@
           "spots": 9
         }
       },
-      "last_updated_at": "2026-09-18T17:04:48.844964+00:00"
+      "last_updated_at": "2026-09-18T17:30:48.529543+00:00"
     },
     {
       "id": "A000000206008",
@@ -3007,7 +3007,7 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:07:43.861563+00:00"
+      "last_updated_at": "2026-09-18T17:31:41.031658+00:00"
     },
     {
       "id": "A000000206573",
@@ -3145,7 +3145,7 @@
           "wrinkle": 4
         }
       },
-      "last_updated_at": "2026-09-18T17:12:11.408492+00:00"
+      "last_updated_at": "2026-09-18T17:36:03.562606+00:00"
     },
     {
       "id": "A000000207177",
@@ -3391,14 +3391,14 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:12:03.894712+00:00"
+      "last_updated_at": "2026-09-18T17:35:56.07104+00:00"
     },
     {
       "id": "A000000207759",
       "name": "엠도씨 엔드 핏 스틱 비비 파운데이션 13g (1호/2호/3호)",
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 44,
       "coverage_score": null,
@@ -3468,14 +3468,14 @@
           "acne": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:11:56.395501+00:00"
+      "last_updated_at": "2026-09-18T17:35:48.565675+00:00"
     },
     {
       "id": "A000000207762",
       "name": "엠도씨 엔드 핏 프라이머 팩트 10g (라이트베이지/내추럴베이지)",
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 3.7,
       "review_count": 6,
       "coverage_score": null,
@@ -3528,7 +3528,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:04:28.83988+00:00"
+      "last_updated_at": "2026-09-18T17:30:41.038153+00:00"
     },
     {
       "id": "A000000208723",
@@ -3572,14 +3572,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:11:48.895919+00:00"
+      "last_updated_at": "2026-09-18T17:35:41.056498+00:00"
     },
     {
       "id": "A000000210307",
       "name": "듀이셀 트루빔 파운데이션 12g 기획(+토너패드 20매)",
       "brand": "듀이셀",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.9,
       "review_count": 975,
       "coverage_score": null,
@@ -3616,7 +3616,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:11:41.39496+00:00"
+      "last_updated_at": "2026-09-18T17:35:33.555537+00:00"
     },
     {
       "id": "A000000210921",
@@ -3660,7 +3660,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:11:33.894357+00:00"
+      "last_updated_at": "2026-09-18T17:35:26.059073+00:00"
     },
     {
       "id": "A000000212063",
@@ -3809,7 +3809,7 @@
           "redness": 13
         }
       },
-      "last_updated_at": "2026-09-18T17:11:26.398248+00:00"
+      "last_updated_at": "2026-09-18T17:35:18.558252+00:00"
     },
     {
       "id": "A000000212991",
@@ -3935,7 +3935,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:11:18.897798+00:00"
+      "last_updated_at": "2026-09-18T17:35:11.052461+00:00"
     },
     {
       "id": "A000000212998",
@@ -4015,14 +4015,14 @@
           "spots": 11
         }
       },
-      "last_updated_at": "2026-09-18T17:11:11.387054+00:00"
+      "last_updated_at": "2026-09-18T17:35:03.557443+00:00"
     },
     {
       "id": "A000000213066",
       "name": "[올인원 완벽커버] 스웨거 톤 커버 파운데이션 스틱 [1호/2호]",
       "brand": "스웨거",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.9,
       "review_count": 269,
       "coverage_score": 3.96,
@@ -4130,7 +4130,7 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:11:03.895021+00:00"
+      "last_updated_at": "2026-09-18T17:34:56.056436+00:00"
     },
     {
       "id": "A000000213068",
@@ -4222,7 +4222,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:10:56.392231+00:00"
+      "last_updated_at": "2026-09-18T17:34:48.639279+00:00"
     },
     {
       "id": "A000000214028",
@@ -4331,7 +4331,7 @@
           "redness": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:03:51.342052+00:00"
+      "last_updated_at": "2026-09-18T17:30:33.532534+00:00"
     },
     {
       "id": "A000000217042",
@@ -4409,7 +4409,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:10:48.891483+00:00"
+      "last_updated_at": "2026-09-18T17:34:41.056023+00:00"
     },
     {
       "id": "A000000217784",
@@ -4522,14 +4522,14 @@
           "redness": 8
         }
       },
-      "last_updated_at": "2026-09-18T17:03:28.83556+00:00"
+      "last_updated_at": "2026-09-18T17:30:28.529227+00:00"
     },
     {
       "id": "A000000222827",
       "name": "[1위파데] 그라펜 팁 스케치 멀티 커버 파운데이션 20ml 기획 (+팩클렌저 30ml)",
       "brand": "그라펜",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.9,
       "review_count": 668,
       "coverage_score": 3.79,
@@ -4651,7 +4651,7 @@
           "redness": 4
         }
       },
-      "last_updated_at": "2026-09-18T17:10:41.392115+00:00"
+      "last_updated_at": "2026-09-18T17:34:33.553055+00:00"
     },
     {
       "id": "A000000222829",
@@ -4728,7 +4728,7 @@
           "redness": 3
         }
       },
-      "last_updated_at": "2026-09-18T17:10:33.884774+00:00"
+      "last_updated_at": "2026-09-18T17:34:26.043484+00:00"
     },
     {
       "id": "A000000223633",
@@ -4849,7 +4849,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:10:26.386557+00:00"
+      "last_updated_at": "2026-09-18T17:34:18.549123+00:00"
     },
     {
       "id": "A000000225422",
@@ -4960,7 +4960,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:10:03.887191+00:00"
+      "last_updated_at": "2026-09-18T17:33:56.164839+00:00"
     },
     {
       "id": "A000000227219",
@@ -5017,14 +5017,14 @@
           "pore": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:09:56.380595+00:00"
+      "last_updated_at": "2026-09-18T17:33:48.663945+00:00"
     },
     {
       "id": "A000000229158",
       "name": "[누적판매 26만개] 다슈 맨즈 멀티 커버 스틱 파운데이션",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 850,
       "coverage_score": 3.95,
@@ -5147,14 +5147,14 @@
           "redness": 3
         }
       },
-      "last_updated_at": "2026-09-18T17:09:48.886829+00:00"
+      "last_updated_at": "2026-09-18T17:33:41.170866+00:00"
     },
     {
       "id": "A000000230739",
       "name": "[유분순삭/보송] 미닉 노세범 멀티 파우더 5g",
       "brand": "미닉",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.7,
       "review_count": 69,
       "coverage_score": null,
@@ -5191,7 +5191,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:09:41.382954+00:00"
+      "last_updated_at": "2026-09-18T17:33:33.660044+00:00"
     },
     {
       "id": "A000000233178",
@@ -5296,14 +5296,14 @@
           "wrinkle": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:09:33.93851+00:00"
+      "last_updated_at": "2026-09-18T17:33:26.158489+00:00"
     },
     {
       "id": "A000000238631",
       "name": "엠도씨 엔드 핏 프라이머 팩트 10g 01 라이트베이지",
       "brand": "엠도씨",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 3.7,
       "review_count": 6,
       "coverage_score": null,
@@ -5340,7 +5340,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:01:58.82578+00:00"
+      "last_updated_at": "2026-09-18T17:30:13.528493+00:00"
     },
     {
       "id": "A000000240089",
@@ -5409,14 +5409,14 @@
           "spots": 2
         }
       },
-      "last_updated_at": "2026-09-18T17:09:26.381271+00:00"
+      "last_updated_at": "2026-09-18T17:33:18.66166+00:00"
     },
     {
       "id": "A000000246600",
       "name": "[1등 보송젤파우더] 오브제 오일 컨트롤 피니셔 5g 단품",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.5,
       "review_count": 1943,
       "coverage_score": null,
@@ -5453,7 +5453,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:09:18.869188+00:00"
+      "last_updated_at": "2026-09-18T17:33:11.153565+00:00"
     },
     {
       "id": "A000000246705",
@@ -5585,7 +5585,7 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:09:11.374267+00:00"
+      "last_updated_at": "2026-09-18T17:33:03.66068+00:00"
     },
     {
       "id": "A000000246737",
@@ -5657,7 +5657,7 @@
           "spots": 4
         }
       },
-      "last_updated_at": "2026-09-18T17:07:53.872008+00:00"
+      "last_updated_at": "2026-09-18T17:31:48.544705+00:00"
     },
     {
       "id": "A000000249090",
@@ -5784,7 +5784,7 @@
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
       "star_rating": 4.9,
-      "review_count": 17192,
+      "review_count": 17193,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -5819,14 +5819,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:09:03.879797+00:00"
+      "last_updated_at": "2026-09-18T17:32:56.159564+00:00"
     },
     {
       "id": "A000000249714",
       "name": "[기프트패키지] [맨즈 메이크업 NO.1] 오브제 보송커버 2종 기획 (파운데이션 2호 + 오일 컨트롤 피니셔)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 6344,
       "coverage_score": null,
@@ -5863,7 +5863,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:56.380497+00:00"
+      "last_updated_at": "2026-09-18T17:32:48.655893+00:00"
     },
     {
       "id": "A000000249774",
@@ -5907,14 +5907,14 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:48.873849+00:00"
+      "last_updated_at": "2026-09-18T17:32:41.155194+00:00"
     },
     {
       "id": "A000000249778",
       "name": "[기프트세트] 다슈 맨즈 멀티 커버 스틱 파운데이션 2호 + 다슈 맨즈 컬러체인지 립밤 (쿨레드)",
       "brand": "다슈",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 4288,
       "coverage_score": null,
@@ -5951,7 +5951,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:41.383868+00:00"
+      "last_updated_at": "2026-09-18T17:32:33.654897+00:00"
     },
     {
       "id": "A000000251853",
@@ -6011,16 +6011,16 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:33.873397+00:00"
+      "last_updated_at": "2026-09-18T17:32:26.160501+00:00"
     },
     {
       "id": "A000000258285",
       "name": "[1등파데 리뉴얼] 오브제 내추럴 커버 파운데이션 PRO 14g 단품/기획 (+올인원 30ml 증정)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.8,
-      "review_count": 8210,
+      "review_count": 8212,
       "coverage_score": null,
       "longevity_score": null,
       "lightweight_score": null,
@@ -6077,7 +6077,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:26.371621+00:00"
+      "last_updated_at": "2026-09-18T17:32:18.647843+00:00"
     },
     {
       "id": "A000000261435",
@@ -6170,14 +6170,14 @@
           "redness": 1
         }
       },
-      "last_updated_at": "2026-09-18T17:08:18.875197+00:00"
+      "last_updated_at": "2026-09-18T17:32:11.148742+00:00"
     },
     {
       "id": "A000000261765",
       "name": "보호 하이퍼 내추럴 커버 스틱 12g",
       "brand": "BOHO",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "stick",
       "star_rating": 5,
       "review_count": 78,
       "coverage_score": 4,
@@ -6270,7 +6270,7 @@
           "redness": 6
         }
       },
-      "last_updated_at": "2026-09-18T17:08:11.379758+00:00"
+      "last_updated_at": "2026-09-18T17:32:03.542764+00:00"
     },
     {
       "id": "A000000267995",
@@ -6330,7 +6330,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:08:03.869441+00:00"
+      "last_updated_at": "2026-09-18T17:31:56.033622+00:00"
     },
     {
       "id": "A000000268424",
@@ -6396,7 +6396,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:01:21.325331+00:00"
+      "last_updated_at": "2026-09-18T17:30:06.028755+00:00"
     },
     {
       "id": "B000000223838",
@@ -6456,7 +6456,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:03:01.33574+00:00"
+      "last_updated_at": "2026-09-18T17:30:21.027918+00:00"
     },
     {
       "id": "B000000223860",
@@ -6500,7 +6500,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:10:18.885991+00:00"
+      "last_updated_at": "2026-09-18T17:34:11.042686+00:00"
     },
     {
       "id": "B000000223861",
@@ -6544,7 +6544,7 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {}
       },
-      "last_updated_at": "2026-09-18T17:10:11.389157+00:00"
+      "last_updated_at": "2026-09-18T17:34:03.663577+00:00"
     }
   ]
 }
