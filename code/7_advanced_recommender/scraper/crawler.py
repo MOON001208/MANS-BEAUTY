@@ -309,7 +309,12 @@ def run(args):
                 continue
             detail = api.detail(pid)
             target = is_target(detail, pid in existing)
-            details_cache[pid] = {'at': time.time(), 'target': target}
+            # Recording the source's own category makes the collected mix
+            # answerable without another pass over the catalog.
+            standard = detail.get('standardCategory') or {}
+            details_cache[pid] = {'at': time.time(), 'target': target,
+                                  'category': standard.get('lowerCategoryName'),
+                                  'middle': standard.get('middleCategoryName')}
             if not target:
                 continue
             product = product_from_detail(pid, detail)
