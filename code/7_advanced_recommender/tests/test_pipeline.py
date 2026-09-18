@@ -90,10 +90,26 @@ class HarvestTests(unittest.TestCase):
 
 class CatalogTests(unittest.TestCase):
     def test_mens_flag_not_brand_guess(self):
-        detail = {'menCategoryFlag': True, 'standardCategory': {'lowerCategoryName': '쿠션'}}
+        detail = {'menCategoryFlag': True,
+                  'standardCategory': {'middleCategoryName': '베이스 메이크업', 'lowerCategoryName': '쿠션'}}
         self.assertTrue(is_target(detail))
         self.assertFalse(is_target({**detail, 'menCategoryFlag': False}))
-        self.assertFalse(is_target({'menCategoryFlag': True, 'standardCategory': {'lowerCategoryName': '샴푸'}}))
+        self.assertFalse(is_target({'menCategoryFlag': True,
+                                    'standardCategory': {'middleCategoryName': '헤어케어', 'lowerCategoryName': '샴푸'}}))
+
+    def test_every_base_makeup_kind_is_collected(self):
+        # A name-keyword filter dropped these; the category keeps them in.
+        for kind in ['컨실러', '파우더', '메이크업 베이스/프라이머', 'BB/CC', '파운데이션']:
+            detail = {'menCategoryFlag': True,
+                      'standardCategory': {'middleCategoryName': '베이스 메이크업', 'lowerCategoryName': kind}}
+            self.assertTrue(is_target(detail), kind)
+
+    def test_other_makeup_families_are_not_collected(self):
+        for middle in ['립 메이크업', '아이 메이크업']:
+            detail = {'menCategoryFlag': True, 'standardCategory': {'middleCategoryName': middle}}
+            self.assertFalse(is_target(detail), middle)
+        # A product already stored stays in scope so its data keeps refreshing.
+        self.assertTrue(is_target({'menCategoryFlag': False, 'standardCategory': {}}, known=True))
 
     def test_missing_stats_price_not_zeroed(self):
         product = product_from_detail('p', {'goodsNumber': 'p', 'goodsName': '테스트 쿠션'})

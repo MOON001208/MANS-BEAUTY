@@ -19,7 +19,7 @@ class IngestionTests(unittest.TestCase):
             query.upsert.side_effect = upsert
             return query
         db.table.side_effect = table
-        api.detail.side_effect = lambda pid: {'goodsNumber': pid, 'goodsName': '남성 쿠션', 'menCategoryFlag': True, 'standardCategory': {'lowerCategoryName': '쿠션'}}
+        api.detail.side_effect = lambda pid: {'goodsNumber': pid, 'goodsName': '남성 쿠션', 'menCategoryFlag': True, 'standardCategory': {'middleCategoryName': '베이스 메이크업', 'lowerCategoryName': '쿠션'}}
         api.stats.return_value = {}
         if limited:
             api.reviews_page.side_effect = crawler.RateLimited('429')

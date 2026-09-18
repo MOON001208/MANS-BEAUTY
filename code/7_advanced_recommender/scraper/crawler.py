@@ -154,8 +154,15 @@ def parse_ingredients(data):
     return unique[0] if len(unique) == 1 else None
 
 def is_target(detail, known=False):
-    kind = (detail.get('standardCategory') or {}).get('lowerCategoryName', '')
-    return known or (detail.get('menCategoryFlag') is True and any(t in kind for t in ['쿠션', '파운데이션', 'BB', 'CC', '비비', '톤']))
+    """Every men's base makeup product, as Olive Young classifies it.
+
+    Olive Young has no men's category to browse: menCategoryFlag on the product
+    is what marks one. Matching the standard middle category rather than name
+    keywords keeps 컨실러, 파우더 and 프라이머 in, which a keyword list dropped.
+    """
+    standard = detail.get('standardCategory') or {}
+    middle = (standard.get('middleCategoryName') or '').replace(' ', '')
+    return known or (detail.get('menCategoryFlag') is True and middle == '베이스메이크업')
 
 def product_from_detail(pid, detail):
     kind = (detail.get('standardCategory') or {}).get('lowerCategoryName', '')
@@ -354,7 +361,10 @@ def run(args):
                 elif not args.write:
                     counts['would_insert'] = counts.get('would_insert', 0) + len(fresh)
                 known_review_ids.update(r['id'] for r in accepted)
-            item['reviews'] = harvest_reviews(api, pid, save_page, state, args.max_review_pages, checkpoint=checkpoint)
+            if getattr(args, 'products_only', False):
+                item['reviews'] = {'skipped': 'products_only'}
+            else:
+                item['reviews'] = harvest_reviews(api, pid, save_page, state, args.max_review_pages, checkpoint=checkpoint)
             item.update(counts)
             item['status'] = 'complete'
             history[pid] = time.time()
@@ -391,6 +401,8 @@ def parser():
     p.add_argument('--max-seconds', type=int, default=5400)
     p.add_argument('--fresh', action='store_true')
     p.add_argument('--skip-ingredients', action='store_true')
+    # Refreshes catalog and option data only; review cursors are left untouched.
+    p.add_argument('--products-only', action='store_true')
     return p
 
 if __name__ == '__main__':
