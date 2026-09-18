@@ -123,6 +123,17 @@ class CatalogTests(unittest.TestCase):
         self.assertIsNone(parse_ingredients(data))
 
 class ProfileTests(unittest.TestCase):
+    def test_crawler_product_type_is_not_re_inferred(self):
+        # products.category is a display group; re-inferring from it turned every
+        # foundation and powder into a cushion because it contains the word 쿠션.
+        product = {'id': 'p', 'name': '오브제 내추럴 커버 파운데이션',
+                   'category': '쿠션/파운데이션', 'product_type': 'liquid'}
+        self.assertEqual(build_profile(product, [])['product_type'], 'liquid')
+
+    def test_product_type_is_inferred_only_when_missing(self):
+        product = {'id': 'p', 'name': '남성 쿠션', 'category': '쿠션/파운데이션'}
+        self.assertEqual(build_profile(product, [])['product_type'], 'cushion')
+
     def test_unknown_attributes_stay_null(self):
         p = build_profile({'id': 'p'}, [{'id': str(i), 'content': '배송이 빨라요', 'rating': 5} for i in range(5)])
         self.assertIsNone(p['coverage_score'])

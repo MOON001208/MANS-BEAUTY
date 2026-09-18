@@ -212,7 +212,11 @@ def build_profile(product, reviews):
         profile['compat_' + skin] = round(((sum(vals) + 3 * 5) / (len(vals) + 5) - 1) / 4, 3) if len(vals) >= 5 else None
     suitable_concerns = [c for c in CONCERNS if good[c] >= 3 and good[c] >= 2 * bad[c]]
     profile.update({
-        'product_type': product_type(product.get('name'), product.get('category')),
+        # The crawler infers this from Olive Young's own category. products.category
+        # holds a display group ('쿠션/파운데이션'), so re-inferring from it fed the
+        # word 쿠션 back in and turned every foundation, stick and powder into a
+        # cushion. Only fill it in when the crawler has not.
+        'product_type': product.get('product_type') or product_type(product.get('name'), product.get('category')),
         'suitable_skin_types': [s for s in skin_ratings if len(skin_ratings[s]) >= 5 and mean(skin_ratings[s]) >= 4],
         'suitable_concerns': suitable_concerns, 'suitable_shades': sorted(options),
         'shade_options': {s: counts.most_common(1)[0][0] for s, counts in options.items()},
