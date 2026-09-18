@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import urllib.request
@@ -164,14 +165,51 @@ def status(checks):
         checks.record(age <= STALE_DAYS, "수집 신선도", f"최근 갱신 {newest[:10]} ({age}일 전)", warn_only=True)
 
 
+def crosscheck(checks, base):
+    """Have Codex review what changed since `base`.
+
+    A second model reading the diff catches this project's recurring failure:
+    a confident claim nobody checked against the data. Codex reads AGENTS.md on
+    its own, so the invariants reach it without a prompt here -- which is just
+    as well, since `codex review` refuses a custom prompt alongside --base.
+    Findings are advisory, so an unavailable Codex warns rather than fails.
+    """
+    print(f"- 교차 검수 (codex, {base} 대비) -")
+    # npm installs codex as a .CMD shim on Windows, which only resolves once
+    # shutil.which has expanded PATHEXT.
+    executable = shutil.which("codex")
+    if not executable:
+        checks.record(False, "codex 실행", "codex CLI를 PATH에서 찾지 못함", warn_only=True)
+        return
+    try:
+        result = subprocess.run([executable, "review", "--base", base],
+                                cwd=ROOT.parent.parent, capture_output=True, text=True, timeout=900)
+    except OSError as error:
+        checks.record(False, "codex 실행", type(error).__name__, warn_only=True)
+        return
+    except subprocess.TimeoutExpired:
+        checks.record(False, "codex 실행", "15분 초과", warn_only=True)
+        return
+    output = (result.stdout + result.stderr).strip()
+    if "usage limit" in output:
+        checks.record(False, "codex 실행", "사용량 한도 소진 - 리셋 후 재시도", warn_only=True)
+        return
+    checks.record(result.returncode == 0, "codex 실행", "" if result.returncode == 0 else f"exit {result.returncode}", warn_only=True)
+    print(output[-4000:] if output else "   (출력 없음)")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=["verify", "health", "status", "all"])
+    parser.add_argument("command", choices=["verify", "health", "status", "crosscheck", "all"])
+    parser.add_argument("--base", default="origin/main", help="crosscheck가 비교할 기준 (기본: origin/main)")
     args = parser.parse_args()
     checks = Checks()
     names = ["verify", "health", "status"] if args.command == "all" else [args.command]
     for name in names:
-        {"verify": verify, "health": health, "status": status}[name](checks)
+        if name == "crosscheck":
+            crosscheck(checks, args.base)
+        else:
+            {"verify": verify, "health": health, "status": status}[name](checks)
         print()
     print("모두 통과" if not checks.failed else f"실패 {checks.failed}건")
     return 1 if checks.failed else 0
