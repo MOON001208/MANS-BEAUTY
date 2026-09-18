@@ -8,6 +8,7 @@ from types import SimpleNamespace
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper.crawler import harvest_reviews, normalize_review, is_target, parse_ingredients, product_from_detail, SourceError
 from pipeline import profiles
+from pipeline.shade_mapping import mapping_statements, summarise
 from pipeline.profiles import build_profile, extract_attributes, get_shade_from_option, input_hash, shade_lineup
 from shared import read_all
 
@@ -224,3 +225,35 @@ class PaginationTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ShadeMappingTests(unittest.TestCase):
+    def test_self_description_is_not_a_mapping(self):
+        # The writer's own shade says nothing about which option this product is.
+        self.assertEqual(mapping_statements('저는 23호를 쓰는데 노란끼가 빠졌어요'), [])
+        self.assertEqual(mapping_statements('23~25호 톤의 어두운 피부톤이에요'), [])
+
+    def test_stated_mapping_is_extracted(self):
+        self.assertEqual(mapping_statements('3호 제프리(25호)가 어둡고, 2호 라이언(23호)는'),
+                         [(3, 25), (2, 23)])
+        self.assertEqual(mapping_statements('22-23호 분들은 2호로 가시면 됩니다'), [(2, 23)])
+
+    def test_cushion_shade_is_not_read_as_a_brand_shade(self):
+        # 21호 contains a 1 followed by 호; it must not also count as brand 1호.
+        self.assertEqual(mapping_statements('21호 쓰는 사람입니다'), [])
+
+    def test_median_survives_neighbouring_disagreement(self):
+        summary = summarise({1: [21, 21, 22, 21, 19, 23], 2: [23, 23, 24, 23, 22]})
+        self.assertEqual(summary[1]['shade'], '21')
+        self.assertEqual(summary[2]['shade'], '23')
+
+    def test_thin_or_indistinguishable_evidence_is_refused(self):
+        self.assertIsNone(summarise({1: [21, 21], 2: [23] * 6}))
+        # Both options landing on one shade cannot tell a buyer them apart.
+        self.assertIsNone(summarise({1: [23] * 6, 2: [23] * 6}))
+        # A single rung states no range.
+        self.assertIsNone(summarise({2: [23] * 9}))
+
+    def test_order_must_not_invert(self):
+        # A lower brand number resolving darker than a higher one is incoherent.
+        self.assertIsNone(summarise({1: [25] * 6, 2: [21] * 6}))
