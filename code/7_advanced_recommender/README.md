@@ -36,7 +36,7 @@ python -m venv .venv
 - `.pipeline-cache`에 커서·탐색 캐시·실행 보고서를 기록합니다. Git에 포함하지 않습니다. `--fresh`는 저장 커서 대신 처음부터 탐색합니다.
 - 성분표가 차단되거나 여러 옵션의 성분이 섞이면 추정하지 않습니다. 확인된 성분표가 없으면 성분 관련 판정을 제공하지 않습니다.
 
-GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST 및 수동 실행을 지원합니다. `SUPABASE_URL`, `SUPABASE_SECRET_KEY` Secrets가 필요합니다. 수집 뒤 프로필을 갱신하고, 실패해도 커서와 보고서를 보관합니다. 장기 비활성 저장소는 GitHub가 스케줄을 중지할 수 있으므로 Actions의 활성 상태를 확인하세요.
+GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST에 **저장된 리뷰의 프로필만 갱신**합니다. GitHub 호스팅 서버의 올리브영 요청이 403으로 차단되어, 수집은 사용자가 PC에서 위 명령으로 수동 실행하는 구성입니다. PC에 자동 작업은 등록하지 않습니다. `SUPABASE_URL`, `SUPABASE_SECRET_KEY` Secrets가 필요합니다. 수동 Actions 실행의 `collect_reviews`는 기본 false이며 접근 가능한 실행 환경에서만 사용합니다. 실패해도 커서와 보고서를 보관합니다. 장기 비활성 저장소는 GitHub가 스케줄을 중지할 수 있으므로 Actions의 활성 상태를 확인하세요.
 
 ## 추천 점수의 의미
 

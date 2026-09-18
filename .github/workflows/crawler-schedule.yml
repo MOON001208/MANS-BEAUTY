@@ -8,6 +8,10 @@ on:
         description: 'Optional product ID; blank discovers the catalog'
         type: string
         default: ''
+      collect_reviews:
+        description: 'Try public collection from this runner (may be blocked by source)'
+        type: boolean
+        default: false
       max_review_pages:
         description: 'Pages per review sort (minimum 2)'
         type: number
@@ -52,8 +56,10 @@ jobs:
           PRODUCT_ID: ${{ inputs.product || '' }}
           REVIEW_PAGES: ${{ inputs.max_review_pages || '100' }}
           CRAWL_SECONDS: ${{ inputs.max_seconds || '5400' }}
+          COLLECT_REVIEWS: ${{ inputs.collect_reviews || 'false' }}
         run: |
           args=(--write --max-review-pages "$REVIEW_PAGES" --max-seconds "$CRAWL_SECONDS")
+          if [[ "$COLLECT_REVIEWS" != "true" ]]; then args+=(--profiles-only); fi
           if [[ -n "$PRODUCT_ID" ]]; then args+=(--product "$PRODUCT_ID"); fi
           python -u run_pipeline.py "${args[@]}"
       - uses: actions/cache/save@v4
@@ -69,4 +75,5 @@ jobs:
         with:
           name: pipeline-report
           path: code/7_advanced_recommender/.pipeline-cache/*report.json
+          include-hidden-files: true
           retention-days: 14
