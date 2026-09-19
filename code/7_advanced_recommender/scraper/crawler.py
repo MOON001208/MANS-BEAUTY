@@ -164,7 +164,7 @@ def is_target(detail, known=False):
     middle = (standard.get('middleCategoryName') or '').replace(' ', '')
     return known or (detail.get('menCategoryFlag') is True and middle == '베이스메이크업')
 
-def product_from_detail(pid, detail):
+def product_from_detail(pid, detail, existing=None):
     kind = (detail.get('standardCategory') or {}).get('lowerCategoryName', '')
     name = detail.get('goodsName', '')
     if not name or detail.get('goodsNumber') != pid:
@@ -178,6 +178,12 @@ def product_from_detail(pid, detail):
               'product_type': product_type, 'product_url': SITE + '/store/goods/getGoodsDetail.do?goodsNo=' + pid,
               'last_updated_at': utc_now(),
               'source_options': [{'id': o.get('optionNumber'), 'name': o.get('optionName') or '', 'sold_out': bool(o.get('soldOutFlag'))} for o in detail.get('options', [])]}
+    # Catalog refreshes must preserve an existing review profile. Use the
+    # existing JSON column so source categories survive without a SQL migration.
+    if kind:
+        result['profile_metadata'] = {
+            **((existing or {}).get('profile_metadata') or {}), 'source_category': kind,
+        }
     if image_url and image_url.startswith('https://'):
         result['thumbnail_url'] = image_url
     for target, source in [('price', 'finalPrice'), ('original_price', 'salePrice')]:
@@ -317,7 +323,7 @@ def run(args):
                                   'middle': standard.get('middleCategoryName')}
             if not target:
                 continue
-            product = product_from_detail(pid, detail)
+            product = product_from_detail(pid, detail, existing.get(pid))
             item = {'id': pid, 'is_new': pid not in existing, 'warnings': [], 'status': 'running'}
             report['products'].append(item)
             try:

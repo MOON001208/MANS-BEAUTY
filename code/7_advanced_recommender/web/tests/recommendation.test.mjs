@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
+import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, shadeLineup, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
 const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
@@ -95,10 +95,32 @@ test('a buyable option is preferred over a nearer sold-out one', () => {
   ]);
   assert.equal(bestShadeOption(line, '21').label, '2호');
 });
-test('when every option is sold out the nearest is still named', () => {
+test('all sold-out options still provide a labelled suggestion and shade bonus', () => {
   const line = lined([
     { name: '1호', label: '1호', position: 0, sold_out: true },
     { name: '2호', label: '2호', position: 1, sold_out: true },
   ]);
   assert.equal(bestShadeOption(line, '21').label, '1호');
+  assert.equal(bestShadeOption(line, '21').sold_out, true);
+  assert.equal(shadeLineup(line).options.length, 2);
+  assert.equal(shadeScore(line, '21'), shadeScore(two, '21'));
+});
+
+test('non-cover source categories cannot rank even with an old liquid type', () => {
+  const categories = ['프라이머/베이스', '파우더/팩트', '쉐이딩', '컨실러'];
+  const others = categories.map(category => withType(category, 'liquid', {
+    profile_metadata: { ...product.profile_metadata, source_category: category },
+  }));
+  const foundation = withType('foundation', 'liquid', {
+    profile_metadata: { ...product.profile_metadata, source_category: '파운데이션' },
+  });
+  for (const applicationMethod of ['any', 'tool']) {
+    assert.deepEqual(selectRecommendations([...others, foundation], { ...quiz, applicationMethod }).map(p => p.id), ['foundation']);
+  }
+  assert.deepEqual(searchProducts(others, '').map(p => p.id), categories);
+});
+
+test('non-cover types stay excluded even without category metadata', () => {
+  const others = ['primer', 'powder', 'shading'].map(type => withType(type, type));
+  assert.deepEqual(selectRecommendations(others, quiz), []);
 });

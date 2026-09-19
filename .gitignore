@@ -85,3 +85,6 @@ generate_ppt.py
 update_plk_data.py
 서하님이 주신 http코드/
 올리브영데이터분석.pdf
+
+# Local legacy scripts may contain API credentials; keep outside version control.
+스크래핑 코드/

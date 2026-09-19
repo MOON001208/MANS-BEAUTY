@@ -26,6 +26,8 @@ function evaluate(persona) {
   for (const p of results) {
     if (!hasCurrentProfile(p)) violations.push(`${p.id}: 구버전 프로필`);
     if ((meta(p).analyzed_count ?? 0) < MIN_ANALYZED_REVIEWS) violations.push(`${p.id}: 분석 리뷰 ${MIN_ANALYZED_REVIEWS}개 미만`);
+    if (['concealer', 'primer', 'powder', 'shading'].includes(p.product_type)) violations.push(`${p.id}: 전체 얼굴 커버 유형 아님`);
+    if (['컨실러', '프라이머/베이스', '파우더/팩트', '쉐이딩'].includes(meta(p).source_category)) violations.push(`${p.id}: 전체 얼굴 커버 소분류 아님`);
     if (persona.applicationMethod === 'hand' && p.product_type !== 'tone_lotion') violations.push(`${p.id}: 손 사용 조건 위반`);
     if (persona.applicationMethod === 'tool' && p.product_type === 'tone_lotion') violations.push(`${p.id}: 도구 사용 조건 위반`);
   }

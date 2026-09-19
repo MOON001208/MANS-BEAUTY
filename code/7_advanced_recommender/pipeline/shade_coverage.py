@@ -22,11 +22,12 @@ from pipeline.profiles import shade_lineup
 
 SINGLE_BY_NATURE = re.compile(r'톤업|브라이트닝|화이트닝|프라이머|선크림|에센스')
 FAMILY = {'tone_lotion': '톤로션/커버로션/BB', 'cushion': '쿠션/파운데이션', 'concealer': '컨실러',
+          'primer': '프라이머/베이스', 'powder': '파우더/팩트', 'shading': '쉐이딩',
           'stick': '스틱', 'liquid': '기타 베이스'}
 BUCKETS = [
     ('A', '21/23/25 명시'),
     ('B', '제품 내 밝기 순서 확보'),
-    ('C', '호수 구조 파악, 재고 1종뿐'),
+    ('C', '호수 구조 파악, 구매 선택지 부족/미확인'),
     ('D', '옵션은 있으나 호수 아님'),
     ('E', '옵션 데이터 없음 (본래 단일 호수)'),
     ('F', '옵션 데이터 없음 (커버 목적, 미확보)'),
@@ -39,7 +40,7 @@ def classify(product, review_options):
     if product.get('suitable_shades'):
         return 'A'
     if stored:
-        return 'B'
+        return 'B' if len(stored.get('options', [])) >= 2 else 'C'
     # Sold-out options leave the shade structure known but unbuyable.
     if shade_lineup(review_options):
         return 'C'

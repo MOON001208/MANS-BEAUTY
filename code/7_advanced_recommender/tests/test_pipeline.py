@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper.crawler import harvest_reviews, normalize_review, is_target, parse_ingredients, product_from_detail, SourceError
 from pipeline import profiles
 from pipeline.shade_mapping import mapping_statements, summarise
+from pipeline.shade_coverage import classify
 from pipeline.profiles import build_profile, extract_attributes, get_shade_from_option, input_hash, shade_lineup
 from shared import read_all
 
@@ -118,6 +119,30 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('review_count', product)
         self.assertNotIn('ingredients_raw', product)
 
+    def test_source_category_survives_catalog_and_profile_refresh(self):
+        for category, expected in [('프라이머/베이스', 'primer'), ('파우더/팩트', 'powder'),
+                                   ('쉐이딩', 'shading'), ('파운데이션', 'liquid')]:
+            with self.subTest(category=category):
+                existing = {'profile_metadata': {'version': profiles.VERSION, 'analyzed_count': 12,
+                                                 'evidence_review_ids': {'coverage': ['a', 'b', 'c']}}}
+                original = copy.deepcopy(existing)
+                detail = {'goodsNumber': 'p', 'goodsName': '남성 베이스',
+                          'standardCategory': {'lowerCategoryName': category}}
+                product = product_from_detail('p', detail, existing)
+                self.assertEqual(product['product_type'], expected)
+                self.assertEqual(product['profile_metadata']['analyzed_count'], 12)
+                self.assertEqual(product['profile_metadata']['source_category'], category)
+                self.assertEqual(existing, original)
+                profile = build_profile(product, [])
+                self.assertEqual(profile['profile_metadata']['source_category'], category)
+                self.assertEqual(profile['product_type'], expected)
+                self.assertEqual(input_hash(product, []), input_hash({**product, **profile}, []))
+
+    def test_source_category_wins_over_marketing_name(self):
+        product = product_from_detail('p', {'goodsNumber': 'p', 'goodsName': '쿠션 전용 프라이머',
+                                            'standardCategory': {'lowerCategoryName': '프라이머/베이스'}})
+        self.assertEqual(product['product_type'], 'primer')
+
     def test_ingredients_different_formulations_are_not_combined(self):
         data = [{'name': '전성분', 'content': '정제수, 글리세린, 나이아신아마이드'}, {'name': '전성분', 'content': '정제수, 글리세린, 향료, 에탄올'}]
         self.assertIsNone(parse_ingredients(data))
@@ -202,15 +227,37 @@ class ProfileTests(unittest.TestCase):
         # Packaging differences collapse to one shade, which offers no choice.
         self.assertIsNone(shade_lineup(Counter({'[본품] 1호': 5, '[기획] 1호': 3})))
 
-    def test_sold_out_options_stay_in_the_lineup_but_are_marked(self):
-        # Out of stock is not the same as not existing. Hiding the range would
-        # tell a buyer less about the product than the shelf does.
+    def test_sold_out_options_keep_their_positions_and_stock_flags(self):
         product = {'id': 'p', 'source_options': [
-            {'name': '1호', 'sold_out': False}, {'name': '2호', 'sold_out': True}]}
+            {'name': '1호', 'sold_out': True}, {'name': '2호', 'sold_out': False}]}
         profile = build_profile(product, [])
         lineup = profile['profile_metadata']['shade_lineup']
-        self.assertEqual([(o['label'], o['sold_out']) for o in lineup['options']],
-                         [('1호', False), ('2호', True)])
+        self.assertEqual([(o['label'], o['position'], o['sold_out']) for o in lineup['options']],
+                         [('1호', 0.0, True), ('2호', 1.0, False)])
+
+    def test_all_sold_out_retains_the_lineup(self):
+        product = {'id': 'p', 'source_options': [
+            {'name': '1호', 'sold_out': True}, {'name': '2호', 'sold_out': True}]}
+        lineup = build_profile(product, [])['profile_metadata']['shade_lineup']
+        self.assertEqual(len(lineup['options']), 2)
+        self.assertTrue(all(o['sold_out'] for o in lineup['options']))
+
+    def test_coverage_counts_shade_information_regardless_of_stock(self):
+        for count in [0, 1, 2]:
+            product = {'profile_metadata': {'shade_lineup': {'options': [
+                {'sold_out': index >= count} for index in range(2)]}}}
+            self.assertEqual(classify(product, Counter()), 'B')
+
+    def test_sold_out_packaging_does_not_hide_buyable_variant(self):
+        lineup = shade_lineup(Counter({'[기획] 1호': 10, '[본품] 1호': 1, '2호': 3}), {'[기획] 1호'})
+        self.assertEqual([o['name'] for o in lineup['options']], ['[본품] 1호', '2호'])
+
+    def test_identical_option_names_can_have_different_stock(self):
+        product = {'id': 'p', 'source_options': [
+            {'id': 'a', 'name': '1호', 'sold_out': True},
+            {'id': 'b', 'name': '1호', 'sold_out': False},
+            {'id': 'c', 'name': '2호', 'sold_out': False}]}
+        self.assertEqual(len(build_profile(product, [])['profile_metadata']['shade_lineup']['options']), 2)
 
     def test_a_sold_out_option_never_claims_a_cushion_shade(self):
         # suitable_shades drives the quiz's 21/23/25 match, so it stays buyable-only.
@@ -233,6 +280,14 @@ class ProfileTests(unittest.TestCase):
     def test_edits_invalidate_fingerprint(self):
         a = input_hash({'id': 'p'}, [{'id': 'r', 'content': 'a'}])
         self.assertNotEqual(a, input_hash({'id': 'p'}, [{'id': 'r', 'content': 'b'}]))
+
+    def test_source_category_and_type_changes_invalidate_fingerprint(self):
+        product = {'id': 'p', 'product_type': 'liquid'}
+        before = input_hash(product, [])
+        self.assertNotEqual(before, input_hash({**product, 'product_type': 'stick'}, []))
+        changed = {**product, 'profile_metadata': {'source_category': '파우더/팩트'}}
+        self.assertNotEqual(before, input_hash(changed, []))
+        self.assertEqual(build_profile(changed, [])['product_type'], 'powder')
 
     def test_metadata_shape_change_invalidates_fingerprint(self):
         # A stored profile missing newly added metadata must not be skipped as unchanged.

@@ -10,6 +10,12 @@ CACHE = ROOT / '.pipeline-cache'
 
 def product_type(name, category=''):
     import re
+    # Source categories outrank name keywords (e.g. a primer mentioning cushion).
+    source_types = {'프라이머/베이스': 'primer', '메이크업베이스/프라이머': 'primer',
+                    '파우더/팩트': 'powder', '파우더': 'powder', '쉐이딩': 'shading'}
+    source_type = source_types.get(re.sub(r'\s+', '', category or ''))
+    if source_type:
+        return source_type
     text = (name or '') + ' ' + (category or '')
     if '컨실러' in text:
         return 'concealer'

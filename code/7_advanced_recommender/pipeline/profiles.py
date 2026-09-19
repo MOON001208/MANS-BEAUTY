@@ -14,7 +14,7 @@ from shared import product_type
 VERSION = 'rules-ko-v1'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 5
+METADATA_REVISION = 6
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -116,22 +116,18 @@ def shade_lineup(option_counts, unavailable=()):
     when the options land on distinct levels. A brand's 1호 is never claimed to
     equal the 21호 of the cushion scale; only the order within this product is
     asserted. Packaging variants of one shade collapse onto a single rung, and
-    names that state no shade at all are dropped. Returns None when fewer than
-    two rungs survive, which is what volume-only and tint-purpose options do.
+    names that state no shade at all are dropped. Returns None when the source
+    states fewer than two rungs.
 
-    Options in `unavailable` still shape the range and are marked sold_out.
-    Being out of stock is not the same as not existing, and hiding the range
-    leaves a buyer knowing less about the product than the shelf would tell
-    them. Availability is reported next to the shade, not instead of it.
+    Keep sold-out shades and their positions; stock status is displayed, not a
+    reason to hide shade information. Prefer a buyable packaging variant when
+    several options describe the same shade.
     """
     cleaned = defaultdict(Counter)
-    sold_out = set()
     for name, count in option_counts.items():
         text = _clean_option(name)
         if text:
             cleaned[text][name] += count
-            if name in unavailable:
-                sold_out.add(text)
     for basis, resolve in [('number', _option_number), ('brightness_words', _brightness_level)]:
         rungs = defaultdict(Counter)
         for text, names in cleaned.items():
@@ -144,15 +140,25 @@ def shade_lineup(option_counts, unavailable=()):
         last = len(ordered) - 1
         options = []
         for index, level in enumerate(ordered):
-            name = rungs[level].most_common(1)[0][0]
+            available = Counter({name: count for name, count in rungs[level].items()
+                                 if name not in unavailable})
+            name = (available or rungs[level]).most_common(1)[0][0]
             label = _clean_option(name)
             options.append({'name': name, 'label': label, 'position': round(index / last, 3),
-                            'sold_out': label in sold_out})
-        return {'basis': basis, 'options': options}
+                            'sold_out': not bool(available)})
+        return {'basis': basis, 'options': options} if options else None
     return None
+
+def profile_product_type(product):
+    source_category = (product.get('profile_metadata') or {}).get('source_category')
+    if source_category:
+        return product_type(product.get('name'), source_category)
+    return product.get('product_type') or product_type(product.get('name'), product.get('category'))
 
 def input_hash(product, reviews):
     source = {k: product.get(k) for k in ['id', 'name', 'category', 'ingredients_raw', 'source_options']}
+    source['source_category'] = (product.get('profile_metadata') or {}).get('source_category')
+    source['product_type'] = profile_product_type(product)
     data = [{k: r.get(k) for k in ['id', 'content', 'rating', 'skin_type', 'option_name']} for r in reviews]
     raw = json.dumps([VERSION, METADATA_REVISION, source, sorted(data, key=lambda r: r['id'])], ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(raw.encode()).hexdigest()
@@ -187,20 +193,21 @@ def build_profile(product, reviews):
         if shade:
             options[shade][option] += 1
     # Prefer the current catalog over option names remembered from old reviews, so
-    # a discontinued shade is never offered. Sold-out options stay in the lineup
-    # and are marked: they are on the shelf, just not buyable today, and dropping
-    # them hid the shade range of eight products entirely.
+    # options removed from the catalog are not offered. Sold-out shades still
+    # belong to the product's lineup and carry an availability flag.
     source_options = product.get('source_options')
     unavailable = set()
     if source_options is not None:
         options, option_names = defaultdict(Counter), Counter()
+        available_names = {o.get('name') for o in source_options if not o.get('sold_out')}
         for option in source_options:
             name = option.get('name') or ''
             if not name.strip():
                 continue
             option_names[name] += 1
             if option.get('sold_out'):
-                unavailable.add(name)
+                if name not in available_names:
+                    unavailable.add(name)
                 continue
             # Only a buyable option may claim a 21/23/25 shade the quiz matches on.
             shade = get_shade_from_option(name)
@@ -215,14 +222,16 @@ def build_profile(product, reviews):
         # The crawler infers this from Olive Young's own category. products.category
         # holds a display group ('쿠션/파운데이션'), so re-inferring from it fed the
         # word 쿠션 back in and turned every foundation, stick and powder into a
-        # cushion. Only fill it in when the crawler has not.
-        'product_type': product.get('product_type') or product_type(product.get('name'), product.get('category')),
+        # cushion. Prefer the preserved source category, then the crawler's type.
+        'product_type': profile_product_type(product),
         'suitable_skin_types': [s for s in skin_ratings if len(skin_ratings[s]) >= 5 and mean(skin_ratings[s]) >= 4],
         'suitable_concerns': suitable_concerns, 'suitable_shades': sorted(options),
         'shade_options': {s: counts.most_common(1)[0][0] for s, counts in options.items()},
         'ingredient_level': '성분 확인' if product.get('ingredients_raw') else None,
         'profile_metadata': {
             'version': VERSION, 'analyzed_count': len(reviews), 'input_hash': input_hash(product, reviews),
+            'metadata_revision': METADATA_REVISION,
+            'source_category': (product.get('profile_metadata') or {}).get('source_category'),
             'evidence_counts': {k: len(scores[k]) for k in ATTRIBUTES}, 'evidence_review_ids': dict(evidence_ids),
             'concern_evidence_ids': dict(concern_ids),
             'skin_review_counts': {k: len(v) for k, v in skin_ratings.items()},

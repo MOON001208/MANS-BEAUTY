@@ -13,9 +13,8 @@ export function shadeLineup(product: Product): ShadeLineup | null {
 }
 
 /** The option of this product closest to the requested tone, or null if it states none.
- *  Buyable options win: naming a shade the shop cannot sell today helps nobody.
- *  When every option is out of stock the nearest one is still returned, so the
- *  page can name it and say it is unavailable. */
+ *  Prefer in-stock options; if all are sold out, suggest the nearest one and
+ *  let the card/modal display its sold-out status. */
 export function bestShadeOption(product: Product, shade: ShadeChoice | null) {
   if (!shade || shade === 'any') return null;
   const options = shadeLineup(product)?.options;
@@ -94,12 +93,18 @@ export const RESULT_LIMIT = 12;
 // hiding one spot - and its review scores describe that job, not this one.
 // Concealers stay in the catalog; they are just not an answer to this quiz.
 const RECOMMENDABLE_TYPES = new Set(['cushion', 'liquid', 'stick', 'tone_lotion']);
+const NON_COVER_CATEGORIES = new Set(['컨실러', '프라이머/베이스', '메이크업베이스/프라이머', '파우더/팩트', '파우더', '쉐이딩']);
+
+export function isFullFaceBase(product: Product): boolean {
+  const category = product.profile_metadata?.source_category?.replace(/\s+/g, '') ?? '';
+  return RECOMMENDABLE_TYPES.has(product.product_type ?? '') && !NON_COVER_CATEGORIES.has(category);
+}
 
 /** The ranking the site shows. Kept here so the offline evaluation scores the same list. */
 export function selectRecommendations(products: Product[], quiz: QuizAnswers): (Product & { _score: number })[] {
   return products
     .filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= MIN_ANALYZED_REVIEWS)
-    .filter(p => RECOMMENDABLE_TYPES.has(p.product_type ?? ''))
+    .filter(isFullFaceBase)
     .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
     .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
     .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))
