@@ -11,6 +11,19 @@ python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r code/7_advanced_recommender/requirements.txt
 ```
 
+과거 Crawl4AI 수집 코드를 실행하거나 브라우저로 올리브영 화면을 확인하려면 선택적으로
+`requirements-crawl4ai.txt`를 설치합니다. 현재 운영 수집기의 리뷰 API 호출에는 Crawl4AI가 필요하지 않습니다.
+
+```powershell
+.venv/Scripts/python.exe -m pip install -r code/7_advanced_recommender/requirements-crawl4ai.txt
+.venv/Scripts/python.exe -m playwright install chromium
+```
+
+2026-09-27 이 PC의 `.venv`에서 Crawl4AI 0.9.2와 Playwright 1.61.0을 확인했고,
+Playwright의 Chromium 실행 파일이 존재하며 Crawl4AI로 올리브영 상품 페이지를
+비로그인 상태에서 열어 HTTP 200을 받았다. 이는 브라우저 환경과 페이지 접근 확인이며,
+리뷰 API의 페이지 제한이 해제되었다는 뜻은 아니다.
+
 이 디렉터리의 `.env.example`을 `.env`로 복사한 뒤 서버 전용 `SUPABASE_SECRET_KEY`를 설정합니다. `web/.env.local`에는 URL과 공개용 publishable 키만 넣습니다. 실제 `.env`는 Git에 포함하지 않습니다.
 
 처음 연결하는 DB에는 `migrations/20260917_pipeline_security.sql`을 Supabase SQL Editor에서 먼저 적용합니다. 상품·리뷰 행은 삭제하지 않으며, 공개 계정의 쓰기 권한과 리뷰 작성자 닉네임 조회 권한을 제거합니다. 노출된 관리자 키 자체는 별도 폐기해야 합니다.
@@ -42,8 +55,10 @@ GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST에 **저
 ## 리뷰 수집의 한계
 
 2026-09-19에는 10건씩 요청했을 때 정렬당 약 10페이지 이후 `loginRequired`를 받았다.
-2026-09-27에는 50건 페이지와 옵션 필터가 작동함을 확인했다. 50건 페이지에서 접근 가능한
-총 페이지 수는 아직 확인하지 못했다. 로그인 요구가 나오면 그 실행의 리뷰 탐색을 멈춘다.
+2026-09-27에는 50건 페이지와 옵션 필터가 작동함을 확인했다. 비로그인 상태에서 리뷰가
+충분히 많은 상품의 최신순을 조회하면 10페이지째(응답 500건)에 `loginRequired=true`가
+표시됐다. 과거 Crawl4AI 코드와 동일하게 `page=0`을 넣어 옵션별로 조회해도 해당 옵션의
+10페이지째에 같은 표시가 나왔다. 로그인 요구가 나오면 그 실행의 리뷰 탐색을 멈춘다.
 여러 상품을 연속으로 수집하면 서버가 긴 대기를 요구하고(`RateLimited`), 크롤러는 거기서 멈춘다.
 
 그래서 리뷰는 한 번에 다 받는 것이 아니라 여러 세션에 나눠 쌓는다. 커서는 `.pipeline-cache`에
