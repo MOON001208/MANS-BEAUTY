@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper import crawler
 
 class IngestionTests(unittest.TestCase):
-    def run_pipeline(self, limited=False):
+    def run_pipeline(self, limited=False, related_failure=False):
         db, api = MagicMock(), MagicMock()
         writes = []
         def table(name):
@@ -19,7 +19,12 @@ class IngestionTests(unittest.TestCase):
             query.upsert.side_effect = upsert
             return query
         db.table.side_effect = table
-        api.detail.side_effect = lambda pid: {'goodsNumber': pid, 'goodsName': '남성 쿠션', 'menCategoryFlag': True, 'standardCategory': {'middleCategoryName': '베이스 메이크업', 'lowerCategoryName': '쿠션'}}
+        def detail(pid):
+            if related_failure and pid == 'q':
+                raise crawler.SourceError('단종 상품 상세 없음')
+            return {'goodsNumber': pid, 'goodsName': '남성 쿠션', 'menCategoryFlag': True,
+                    'standardCategory': {'middleCategoryName': '베이스 메이크업', 'lowerCategoryName': '쿠션'}}
+        api.detail.side_effect = detail
         api.stats.return_value = {}
         if limited:
             api.reviews_page.side_effect = crawler.RateLimited('429')
@@ -44,6 +49,13 @@ class IngestionTests(unittest.TestCase):
         result, _, api = self.run_pipeline(limited=True)
         self.assertEqual(result['stop'], 'RateLimited')
         api.detail.assert_called_once_with('p')
+
+    def test_unavailable_related_product_skips_only_its_review(self):
+        result, writes, _ = self.run_pipeline(related_failure=True)
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['products'][0]['cross_product_skipped'], 1)
+        self.assertEqual(result['products'][0]['warnings'][0]['stage'], 'related_detail')
+        self.assertFalse(any(name == 'reviews' for name, _ in writes))
 
 if __name__ == '__main__':
     unittest.main()

@@ -70,7 +70,7 @@ class OliveYoung:
                     raise SourceError(f'올리브영 재시도 소진 HTTP {response.status_code}')
                 wait = response.headers.get('Retry-After', '')
                 if wait.isdigit() and float(wait) > 60:
-                    raise RateLimited('서버가 긴 대기 시간을 요청했습니다. 수집을 중단합니다.')
+                    raise RateLimited(f'서버가 {wait}초 대기를 요청했습니다. 수집을 중단합니다.')
                 time.sleep(float(wait) if wait.isdigit() else 2 ** (attempt + 2))
                 continue
             if not 200 <= response.status_code < 300:
@@ -83,8 +83,15 @@ class OliveYoung:
             payload = self.request(method, url, **kwargs).json()
         except ValueError:
             raise SourceError('JSON 응답이 아닙니다.') from None
-        if not isinstance(payload, dict) or payload.get('code', 200) not in (200, '200'):
-            raise SourceError('올리브영 API 실패 응답')
+        if not isinstance(payload, dict):
+            raise SourceError('올리브영 API 응답 형식 오류')
+        code = payload.get('code', 200)
+        if code in (401, '401', 403, '403'):
+            raise AccessLimited(f'올리브영 API 접근 제한 code={code}')
+        if code in (429, '429'):
+            raise RateLimited('올리브영 API 요청량 제한 code=429')
+        if code not in (200, '200'):
+            raise SourceError(f'올리브영 API 실패 응답 code={code} status={payload.get("status")}')
         if payload.get('data') is None:
             raise SourceError('올리브영 API data 누락')
         return payload['data']
@@ -378,13 +385,19 @@ def run(args):
                 for row in rows:
                     source = row['product_id']
                     if source != pid and source not in existing and source not in rejected_sources:
-                        source_detail = api.detail(source)
-                        if is_target(source_detail):
-                            source_product = product_from_detail(source, source_detail)
-                            if args.write:
-                                db.table('products').upsert(source_product).execute()
-                            existing[source] = source_product
-                        else:
+                        try:
+                            source_detail = api.detail(source)
+                            if is_target(source_detail):
+                                source_product = product_from_detail(source, source_detail)
+                                if args.write:
+                                    db.table('products').upsert(source_product).execute()
+                                existing[source] = source_product
+                            else:
+                                rejected_sources.add(source)
+                        except (AccessLimited, RateLimited, BudgetReached):
+                            raise
+                        except SourceError as error:
+                            item['warnings'].append({'stage': 'related_detail', 'id': source, 'error': str(error)})
                             rejected_sources.add(source)
                     if source == pid or source in existing:
                         accepted.append(row)
