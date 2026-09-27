@@ -347,26 +347,41 @@ def run(args):
             cached = details_cache.get(pid)
             if pid not in existing and cached and time.time() - cached['at'] < 7 * 86400 and not cached['target']:
                 continue
-            detail = api.detail(pid)
-            target = is_target(detail, pid in existing)
-            # Recording the source's own category makes the collected mix
-            # answerable without another pass over the catalog.
-            standard = detail.get('standardCategory') or {}
-            details_cache[pid] = {'at': time.time(), 'target': target,
-                                  'category': standard.get('lowerCategoryName'),
-                                  'middle': standard.get('middleCategoryName')}
+            detail_error = None
+            try:
+                detail = api.detail(pid)
+            except (AccessLimited, RateLimited, BudgetReached):
+                raise
+            except SourceError as error:
+                if pid not in existing:
+                    raise
+                detail, detail_error = None, str(error)
+            target = is_target(detail, pid in existing) if detail is not None else True
+            if detail is not None:
+                # Recording the source's own category makes the collected mix
+                # answerable without another pass over the catalog.
+                standard = detail.get('standardCategory') or {}
+                details_cache[pid] = {'at': time.time(), 'target': target,
+                                      'category': standard.get('lowerCategoryName'),
+                                      'middle': standard.get('middleCategoryName')}
             if not target:
                 continue
-            product = product_from_detail(pid, detail, existing.get(pid))
+            product = product_from_detail(pid, detail, existing.get(pid)) if detail is not None else None
             item = {'id': pid, 'is_new': pid not in existing, 'warnings': [], 'status': 'running'}
             report['products'].append(item)
+            if detail_error:
+                item['warnings'].append({'stage': 'detail', 'error': detail_error})
             try:
-                product.update(api.stats(pid))
+                stats = api.stats(pid)
+                if product is not None:
+                    product.update(stats)
+                elif args.write:
+                    db.table('products').update(stats).eq('id', pid).execute()
             except (AccessLimited, RateLimited, BudgetReached):
                 raise
             except SourceError as error:
                 item['warnings'].append({'stage': 'stats', 'error': str(error)})
-            if not args.skip_ingredients and not (existing.get(pid) or {}).get('ingredients_raw'):
+            if detail is not None and not args.skip_ingredients and not (existing.get(pid) or {}).get('ingredients_raw'):
                 try:
                     ingredients = api.ingredients(pid, detail)
                     if ingredients:
@@ -377,7 +392,7 @@ def run(args):
                     raise
                 except SourceError as error:
                     item['warnings'].append({'stage': 'ingredients', 'error': str(error)})
-            if args.write:
+            if args.write and product is not None:
                 db.table('products').upsert(product).execute()
             counts = {'new_saved': 0, 'cross_product_skipped': 0, 'cross_product_saved': 0}
             def save_page(rows):

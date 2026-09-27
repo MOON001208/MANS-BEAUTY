@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper import crawler
 
 class IngestionTests(unittest.TestCase):
-    def run_pipeline(self, limited=False, related_failure=False):
+    def run_pipeline(self, limited=False, related_failure=False, current_failure=False):
         db, api = MagicMock(), MagicMock()
         writes = []
         def table(name):
@@ -20,6 +20,8 @@ class IngestionTests(unittest.TestCase):
             return query
         db.table.side_effect = table
         def detail(pid):
+            if current_failure and pid == 'p':
+                raise crawler.SourceError('code=31502')
             if related_failure and pid == 'q':
                 raise crawler.SourceError('단종 상품 상세 없음')
             return {'goodsNumber': pid, 'goodsName': '남성 쿠션', 'menCategoryFlag': True,
@@ -56,6 +58,12 @@ class IngestionTests(unittest.TestCase):
         self.assertEqual(result['products'][0]['cross_product_skipped'], 1)
         self.assertEqual(result['products'][0]['warnings'][0]['stage'], 'related_detail')
         self.assertFalse(any(name == 'reviews' for name, _ in writes))
+
+    def test_known_product_can_collect_when_detail_is_unavailable(self):
+        result, writes, _ = self.run_pipeline(current_failure=True)
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['products'][0]['warnings'][0]['stage'], 'detail')
+        self.assertTrue(any(name == 'reviews' for name, _ in writes))
 
 if __name__ == '__main__':
     unittest.main()
