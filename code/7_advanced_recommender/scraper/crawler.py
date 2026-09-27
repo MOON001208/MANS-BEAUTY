@@ -24,6 +24,7 @@ REVIEW_ROOT = 'https://m.oliveyoung.co.kr/review/api/v2/reviews'
 CATALOG_ID = '100000100020001'  # current base makeup, filtered by menCategoryFlag
 PRODUCT_SORTS = {'new': '02', 'popular': '01'}
 REVIEW_SORTS = ('DATETIME_DESC', 'USEFUL_SCORE_DESC', 'RATING_DESC', 'RATING_ASC')
+REVIEW_PAGE_SIZE = 50  # Confirmed against the live cursor API on 2026-09-27.
 SKIN_TYPES = {'A01': '건성', 'A02': '지성', 'A03': '복합성', 'A04': '중성', 'A05': '민감성'}
 SKIN_TONES = {'B01': '쿨톤', 'B02': '웜톤', 'B03': '뉴트럴'}
 SKIN_TROUBLES = {'C01': '건조함', 'C02': '여드름', 'C03': '모공', 'C04': '블랙헤드', 'C05': '미백', 'C06': '주름', 'C07': '탄력', 'C08': '다크서클', 'C09': '홍조', 'C10': '잡티', 'C11': '각질'}
@@ -117,17 +118,34 @@ class OliveYoung:
             raise SourceError('리뷰 통계 필드가 변경되었습니다.')
         return {'review_count': int(count), 'star_rating': float(rating)}
 
+    def review_options(self, pid):
+        data = self.json('GET', REVIEW_ROOT + f'/options/{pid}/count')
+        items = data.get('productItemReviewCountList') if isinstance(data, dict) else None
+        if not isinstance(items, list):
+            raise SourceError('옵션별 리뷰 수 응답 스키마 변경')
+        numbers = []
+        for item in items:
+            if not isinstance(item, dict) or not isinstance(item.get('reviewCount'), (int, float)):
+                raise SourceError('옵션별 리뷰 수 응답 스키마 변경')
+            number = item.get('itemNumber')
+            if item['reviewCount'] > 0 and number is not None and str(number):
+                numbers.append(str(number))
+        return list(dict.fromkeys(numbers))
+
     def ingredients(self, pid, detail):
         data = self.json('POST', SITE + '/goods/api/v1/article', json={
             'goodsNumber': pid, 'liquorFlag': detail.get('liquorFlag', False),
             'goodsOptionInfoList': [{'standardCode': o.get('standardCode'), 'optionName': o.get('optionName')} for o in detail.get('options', [])]})
         return parse_ingredients(data)
 
-    def reviews_page(self, pid, sort, cursor=None):
+    def reviews_page(self, pid, sort, cursor=None, item_number=None):
         if sort not in REVIEW_SORTS:
             raise ValueError('검증되지 않은 정렬')
-        data = self.json('POST', REVIEW_ROOT + '/cursor', json={
-            'goodsNumber': pid, 'size': 10, 'sortType': sort, 'reviewType': 'ALL', **(cursor or {})})
+        payload = {'goodsNumber': pid, 'size': REVIEW_PAGE_SIZE, 'sortType': sort, 'reviewType': 'ALL',
+                   **(cursor or {})}
+        if item_number is not None:
+            payload['itemNumberList'] = [item_number]
+        data = self.json('POST', REVIEW_ROOT + '/cursor', json=payload)
         if not isinstance(data, dict) or not isinstance(data.get('goodsReviewList'), list) or not isinstance(data.get('hasNext'), bool):
             raise SourceError('리뷰 커서 응답 스키마 변경')
         return data
@@ -214,11 +232,17 @@ def normalize_review(raw, pid):
             'option_name': goods.get('optionName') or None, 'is_best': bool(raw.get('isBest', False)),
             'created_at': date.isoformat(), 'last_updated_at': utc_now()}
 
-def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORTS, checkpoint=lambda: None):
-    """Fresh head of every sort, then resume historical cursor. Never stop on known IDs."""
+def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORTS,
+                    checkpoint=lambda: None, option_numbers=()):
+    """Collect all reviews, then option-filtered latest reviews, deduplicating IDs."""
     seen, report = set(), {'sorts': {}}
-    for sort in sorts:
-        key = pid + ':' + sort
+    # The option endpoint covers only a subset of the product-wide review count.
+    # Keep the unfiltered sorts first; option scans supplement rather than replace them.
+    sources = [(sort, None) for sort in sorts]
+    sources += [(sorts[0], number) for number in option_numbers] if sorts else []
+    for sort, item_number in sources:
+        label = sort if item_number is None else f'{sort}:{item_number}'
+        key = pid + ':' + label
         cursor = state.get(key)
         pending = [None] + ([cursor] if cursor else [])
         visited, pages, fetched, stop = set(), 0, 0, 'page_budget'
@@ -229,7 +253,8 @@ def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORT
                 stop = 'repeated_cursor'
                 break
             visited.add(signature)
-            data = api.reviews_page(pid, sort, current)
+            data = (api.reviews_page(pid, sort, current) if item_number is None
+                    else api.reviews_page(pid, sort, current, item_number=item_number))
             rows = [normalize_review(r, pid) for r in data['goodsReviewList']]
             new = {r['id']: r for r in rows if r['id'] not in seen}
             save_page(list(new.values()))
@@ -251,7 +276,9 @@ def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORT
                 cursor = next_cursor
                 state[key] = cursor
                 checkpoint()
-        report['sorts'][sort] = {'pages': pages, 'unique_fetched': fetched, 'stop': stop}
+        report['sorts'][label] = {'pages': pages, 'unique_fetched': fetched, 'stop': stop}
+        if stop == 'login_required':
+            break
     report['unique_fetched'] = len(seen)
     return report
 
@@ -375,7 +402,15 @@ def run(args):
             if getattr(args, 'products_only', False):
                 item['reviews'] = {'skipped': 'products_only'}
             else:
-                item['reviews'] = harvest_reviews(api, pid, save_page, state, args.max_review_pages, checkpoint=checkpoint)
+                option_numbers = []
+                try:
+                    option_numbers = api.review_options(pid)
+                except (AccessLimited, RateLimited, BudgetReached):
+                    raise
+                except SourceError as error:
+                    item['warnings'].append({'stage': 'review_options', 'error': str(error)})
+                item['reviews'] = harvest_reviews(api, pid, save_page, state, args.max_review_pages,
+                                                  checkpoint=checkpoint, option_numbers=option_numbers)
             item.update(counts)
             item['status'] = 'complete'
             history[pid] = time.time()

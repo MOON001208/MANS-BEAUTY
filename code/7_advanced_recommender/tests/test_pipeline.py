@@ -7,7 +7,8 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scraper.crawler import harvest_reviews, normalize_review, is_target, parse_ingredients, product_from_detail, SourceError
+from scraper.crawler import (OliveYoung, harvest_reviews, normalize_review,
+                             is_target, parse_ingredients, product_from_detail, SourceError)
 from pipeline import profiles
 from pipeline.shade_mapping import mapping_statements, summarise
 from pipeline.shade_coverage import classify
@@ -31,6 +32,37 @@ class FakeApi:
         return copy.deepcopy(self.pages[key])
 
 class HarvestTests(unittest.TestCase):
+    def test_option_api_uses_verified_page_size_and_filter(self):
+        api = OliveYoung(session=object())
+        with mock.patch.object(api, 'json', return_value=page([1])) as request:
+            api.reviews_page('p', 'DATETIME_DESC', item_number='001')
+        payload = request.call_args.kwargs['json']
+        self.assertEqual(payload['size'], 50)
+        self.assertEqual(payload['itemNumberList'], ['001'])
+
+    def test_option_scan_preserves_unfiltered_and_deduplicates(self):
+        class OptionApi:
+            def __init__(self):
+                self.calls = []
+            def reviews_page(self, pid, sort, cursor, item_number=None):
+                self.calls.append((item_number, cursor.get('cursorId') if cursor else None))
+                if item_number is None:
+                    return page([1, 2])
+                return page([2, 3])
+        api, saved, state = OptionApi(), [], {}
+        report = harvest_reviews(api, 'p', saved.extend, state, sorts=['new'], option_numbers=['001'])
+        self.assertEqual([r['id'] for r in saved], ['1', '2', '3'])
+        self.assertEqual(report['unique_fetched'], 3)
+        self.assertEqual(api.calls, [(None, None), ('001', None)])
+        self.assertNotIn('p:new:001', state)
+
+    def test_option_count_skips_empty_options(self):
+        api = OliveYoung(session=object())
+        with mock.patch.object(api, 'json', return_value={'productItemReviewCountList': [
+                {'itemNumber': '001', 'reviewCount': 5}, {'itemNumber': '002', 'reviewCount': 0}]}) as request:
+            self.assertEqual(api.review_options('p'), ['001'])
+        self.assertIn('/options/p/count', request.call_args.args[1])
+
     def test_all_sorts_deduplicate_without_early_stop(self):
         api = FakeApi({('new', None): page([1], 'next'), ('new', 'next'): page([2]), ('popular', None): page([1, 3])})
         saved = []
@@ -65,7 +97,7 @@ class HarvestTests(unittest.TestCase):
 
     def test_login_limit_stops_without_bypass(self):
         api = FakeApi({('new', None): page([1], 'next', login=True)})
-        report = harvest_reviews(api, 'p', lambda rows: None, {}, sorts=['new'])
+        report = harvest_reviews(api, 'p', lambda rows: None, {}, sorts=['new', 'popular'])
         self.assertEqual(len(api.calls), 1)
         self.assertEqual(report['sorts']['new']['stop'], 'login_required')
 
