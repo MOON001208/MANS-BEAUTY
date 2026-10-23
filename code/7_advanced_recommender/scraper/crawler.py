@@ -290,7 +290,14 @@ def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORT
     return report
 
 def run(args):
-    db, api = database(), OliveYoung(args.delay, max_seconds=args.max_seconds)
+    if getattr(args, 'browser', False):
+        from scraper.browser import run_browser
+        return run_browser(args, _run)
+    return _run(args)
+
+
+def _run(args, session=None):
+    db, api = database(), OliveYoung(args.delay, session=session, max_seconds=args.max_seconds)
     if args.write:
         db.table('products').select('id,profile_metadata,source_options').limit(1).execute()
     existing = {p['id']: p for p in read_all(db, 'products')}
@@ -475,6 +482,7 @@ def parser():
     p.add_argument('--max-seconds', type=int, default=5400)
     p.add_argument('--fresh', action='store_true')
     p.add_argument('--skip-ingredients', action='store_true')
+    p.add_argument('--browser', action='store_true', help='Use an anonymous Crawl4AI Chromium session (optional dependencies required)')
     # Refreshes catalog and option data only; review cursors are left untouched.
     p.add_argument('--products-only', action='store_true')
     return p

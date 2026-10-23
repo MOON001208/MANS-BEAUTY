@@ -54,6 +54,14 @@ GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST에 **저
 
 ## 리뷰 수집의 한계
 
+2026-10-24에는 직접 HTTP 요청의 리뷰 목록이 403을 반환하는 반면,
+Crawl4AI의 비로그인 Chromium에서는 같은 리뷰 API가 50건을 반환함을 확인했다.
+선택 의존성(`requirements-crawl4ai.txt`, Playwright Chromium)을 설치한 PC에서는
+`python run_pipeline.py --browser --write --max-review-pages 2 --delay 8 --skip-ingredients`
+로 브라우저 안에서 요청할 수 있다. `--product 상품ID`를 반복 지정하면 대상만 수집한다.
+로그인 세션은 저장하지 않으며, 중복 제거·커서 저장·접근 제한 시 중단 규칙은 기존과 같다.
+브라우저에서도 제한되면 중단한다. 기본 HTTP 방식에서 자동 전환하지 않는다.
+
 2026-09-19에는 10건씩 요청했을 때 정렬당 약 10페이지 이후 `loginRequired`를 받았다.
 2026-09-27에는 50건 페이지와 옵션 필터가 작동함을 확인했다. 비로그인 상태에서 리뷰가
 충분히 많은 상품의 최신순을 조회하면 10페이지째(응답 500건)에 `loginRequired=true`가
