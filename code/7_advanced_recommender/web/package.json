@@ -12,7 +12,9 @@
     "eval": "node --experimental-strip-types scripts/evaluate-recommendations.mjs",
     "snapshot": "node scripts/snapshot-catalog.mjs",
     "start": "python -m http.server 3000 --bind 127.0.0.1 --directory out",
-    "lint": "eslint"
+    "lint": "eslint",
+    "review:prepare": "node --experimental-strip-types scripts/human-review.mjs prepare",
+    "review:report": "node --experimental-strip-types scripts/human-review.mjs report"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",

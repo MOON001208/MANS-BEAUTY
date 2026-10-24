@@ -4,7 +4,7 @@ import { IngredientDetails } from '../components/IngredientDetails';
 
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
-import { bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
+import { attributeEvidence, FEATURE_CONFIG, bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
 import { loadCatalog } from '@/lib/catalog';
 import Image from 'next/image';
 
@@ -57,13 +57,13 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 // ─── 컴포넌트: 점수 바 ───────────────────────────────────────────────────────
-function ScoreBar({ label, value, color }: { label: string; value: number | null; color: string }) {
+function ScoreBar({ label, value, color, count }: { label: string; value: number | null; color: string; count?: number }) {
   const pct = value == null ? 0 : Math.max(0, Math.min(100, ((value - 1) / 4) * 100));
   return (
     <div style={{ marginBottom: '8px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
         <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{label}</span>
-        <span style={{ fontSize: '0.75rem', fontWeight: 600, color }}>{value?.toFixed(1) ?? '정보 부족'}</span>
+        <span style={{ fontSize: '0.75rem', fontWeight: 600, color, textAlign: 'right', flexShrink: 0 }}>{value?.toFixed(1) ?? '정보 부족'}{count != null && <small style={{ display: 'block', fontWeight: 400, color: 'var(--text-muted)' }}>근거 {count}건</small>}</span>
       </div>
       <div style={{ height: '6px', borderRadius: '3px', background: 'rgba(255,255,255,0.08)', overflow: 'hidden' }}>
         <div style={{ height: '100%', borderRadius: '3px', width: value ? `${pct}%` : '0%', background: color, transition: 'width 0.6s ease' }} />
@@ -131,11 +131,12 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
       <div style={{ padding: '14px 16px 16px' }}>
         <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>{product.brand}</p>
         <h3 style={{ fontSize: '0.88rem', fontWeight: 600, lineHeight: 1.4, marginBottom: '10px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{product.name}</h3>
-        {(product.coverage_score || product.longevity_score || product.lightweight_score) && (
+        {hasCurrentProfile(product) && (
           <div style={{ marginBottom: '10px' }}>
-            <ScoreBar label="커버력" value={hasCurrentProfile(product) ? product.coverage_score : null} color="#a78bfa" />
-            <ScoreBar label="지속력" value={hasCurrentProfile(product) ? product.longevity_score : null} color="#60a5fa" />
-            <ScoreBar label="착용감/가벼움" value={hasCurrentProfile(product) ? product.lightweight_score : null} color="#34d399" />
+            {FEATURE_CONFIG.map(feature => {
+              const evidence = attributeEvidence(product, feature.key);
+              return <ScoreBar key={feature.key} label={feature.label} value={evidence.score} count={evidence.count} color={feature.color} />;
+            })}
           </div>
         )}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -187,13 +188,16 @@ interface QuizState {
   coveragePref: number;
   longevityPref: number;
   lightweightPref: number;
+  naturalnessPref: number;
+  transferPref: number;
+  smoothnessPref: number;
   shade: ShadeChoice | null;
   applicationMethod: ApplicationMethod | null;
 }
 
 function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
   const [step, setStep] = useState(0);
-  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: null, applicationMethod: null });
+  const [state, setState] = useState<QuizState>({ skinType: null, concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, naturalnessPref: 3, transferPref: 3, smoothnessPref: 3, shade: null, applicationMethod: null });
 
   const steps = [
     { title: '피부 타입이 어떻게 되세요?', subtitle: '가장 가까운 항목을 선택해주세요' },
@@ -254,34 +258,18 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
 
       {/* Step 2 (Sliders) */}
       {step === 2 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', padding: '10px 0' }}>
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>커버력 중요도</span>
-              <span style={{ color: '#a5b4fc', fontWeight: 700 }}>{state.coveragePref}점</span>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 24, padding: '10px 0' }}>
+          {FEATURE_CONFIG.map(feature => (
+            <div key={feature.key}>
+              <label htmlFor={feature.pref} style={{ display: 'flex', justifyContent: 'space-between', gap: 8, marginBottom: 8, fontWeight: 600 }}>
+                <span>{feature.label} 중요도</span><span style={{ color: feature.color, flexShrink: 0 }}>{state[feature.pref]}점</span>
+              </label>
+              <input id={feature.pref} type="range" min="1" max="5" step="1" value={state[feature.pref]}
+                onChange={event => setState(value => ({ ...value, [feature.pref]: Number(event.target.value) }))}
+                style={{ width: '100%', accentColor: feature.color, cursor: 'pointer' }} />
             </div>
-            <input type="range" min="1" max="5" step="1"
-              value={state.coveragePref} onChange={e => setState(s => ({ ...s, coveragePref: parseInt(e.target.value) }))}
-              style={{ width: '100%', accentColor: '#a78bfa', cursor: 'pointer' }} />
-          </div>
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>지속력 중요도</span>
-              <span style={{ color: '#60a5fa', fontWeight: 700 }}>{state.longevityPref}점</span>
-            </div>
-            <input type="range" min="1" max="5" step="1"
-              value={state.longevityPref} onChange={e => setState(s => ({ ...s, longevityPref: parseInt(e.target.value) }))}
-              style={{ width: '100%', accentColor: '#60a5fa', cursor: 'pointer' }} />
-          </div>
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>착용감/가벼움 중요도</span>
-              <span style={{ color: '#34d399', fontWeight: 700 }}>{state.lightweightPref}점</span>
-            </div>
-            <input type="range" min="1" max="5" step="1"
-              value={state.lightweightPref} onChange={e => setState(s => ({ ...s, lightweightPref: parseInt(e.target.value) }))}
-              style={{ width: '100%', accentColor: '#34d399', cursor: 'pointer' }} />
-          </div>
+          ))}
+          <p style={{ gridColumn: '1 / -1', color: 'var(--text-muted)', fontSize: '0.78rem' }}>리뷰에서 확인된 정도와 근거 수를 함께 반영합니다. 정보가 없다는 이유로 나쁜 제품이라고 판정하지 않습니다.</p>
         </div>
       )}
 
@@ -368,6 +356,7 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
   const [reviewError, setReviewError] = useState('');
   const [evidenceById, setEvidenceById] = useState<Map<string, Review>>(new Map());
   const [evidenceError, setEvidenceError] = useState('');
+  const [wearScope, setWearScope] = useState('');
   const [openEvidence, setOpenEvidence] = useState<string | null>(null);
 
   useEffect(() => {
@@ -385,10 +374,12 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
 
   // Reviews that produced each score and concern tag, so a claim can be traced to its source.
   const meta = hasCurrentProfile(product) ? product.profile_metadata : null;
+  const scopedWear = useMemo(() => wearScope ? meta?.option_wear?.[wearScope]?.attributes : meta?.wear_attributes, [meta, wearScope]);
   const evidenceIds = useMemo(() => [...new Set([
     ...Object.values(meta?.evidence_review_ids ?? {}).flat(),
     ...Object.values(meta?.concern_evidence_ids ?? {}).flat(),
-  ])], [meta]);
+    ...Object.values(scopedWear ?? {}).flatMap(entry => [...entry.positive_review_ids, ...entry.negative_review_ids, ...entry.mixed_review_ids]),
+  ])], [meta, scopedWear]);
 
   useEffect(() => {
     if (!evidenceIds.length) return;
@@ -464,11 +455,32 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
             {evidenceError && <p role="alert" style={{ fontSize: '0.72rem', color: '#f87171', marginBottom: 8 }}>{evidenceError}</p>}
             {([['coverage', '커버력', '#a78bfa', product.coverage_score], ['longevity', '지속력', '#60a5fa', product.longevity_score], ['lightweight', '착용감', '#34d399', product.lightweight_score]] as [string, string, string, number | null][]).map(([key, label, color, value]) => (
               <div key={key}>
-                <ScoreBar label={label} value={hasCurrentProfile(product) ? value : null} color={color} />
+                <ScoreBar label={label} value={hasCurrentProfile(product) ? value : null} color={color} count={meta?.evidence_counts?.[key] ?? 0} />
                 {renderEvidence(key, meta?.evidence_review_ids?.[key])}
               </div>
             ))}
           </div>
+
+          <section aria-label="자연스러움과 사용감 근거" style={{ marginBottom: 20 }}>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: 12 }}>화장 티·묻어남·들뜸에 대한 리뷰</h3>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 12 }}>점수와 근거 수는 별개입니다. 명확한 근거가 3건 미만이면 정보 부족이며, 한 리뷰 안에서 평가가 엇갈리면 점수에서 제외합니다.</p>
+            <label style={{ display: 'block', fontSize: '0.78rem', marginBottom: 12 }}>
+              리뷰 범위
+              <select value={wearScope} onChange={event => setWearScope(event.target.value)} style={{ display: 'block', width: '100%', marginTop: 6, padding: 8, background: '#171725', color: 'var(--text-primary)', border: '1px solid var(--border-color)', borderRadius: 8 }}>
+                <option value="">상품 전체 리뷰</option>
+                {Object.entries(meta?.option_wear ?? {}).map(([name, group]) => <option key={name} value={name}>{name} · {group.review_count}건</option>)}
+              </select>
+            </label>
+            {wearScope && <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: 12 }}>리뷰에 기록된 옵션명 그대로입니다. 과거 옵션이 포함되며 현재 판매 옵션·리뉴얼 전후와의 대응을 확인한 정보는 아닙니다. 추천 순위는 상품 전체 근거를 사용합니다.</p>}
+            {FEATURE_CONFIG.slice(0, 3).map(feature => {
+              const entry = scopedWear?.[feature.key as 'naturalness' | 'transfer_resistance' | 'smoothness'];
+              return <div key={feature.key} style={{ marginBottom: 14 }}>
+                <ScoreBar label={feature.label} value={entry && entry.evidence_count >= 3 ? entry.score : null} count={entry?.evidence_count ?? 0} color={feature.color} />
+                <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>긍정 {entry?.positive_count ?? 0}건 · 부정 {entry?.negative_count ?? 0}건 · 리뷰 안 평가 엇갈림 {entry?.mixed_count ?? 0}건</p>
+                {renderEvidence('wear:' + feature.key, [...(entry?.positive_review_ids ?? []), ...(entry?.negative_review_ids ?? []), ...(entry?.mixed_review_ids ?? [])])}
+              </div>;
+            })}
+          </section>
 
           <div style={{ marginBottom: '20px', padding: '14px', borderRadius: '12px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
             <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>🧬 같은 피부타입 구매자의 평점 지표</h3>
@@ -669,6 +681,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <p style={{ textAlign: 'center', fontSize: '0.78rem', marginTop: 16 }}><a href="./recommendation-review.html" style={{ color: '#a5b4fc' }}>추천 결과 비교 평가에 참여하기 ↗</a></p>
 
       {/* 퀴즈 */}
       {mode === 'quiz' && (

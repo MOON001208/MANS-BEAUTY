@@ -37,7 +37,7 @@ def audit(products, reviews):
             if field != 'profile_metadata' and product.get(field) != value:
                 fail('recalculation_mismatch:' + field)
         for field in ['input_hash', 'evidence_counts', 'positive_concern_counts', 'negative_concern_counts',
-                      'skin_review_counts', 'shade_source', 'shade_lineup']:
+                      'skin_review_counts', 'shade_source', 'shade_lineup', 'wear_attributes', 'option_wear']:
             if meta.get(field) != expected['profile_metadata'].get(field):
                 fail('metadata_mismatch:' + field)
         claims = [(attr, (meta.get('evidence_review_ids') or {}).get(attr, []), False)
@@ -62,6 +62,28 @@ def audit(products, reviews):
                     samples.append({'product_id': pid, 'claim': claim, 'review_id': str(rid),
                                     'content': row.get('content', ''), 'rating': row.get('rating'),
                                     'extracted': extracted.get('positive_concerns') if concern else extracted['evidence'][claim]})
+        scopes = [(None, meta.get('wear_attributes') or {})]
+        scopes += [(name, group.get('attributes') or {}) for name, group in (meta.get('option_wear') or {}).items()]
+        for option, attributes in scopes:
+            for key, entry in attributes.items():
+                definite = entry.get('positive_review_ids', []) + entry.get('negative_review_ids', [])
+                if entry.get('score') is not None and (entry.get('evidence_count', 0) < 3 or len(set(definite)) < 3):
+                    fail('wear_claim_under_three:' + key)
+                for polarity in ['positive', 'negative', 'mixed']:
+                    for rid in entry.get(polarity + '_review_ids', []):
+                        references += 1
+                        row = indexed.get(str(rid))
+                        if not row or row['product_id'] != pid or (option is not None and row.get('option_name') != option):
+                            fail('missing_or_foreign_wear_evidence:' + key + ':' + str(rid))
+                            continue
+                        value = extract_attributes(row)['wear'].get(key, {})
+                        pos, neg = bool(value.get('positive')), bool(value.get('negative'))
+                        matches = pos and neg if polarity == 'mixed' else pos and not neg if polarity == 'positive' else neg and not pos
+                        if not matches:
+                            fail('wear_expression_mismatch:' + key + ':' + str(rid))
+                        if option is None and str(rid) == str(entry[polarity + '_review_ids'][0]):
+                            samples.append({'product_id': pid, 'claim': key, 'polarity': polarity, 'review_id': str(rid),
+                                            'content': row.get('content', ''), 'extracted': value})
     ingredients = Counter((p.get('profile_metadata') or {}).get('ingredient_source', {}).get('status', 'unknown')
                           for p in products if (p.get('profile_metadata') or {}).get('ingredient_source') is not None)
     return {'audited_at': utc_now(), 'version': VERSION, 'metadata_revision': METADATA_REVISION,
@@ -70,6 +92,8 @@ def audit(products, reviews):
             'ingredient_statuses': dict(ingredients),
             'products_with_explicit_shades': sum(bool(p.get('suitable_shades')) for p in products),
             'products_with_lineup': sum(bool((p.get('profile_metadata') or {}).get('shade_lineup')) for p in products),
+            'wear_score_coverage': {key: sum((p.get('profile_metadata') or {}).get('wear_attributes', {}).get(key, {}).get('score') is not None for p in products)
+                                    for key in ['naturalness', 'transfer_resistance', 'smoothness']},
             'errors': errors, 'claim_samples': samples,
             'limitation': 'Row integrity and rule replay only; semantic samples still require human/model reading. No relevance accuracy or clinical safety measured.'}
 

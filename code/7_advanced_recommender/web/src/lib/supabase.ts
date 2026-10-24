@@ -38,8 +38,38 @@ export interface Product {
   compat_sensitive: number | null;
   compat_combination: number | null;
   last_updated_at: string;
-  profile_metadata?: { version?: string; metadata_revision?: number; source_category?: string | null; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]>; shade_lineup?: ShadeLineup | null; ingredient_source?: IngredientSource | null } | null;
+  profile_metadata?: ProfileMetadata | null;
   reviews?: { count: number }[];
+}
+
+export type WearAttributeKey = 'naturalness' | 'transfer_resistance' | 'smoothness';
+export interface WearEvidence {
+  score: number | null;
+  evidence_count: number;
+  positive_count: number;
+  negative_count: number;
+  mixed_count: number;
+  positive_review_ids: string[];
+  negative_review_ids: string[];
+  mixed_review_ids: string[];
+}
+export interface ProfileMetadata {
+  version?: string;
+  metadata_revision?: number;
+  source_category?: string | null;
+  analyzed_count?: number;
+  analyzed_at?: string;
+  evidence_counts?: Record<string, number>;
+  positive_concern_counts?: Record<string, number>;
+  negative_concern_counts?: Record<string, number>;
+  shade_source?: string;
+  skin_review_counts?: Record<string, number>;
+  evidence_review_ids?: Record<string, string[]>;
+  concern_evidence_ids?: Record<string, string[]>;
+  shade_lineup?: ShadeLineup | null;
+  ingredient_source?: IngredientSource | null;
+  wear_attributes?: Partial<Record<WearAttributeKey, WearEvidence>>;
+  option_wear?: Record<string, { review_count: number; attributes: Partial<Record<WearAttributeKey, WearEvidence>> }>;
 }
 
 export interface Review {
@@ -67,6 +97,6 @@ export interface IngredientSource {
 
 export type SkinType = 'oily' | 'dry' | 'combination' | 'sensitive';
 export type SkinConcern = 'acne' | 'pore' | 'redness' | 'spots' | 'wrinkle';
-export type PriorityAttr = 'coverage' | 'longevity' | 'lightweight';
+export type PriorityAttr = 'coverage' | 'longevity' | 'lightweight' | WearAttributeKey;
 export type ShadeChoice = '21' | '23' | '25' | 'any';
 export type ApplicationMethod = 'hand' | 'tool' | 'any';

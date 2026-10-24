@@ -10,11 +10,12 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 from shared import product_type
+from pipeline.wear import extract_wear, summarize_wear
 
-VERSION = 'rules-ko-v2'
+VERSION = 'rules-ko-v3'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 7
+METADATA_REVISION = 8
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -97,6 +98,7 @@ def extract_attributes(review):
             result['positive_concerns'].append(concern)
         if bad:
             result['negative_concerns'].append(concern)
+    result['wear'] = extract_wear([part for part in parts if current_experience(part)])
     return result
 
 def get_shade_from_option(option):
@@ -208,8 +210,12 @@ def build_profile(product, reviews):
     scores, evidence_ids, concern_ids = defaultdict(list), defaultdict(list), defaultdict(list)
     good, bad, skin_ratings = Counter(), Counter(), defaultdict(list)
     options, option_names = defaultdict(Counter), Counter()
+    wear_items, option_wear_items = [], defaultdict(list)
     for review in reviews:
         attr = extract_attributes(review)
+        wear_items.append((review['id'], attr['wear']))
+        if (review.get('option_name') or '').strip():
+            option_wear_items[review['option_name']].append((review['id'], attr['wear']))
         for name in ATTRIBUTES:
             if attr[name] is not None:
                 scores[name].append(attr[name])
@@ -276,6 +282,9 @@ def build_profile(product, reviews):
             'ingredient_source': (product.get('profile_metadata') or {}).get('ingredient_source'),
             'evidence_counts': {k: len(scores[k]) for k in ATTRIBUTES}, 'evidence_review_ids': dict(evidence_ids),
             'concern_evidence_ids': dict(concern_ids),
+            'wear_attributes': summarize_wear(wear_items),
+            'option_wear': {name: {'review_count': len(items), 'attributes': summarize_wear(items)}
+                            for name, items in sorted(option_wear_items.items())},
             'skin_review_counts': {k: len(v) for k, v in skin_ratings.items()},
             'positive_concern_counts': dict(good), 'negative_concern_counts': dict(bad),
             'shade_source': 'catalog' if source_options is not None else 'historical_reviews',

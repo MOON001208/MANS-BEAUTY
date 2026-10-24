@@ -44,3 +44,6 @@ next-env.d.ts
 
 # generated each run; regenerate with npm run eval
 tests/fixtures/evaluation-report.json
+
+# Aggregate human evaluation report; never commit individual response files.
+tests/fixtures/human-review-report.json

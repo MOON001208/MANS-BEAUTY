@@ -12,7 +12,10 @@
       "longevityPref": 5,
       "lightweightPref": 2,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "oily-acne-hand-21",
@@ -25,7 +28,10 @@
       "longevityPref": 3,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "dry-none-any-25",
@@ -36,7 +42,10 @@
       "longevityPref": 2,
       "lightweightPref": 4,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "dry-wrinkle-tool-any",
@@ -49,7 +58,10 @@
       "longevityPref": 4,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "sensitive-redness-hand-21",
@@ -62,7 +74,10 @@
       "longevityPref": 2,
       "lightweightPref": 4,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "sensitive-acne-redness-any",
@@ -76,7 +91,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "combination-spots-tool-23",
@@ -89,7 +107,10 @@
       "longevityPref": 4,
       "lightweightPref": 2,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "combination-pore-spots-hand-23",
@@ -103,7 +124,10 @@
       "longevityPref": 3,
       "lightweightPref": 4,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "oily-all-concerns-any",
@@ -120,7 +144,10 @@
       "longevityPref": 5,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "dry-indifferent-any",
@@ -131,7 +158,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "combination-lightweight-hand-25",
@@ -142,7 +172,10 @@
       "longevityPref": 2,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "sensitive-none-tool-any",
@@ -153,7 +186,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-hand-balanced",
@@ -167,7 +203,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-hand-coverage",
@@ -181,7 +220,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-hand-longevity",
@@ -195,7 +237,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-hand-lightweight",
@@ -209,7 +254,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-hand-unimportant",
@@ -223,7 +271,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-21-tool-balanced",
@@ -237,7 +288,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-tool-coverage",
@@ -251,7 +305,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-tool-longevity",
@@ -265,7 +322,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-tool-lightweight",
@@ -279,7 +339,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-tool-unimportant",
@@ -293,7 +356,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-21-any-balanced",
@@ -307,7 +373,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-any-coverage",
@@ -321,7 +390,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-any-longevity",
@@ -335,7 +407,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-any-lightweight",
@@ -349,7 +424,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-21-any-unimportant",
@@ -363,7 +441,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-23-hand-balanced",
@@ -377,7 +458,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-hand-coverage",
@@ -391,7 +475,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-hand-longevity",
@@ -405,7 +492,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-hand-lightweight",
@@ -419,7 +509,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-hand-unimportant",
@@ -433,7 +526,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-23-tool-balanced",
@@ -447,7 +543,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-tool-coverage",
@@ -461,7 +560,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-tool-longevity",
@@ -475,7 +577,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-tool-lightweight",
@@ -489,7 +594,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-tool-unimportant",
@@ -503,7 +611,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-23-any-balanced",
@@ -517,7 +628,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-any-coverage",
@@ -531,7 +645,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-any-longevity",
@@ -545,7 +662,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-any-lightweight",
@@ -559,7 +679,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-23-any-unimportant",
@@ -573,7 +696,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-25-hand-balanced",
@@ -587,7 +713,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-hand-coverage",
@@ -601,7 +730,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-hand-longevity",
@@ -615,7 +747,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-hand-lightweight",
@@ -629,7 +764,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-hand-unimportant",
@@ -643,7 +781,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-25-tool-balanced",
@@ -657,7 +798,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-tool-coverage",
@@ -671,7 +815,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-tool-longevity",
@@ -685,7 +832,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-tool-lightweight",
@@ -699,7 +849,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-tool-unimportant",
@@ -713,7 +866,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-25-any-balanced",
@@ -727,7 +883,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-any-coverage",
@@ -741,7 +900,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-any-longevity",
@@ -755,7 +917,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-any-lightweight",
@@ -769,7 +934,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-25-any-unimportant",
@@ -783,7 +951,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-any-hand-balanced",
@@ -797,7 +968,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-hand-coverage",
@@ -811,7 +985,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-hand-longevity",
@@ -825,7 +1002,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-hand-lightweight",
@@ -839,7 +1019,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-hand-unimportant",
@@ -853,7 +1036,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-any-tool-balanced",
@@ -867,7 +1053,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-tool-coverage",
@@ -881,7 +1070,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-tool-longevity",
@@ -895,7 +1087,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-tool-lightweight",
@@ -909,7 +1104,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-tool-unimportant",
@@ -923,7 +1121,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-oily-any-any-balanced",
@@ -937,7 +1138,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-any-coverage",
@@ -951,7 +1155,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-any-longevity",
@@ -965,7 +1172,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-any-lightweight",
@@ -979,7 +1189,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-oily-any-any-unimportant",
@@ -993,7 +1206,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-21-hand-balanced",
@@ -1006,7 +1222,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-hand-coverage",
@@ -1019,7 +1238,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-hand-longevity",
@@ -1032,7 +1254,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-hand-lightweight",
@@ -1045,7 +1270,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-hand-unimportant",
@@ -1058,7 +1286,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-21-tool-balanced",
@@ -1071,7 +1302,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-tool-coverage",
@@ -1084,7 +1318,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-tool-longevity",
@@ -1097,7 +1334,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-tool-lightweight",
@@ -1110,7 +1350,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-tool-unimportant",
@@ -1123,7 +1366,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-21-any-balanced",
@@ -1136,7 +1382,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-any-coverage",
@@ -1149,7 +1398,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-any-longevity",
@@ -1162,7 +1414,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-any-lightweight",
@@ -1175,7 +1430,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-21-any-unimportant",
@@ -1188,7 +1446,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-23-hand-balanced",
@@ -1201,7 +1462,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-hand-coverage",
@@ -1214,7 +1478,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-hand-longevity",
@@ -1227,7 +1494,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-hand-lightweight",
@@ -1240,7 +1510,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-hand-unimportant",
@@ -1253,7 +1526,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-23-tool-balanced",
@@ -1266,7 +1542,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-tool-coverage",
@@ -1279,7 +1558,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-tool-longevity",
@@ -1292,7 +1574,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-tool-lightweight",
@@ -1305,7 +1590,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-tool-unimportant",
@@ -1318,7 +1606,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-23-any-balanced",
@@ -1331,7 +1622,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-any-coverage",
@@ -1344,7 +1638,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-any-longevity",
@@ -1357,7 +1654,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-any-lightweight",
@@ -1370,7 +1670,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-23-any-unimportant",
@@ -1383,7 +1686,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-25-hand-balanced",
@@ -1396,7 +1702,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-hand-coverage",
@@ -1409,7 +1718,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-hand-longevity",
@@ -1422,7 +1734,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-hand-lightweight",
@@ -1435,7 +1750,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-hand-unimportant",
@@ -1448,7 +1766,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-25-tool-balanced",
@@ -1461,7 +1782,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-tool-coverage",
@@ -1474,7 +1798,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-tool-longevity",
@@ -1487,7 +1814,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-tool-lightweight",
@@ -1500,7 +1830,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-tool-unimportant",
@@ -1513,7 +1846,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-25-any-balanced",
@@ -1526,7 +1862,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-any-coverage",
@@ -1539,7 +1878,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-any-longevity",
@@ -1552,7 +1894,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-any-lightweight",
@@ -1565,7 +1910,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-25-any-unimportant",
@@ -1578,7 +1926,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-any-hand-balanced",
@@ -1591,7 +1942,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-hand-coverage",
@@ -1604,7 +1958,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-hand-longevity",
@@ -1617,7 +1974,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-hand-lightweight",
@@ -1630,7 +1990,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-hand-unimportant",
@@ -1643,7 +2006,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-any-tool-balanced",
@@ -1656,7 +2022,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-tool-coverage",
@@ -1669,7 +2038,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-tool-longevity",
@@ -1682,7 +2054,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-tool-lightweight",
@@ -1695,7 +2070,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-tool-unimportant",
@@ -1708,7 +2086,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-dry-any-any-balanced",
@@ -1721,7 +2102,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-any-coverage",
@@ -1734,7 +2118,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-any-longevity",
@@ -1747,7 +2134,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-any-lightweight",
@@ -1760,7 +2150,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-dry-any-any-unimportant",
@@ -1773,7 +2166,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-21-hand-balanced",
@@ -1786,7 +2182,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-hand-coverage",
@@ -1799,7 +2198,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-hand-longevity",
@@ -1812,7 +2214,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-hand-lightweight",
@@ -1825,7 +2230,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-hand-unimportant",
@@ -1838,7 +2246,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-21-tool-balanced",
@@ -1851,7 +2262,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-tool-coverage",
@@ -1864,7 +2278,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-tool-longevity",
@@ -1877,7 +2294,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-tool-lightweight",
@@ -1890,7 +2310,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-tool-unimportant",
@@ -1903,7 +2326,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-21-any-balanced",
@@ -1916,7 +2342,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-any-coverage",
@@ -1929,7 +2358,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-any-longevity",
@@ -1942,7 +2374,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-any-lightweight",
@@ -1955,7 +2390,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-21-any-unimportant",
@@ -1968,7 +2406,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-23-hand-balanced",
@@ -1981,7 +2422,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-hand-coverage",
@@ -1994,7 +2438,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-hand-longevity",
@@ -2007,7 +2454,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-hand-lightweight",
@@ -2020,7 +2470,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-hand-unimportant",
@@ -2033,7 +2486,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-23-tool-balanced",
@@ -2046,7 +2502,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-tool-coverage",
@@ -2059,7 +2518,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-tool-longevity",
@@ -2072,7 +2534,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-tool-lightweight",
@@ -2085,7 +2550,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-tool-unimportant",
@@ -2098,7 +2566,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-23-any-balanced",
@@ -2111,7 +2582,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-any-coverage",
@@ -2124,7 +2598,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-any-longevity",
@@ -2137,7 +2614,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-any-lightweight",
@@ -2150,7 +2630,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-23-any-unimportant",
@@ -2163,7 +2646,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-25-hand-balanced",
@@ -2176,7 +2662,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-hand-coverage",
@@ -2189,7 +2678,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-hand-longevity",
@@ -2202,7 +2694,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-hand-lightweight",
@@ -2215,7 +2710,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-hand-unimportant",
@@ -2228,7 +2726,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-25-tool-balanced",
@@ -2241,7 +2742,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-tool-coverage",
@@ -2254,7 +2758,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-tool-longevity",
@@ -2267,7 +2774,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-tool-lightweight",
@@ -2280,7 +2790,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-tool-unimportant",
@@ -2293,7 +2806,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-25-any-balanced",
@@ -2306,7 +2822,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-any-coverage",
@@ -2319,7 +2838,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-any-longevity",
@@ -2332,7 +2854,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-any-lightweight",
@@ -2345,7 +2870,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-25-any-unimportant",
@@ -2358,7 +2886,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-any-hand-balanced",
@@ -2371,7 +2902,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-hand-coverage",
@@ -2384,7 +2918,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-hand-longevity",
@@ -2397,7 +2934,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-hand-lightweight",
@@ -2410,7 +2950,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-hand-unimportant",
@@ -2423,7 +2966,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-any-tool-balanced",
@@ -2436,7 +2982,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-tool-coverage",
@@ -2449,7 +2998,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-tool-longevity",
@@ -2462,7 +3014,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-tool-lightweight",
@@ -2475,7 +3030,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-tool-unimportant",
@@ -2488,7 +3046,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-sensitive-any-any-balanced",
@@ -2501,7 +3062,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-any-coverage",
@@ -2514,7 +3078,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-any-longevity",
@@ -2527,7 +3094,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-any-lightweight",
@@ -2540,7 +3110,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-sensitive-any-any-unimportant",
@@ -2553,7 +3126,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-21-hand-balanced",
@@ -2567,7 +3143,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-hand-coverage",
@@ -2581,7 +3160,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-hand-longevity",
@@ -2595,7 +3177,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-hand-lightweight",
@@ -2609,7 +3194,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-hand-unimportant",
@@ -2623,7 +3211,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-21-tool-balanced",
@@ -2637,7 +3228,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-tool-coverage",
@@ -2651,7 +3245,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-tool-longevity",
@@ -2665,7 +3262,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-tool-lightweight",
@@ -2679,7 +3279,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-tool-unimportant",
@@ -2693,7 +3296,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-21-any-balanced",
@@ -2707,7 +3313,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-any-coverage",
@@ -2721,7 +3330,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-any-longevity",
@@ -2735,7 +3347,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-any-lightweight",
@@ -2749,7 +3364,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-21-any-unimportant",
@@ -2763,7 +3381,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "21",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-23-hand-balanced",
@@ -2777,7 +3398,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-hand-coverage",
@@ -2791,7 +3415,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-hand-longevity",
@@ -2805,7 +3432,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-hand-lightweight",
@@ -2819,7 +3449,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-hand-unimportant",
@@ -2833,7 +3466,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-23-tool-balanced",
@@ -2847,7 +3483,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-tool-coverage",
@@ -2861,7 +3500,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-tool-longevity",
@@ -2875,7 +3517,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-tool-lightweight",
@@ -2889,7 +3534,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-tool-unimportant",
@@ -2903,7 +3551,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-23-any-balanced",
@@ -2917,7 +3568,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-any-coverage",
@@ -2931,7 +3585,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-any-longevity",
@@ -2945,7 +3602,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-any-lightweight",
@@ -2959,7 +3619,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-23-any-unimportant",
@@ -2973,7 +3636,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "23",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-25-hand-balanced",
@@ -2987,7 +3653,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-hand-coverage",
@@ -3001,7 +3670,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-hand-longevity",
@@ -3015,7 +3687,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-hand-lightweight",
@@ -3029,7 +3704,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-hand-unimportant",
@@ -3043,7 +3721,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-25-tool-balanced",
@@ -3057,7 +3738,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-tool-coverage",
@@ -3071,7 +3755,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-tool-longevity",
@@ -3085,7 +3772,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-tool-lightweight",
@@ -3099,7 +3789,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-tool-unimportant",
@@ -3113,7 +3806,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-25-any-balanced",
@@ -3127,7 +3823,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-any-coverage",
@@ -3141,7 +3840,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-any-longevity",
@@ -3155,7 +3857,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-any-lightweight",
@@ -3169,7 +3874,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-25-any-unimportant",
@@ -3183,7 +3891,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "25",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-any-hand-balanced",
@@ -3197,7 +3908,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-hand-coverage",
@@ -3211,7 +3925,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-hand-longevity",
@@ -3225,7 +3942,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-hand-lightweight",
@@ -3239,7 +3959,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-hand-unimportant",
@@ -3253,7 +3976,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "hand"
+      "applicationMethod": "hand",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-any-tool-balanced",
@@ -3267,7 +3993,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-tool-coverage",
@@ -3281,7 +4010,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-tool-longevity",
@@ -3295,7 +4027,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-tool-lightweight",
@@ -3309,7 +4044,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-tool-unimportant",
@@ -3323,7 +4061,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "tool"
+      "applicationMethod": "tool",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
     },
     {
       "id": "matrix-combination-any-any-balanced",
@@ -3337,7 +4078,10 @@
       "longevityPref": 3,
       "lightweightPref": 3,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-any-coverage",
@@ -3351,7 +4095,10 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-any-longevity",
@@ -3365,7 +4112,10 @@
       "longevityPref": 5,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-any-lightweight",
@@ -3379,7 +4129,10 @@
       "longevityPref": 1,
       "lightweightPref": 5,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 3,
+      "transferPref": 3,
+      "smoothnessPref": 3
     },
     {
       "id": "matrix-combination-any-any-unimportant",
@@ -3393,7 +4146,2026 @@
       "longevityPref": 1,
       "lightweightPref": 1,
       "shade": "any",
-      "applicationMethod": "any"
+      "applicationMethod": "any",
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-hand-naturalnessPref",
+      "label": "oily · 21 · hand · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-tool-naturalnessPref",
+      "label": "oily · 21 · tool · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-any-naturalnessPref",
+      "label": "oily · 21 · any · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-hand-naturalnessPref",
+      "label": "oily · 23 · hand · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-tool-naturalnessPref",
+      "label": "oily · 23 · tool · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-any-naturalnessPref",
+      "label": "oily · 23 · any · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-hand-naturalnessPref",
+      "label": "oily · 25 · hand · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-tool-naturalnessPref",
+      "label": "oily · 25 · tool · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-any-naturalnessPref",
+      "label": "oily · 25 · any · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-hand-naturalnessPref",
+      "label": "oily · any · hand · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-tool-naturalnessPref",
+      "label": "oily · any · tool · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-any-naturalnessPref",
+      "label": "oily · any · any · 화장 티 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-hand-naturalnessPref",
+      "label": "dry · 21 · hand · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-tool-naturalnessPref",
+      "label": "dry · 21 · tool · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-any-naturalnessPref",
+      "label": "dry · 21 · any · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-hand-naturalnessPref",
+      "label": "dry · 23 · hand · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-tool-naturalnessPref",
+      "label": "dry · 23 · tool · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-any-naturalnessPref",
+      "label": "dry · 23 · any · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-hand-naturalnessPref",
+      "label": "dry · 25 · hand · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-tool-naturalnessPref",
+      "label": "dry · 25 · tool · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-any-naturalnessPref",
+      "label": "dry · 25 · any · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-hand-naturalnessPref",
+      "label": "dry · any · hand · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-tool-naturalnessPref",
+      "label": "dry · any · tool · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-any-naturalnessPref",
+      "label": "dry · any · any · 화장 티 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-hand-naturalnessPref",
+      "label": "combination · 21 · hand · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-tool-naturalnessPref",
+      "label": "combination · 21 · tool · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-any-naturalnessPref",
+      "label": "combination · 21 · any · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-hand-naturalnessPref",
+      "label": "combination · 23 · hand · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-tool-naturalnessPref",
+      "label": "combination · 23 · tool · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-any-naturalnessPref",
+      "label": "combination · 23 · any · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-hand-naturalnessPref",
+      "label": "combination · 25 · hand · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-tool-naturalnessPref",
+      "label": "combination · 25 · tool · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-any-naturalnessPref",
+      "label": "combination · 25 · any · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-hand-naturalnessPref",
+      "label": "combination · any · hand · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-tool-naturalnessPref",
+      "label": "combination · any · tool · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-any-naturalnessPref",
+      "label": "combination · any · any · 화장 티 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-hand-naturalnessPref",
+      "label": "sensitive · 21 · hand · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-tool-naturalnessPref",
+      "label": "sensitive · 21 · tool · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-any-naturalnessPref",
+      "label": "sensitive · 21 · any · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-hand-naturalnessPref",
+      "label": "sensitive · 23 · hand · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-tool-naturalnessPref",
+      "label": "sensitive · 23 · tool · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-any-naturalnessPref",
+      "label": "sensitive · 23 · any · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-hand-naturalnessPref",
+      "label": "sensitive · 25 · hand · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-tool-naturalnessPref",
+      "label": "sensitive · 25 · tool · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-any-naturalnessPref",
+      "label": "sensitive · 25 · any · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-hand-naturalnessPref",
+      "label": "sensitive · any · hand · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-tool-naturalnessPref",
+      "label": "sensitive · any · tool · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-any-naturalnessPref",
+      "label": "sensitive · any · any · 화장 티 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 5,
+      "transferPref": 1,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-hand-transferPref",
+      "label": "oily · 21 · hand · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-tool-transferPref",
+      "label": "oily · 21 · tool · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-any-transferPref",
+      "label": "oily · 21 · any · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-hand-transferPref",
+      "label": "oily · 23 · hand · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-tool-transferPref",
+      "label": "oily · 23 · tool · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-23-any-transferPref",
+      "label": "oily · 23 · any · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-hand-transferPref",
+      "label": "oily · 25 · hand · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-tool-transferPref",
+      "label": "oily · 25 · tool · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-25-any-transferPref",
+      "label": "oily · 25 · any · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-hand-transferPref",
+      "label": "oily · any · hand · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-tool-transferPref",
+      "label": "oily · any · tool · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-any-any-transferPref",
+      "label": "oily · any · any · 묻어남 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-hand-transferPref",
+      "label": "dry · 21 · hand · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-tool-transferPref",
+      "label": "dry · 21 · tool · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-21-any-transferPref",
+      "label": "dry · 21 · any · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-hand-transferPref",
+      "label": "dry · 23 · hand · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-tool-transferPref",
+      "label": "dry · 23 · tool · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-23-any-transferPref",
+      "label": "dry · 23 · any · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-hand-transferPref",
+      "label": "dry · 25 · hand · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-tool-transferPref",
+      "label": "dry · 25 · tool · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-25-any-transferPref",
+      "label": "dry · 25 · any · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-hand-transferPref",
+      "label": "dry · any · hand · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-tool-transferPref",
+      "label": "dry · any · tool · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "dry-any-any-transferPref",
+      "label": "dry · any · any · 묻어남 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-hand-transferPref",
+      "label": "combination · 21 · hand · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-tool-transferPref",
+      "label": "combination · 21 · tool · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-21-any-transferPref",
+      "label": "combination · 21 · any · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-hand-transferPref",
+      "label": "combination · 23 · hand · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-tool-transferPref",
+      "label": "combination · 23 · tool · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-23-any-transferPref",
+      "label": "combination · 23 · any · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-hand-transferPref",
+      "label": "combination · 25 · hand · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-tool-transferPref",
+      "label": "combination · 25 · tool · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-25-any-transferPref",
+      "label": "combination · 25 · any · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-hand-transferPref",
+      "label": "combination · any · hand · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-tool-transferPref",
+      "label": "combination · any · tool · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "combination-any-any-transferPref",
+      "label": "combination · any · any · 묻어남 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-hand-transferPref",
+      "label": "sensitive · 21 · hand · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-tool-transferPref",
+      "label": "sensitive · 21 · tool · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-21-any-transferPref",
+      "label": "sensitive · 21 · any · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-hand-transferPref",
+      "label": "sensitive · 23 · hand · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-tool-transferPref",
+      "label": "sensitive · 23 · tool · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-23-any-transferPref",
+      "label": "sensitive · 23 · any · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-hand-transferPref",
+      "label": "sensitive · 25 · hand · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-tool-transferPref",
+      "label": "sensitive · 25 · tool · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-25-any-transferPref",
+      "label": "sensitive · 25 · any · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-hand-transferPref",
+      "label": "sensitive · any · hand · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-tool-transferPref",
+      "label": "sensitive · any · tool · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "sensitive-any-any-transferPref",
+      "label": "sensitive · any · any · 묻어남 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 5,
+      "smoothnessPref": 1
+    },
+    {
+      "id": "oily-21-hand-smoothnessPref",
+      "label": "oily · 21 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-21-tool-smoothnessPref",
+      "label": "oily · 21 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-21-any-smoothnessPref",
+      "label": "oily · 21 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-23-hand-smoothnessPref",
+      "label": "oily · 23 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-23-tool-smoothnessPref",
+      "label": "oily · 23 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-23-any-smoothnessPref",
+      "label": "oily · 23 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-25-hand-smoothnessPref",
+      "label": "oily · 25 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-25-tool-smoothnessPref",
+      "label": "oily · 25 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-25-any-smoothnessPref",
+      "label": "oily · 25 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-any-hand-smoothnessPref",
+      "label": "oily · any · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-any-tool-smoothnessPref",
+      "label": "oily · any · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "oily-any-any-smoothnessPref",
+      "label": "oily · any · any · 들뜸·끼임 적음만 중요",
+      "skinType": "oily",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-21-hand-smoothnessPref",
+      "label": "dry · 21 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-21-tool-smoothnessPref",
+      "label": "dry · 21 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-21-any-smoothnessPref",
+      "label": "dry · 21 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-23-hand-smoothnessPref",
+      "label": "dry · 23 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-23-tool-smoothnessPref",
+      "label": "dry · 23 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-23-any-smoothnessPref",
+      "label": "dry · 23 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-25-hand-smoothnessPref",
+      "label": "dry · 25 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-25-tool-smoothnessPref",
+      "label": "dry · 25 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-25-any-smoothnessPref",
+      "label": "dry · 25 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-any-hand-smoothnessPref",
+      "label": "dry · any · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-any-tool-smoothnessPref",
+      "label": "dry · any · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "dry-any-any-smoothnessPref",
+      "label": "dry · any · any · 들뜸·끼임 적음만 중요",
+      "skinType": "dry",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-21-hand-smoothnessPref",
+      "label": "combination · 21 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-21-tool-smoothnessPref",
+      "label": "combination · 21 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-21-any-smoothnessPref",
+      "label": "combination · 21 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-23-hand-smoothnessPref",
+      "label": "combination · 23 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-23-tool-smoothnessPref",
+      "label": "combination · 23 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-23-any-smoothnessPref",
+      "label": "combination · 23 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-25-hand-smoothnessPref",
+      "label": "combination · 25 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-25-tool-smoothnessPref",
+      "label": "combination · 25 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-25-any-smoothnessPref",
+      "label": "combination · 25 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-any-hand-smoothnessPref",
+      "label": "combination · any · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-any-tool-smoothnessPref",
+      "label": "combination · any · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "combination-any-any-smoothnessPref",
+      "label": "combination · any · any · 들뜸·끼임 적음만 중요",
+      "skinType": "combination",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-21-hand-smoothnessPref",
+      "label": "sensitive · 21 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-21-tool-smoothnessPref",
+      "label": "sensitive · 21 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-21-any-smoothnessPref",
+      "label": "sensitive · 21 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "21",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-23-hand-smoothnessPref",
+      "label": "sensitive · 23 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-23-tool-smoothnessPref",
+      "label": "sensitive · 23 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-23-any-smoothnessPref",
+      "label": "sensitive · 23 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "23",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-25-hand-smoothnessPref",
+      "label": "sensitive · 25 · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-25-tool-smoothnessPref",
+      "label": "sensitive · 25 · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-25-any-smoothnessPref",
+      "label": "sensitive · 25 · any · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "25",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-any-hand-smoothnessPref",
+      "label": "sensitive · any · hand · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "hand",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-any-tool-smoothnessPref",
+      "label": "sensitive · any · tool · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "tool",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
+    },
+    {
+      "id": "sensitive-any-any-smoothnessPref",
+      "label": "sensitive · any · any · 들뜸·끼임 적음만 중요",
+      "skinType": "sensitive",
+      "shade": "any",
+      "applicationMethod": "any",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "naturalnessPref": 1,
+      "transferPref": 1,
+      "smoothnessPref": 5
     }
   ]
 }

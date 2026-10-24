@@ -1,6 +1,48 @@
-import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod, ShadeLineup } from './supabase';
+import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod, ShadeLineup, PriorityAttr, WearAttributeKey } from './supabase';
 
-export const PROFILE_VERSION = 'rules-ko-v2';
+export const PROFILE_VERSION = 'rules-ko-v3';
+// A policy prior, not a learned parameter or probability of correctness.
+export const EVIDENCE_PRIOR = 5;
+export const FEATURE_CONFIG = [
+  { key: 'naturalness', pref: 'naturalnessPref', label: '화장 티가 덜 나는 표현', color: '#fbbf24' },
+  { key: 'transfer_resistance', pref: 'transferPref', label: '묻어남이 적은 표현', color: '#fb923c' },
+  { key: 'smoothness', pref: 'smoothnessPref', label: '들뜸·뭉침·끼임이 적은 표현', color: '#f472b6' },
+  { key: 'coverage', pref: 'coveragePref', label: '커버력', color: '#a78bfa' },
+  { key: 'longevity', pref: 'longevityPref', label: '지속력', color: '#60a5fa' },
+  { key: 'lightweight', pref: 'lightweightPref', label: '착용감/가벼움', color: '#34d399' },
+] as const;
+
+export function evidenceSupport(count: number): number {
+  const n = Number.isFinite(count) ? Math.max(0, count) : 0;
+  return n / (n + EVIDENCE_PRIOR);
+}
+
+export function attributeEvidence(product: Product, key: PriorityAttr) {
+  if (!hasCurrentProfile(product)) return { score: null, count: 0 };
+  const wear = product.profile_metadata?.wear_attributes?.[key as WearAttributeKey];
+  const count = wear?.evidence_count ?? product.profile_metadata?.evidence_counts?.[key] ?? 0;
+  const raw = key === 'coverage' ? product.coverage_score : key === 'longevity' ? product.longevity_score : key === 'lightweight' ? product.lightweight_score : wear?.score;
+  return { score: count >= 3 && raw != null && Number.isFinite(raw) ? raw : null, count };
+}
+
+export function featureAssessment(product: Product, prefs: Partial<QuizAnswers>) {
+  let weightedValue = 0, weightedSupport = 0, totalWeight = 0, knownWeight = 0, known = 0;
+  for (const feature of FEATURE_CONFIG) {
+    const weight = Math.max(0, Math.min(5, prefs[feature.pref] ?? 1) - 1);
+    if (!weight) continue;
+    totalWeight += weight;
+    const { score, count } = attributeEvidence(product, feature.key);
+    const support = score == null ? 0 : evidenceSupport(count);
+    // Neutral only for ranking arithmetic; the stored/displayed value stays null.
+    const quality = score == null ? 0.5 : 0.5 + support * (Math.max(0, Math.min(1, (score - 1) / 4)) - 0.5);
+    weightedValue += weight * quality;
+    weightedSupport += weight * support;
+    if (score != null) { knownWeight += weight; known += 1; }
+  }
+  return { points: totalWeight ? weightedValue / totalWeight * 30 : 0,
+    supportBonus: totalWeight ? weightedSupport / totalWeight * 5 : 0,
+    knownWeight, totalWeight, known };
+}
 export const SKIN_TYPE_COMPAT_COL = {
   oily: 'compat_oily', dry: 'compat_dry', sensitive: 'compat_sensitive', combination: 'compat_combination',
 } as const;
@@ -34,7 +76,7 @@ export function getCompatScore(product: Product, skinType: SkinType): number | n
   return hasCurrentProfile(product) ? product[SKIN_TYPE_COMPAT_COL[skinType]] : null;
 }
 
-export function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], coveragePref: number, longevityPref: number, lightweightPref: number, shade: ShadeChoice | null): number {
+export function calcRecommendScore(product: Product, skinType: SkinType, concerns: SkinConcern[], coveragePref: number, longevityPref: number, lightweightPref: number, shade: ShadeChoice | null, wearPrefs: Partial<QuizAnswers> = {}): number {
   if (!hasCurrentProfile(product)) return -1;
   const compat = getCompatScore(product, skinType);
   let score = (compat ?? 0.5) * 25;
@@ -45,11 +87,8 @@ export function calcRecommendScore(product: Product, skinType: SkinType, concern
     score -= concerns.filter(c => (adverse[c] ?? 0) >= 3 && (adverse[c] ?? 0) > (positive[c] ?? 0)).length * 10;
   }
   // 1 = unimportant, so it contributes zero weight, not a preference for low quality.
-  const pairs = [[coveragePref, product.coverage_score], [longevityPref, product.longevity_score], [lightweightPref, product.lightweight_score]];
-  const totalWeight = pairs.reduce((n, [importance]) => n + Math.max(0, (importance ?? 1) - 1), 0);
-  if (totalWeight > 0) {
-    score += pairs.reduce((n, [importance, value]) => n + Math.max(0, (importance ?? 1) - 1) * (value == null ? 0 : Math.max(0, Math.min(1, (value - 1) / 4))), 0) / totalWeight * 30;
-  }
+  const features = featureAssessment(product, { ...wearPrefs, coveragePref, longevityPref, lightweightPref });
+  score += features.points + features.supportBonus;
   if (shade && shade !== 'any') {
     if (product.suitable_shades?.length) {
       if (product.suitable_shades.includes(shade)) score += 15;
@@ -64,8 +103,7 @@ export function calcRecommendScore(product: Product, skinType: SkinType, concern
       if (option) score += 10 * (1 - Math.abs(option.position - SHADE_TARGET[shade]));
     }
   }
-  // Small confidence adjustment uses analyzed reviews, never source site's total count.
-  score += Math.min(Math.log10((product.profile_metadata?.analyzed_count ?? 0) + 1), 3) / 3 * 5;
+  // Confidence now uses evidence for requested attributes, not total review volume.
   return score;
 }
 
@@ -80,6 +118,9 @@ export interface QuizAnswers {
   coveragePref: number;
   longevityPref: number;
   lightweightPref: number;
+  naturalnessPref?: number;
+  transferPref?: number;
+  smoothnessPref?: number;
   shade: ShadeChoice | null;
   applicationMethod: ApplicationMethod | null;
 }
@@ -109,7 +150,7 @@ export function selectRecommendations(products: Product[], quiz: QuizAnswers): (
     // Products with only relative brand shades remain eligible as uncertain.
     .filter(p => !quiz.shade || quiz.shade === 'any' || !p.suitable_shades?.length || p.suitable_shades.includes(quiz.shade))
     .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
-    .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
+    .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade, quiz) }))
     .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))
     .slice(0, RESULT_LIMIT);
 }

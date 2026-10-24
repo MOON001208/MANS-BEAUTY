@@ -229,6 +229,9 @@ def status(checks):
     shaded = sum(1 for p in current if p.get('suitable_shades') or
                  ((p.get('profile_metadata') or {}).get('shade_lineup') or {}).get('options'))
     print(f"   상품 {len(products)}개 · 분석 리뷰 {analysed:,}건 · 호수 라인업 {lineups}개")
+    for key, label in [('naturalness', '자연스러움'), ('transfer_resistance', '묻어남'), ('smoothness', '들뜸·뭉침·끼임')]:
+        known = sum((p.get('profile_metadata') or {}).get('wear_attributes', {}).get(key, {}).get('score') is not None for p in current)
+        print(f"   {label} 근거 점수 보유 {known}/{len(products)}개")
     checks.record(len(products) > 0, "상품 존재", f"{len(products)}개")
     checks.record(len(current) == len(products), f"프로필 버전 최신 ({VERSION})", f"{len(current)}/{len(products)}")
     revised = sum(1 for p in current if (p.get('profile_metadata') or {}).get('metadata_revision') == METADATA_REVISION)

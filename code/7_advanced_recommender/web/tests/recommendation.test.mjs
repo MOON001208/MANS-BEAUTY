@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, shadeLineup, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
+import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, shadeLineup, MIN_ANALYZED_REVIEWS, featureAssessment, evidenceSupport } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
-const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v2', analyzed_count: 30 } };
+const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v3', analyzed_count: 30, evidence_counts: { coverage: 30, longevity: 30, lightweight: 30 } } };
 const score = (p, longevity) => calcRecommendScore(p, 'oily', [], 3, longevity, 3, '23');
 
 test('unimportant longevity never rewards poor longevity', () => {
@@ -40,7 +40,7 @@ test('known conflicting absolute shades cannot rank despite other strong scores'
 });
 
 test('thinly analyzed profiles are excluded, not merely ranked lower', () => {
-  const thin = { ...product, id: 'thin', profile_metadata: { version: 'rules-ko-v2', analyzed_count: MIN_ANALYZED_REVIEWS - 1 } };
+  const thin = { ...product, id: 'thin', profile_metadata: { version: 'rules-ko-v3', analyzed_count: MIN_ANALYZED_REVIEWS - 1 } };
   const ids = selectRecommendations([product, thin], quiz).map(p => p.id);
   assert.deepEqual(ids, ['1']);
 });
@@ -57,7 +57,7 @@ test('equal scores break ties by id, so the order never wobbles between runs', (
   assert.deepEqual(selectRecommendations(catalog, quiz).map(p => p.id), ['a', 'b']);
 });
 
-const lined = options => ({ ...product, suitable_shades: [], profile_metadata: { version: 'rules-ko-v2', analyzed_count: 30, shade_lineup: { basis: 'number', options } } });
+const lined = options => ({ ...product, suitable_shades: [], profile_metadata: { version: 'rules-ko-v3', analyzed_count: 30, evidence_counts: { coverage: 30, longevity: 30, lightweight: 30 }, shade_lineup: { basis: 'number', options } } });
 const two = lined([{ name: '01 라이트베이지', label: '01 라이트베이지', position: 0 }, { name: '02 내추럴베이지', label: '02 내추럴베이지', position: 1 }]);
 const three = lined([{ name: '1호', label: '1호', position: 0 }, { name: '2호', label: '2호', position: 0.5 }, { name: '3호', label: '3호', position: 1 }]);
 const shadeScore = (p, choice) => calcRecommendScore(p, 'oily', [], 3, 3, 3, choice);
@@ -129,4 +129,39 @@ test('non-cover source categories cannot rank even with an old liquid type', () 
 test('non-cover types stay excluded even without category metadata', () => {
   const others = ['primer', 'powder', 'shading'].map(type => withType(type, type));
   assert.deepEqual(selectRecommendations(others, quiz), []);
+});
+
+const allUnimportant = { coveragePref: 1, longevityPref: 1, lightweightPref: 1, naturalnessPref: 1, transferPref: 1, smoothnessPref: 1 };
+const wearProduct = (id, value, count) => ({ ...product, id, profile_metadata: { ...product.profile_metadata,
+  wear_attributes: { naturalness: { score: value, evidence_count: count } } } });
+
+test('missing evidence stays null and receives a neutral ranking value, not a poor score', () => {
+  const unknown = wearProduct('unknown', null, 0);
+  const assessment = featureAssessment(unknown, { ...allUnimportant, naturalnessPref: 5 });
+  assert.equal(assessment.points, 15);
+  assert.equal(assessment.supportBonus, 0);
+  assert.equal(assessment.known, 0);
+  assert.equal(unknown.profile_metadata.wear_attributes.naturalness.score, null);
+  assert.ok(featureAssessment(wearProduct('bad', 2, 100), { ...allUnimportant, naturalnessPref: 5 }).points < assessment.points);
+});
+
+test('confidence follows evidence for the requested attribute, not overall review volume', () => {
+  const few = wearProduct('few', 4, 3), many = wearProduct('many', 4, 300);
+  const prefs = { ...allUnimportant, naturalnessPref: 5 };
+  assert.ok(featureAssessment(many, prefs).points > featureAssessment(few, prefs).points);
+  assert.ok(featureAssessment(many, prefs).supportBonus > featureAssessment(few, prefs).supportBonus);
+  assert.deepEqual(featureAssessment({ ...few, profile_metadata: { ...few.profile_metadata, analyzed_count: 90000 } }, prefs), featureAssessment(few, prefs));
+  assert.equal(evidenceSupport(0), 0);
+  assert.ok(evidenceSupport(300) < 1);
+});
+
+test('new user priorities affect the real ranking and 1 disables their effect', () => {
+  const good = wearProduct('z-good', 4, 30), bad = wearProduct('a-bad', 2, 30);
+  assert.deepEqual(selectRecommendations([bad, good], { ...quiz, ...allUnimportant, naturalnessPref: 5 }).map(p => p.id), ['z-good', 'a-bad']);
+  assert.deepEqual(selectRecommendations([bad, good], { ...quiz, ...allUnimportant }).map(p => p.id), ['a-bad', 'z-good']);
+});
+
+test('fabricated non-null score with fewer than three references cannot influence ranking', () => {
+  const prefs = { ...allUnimportant, naturalnessPref: 5 };
+  assert.deepEqual(featureAssessment(wearProduct('thin', 5, 2), prefs), featureAssessment(wearProduct('unknown', null, 0), prefs));
 });

@@ -1,0 +1,469 @@
+{
+  "policy": "rules-ko-v2",
+  "captured_at": "2026-10-24T09:29:56.936Z",
+  "catalog_ids": [
+    "A000000011081",
+    "A000000011082",
+    "A000000011083",
+    "A000000107838",
+    "A000000122217",
+    "A000000122221",
+    "A000000129149",
+    "A000000130798",
+    "A000000130814",
+    "A000000130815",
+    "A000000131799",
+    "A000000131803",
+    "A000000138949",
+    "A000000142173",
+    "A000000143169",
+    "A000000143170",
+    "A000000161006",
+    "A000000161010",
+    "A000000161093",
+    "A000000178092",
+    "A000000182290",
+    "A000000184127",
+    "A000000186336",
+    "A000000187410",
+    "A000000187413",
+    "A000000187415",
+    "A000000189059",
+    "A000000191833",
+    "A000000192866",
+    "A000000196122",
+    "A000000198001",
+    "A000000200388",
+    "A000000203000",
+    "A000000204825",
+    "A000000204828",
+    "A000000204975",
+    "A000000205624",
+    "A000000205935",
+    "A000000205969",
+    "A000000205970",
+    "A000000206008",
+    "A000000206573",
+    "A000000207177",
+    "A000000207369",
+    "A000000207759",
+    "A000000207762",
+    "A000000208723",
+    "A000000210307",
+    "A000000210921",
+    "A000000212063",
+    "A000000212991",
+    "A000000212998",
+    "A000000213066",
+    "A000000213068",
+    "A000000214028",
+    "A000000217042",
+    "A000000217784",
+    "A000000222827",
+    "A000000222829",
+    "A000000223633",
+    "A000000224891",
+    "A000000225422",
+    "A000000227219",
+    "A000000229158",
+    "A000000230739",
+    "A000000233177",
+    "A000000233178",
+    "A000000238631",
+    "A000000240089",
+    "A000000246600",
+    "A000000246705",
+    "A000000246737",
+    "A000000249090",
+    "A000000249713",
+    "A000000249714",
+    "A000000249774",
+    "A000000249778",
+    "A000000250221",
+    "A000000251853",
+    "A000000258285",
+    "A000000261435",
+    "A000000261765",
+    "A000000267995",
+    "A000000268424",
+    "B000000223838",
+    "B000000223860",
+    "B000000223861"
+  ],
+  "analyzed_reviews": 33954,
+  "cases": [
+    {
+      "id": "oily-pore-tool-23",
+      "label": "지성 · 모공 · 도구 · 23호",
+      "answers": {
+        "id": "oily-pore-tool-23",
+        "label": "지성 · 모공 · 도구 · 23호",
+        "skinType": "oily",
+        "concerns": [
+          "pore"
+        ],
+        "coveragePref": 4,
+        "longevityPref": 5,
+        "lightweightPref": 2,
+        "shade": "23",
+        "applicationMethod": "tool",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000212063",
+        "A000000178092"
+      ]
+    },
+    {
+      "id": "oily-acne-hand-21",
+      "label": "지성 · 여드름 · 손 · 21호",
+      "answers": {
+        "id": "oily-acne-hand-21",
+        "label": "지성 · 여드름 · 손 · 21호",
+        "skinType": "oily",
+        "concerns": [
+          "acne"
+        ],
+        "coveragePref": 3,
+        "longevityPref": 3,
+        "lightweightPref": 5,
+        "shade": "21",
+        "applicationMethod": "hand",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000207177",
+        "A000000233178",
+        "A000000204828"
+      ]
+    },
+    {
+      "id": "dry-none-any-25",
+      "label": "건성 · 고민없음 · 무관 · 25호",
+      "answers": {
+        "id": "dry-none-any-25",
+        "label": "건성 · 고민없음 · 무관 · 25호",
+        "skinType": "dry",
+        "concerns": [],
+        "coveragePref": 2,
+        "longevityPref": 2,
+        "lightweightPref": 4,
+        "shade": "25",
+        "applicationMethod": "any",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000207177",
+        "A000000223633"
+      ]
+    },
+    {
+      "id": "dry-wrinkle-tool-any",
+      "label": "건성 · 주름 · 도구 · 호수모름",
+      "answers": {
+        "id": "dry-wrinkle-tool-any",
+        "label": "건성 · 주름 · 도구 · 호수모름",
+        "skinType": "dry",
+        "concerns": [
+          "wrinkle"
+        ],
+        "coveragePref": 4,
+        "longevityPref": 4,
+        "lightweightPref": 3,
+        "shade": "any",
+        "applicationMethod": "tool",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000212063",
+        "A000000204825",
+        "A000000229158"
+      ]
+    },
+    {
+      "id": "sensitive-redness-hand-21",
+      "label": "민감성 · 홍조 · 손 · 21호",
+      "answers": {
+        "id": "sensitive-redness-hand-21",
+        "label": "민감성 · 홍조 · 손 · 21호",
+        "skinType": "sensitive",
+        "concerns": [
+          "redness"
+        ],
+        "coveragePref": 5,
+        "longevityPref": 2,
+        "lightweightPref": 4,
+        "shade": "21",
+        "applicationMethod": "hand",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000217784",
+        "A000000207177",
+        "A000000249090"
+      ]
+    },
+    {
+      "id": "sensitive-acne-redness-any",
+      "label": "민감성 · 여드름+홍조 · 무관 · 호수모름",
+      "answers": {
+        "id": "sensitive-acne-redness-any",
+        "label": "민감성 · 여드름+홍조 · 무관 · 호수모름",
+        "skinType": "sensitive",
+        "concerns": [
+          "acne",
+          "redness"
+        ],
+        "coveragePref": 3,
+        "longevityPref": 3,
+        "lightweightPref": 3,
+        "shade": "any",
+        "applicationMethod": "any",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000212063",
+        "A000000222827",
+        "A000000198001"
+      ]
+    },
+    {
+      "id": "combination-spots-tool-23",
+      "label": "복합성 · 잡티 · 도구 · 23호",
+      "answers": {
+        "id": "combination-spots-tool-23",
+        "label": "복합성 · 잡티 · 도구 · 23호",
+        "skinType": "combination",
+        "concerns": [
+          "spots"
+        ],
+        "coveragePref": 5,
+        "longevityPref": 4,
+        "lightweightPref": 2,
+        "shade": "23",
+        "applicationMethod": "tool",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000222827",
+        "A000000212063"
+      ]
+    },
+    {
+      "id": "combination-pore-spots-hand-23",
+      "label": "복합성 · 모공+잡티 · 손 · 23호",
+      "answers": {
+        "id": "combination-pore-spots-hand-23",
+        "label": "복합성 · 모공+잡티 · 손 · 23호",
+        "skinType": "combination",
+        "concerns": [
+          "pore",
+          "spots"
+        ],
+        "coveragePref": 4,
+        "longevityPref": 3,
+        "lightweightPref": 4,
+        "shade": "23",
+        "applicationMethod": "hand",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000212991",
+        "A000000207177",
+        "A000000223633"
+      ]
+    },
+    {
+      "id": "oily-all-concerns-any",
+      "label": "지성 · 고민 5개 전부 · 무관 · 호수모름",
+      "answers": {
+        "id": "oily-all-concerns-any",
+        "label": "지성 · 고민 5개 전부 · 무관 · 호수모름",
+        "skinType": "oily",
+        "concerns": [
+          "acne",
+          "pore",
+          "redness",
+          "spots",
+          "wrinkle"
+        ],
+        "coveragePref": 5,
+        "longevityPref": 5,
+        "lightweightPref": 5,
+        "shade": "any",
+        "applicationMethod": "any",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000207177",
+        "A000000212063",
+        "A000000206573"
+      ]
+    },
+    {
+      "id": "dry-indifferent-any",
+      "label": "건성 · 고민없음 · 전 항목 중요도 1 (가중치 0)",
+      "answers": {
+        "id": "dry-indifferent-any",
+        "label": "건성 · 고민없음 · 전 항목 중요도 1 (가중치 0)",
+        "skinType": "dry",
+        "concerns": [],
+        "coveragePref": 1,
+        "longevityPref": 1,
+        "lightweightPref": 1,
+        "shade": "any",
+        "applicationMethod": "any",
+        "naturalnessPref": 1,
+        "transferPref": 1,
+        "smoothnessPref": 1
+      },
+      "product_ids": [
+        "A000000249090",
+        "A000000207177",
+        "A000000212063"
+      ]
+    },
+    {
+      "id": "combination-lightweight-hand-25",
+      "label": "복합성 · 고민없음 · 손 · 25호 · 가벼움 최우선",
+      "answers": {
+        "id": "combination-lightweight-hand-25",
+        "label": "복합성 · 고민없음 · 손 · 25호 · 가벼움 최우선",
+        "skinType": "combination",
+        "concerns": [],
+        "coveragePref": 1,
+        "longevityPref": 2,
+        "lightweightPref": 5,
+        "shade": "25",
+        "applicationMethod": "hand",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000223633",
+        "A000000207177",
+        "A000000205970"
+      ]
+    },
+    {
+      "id": "sensitive-none-tool-any",
+      "label": "민감성 · 고민없음 · 도구 · 호수모름",
+      "answers": {
+        "id": "sensitive-none-tool-any",
+        "label": "민감성 · 고민없음 · 도구 · 호수모름",
+        "skinType": "sensitive",
+        "concerns": [],
+        "coveragePref": 3,
+        "longevityPref": 5,
+        "lightweightPref": 1,
+        "shade": "any",
+        "applicationMethod": "tool",
+        "naturalnessPref": 3,
+        "transferPref": 3,
+        "smoothnessPref": 3
+      },
+      "product_ids": [
+        "A000000212063",
+        "A000000198001",
+        "A000000204825"
+      ]
+    },
+    {
+      "id": "pilot-naturalnessPref",
+      "label": "지성 · 도구 · 23호 · 화장 티 적음 최우선",
+      "answers": {
+        "id": "pilot-naturalnessPref",
+        "label": "지성 · 도구 · 23호 · 화장 티 적음 최우선",
+        "skinType": "oily",
+        "concerns": [
+          "pore"
+        ],
+        "coveragePref": 1,
+        "longevityPref": 1,
+        "lightweightPref": 1,
+        "shade": "23",
+        "applicationMethod": "tool",
+        "naturalnessPref": 5,
+        "transferPref": 1,
+        "smoothnessPref": 1
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000212063",
+        "A000000178092"
+      ]
+    },
+    {
+      "id": "pilot-transferPref",
+      "label": "지성 · 도구 · 23호 · 묻어남 적음 최우선",
+      "answers": {
+        "id": "pilot-transferPref",
+        "label": "지성 · 도구 · 23호 · 묻어남 적음 최우선",
+        "skinType": "oily",
+        "concerns": [
+          "pore"
+        ],
+        "coveragePref": 1,
+        "longevityPref": 1,
+        "lightweightPref": 1,
+        "shade": "23",
+        "applicationMethod": "tool",
+        "naturalnessPref": 1,
+        "transferPref": 5,
+        "smoothnessPref": 1
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000212063",
+        "A000000178092"
+      ]
+    },
+    {
+      "id": "pilot-smoothnessPref",
+      "label": "지성 · 도구 · 23호 · 들뜸 적음 최우선",
+      "answers": {
+        "id": "pilot-smoothnessPref",
+        "label": "지성 · 도구 · 23호 · 들뜸 적음 최우선",
+        "skinType": "oily",
+        "concerns": [
+          "pore"
+        ],
+        "coveragePref": 1,
+        "longevityPref": 1,
+        "lightweightPref": 1,
+        "shade": "23",
+        "applicationMethod": "tool",
+        "naturalnessPref": 1,
+        "transferPref": 1,
+        "smoothnessPref": 5
+      },
+      "product_ids": [
+        "A000000246705",
+        "A000000212063",
+        "A000000178092"
+      ]
+    }
+  ]
+}

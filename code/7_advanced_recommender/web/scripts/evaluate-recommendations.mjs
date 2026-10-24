@@ -5,7 +5,7 @@
 // there are no human relevance labels or click logs yet, so NDCG/Recall would be
 // unfounded here. Ranks the same list the site ranks, via selectRecommendations.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { selectRecommendations, hasCurrentProfile, bestShadeOption, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
+import { selectRecommendations, hasCurrentProfile, bestShadeOption, MIN_ANALYZED_REVIEWS, FEATURE_CONFIG, attributeEvidence } from '../src/lib/recommendation.ts';
 
 const read = name => JSON.parse(readFileSync(new URL(`../tests/fixtures/${name}`, import.meta.url), 'utf-8'));
 const snapshot = read('catalog-snapshot.json');
@@ -14,6 +14,7 @@ const share = (n, total) => (total ? n / total : null);
 const pct = value => (value === null ? 'n/a' : `${(value * 100).toFixed(1)}%`);
 
 const ATTRIBUTES = ['coverage', 'longevity', 'lightweight'];
+const scoreFor = (p, key) => attributeEvidence(p, key).score;
 
 function evaluate(persona) {
   const results = selectRecommendations(snapshot.products, persona);
@@ -39,6 +40,12 @@ function evaluate(persona) {
     for (const concern of p.suitable_concerns ?? []) {
       if ((meta(p).concern_evidence_ids?.[concern] ?? []).length < 3) violations.push(`${p.id}: ${concern} 표시 근거 3건 미만`);
     }
+    for (const key of ['naturalness', 'transfer_resistance', 'smoothness']) {
+      const entry = meta(p).wear_attributes?.[key];
+      if (entry?.score != null && (entry.evidence_count < 3 || new Set([...entry.positive_review_ids, ...entry.negative_review_ids]).size < 3)) {
+        violations.push(`${p.id}: ${key} 표시 근거 3건 미만`);
+      }
+    }
   }
 
   const shadeKnown = results.filter(p => p.suitable_shades?.length);
@@ -53,12 +60,14 @@ function evaluate(persona) {
   // Products showing no claim at all are excluded: counting them as "traceable"
   // would report a vacuous 100% that hides products with untraceable claims.
   const claiming = results.filter(p =>
-    ATTRIBUTES.some(a => p[`${a}_score`] != null) || (p.suitable_concerns ?? []).length);
+    FEATURE_CONFIG.some(a => scoreFor(p, a.key) != null) || (p.suitable_concerns ?? []).length);
   const traceable = claiming.filter(p => {
     const shownAttributes = ATTRIBUTES.filter(a => p[`${a}_score`] != null);
     const attributesBacked = shownAttributes.every(a => (meta(p).evidence_review_ids?.[a] ?? []).length > 0);
     const concernsBacked = (p.suitable_concerns ?? []).every(c => (meta(p).concern_evidence_ids?.[c] ?? []).length > 0);
-    return attributesBacked && concernsBacked;
+    const wearBacked = ['naturalness', 'transfer_resistance', 'smoothness'].every(key => scoreFor(p, key) == null ||
+      (meta(p).wear_attributes[key].positive_review_ids.length + meta(p).wear_attributes[key].negative_review_ids.length) >= 3);
+    return attributesBacked && concernsBacked && wearBacked;
   });
 
   return {
