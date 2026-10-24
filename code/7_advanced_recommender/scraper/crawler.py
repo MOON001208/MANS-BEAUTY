@@ -140,10 +140,12 @@ class OliveYoung:
         return list(dict.fromkeys(numbers))
 
     def ingredients(self, pid, detail):
-        data = self.json('POST', SITE + '/goods/api/v1/article', json={
+        return parse_ingredients(self.ingredient_article(pid, detail))
+
+    def ingredient_article(self, pid, detail):
+        return self.json('POST', SITE + '/goods/api/v1/article', json={
             'goodsNumber': pid, 'liquorFlag': detail.get('liquorFlag', False),
             'goodsOptionInfoList': [{'standardCode': o.get('standardCode'), 'optionName': o.get('optionName')} for o in detail.get('options', [])]})
-        return parse_ingredients(data)
 
     def reviews_page(self, pid, sort, cursor=None, item_number=None):
         if sort not in REVIEW_SORTS:
@@ -296,10 +298,15 @@ def harvest_reviews(api, pid, save_page, state, max_pages=500, sorts=REVIEW_SORT
     return report
 
 def run(args):
-    if getattr(args, 'browser', False):
+    collect = _run
+    if getattr(args, 'ingredients_only', False):
+        from scraper.ingredients import collect
+    elif getattr(args, 'latest_only', False):
+        from scraper.latest import collect
+    if getattr(args, 'browser', False) and not getattr(args, 'from_ingredient_cache', False):
         from scraper.browser import run_browser
-        return run_browser(args, _run)
-    return _run(args)
+        return run_browser(args, collect)
+    return collect(args)
 
 
 def _run(args, session=None):
@@ -396,12 +403,13 @@ def _run(args, session=None):
                 item['warnings'].append({'stage': 'stats', 'error': str(error)})
             if detail is not None and not args.skip_ingredients and not (existing.get(pid) or {}).get('ingredients_raw'):
                 try:
-                    ingredients = api.ingredients(pid, detail)
-                    if ingredients:
-                        product['ingredients_raw'] = ingredients
-                    else:
+                    from scraper.ingredients import ingredient_patch
+                    patch, listing = ingredient_patch(product, api.ingredient_article(pid, detail))
+                    product.update(patch)
+                    item['ingredients'] = listing['status']
+                    if not listing['entries']:
                         item['warnings'].append({'stage': 'ingredients', 'error': '단일 성분표 미확인'})
-                except (RateLimited, BudgetReached):
+                except (AccessLimited, RateLimited, BudgetReached):
                     raise
                 except SourceError as error:
                     item['warnings'].append({'stage': 'ingredients', 'error': str(error)})
@@ -489,15 +497,32 @@ def parser():
     p.add_argument('--fresh', action='store_true')
     p.add_argument('--skip-ingredients', action='store_true')
     p.add_argument('--browser', action='store_true', help='Use an anonymous Crawl4AI Chromium session (optional dependencies required)')
+    modes = p.add_mutually_exclusive_group()
+    modes.add_argument('--latest-only', action='store_true', help='Catch up latest reviews through the previous collection day')
+    modes.add_argument('--ingredients-only', action='store_true', help='Refresh seller ingredient listings and catalog details without reviews')
+    p.add_argument('--from-ingredient-cache', action='store_true', help='Ingredients-only: apply previously fetched article responses without network access')
     # Refreshes catalog and option data only; review cursors are left untouched.
     p.add_argument('--products-only', action='store_true')
     return p
 
+
+def validate_args(p, args):
+    if args.max_review_pages < 2 or args.max_catalog_pages < 1 or args.delay < 0 or args.max_seconds <= 0:
+        p.error('review pages >=2, catalog pages >=1, delay >=0, seconds >0 required')
+    if args.from_ingredient_cache and not args.ingredients_only:
+        p.error('--from-ingredient-cache requires --ingredients-only')
+    if args.ingredients_only and args.skip_ingredients:
+        p.error('--ingredients-only cannot use --skip-ingredients')
+    if args.products_only and (args.latest_only or args.ingredients_only):
+        p.error('--products-only cannot be combined with a review/ingredient mode')
+    if getattr(args, 'profiles_only', False) and (args.latest_only or args.ingredients_only):
+        p.error('--profiles-only cannot be combined with a collection mode')
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
-    args = parser().parse_args()
-    if args.max_review_pages < 2 or args.max_catalog_pages < 1 or args.delay < 0 or args.max_seconds <= 0:
-        raise SystemExit('리뷰 페이지 예산 >=2, 카테고리 페이지 >=1, 지연 >=0 필요')
+    p = parser()
+    args = p.parse_args()
+    validate_args(p, args)
     result = run(args)
     print(json.dumps({'products': len(result['products']), 'errors': len(result['errors'])}))
-    raise SystemExit(1 if result['errors'] else 0)
+    raise SystemExit(1 if result['errors'] or result.get('incomplete_products') else 0)

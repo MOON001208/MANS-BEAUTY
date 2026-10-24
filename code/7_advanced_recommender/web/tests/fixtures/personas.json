@@ -1,29 +1,3399 @@
 {
   "note": "제약조건 충족률 평가용 페르소나. 관련도 정답(relevance label)이 아니라, 사용자가 건 조건을 결과가 지키는지 측정하기 위한 입력 집합입니다.",
   "personas": [
-    { "id": "oily-pore-tool-23", "label": "지성 · 모공 · 도구 · 23호",
-      "skinType": "oily", "concerns": ["pore"], "coveragePref": 4, "longevityPref": 5, "lightweightPref": 2, "shade": "23", "applicationMethod": "tool" },
-    { "id": "oily-acne-hand-21", "label": "지성 · 여드름 · 손 · 21호",
-      "skinType": "oily", "concerns": ["acne"], "coveragePref": 3, "longevityPref": 3, "lightweightPref": 5, "shade": "21", "applicationMethod": "hand" },
-    { "id": "dry-none-any-25", "label": "건성 · 고민없음 · 무관 · 25호",
-      "skinType": "dry", "concerns": [], "coveragePref": 2, "longevityPref": 2, "lightweightPref": 4, "shade": "25", "applicationMethod": "any" },
-    { "id": "dry-wrinkle-tool-any", "label": "건성 · 주름 · 도구 · 호수모름",
-      "skinType": "dry", "concerns": ["wrinkle"], "coveragePref": 4, "longevityPref": 4, "lightweightPref": 3, "shade": "any", "applicationMethod": "tool" },
-    { "id": "sensitive-redness-hand-21", "label": "민감성 · 홍조 · 손 · 21호",
-      "skinType": "sensitive", "concerns": ["redness"], "coveragePref": 5, "longevityPref": 2, "lightweightPref": 4, "shade": "21", "applicationMethod": "hand" },
-    { "id": "sensitive-acne-redness-any", "label": "민감성 · 여드름+홍조 · 무관 · 호수모름",
-      "skinType": "sensitive", "concerns": ["acne", "redness"], "coveragePref": 3, "longevityPref": 3, "lightweightPref": 3, "shade": "any", "applicationMethod": "any" },
-    { "id": "combination-spots-tool-23", "label": "복합성 · 잡티 · 도구 · 23호",
-      "skinType": "combination", "concerns": ["spots"], "coveragePref": 5, "longevityPref": 4, "lightweightPref": 2, "shade": "23", "applicationMethod": "tool" },
-    { "id": "combination-pore-spots-hand-23", "label": "복합성 · 모공+잡티 · 손 · 23호",
-      "skinType": "combination", "concerns": ["pore", "spots"], "coveragePref": 4, "longevityPref": 3, "lightweightPref": 4, "shade": "23", "applicationMethod": "hand" },
-    { "id": "oily-all-concerns-any", "label": "지성 · 고민 5개 전부 · 무관 · 호수모름",
-      "skinType": "oily", "concerns": ["acne", "pore", "redness", "spots", "wrinkle"], "coveragePref": 5, "longevityPref": 5, "lightweightPref": 5, "shade": "any", "applicationMethod": "any" },
-    { "id": "dry-indifferent-any", "label": "건성 · 고민없음 · 전 항목 중요도 1 (가중치 0)",
-      "skinType": "dry", "concerns": [], "coveragePref": 1, "longevityPref": 1, "lightweightPref": 1, "shade": "any", "applicationMethod": "any" },
-    { "id": "combination-lightweight-hand-25", "label": "복합성 · 고민없음 · 손 · 25호 · 가벼움 최우선",
-      "skinType": "combination", "concerns": [], "coveragePref": 1, "longevityPref": 2, "lightweightPref": 5, "shade": "25", "applicationMethod": "hand" },
-    { "id": "sensitive-none-tool-any", "label": "민감성 · 고민없음 · 도구 · 호수모름",
-      "skinType": "sensitive", "concerns": [], "coveragePref": 3, "longevityPref": 5, "lightweightPref": 1, "shade": "any", "applicationMethod": "tool" }
+    {
+      "id": "oily-pore-tool-23",
+      "label": "지성 · 모공 · 도구 · 23호",
+      "skinType": "oily",
+      "concerns": [
+        "pore"
+      ],
+      "coveragePref": 4,
+      "longevityPref": 5,
+      "lightweightPref": 2,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "oily-acne-hand-21",
+      "label": "지성 · 여드름 · 손 · 21호",
+      "skinType": "oily",
+      "concerns": [
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "dry-none-any-25",
+      "label": "건성 · 고민없음 · 무관 · 25호",
+      "skinType": "dry",
+      "concerns": [],
+      "coveragePref": 2,
+      "longevityPref": 2,
+      "lightweightPref": 4,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "dry-wrinkle-tool-any",
+      "label": "건성 · 주름 · 도구 · 호수모름",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 4,
+      "longevityPref": 4,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "sensitive-redness-hand-21",
+      "label": "민감성 · 홍조 · 손 · 21호",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 2,
+      "lightweightPref": 4,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "sensitive-acne-redness-any",
+      "label": "민감성 · 여드름+홍조 · 무관 · 호수모름",
+      "skinType": "sensitive",
+      "concerns": [
+        "acne",
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "combination-spots-tool-23",
+      "label": "복합성 · 잡티 · 도구 · 23호",
+      "skinType": "combination",
+      "concerns": [
+        "spots"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 4,
+      "lightweightPref": 2,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "combination-pore-spots-hand-23",
+      "label": "복합성 · 모공+잡티 · 손 · 23호",
+      "skinType": "combination",
+      "concerns": [
+        "pore",
+        "spots"
+      ],
+      "coveragePref": 4,
+      "longevityPref": 3,
+      "lightweightPref": 4,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "oily-all-concerns-any",
+      "label": "지성 · 고민 5개 전부 · 무관 · 호수모름",
+      "skinType": "oily",
+      "concerns": [
+        "acne",
+        "pore",
+        "redness",
+        "spots",
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 5,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "dry-indifferent-any",
+      "label": "건성 · 고민없음 · 전 항목 중요도 1 (가중치 0)",
+      "skinType": "dry",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "combination-lightweight-hand-25",
+      "label": "복합성 · 고민없음 · 손 · 25호 · 가벼움 최우선",
+      "skinType": "combination",
+      "concerns": [],
+      "coveragePref": 1,
+      "longevityPref": 2,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "sensitive-none-tool-any",
+      "label": "민감성 · 고민없음 · 도구 · 호수모름",
+      "skinType": "sensitive",
+      "concerns": [],
+      "coveragePref": 3,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-hand-balanced",
+      "label": "oily · 21 · hand · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-21-hand-coverage",
+      "label": "oily · 21 · hand · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-21-hand-longevity",
+      "label": "oily · 21 · hand · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-21-hand-lightweight",
+      "label": "oily · 21 · hand · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-21-hand-unimportant",
+      "label": "oily · 21 · hand · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-21-tool-balanced",
+      "label": "oily · 21 · tool · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-tool-coverage",
+      "label": "oily · 21 · tool · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-tool-longevity",
+      "label": "oily · 21 · tool · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-tool-lightweight",
+      "label": "oily · 21 · tool · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-tool-unimportant",
+      "label": "oily · 21 · tool · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-21-any-balanced",
+      "label": "oily · 21 · any · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-21-any-coverage",
+      "label": "oily · 21 · any · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-21-any-longevity",
+      "label": "oily · 21 · any · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-21-any-lightweight",
+      "label": "oily · 21 · any · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-21-any-unimportant",
+      "label": "oily · 21 · any · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-23-hand-balanced",
+      "label": "oily · 23 · hand · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-23-hand-coverage",
+      "label": "oily · 23 · hand · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-23-hand-longevity",
+      "label": "oily · 23 · hand · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-23-hand-lightweight",
+      "label": "oily · 23 · hand · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-23-hand-unimportant",
+      "label": "oily · 23 · hand · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-23-tool-balanced",
+      "label": "oily · 23 · tool · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-23-tool-coverage",
+      "label": "oily · 23 · tool · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-23-tool-longevity",
+      "label": "oily · 23 · tool · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-23-tool-lightweight",
+      "label": "oily · 23 · tool · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-23-tool-unimportant",
+      "label": "oily · 23 · tool · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-23-any-balanced",
+      "label": "oily · 23 · any · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-23-any-coverage",
+      "label": "oily · 23 · any · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-23-any-longevity",
+      "label": "oily · 23 · any · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-23-any-lightweight",
+      "label": "oily · 23 · any · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-23-any-unimportant",
+      "label": "oily · 23 · any · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-25-hand-balanced",
+      "label": "oily · 25 · hand · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-25-hand-coverage",
+      "label": "oily · 25 · hand · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-25-hand-longevity",
+      "label": "oily · 25 · hand · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-25-hand-lightweight",
+      "label": "oily · 25 · hand · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-25-hand-unimportant",
+      "label": "oily · 25 · hand · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-25-tool-balanced",
+      "label": "oily · 25 · tool · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-25-tool-coverage",
+      "label": "oily · 25 · tool · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-25-tool-longevity",
+      "label": "oily · 25 · tool · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-25-tool-lightweight",
+      "label": "oily · 25 · tool · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-25-tool-unimportant",
+      "label": "oily · 25 · tool · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-25-any-balanced",
+      "label": "oily · 25 · any · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-25-any-coverage",
+      "label": "oily · 25 · any · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-25-any-longevity",
+      "label": "oily · 25 · any · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-25-any-lightweight",
+      "label": "oily · 25 · any · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-25-any-unimportant",
+      "label": "oily · 25 · any · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-any-hand-balanced",
+      "label": "oily · any · hand · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-any-hand-coverage",
+      "label": "oily · any · hand · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-any-hand-longevity",
+      "label": "oily · any · hand · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-any-hand-lightweight",
+      "label": "oily · any · hand · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-any-hand-unimportant",
+      "label": "oily · any · hand · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-oily-any-tool-balanced",
+      "label": "oily · any · tool · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-any-tool-coverage",
+      "label": "oily · any · tool · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-any-tool-longevity",
+      "label": "oily · any · tool · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-any-tool-lightweight",
+      "label": "oily · any · tool · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-any-tool-unimportant",
+      "label": "oily · any · tool · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-oily-any-any-balanced",
+      "label": "oily · any · any · balanced",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-any-any-coverage",
+      "label": "oily · any · any · coverage",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-any-any-longevity",
+      "label": "oily · any · any · longevity",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-any-any-lightweight",
+      "label": "oily · any · any · lightweight",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-oily-any-any-unimportant",
+      "label": "oily · any · any · unimportant",
+      "skinType": "oily",
+      "concerns": [
+        "pore",
+        "acne"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-21-hand-balanced",
+      "label": "dry · 21 · hand · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-21-hand-coverage",
+      "label": "dry · 21 · hand · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-21-hand-longevity",
+      "label": "dry · 21 · hand · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-21-hand-lightweight",
+      "label": "dry · 21 · hand · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-21-hand-unimportant",
+      "label": "dry · 21 · hand · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-21-tool-balanced",
+      "label": "dry · 21 · tool · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-21-tool-coverage",
+      "label": "dry · 21 · tool · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-21-tool-longevity",
+      "label": "dry · 21 · tool · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-21-tool-lightweight",
+      "label": "dry · 21 · tool · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-21-tool-unimportant",
+      "label": "dry · 21 · tool · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-21-any-balanced",
+      "label": "dry · 21 · any · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-21-any-coverage",
+      "label": "dry · 21 · any · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-21-any-longevity",
+      "label": "dry · 21 · any · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-21-any-lightweight",
+      "label": "dry · 21 · any · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-21-any-unimportant",
+      "label": "dry · 21 · any · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-23-hand-balanced",
+      "label": "dry · 23 · hand · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-23-hand-coverage",
+      "label": "dry · 23 · hand · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-23-hand-longevity",
+      "label": "dry · 23 · hand · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-23-hand-lightweight",
+      "label": "dry · 23 · hand · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-23-hand-unimportant",
+      "label": "dry · 23 · hand · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-23-tool-balanced",
+      "label": "dry · 23 · tool · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-23-tool-coverage",
+      "label": "dry · 23 · tool · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-23-tool-longevity",
+      "label": "dry · 23 · tool · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-23-tool-lightweight",
+      "label": "dry · 23 · tool · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-23-tool-unimportant",
+      "label": "dry · 23 · tool · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-23-any-balanced",
+      "label": "dry · 23 · any · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-23-any-coverage",
+      "label": "dry · 23 · any · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-23-any-longevity",
+      "label": "dry · 23 · any · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-23-any-lightweight",
+      "label": "dry · 23 · any · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-23-any-unimportant",
+      "label": "dry · 23 · any · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-25-hand-balanced",
+      "label": "dry · 25 · hand · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-25-hand-coverage",
+      "label": "dry · 25 · hand · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-25-hand-longevity",
+      "label": "dry · 25 · hand · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-25-hand-lightweight",
+      "label": "dry · 25 · hand · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-25-hand-unimportant",
+      "label": "dry · 25 · hand · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-25-tool-balanced",
+      "label": "dry · 25 · tool · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-25-tool-coverage",
+      "label": "dry · 25 · tool · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-25-tool-longevity",
+      "label": "dry · 25 · tool · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-25-tool-lightweight",
+      "label": "dry · 25 · tool · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-25-tool-unimportant",
+      "label": "dry · 25 · tool · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-25-any-balanced",
+      "label": "dry · 25 · any · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-25-any-coverage",
+      "label": "dry · 25 · any · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-25-any-longevity",
+      "label": "dry · 25 · any · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-25-any-lightweight",
+      "label": "dry · 25 · any · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-25-any-unimportant",
+      "label": "dry · 25 · any · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-any-hand-balanced",
+      "label": "dry · any · hand · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-any-hand-coverage",
+      "label": "dry · any · hand · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-any-hand-longevity",
+      "label": "dry · any · hand · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-any-hand-lightweight",
+      "label": "dry · any · hand · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-any-hand-unimportant",
+      "label": "dry · any · hand · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-dry-any-tool-balanced",
+      "label": "dry · any · tool · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-any-tool-coverage",
+      "label": "dry · any · tool · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-any-tool-longevity",
+      "label": "dry · any · tool · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-any-tool-lightweight",
+      "label": "dry · any · tool · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-any-tool-unimportant",
+      "label": "dry · any · tool · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-dry-any-any-balanced",
+      "label": "dry · any · any · balanced",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-any-any-coverage",
+      "label": "dry · any · any · coverage",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-any-any-longevity",
+      "label": "dry · any · any · longevity",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-any-any-lightweight",
+      "label": "dry · any · any · lightweight",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-dry-any-any-unimportant",
+      "label": "dry · any · any · unimportant",
+      "skinType": "dry",
+      "concerns": [
+        "wrinkle"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-21-hand-balanced",
+      "label": "sensitive · 21 · hand · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-21-hand-coverage",
+      "label": "sensitive · 21 · hand · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-21-hand-longevity",
+      "label": "sensitive · 21 · hand · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-21-hand-lightweight",
+      "label": "sensitive · 21 · hand · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-21-hand-unimportant",
+      "label": "sensitive · 21 · hand · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-21-tool-balanced",
+      "label": "sensitive · 21 · tool · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-21-tool-coverage",
+      "label": "sensitive · 21 · tool · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-21-tool-longevity",
+      "label": "sensitive · 21 · tool · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-21-tool-lightweight",
+      "label": "sensitive · 21 · tool · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-21-tool-unimportant",
+      "label": "sensitive · 21 · tool · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-21-any-balanced",
+      "label": "sensitive · 21 · any · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-21-any-coverage",
+      "label": "sensitive · 21 · any · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-21-any-longevity",
+      "label": "sensitive · 21 · any · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-21-any-lightweight",
+      "label": "sensitive · 21 · any · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-21-any-unimportant",
+      "label": "sensitive · 21 · any · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-23-hand-balanced",
+      "label": "sensitive · 23 · hand · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-23-hand-coverage",
+      "label": "sensitive · 23 · hand · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-23-hand-longevity",
+      "label": "sensitive · 23 · hand · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-23-hand-lightweight",
+      "label": "sensitive · 23 · hand · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-23-hand-unimportant",
+      "label": "sensitive · 23 · hand · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-23-tool-balanced",
+      "label": "sensitive · 23 · tool · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-23-tool-coverage",
+      "label": "sensitive · 23 · tool · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-23-tool-longevity",
+      "label": "sensitive · 23 · tool · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-23-tool-lightweight",
+      "label": "sensitive · 23 · tool · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-23-tool-unimportant",
+      "label": "sensitive · 23 · tool · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-23-any-balanced",
+      "label": "sensitive · 23 · any · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-23-any-coverage",
+      "label": "sensitive · 23 · any · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-23-any-longevity",
+      "label": "sensitive · 23 · any · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-23-any-lightweight",
+      "label": "sensitive · 23 · any · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-23-any-unimportant",
+      "label": "sensitive · 23 · any · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-25-hand-balanced",
+      "label": "sensitive · 25 · hand · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-25-hand-coverage",
+      "label": "sensitive · 25 · hand · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-25-hand-longevity",
+      "label": "sensitive · 25 · hand · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-25-hand-lightweight",
+      "label": "sensitive · 25 · hand · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-25-hand-unimportant",
+      "label": "sensitive · 25 · hand · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-25-tool-balanced",
+      "label": "sensitive · 25 · tool · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-25-tool-coverage",
+      "label": "sensitive · 25 · tool · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-25-tool-longevity",
+      "label": "sensitive · 25 · tool · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-25-tool-lightweight",
+      "label": "sensitive · 25 · tool · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-25-tool-unimportant",
+      "label": "sensitive · 25 · tool · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-25-any-balanced",
+      "label": "sensitive · 25 · any · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-25-any-coverage",
+      "label": "sensitive · 25 · any · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-25-any-longevity",
+      "label": "sensitive · 25 · any · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-25-any-lightweight",
+      "label": "sensitive · 25 · any · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-25-any-unimportant",
+      "label": "sensitive · 25 · any · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-any-hand-balanced",
+      "label": "sensitive · any · hand · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-any-hand-coverage",
+      "label": "sensitive · any · hand · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-any-hand-longevity",
+      "label": "sensitive · any · hand · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-any-hand-lightweight",
+      "label": "sensitive · any · hand · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-any-hand-unimportant",
+      "label": "sensitive · any · hand · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-sensitive-any-tool-balanced",
+      "label": "sensitive · any · tool · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-any-tool-coverage",
+      "label": "sensitive · any · tool · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-any-tool-longevity",
+      "label": "sensitive · any · tool · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-any-tool-lightweight",
+      "label": "sensitive · any · tool · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-any-tool-unimportant",
+      "label": "sensitive · any · tool · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-sensitive-any-any-balanced",
+      "label": "sensitive · any · any · balanced",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-any-any-coverage",
+      "label": "sensitive · any · any · coverage",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-any-any-longevity",
+      "label": "sensitive · any · any · longevity",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-any-any-lightweight",
+      "label": "sensitive · any · any · lightweight",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-sensitive-any-any-unimportant",
+      "label": "sensitive · any · any · unimportant",
+      "skinType": "sensitive",
+      "concerns": [
+        "redness"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-21-hand-balanced",
+      "label": "combination · 21 · hand · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-21-hand-coverage",
+      "label": "combination · 21 · hand · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-21-hand-longevity",
+      "label": "combination · 21 · hand · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-21-hand-lightweight",
+      "label": "combination · 21 · hand · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-21-hand-unimportant",
+      "label": "combination · 21 · hand · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-21-tool-balanced",
+      "label": "combination · 21 · tool · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-21-tool-coverage",
+      "label": "combination · 21 · tool · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-21-tool-longevity",
+      "label": "combination · 21 · tool · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-21-tool-lightweight",
+      "label": "combination · 21 · tool · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-21-tool-unimportant",
+      "label": "combination · 21 · tool · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-21-any-balanced",
+      "label": "combination · 21 · any · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-21-any-coverage",
+      "label": "combination · 21 · any · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-21-any-longevity",
+      "label": "combination · 21 · any · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-21-any-lightweight",
+      "label": "combination · 21 · any · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-21-any-unimportant",
+      "label": "combination · 21 · any · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "21",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-23-hand-balanced",
+      "label": "combination · 23 · hand · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-23-hand-coverage",
+      "label": "combination · 23 · hand · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-23-hand-longevity",
+      "label": "combination · 23 · hand · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-23-hand-lightweight",
+      "label": "combination · 23 · hand · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-23-hand-unimportant",
+      "label": "combination · 23 · hand · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-23-tool-balanced",
+      "label": "combination · 23 · tool · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-23-tool-coverage",
+      "label": "combination · 23 · tool · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-23-tool-longevity",
+      "label": "combination · 23 · tool · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-23-tool-lightweight",
+      "label": "combination · 23 · tool · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-23-tool-unimportant",
+      "label": "combination · 23 · tool · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-23-any-balanced",
+      "label": "combination · 23 · any · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-23-any-coverage",
+      "label": "combination · 23 · any · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-23-any-longevity",
+      "label": "combination · 23 · any · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-23-any-lightweight",
+      "label": "combination · 23 · any · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-23-any-unimportant",
+      "label": "combination · 23 · any · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "23",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-25-hand-balanced",
+      "label": "combination · 25 · hand · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-25-hand-coverage",
+      "label": "combination · 25 · hand · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-25-hand-longevity",
+      "label": "combination · 25 · hand · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-25-hand-lightweight",
+      "label": "combination · 25 · hand · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-25-hand-unimportant",
+      "label": "combination · 25 · hand · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-25-tool-balanced",
+      "label": "combination · 25 · tool · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-25-tool-coverage",
+      "label": "combination · 25 · tool · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-25-tool-longevity",
+      "label": "combination · 25 · tool · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-25-tool-lightweight",
+      "label": "combination · 25 · tool · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-25-tool-unimportant",
+      "label": "combination · 25 · tool · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-25-any-balanced",
+      "label": "combination · 25 · any · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-25-any-coverage",
+      "label": "combination · 25 · any · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-25-any-longevity",
+      "label": "combination · 25 · any · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-25-any-lightweight",
+      "label": "combination · 25 · any · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-25-any-unimportant",
+      "label": "combination · 25 · any · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "25",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-any-hand-balanced",
+      "label": "combination · any · hand · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-any-hand-coverage",
+      "label": "combination · any · hand · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-any-hand-longevity",
+      "label": "combination · any · hand · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-any-hand-lightweight",
+      "label": "combination · any · hand · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-any-hand-unimportant",
+      "label": "combination · any · hand · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "hand"
+    },
+    {
+      "id": "matrix-combination-any-tool-balanced",
+      "label": "combination · any · tool · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-any-tool-coverage",
+      "label": "combination · any · tool · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-any-tool-longevity",
+      "label": "combination · any · tool · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-any-tool-lightweight",
+      "label": "combination · any · tool · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-any-tool-unimportant",
+      "label": "combination · any · tool · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "tool"
+    },
+    {
+      "id": "matrix-combination-any-any-balanced",
+      "label": "combination · any · any · balanced",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 3,
+      "longevityPref": 3,
+      "lightweightPref": 3,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-any-any-coverage",
+      "label": "combination · any · any · coverage",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 5,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-any-any-longevity",
+      "label": "combination · any · any · longevity",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 5,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-any-any-lightweight",
+      "label": "combination · any · any · lightweight",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 5,
+      "shade": "any",
+      "applicationMethod": "any"
+    },
+    {
+      "id": "matrix-combination-any-any-unimportant",
+      "label": "combination · any · any · unimportant",
+      "skinType": "combination",
+      "concerns": [
+        "spots",
+        "pore"
+      ],
+      "coveragePref": 1,
+      "longevityPref": 1,
+      "lightweightPref": 1,
+      "shade": "any",
+      "applicationMethod": "any"
+    }
   ]
 }

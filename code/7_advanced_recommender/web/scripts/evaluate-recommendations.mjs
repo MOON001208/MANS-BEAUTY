@@ -30,6 +30,15 @@ function evaluate(persona) {
     if (['컨실러', '프라이머/베이스', '파우더/팩트', '쉐이딩'].includes(meta(p).source_category)) violations.push(`${p.id}: 전체 얼굴 커버 소분류 아님`);
     if (persona.applicationMethod === 'hand' && p.product_type !== 'tone_lotion') violations.push(`${p.id}: 손 사용 조건 위반`);
     if (persona.applicationMethod === 'tool' && p.product_type === 'tone_lotion') violations.push(`${p.id}: 도구 사용 조건 위반`);
+    if (wantsShade && p.suitable_shades?.length && !p.suitable_shades.includes(persona.shade)) violations.push(`${p.id}: 명시 호수 불일치`);
+    for (const attr of ATTRIBUTES) {
+      if (p[`${attr}_score`] != null && ((meta(p).evidence_counts?.[attr] ?? 0) < 3 || (meta(p).evidence_review_ids?.[attr] ?? []).length < 3)) {
+        violations.push(`${p.id}: ${attr} 표시 근거 3건 미만`);
+      }
+    }
+    for (const concern of p.suitable_concerns ?? []) {
+      if ((meta(p).concern_evidence_ids?.[concern] ?? []).length < 3) violations.push(`${p.id}: ${concern} 표시 근거 3건 미만`);
+    }
   }
 
   const shadeKnown = results.filter(p => p.suitable_shades?.length);
@@ -67,6 +76,7 @@ function evaluate(persona) {
     traceable_rate: share(traceable.length, claiming.length),
     no_claim_rate: share(results.length - claiming.length, results.length),
     top3: results.slice(0, 3).map(p => `${p.brand} ${p.name}`.slice(0, 44)),
+    top3_ids: results.slice(0, 3).map(p => p.id),
   };
 }
 
@@ -76,6 +86,7 @@ const mean = key => {
   return values.length ? values.reduce((a, b) => a + b, 0) / values.length : null;
 };
 const report = {
+  metric_note: '부정언급은 리뷰 표현 집계이며 의학적 부작용 발생률이 아님. 제약조건 검증이며 추천 정확도를 뜻하지 않음.',
   evaluated_at: new Date().toISOString(),
   catalog_captured_at: snapshot.captured_at,
   catalog_size: snapshot.count,
@@ -95,18 +106,19 @@ const report = {
 };
 
 console.log(`카탈로그 ${report.catalog_size}개 · 페르소나 ${report.personas}명 (스냅샷 ${snapshot.captured_at.slice(0, 10)})\n`);
-console.log('페르소나                                   결과  호수충돌  자체호수  호수없음  고민적중  부작용  근거추적  주장없음');
-for (const r of rows) {
+console.log('페르소나                                   결과  호수충돌  자체호수  호수없음  고민적중  부정언급  근거추적  주장없음');
+for (const r of rows.filter((r, index) => index < 12 || r.violations.length || process.argv.includes('--verbose'))) {
   console.log(
     `${r.label.padEnd(42)} ${String(r.returned).padStart(2)}건  ${pct(r.shade_conflict_rate).padStart(7)}  ` +
     `${pct(r.shade_lineup_rate).padStart(7)}  ${pct(r.shade_unknown_rate).padStart(7)}  ${pct(r.concern_hit_rate).padStart(7)}  ${pct(r.adverse_rate).padStart(6)}  ` +
     `${pct(r.traceable_rate).padStart(7)}  ${pct(r.no_claim_rate).padStart(7)}`);
   for (const v of r.violations) console.log(`    위반: ${v}`);
 }
+if (rows.length > 12 && !process.argv.includes('--verbose')) console.log(`추가 조합 ${rows.length - 12}건은 평가 보고서에 저장 (--verbose로 전체 출력)`);
 const s = report.summary;
 console.log(`
 평균: 호수충돌 ${pct(s.mean_shade_conflict_rate)} · 자체호수 ${pct(s.mean_shade_lineup_rate)} · 호수없음 ${pct(s.mean_shade_unknown_rate)} · 고민적중 ${pct(s.mean_concern_hit_rate)}`);
-console.log(`      부작용 ${pct(s.mean_adverse_rate)} · 근거추적 ${pct(s.mean_traceable_rate)} · 주장없음 ${pct(s.mean_no_claim_rate)}`);
+console.log(`      부정언급 ${pct(s.mean_adverse_rate)} · 근거추적 ${pct(s.mean_traceable_rate)} · 주장없음 ${pct(s.mean_no_claim_rate)}`);
 console.log(`하드 조건 위반 ${s.total_violations}건 · 결과 0건인 페르소나 ${s.empty_results}명`);
 
 writeFileSync(new URL('../tests/fixtures/evaluation-report.json', import.meta.url), JSON.stringify(report, null, 2));

@@ -38,7 +38,7 @@ export interface Product {
   compat_sensitive: number | null;
   compat_combination: number | null;
   last_updated_at: string;
-  profile_metadata?: { version?: string; metadata_revision?: number; source_category?: string | null; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]>; shade_lineup?: ShadeLineup | null } | null;
+  profile_metadata?: { version?: string; metadata_revision?: number; source_category?: string | null; analyzed_count?: number; analyzed_at?: string; evidence_counts?: Record<string, number>; positive_concern_counts?: Record<string, number>; negative_concern_counts?: Record<string, number>; shade_source?: string; skin_review_counts?: Record<string, number>; evidence_review_ids?: Record<string, string[]>; concern_evidence_ids?: Record<string, string[]>; shade_lineup?: ShadeLineup | null; ingredient_source?: IngredientSource | null } | null;
   reviews?: { count: number }[];
 }
 
@@ -53,6 +53,16 @@ export interface Review {
   option_name: string;
   created_at: string;
   is_best: boolean;
+}
+
+export interface IngredientSource {
+  status: 'collected' | 'partial' | 'reference_only' | 'image_only' | 'not_listed' | 'unavailable';
+  images?: { label: string; url: string }[];
+  source_url: string;
+  checked_at: string;
+  entries: { label: string; text: string }[];
+  references: { label: string; text: string }[];
+  scope: 'seller_listing';
 }
 
 export type SkinType = 'oily' | 'dry' | 'combination' | 'sensitive';

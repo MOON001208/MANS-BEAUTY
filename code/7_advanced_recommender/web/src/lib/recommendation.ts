@@ -1,6 +1,6 @@
 import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod, ShadeLineup } from './supabase';
 
-export const PROFILE_VERSION = 'rules-ko-v1';
+export const PROFILE_VERSION = 'rules-ko-v2';
 export const SKIN_TYPE_COMPAT_COL = {
   oily: 'compat_oily', dry: 'compat_dry', sensitive: 'compat_sensitive', combination: 'compat_combination',
 } as const;
@@ -105,6 +105,9 @@ export function selectRecommendations(products: Product[], quiz: QuizAnswers): (
   return products
     .filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= MIN_ANALYZED_REVIEWS)
     .filter(isFullFaceBase)
+    // An explicitly incompatible shade must not be rescued by unrelated scores.
+    // Products with only relative brand shades remain eligible as uncertain.
+    .filter(p => !quiz.shade || quiz.shade === 'any' || !p.suitable_shades?.length || p.suitable_shades.includes(quiz.shade))
     .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
     .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade) }))
     .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))

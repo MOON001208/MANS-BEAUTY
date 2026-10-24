@@ -11,10 +11,10 @@ from collections import Counter, defaultdict
 from statistics import mean
 from shared import product_type
 
-VERSION = 'rules-ko-v1'
+VERSION = 'rules-ko-v2'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 6
+METADATA_REVISION = 7
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -29,6 +29,39 @@ ATTRIBUTES = {
 }
 CONCERNS = {'acne': '여드름|트러블', 'pore': '모공', 'redness': '홍조', 'spots': '잡티|다크서클', 'wrinkle': '주름'}
 NEGATION = re.compile(r'않|아니|못|없|안\s*(?:되|돼|좋|가려|커버)|별로')
+CONDITIONAL = re.compile(r'(?:좋|뛰어나|가려지|커버하|되|돼)(?:으면|면)')
+
+
+def current_experience(part):
+    if re.search(r'(?:구매|구입|사용해보)(?:하려|하고\s*싶|려고)|(?:사려|사려고|사고\s*싶)|제품을\s*(?:찾|구하)', part):
+        return False
+    if re.search(r'(?:기존|예전|이전).{0,80}(?:써왔|쓰던|사용하던|썼던|사용했)', part) and not re.search(r'보다|비해', part):
+        return False
+    return True
+
+
+def positive_concern(part, words):
+    """A concern name plus a product noun is not an observed benefit."""
+    effect = (r'(?:잘\s*)?가려(?:져|줘|주|졌|집|요|지)|'
+              r'커버(?:력)?(?:이|가|은|는|도)?\s*(?:정말|아주|너무|꽤|잘)?\s*'
+              r'(?:좋|뛰어나|돼|되|됩|됐|해줘|해주)|'
+              r'(?:완화|진정)(?:가|이|은|는|도)?\s*(?:잘\s*)?(?:돼|되|됩|됐)|줄어|줄었')
+    return bool(re.search(rf'(?:{words}).{{0,18}}(?:{effect})', part))
+
+
+def negative_concern(part, words):
+    coverage = re.search(rf'(?:{words}).{{0,14}}(?:안\s*가려|못\s*가려|가려지지|커버.{{0,6}}(?:안|못|부족|약하|약해|아쉬))', part)
+    if coverage and not re.search(r'않|없', part[coverage.end():coverage.end() + 12]):
+        return True
+    flare = re.search(rf'(?:{words}).{{0,12}}(?:심해졌|더\s*심해|올라왔|올라오|올라와|올라옵|생겼|났|뒤집)', part)
+    if not flare:
+        return False
+    local = part[flare.start():flare.end() + 12]
+    if re.search(r'안\s|않|없', local):
+        return False
+    background = re.search(r'원래|평소|피부라|피부인데|피부타입|생겨서|나서|올라와서|구매.*계기', part)
+    usage = re.search(r'사용\s*후|사용하고|바른\s*후|바르고|쓰고|쓰니|사용하니|발랐더니|바르니|사용\s*뒤', part[max(0, flare.start() - 40):flare.start()])
+    return not background or bool(usage)
 
 def clauses(text):
     return [s.strip() for s in re.split(r'[.!?\n]+|(?:지만|그런데|하지만)', text or '') if s.strip()]
@@ -39,9 +72,11 @@ def extract_attributes(review):
     for attr, (positive_patterns, negative_patterns) in ATTRIBUTES.items():
         positive, negative = [], []
         for part in parts:
+            if not current_experience(part):
+                continue
             pos = any(re.search(p, part) for p in positive_patterns)
             neg = any(re.search(p, part) for p in negative_patterns)
-            if pos and not NEGATION.search(part):
+            if pos and not NEGATION.search(part) and not CONDITIONAL.search(part):
                 positive.append(part[:180])
             if neg and not re.search(r'(?:무겁|답답|무너|부족|아쉬).{0,5}(?:않|없)', part):
                 negative.append(part[:180])
@@ -50,11 +85,13 @@ def extract_attributes(review):
     for concern, words in CONCERNS.items():
         good = bad = False
         for part in parts:
+            if not current_experience(part):
+                continue
             if not re.search(words, part):
                 continue
-            if re.search(r'(?:가려|커버|완화|진정|줄어|줄었)', part) and not NEGATION.search(part):
+            if positive_concern(part, words) and not NEGATION.search(part) and not CONDITIONAL.search(part) and not re.search(r'부족|약하|약해|아쉬', part):
                 good = True
-            if re.search(r'(?:심해|심해졌|올라|났|생겼|뒤집|못\s*가|안\s*가|가려지지|커버.{0,4}(?:안|못))', part) and not re.search(r'(?:안|않|없).{0,3}(?:났|생겼|올라)', part):
+            if negative_concern(part, words):
                 bad = True
         if good and not bad and (review.get('rating') or 0) >= 4:
             result['positive_concerns'].append(concern)
@@ -158,6 +195,8 @@ def profile_product_type(product):
 def input_hash(product, reviews):
     source = {k: product.get(k) for k in ['id', 'name', 'category', 'ingredients_raw', 'source_options']}
     source['source_category'] = (product.get('profile_metadata') or {}).get('source_category')
+    ingredients = (product.get('profile_metadata') or {}).get('ingredient_source')
+    source['ingredient_source'] = {k: ingredients.get(k) for k in ['status', 'source_url', 'entries', 'references', 'images']} if ingredients else None
     source['product_type'] = profile_product_type(product)
     data = [{k: r.get(k) for k in ['id', 'content', 'rating', 'skin_type', 'option_name']} for r in reviews]
     raw = json.dumps([VERSION, METADATA_REVISION, source, sorted(data, key=lambda r: r['id'])], ensure_ascii=False, sort_keys=True)
@@ -227,11 +266,14 @@ def build_profile(product, reviews):
         'suitable_skin_types': [s for s in skin_ratings if len(skin_ratings[s]) >= 5 and mean(skin_ratings[s]) >= 4],
         'suitable_concerns': suitable_concerns, 'suitable_shades': sorted(options),
         'shade_options': {s: counts.most_common(1)[0][0] for s, counts in options.items()},
-        'ingredient_level': '성분 확인' if product.get('ingredients_raw') else None,
+        'ingredient_level': '성분 확인' if product.get('ingredients_raw') and (
+            not (product.get('profile_metadata') or {}).get('ingredient_source') or
+            (product['profile_metadata']['ingredient_source'].get('status') in ['collected', 'partial'])) else None,
         'profile_metadata': {
             'version': VERSION, 'analyzed_count': len(reviews), 'input_hash': input_hash(product, reviews),
             'metadata_revision': METADATA_REVISION,
             'source_category': (product.get('profile_metadata') or {}).get('source_category'),
+            'ingredient_source': (product.get('profile_metadata') or {}).get('ingredient_source'),
             'evidence_counts': {k: len(scores[k]) for k in ATTRIBUTES}, 'evidence_review_ids': dict(evidence_ids),
             'concern_evidence_ids': dict(concern_ids),
             'skin_review_counts': {k: len(v) for k, v in skin_ratings.items()},

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { calcRecommendScore, searchProducts, selectRecommendations, bestShadeOption, shadeLineup, MIN_ANALYZED_REVIEWS } from '../src/lib/recommendation.ts';
 import { isPublicKey, validatePublicEnv } from '../scripts/check-public-env.mjs';
 
-const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30 } };
+const product = { id: '1', name: '테스트', brand: '브랜드', product_type: 'cushion', compat_oily: 0.6, coverage_score: 4, longevity_score: 4, lightweight_score: 4, suitable_concerns: [], suitable_shades: ['23'], profile_metadata: { version: 'rules-ko-v2', analyzed_count: 30 } };
 const score = (p, longevity) => calcRecommendScore(p, 'oily', [], 3, longevity, 3, '23');
 
 test('unimportant longevity never rewards poor longevity', () => {
@@ -33,8 +33,14 @@ test('service role and secret keys are rejected', () => {
 const quiz = { skinType: 'oily', concerns: [], coveragePref: 3, longevityPref: 3, lightweightPref: 3, shade: 'any', applicationMethod: 'any' };
 const withType = (id, product_type, extra = {}) => ({ ...product, id, product_type, ...extra });
 
+test('known conflicting absolute shades cannot rank despite other strong scores', () => {
+  const wrong = { ...product, id: 'wrong', suitable_shades: ['25'], compat_oily: 1, coverage_score: 5 };
+  const unknown = { ...product, id: 'unknown', suitable_shades: [] };
+  assert.deepEqual(selectRecommendations([wrong, unknown], { ...quiz, shade: '21' }).map(p => p.id), ['unknown']);
+});
+
 test('thinly analyzed profiles are excluded, not merely ranked lower', () => {
-  const thin = { ...product, id: 'thin', profile_metadata: { version: 'rules-ko-v1', analyzed_count: MIN_ANALYZED_REVIEWS - 1 } };
+  const thin = { ...product, id: 'thin', profile_metadata: { version: 'rules-ko-v2', analyzed_count: MIN_ANALYZED_REVIEWS - 1 } };
   const ids = selectRecommendations([product, thin], quiz).map(p => p.id);
   assert.deepEqual(ids, ['1']);
 });
@@ -51,7 +57,7 @@ test('equal scores break ties by id, so the order never wobbles between runs', (
   assert.deepEqual(selectRecommendations(catalog, quiz).map(p => p.id), ['a', 'b']);
 });
 
-const lined = options => ({ ...product, suitable_shades: [], profile_metadata: { version: 'rules-ko-v1', analyzed_count: 30, shade_lineup: { basis: 'number', options } } });
+const lined = options => ({ ...product, suitable_shades: [], profile_metadata: { version: 'rules-ko-v2', analyzed_count: 30, shade_lineup: { basis: 'number', options } } });
 const two = lined([{ name: '01 라이트베이지', label: '01 라이트베이지', position: 0 }, { name: '02 내추럴베이지', label: '02 내추럴베이지', position: 1 }]);
 const three = lined([{ name: '1호', label: '1호', position: 0 }, { name: '2호', label: '2호', position: 0.5 }, { name: '3호', label: '3호', position: 1 }]);
 const shadeScore = (p, choice) => calcRecommendScore(p, 'oily', [], 3, 3, 3, choice);

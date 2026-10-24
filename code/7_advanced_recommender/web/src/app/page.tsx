@@ -1,5 +1,7 @@
 'use client';
 
+import { IngredientDetails } from '../components/IngredientDetails';
+
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
 import { bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
@@ -526,6 +528,8 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
               </div>
             </div>
           )}
+
+          <IngredientDetails product={product} />
 
           {product.product_url && (
             <a href={product.product_url} target="_blank" rel="noopener noreferrer"
