@@ -42,6 +42,13 @@ def ingredient_listing(data, pid, checked_at=None):
 
 def ingredient_patch(product, article, checked_at=None, unavailable=False, images=None):
     listing = ingredient_listing(article, product['id'], checked_at)
+    previous = (product.get('profile_metadata') or {}).get('ingredient_source') or {}
+    if (images is None and not unavailable and listing['status'] == 'reference_only'
+            and previous.get('status') == 'image_only' and previous.get('references') == listing['references']):
+        # A later text-only refresh cannot re-verify image text. Keep the exact
+        # previously inspected source links and their original confirmation date.
+        images = previous.get('images')
+        listing['checked_at'] = previous.get('checked_at') or listing['checked_at']
     if unavailable:
         listing['status'] = 'unavailable'
         listing['references'] = [{'label': '현재 원문', 'text': '상품을 찾을 수 없어 현재 전성분을 확인하지 못했습니다.'}]

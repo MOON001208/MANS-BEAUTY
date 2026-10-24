@@ -21,6 +21,10 @@ class IngredientTests(unittest.TestCase):
         self.assertEqual(len(source['images']), 1)
         self.assertNotIn('ingredients_raw', patch)
         self.assertIsNone(build_profile({**product, **patch}, [])['ingredient_level'])
+        refreshed, same = ingredient_patch({**product, **patch}, article({'title': '전성분', 'content': '상세페이지 참조'}), checked_at='later')
+        self.assertEqual(same['images'], source['images'])
+        self.assertEqual(same['checked_at'], source['checked_at'])
+        self.assertEqual(same['status'], 'image_only')
     def test_shade_and_bundle_sections_are_preserved(self):
         data = article({'title': '화장품법에 따라 기재해야 하는 모든 성분',
                         'content': '[1호] 정제수, 글리세린<br>[3호] 정제수, 실리카'})
