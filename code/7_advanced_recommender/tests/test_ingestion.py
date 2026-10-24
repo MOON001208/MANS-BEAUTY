@@ -8,6 +8,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scraper import crawler
 
 class IngestionTests(unittest.TestCase):
+    def test_nul_in_review_does_not_block_batch_or_join_evidence_words(self):
+        raw = {'reviewId': 1, 'reviewScore': 5, 'createdDateTime': '2026.10.24',
+               'content': '커\x00버는 모르겠고 가벼워요. 😀'}
+        result = crawler.normalize_review(raw, 'p')
+        self.assertEqual(result['content'], '커 버는 모르겠고 가벼워요. 😀')
+        self.assertNotIn('\x00', result['content'])
+        self.assertEqual(result['product_id'], 'p')
+
+    def test_invalid_review_body_is_not_turned_into_text_evidence(self):
+        raw = {'reviewId': 1, 'reviewScore': 5, 'createdDateTime': '2026.10.24',
+               'content': {'text': '커버력이 좋아요'}}
+        with self.assertRaises(crawler.SourceError):
+            crawler.normalize_review(raw, 'p')
+
     def run_pipeline(self, limited=False, related_failure=False, current_failure=False):
         db, api = MagicMock(), MagicMock()
         writes = []

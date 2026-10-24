@@ -232,7 +232,13 @@ def normalize_review(raw, pid):
     trouble = profile.get('skinTrouble') or []
     if isinstance(trouble, str):
         trouble = [trouble]
-    return {'id': str(rid), 'product_id': source_pid, 'rating': int(rating), 'content': raw.get('content') or '',
+    content = raw.get('content') or ''
+    if not isinstance(content, str):
+        raise SourceError('리뷰 본문 형식 오류')
+    # PostgreSQL text rejects U+0000. Keep a word boundary rather than joining
+    # fragments into new evidence keywords when replacing this hidden character.
+    content = content.replace('\x00', ' ')
+    return {'id': str(rid), 'product_id': source_pid, 'rating': int(rating), 'content': content,
             'author': None, 'skin_type': SKIN_TYPES.get(profile.get('skinType'), profile.get('skinType')),
             'skin_tone': SKIN_TONES.get(profile.get('skinTone'), profile.get('skinTone')),
             'skin_trouble': ','.join(SKIN_TROUBLES.get(t, t) for t in trouble) or None,
