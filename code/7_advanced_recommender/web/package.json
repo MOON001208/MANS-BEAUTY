@@ -11,6 +11,7 @@
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "eval": "node --experimental-strip-types scripts/evaluate-recommendations.mjs",
     "snapshot": "node scripts/snapshot-catalog.mjs",
+    "snapshot:fallback": "node scripts/snapshot-catalog.mjs --fallback-only",
     "start": "python -m http.server 3000 --bind 127.0.0.1 --directory out",
     "lint": "eslint",
     "review:prepare": "node --experimental-strip-types scripts/human-review.mjs prepare",

@@ -607,6 +607,7 @@ export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState('');
+  const [catalogCapturedAt, setCatalogCapturedAt] = useState<string | null>(null);
   const [retry, setRetry] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [browseCategory, setBrowseCategory] = useState('all');
@@ -615,14 +616,16 @@ export default function HomePage() {
 
   useEffect(() => {
     const controller = new AbortController();
-    loadCatalog(controller.signal).then(data => {
+    loadCatalog(controller.signal).then(result => {
       if (controller.signal.aborted) return;
-      setProducts(data);
+      setProducts(result.products);
+      setCatalogCapturedAt(result.source === 'snapshot' ? result.capturedAt ?? null : null);
       setLoadError('');
       setLoading(false);
     }).catch(() => {
       if (controller.signal.aborted) return;
       setProducts([]);
+      setCatalogCapturedAt(null);
       setLoadError('상품을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
       setLoading(false);
     });
@@ -649,7 +652,11 @@ export default function HomePage() {
   return (
     <main>
       {loadError && <div role="alert" style={{ padding: 24, textAlign: 'center' }}>
-        {loadError} <button className="filter-btn" onClick={() => { setLoading(true); setRetry(n => n + 1); }}>다시 시도</button>
+        상품 자료에 연결할 수 없어 추천을 계산하지 못했습니다. <button className="filter-btn" onClick={() => { setLoading(true); setRetry(n => n + 1); }}>다시 시도</button>
+      </div>}
+      {catalogCapturedAt && !loadError && <div role="status" style={{ padding: '12px 24px', textAlign: 'center', color: 'var(--text-secondary)' }}>
+        현재 상품 API에 연결되지 않아 {new Date(catalogCapturedAt).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}에 저장된 자료로 추천합니다. 가격·재고 등 최신 정보는 판매 페이지에서 확인해 주세요.{' '}
+        <button className="filter-btn" onClick={() => { setLoading(true); setRetry(n => n + 1); }}>최신 자료 다시 시도</button>
       </div>}
       {!loading && !loadError && mode !== 'quiz' && displayProducts.length === 0 && <p role="status" style={{ padding: 24, textAlign: 'center' }}>조건에 맞는 분석 자료가 아직 충분하지 않습니다. 전체 보기에서 상품을 확인해 주세요.</p>}
       {/* Hero */}
@@ -659,7 +666,7 @@ export default function HomePage() {
             display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '5px 14px', borderRadius: '20px', marginBottom: '18px',
             background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)', fontSize: '0.78rem', color: '#a5b4fc',
           }}>
-            ✨ 리뷰 기반 맞춤 추천 · 분석 리뷰 {storedReviewCount.toLocaleString()}개
+            ✨ 리뷰 기반 맞춤 추천 · {loading ? '상품 자료 불러오는 중' : loadError ? '상품 자료 연결 오류' : `분석 리뷰 ${storedReviewCount.toLocaleString()}개`}
           </div>
           <h1 style={{
             fontSize: 'clamp(1.8rem, 5vw, 3.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '14px',
@@ -705,7 +712,7 @@ export default function HomePage() {
           </div>
           <h2 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '4px' }}>🏅 맞춤 추천 결과</h2>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '22px' }}>
-            {loading ? '분석 중...' : `총 ${displayProducts.length}개의 맞춤 추천 제품 (관련도 순)`}
+            {loading ? '상품 자료 불러오는 중...' : loadError ? '상품 자료 연결 후 추천을 표시합니다.' : `총 ${displayProducts.length}개의 맞춤 추천 제품 (관련도 순)`}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
             {loading ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
@@ -739,7 +746,7 @@ export default function HomePage() {
             </div>
           </div>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '18px' }}>
-            {loading ? '로딩 중...' : `총 ${displayProducts.length}개 상품`}
+            {loading ? '로딩 중...' : loadError ? '상품 자료 연결 후 목록을 표시합니다.' : `총 ${displayProducts.length}개 상품`}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
             {loading ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
@@ -752,7 +759,7 @@ export default function HomePage() {
       )}
 
       <footer style={{ padding: '28px 24px', textAlign: 'center', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.78rem' }}>
-        <p>MEN&apos;S BEAUTY PICK — 분석 리뷰 {storedReviewCount.toLocaleString()}개 · 근거를 확인하는 남성 화장품 추천</p>
+        <p>MEN&apos;S BEAUTY PICK — {loading || loadError ? '상품 자료 확인 중' : `분석 리뷰 ${storedReviewCount.toLocaleString()}개`} · 근거를 확인하는 남성 화장품 추천</p>
         <p>마지막 상품 갱신: {latestUpdate ? new Date(latestUpdate).toLocaleDateString('ko-KR') : '확인 중'}</p>
         <p style={{ marginTop: '4px', opacity: 0.5 }}>교육 목적으로 제작 · 상업적 이용 불가</p>
       </footer>

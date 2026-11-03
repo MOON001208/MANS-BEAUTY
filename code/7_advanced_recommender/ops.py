@@ -103,7 +103,12 @@ def _public_access(url, key, checks):
         checks.record(False, "공개 키", "공개 읽기 권한 검사에 사용할 키 없음")
         return
     try:
-        _get(url, key, "products", "select=id&limit=1")
+        products = _get(url, key, "products", "select=id,profile_metadata&limit=1")
+        from pipeline.profiles import VERSION
+        if not products or (products[0].get('profile_metadata') or {}).get('version') != VERSION:
+            checks.record(False, "공개 상품 데이터", "공개 키 응답에 현재 추천 프로필이 없음")
+        else:
+            checks.record(True, "공개 상품 데이터")
         _get(url, key, "reviews", "select=id,product_id,rating,content,skin_type,skin_tone,skin_trouble,option_name,created_at,is_best&limit=1")
         checks.record(True, "공개 키 조회")
     except Exception as error:
@@ -179,6 +184,18 @@ def _site_health(checks):
         checks.record(False, "배포 HTML·연결 JS 키 검사", f"JS 확인 불가 ({type(error).__name__})")
         return
     checks.record(not unsafe, "배포 HTML·연결 JS 키 검사", f"JS {len(links.urls)}개 검사")
+    try:
+        snapshot_text = fetch(urljoin(SITE, "catalog-fallback.json"))
+        snapshot = json.loads(snapshot_text)
+        from pipeline.profiles import VERSION
+        products = snapshot.get('products')
+        valid = (isinstance(products, list) and len(products) > 0 and snapshot.get('count') == len(products)
+                 and isinstance(snapshot.get('captured_at'), str) and snapshot['captured_at']
+                 and all((p.get('profile_metadata') or {}).get('version') == VERSION for p in products))
+        checks.record(valid, "배포 대체 카탈로그", f"상품 {len(products)}개" if isinstance(products, list) else "형식 오류")
+        checks.record(not _contains_server_key(snapshot_text), "배포 대체 카탈로그 키 검사")
+    except Exception as error:
+        checks.record(False, "배포 대체 카탈로그", type(error).__name__)
 
 
 def health(checks):

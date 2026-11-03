@@ -238,6 +238,8 @@ npm run build
 
 `npm run eval`은 `tests/fixtures/personas.json`의 기본 12개·기존 체계적 조합 240개·새 항목 단독 중요도 조합 144개, 총 396개를 실제 화면과 같은 `selectRecommendations`로 정렬해, 사용자가 건 조건을 결과가 지키는지 측정합니다. 관련도 정답이나 클릭 로그가 없으므로 NDCG·Recall이 아니라 **제약조건 충족률**과 **근거 추적률**을 봅니다. 하드 조건(구버전 프로필, 분석 리뷰 최소치, 사용 방식 필터) 위반이나 결과 0건이면 실패하고, 나머지 비율은 변경 전후 비교용으로 보고만 합니다. 커밋된 `tests/fixtures/catalog-snapshot.json`으로 돌기 때문에 CI에서 DB 접근이 필요 없습니다. 스냅샷 갱신은 `npm run snapshot`(공개 키 필요)입니다.
 
+`npm run snapshot`은 평가용 파일과 사이트의 `public/catalog-fallback.json`을 함께 갱신합니다. 사람 비교 평가에 사용한 평가용 파일을 유지하면서 사이트 대체 자료만 갱신하려면 `npm run snapshot:fallback`을 사용합니다. 사이트에서 공개 상품 API가 실패하거나 빈 목록을 반환하면 저장 날짜를 표시하고 대체 자료로 추천하며, 두 경로 모두 실패하면 연결 오류와 다시 시도 버튼을 표시합니다. 리뷰·상품 프로필을 갱신한 뒤 대체 자료도 갱신·배포해야 최신 상태를 유지합니다.
+
 웹 빌드 전 환경변수와 빌드 후 정적 파일에서 관리자 키를 검사합니다. CI에는 실제 DB 키 대신 공개용 형식의 테스트 값을 사용합니다. 상품 삭제와 리뷰 재귀속을 수행하던 `merge_variants.py`는 중지했습니다.
 
 보안 참고: [Supabase API keys](https://supabase.com/docs/guides/getting-started/api-keys).

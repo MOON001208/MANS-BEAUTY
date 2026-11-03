@@ -42,7 +42,7 @@ class OpsTests(unittest.TestCase):
                     (http_error(500, 'XX000'), 1), (http_error(400, '42703'), 1),
                     (URLError('offline'), 1), (TimeoutError(), 1)]
         for result, expected in outcomes:
-            with self.subTest(result=result), patch.object(ops, '_get', side_effect=[[], [], result]):
+            with self.subTest(result=result), patch.object(ops, '_get', side_effect=[[{'id': 'p1', 'profile_metadata': {'version': VERSION}}], [], result]):
                 failed, _ = self.check(ops._public_access, 'https://example.invalid', 'public-fixture')
                 self.assertEqual(failed, expected)
 
@@ -53,8 +53,14 @@ class OpsTests(unittest.TestCase):
             self.assertEqual(get.call_count, 1)
 
     def test_public_review_content_must_remain_readable(self):
-        with patch.object(ops, '_get', side_effect=[[], http_error(403, '42501')]):
+        with patch.object(ops, '_get', side_effect=[[{'id': 'p1', 'profile_metadata': {'version': VERSION}}], http_error(403, '42501')]):
             self.assertEqual(self.check(ops._public_access, 'unused', 'public-fixture')[0], 1)
+
+    def test_public_key_with_empty_product_result_is_not_healthy(self):
+        with patch.object(ops, '_get', side_effect=[[], [], http_error(403, '42501')]):
+            failed, output = self.check(ops._public_access, 'unused', 'public-fixture')
+        self.assertEqual(failed, 1)
+        self.assertIn('공개 상품 데이터', output)
 
     def test_crosscheck_does_not_claim_to_review_an_empty_diff(self):
         with patch.object(ops.subprocess, 'run') as run, patch.object(ops.shutil, 'which') as which:
@@ -74,11 +80,18 @@ class OpsTests(unittest.TestCase):
 
     def test_live_scan_checks_linked_javascript_not_just_html(self):
         html = b'<link rel="preload" as="script" href="/chunk.js"><script src="/chunk.js"></script>'
+        fallback = json.dumps({'captured_at': '2026-11-03T00:00:00Z', 'count': 1,
+                               'products': [{'profile_metadata': {'version': VERSION}}]}).encode()
         for javascript, expected in [(b'const safe = true;', 0), (b'sb_secret_test_fixture_only', 1)]:
             with self.subTest(javascript=javascript), patch.object(
-                    ops.urllib.request, 'urlopen', side_effect=[io.BytesIO(html), io.BytesIO(javascript)]) as fetch:
+                    ops.urllib.request, 'urlopen', side_effect=[io.BytesIO(html), io.BytesIO(javascript), io.BytesIO(fallback)]) as fetch:
                 self.assertEqual(self.check(ops._site_health)[0], expected)
-                self.assertEqual(fetch.call_count, 2)
+                self.assertEqual(fetch.call_count, 3)
+
+    def test_missing_deployed_fallback_fails_health(self):
+        with patch.object(ops.urllib.request, 'urlopen', side_effect=[
+                io.BytesIO(b'<html></html>'), URLError('missing fallback')]):
+            self.assertEqual(self.check(ops._site_health)[0], 1)
 
     def test_unreadable_javascript_cannot_pass_scan(self):
         with patch.object(ops.urllib.request, 'urlopen', side_effect=[

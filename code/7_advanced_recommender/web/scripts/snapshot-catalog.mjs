@@ -4,6 +4,7 @@ import { validatePublicEnv } from './check-public-env.mjs';
 
 export const FIELDS = [
   'id', 'name', 'brand', 'category', 'product_type', 'star_rating', 'review_count',
+  'price', 'original_price', 'thumbnail_url', 'product_url',
   'coverage_score', 'longevity_score', 'lightweight_score',
   'suitable_shades', 'shade_options', 'source_options', 'suitable_skin_types', 'suitable_concerns',
   'compat_oily', 'compat_dry', 'compat_sensitive', 'compat_combination',
@@ -36,9 +37,15 @@ if (process.argv[1]?.endsWith('snapshot-catalog.mjs')) {
   for (const file of ['.env.local', '.env']) if (existsSync(file)) process.loadEnvFile(file);
   try {
     const products = await fetchCatalog();
-    writeFileSync(new URL('../tests/fixtures/catalog-snapshot.json', import.meta.url),
-      JSON.stringify({ captured_at: new Date().toISOString(), count: products.length, products }, null, 2));
-    console.log(`카탈로그 스냅샷 저장: 상품 ${products.length}개`);
+    if (!products.length || products.some(p => !p.id || !p.profile_metadata?.version)) {
+      throw new Error('빈 상품 목록이나 프로필이 없는 상품으로 스냅샷을 덮어쓸 수 없습니다.');
+    }
+    const snapshot = JSON.stringify({ captured_at: new Date().toISOString(), count: products.length, products }, null, 2);
+    if (!process.argv.includes('--fallback-only')) {
+      writeFileSync(new URL('../tests/fixtures/catalog-snapshot.json', import.meta.url), snapshot);
+    }
+    writeFileSync(new URL('../public/catalog-fallback.json', import.meta.url), snapshot);
+    console.log(`${process.argv.includes('--fallback-only') ? '사이트 대체 카탈로그' : '카탈로그 스냅샷'} 저장: 상품 ${products.length}개`);
   } catch (error) {
     console.error(error.message);
     process.exitCode = 1;
