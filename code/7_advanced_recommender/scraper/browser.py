@@ -75,7 +75,7 @@ class BrowserSession:
 
 
 async def _run_browser(args, collect):
-    from scraper.crawler import AccessLimited, SourceError
+    from scraper.crawler import AccessLimited, SITE, SourceError
     os.environ.setdefault('CRAWL4_AI_BASE_DIRECTORY', str(CACHE / 'crawl4ai'))
     try:
         from crawl4ai import AsyncWebCrawler, BrowserConfig, CacheMode, CrawlerRunConfig
@@ -90,9 +90,10 @@ async def _run_browser(args, collect):
     async with AsyncWebCrawler(config=BrowserConfig(headless=True, verbose=False)) as crawler:
         crawler.crawler_strategy.set_hook('on_page_context_created', remember_page)
         pid = (args.product or [None])[0]
-        url = 'https://www.oliveyoung.co.kr/'
+        # Crawl4AI reports the root URL's 301 even after following it to a 200.
+        url = f'{SITE}/store/main/main.do'
         if pid:
-            url += 'store/goods/getGoodsDetail.do?' + urlencode({'goodsNo': pid})
+            url = f'{SITE}/store/goods/getGoodsDetail.do?' + urlencode({'goodsNo': pid})
         result = await crawler.arun(url=url, config=CrawlerRunConfig(
             cache_mode=CacheMode.BYPASS, session_id='anonymous-collection',
             page_timeout=45000, delay_before_return_html=5))

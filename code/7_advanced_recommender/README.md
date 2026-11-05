@@ -50,11 +50,17 @@ Playwright의 Chromium 실행 파일이 존재하며 Crawl4AI로 올리브영 �
 - `.pipeline-cache`에 커서·탐색 캐시·실행 보고서를 기록합니다. Git에 포함하지 않습니다. `--fresh`는 저장 커서 대신 처음부터 탐색합니다.
 - 성분표가 차단되거나 여러 옵션의 성분이 섞이면 추정하지 않습니다. 확인된 성분표가 없으면 성분 관련 판정을 제공하지 않습니다.
 
-GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST에 **저장된 리뷰의 프로필만 갱신**합니다. GitHub 호스팅 서버의 올리브영 요청이 403으로 차단되어, 수집은 사용자가 PC에서 위 명령으로 수동 실행하는 구성입니다. PC에 자동 작업은 등록하지 않습니다. `SUPABASE_URL`, `SUPABASE_SECRET_KEY` Secrets가 필요합니다. 수동 Actions 실행의 `collect_reviews`는 기본 false이며 접근 가능한 실행 환경에서만 사용합니다. 실패해도 커서와 보고서를 보관합니다. 장기 비활성 저장소는 GitHub가 스케줄을 중지할 수 있으므로 Actions의 활성 상태를 확인하세요.
+GitHub Actions `Scheduled Crawler Update`는 매주 월요일 09:00 KST에 **저장된 리뷰의 프로필만 갱신**합니다. GitHub 호스팅 서버의 올리브영 요청이 403으로 차단되어, 리뷰 수집은 PC에서 실행합니다. Actions에는 `SUPABASE_URL`, `SUPABASE_SECRET_KEY` Secrets가 필요합니다. 수동 Actions 실행의 `collect_reviews`는 기본 false이며 접근 가능한 실행 환경에서만 사용합니다. 실패해도 커서와 보고서를 보관합니다. 장기 비활성 저장소는 GitHub가 스케줄을 중지할 수 있으므로 Actions의 활성 상태를 확인하세요.
+
+## Windows에서 하루 한 번 최신 리뷰 갱신
+
+이 PC의 작업 스케줄러에서 `MANS-BEAUTY Daily Review Collection`이 현재 사용자 로그인 1분 뒤에 실행됩니다. 등록된 전체 상품을 최신순으로 확인하고 저장한 리뷰로 추천 프로필을 갱신합니다. Crawl4AI와 Chromium, 저장소 루트의 `.venv`, 운영 폴더의 `.env`가 필요합니다.
+
+`run_daily_windows.py`는 PC의 날짜로 `.pipeline-cache/windows-daily/YYYY-MM-DD.log`를 처음 만들 때만 수집을 시작합니다. 첫 실행이 실패하거나 중단된 날에도 자동 실행은 한 번입니다. 성공적으로 저장한 구간과 보류 커서는 다음 실행에서 이어집니다. 그날의 로그와 `.pipeline-cache/pipeline-report.json`에서 결과를 확인합니다. 수동 수집은 예약 작업이 끝난 뒤 실행합니다.
 
 ## 최신 리뷰와 전성분 수동 갱신 (2026-10-24)
 
-이 운영 디렉터리에서 실행합니다. 수집 자동 일정은 추가하지 않았습니다.
+이 운영 디렉터리에서 실행합니다.
 
 ```powershell
 # 이전 확인일까지 최신순으로 수집: 50건에서 끝내지 않고 경계일 전체 포함
