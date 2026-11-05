@@ -100,7 +100,10 @@ Crawl4AI의 비로그인 Chromium에서는 같은 리뷰 API가 50건을 반환�
 선택 의존성(`requirements-crawl4ai.txt`, Playwright Chromium)을 설치한 PC에서는
 `python run_pipeline.py --browser --write --max-review-pages 2 --delay 8 --skip-ingredients`
 로 브라우저 안에서 요청할 수 있다. `--product 상품ID`를 반복 지정하면 대상만 수집한다.
-로그인 세션은 저장하지 않으며, 중복 제거·커서 저장·접근 제한 시 중단 규칙은 기존과 같다.
+기본값은 비로그인이다. 전용 프로필에서 로그인한 뒤 `q`로 저장하고, 운영 폴더의 `.env`에
+`OLIVEYOUNG_BROWSER_PROFILE`을 해당 프로필 폴더로 지정하면 `--browser` 수집과 Windows 예약 작업이
+그 폴더의 `storage_state.json`을 읽는다. 세션이 만료되면 전용 프로필에서 다시 로그인해 저장한다.
+이 파일은 로그인 정보를 포함하므로 로컬에만 보관한다. 중복 제거·커서 저장·접근 제한 시 중단 규칙은 그대로 적용한다.
 브라우저에서도 제한되면 중단한다. 기본 HTTP 방식에서 자동 전환하지 않는다.
 
 2026-09-19에는 10건씩 요청했을 때 정렬당 약 10페이지 이후 `loginRequired`를 받았다.

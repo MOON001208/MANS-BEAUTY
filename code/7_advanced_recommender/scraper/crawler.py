@@ -496,7 +496,7 @@ def parser():
     p.add_argument('--max-seconds', type=int, default=5400)
     p.add_argument('--fresh', action='store_true')
     p.add_argument('--skip-ingredients', action='store_true')
-    p.add_argument('--browser', action='store_true', help='Use an anonymous Crawl4AI Chromium session (optional dependencies required)')
+    p.add_argument('--browser', action='store_true', help='Use Crawl4AI Chromium (optional dependencies, saved login if configured)')
     modes = p.add_mutually_exclusive_group()
     modes.add_argument('--latest-only', action='store_true', help='Catch up latest reviews through the previous collection day')
     modes.add_argument('--ingredients-only', action='store_true', help='Refresh seller ingredient listings and catalog details without reviews')

@@ -11,13 +11,13 @@ from scraper.crawler import AccessLimited, OliveYoung, RateLimited, SourceError
 
 
 class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
-    def make_api(self, status=200, body=None, headers=None):
+    def make_api(self, status=200, body=None, headers=None, use_saved_login=False):
         page = MagicMock()
         page.evaluate = AsyncMock(return_value={
             'status': status, 'headers': headers or {},
             'text': json.dumps(body if body is not None else {'code': 200, 'data': {'ok': True}}),
         })
-        session = BrowserSession(page, asyncio.get_running_loop())
+        session = BrowserSession(page, asyncio.get_running_loop(), use_saved_login=use_saved_login)
         return OliveYoung(delay=0, session=session), page
 
     async def test_request_body_survives_thread_bridge(self):
@@ -29,6 +29,14 @@ class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(sent['payload'], payload)
         self.assertNotIn('origin', sent['headers'])
         self.assertNotIn('referer', sent['headers'])
+        self.assertEqual(sent['credentials'], 'same-origin')
+
+    async def test_saved_login_includes_cookies_on_mobile_review_api(self):
+        api, page = self.make_api(use_saved_login=True)
+        await asyncio.to_thread(api.json, 'POST', 'https://m.oliveyoung.co.kr/review/api/v2/reviews/cursor', json={})
+        self.assertEqual(page.evaluate.call_args.args[1]['credentials'], 'include')
+        await asyncio.to_thread(api.json, 'GET', 'https://www.oliveyoung.co.kr/catalog')
+        self.assertEqual(page.evaluate.call_args.args[1]['credentials'], 'same-origin')
 
     async def test_query_params_and_html_survive(self):
         api, page = self.make_api()
