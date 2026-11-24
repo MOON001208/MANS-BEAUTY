@@ -197,7 +197,19 @@ def product_from_detail(pid, detail, existing=None):
     if not name or detail.get('goodsNumber') != pid:
         raise SourceError('상품 상세 ID/이름 불일치')
     product_type = infer_product_type(name, kind)
-    group = '톤 로션/BB' if product_type == 'tone_lotion' else '쿠션/파운데이션'
+    existing_meta = (existing or {}).get('profile_metadata') or {}
+    if product_type == 'foundation_unknown':
+        from pipeline.classification import verified_seller_formulation
+        verified = verified_seller_formulation(pid, name)
+        if verified:
+            product_type = verified['product_type']
+        elif (existing
+              and existing.get('name') == name
+              and existing_meta.get('source_category') == kind
+              and (existing_meta.get('formulation') or {}).get('status') == 'confirmed'
+              and existing.get('product_type') in ('stick', 'liquid')):
+            product_type = existing['product_type']
+    group = '톤 로션/BB' if product_type == 'tone_lotion' else '립 메이크업' if product_type == 'lip' else '쿠션/파운데이션'
     images = detail.get('thumbnailImage') or []
     image = images[0] if images else {}
     image_url = '/'.join([str(image.get('url') or '').rstrip('/'), str(image.get('path') or '').lstrip('/')]).rstrip('/')

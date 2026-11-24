@@ -23,7 +23,8 @@ from pipeline.profiles import shade_lineup
 SINGLE_BY_NATURE = re.compile(r'톤업|브라이트닝|화이트닝|프라이머|선크림|에센스')
 FAMILY = {'tone_lotion': '톤로션/커버로션/BB', 'cushion': '쿠션/파운데이션', 'concealer': '컨실러',
           'primer': '프라이머/베이스', 'powder': '파우더/팩트', 'shading': '쉐이딩',
-          'stick': '스틱', 'liquid': '기타 베이스'}
+          'stick': '스틱', 'liquid': '리퀴드 파운데이션',
+          'foundation_unknown': '파운데이션(제형 미확인)', 'lip': '립 메이크업', 'unknown': '유형 미확인'}
 BUCKETS = [
     ('A', '21/23/25 명시'),
     ('B', '제품 내 밝기 순서 확보'),
@@ -60,7 +61,7 @@ def run():
     members = defaultdict(list)
     for product in products:
         bucket = classify(product, options.get(product['id'], Counter()))
-        table[product.get('product_type') or 'liquid'][bucket] += 1
+        table[product.get('product_type') or 'unknown'][bucket] += 1
         members[bucket].append({'id': product['id'], 'name': product.get('name'),
                                 'product_type': product.get('product_type')})
     report = {'generated_at': utc_now(), 'total': len(products),

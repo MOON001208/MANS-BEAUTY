@@ -9,23 +9,8 @@ ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / '.pipeline-cache'
 
 def product_type(name, category=''):
-    import re
-    # Source categories outrank name keywords (e.g. a primer mentioning cushion).
-    source_types = {'프라이머/베이스': 'primer', '메이크업베이스/프라이머': 'primer',
-                    '파우더/팩트': 'powder', '파우더': 'powder', '쉐이딩': 'shading'}
-    source_type = source_types.get(re.sub(r'\s+', '', category or ''))
-    if source_type:
-        return source_type
-    text = (name or '') + ' ' + (category or '')
-    if '컨실러' in text:
-        return 'concealer'
-    if '쿠션' in text:
-        return 'cushion'
-    if '스틱' in text:
-        return 'stick'
-    if re.search(r'로션|BB|CC|비비|톤업', text, re.I):
-        return 'tone_lotion'
-    return 'liquid'
+    from pipeline.classification import infer_static_product_type
+    return infer_static_product_type(name, category)
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat()

@@ -37,9 +37,16 @@ def audit(products, reviews):
             if field != 'profile_metadata' and product.get(field) != value:
                 fail('recalculation_mismatch:' + field)
         for field in ['input_hash', 'evidence_counts', 'positive_concern_counts', 'negative_concern_counts',
-                      'skin_review_counts', 'shade_source', 'shade_lineup', 'wear_attributes', 'option_wear']:
+                      'skin_review_counts', 'shade_source', 'shade_lineup', 'wear_attributes', 'option_wear',
+                      'formulation', 'recommendation_eligibility']:
             if meta.get(field) != expected['profile_metadata'].get(field):
                 fail('metadata_mismatch:' + field)
+        for section in ('formulation', 'recommendation_eligibility'):
+            for rid in (meta.get(section) or {}).get('evidence_review_ids') or []:
+                references += 1
+                row = indexed.get(str(rid))
+                if not row or row['product_id'] != pid:
+                    fail('missing_or_foreign_evidence:' + section + ':' + str(rid))
         claims = [(attr, (meta.get('evidence_review_ids') or {}).get(attr, []), False)
                   for attr in ATTRIBUTES if product.get(attr + '_score') is not None]
         claims += [(concern, (meta.get('concern_evidence_ids') or {}).get(concern, []), True)

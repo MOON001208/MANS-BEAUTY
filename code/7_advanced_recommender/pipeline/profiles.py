@@ -9,13 +9,13 @@ import json
 import re
 from collections import Counter, defaultdict
 from statistics import mean
-from shared import product_type
+from pipeline.classification import classify_product
 from pipeline.wear import extract_wear, summarize_wear
 
 VERSION = 'rules-ko-v3'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
-METADATA_REVISION = 8
+METADATA_REVISION = 9
 SKIN_TYPES = {'지성': 'oily', '건성': 'dry', '복합성': 'combination', '중성': 'combination', '민감성': 'sensitive'}
 ATTRIBUTES = {
     'coverage': (
@@ -103,7 +103,12 @@ def extract_attributes(review):
 
 def get_shade_from_option(option):
     """Only explicit shade numbers. Brand shade 1 and vague beige are not 21/23."""
-    matches = set(re.findall(r'(?<!\d)(21|23|25)(?=\s*호|[NnCcWw](?:\d)?\b|\b)', option or ''))
+    text = option or ''
+    # Seller-declared ranges can contain a quiz shade without naming it at either end.
+    ranges = re.compile(r'(?<!\d)(19|2\d)\s*[~～–-]\s*(19|2\d)\s*호')
+    matches = {str(n) for low, high in ranges.findall(text) for n in (21, 23, 25)
+               if int(low) <= n <= int(high)}
+    matches.update(re.findall(r'(?<!\d)(21|23|25)(?=\s*호|[NnCcWw](?:\d)?\b|\b)', ranges.sub(' ', text)))
     return next(iter(matches)) if len(matches) == 1 else None
 
 # Packaging, volume and bundle wording is not part of a shade name.
@@ -188,18 +193,18 @@ def shade_lineup(option_counts, unavailable=()):
         return {'basis': basis, 'options': options} if options else None
     return None
 
-def profile_product_type(product):
-    source_category = (product.get('profile_metadata') or {}).get('source_category')
-    if source_category:
-        return product_type(product.get('name'), source_category)
-    return product.get('product_type') or product_type(product.get('name'), product.get('category'))
+def profile_product_type(product, reviews=()):
+    return classify_product(product, reviews)[0]
 
 def input_hash(product, reviews):
     source = {k: product.get(k) for k in ['id', 'name', 'category', 'ingredients_raw', 'source_options']}
     source['source_category'] = (product.get('profile_metadata') or {}).get('source_category')
     ingredients = (product.get('profile_metadata') or {}).get('ingredient_source')
     source['ingredient_source'] = {k: ingredients.get(k) for k in ['status', 'source_url', 'entries', 'references', 'images']} if ingredients else None
-    source['product_type'] = profile_product_type(product)
+    ptype, formulation, eligibility = classify_product(product, reviews)
+    source['product_type'] = ptype
+    source['formulation'] = formulation
+    source['recommendation_eligibility'] = eligibility
     data = [{k: r.get(k) for k in ['id', 'content', 'rating', 'skin_type', 'option_name']} for r in reviews]
     raw = json.dumps([VERSION, METADATA_REVISION, source, sorted(data, key=lambda r: r['id'])], ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(raw.encode()).hexdigest()
@@ -263,12 +268,12 @@ def build_profile(product, reviews):
         vals = skin_ratings[skin]
         profile['compat_' + skin] = round(((sum(vals) + 3 * 5) / (len(vals) + 5) - 1) / 4, 3) if len(vals) >= 5 else None
     suitable_concerns = [c for c in CONCERNS if good[c] >= 3 and good[c] >= 2 * bad[c]]
+    resolved_type, formulation, eligibility = classify_product(product, reviews)
     profile.update({
-        # The crawler infers this from Olive Young's own category. products.category
-        # holds a display group ('쿠션/파운데이션'), so re-inferring from it fed the
-        # word 쿠션 back in and turned every foundation, stick and powder into a
-        # cushion. Prefer the preserved source category, then the crawler's type.
-        'product_type': profile_product_type(product),
+        # Derive formulation and recommendation eligibility from seller category,
+        # primary product name (never gift suffixes or display group '쿠션/파운데이션'),
+        # and explicit review evidence. Unconfirmed foundations stay 'foundation_unknown'.
+        'product_type': resolved_type,
         'suitable_skin_types': [s for s in skin_ratings if len(skin_ratings[s]) >= 5 and mean(skin_ratings[s]) >= 4],
         'suitable_concerns': suitable_concerns, 'suitable_shades': sorted(options),
         'shade_options': {s: counts.most_common(1)[0][0] for s, counts in options.items()},
@@ -280,6 +285,8 @@ def build_profile(product, reviews):
             'metadata_revision': METADATA_REVISION,
             'source_category': (product.get('profile_metadata') or {}).get('source_category'),
             'ingredient_source': (product.get('profile_metadata') or {}).get('ingredient_source'),
+            'formulation': formulation,
+            'recommendation_eligibility': eligibility,
             'evidence_counts': {k: len(scores[k]) for k in ATTRIBUTES}, 'evidence_review_ids': dict(evidence_ids),
             'concern_evidence_ids': dict(concern_ids),
             'wear_attributes': summarize_wear(wear_items),

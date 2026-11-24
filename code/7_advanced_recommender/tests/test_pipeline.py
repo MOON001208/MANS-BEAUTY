@@ -153,7 +153,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_source_category_survives_catalog_and_profile_refresh(self):
         for category, expected in [('프라이머/베이스', 'primer'), ('파우더/팩트', 'powder'),
-                                   ('쉐이딩', 'shading'), ('파운데이션', 'liquid')]:
+                                   ('쉐이딩', 'shading'), ('파운데이션', 'foundation_unknown')]:
             with self.subTest(category=category):
                 existing = {'profile_metadata': {'version': profiles.VERSION, 'analyzed_count': 12,
                                                  'evidence_review_ids': {'coverage': ['a', 'b', 'c']}}}
@@ -183,9 +183,12 @@ class ProfileTests(unittest.TestCase):
     def test_crawler_product_type_is_not_re_inferred(self):
         # products.category is a display group; re-inferring from it turned every
         # foundation and powder into a cushion because it contains the word 쿠션.
+        # Unconfirmed foundations stay 'foundation_unknown' instead of cushion or liquid.
         product = {'id': 'p', 'name': '오브제 내추럴 커버 파운데이션',
-                   'category': '쿠션/파운데이션', 'product_type': 'liquid'}
-        self.assertEqual(build_profile(product, [])['product_type'], 'liquid')
+                   'category': '쿠션/파운데이션', 'product_type': 'cushion'}
+        profile = build_profile(product, [])
+        self.assertEqual(profile['product_type'], 'foundation_unknown')
+        self.assertEqual(profile['profile_metadata']['formulation']['status'], 'unconfirmed')
 
     def test_product_type_is_inferred_only_when_missing(self):
         product = {'id': 'p', 'name': '남성 쿠션', 'category': '쿠션/파운데이션'}
@@ -302,6 +305,14 @@ class ProfileTests(unittest.TestCase):
     def test_source_options_override_old_reviews(self):
         p = build_profile({'id': 'p', 'source_options': [{'name': '23호', 'sold_out': False}, {'name': '25호', 'sold_out': True}]}, [{'id': '1', 'option_name': '21호'}])
         self.assertEqual(p['suitable_shades'], ['23'])
+
+    def test_seller_range_includes_middle_shade_and_preserves_stock(self):
+        names = ['[20~21호] 1호 라이트베이지', '[22~24호] 2호 베이지', '[25~26호] 3호 샌드']
+        profile = build_profile({'id': 'range', 'source_options': [
+            {'name': name, 'sold_out': i == 2} for i, name in enumerate(names)
+        ]}, [])
+        self.assertEqual(profile['suitable_shades'], ['21', '23'])
+        self.assertEqual(profile['shade_options']['23'], names[1])
 
     def test_duplicate_ids_do_not_inflate_evidence(self):
         r = {'id': '1', 'content': '커버력이 좋아요', 'rating': 5}

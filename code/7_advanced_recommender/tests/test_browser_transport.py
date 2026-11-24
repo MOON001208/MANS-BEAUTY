@@ -85,7 +85,6 @@ class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
         import os
         from types import SimpleNamespace
         from unittest.mock import patch
-        import crawl4ai
         from scraper import browser
 
         hook_holder = {}
@@ -114,8 +113,13 @@ class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
                     await hook_holder['on_page_context_created'](fake_page)
                 return res
 
+        # The CI suite exercises our transport with no browser or optional crawler installed.
+        crawler_module = SimpleNamespace(
+            AsyncWebCrawler=FakeCrawler, BrowserConfig=SimpleNamespace,
+            CrawlerRunConfig=SimpleNamespace, CacheMode=SimpleNamespace(BYPASS='bypass'),
+        )
         args = SimpleNamespace(product=None)
-        with patch.object(crawl4ai, 'AsyncWebCrawler', FakeCrawler), \
+        with patch.dict(sys.modules, {'crawl4ai': crawler_module}), \
                 patch.object(browser.asyncio, 'sleep', new=AsyncMock()), \
                 patch.dict(os.environ, {'OLIVEYOUNG_BROWSER_PROFILE': ''}):
             out = await browser._run_browser(args, lambda a, session=None: ('ok', session.use_saved_login))
@@ -127,7 +131,7 @@ class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
 
         responses[:] = [SimpleNamespace(success=False, status_code=403)]
         arun_calls.clear()
-        with patch.object(crawl4ai, 'AsyncWebCrawler', FakeCrawler), \
+        with patch.dict(sys.modules, {'crawl4ai': crawler_module}), \
                 patch.dict(os.environ, {'OLIVEYOUNG_BROWSER_PROFILE': ''}):
             with self.assertRaises(AccessLimited):
                 await browser._run_browser(args, lambda a, session=None: None)
