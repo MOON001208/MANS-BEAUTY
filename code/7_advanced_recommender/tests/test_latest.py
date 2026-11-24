@@ -83,6 +83,37 @@ class LatestTests(unittest.TestCase):
         with self.assertRaises(SourceError):
             harvest_since(api, 'p', lambda rows: None, entry)
 
+    def test_single_backdated_offline_review_does_not_fail_or_stop_early(self):
+        first_days = ['2026.11.24', '2026.11.23', '2026.01.18', '2026.11.22', '2026.11.21']
+        second_days = ['2026.11.20', '2026.11.19', '2026.11.18', '2026.11.17', '2026.11.16']
+        api = Api({
+            None: {'goodsReviewList': [{'reviewId': 10 + i, 'reviewScore': 5, 'createdDateTime': d, 'content': '좋아요'}
+                                       for i, d in enumerate(first_days)],
+                   'hasNext': True, 'nextCursorId': 'page2', 'nextCursorScore': None,
+                   'nextCursorCount': None, 'loginRequired': False},
+            'page2': {'goodsReviewList': [{'reviewId': 20 + i, 'reviewScore': 5, 'createdDateTime': d, 'content': '좋아요'}
+                                          for i, d in enumerate(second_days)],
+                      'hasNext': True, 'nextCursorId': 'page3', 'nextCursorScore': None,
+                      'nextCursorCount': None, 'loginRequired': False},
+        })
+        saved = []
+        entry = prepare_cycle(None, '2026-11-20', '2026-11-24T00:00:00Z')
+        result = harvest_since(api, 'p', lambda rows: saved.extend(r['id'] for r in rows), entry)
+        self.assertTrue(result['complete'])
+        self.assertEqual(api.calls, [None, 'page2'])
+        self.assertEqual(len(saved), 10)
+
+    def test_genuinely_broken_date_sort_still_raises_source_error(self):
+        for bad_days in (['2026.01.18', '2026.05.18'],
+                         ['2026.05.01', '2026.05.02', '2026.05.03', '2026.05.04', '2026.05.05', '2026.05.06']):
+            api = Api({None: {'goodsReviewList': [{'reviewId': i + 1, 'reviewScore': 5, 'createdDateTime': d, 'content': '좋아요'}
+                                                  for i, d in enumerate(bad_days)],
+                              'hasNext': False, 'nextCursorId': None, 'nextCursorScore': None,
+                              'nextCursorCount': None, 'loginRequired': False}})
+            entry = prepare_cycle(None, '2026-01-01', '2026-10-24T00:00:00Z')
+            with self.assertRaises(SourceError):
+                harvest_since(api, 'p', lambda rows: None, entry)
+
     def test_pipeline_rebuilds_related_product_profiles(self):
         with TemporaryDirectory() as folder, patch.object(run_pipeline, 'CACHE', Path(folder)), \
                 patch.object(sys, 'argv', ['run_pipeline', '--product', 'p', '--write']), \
@@ -90,6 +121,19 @@ class LatestTests(unittest.TestCase):
                 patch.object(run_pipeline, 'profile', return_value={'errors': [], 'updated': []}) as profiles:
             self.assertFalse(run_pipeline.main())
         profiles.assert_called_once_with(True, None)
+
+    def test_pipeline_records_source_error_detail(self):
+        import json
+        with TemporaryDirectory() as folder, patch.object(run_pipeline, 'CACHE', Path(folder)), \
+                patch.object(sys, 'argv', ['run_pipeline', '--product', 'p']), \
+                patch.object(run_pipeline, 'crawl', side_effect=SourceError('브라우저 상품 페이지를 열지 못했습니다 (status=302).')), \
+                patch.object(run_pipeline, 'profile', return_value={'errors': [], 'updated': []}):
+            self.assertTrue(run_pipeline.main())
+            report = json.loads((Path(folder) / 'pipeline-report.json').read_text(encoding='utf-8'))
+        self.assertEqual(report['errors'], [{
+            'stage': 'crawl', 'error': 'SourceError',
+            'detail': '브라우저 상품 페이지를 열지 못했습니다 (status=302).',
+        }])
 
 
 if __name__ == '__main__':

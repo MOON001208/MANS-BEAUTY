@@ -81,6 +81,58 @@ class BrowserTransportTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(page.evaluate.await_count, 1)
         page.remove_listener.assert_called_once()
 
+    async def test_initial_open_retries_transient_redirect_and_never_retries_403(self):
+        import os
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        import crawl4ai
+        from scraper import browser
+
+        hook_holder = {}
+        fake_page = MagicMock()
+        responses = [
+            SimpleNamespace(success=True, status_code=302),
+            SimpleNamespace(success=True, status_code=200),
+        ]
+        arun_calls = []
+
+        class FakeCrawler:
+            def __init__(self, config):
+                self.config = config
+                self.crawler_strategy = SimpleNamespace(set_hook=lambda name, fn: hook_holder.setdefault(name, fn))
+
+            async def __aenter__(self):
+                return self
+
+            async def __aexit__(self, *exc):
+                return False
+
+            async def arun(self, url, config):
+                arun_calls.append((url, config.session_id))
+                res = responses.pop(0)
+                if res.status_code == 200:
+                    await hook_holder['on_page_context_created'](fake_page)
+                return res
+
+        args = SimpleNamespace(product=None)
+        with patch.object(crawl4ai, 'AsyncWebCrawler', FakeCrawler), \
+                patch.object(browser.asyncio, 'sleep', new=AsyncMock()), \
+                patch.dict(os.environ, {'OLIVEYOUNG_BROWSER_PROFILE': ''}):
+            out = await browser._run_browser(args, lambda a, session=None: ('ok', session.use_saved_login))
+        self.assertEqual(out, ('ok', False))
+        self.assertEqual(arun_calls, [
+            ('https://www.oliveyoung.co.kr/store/main/main.do?oy=0', 'oliveyoung-collection-0'),
+            ('https://www.oliveyoung.co.kr/store/main/main.do?oy=0', 'oliveyoung-collection-1'),
+        ])
+
+        responses[:] = [SimpleNamespace(success=False, status_code=403)]
+        arun_calls.clear()
+        with patch.object(crawl4ai, 'AsyncWebCrawler', FakeCrawler), \
+                patch.dict(os.environ, {'OLIVEYOUNG_BROWSER_PROFILE': ''}):
+            with self.assertRaises(AccessLimited):
+                await browser._run_browser(args, lambda a, session=None: None)
+        self.assertEqual(len(arun_calls), 1)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,6 @@
 """One command: catalog discovery -> review ingestion -> versioned profiles."""
 import json
-from scraper.crawler import parser, validate_args, run as crawl
+from scraper.crawler import SourceError, parser, validate_args, run as crawl
 from pipeline.build_profiles import run as profile
 from shared import CACHE, utc_now, write_json
 
@@ -14,7 +14,10 @@ def main():
         try:
             result['crawl'] = crawl(args)
         except Exception as error:
-            result['errors'].append({'stage': 'crawl', 'error': type(error).__name__})
+            entry = {'stage': 'crawl', 'error': type(error).__name__}
+            if isinstance(error, SourceError) and str(error):
+                entry['detail'] = str(error)
+            result['errors'].append(entry)
     # Successfully stored pages remain usable even if other source requests failed.
     try:
         # A source query can return reviews owned by another known product.

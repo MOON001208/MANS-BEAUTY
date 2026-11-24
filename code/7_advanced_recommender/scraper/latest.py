@@ -33,6 +33,23 @@ def prepare_cycle(previous, cutoff_day, now):
     return {'head_checked_at': now, 'pending': [{'cursor': None, 'cutoff_day': cutoff_day}]}
 
 
+def _non_increasing_length(days):
+    """Length of the longest non-increasing subsequence (d_0 >= d_1 >= ...)."""
+    lengths = []
+    for index, day in enumerate(days):
+        best = max((lengths[prev] for prev in range(index) if days[prev] >= day), default=0)
+        lengths.append(best + 1)
+    return max(lengths, default=0)
+
+
+def _allowed_date_outliers(count):
+    # Olive Young OFFLINE store reviews occasionally carry an older purchase/draft
+    # date while sitting in registration order (16 rows across 35,552 reviews).
+    if count < 5:
+        return 0
+    return 1 if count < 40 else 2
+
+
 def harvest_since(api, pid, save_page, entry, checkpoint=lambda: None, max_pages=500):
     from scraper.crawler import normalize_review, SourceError
     report = {'pages': 0, 'fetched': 0, 'stop': 'page_budget', 'complete': False}
@@ -44,7 +61,8 @@ def harvest_since(api, pid, save_page, entry, checkpoint=lambda: None, max_pages
         data = api.reviews_page(pid, 'DATETIME_DESC', phase['cursor'])
         rows = list({r['id']: r for r in (normalize_review(raw, pid) for raw in data['goodsReviewList'])}.values())
         days = [collection_day(r['created_at']) for r in rows]
-        if days != sorted(days, reverse=True):
+        allowed_outliers = _allowed_date_outliers(len(days))
+        if len(days) - _non_increasing_length(days) > allowed_outliers:
             raise SourceError('최신순 리뷰 작성일 정렬이 변경되었습니다.')
         save_page(rows)  # Never move a cursor before its batch is stored.
         report['pages'] += 1
@@ -53,9 +71,12 @@ def harvest_since(api, pid, save_page, entry, checkpoint=lambda: None, max_pages
             report['stop'] = 'login_required'
             checkpoint()
             return report
-        # Dates have day precision: include the entire boundary day.
+        # Dates have day precision: include the entire boundary day. Require more
+        # pre-boundary rows than allowed backdated outliers so a single OFFLINE
+        # anomaly cannot stop pagination before the chronological stream crosses.
         boundary = phase.get('cutoff_day')
-        if not data['hasNext'] or (boundary and days and min(days) < boundary):
+        crossed = bool(boundary and days and sum(day < boundary for day in days) > allowed_outliers)
+        if not data['hasNext'] or crossed:
             entry['pending'].pop(0)
             checkpoint()
             report['stop'] = 'exhausted' if not data['hasNext'] else 'previous_collection_day'

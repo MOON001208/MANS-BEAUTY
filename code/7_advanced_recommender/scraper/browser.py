@@ -89,7 +89,10 @@ async def _run_browser(args, collect):
     except ImportError:
         raise SourceError('requirements-crawl4ai.txt와 Playwright Chromium 설치가 필요합니다.') from None
 
-    profile_dir = os.getenv('OLIVEYOUNG_BROWSER_PROFILE') or dotenv_values(ROOT / '.env').get('OLIVEYOUNG_BROWSER_PROFILE')
+    env_values = dotenv_values(ROOT / '.env')
+    profile_dir = (os.environ['OLIVEYOUNG_BROWSER_PROFILE']
+                   if 'OLIVEYOUNG_BROWSER_PROFILE' in os.environ
+                   else env_values.get('OLIVEYOUNG_BROWSER_PROFILE'))
     browser_options = {'headless': True, 'verbose': False}
     if profile_dir:
         storage_state = Path(profile_dir).expanduser() / 'storage_state.json'
@@ -107,17 +110,26 @@ async def _run_browser(args, collect):
     async with AsyncWebCrawler(config=BrowserConfig(**browser_options)) as crawler:
         crawler.crawler_strategy.set_hook('on_page_context_created', remember_page)
         pid = (args.product or [None])[0]
-        # Crawl4AI reports the root URL's 301 even after following it to a 200.
-        url = f'{SITE}/store/main/main.do'
+        # Crawl4AI reports the root URL's 301 even after following it to a 200,
+        # and main.do without oy=0 triggers an extra redirect race on cold boot.
+        url = f'{SITE}/store/main/main.do?oy=0'
         if pid:
             url = f'{SITE}/store/goods/getGoodsDetail.do?' + urlencode({'goodsNo': pid})
-        result = await crawler.arun(url=url, config=CrawlerRunConfig(
-            cache_mode=CacheMode.BYPASS, session_id='oliveyoung-collection',
-            page_timeout=45000, delay_before_return_html=5))
-        if result.status_code in (401, 403):
-            raise AccessLimited(f'브라우저 페이지 접근 제한 HTTP {result.status_code}')
-        if not result.success or result.status_code != 200 or 'page' not in state:
-            raise SourceError('브라우저 상품 페이지를 열지 못했습니다.')
+        result = None
+        for attempt in range(3):
+            state.pop('page', None)
+            result = await crawler.arun(url=url, config=CrawlerRunConfig(
+                cache_mode=CacheMode.BYPASS, session_id=f'oliveyoung-collection-{attempt}',
+                page_timeout=45000, delay_before_return_html=5))
+            if result.status_code in (401, 403):
+                raise AccessLimited(f'브라우저 페이지 접근 제한 HTTP {result.status_code}')
+            if result.success and result.status_code == 200 and 'page' in state:
+                break
+            if attempt < 2:
+                await asyncio.sleep(2 * (attempt + 1))
+        else:
+            status = getattr(result, 'status_code', None)
+            raise SourceError(f'브라우저 상품 페이지를 열지 못했습니다 (status={status}).')
         session = BrowserSession(state['page'], asyncio.get_running_loop(), use_saved_login=bool(profile_dir))
         return await asyncio.to_thread(collect, args, session=session)
 
