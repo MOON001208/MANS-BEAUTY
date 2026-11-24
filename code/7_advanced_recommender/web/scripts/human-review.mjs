@@ -5,12 +5,44 @@ import { selectRecommendations, FEATURE_CONFIG, PROFILE_VERSION, attributeEviden
 
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 
+export const catalogSourceDigest = catalog => digest(catalog.products.map(p => ({
+  id: p.id, name: p.name, source_options: p.source_options ?? null,
+})).sort((a, b) => a.id.localeCompare(b.id)));
+
+export function captureBaseline(catalog, personas) {
+  if (!catalog.products.length || catalog.products.some(p => p.profile_metadata?.version !== PROFILE_VERSION)) {
+    throw new Error('현재 규칙으로 생성된 카탈로그가 필요합니다.');
+  }
+  return {
+    policy: PROFILE_VERSION, captured_at: new Date().toISOString(),
+    catalog_ids: catalog.products.map(p => p.id).sort(),
+    catalog_source_digest: catalogSourceDigest(catalog),
+    review_source_digest: catalog.review_source_digest ?? null,
+    analyzed_reviews: catalog.products.reduce((n, p) => n + (p.profile_metadata?.analyzed_count ?? 0), 0),
+    cases: personas.map(answers => ({
+      id: answers.id, label: answers.label, answers,
+      product_ids: selectRecommendations(catalog.products, answers).slice(0, 3).map(p => p.id),
+    })),
+  };
+}
+
 export function createStudy(catalog, baseline, audit) {
   if (JSON.stringify(catalog.products.map(p => p.id).sort()) !== JSON.stringify([...baseline.catalog_ids].sort()) ||
       catalog.products.reduce((n, p) => n + (p.profile_metadata?.analyzed_count ?? 0), 0) !== baseline.analyzed_reviews) {
     throw new Error('비교 기준과 현재 카탈로그의 상품·리뷰 범위가 다릅니다. 같은 자료로 비교해야 합니다.');
   }
-  if (audit.errors.length || audit.version !== PROFILE_VERSION) throw new Error('현재 규칙의 근거 감사를 먼저 통과해야 합니다.');
+  const sourceDigests = [baseline.catalog_source_digest, baseline.review_source_digest, catalog.review_source_digest];
+  if (!sourceDigests.every(value => typeof value === 'string' && value.length > 0) ||
+      baseline.catalog_source_digest !== catalogSourceDigest(catalog) ||
+      baseline.review_source_digest !== catalog.review_source_digest) {
+    throw new Error('수정 전후 상품 원본 또는 리뷰 원본이 다릅니다.');
+  }
+  if (audit.errors.length || audit.version !== PROFILE_VERSION ||
+      catalog.count !== catalog.products.length || audit.products !== catalog.count ||
+      audit.reviews !== baseline.analyzed_reviews ||
+      catalog.products.some(p => p.profile_metadata?.version !== PROFILE_VERSION)) {
+    throw new Error('현재 카탈로그 전체가 최신 규칙의 근거 감사를 통과해야 합니다.');
+  }
   const samples = audit.claim_samples;
   const card = id => {
     const product = catalog.products.find(p => p.id === id);
@@ -18,10 +50,14 @@ export function createStudy(catalog, baseline, audit) {
     return { id, name: product.name, brand: product.brand, type: product.product_type,
       suitable_shades: product.suitable_shades ?? [], lineup: product.profile_metadata?.shade_lineup?.options ?? [],
       features: FEATURE_CONFIG.map(f => ({ label: f.label, ...attributeEvidence(product, f.key) })),
-      evidence: samples.filter(s => s.product_id === id && s.polarity && s.polarity !== 'mixed').map(s => ({
-        label: FEATURE_CONFIG.find(f => f.key === s.claim)?.label, polarity: s.polarity,
-        review_id: s.review_id, text: s.extracted[s.polarity]?.[0] ?? '',
-      })) };
+      evidence: samples.filter(s => s.product_id === id && FEATURE_CONFIG.some(f => f.key === s.claim)).flatMap(s => {
+        const polarities = s.polarity ? [s.polarity].filter(p => p !== 'mixed')
+          : ['positive', 'negative'].filter(p => s.extracted?.[p]?.length);
+        return polarities.map(polarity => ({
+          label: FEATURE_CONFIG.find(f => f.key === s.claim).label, polarity,
+          review_id: s.review_id, text: s.content ?? s.extracted[polarity]?.[0] ?? '',
+        }));
+      }) };
   };
   const cases = baseline.cases.map(old => {
     const current = selectRecommendations(catalog.products, old.answers).slice(0, 3).map(p => p.id);
@@ -33,7 +69,9 @@ export function createStudy(catalog, baseline, audit) {
   });
   cases.sort((a, b) => Number(a.same_order) - Number(b.same_order));
   const body = { policy: PROFILE_VERSION, baseline_policy: baseline.policy, catalog_captured_at: catalog.captured_at,
-    products: catalog.count, reviews: baseline.analyzed_reviews, cases };
+    products: catalog.count, reviews: baseline.analyzed_reviews,
+    catalog_source_digest: baseline.catalog_source_digest, review_source_digest: baseline.review_source_digest,
+    cases };
   return { study_id: digest(body).slice(0, 20), ...body };
 }
 
@@ -42,12 +80,17 @@ export function summarizeResponses(study, responses) {
   const validCases = new Map(study.cases.map(c => [c.id, c]));
   const unique = new Map();
   for (const response of [...responses].sort((a, b) => String(a.completed_at).localeCompare(String(b.completed_at)))) {
-    if (response.study_id !== study.study_id || response.human_confirmed !== true || !response.response_id || !Array.isArray(response.answers)) {
+    if (response.study_id !== study.study_id || response.human_confirmed !== true ||
+        typeof response.response_id !== 'string' || !response.response_id.trim() ||
+        !Number.isFinite(Date.parse(response.completed_at)) || !Array.isArray(response.answers)) {
       throw new Error('사람 평가 확인·평가 세트 ID·응답 형식을 확인하세요.');
     }
     const seen = new Set();
     for (const answer of response.answers) {
-      if (!validCases.has(answer.case_id) || !choices.has(answer.choice) || seen.has(answer.case_id)) throw new Error('알 수 없거나 중복된 평가 사례·선택입니다.');
+      if (!answer || !validCases.has(answer.case_id) || !choices.has(answer.choice) || seen.has(answer.case_id) ||
+          (answer.reason !== undefined && (typeof answer.reason !== 'string' || answer.reason.length > 3000))) {
+        throw new Error('알 수 없거나 중복된 평가 사례·선택입니다.');
+      }
       seen.add(answer.case_id);
       unique.set(`${response.response_id}:${answer.case_id}`, { response_id: response.response_id, ...answer });
     }
@@ -67,9 +110,16 @@ export function summarizeResponses(study, responses) {
 if (process.argv[1]?.endsWith('human-review.mjs')) {
   const read = path => JSON.parse(readFileSync(path, 'utf8'));
   const [mode, ...files] = process.argv.slice(2);
-  if (mode === 'prepare') {
+  if (mode === 'baseline') {
+    const baseline = captureBaseline(read(files[0] ?? 'tests/fixtures/catalog-snapshot.json'),
+      read('tests/fixtures/personas.json').personas.slice(0, 12));
+    const output = `tests/fixtures/recommendation-${baseline.policy.replace('rules-ko-', '')}-baseline.json`;
+    writeFileSync(output, JSON.stringify(baseline, null, 2) + '\n');
+    console.log(`수정 전 목록 저장: ${baseline.policy} · ${baseline.cases.length}개 사례`);
+  } else if (mode === 'prepare') {
     const auditPath = files[0] ?? '../.pipeline-cache/recommendation-audit.json';
-    const study = createStudy(read('tests/fixtures/catalog-snapshot.json'), read('tests/fixtures/recommendation-v2-baseline.json'), read(auditPath));
+    const study = createStudy(read('tests/fixtures/catalog-snapshot.json'),
+      read(files[1] ?? 'tests/fixtures/recommendation-v3-baseline.json'), read(auditPath));
     const encoded = JSON.stringify(study).replaceAll('<', '\\u003c');
     mkdirSync('public', { recursive: true });
     writeFileSync('public/recommendation-review.html', readFileSync('scripts/human-review-template.html', 'utf8').replace('__STUDY_JSON__', encoded));
@@ -80,5 +130,5 @@ if (process.argv[1]?.endsWith('human-review.mjs')) {
     const report = summarizeResponses(study, files.map(read));
     writeFileSync('tests/fixtures/human-review-report.json', JSON.stringify(report, null, 2) + '\n');
     console.log(JSON.stringify(report, null, 2));
-  } else throw new Error('사용법: node --experimental-strip-types scripts/human-review.mjs prepare [감사JSON] | report [사람이 저장한 응답JSON ...]');
+  } else throw new Error('사용법: node --experimental-strip-types scripts/human-review.mjs baseline [카탈로그JSON] | prepare [감사JSON] | report [사람이 저장한 응답JSON ...]');
 }

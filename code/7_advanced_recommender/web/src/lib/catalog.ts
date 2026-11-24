@@ -1,5 +1,5 @@
 import type { Product } from './supabase';
-import { PROFILE_VERSION } from './recommendation.ts';
+import { hasCurrentProfile } from './recommendation.ts';
 
 export interface CatalogResult {
   products: Product[];
@@ -53,7 +53,7 @@ export async function loadCatalog(
     const snapshot: CatalogSnapshot = await response.json();
     if (!Array.isArray(snapshot.products) || snapshot.products.length < 1 ||
         snapshot.count !== snapshot.products.length || !Number.isFinite(Date.parse(snapshot.captured_at)) ||
-        snapshot.products.some(p => !p.id || p.profile_metadata?.version !== PROFILE_VERSION)) {
+        snapshot.products.some(p => !p.id || !hasCurrentProfile(p))) {
       throw new Error('저장된 상품 자료를 확인하지 못했습니다. 잠시 후 다시 시도해주세요.');
     }
     return { products: snapshot.products, source: 'snapshot', capturedAt: snapshot.captured_at };

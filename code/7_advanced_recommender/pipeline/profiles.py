@@ -10,9 +10,9 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 from pipeline.classification import classify_product
-from pipeline.wear import extract_wear, summarize_wear
+from pipeline.wear import NON_OBSERVATION, extract_wear, review_clauses, summarize_wear
 
-VERSION = 'rules-ko-v3'
+VERSION = 'rules-ko-v4'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
 METADATA_REVISION = 9
@@ -22,18 +22,20 @@ ATTRIBUTES = {
         [r'커버(?:력)?(?:이|은|는|가|도)?\s*(?:정말|아주|너무|꽤)?\s*(?:좋|뛰어나|훌륭|잘\s*돼|잘\s*되)', r'(?:잡티|모공|흉터|홍조).{0,10}(?:잘\s*가려|잘\s*커버)'],
         [r'커버(?:력)?(?:이|은|는|가|도)?\s*(?:별로|부족|약해|약하|아쉬|안\s*돼|안\s*되)', r'(?:잡티|모공|흉터|홍조).{0,8}(?:안\s*가려|가려지지)']),
     'longevity': (
-        [r'지속(?:력)?(?:이|은|는|가|도)?\s*(?:정말|아주|너무|꽤)?\s*(?:좋|뛰어나|길어|길다)', r'오래\s*(?:유지|가요|갑니다)', r'하루\s*종일.{0,10}(?:유지|멀쩡)'],
-        [r'지속(?:력)?(?:이|은|는|가|도)?\s*(?:별로|부족|약해|약하|아쉬|짧)', r'(?:금방|빨리|쉽게)\s*(?:무너|지워|사라)']),
+        [r'지속(?:력)?(?:이|은|는|가|도)?\s*(?:정말|아주|너무|꽤)?\s*(?:좋|뛰어나|길어|길다|오래\s*가)', r'오래\s*(?:유지|가요|갑니다)', r'하루\s*종일.{0,10}(?:유지|멀쩡)'],
+        [r'지속(?:력)?(?:이|은|는|가|도)?\s*(?:별로|부족|약해|약하|아쉬|짧|좋지\s*않|안\s*좋)', r'(?:금방|빨리|쉽게)\s*(?:무너|지워|사라)']),
     'lightweight': (
         [r'(?:발림|착용감|사용감|제형).{0,10}(?:가벼|산뜻)', r'가볍게\s*발', r'가벼워요', r'가벼운\s*(?:느낌|사용감|제형)'],
         [r'무거워요', r'(?:사용감|제형|착용감).{0,10}(?:무겁|무거|답답)', r'답답해요', r'두껍게\s*발']),
 }
 CONCERNS = {'acne': '여드름|트러블', 'pore': '모공', 'redness': '홍조', 'spots': '잡티|다크서클', 'wrinkle': '주름'}
 NEGATION = re.compile(r'않|아니|못|없|안\s*(?:되|돼|좋|가려|커버)|별로')
-CONDITIONAL = re.compile(r'(?:좋|뛰어나|가려지|커버하|되|돼)(?:으면|면)')
+CONDITIONAL = re.compile(r'(?:좋|뛰어나|가려지|커버하|되|돼|않|없|무너지)(?:으면|면)')
 
 
 def current_experience(part):
+    if NON_OBSERVATION.search(part):
+        return False
     if re.search(r'(?:구매|구입|사용해보)(?:하려|하고\s*싶|려고)|(?:사려|사려고|사고\s*싶)|제품을\s*(?:찾|구하)', part):
         return False
     if re.search(r'(?:기존|예전|이전).{0,80}(?:써왔|쓰던|사용하던|썼던|사용했)', part) and not re.search(r'보다|비해', part):
@@ -54,18 +56,27 @@ def negative_concern(part, words):
     coverage = re.search(rf'(?:{words}).{{0,14}}(?:안\s*가려|못\s*가려|가려지지|커버.{{0,6}}(?:안|못|부족|약하|약해|아쉬))', part)
     if coverage and not re.search(r'않|없', part[coverage.end():coverage.end() + 12]):
         return True
-    flare = re.search(rf'(?:{words}).{{0,12}}(?:심해졌|더\s*심해|올라왔|올라오|올라와|올라옵|생겼|났|뒤집)', part)
+    flare = re.search(rf'(?:{words}).{{0,40}}?(?:심해졌|더\s*심해|올라왔|올라오|올라와|올라옵|생겼|났|뒤집)', part)
     if not flare:
+        return False
+    concern_end = flare.start() + re.match(rf'(?:{words})', part[flare.start():]).end()
+    other_concerns = '|'.join(pattern for pattern in CONCERNS.values() if pattern != words)
+    if re.search(rf'(?:{other_concerns})', part[concern_end:flare.end()]):
+        # A skin introduction must not inherit an adverse effect explicitly
+        # attached to a different concern later in the same use statement.
         return False
     local = part[flare.start():flare.end() + 12]
     if re.search(r'안\s|않|없', local):
         return False
     background = re.search(r'원래|평소|피부라|피부인데|피부타입|생겨서|나서|올라와서|구매.*계기', part)
-    usage = re.search(r'사용\s*후|사용하고|바른\s*후|바르고|쓰고|쓰니|사용하니|발랐더니|바르니|사용\s*뒤', part[max(0, flare.start() - 40):flare.start()])
-    return not background or bool(usage)
+    usage = re.search(r'사용\s*후|사용하고|바른\s*후|바르고|쓰고|쓰니|써보니|사용하니|사용하니까|발랐더니|바르니|사용\s*뒤',
+                      part[max(0, flare.start() - 40):flare.end()])
+    # A wider span is allowed only with an explicit causal use expression.
+    nearby = re.search(rf'(?:{words}).{{0,12}}(?:심해졌|더\s*심해|올라왔|올라오|올라와|올라옵|생겼|났|뒤집)', part)
+    return bool(usage) or (not background and bool(nearby))
 
 def clauses(text):
-    return [s.strip() for s in re.split(r'[.!?\n]+|(?:지만|그런데|하지만)', text or '') if s.strip()]
+    return review_clauses(text)
 
 def extract_attributes(review):
     parts = clauses(review.get('content') or '')
@@ -79,7 +90,7 @@ def extract_attributes(review):
             neg = any(re.search(p, part) for p in negative_patterns)
             if pos and not NEGATION.search(part) and not CONDITIONAL.search(part):
                 positive.append(part[:180])
-            if neg and not re.search(r'(?:무겁|답답|무너|부족|아쉬).{0,5}(?:않|없)', part):
+            if neg and not CONDITIONAL.search(part) and not re.search(r'(?:무겁|답답|무너|부족|아쉬).{0,5}(?:않|없)', part):
                 negative.append(part[:180])
         result[attr] = 4.0 if positive and not negative else 2.0 if negative and not positive else None
         result['evidence'][attr] = {'positive': positive[:2], 'negative': negative[:2]}

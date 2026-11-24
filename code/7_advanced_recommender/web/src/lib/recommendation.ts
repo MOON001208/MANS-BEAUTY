@@ -1,6 +1,6 @@
 import type { Product, SkinType, SkinConcern, ShadeChoice, ApplicationMethod, ShadeLineup, PriorityAttr, WearAttributeKey } from './supabase';
 
-export const PROFILE_VERSION = 'rules-ko-v3';
+export const PROFILE_VERSION = 'rules-ko-v4';
 // A policy prior, not a learned parameter or probability of correctness.
 export const EVIDENCE_PRIOR = 5;
 export const FEATURE_CONFIG = [
@@ -206,7 +206,9 @@ export function classifyShadeMatch(product: Product, shade: ShadeChoice | null):
 }
 
 export function hasCurrentProfile(product: Product): boolean {
-  return product.profile_metadata?.version === PROFILE_VERSION;
+  // Both versions use the same public schema. This keeps live results available
+  // while the new extractor's profiles are rolled out after the compatible web.
+  return [PROFILE_VERSION, 'rules-ko-v3'].includes(product.profile_metadata?.version ?? '');
 }
 
 export function getCompatScore(product: Product, skinType: SkinType): number | null {
