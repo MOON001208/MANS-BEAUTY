@@ -4,7 +4,7 @@ import { IngredientDetails } from '../components/IngredientDetails';
 
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
-import { attributeEvidence, FEATURE_CONFIG, bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
+import { attributeEvidence, FEATURE_CONFIG, bestExplicitShadeOption, bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
 import { loadCatalog } from '@/lib/catalog';
 import Image from 'next/image';
 
@@ -89,18 +89,24 @@ function IngredientBadge({ level }: { level: string | null }) {
 }
 
 // ─── 컴포넌트: 상품 카드 ─────────────────────────────────────────────────────
+const productTypeLabels: Record<string, string> = {
+  cushion: '쿠션', liquid: '리퀴드 파운데이션', stick: '스틱 파운데이션',
+  tone_lotion: '톤로션/BB', concealer: '컨실러', primer: '프라이머/베이스',
+  shading: '쉐이딩', powder: '파우더/팩트',
+  foundation_unknown: '파운데이션 (제형 미확인)', lip: '립 메이크업',
+};
+
 function ProductCard({ product, skinType, userShade, onClick, rank }: {
   product: Product; skinType: SkinType; userShade: ShadeChoice | null;
   onClick: () => void; rank: number;
 }) {
-  const typeLabel: Record<string, string> = { cushion: '쿠션', liquid: '리퀴드', stick: '스틱', tone_lotion: '톤로션/BB', concealer: '컨실러' };
   const compatScore = getCompatScore(product, skinType);
   const rankColors = ['', 'linear-gradient(135deg,#ffd700,#ff8c00)', 'linear-gradient(135deg,#c0c0c0,#808080)', 'linear-gradient(135deg,#cd7f32,#8b4500)'];
 
   // Only display an exact known shade; never invent an adjacent or default shade.
-  const recommendedShadeStr = userShade && userShade !== 'any' && product.suitable_shades?.includes(userShade) ? userShade : '';
+  const exactOption = bestExplicitShadeOption(product, userShade);
   const lineup = shadeLineup(product);
-  const lineupOption = product.suitable_shades?.length ? null : bestShadeOption(product, userShade);
+  const lineupOption = exactOption ? null : bestShadeOption(product, userShade);
   const lineupPlace = !lineupOption ? '' : lineupOption.position === 0 ? '가장 밝은 쪽' : lineupOption.position === 1 ? '가장 어두운 쪽' : '중간';
 
   return (
@@ -124,7 +130,7 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
               product.product_type === 'stick' ? 'rgba(168,85,247,0.8)' :
                 product.product_type === 'tone_lotion' ? 'rgba(20,184,166,0.8)' : 'rgba(59,130,246,0.8)',
           }}>
-            {typeLabel[product.product_type ?? ''] ?? product.category}
+            {productTypeLabels[product.product_type ?? ''] ?? '제형 미확인'}
           </span>
         </div>
       </div>
@@ -159,22 +165,26 @@ function ProductCard({ product, skinType, userShade, onClick, rank }: {
             </div>
           </div>
         </div>
-        {recommendedShadeStr && (
+        {exactOption && (
           <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
             <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>💡 선택 호수와 일치하는 옵션: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>
-              {product.shade_options?.[recommendedShadeStr] || `${recommendedShadeStr}호`}
+              {exactOption.name}{exactOption.sold_out && ' (현재 품절)'}
             </span>
           </div>
         )}
         {lineupOption && lineup && (
           <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.1)' }}>
-            <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>🎨 이 제품에서 고를 옵션: </span>
+            <span style={{ fontSize: '0.7rem', color: '#a5b4fc', fontWeight: 600 }}>🎨 브랜드 내 상대 밝기: </span>
             <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>{lineupOption.label}</span>
             <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginLeft: '6px' }}>
               ({lineup.options.length}종 중 {lineupPlace}{lineupOption.sold_out ? ', 현재 품절' : ''})
             </span>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>선택한 {userShade}호와 같은 밝기인지는 확인되지 않았어요.</div>
           </div>
+        )}
+        {userShade && userShade !== 'any' && !exactOption && !lineupOption && (
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>선택한 {userShade}호에 맞는 옵션 정보가 없어요.</p>
         )}
       </div>
     </div>
@@ -376,6 +386,7 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
   const meta = hasCurrentProfile(product) ? product.profile_metadata : null;
   const scopedWear = useMemo(() => wearScope ? meta?.option_wear?.[wearScope]?.attributes : meta?.wear_attributes, [meta, wearScope]);
   const evidenceIds = useMemo(() => [...new Set([
+    ...(meta?.formulation?.evidence_review_ids ?? []),
     ...Object.values(meta?.evidence_review_ids ?? {}).flat(),
     ...Object.values(meta?.concern_evidence_ids ?? {}).flat(),
     ...Object.values(scopedWear ?? {}).flatMap(entry => [...entry.positive_review_ids, ...entry.negative_review_ids, ...entry.mixed_review_ids]),
@@ -385,7 +396,7 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
     if (!evidenceIds.length) return;
     const controller = new AbortController();
     supabase.from('reviews').select('id,product_id,rating,content,skin_type,skin_tone,skin_trouble,option_name,created_at,is_best')
-      .in('id', evidenceIds).abortSignal(controller.signal)
+      .eq('product_id', product.id).in('id', evidenceIds).abortSignal(controller.signal)
       .then(({ data, error }) => {
         if (controller.signal.aborted) return;
         setEvidenceById(new Map(((data || []) as Review[]).map(r => [r.id, r])));
@@ -393,7 +404,7 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
         setEvidenceError(error ? '근거 리뷰를 불러오지 못했습니다.' : '');
       });
     return () => controller.abort();
-  }, [evidenceIds]);
+  }, [evidenceIds, product.id]);
 
   const modalLineup = shadeLineup(product);
   const modalPick = bestShadeOption(product, userShade);
@@ -436,6 +447,14 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
                 <IngredientBadge level={hasCurrentProfile(product) ? product.ingredient_level : null} />
               </div>
               <h2 style={{ fontSize: '1.15rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '10px' }}>{product.name}</h2>
+              <p>{productTypeLabels[product.product_type ?? ''] ?? '제형 미확인'}</p>
+              {meta?.formulation?.basis === 'seller_verified' && meta.formulation.source_url?.startsWith('https://image.oliveyoung.co.kr/') && (
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                  {meta.formulation.verified_fact}{' '}
+                  <a href={meta.formulation.source_url} target="_blank" rel="noopener noreferrer">판매자 상품 사진 보기</a>
+                </p>
+              )}
+              {renderEvidence('formulation', meta?.formulation?.evidence_review_ids)}
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <StarRating rating={product.star_rating || 0} />
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>리뷰 {product.review_count?.toLocaleString()}개</span>
@@ -516,7 +535,7 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
             </div>
           )}
 
-          {!product.suitable_shades?.length && modalLineup && (
+          {modalLineup && (
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '6px' }}>🎨 이 제품의 호수 (밝은 순)</h3>
               <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
@@ -533,12 +552,21 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
                       textDecoration: option.sold_out ? 'line-through' : 'none',
                       border: `1px solid ${picked ? 'rgba(99,102,241,0.4)' : 'var(--border-color)'}`,
                     }}>
-                      {option.label}{option.sold_out && ' (품절)'}{picked && ' ← 선택한 톤에 가장 가까움'}
+                      {option.label}{option.sold_out && ' (품절)'}{picked && ' ← 선택 조건에서 확인할 옵션'}
                     </span>
                   );
                 })}
               </div>
             </div>
+          )}
+
+          {!modalLineup && !!product.source_options?.length && (
+            <section aria-label="판매자 옵션" style={{ marginBottom: 16 }}>
+              <h3>판매자 옵션</h3>
+              {product.source_options.map((option, index) => (
+                <p key={option.id ?? index}>{option.name?.trim() || product.name}{option.sold_out && ' (품절)'}</p>
+              ))}
+            </section>
           )}
 
           <IngredientDetails product={product} />
@@ -618,7 +646,10 @@ export default function HomePage() {
     const controller = new AbortController();
     loadCatalog(controller.signal).then(result => {
       if (controller.signal.aborted) return;
-      setProducts(result.products);
+      setProducts(result.products.filter(p => {
+        const reason = p.profile_metadata?.recommendation_eligibility?.exclusion_reason;
+        return reason !== 'mixed_set' && reason !== 'lip_primary' && reason !== 'lip_contaminated_reviews';
+      }));
       setCatalogCapturedAt(result.source === 'snapshot' ? result.capturedAt ?? null : null);
       setLoadError('');
       setLoading(false);
@@ -636,7 +667,7 @@ export default function HomePage() {
     if (mode === 'result' && quizResult?.skinType) {
       return selectRecommendations(products, { ...quizResult, skinType: quizResult.skinType });
     }
-    const filtered = searchProducts(products, browseSearch).filter(p => browseCategory === 'all' || p.category?.includes(browseCategory));
+    const filtered = searchProducts(products, browseSearch).filter(p => browseCategory === 'all' || p.product_type === browseCategory);
     return filtered.sort((a, b) => browseSort === 'price_asc' ? (a.price ?? Infinity) - (b.price ?? Infinity) : browseSort === 'star_rating' ? (b.star_rating ?? 0) - (a.star_rating ?? 0) : (b.review_count ?? 0) - (a.review_count ?? 0));
   }, [products, mode, quizResult, browseSearch, browseCategory, browseSort]);
 
@@ -735,8 +766,8 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '10px', marginBottom: '22px' }}>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {[['all', '전체'], ['쿠션', '쿠션/파운데이션'], ['톤 로션', '톤 로션/BB']].map(([k, l]) => (
-                <button key={k} className={`filter-btn ${browseCategory === k ? 'active' : ''}`} onClick={() => setBrowseCategory(k)}>{l}</button>
+              {['all', 'cushion', 'liquid', 'stick', 'tone_lotion'].map(k => (
+                <button key={k} aria-pressed={browseCategory === k} className={`filter-btn ${browseCategory === k ? 'active' : ''}`} onClick={() => setBrowseCategory(k)}>{productTypeLabels[k] ?? '전체'}</button>
               ))}
             </div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>

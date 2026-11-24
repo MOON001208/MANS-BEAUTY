@@ -5,15 +5,19 @@
 // there are no human relevance labels or click logs yet, so NDCG/Recall would be
 // unfounded here. Ranks the same list the site ranks, via selectRecommendations.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { selectRecommendations, hasCurrentProfile, bestShadeOption, MIN_ANALYZED_REVIEWS, FEATURE_CONFIG, attributeEvidence } from '../src/lib/recommendation.ts';
+import { selectRecommendations, hasCurrentProfile, bestShadeOption, bestExplicitShadeOption, isShadeCompatible, MIN_ANALYZED_REVIEWS, FEATURE_CONFIG, attributeEvidence } from '../src/lib/recommendation.ts';
 
 const read = name => JSON.parse(readFileSync(new URL(`../tests/fixtures/${name}`, import.meta.url), 'utf-8'));
-const snapshot = read('catalog-snapshot.json');
+// Exercise the catalog shipped to users. The human comparison study has its own frozen fixture.
+const snapshot = JSON.parse(readFileSync(new URL('../public/catalog-fallback.json', import.meta.url), 'utf-8'));
 const { personas } = read('personas.json');
 const share = (n, total) => (total ? n / total : null);
 const pct = value => (value === null ? 'n/a' : `${(value * 100).toFixed(1)}%`);
 
 const ATTRIBUTES = ['coverage', 'longevity', 'lightweight'];
+// Dated catalog QA examples: these listings sell two different makeup products together.
+// Check their identity independently of the classifier that populates product_type.
+const mixedGiftIds = new Set(['A000000249713', 'A000000249714', 'A000000249774', 'A000000249778']);
 const scoreFor = (p, key) => attributeEvidence(p, key).score;
 
 function evaluate(persona) {
@@ -27,11 +31,14 @@ function evaluate(persona) {
   for (const p of results) {
     if (!hasCurrentProfile(p)) violations.push(`${p.id}: 구버전 프로필`);
     if ((meta(p).analyzed_count ?? 0) < MIN_ANALYZED_REVIEWS) violations.push(`${p.id}: 분석 리뷰 ${MIN_ANALYZED_REVIEWS}개 미만`);
-    if (['concealer', 'primer', 'powder', 'shading'].includes(p.product_type)) violations.push(`${p.id}: 전체 얼굴 커버 유형 아님`);
+    if (!['cushion', 'liquid', 'stick', 'tone_lotion', 'foundation_unknown'].includes(p.product_type) ||
+        meta(p).recommendation_eligibility?.eligible === false) violations.push(`${p.id}: 전체 얼굴 커버 추천 제외 대상`);
+    if (mixedGiftIds.has(p.id)) violations.push(`${p.id}: 서로 다른 본품을 묶은 기프트 세트`);
     if (['컨실러', '프라이머/베이스', '파우더/팩트', '쉐이딩'].includes(meta(p).source_category)) violations.push(`${p.id}: 전체 얼굴 커버 소분류 아님`);
     if (persona.applicationMethod === 'hand' && p.product_type !== 'tone_lotion') violations.push(`${p.id}: 손 사용 조건 위반`);
     if (persona.applicationMethod === 'tool' && p.product_type === 'tone_lotion') violations.push(`${p.id}: 도구 사용 조건 위반`);
-    if (wantsShade && p.suitable_shades?.length && !p.suitable_shades.includes(persona.shade)) violations.push(`${p.id}: 명시 호수 불일치`);
+    if (wantsShade && !isShadeCompatible(p, persona.shade)) violations.push(`${p.id}: 명시 호수 불일치`);
+    if (wantsShade && persona.shade !== '23' && p.id === 'A000000142173') violations.push(`${p.id}: 23 샌드 전용 상품`);
     for (const attr of ATTRIBUTES) {
       if (p[`${attr}_score`] != null && ((meta(p).evidence_counts?.[attr] ?? 0) < 3 || (meta(p).evidence_review_ids?.[attr] ?? []).length < 3)) {
         violations.push(`${p.id}: ${attr} 표시 근거 3건 미만`);
@@ -48,10 +55,10 @@ function evaluate(persona) {
     }
   }
 
-  const shadeKnown = results.filter(p => p.suitable_shades?.length);
+  const shadeKnown = wantsShade ? results.filter(p => bestExplicitShadeOption(p, persona.shade)) : [];
   // A product serves the tone if it states a matching shade or its own options
   // run light to dark, so the buyer can pick the right one.
-  const viaLineup = wantsShade ? results.filter(p => !p.suitable_shades?.length && bestShadeOption(p, persona.shade)) : [];
+  const viaLineup = wantsShade ? results.filter(p => !bestExplicitShadeOption(p, persona.shade) && bestShadeOption(p, persona.shade)) : [];
   const adverse = results.filter(p => persona.concerns.some(c =>
     (meta(p).negative_concern_counts?.[c] ?? 0) >= 3 &&
     (meta(p).negative_concern_counts?.[c] ?? 0) > (meta(p).positive_concern_counts?.[c] ?? 0)));
@@ -77,7 +84,7 @@ function evaluate(persona) {
     violations,
     // Requested shade is unavailable on some products; only a product that lists
     // shades and omits the requested one is a real conflict.
-    shade_conflict_rate: wantsShade ? share(shadeKnown.filter(p => !p.suitable_shades.includes(persona.shade)).length, shadeKnown.length) : null,
+    shade_conflict_rate: wantsShade ? share(results.filter(p => !isShadeCompatible(p, persona.shade)).length, results.length) : null,
     shade_lineup_rate: wantsShade ? share(viaLineup.length, results.length) : null,
     shade_unknown_rate: wantsShade ? share(results.length - shadeKnown.length - viaLineup.length, results.length) : null,
     concern_hit_rate: persona.concerns.length ? share(results.filter(p => persona.concerns.some(c => p.suitable_concerns?.includes(c))).length, results.length) : null,

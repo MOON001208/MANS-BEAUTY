@@ -50,22 +50,159 @@ export const SKIN_TYPE_COMPAT_COL = {
 /** Where each quiz tone sits on a product's own light-to-dark range. */
 export const SHADE_TARGET: Record<'21' | '23' | '25', number> = { '21': 0, '23': 0.5, '25': 1 };
 
+type ExplicitShade = '21' | '23' | '25';
+export type ShadeMatchKind = 'any' | 'exact' | 'relative' | 'unknown' | 'conflict';
+
+const QUIZ_SHADES: readonly ExplicitShade[] = ['21', '23', '25'];
+const EXPLICIT_SHADE_RANGE = /(?<!\d)(19|2\d)\s*[~～–-]\s*(19|2\d)\s*호/g;
+const EXPLICIT_SHADE_HO = /(?<!\d)(19|2\d)\s*호/g;
+const EXPLICIT_SHADE_CODE = /(?<!\d)(21|23|25)[NnCcWw]\d?(?![A-Za-z0-9가-힣])/g;
+const EXPLICIT_SHADE_HASH = /(?:^|[\s([/#])(?:no\.?\s*|#)(21|23|25)(?![A-Za-z0-9])/gi;
+const EXPLICIT_SHADE_TONE_AFTER = /(?<!\d)(21|23|25)\s+(?:라이트|내추럴|네추럴|뉴트럴|미디엄|아이보리|베이지|샌드|앰버|탄|페어|딥|다크)/g;
+const EXPLICIT_SHADE_TONE_BEFORE = /(?:라이트|내추럴|네추럴|뉴트럴|미디엄|아이보리|베이지|샌드|앰버|탄|페어|딥|다크)\s+(21|23|25)(?![\dA-Za-z]|ml|g|매|개|종)/gi;
+
+function isExplicitShade(value: string): value is ExplicitShade {
+  return value === '21' || value === '23' || value === '25';
+}
+
+/** Extracts cushion-scale shades (21/23/25) explicitly stated in an option or product title.
+ *  Brand-relative numbers (1호, 02호, 001) and non-shade units (24H, 20ml, 20매) never match. */
+export function parseExplicitShadeSpec(text: string | null | undefined): { hasExplicit: boolean; shades: Set<ExplicitShade> } {
+  const shades = new Set<ExplicitShade>();
+  if (!text) return { hasExplicit: false, shades };
+  let hasExplicit = false;
+  const remaining = text.replace(EXPLICIT_SHADE_RANGE, (_, left: string, right: string) => {
+    hasExplicit = true;
+    const low = Math.min(Number(left), Number(right));
+    const high = Math.max(Number(left), Number(right));
+    for (const candidate of QUIZ_SHADES) {
+      const n = Number(candidate);
+      if (n >= low && n <= high) shades.add(candidate);
+    }
+    return ' ';
+  });
+  for (const match of remaining.matchAll(EXPLICIT_SHADE_HO)) {
+    hasExplicit = true;
+    if (isExplicitShade(match[1])) {
+      shades.add(match[1]);
+    }
+  }
+  for (const pattern of [EXPLICIT_SHADE_CODE, EXPLICIT_SHADE_HASH, EXPLICIT_SHADE_TONE_AFTER, EXPLICIT_SHADE_TONE_BEFORE]) {
+    for (const match of remaining.matchAll(pattern)) {
+      if (isExplicitShade(match[1])) {
+        hasExplicit = true;
+        shades.add(match[1]);
+      }
+    }
+  }
+  return { hasExplicit, shades };
+}
+
+function optionShadeSpec(option: { name?: string | null; label?: string | null }) {
+  const fromName = parseExplicitShadeSpec(option.name);
+  const fromLabel = parseExplicitShadeSpec(option.label);
+  return {
+    hasExplicit: fromName.hasExplicit || fromLabel.hasExplicit,
+    shades: new Set<ExplicitShade>([...fromName.shades, ...fromLabel.shades]),
+  };
+}
+
+function isOptionShadeCompatible(option: { name?: string | null; label?: string | null }, shade: ExplicitShade): boolean {
+  const spec = optionShadeSpec(option);
+  return !spec.hasExplicit || spec.shades.has(shade);
+}
+
 export function shadeLineup(product: Product): ShadeLineup | null {
   return (hasCurrentProfile(product) ? product.profile_metadata?.shade_lineup : null) ?? null;
 }
 
-/** The option of this product closest to the requested tone, or null if it states none.
- *  Prefer in-stock options; if all are sold out, suggest the nearest one and
- *  let the card/modal display its sold-out status. */
+/** True unless the product explicitly states cushion-scale shade(s) that exclude `shade`.
+ *  Brand-relative lineups (1호/2호, 아이보리/베이지/샌드) and unstated shades stay eligible. */
+export function isShadeCompatible(product: Product, shade: ShadeChoice | null): boolean {
+  if (!shade || shade === 'any') return true;
+  // The current seller catalog includes sold-out shades that suitable_shades omits.
+  const catalogOptions = (product.source_options ?? []).filter(o => o.name?.trim());
+  if (catalogOptions.length) {
+    const specs = catalogOptions.map(o => parseExplicitShadeSpec(o.name));
+    if (specs.every(s => s.hasExplicit)) return specs.some(s => s.shades.has(shade));
+  }
+  if (product.suitable_shades?.length) {
+    const stated = new Set<ExplicitShade>();
+    for (const entry of product.suitable_shades) {
+      if (isExplicitShade(entry)) stated.add(entry);
+      else for (const s of parseExplicitShadeSpec(entry).shades) stated.add(s);
+    }
+    return stated.has(shade);
+  }
+  const shadeOptionEntries = Object.entries(product.shade_options ?? {});
+  if (shadeOptionEntries.length) {
+    return shadeOptionEntries.some(([key, label]) =>
+      key === shade || parseExplicitShadeSpec(key).shades.has(shade) || parseExplicitShadeSpec(label).shades.has(shade));
+  }
+  const lineupOptions = shadeLineup(product)?.options ?? [];
+  if (lineupOptions.length) {
+    const specs = lineupOptions.map(optionShadeSpec);
+    if (specs.every(spec => spec.hasExplicit)) {
+      return specs.some(spec => spec.shades.has(shade));
+    }
+    return true;
+  }
+  const sourceOptions = (product.source_options ?? [])
+    .filter(o => (o?.name ?? '').trim().length > 0);
+  if (sourceOptions.length) {
+    const specs = sourceOptions.map(o => parseExplicitShadeSpec(o.name));
+    if (specs.every(spec => spec.hasExplicit)) {
+      return specs.some(spec => spec.shades.has(shade));
+    }
+  }
+  const titleSpec = parseExplicitShadeSpec(product.name);
+  if (titleSpec.hasExplicit) {
+    return titleSpec.shades.has(shade);
+  }
+  return true;
+}
+
+/** Exact seller option, including its stock state. Relative brand numbers never match. */
+export function bestExplicitShadeOption(product: Product, shade: ShadeChoice | null) {
+  if (!shade || shade === 'any' || !isShadeCompatible(product, shade)) return null;
+  const sources = (product.source_options ?? []).filter(o => o.name?.trim());
+  const candidates = sources.length ? sources.map(o => ({ name: o.name!, sold_out: o.sold_out }))
+    : (shadeLineup(product)?.options ?? []);
+  const matching = candidates.filter(o => parseExplicitShadeSpec(o.name).shades.has(shade));
+  if (matching.length) return matching.find(o => !o.sold_out) ?? matching[0];
+  const title = parseExplicitShadeSpec(product.name);
+  if (!shadeLineup(product) && sources.length <= 1 && title.shades.has(shade)) {
+    return { name: sources[0]?.name || product.name, sold_out: sources[0]?.sold_out };
+  }
+  if (product.suitable_shades?.includes(shade)) {
+    return { name: product.shade_options?.[shade] || `${shade}호`, sold_out: undefined };
+  }
+  return null;
+}
+
+/** The option of this product closest to the requested tone, or null if it states none
+ *  or every option explicitly conflicts with the requested cushion shade.
+ *  Prefer in-stock options; if all compatible options are sold out, suggest the nearest
+ *  one and let the card/modal display its sold-out status. */
 export function bestShadeOption(product: Product, shade: ShadeChoice | null) {
   if (!shade || shade === 'any') return null;
   const options = shadeLineup(product)?.options;
   if (!options?.length) return null;
+  const compatible = options.filter(o => isOptionShadeCompatible(o, shade));
+  if (!compatible.length) return null;
   const target = SHADE_TARGET[shade];
-  const nearest = (list: typeof options) =>
+  const nearest = (list: typeof compatible) =>
     list.reduce((best, o) => Math.abs(o.position - target) < Math.abs(best.position - target) ? o : best);
-  const inStock = options.filter(o => !o.sold_out);
-  return nearest(inStock.length ? inStock : options);
+  const inStock = compatible.filter(o => !o.sold_out);
+  return nearest(inStock.length ? inStock : compatible);
+}
+
+export function classifyShadeMatch(product: Product, shade: ShadeChoice | null): ShadeMatchKind {
+  if (!shade || shade === 'any') return 'any';
+  if (!isShadeCompatible(product, shade)) return 'conflict';
+  if (bestExplicitShadeOption(product, shade)) return 'exact';
+  if (bestShadeOption(product, shade)) return 'relative';
+  return 'unknown';
 }
 
 export function hasCurrentProfile(product: Product): boolean {
@@ -90,9 +227,10 @@ export function calcRecommendScore(product: Product, skinType: SkinType, concern
   const features = featureAssessment(product, { ...wearPrefs, coveragePref, longevityPref, lightweightPref });
   score += features.points + features.supportBonus;
   if (shade && shade !== 'any') {
-    if (product.suitable_shades?.length) {
-      if (product.suitable_shades.includes(shade)) score += 15;
-      else score -= 20;
+    if (!isShadeCompatible(product, shade)) {
+      score -= 20;
+    } else if (bestExplicitShadeOption(product, shade)) {
+      score += 15;
     } else {
       // No 21/23/25 shade stated, but the product's own options may run light to
       // dark. Credit how closely its nearest option sits to the requested tone:
@@ -133,10 +271,11 @@ export const RESULT_LIMIT = 12;
 // ranks full-face base makeup. A concealer answers a different question -
 // hiding one spot - and its review scores describe that job, not this one.
 // Concealers stay in the catalog; they are just not an answer to this quiz.
-const RECOMMENDABLE_TYPES = new Set(['cushion', 'liquid', 'stick', 'tone_lotion']);
+const RECOMMENDABLE_TYPES = new Set(['cushion', 'liquid', 'stick', 'tone_lotion', 'foundation_unknown']);
 const NON_COVER_CATEGORIES = new Set(['컨실러', '프라이머/베이스', '메이크업베이스/프라이머', '파우더/팩트', '파우더', '쉐이딩']);
 
 export function isFullFaceBase(product: Product): boolean {
+  if (product.profile_metadata?.recommendation_eligibility?.eligible === false) return false;
   const category = product.profile_metadata?.source_category?.replace(/\s+/g, '') ?? '';
   return RECOMMENDABLE_TYPES.has(product.product_type ?? '') && !NON_COVER_CATEGORIES.has(category);
 }
@@ -146,11 +285,24 @@ export function selectRecommendations(products: Product[], quiz: QuizAnswers): (
   return products
     .filter(p => hasCurrentProfile(p) && (p.profile_metadata?.analyzed_count ?? 0) >= MIN_ANALYZED_REVIEWS)
     .filter(isFullFaceBase)
-    // An explicitly incompatible shade must not be rescued by unrelated scores.
-    // Products with only relative brand shades remain eligible as uncertain.
-    .filter(p => !quiz.shade || quiz.shade === 'any' || !p.suitable_shades?.length || p.suitable_shades.includes(quiz.shade))
+    // An explicitly incompatible shade must not be rescued by unrelated scores or fallback slots.
+    // Products with only relative brand shades or unstated shades remain eligible as uncertain.
+    .filter(p => isShadeCompatible(p, quiz.shade))
     .filter(p => quiz.applicationMethod === 'hand' ? p.product_type === 'tone_lotion' : quiz.applicationMethod === 'tool' ? p.product_type !== 'tone_lotion' : true)
     .map(p => ({ ...p, _score: calcRecommendScore(p, quiz.skinType, quiz.concerns, quiz.coveragePref, quiz.longevityPref, quiz.lightweightPref, quiz.shade, quiz) }))
     .sort((a, b) => b._score - a._score || a.id.localeCompare(b.id))
     .slice(0, RESULT_LIMIT);
+}
+
+/** Splits ranked recommendations into top/exact matches and uncertain/relative alternatives.
+ *  Explicitly conflicting shades are excluded from both primary and alternative lists. */
+export function splitRecommendations(products: Product[], quiz: QuizAnswers) {
+  const ranked = selectRecommendations(products, quiz);
+  if (!quiz.shade || quiz.shade === 'any') {
+    return { primary: ranked.slice(0, 3), alternatives: ranked.slice(3) };
+  }
+  return {
+    primary: ranked.filter(p => classifyShadeMatch(p, quiz.shade) === 'exact'),
+    alternatives: ranked.filter(p => classifyShadeMatch(p, quiz.shade) !== 'exact'),
+  };
 }

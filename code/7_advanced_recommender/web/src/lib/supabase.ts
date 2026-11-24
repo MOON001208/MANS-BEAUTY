@@ -31,6 +31,7 @@ export interface Product {
   lightweight_score: number | null;
   suitable_shades: string[] | null;
   shade_options: Record<string, string> | null;
+  source_options?: { id?: string; name?: string | null; sold_out?: boolean }[] | null;
   suitable_skin_types: string[] | null;
   suitable_concerns: string[] | null;
   compat_oily: number | null;
@@ -54,6 +55,11 @@ export interface WearEvidence {
   mixed_review_ids: string[];
 }
 export interface ProfileMetadata {
+  formulation?: {
+    basis: string; evidence_review_ids: string[];
+    source_url?: string; verified_at?: string; verified_fact?: string;
+  };
+  recommendation_eligibility?: { eligible: boolean; exclusion_reason: string | null };
   version?: string;
   metadata_revision?: number;
   source_category?: string | null;

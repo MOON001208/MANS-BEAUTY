@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-24T06:18:16.322Z",
+  "captured_at": "2026-11-24T14:36:29.567Z",
   "count": 87,
   "products": [
     {
@@ -38,8 +38,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ad835308d6ffd8c6ca7c88a512d6186635d824f9c26c9d1da12057c22b99d905",
-        "analyzed_at": "2026-11-24T06:05:08.580233+00:00",
+        "input_hash": "570a34831a953c79afcdc447d274d11e3c1aa6b2c01de21d9f1ba7976cb0a1a9",
+        "analyzed_at": "2026-11-24T14:32:05.915919+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -115,7 +120,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011081"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 1,
@@ -139,6 +144,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:58.618652+00:00"
@@ -181,8 +192,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "7616fc94111ad9785d1ded2e885653ced2625f282ee972b9f1377a0daf462cce",
-        "analyzed_at": "2026-11-24T06:05:09.238087+00:00",
+        "input_hash": "0761fed0f7ac62fdd791b697c9e3bcb69eeb296f05782b1685abc23e450f16d9",
+        "analyzed_at": "2026-11-24T14:32:06.987432+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -240,7 +256,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011082"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 5,
@@ -276,6 +292,12 @@
         },
         "positive_concern_counts": {
           "pore": 3
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (프라이머/베이스)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:23.572624+00:00"
@@ -316,8 +338,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "7ec5a58e32c372e5aacf2dacb9f38df38304ab2ed5d6fc1a3c26d5fc76d9cfaf",
-        "analyzed_at": "2026-11-24T06:05:09.881559+00:00",
+        "input_hash": "36fa3fb7ea0d4562d948454fcfb93998c8d8e79ac952913c7b833edf4edc246c",
+        "analyzed_at": "2026-11-24T14:32:07.601113+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -377,7 +404,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011083"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 3,
           "oily": 2,
@@ -397,6 +424,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "pore": 1
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (프라이머/베이스)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:18.576084+00:00"
@@ -435,8 +468,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "5d45b9f1e42f147cb41c6cca9f3a85539d13726896b6b4199818920cabc26d79",
-        "analyzed_at": "2026-10-24T10:51:19.067988+00:00",
+        "input_hash": "92131b3c03a7bbab5abe5f9a41173176f6dd845a3fea471479d1a10646e1793d",
+        "analyzed_at": "2026-11-24T14:32:08.183373+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -497,7 +535,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000107838"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 2,
@@ -516,7 +554,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:12:53.614488+00:00"
     },
@@ -556,8 +600,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "8fb1c6ca2049f2de32130b45cf48ca2dde761a17e9f5b6774584578cd67cbe77",
-        "analyzed_at": "2026-11-08T12:17:16.831985+00:00",
+        "input_hash": "2f397b4afae084f818d27150ef62924b9004d0b41f686d657d6ed4dcc20dd673",
+        "analyzed_at": "2026-11-24T14:32:08.739718+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -632,7 +681,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000122217"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 1,
@@ -662,6 +711,12 @@
         },
         "positive_concern_counts": {
           "pore": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:48.621018+00:00"
@@ -705,8 +760,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "d9b9df3790e4e639201786f36b2de1dbadea1ef9997644cda7d2672eccf3248e",
-        "analyzed_at": "2026-11-20T06:50:21.601201+00:00",
+        "input_hash": "ec3df0acd1cb31b5c8f7a840a91322242fbfc0c6d4482527f5bebdfb5311b66f",
+        "analyzed_at": "2026-11-24T14:32:09.317699+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -772,7 +832,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000122221"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 4,
           "oily": 5,
@@ -818,6 +878,12 @@
         "positive_concern_counts": {
           "acne": 2,
           "spots": 6
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:43.609967+00:00"
@@ -869,8 +935,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "03798fa4655e794a9c1e1e5c4acba93fddc76fb514e9a5846ab54a65745a4e5e",
-        "analyzed_at": "2026-11-24T06:16:31.763325+00:00",
+        "input_hash": "bec3ac47ef1432a848bd54a6135637f0150b63ca2b6dc6298b78121ed2340a76",
+        "analyzed_at": "2026-11-24T14:32:10.460403+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "핸섬커버쿠션 1호": {
             "attributes": {
@@ -1085,7 +1156,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000129149"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 30,
           "oily": 25,
@@ -1144,6 +1215,12 @@
           "pore": 3,
           "spots": 13,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:16:23.65409+00:00"
@@ -1193,8 +1270,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "361592a74536a2f1b3f93e1f1900e13ceed731b2ced146c36b4d7cca79b65c21",
-        "analyzed_at": "2026-11-24T06:16:32.917031+00:00",
+        "input_hash": "f54de28685e641b86a6bc27b19f4aef34d5f7828bb7c67f420d2399e32dcecba",
+        "analyzed_at": "2026-11-24T14:32:11.643958+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "라끌랑 슈퍼쉴드 옴므쿠션 1호": {
             "attributes": {
@@ -1442,7 +1524,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130798"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 14,
           "oily": 23,
@@ -1493,6 +1575,12 @@
           "pore": 1,
           "spots": 7,
           "redness": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:38.612703+00:00"
@@ -1543,8 +1631,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "8a9bf06c8155b270de9f88b45f5c74fd793b46e698e543aa54298dbddffaf282",
-        "analyzed_at": "2026-11-20T06:50:25.907777+00:00",
+        "input_hash": "2da3e704bf8ab1e36395364d010ea963c42e03bcda69789992bcfaac9d2b4db9",
+        "analyzed_at": "2026-11-24T14:32:12.456396+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "내추럴 커버 옴므쿠션 1호": {
             "attributes": {
@@ -1812,7 +1905,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130814"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 12,
           "oily": 12,
@@ -1871,6 +1964,12 @@
           "pore": 1,
           "spots": 10,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:33.612979+00:00"
@@ -1913,8 +2012,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c3f723f4c4aa8cc337c6875d2f3d140c392c7f95b3e276138dff45c7d05fd598",
-        "analyzed_at": "2026-11-24T06:05:14.999525+00:00",
+        "input_hash": "a7cf0dda22231337dea40471e1854f2fe6664721f5a0f22f6b41f42114f95397",
+        "analyzed_at": "2026-11-24T14:32:13.283323+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -1989,7 +2093,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130815"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 13,
           "oily": 10,
@@ -2036,6 +2140,12 @@
           "acne": 2,
           "pore": 2,
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:28.618144+00:00"
@@ -2085,8 +2195,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "20ccff589a4db11e457ccb1ee38dabe6323bcea2023f45ac54d48e1ff966c03d",
-        "analyzed_at": "2026-11-24T06:05:15.793599+00:00",
+        "input_hash": "9ed0ec7cdf74ecd4177556ec1fc21296ea0da46342b5e370423f57a1d5059700",
+        "analyzed_at": "2026-11-24T14:32:14.557315+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "샌드": {
             "attributes": {
@@ -2273,7 +2388,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000131799"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 17,
           "oily": 16,
@@ -2322,6 +2437,12 @@
           "acne": 1,
           "pore": 1,
           "spots": 4
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (쉐이딩)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:10:08.567908+00:00"
@@ -2362,8 +2483,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "92f665c95b349017f765f18ac6cfa5bb827a873536d56a13f9e97a85668964ed",
-        "analyzed_at": "2026-11-24T06:16:35.121959+00:00",
+        "input_hash": "a66189c201f4d3693ce4a88bbb7aeaf92e13cbbe811b77e48d771ccf7601d15e",
+        "analyzed_at": "2026-11-24T14:32:16.098134+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -2433,7 +2559,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000131803"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 3,
@@ -2467,6 +2593,12 @@
         "positive_concern_counts": {
           "acne": 1,
           "pore": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:33.624131+00:00"
@@ -2509,8 +2641,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "6d2bdee57bff0a560100f45309d7ffe09b2f58979a465a98366b8f70309c0ab2",
-        "analyzed_at": "2026-10-24T10:51:19.417017+00:00",
+        "input_hash": "70208b86d5a69e0a1f3d74362f0d9594ef74a7a99e5236e5c94eadb7361c6a59",
+        "analyzed_at": "2026-11-24T14:32:17.811543+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -2578,7 +2715,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000138949"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 9,
           "oily": 18,
@@ -2597,7 +2734,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (프라이머/베이스)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:13:28.625746+00:00"
     },
@@ -2641,8 +2784,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "216217e01000bd93d3b76ee8f020c8cc670118506fdcade2afedd89dad2486a5",
-        "analyzed_at": "2026-10-24T10:51:19.449992+00:00",
+        "input_hash": "20b64522fed64bcebbc3768744a8884d37eca1e05bbe5fe3f5b168ad78f6f06d",
+        "analyzed_at": "2026-11-24T14:32:18.790474+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 0,
+            "stick": 0,
+            "liquid": 9
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "11555175",
+            "11650637",
+            "12489826",
+            "14053511",
+            "15819686"
+          ]
+        },
         "option_wear": {
           "매치업 탄": {
             "attributes": {
@@ -2928,7 +3087,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000142173"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 4,
           "oily": 5,
@@ -2979,6 +3138,12 @@
           "pore": 3,
           "spots": 1,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-10-24T09:18:17.694994+00:00"
@@ -3017,8 +3182,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "f645bd3e84198c265807c4576d43a96c6df6ee85c62117a49d8debb4b7456cfb",
-        "analyzed_at": "2026-10-24T10:51:19.451464+00:00",
+        "input_hash": "b4898a001f7bf8f445bb1a9dda3572950458488b357e9fc62c596980f4d93dbf",
+        "analyzed_at": "2026-11-24T14:32:19.391273+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -3074,7 +3244,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000143169"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 0,
@@ -3090,7 +3260,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:12:23.612513+00:00"
     },
@@ -3128,8 +3304,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "6764f9b8c128ce6d468f26e645ef729eb70c74c7ea77dfd594f8d3b949a33b64",
-        "analyzed_at": "2026-10-24T10:51:19.452848+00:00",
+        "input_hash": "4ea9d264374b441dcdef4f16fa16d6dc7a1151fceee811cdbccbce67287007d3",
+        "analyzed_at": "2026-11-24T14:32:19.939489+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -3187,7 +3368,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000143170"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 0,
@@ -3207,6 +3388,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "acne": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:16:18.661189+00:00"
@@ -3257,8 +3444,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "43513d78b061e133edd0433549a60cce3304279858b37777b2e988662d4581b4",
-        "analyzed_at": "2026-10-24T10:51:19.456868+00:00",
+        "input_hash": "7b656dc606af8042c1b93d2ab28656eb9dc0903a49b9735ab4979256ff94d673",
+        "analyzed_at": "2026-11-24T14:32:20.502651+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "3호 샌드15g": {
             "attributes": {
@@ -3452,7 +3644,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161006"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 1,
@@ -3479,6 +3671,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:58.617194+00:00"
@@ -3488,7 +3686,7 @@
       "name": "[덱스 PICK] 오브제 내추럴 커버 파운데이션 13g (SPF50+, PA++++)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 3883,
       "price": 36800,
@@ -3531,8 +3729,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "314977273eddebaa82387b0fc2585e41bd595d1133be5b4d4c163ebbbf580f89",
-        "analyzed_at": "2026-10-24T10:51:19.496761+00:00",
+        "input_hash": "ad74e0dcf78f13b2f3f0d7818b5ce0e548838602726b47bba89c15ee840e51dd",
+        "analyzed_at": "2026-11-24T14:35:14.023961+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 0,
+            "stick": 9,
+            "liquid": 0
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "24338533",
+            "24611562",
+            "26234136",
+            "26457749",
+            "26903381"
+          ]
+        },
         "option_wear": {
           "[단품] 3호 샌드 13g": {
             "attributes": {
@@ -3765,7 +3979,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161010"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 13,
           "oily": 15,
@@ -3812,6 +4026,12 @@
           "acne": 1,
           "pore": 1,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:10:58.592579+00:00"
@@ -3862,8 +4082,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c38b64421fe5e084595ba14af1f56750a86701ebc8e1fdd6ee0596ab92049702",
-        "analyzed_at": "2026-11-24T06:05:20.119561+00:00",
+        "input_hash": "d5c528472180189fbe2db95e7d6479aecf945c6a182b73a549f907c6d6f39906",
+        "analyzed_at": "2026-11-24T14:32:22.471152+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "라이트베이지": {
             "attributes": {
@@ -4067,7 +4292,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161093"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 32,
           "oily": 30,
@@ -4124,6 +4349,12 @@
           "acne": 15,
           "pore": 2,
           "spots": 45
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:16:13.652297+00:00"
@@ -4191,8 +4422,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "14a77d8f6b2ad99b1c1eb96e8080d55127b0488a6d2308154577a36a5903586d",
-        "analyzed_at": "2026-11-24T06:05:21.696851+00:00",
+        "input_hash": "d643d4f41b4968fceef90f536b103fc38897936e555c6e64ce7f40d470c42add",
+        "analyzed_at": "2026-11-24T14:32:24.082567+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 0,
+            "stick": 1,
+            "liquid": 7
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "17826450",
+            "22997799",
+            "47216994",
+            "53567797",
+            "63147571"
+          ]
+        },
         "option_wear": {
           "1호": {
             "attributes": {
@@ -4563,7 +4810,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000178092"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 36,
           "oily": 48,
@@ -4624,6 +4871,12 @@
           "acne": 5,
           "pore": 11,
           "spots": 13
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:16:08.633387+00:00"
@@ -4664,8 +4917,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ebe6f2fa7421ecaee60149c4b9c54c28cbe0f56d1a6f3cbc577ac028c37f5cd1",
-        "analyzed_at": "2026-10-24T10:51:19.721490+00:00",
+        "input_hash": "8f77c8406e17f49e02ffffbdca1fa222ae3bf83d75603042dc979ab9b3cb7048",
+        "analyzed_at": "2026-11-24T14:32:25.007236+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "파운데이션 1호": {
             "attributes": {
@@ -4874,7 +5132,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000182290"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -4894,6 +5152,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": "혼합 세트 구성 (+아이브로우)",
+          "eligible": false,
+          "exclusion_reason": "mixed_set",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:03.584593+00:00"
@@ -4945,8 +5209,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ad400d71b4c650185c66cb52244ad668c77cd5354be1fa674003241d07af90b1",
-        "analyzed_at": "2026-11-20T06:50:37.356472+00:00",
+        "input_hash": "fcb58232b17d5e2c73e87be2699b5b7735e53eac839d9da268dee1d09d030b17",
+        "analyzed_at": "2026-11-24T14:32:26.027913+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호": {
             "attributes": {
@@ -5175,7 +5444,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184127"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 7,
           "oily": 3,
@@ -5207,7 +5476,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:16:03.640168+00:00"
     },
@@ -5248,8 +5523,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "e3bd7463a3a28eb04b51faba55faf278dee20a3a489c5868a9b0e51fedb1951a",
-        "analyzed_at": "2026-11-20T06:50:38.006985+00:00",
+        "input_hash": "b7c641378de1cb70bda0aec2d373f0bfce01928218edee46acd51458bcf34935",
+        "analyzed_at": "2026-11-24T14:32:26.660098+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -5315,7 +5595,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000186336"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 5,
           "oily": 0,
@@ -5344,6 +5624,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "pore": 2
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:10:28.577831+00:00"
@@ -5395,8 +5681,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "0a4821bd1c9f7e9aff3231f916de6dce252c3bed52a7426a20dad3c2fb3f9d1d",
-        "analyzed_at": "2026-11-24T06:05:23.325857+00:00",
+        "input_hash": "c5f47dc37820011f2d6c314d418a37b8dde271019ec4a7c970186fc0dec72e73",
+        "analyzed_at": "2026-11-24T14:32:27.362011+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "내추럴 커버(25호)": {
             "attributes": {
@@ -5551,7 +5842,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187410"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 1,
@@ -5586,6 +5877,12 @@
         },
         "positive_concern_counts": {
           "acne": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:53.633053+00:00"
@@ -5624,8 +5921,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ce51e5fa7474084c4274530b762342af87be50c70ae8aa00a2c83768ddd9cba1",
-        "analyzed_at": "2026-11-20T06:50:39.680674+00:00",
+        "input_hash": "7a26e5eec7203707738917fc4c98df854964583256ebb865d28b0a33c01a44b1",
+        "analyzed_at": "2026-11-24T14:32:27.973992+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -5681,7 +5983,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187413"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -5710,6 +6012,12 @@
         "positive_concern_counts": {
           "acne": 1,
           "spots": 2
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:48.641907+00:00"
@@ -5748,8 +6056,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "63f02a8ae9a44d9f2715555ea8715efa4b76d0b30517169ef6ca2fb406c8d231",
-        "analyzed_at": "2026-11-20T06:50:40.289375+00:00",
+        "input_hash": "c627c129b7f8b4aa5643b6fb03023ca5fed2e0cd155a217d7bec6723bdcce1d5",
+        "analyzed_at": "2026-11-24T14:32:28.556087+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -5805,7 +6118,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187415"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -5822,7 +6135,13 @@
         "negative_concern_counts": {
           "acne": 1
         },
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (프라이머/베이스)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:15:43.6459+00:00"
     },
@@ -5863,8 +6182,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "7ef1c5c0dc882d7921217600d3e2b58b8d0661ebaac86e6b74ec26a6bd306bde",
-        "analyzed_at": "2026-11-24T06:05:24.791224+00:00",
+        "input_hash": "65752bc141a97df9278a3e1b8a7a46709d15f5c1d987a3f173e9f80d65f50e3e",
+        "analyzed_at": "2026-11-24T14:32:29.645651+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -5934,7 +6258,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000189059"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 11,
           "oily": 10,
@@ -5969,6 +6293,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "pore": 2
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:10:53.58729+00:00"
@@ -6011,8 +6341,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "a77e2b87dc7d493ba70b17cd80d1d73637dc09bb05640820f5267d9fb079aed4",
-        "analyzed_at": "2026-11-20T06:50:41.817355+00:00",
+        "input_hash": "76eac1f0852fc34632cd700238476a4b26178d608eeddcbabd0e5eb2e83d5a13",
+        "analyzed_at": "2026-11-24T14:32:30.225032+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -6079,7 +6414,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000191833"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 19,
           "oily": 7,
@@ -6107,6 +6442,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:38.643403+00:00"
@@ -6139,8 +6480,13 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "30193c72d36ff30bfd25563fa44085de2d278dcef3381a3abb04b9554bf9b68e",
-        "analyzed_at": "2026-10-24T10:51:19.809280+00:00",
+        "input_hash": "d9d1c79496f06f9193d6b1bb65dcf1363c17fec12c19410dfde7861e7f7e5067",
+        "analyzed_at": "2026-11-24T14:32:30.770990+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "트루 톤 로션 에어리+리필 더블기획": {
             "attributes": {
@@ -6267,7 +6613,7 @@
           ],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000192866"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 0,
@@ -6277,7 +6623,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-02-25T08:42:48.346423+00:00"
     },
@@ -6318,8 +6670,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "398009392d613577095cdf962edd9d1a2fe40ae25420ccabbb331f480d3a43dd",
-        "analyzed_at": "2026-11-24T06:05:26.284762+00:00",
+        "input_hash": "05f630163d9641c1b6b3cee77ebcb7e3825aa1535061575af662522502275f40",
+        "analyzed_at": "2026-11-24T14:32:31.499285+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -6385,7 +6742,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000196122"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 17,
           "oily": 4,
@@ -6402,7 +6759,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (쉐이딩)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:48.586284+00:00"
     },
@@ -6411,7 +6774,7 @@
       "name": "[1등파데] 오브제 내추럴 커버 파운데이션 단품/기획(+클렌징폼 50ml)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 7921,
       "price": 36800,
@@ -6455,8 +6818,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "507761318ea726596dc132e6750e24607403db6790a7ab5e090e33b634053deb",
-        "analyzed_at": "2026-11-24T06:05:29.119690+00:00",
+        "input_hash": "f51fc1996d600ed9021fed4b0d1553464f3e608477d9f0348678c7fd59233254",
+        "analyzed_at": "2026-11-24T14:35:24.112988+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 3,
+            "stick": 216,
+            "liquid": 2
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "12216128",
+            "12521174",
+            "12521238",
+            "12947568",
+            "13319517"
+          ]
+        },
         "option_wear": {
           "1호": {
             "attributes": {
@@ -7317,7 +7696,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000198001"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 84,
           "oily": 122,
@@ -7390,6 +7769,12 @@
           "spots": 27,
           "redness": 5,
           "wrinkle": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:38.604275+00:00"
@@ -7450,8 +7835,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "657775c47de063b438055a293f84df68f6424ff1bd4b7a0f4fa07095b4304531",
-        "analyzed_at": "2026-11-24T06:05:29.900079+00:00",
+        "input_hash": "4367f02e4cfe2ee1c489d0b0555cacda3add690d1b5f58296069b07165db8ecf",
+        "analyzed_at": "2026-11-24T14:32:34.934964+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "3호 샌드": {
             "attributes": {
@@ -7794,7 +8184,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000200388"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 17,
           "oily": 22,
@@ -7844,6 +8234,12 @@
           "acne": 1,
           "pore": 3,
           "spots": 6
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:23.627796+00:00"
@@ -7853,7 +8249,7 @@
       "name": "라끌랑 올데이 픽싱 커버 파운데이션 30ml (1호/2호) 2종 택1",
       "brand": "라끌랑",
       "category": "쿠션/파운데이션",
-      "product_type": "cushion",
+      "product_type": "liquid",
       "star_rating": 4.9,
       "review_count": 55,
       "price": 37000,
@@ -7876,8 +8272,16 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "d795447214b0d8c943f7011faaa50127271dab4a535c906cd66fdc835c518af5",
-        "analyzed_at": "2026-10-24T10:51:20.280580+00:00",
+        "input_hash": "b2abf0521b9dce090229da68f07079a1bcbd6f7b5085d9151a790847ae2f2cd5",
+        "analyzed_at": "2026-11-24T14:35:25.265196+00:00",
+        "formulation": {
+          "basis": "seller_verified",
+          "status": "confirmed",
+          "source_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0020/A00000020300004ko.jpg?l=ko",
+          "verified_at": "2026-11-24",
+          "verified_fact": "판매자 대표 사진에서 30ml 투명 병 액상 파운데이션을 봉 팁 어플리케이터로 꺼내 도포하고 상단 브러시로 펴 바르는 리퀴드 제형 확인",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호 밝은피부용(23-25호)": {
             "attributes": {
@@ -8036,7 +8440,7 @@
           ],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000203000"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -8071,6 +8475,12 @@
         "positive_concern_counts": {
           "pore": 1,
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-02-25T09:42:32.628173+00:00"
@@ -8080,7 +8490,7 @@
       "name": "듀이셀 트루빔 파운데이션 12g",
       "brand": "듀이셀",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "stick",
       "star_rating": 5,
       "review_count": 850,
       "price": 33000,
@@ -8118,8 +8528,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ac8c65049247d624a6622a5fd2a26207d8e90e1386b9d66dc201666c848c106d",
-        "analyzed_at": "2026-10-24T10:51:20.555521+00:00",
+        "input_hash": "17c36ce5079f3cc29531f5d9634e1f9fa8da2da28cb44e1231286511d48e47cc",
+        "analyzed_at": "2026-11-24T14:35:27.184048+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 7,
+            "stick": 250,
+            "liquid": 2
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "27846664",
+            "27969708",
+            "27990881",
+            "28108682",
+            "28131123"
+          ]
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -8215,7 +8641,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204825"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 34,
           "oily": 50,
@@ -8284,6 +8710,12 @@
           "spots": 62,
           "redness": 1,
           "wrinkle": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:33.640674+00:00"
@@ -8329,8 +8761,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c41d68d17b12aaf3f36c28e7b9391b78b91e7cba908229baef6bd50d77e05446",
-        "analyzed_at": "2026-11-08T12:17:41.820434+00:00",
+        "input_hash": "133cac804961199b07099cc3c76dd8ca36c100e9cc4e1c0e5b551e064738dae9",
+        "analyzed_at": "2026-11-24T14:32:38.513301+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           " 01 코어썸": {
             "attributes": {
@@ -8611,7 +9048,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204828"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 17,
           "oily": 20,
@@ -8665,6 +9102,18 @@
           "acne": 5,
           "pore": 2,
           "spots": 7
+        },
+        "recommendation_eligibility": {
+          "detail": "립 관련 리뷰 혼입 (168/386, 43.5%)",
+          "eligible": false,
+          "exclusion_reason": "lip_contaminated_reviews",
+          "evidence_review_ids": [
+            "23012440",
+            "25227243",
+            "25248524",
+            "25259143",
+            "25266625"
+          ]
         }
       },
       "last_updated_at": "2026-11-24T06:15:28.640408+00:00"
@@ -8724,8 +9173,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "14f521c0d34482ba527a2a548cb188f571144366f38bf67ed2eebab561d866c3",
-        "analyzed_at": "2026-11-24T06:16:51.568554+00:00",
+        "input_hash": "48ab2c7d3f1ec0aaab784c6c33dd368c030a4de8bf3c91cfc98030a8ceb04983",
+        "analyzed_at": "2026-11-24T14:32:39.980906+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[기획] 커버 로션 (중/건성용)": {
             "attributes": {
@@ -9164,7 +9618,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204975"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 25,
           "oily": 22,
@@ -9217,6 +9671,12 @@
           "acne": 2,
           "pore": 1,
           "spots": 17
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:33.602155+00:00"
@@ -9259,8 +9719,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "4676fb9eb859ae1b89419f18e042c8a735ea0fbf0f755e3f8fb232c55d0bd0a6",
-        "analyzed_at": "2026-11-24T05:51:48.437551+00:00",
+        "input_hash": "a0a439db31eb32f886c5485fe9e1433970a88c64b9c7bd6f108c6aaf9afdddc9",
+        "analyzed_at": "2026-11-24T14:32:40.568052+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -9321,7 +9786,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205624"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 14,
           "oily": 15,
@@ -9340,7 +9805,13 @@
         "negative_concern_counts": {
           "acne": 1
         },
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:18.579723+00:00"
     },
@@ -9382,8 +9853,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "87919f7e247190229a4859cd0ec9e2b0882412149d34ec4034f5c665fe1f4487",
-        "analyzed_at": "2026-11-24T06:05:34.605607+00:00",
+        "input_hash": "cde242b7f98c56c36c29b1f527153e6704b26b42da957413bb0ae8d69b19e775",
+        "analyzed_at": "2026-11-24T14:32:41.149894+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -9453,7 +9929,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205935"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 15,
           "oily": 5,
@@ -9463,7 +9939,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (쉐이딩)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:43.599875+00:00"
     },
@@ -9505,8 +9987,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "77cb99c5baa4f79e298187c2a56e12c2f9b28e1f805e7dd6eb399d3cebbf35b4",
-        "analyzed_at": "2026-11-20T06:50:55.620272+00:00",
+        "input_hash": "ef7b3a7a1ef0f320bfb5a29f3b38ed7d969ca84dcf7798e27012da5c3af9db49",
+        "analyzed_at": "2026-11-24T14:32:41.888071+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -9576,7 +10063,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205969"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 8,
           "oily": 11,
@@ -9611,6 +10098,12 @@
         "positive_concern_counts": {
           "spots": 1,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (프라이머/베이스)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:23.633565+00:00"
@@ -9661,8 +10154,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "5e992ff365c93429c51dc70f0837b9ccf8af5a04ac72b39840184d96057eb24a",
-        "analyzed_at": "2026-11-24T06:05:36.121879+00:00",
+        "input_hash": "21e899f0b56326ae9c7b7200704577742cf3fd517e134ebb7b28a3836fbcc94a",
+        "analyzed_at": "2026-11-24T14:32:42.870862+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "03호 샌드베이지": {
             "attributes": {
@@ -9880,7 +10378,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205970"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 27,
           "oily": 17,
@@ -9931,6 +10429,12 @@
         "positive_concern_counts": {
           "pore": 4,
           "spots": 7
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:18.619755+00:00"
@@ -9973,8 +10477,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "59d3a1f38bf32ecfb9ad9e4c158292ab1ace8fade2fb0e0539f1cad7d9bcf927",
-        "analyzed_at": "2026-11-24T06:05:36.878417+00:00",
+        "input_hash": "a5ec5834aefd5fdeb2313997eee17552d7b98477d7f66907e23a687d5d0a1253",
+        "analyzed_at": "2026-11-24T14:32:43.657610+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -10042,7 +10551,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000206008"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 12,
           "oily": 11,
@@ -10066,6 +10575,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:38.640059+00:00"
@@ -10118,8 +10633,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "e6fc8f725cdeaf1e1fed54b9377d1a9ba3dfad32d99d9bc9bc1c63d227f784ee",
-        "analyzed_at": "2026-11-24T06:05:39.636333+00:00",
+        "input_hash": "c7976f7c673a9b13876e117f1edf15dd1ed4f579429974e65e9e3c4c1bfe1a7a",
+        "analyzed_at": "2026-11-24T14:32:46.056897+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "001": {
             "attributes": {
@@ -10348,7 +10868,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000206573"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 37,
           "oily": 79,
@@ -10422,6 +10942,12 @@
           "spots": 89,
           "redness": 6,
           "wrinkle": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:18.634623+00:00"
@@ -10469,8 +10995,13 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "dd122a5a3e026ea3d631f4e23031be527424a3c775ee4f967bdd1918afd09069",
-        "analyzed_at": "2026-11-24T06:16:59.200993+00:00",
+        "input_hash": "cc8dd71b3e524c10d11e12b7c4ab14d5c616120fe5e1d88e2200cc7e876dc630",
+        "analyzed_at": "2026-11-24T14:32:48.008391+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "톤 커버 로션 50ml+10ml": {
             "attributes": {
@@ -10775,7 +11306,7 @@
           ],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207177"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 65,
           "oily": 88,
@@ -10849,6 +11380,12 @@
           "spots": 59,
           "redness": 37,
           "wrinkle": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:08.613734+00:00"
@@ -10899,8 +11436,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ec9b545f7aaadf27009c56d04092df3b90758b3778a9986a629351d339fae2d5",
-        "analyzed_at": "2026-11-24T06:17:01.478088+00:00",
+        "input_hash": "3af39b2682925530ca4827cff29d423245234f2bd98efb9cba978be5181c43d9",
+        "analyzed_at": "2026-11-24T14:32:49.856938+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[단품]55ml 스킨톤 필터로션": {
             "attributes": {
@@ -11086,7 +11628,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207369"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 47,
           "oily": 43,
@@ -11147,6 +11689,12 @@
           "pore": 7,
           "spots": 16,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:13.629987+00:00"
@@ -11197,8 +11745,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "fcef44d7deae46671574f5085bb12bf1e9d8fc4c0914fa019bbb226dcf3dfae5",
-        "analyzed_at": "2026-11-08T12:17:53.291927+00:00",
+        "input_hash": "fb31b7bdd5dd5d8c226e3ae726d6391a9f6034648f21f952299c959a2bc26143",
+        "analyzed_at": "2026-11-24T14:32:50.413227+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "3호 베이지": {
             "attributes": {
@@ -11388,7 +11941,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207759"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 3,
           "oily": 2,
@@ -11409,6 +11962,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "acne": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:15:08.627478+00:00"
@@ -11452,8 +12011,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "89c9c06bdc9ab9c61e210079abdebc0e9243ec5089d2d032826a59c2216c9083",
-        "analyzed_at": "2026-10-24T10:51:21.592259+00:00",
+        "input_hash": "7fcbf4057d6e78dfdd99844d522ac62028d5dc4ba06d25b7d51fd6ef851b4f07",
+        "analyzed_at": "2026-11-24T14:32:50.964203+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호 라이트베이지": {
             "attributes": {
@@ -11600,7 +12164,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207762"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -11610,7 +12174,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:09:33.570416+00:00"
     },
@@ -11648,8 +12218,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "91c2d2cd88ed36b4bb81ab38a2ebfa752ca216bcf5cfa855f8c5fa2d0ad588b0",
-        "analyzed_at": "2026-10-24T10:51:21.594204+00:00",
+        "input_hash": "0e491205a13c59ac33e284c05c263afb9fae7ab5528aa87c5f453e4cd49f18e7",
+        "analyzed_at": "2026-11-24T14:32:51.541119+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -11707,7 +12282,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000208723"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -11717,7 +12292,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:15:03.630365+00:00"
     },
@@ -11726,7 +12307,7 @@
       "name": "듀이셀 트루빔 파운데이션 12g 기획(+토너패드 20매)",
       "brand": "듀이셀",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "stick",
       "star_rating": 4.9,
       "review_count": 990,
       "price": 29700,
@@ -11755,8 +12336,16 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "6b8aace966a3f71c33a7fb64af6bb5fe3353d9bebe3d0ab36e932c24b1a0779b",
-        "analyzed_at": "2026-11-24T06:05:44.838970+00:00",
+        "input_hash": "8908ef655c6bed777fd3b1143708b0642e4340193f240d15e4fe0b22470a0ac9",
+        "analyzed_at": "2026-11-24T14:35:37.834654+00:00",
+        "formulation": {
+          "basis": "seller_verified",
+          "status": "confirmed",
+          "source_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021030706ko.jpg?l=ko",
+          "verified_at": "2026-11-24",
+          "verified_fact": "판매자 대표 사진 본품 용기와 단상자에 Stick Type 및 고체 스틱 도식 표기, 큐라힐스 패드 20매 증정 명시 확인",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -11819,7 +12408,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000210307"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 1,
@@ -11835,7 +12424,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:38.583457+00:00"
     },
@@ -11873,8 +12468,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "b25b6df4783d8812b69f7a886741cd4dc692979d414075bbe60ec23cda4b7bec",
-        "analyzed_at": "2026-11-20T06:51:07.628131+00:00",
+        "input_hash": "06a73ef1e4b5efaeb010ea889b38b2d67eb80e5022e393767bb94fefe093f0d6",
+        "analyzed_at": "2026-11-24T14:32:52.620910+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -11933,7 +12533,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000210921"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 0,
@@ -11943,7 +12543,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:03.575111+00:00"
     },
@@ -12011,8 +12617,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c92b626c8c0dd6f27eb4449c5daed7034248a2ab8e8fcc95b4661d3bceec369c",
-        "analyzed_at": "2026-11-24T06:05:49.801427+00:00",
+        "input_hash": "b0fc2c4a0781ffb8b7c0b0294c4b745f5c2b9263ea24b0c2317b8419210499ec",
+        "analyzed_at": "2026-11-24T14:32:58.131757+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호": {
             "attributes": {
@@ -13775,7 +14386,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212063"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 215,
           "oily": 207,
@@ -13845,6 +14456,12 @@
           "pore": 47,
           "spots": 36,
           "redness": 10
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:58.628649+00:00"
@@ -13901,8 +14518,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "20fb149bb0c3d61eb32e21c065a381612fe5d72128aec37af4a4672a04fd825b",
-        "analyzed_at": "2026-11-24T06:17:08.923517+00:00",
+        "input_hash": "c0ca8d4aa6a2d6b172804d71c7dc673450601279c49b04feee1799f4cc76a5fa",
+        "analyzed_at": "2026-11-24T14:32:59.138048+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[본품] 샌드": {
             "attributes": {
@@ -14246,7 +14868,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212991"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 34,
           "oily": 13,
@@ -14304,6 +14926,12 @@
           "acne": 3,
           "pore": 7,
           "spots": 7
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:53.639252+00:00"
@@ -14352,8 +14980,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "214c747304fc379a57699da1e77d91fdd7435eb7fe45b5fd48ecbb891afa3c82",
-        "analyzed_at": "2026-11-20T06:51:16.542192+00:00",
+        "input_hash": "56a8e3dbfda34236c45a50e79864b5f6677a14d9b9e98c3586a9515a4d65504a",
+        "analyzed_at": "2026-11-24T14:32:59.867106+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "그린 베이지": {
             "attributes": {
@@ -14508,7 +15141,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212998"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 3,
           "oily": 10,
@@ -14550,6 +15183,12 @@
         "positive_concern_counts": {
           "acne": 2,
           "spots": 7
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:48.634679+00:00"
@@ -14600,8 +15239,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "66ea75767ea9f9c02f519b525292a4b802e31710320167b1ea8cb7572f505de6",
-        "analyzed_at": "2026-11-20T06:51:17.667688+00:00",
+        "input_hash": "f4a5ccb5942ae9cb3a25f9c1b1dd5ef2f2a467f0062d97d8ffa147be85d91b19",
+        "analyzed_at": "2026-11-24T14:33:00.855435+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호 베이지": {
             "attributes": {
@@ -14791,7 +15435,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000213066"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 9,
           "oily": 22,
@@ -14842,6 +15486,12 @@
           "acne": 1,
           "pore": 14,
           "spots": 17
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:43.624938+00:00"
@@ -14887,8 +15537,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c34557ed77082cb37e080c7a99865ec41145cde503cdd095bf2b097e28e01bf8",
-        "analyzed_at": "2026-11-20T06:51:18.742029+00:00",
+        "input_hash": "adeaead0cd4bffd1f97d201ed74be29e3002b5dfe5347d03f963128cf5b36681",
+        "analyzed_at": "2026-11-24T14:33:01.664958+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -14961,7 +15616,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000213068"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 14,
           "oily": 11,
@@ -15012,6 +15667,12 @@
           "acne": 1,
           "pore": 3,
           "spots": 5
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:38.634192+00:00"
@@ -15059,8 +15720,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "da8b58a125080f5a24836e3846f3a1c60cc596c2c735024e1a2c1ecaf6a7e997",
-        "analyzed_at": "2026-10-24T10:51:22.352654+00:00",
+        "input_hash": "43cd3eecd2c8ad176b8dc0475ebff559a5a3e532058999233632c11e8f8e105d",
+        "analyzed_at": "2026-11-24T14:33:02.243860+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "02 베이지": {
             "attributes": {
@@ -15228,7 +15894,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000214028"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 3,
@@ -15281,6 +15947,12 @@
           "pore": 3,
           "spots": 3,
           "redness": 3
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:13.622183+00:00"
@@ -15342,8 +16014,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ba31b2e31e2efa9cbedaa02da6aa8fdbd64cf315314cda080d183c4a5085ac40",
-        "analyzed_at": "2026-11-24T06:17:11.724082+00:00",
+        "input_hash": "44043db869f1c1032c9959c8a0938b5c7d9d8e78579b1b5d2ac983400458a6ff",
+        "analyzed_at": "2026-11-24T14:33:02.813768+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "1호 스톤 리필": {
             "attributes": {
@@ -15598,7 +16275,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000217042"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 7,
           "oily": 4,
@@ -15633,6 +16310,12 @@
         },
         "positive_concern_counts": {
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:10:33.583286+00:00"
@@ -15685,8 +16368,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "1890b4f7d1adac3256a7b3c6b59b5f1687c2702e0351580766f8d96580750626",
-        "analyzed_at": "2026-11-08T12:18:06.566896+00:00",
+        "input_hash": "cf86726783c797251cd40577f7d61ce700a8a4043f8c0fcde3cb8b7ada2ba6ba",
+        "analyzed_at": "2026-11-24T14:33:05.863575+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "에어리": {
             "attributes": {
@@ -16248,7 +16936,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000217784"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 103,
           "oily": 112,
@@ -16318,6 +17006,12 @@
           "pore": 10,
           "spots": 12,
           "redness": 5
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:08.62367+00:00"
@@ -16386,8 +17080,16 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "1465e08ff7aea36f6ac960072c8e224e38746fecdf2dc466fdbafa6caba12078",
-        "analyzed_at": "2026-11-24T06:17:15.775642+00:00",
+        "input_hash": "398eaaa04900f034234c91a0132aae7dabf4085d820a1d85ff625b440bf2a7af",
+        "analyzed_at": "2026-11-24T14:35:48.445335+00:00",
+        "formulation": {
+          "basis": "seller_verified",
+          "status": "confirmed",
+          "source_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022282742ko.jpg?l=ko",
+          "verified_at": "2026-11-24",
+          "verified_fact": "판매자 대표 사진 본품 용기 20ML(0.67FL.OZ.) 표기 및 일체형 스펀지 팁으로 액상 제형을 도포하는 리퀴드 파운데이션 구조와 모공클렌저 증정 명시 확인",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "23호 (샌드)": {
             "attributes": {
@@ -16765,7 +17467,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000222827"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 23,
           "oily": 61,
@@ -16827,6 +17529,12 @@
           "pore": 2,
           "spots": 7,
           "redness": 3
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:33.629245+00:00"
@@ -16874,8 +17582,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "153b5e023e802d7c624afb16cd19654794ea61a3661f87110dfc0f64e74ec14a",
-        "analyzed_at": "2026-11-20T06:51:24.651805+00:00",
+        "input_hash": "2a3d40fe005197625a3366c11a12ae408d7753d67e6f1a95f2ae50e7187de59f",
+        "analyzed_at": "2026-11-24T14:33:07.970304+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "톤 커버 로션 50ml+10ml": {
             "attributes": {
@@ -17183,7 +17896,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000222829"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 6,
           "oily": 12,
@@ -17220,6 +17933,12 @@
         "positive_concern_counts": {
           "pore": 1,
           "redness": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:28.605917+00:00"
@@ -17282,8 +18001,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ccb40e458d4c67898db68a2c360807a1ac1e40f2eafe7e5e05728a3e3357c3ba",
-        "analyzed_at": "2026-11-24T06:05:58.223059+00:00",
+        "input_hash": "41da8558bafcab6b654cc8bcd00ded3fdee2f73ac53627202e9a0a5621286e27",
+        "analyzed_at": "2026-11-24T14:33:09.389152+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[본품] 01 라이트베이지": {
             "attributes": {
@@ -17577,7 +18301,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000223633"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 33,
           "oily": 44,
@@ -17638,6 +18362,12 @@
           "acne": 5,
           "pore": 15,
           "spots": 18
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:23.602963+00:00"
@@ -17681,8 +18411,16 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "0f1ac71013df78430f2134d5039401340e5fcd359656fe9ae5de4fd06a9a7c5f",
-        "analyzed_at": "2026-10-24T10:51:22.854874+00:00",
+        "input_hash": "67a34e98afb9fec3507a5e7f2b601eca9af09758a5f0df03bb0f5326343e4719",
+        "analyzed_at": "2026-11-24T14:35:50.303963+00:00",
+        "formulation": {
+          "basis": "seller_verified",
+          "status": "confirmed",
+          "source_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022489101ko.jpg?l=ko",
+          "verified_at": "2026-11-24",
+          "verified_fact": "판매자 대표 사진 본품 용기 20ML(0.67FL.OZ.) 표기 및 상단 스펀지 팁 토출 다이얼 구조의 액상 리퀴드 파운데이션 확인",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": {
           "basis": "number",
@@ -17754,7 +18492,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000224891"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -17764,7 +18502,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:15:58.639671+00:00"
     },
@@ -17834,8 +18578,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "4fa0482435707ec841647556dadd45795a92f28b7a5184b80335743e237c01ef",
-        "analyzed_at": "2026-11-24T06:05:59.184696+00:00",
+        "input_hash": "3bb029d0d84c793bf5025c689d13ec4f7fdc5927161901584504bda560dfb763",
+        "analyzed_at": "2026-11-24T14:33:10.572826+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "03 샌드": {
             "attributes": {
@@ -18389,7 +19138,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000225422"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 18,
           "oily": 25,
@@ -18439,6 +19188,12 @@
           "acne": 1,
           "pore": 4,
           "spots": 4
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:28.627013+00:00"
@@ -18480,8 +19235,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "e794c6a72844a8470c594767fe738424e3d96f23ea049d5372aff4b949e0be3d",
-        "analyzed_at": "2026-10-24T10:51:22.910062+00:00",
+        "input_hash": "40f7284379b862259fe9ad97a872ffdb51466892bc62e30c8671309325abfc51",
+        "analyzed_at": "2026-11-24T14:33:11.164232+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -18555,7 +19315,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000227219"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 3,
           "oily": 12,
@@ -18569,7 +19329,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:14:23.628083+00:00"
     },
@@ -18630,8 +19396,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "95bdba9b9bbbaaf44194170250af77aef055c878cad5c4f2651a97733084bc2d",
-        "analyzed_at": "2026-11-24T06:06:00.649354+00:00",
+        "input_hash": "01845794e922a98b94be04dd5d540558f8a41d3422f0c04f85abaf4fab81c938",
+        "analyzed_at": "2026-11-24T14:33:12.581761+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "03 샌드베이지": {
             "attributes": {
@@ -19114,7 +19885,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000229158"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 43,
           "oily": 37,
@@ -19176,6 +19947,12 @@
           "pore": 12,
           "spots": 16,
           "redness": 2
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:14:18.632447+00:00"
@@ -19216,8 +19993,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "e588f53048206c2c817880d991fffe8e35e936f0e01f9e28e5ac2d4e955eebe1",
-        "analyzed_at": "2026-11-24T06:17:20.006844+00:00",
+        "input_hash": "2faa5d5c8e9d8bda27a0c73938ea4527ca1d50f57111ba6c447ee5f1c79119f0",
+        "analyzed_at": "2026-11-24T14:33:13.249170+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -19285,7 +20067,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000230739"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 16,
           "oily": 0,
@@ -19308,7 +20090,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:09:48.575548+00:00"
     },
@@ -19351,8 +20139,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "4727e68149b05f2a0d8edc592beefd7cbb91576c557fc60ae449bcad38c1f682",
-        "analyzed_at": "2026-10-24T10:51:23.008842+00:00",
+        "input_hash": "d58f32d8bec51c8816bffbb1cda6a4b5b6971ba9c1f3b281b46b991ee946c2f8",
+        "analyzed_at": "2026-11-24T14:33:13.891147+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[NEW] 트루 톤 로션 에어리 (기획)": {
             "attributes": {
@@ -19444,7 +20237,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000233177"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -19454,7 +20247,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:12:13.616007+00:00"
     },
@@ -19515,8 +20314,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "79bf1fc1a846199cc1d283fca9a1e9786b19886a1c0d39bffb965f5392fb01c4",
-        "analyzed_at": "2026-11-24T06:06:02.672563+00:00",
+        "input_hash": "5ca6ad398b978981c5c39ca317f630441df9a4998a028277850a65b57b4e0203",
+        "analyzed_at": "2026-11-24T14:33:15.283885+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "트루 톤 로션 에어리 단품": {
             "attributes": {
@@ -19811,7 +20615,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000233178"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 37,
           "oily": 46,
@@ -19873,6 +20677,12 @@
           "pore": 5,
           "spots": 5,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:18.583007+00:00"
@@ -19911,8 +20721,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "d709f7a68e5597cd1d86f328bddc208930c76758c0dfebf90386e076714cde3e",
-        "analyzed_at": "2026-10-24T10:51:23.123866+00:00",
+        "input_hash": "7a77c06f654513d70e80190a2a1e111aede4dac03bbe34e4eb0128f6ef6f48a2",
+        "analyzed_at": "2026-11-24T14:33:15.650922+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -19968,7 +20783,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000238631"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -19978,7 +20793,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:09:28.571768+00:00"
     },
@@ -20019,8 +20840,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "fe8e74621a5bc217f97b780a44fcfc19176d0bfc9ac8bb43a012e292a25f36eb",
-        "analyzed_at": "2026-11-24T06:17:22.649431+00:00",
+        "input_hash": "c6876310b65f9032b3e93e74c60081c3c730dcea73f9844405f081de751367b0",
+        "analyzed_at": "2026-11-24T14:33:16.823413+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -20084,7 +20910,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000240089"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 4,
           "oily": 5,
@@ -20108,7 +20934,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:14:13.628161+00:00"
     },
@@ -20155,8 +20987,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "8989696103d3e8a0dffeb0a8d3a5d19afaee128ac94b5a419bd7f1743bb0de6d",
-        "analyzed_at": "2026-11-24T06:17:24.804026+00:00",
+        "input_hash": "76f08b17f2327795a6f260341a08a524275c068870de2c987b52afedf9a9759a",
+        "analyzed_at": "2026-11-24T14:33:18.523793+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[단품] 본품": {
             "attributes": {
@@ -20410,7 +21247,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246600"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 22,
           "oily": 26,
@@ -20452,6 +21289,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "pore": 5
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (파우더/팩트)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:13.584772+00:00"
@@ -20516,8 +21359,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "bec0aeaa456c6f66c6241491a79f5a7e04f8aad018efc3e6eb98981e9c4dfc03",
-        "analyzed_at": "2026-11-24T06:06:06.731148+00:00",
+        "input_hash": "e996d84b51d11420960cf6dfecd23486b9c5de3868ced474ecfbdb5f7bf321ac",
+        "analyzed_at": "2026-11-24T14:33:20.330372+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "3호 샌드": {
             "attributes": {
@@ -21032,7 +21880,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246705"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 39,
           "oily": 78,
@@ -21097,6 +21945,12 @@
           "pore": 13,
           "spots": 19,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:11:08.588348+00:00"
@@ -21141,8 +21995,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "6ee47fa89f47bdb33dedb3528349bc0ff06249c705c5cf00d35d27c31d500547",
-        "analyzed_at": "2026-10-24T10:51:23.441503+00:00",
+        "input_hash": "88de1530cf84b41a4cf55035ef9baab33085627f4202c4bf1d2ca1534809161f",
+        "analyzed_at": "2026-11-24T14:33:21.146931+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -21217,7 +22076,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246737"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 5,
           "oily": 18,
@@ -21262,6 +22121,12 @@
           "pore": 1,
           "spots": 4,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:43.627905+00:00"
@@ -21303,8 +22168,13 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "ca35e9ac530ae6a62782b79d30c90267ae856d660fb990a9f8cc17f97ed3f0c9",
-        "analyzed_at": "2026-10-24T10:51:23.938132+00:00",
+        "input_hash": "77b9ce0300f487bcb85c0c5ba25b4caf07b78d0974078bb637b1097a8722e313",
+        "analyzed_at": "2026-11-24T14:33:26.076840+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[단품] 커버로션": {
             "attributes": {
@@ -21845,7 +22715,7 @@
           ],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249090"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 130,
           "oily": 155,
@@ -21919,6 +22789,12 @@
           "spots": 59,
           "redness": 6,
           "wrinkle": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-03-04T05:01:16.293412+00:00"
@@ -21957,8 +22833,13 @@
       "ingredient_level": null,
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c7c4d823ad5ea45c3ce17c61c64b2b163bdb0aa776cd8685d56fa8df44db38ac",
-        "analyzed_at": "2026-11-20T06:51:43.189871+00:00",
+        "input_hash": "a8eda81fa2e9f2378917fad8f37d7dc96357468094e1d92ad1a9ebb586a0364d",
+        "analyzed_at": "2026-11-24T14:33:26.665771+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -22034,7 +22915,7 @@
           ],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249713"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -22044,7 +22925,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "혼합 세트 구성 (+레드립밤)",
+          "eligible": false,
+          "exclusion_reason": "mixed_set",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:14:08.66185+00:00"
     },
@@ -22053,7 +22940,7 @@
       "name": "[기프트패키지] [맨즈 메이크업 NO.1] 오브제 보송커버 2종 기획 (파운데이션 2호 + 오일 컨트롤 피니셔)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "foundation_unknown",
       "star_rating": 4.8,
       "review_count": 6886,
       "price": 51900,
@@ -22082,8 +22969,20 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "890003b7897fd0ba70b0dbd919e1209faccce665622a4967a7abab2b530192d3",
-        "analyzed_at": "2026-11-08T12:18:23.748329+00:00",
+        "input_hash": "818019a6e80e36a61bcd17daf94915ceddda757b63fa771d6df292415384fc98",
+        "analyzed_at": "2026-11-24T14:33:27.203040+00:00",
+        "formulation": {
+          "basis": "insufficient_evidence",
+          "counts": {
+            "mixed": 0,
+            "stick": 1,
+            "liquid": 0
+          },
+          "status": "unconfirmed",
+          "evidence_review_ids": [
+            "66291059"
+          ]
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -22139,7 +23038,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249714"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 1,
           "oily": 2,
@@ -22149,7 +23048,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "혼합 세트 구성 (+오일 컨트롤 피니셔)",
+          "eligible": false,
+          "exclusion_reason": "mixed_set",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:14:03.628545+00:00"
     },
@@ -22187,8 +23092,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "5f975d0b30e6bbb412e0aaa5fd3f2226be8c2830185343a00d894298cb3f01ec",
-        "analyzed_at": "2026-10-24T10:51:23.939992+00:00",
+        "input_hash": "dc048a935eee0110cde0bc4acb49d6a3ab809ec3d7c0e3f9086f72dc9c959382",
+        "analyzed_at": "2026-11-24T14:33:27.753397+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -22244,7 +23154,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249774"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -22258,7 +23168,13 @@
         },
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "혼합 세트 구성 (+립밤)",
+          "eligible": false,
+          "exclusion_reason": "mixed_set",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:13:58.626047+00:00"
     },
@@ -22296,8 +23212,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "b14024328e2497ecc9d2886ff80fd96a344a8eb4a18688c690ccb6e96fa9e0c8",
-        "analyzed_at": "2026-11-24T06:17:32.970673+00:00",
+        "input_hash": "3f7f1718f713ef127d3ab9cc634916a8f12a1fe47a4d3661f77749542d7a05a3",
+        "analyzed_at": "2026-11-24T14:33:28.426460+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -22353,7 +23274,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249778"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -22363,7 +23284,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": "혼합 세트 구성 (+립밤)",
+          "eligible": false,
+          "exclusion_reason": "mixed_set",
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:23.580839+00:00"
     },
@@ -22411,8 +23338,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "c78dbc0d3cc46dedf7b147880abdc654f2a10267062d5e571e926ca9ec5e03b9",
-        "analyzed_at": "2026-11-24T06:06:13.213679+00:00",
+        "input_hash": "f4d8777e9016423bd01a6811d8c2933a0b34322faabf0fafa53ce0a2da2df350",
+        "analyzed_at": "2026-11-24T14:33:29.206798+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           " [단품]커버 로션 에어핏(지성용)": {
             "attributes": {
@@ -22592,7 +23524,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000250221"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 4,
           "oily": 11,
@@ -22639,6 +23571,12 @@
           "acne": 1,
           "spots": 7,
           "wrinkle": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:12:18.617617+00:00"
@@ -22684,8 +23622,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "11994b3f1d094460262120f964cd891a9bed7c0a0f8bdaaba4d76d1217bfc008",
-        "analyzed_at": "2026-11-24T06:06:13.785464+00:00",
+        "input_hash": "9af21a7848be3767c687145ff89774d9f865ff35e4066207c737a8bf82183cd5",
+        "analyzed_at": "2026-11-24T14:33:29.751269+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[단품/보통피부] 02호 내추럴베이지": {
             "attributes": {
@@ -22836,7 +23779,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000251853"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 3,
@@ -22867,6 +23810,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 5
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:43.574766+00:00"
@@ -22876,7 +23825,7 @@
       "name": "[1등파데 리뉴얼] 오브제 내추럴 커버 파운데이션 PRO 14g 단품/기획 (+올인원 30ml 증정)",
       "brand": "오브제",
       "category": "쿠션/파운데이션",
-      "product_type": "liquid",
+      "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 8890,
       "price": 36800,
@@ -22939,8 +23888,24 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "51eefa7a4b29c138f5df8c3de74bd39a9700aab42f75eac3e5cc270b4f7e4255",
-        "analyzed_at": "2026-11-24T06:06:15.181381+00:00",
+        "input_hash": "f683904632abd73098f820158b8eb241b1c381d63f5a7172e6a16caae1a9c703",
+        "analyzed_at": "2026-11-24T14:36:04.097926+00:00",
+        "formulation": {
+          "basis": "reviews",
+          "counts": {
+            "mixed": 0,
+            "stick": 38,
+            "liquid": 1
+          },
+          "status": "confirmed",
+          "evidence_review_ids": [
+            "62934001",
+            "63198868",
+            "63522468",
+            "63599745",
+            "63652914"
+          ]
+        },
         "option_wear": {
           "[단품] 프로 1호": {
             "attributes": {
@@ -23295,7 +24260,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000258285"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 18,
           "oily": 42,
@@ -23359,6 +24324,12 @@
           "pore": 8,
           "spots": 15,
           "redness": 3
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:13.575513+00:00"
@@ -23402,8 +24373,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "156033f8d0e8e7195a3b9b70ceaa2dd631c2cccd4a29d098bbc04e5da0e16145",
-        "analyzed_at": "2026-11-24T06:06:15.949655+00:00",
+        "input_hash": "205a6389864599c2e3e2b982b520176f652bcdb268792c8e283cbe42a6c8f153",
+        "analyzed_at": "2026-11-24T14:33:31.662247+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -23479,7 +24455,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000261435"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 2,
           "oily": 11,
@@ -23532,6 +24508,12 @@
           "pore": 7,
           "spots": 5,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:53.620677+00:00"
@@ -23575,8 +24557,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "3b786eeceba9d1524524fd9c5efc12d811a44c5ed5710ae72cdddf022e78b101",
-        "analyzed_at": "2026-11-24T06:06:16.714709+00:00",
+        "input_hash": "f3ba099eda142d9dabcd4e45f856f3530b23f7e18decdabd46a483670b771ffa",
+        "analyzed_at": "2026-11-24T14:33:32.430885+00:00",
+        "formulation": {
+          "basis": "name",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
@@ -23644,7 +24631,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000261765"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 3,
           "oily": 7,
@@ -23689,6 +24676,12 @@
           "pore": 2,
           "spots": 5,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:13:48.627504+00:00"
@@ -23738,8 +24731,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "5c1f1d8e402a2214a6acb7c84f3d28803cac52ca554b0016e1491406d9a7cf94",
-        "analyzed_at": "2026-11-24T06:17:37.100901+00:00",
+        "input_hash": "b24ab7d0d87abf033057949f27664e4babba1014037c2b117db222afa3c466f2",
+        "analyzed_at": "2026-11-24T14:33:33.333998+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[기획/10ml증정] 1호(밝은피부)": {
             "attributes": {
@@ -24041,7 +25039,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000267995"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 7,
           "oily": 14,
@@ -24093,6 +25091,12 @@
           "acne": 1,
           "spots": 6,
           "redness": 1
+        },
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:38.561703+00:00"
@@ -24113,10 +25117,12 @@
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [
-        "21"
+        "21",
+        "23"
       ],
       "shade_options": {
-        "21": "[20~21호] 1호 라이트베이지"
+        "21": "[20~21호] 1호 라이트베이지",
+        "23": "[22~24호] 2호 베이지"
       },
       "source_options": [
         {
@@ -24145,8 +25151,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "afa048470daa198b5723226476da92fdf1d9dcc168d3e48b72487a2f6d894edf",
-        "analyzed_at": "2026-11-24T06:17:37.646873+00:00",
+        "input_hash": "601932bfcdfcd8aaa2ad938ed6e929ab887b0d06d41d711de3b0fc885f0f193c",
+        "analyzed_at": "2026-11-24T14:33:33.894182+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "[25~26호] 3호 샌드": {
             "attributes": {
@@ -24299,7 +25310,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000268424"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -24309,7 +25320,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:10:13.580828+00:00"
     },
@@ -24352,8 +25369,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "e635b7b207d24ba5229c1ff8795be0c24d92abe02ec8f3efc82a5e197d39bf2a",
-        "analyzed_at": "2026-10-24T10:51:24.139061+00:00",
+        "input_hash": "0214cf0543ff00650d5cb065cdcff3c245bab6f8e79ecddb1bd2d514ed0c689f",
+        "analyzed_at": "2026-11-24T14:33:34.470533+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "샌드 베이지": {
             "attributes": {
@@ -24496,7 +25518,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223838"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -24506,7 +25528,13 @@
         "evidence_review_ids": {},
         "concern_evidence_ids": {},
         "negative_concern_counts": {},
-        "positive_concern_counts": {}
+        "positive_concern_counts": {},
+        "recommendation_eligibility": {
+          "detail": null,
+          "eligible": true,
+          "exclusion_reason": null,
+          "evidence_review_ids": []
+        }
       },
       "last_updated_at": "2026-11-24T06:13:03.621764+00:00"
     },
@@ -24544,8 +25572,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "05acd06161272511deec7756b9fa8709b64fb8f4a00d0cd926d8608723f0aed2",
-        "analyzed_at": "2026-10-24T10:51:24.140155+00:00",
+        "input_hash": "cd25365be8cdb685066feaf10e8ebeabf6090fd0874dc6ceedd742a9b34e3e7c",
+        "analyzed_at": "2026-11-24T14:33:35.007024+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "다크서클 커버": {
             "attributes": {
@@ -24637,7 +25670,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223860"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -24657,6 +25690,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 1
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:58.574972+00:00"
@@ -24695,8 +25734,13 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v3",
-        "input_hash": "633c234520dcae530654aac1f602b624148d63155663921074a0712bef0bd169",
-        "analyzed_at": "2026-10-24T10:51:24.141184+00:00",
+        "input_hash": "93eaf4470b15ee14d316c7b66b53b3657efc0cc0fa8b37deedc58e1c47840723",
+        "analyzed_at": "2026-11-24T14:33:35.570427+00:00",
+        "formulation": {
+          "basis": "source_category",
+          "status": "confirmed",
+          "evidence_review_ids": []
+        },
         "option_wear": {
           "샌드 베이지": {
             "attributes": {
@@ -24792,7 +25836,7 @@
           "references": [],
           "source_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223861"
         },
-        "metadata_revision": 8,
+        "metadata_revision": 9,
         "skin_review_counts": {
           "dry": 0,
           "oily": 0,
@@ -24814,6 +25858,12 @@
         "negative_concern_counts": {},
         "positive_concern_counts": {
           "spots": 2
+        },
+        "recommendation_eligibility": {
+          "detail": "전체 얼굴 커버 유형 아님 (컨실러)",
+          "eligible": false,
+          "exclusion_reason": "non_cover_base",
+          "evidence_review_ids": []
         }
       },
       "last_updated_at": "2026-11-24T06:09:53.580394+00:00"

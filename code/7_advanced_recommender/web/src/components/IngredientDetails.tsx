@@ -8,7 +8,7 @@ export function IngredientDetails({ product }: { product: Product }) {
     <section aria-label="전성분 정보" style={{ marginBottom: 20, padding: 14, border: '1px solid var(--border-color)', borderRadius: 12 }}>
       <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: 8 }}>전성분</h3>
       <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: 8 }}>
-        판매자가 기재한 옵션·구성품 구분을 그대로 표시합니다.
+        판매자가 기재한 옵션·구성품별 전성분입니다. 피부 타입별 추천 점수는 수집한 리뷰를 기준으로 계산합니다.
         {source?.checked_at && ` 확인일 ${new Date(source.checked_at).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}`}
       </p>
       {!entries.length && <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>텍스트 전성분을 확인하지 못했습니다.</p>}
