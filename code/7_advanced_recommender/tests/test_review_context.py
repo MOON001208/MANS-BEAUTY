@@ -218,11 +218,50 @@ class ReviewContextTests(unittest.TestCase):
         self.assertEqual(meta['wear_attributes']['transfer_resistance']['positive_review_ids'], ['0', '1', '2'])
 
     def test_version_change_invalidates_hash_without_shape_change(self):
-        self.assertEqual(profiles.VERSION, 'rules-ko-v4')
+        self.assertEqual(profiles.VERSION, 'rules-ko-v5')
         self.assertEqual(profiles.METADATA_REVISION, 9)
         before = input_hash({'id': 'p'}, [])
-        with mock.patch.object(profiles, 'VERSION', 'rules-ko-v3'):
+        with mock.patch.object(profiles, 'VERSION', 'rules-ko-v4'):
             self.assertNotEqual(input_hash({'id': 'p'}, []), before)
+
+    def test_thick_application_concession_is_not_a_heavy_texture(self):
+        for text in ['좀 두껍게 발라도 자연스럽습니다', '두껍게 발라봐도 괜찮아요',
+                     '두껍게 발라보면 좋을 것 같아요']:
+            with self.subTest(text=text):
+                result = self.extract(text)
+                self.assertIsNone(result['lightweight'])
+                self.assertEqual(result['evidence']['lightweight']['negative'], [])
+
+    def test_neither_heavy_nor_light_is_neutral_and_keeps_coverage(self):
+        text = '남자친구가 쿠션을 이것만 써요 커버력도 좋고 제형도 너무 무겁지도 가볍지도 않아서 좋아하는 것 같아용'
+        result = self.extract(text)
+        self.assertIsNone(result['lightweight'])
+        self.assertEqual(result['coverage'], 4)
+        self.assertEqual(result['evidence']['coverage']['positive'], [text])
+
+    def test_balanced_weight_variants_stay_neutral(self):
+        for text in ['제형은 가볍지도 무겁지도 않아요',
+                     '제형이 무거운 것도 가벼운 것도 아니에요',
+                     '제형이 무겁지도 않고 가볍지도 않아요']:
+            with self.subTest(text=text):
+                self.assertIsNone(self.extract(text)['lightweight'])
+
+    def test_real_heavy_or_thick_application_complaints_stay_negative(self):
+        for text in ['제형이 무거워서 답답해요', '두껍게 발려서 답답해요',
+                     '사용감이 무거워요', '두껍게 발리는 편이에요']:
+            with self.subTest(text=text):
+                result = self.extract(text)
+                self.assertEqual(result['lightweight'], 2)
+                self.assertTrue(result['evidence']['lightweight']['negative'])
+
+    def test_neutral_weight_does_not_erase_a_separate_discomfort_claim(self):
+        result = self.extract('제형이 무겁지도 가볍지도 않아서 적당한데 답답해요')
+        self.assertEqual(result['lightweight'], 2)
+
+    def test_neutral_weight_does_not_cancel_real_coverage_negation(self):
+        result = self.extract('커버력이 좋지 않아요 제형이 무겁지도 가볍지도 않아요')
+        self.assertIsNone(result['coverage'])
+        self.assertEqual(result['evidence']['coverage']['positive'], [])
 
 
 if __name__ == '__main__':

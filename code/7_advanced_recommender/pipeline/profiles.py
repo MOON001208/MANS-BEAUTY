@@ -12,7 +12,7 @@ from statistics import mean
 from pipeline.classification import classify_product
 from pipeline.wear import NON_OBSERVATION, extract_wear, review_clauses, summarize_wear
 
-VERSION = 'rules-ko-v4'
+VERSION = 'rules-ko-v5'
 # Shape of profile_metadata. Bumping this rebuilds stored profiles on the next run
 # without changing VERSION, so the deployed site keeps reading current profiles.
 METADATA_REVISION = 9
@@ -31,6 +31,29 @@ ATTRIBUTES = {
 CONCERNS = {'acne': '여드름|트러블', 'pore': '모공', 'redness': '홍조', 'spots': '잡티|다크서클', 'wrinkle': '주름'}
 NEGATION = re.compile(r'않|아니|못|없|안\s*(?:되|돼|좋|가려|커버)|별로')
 CONDITIONAL = re.compile(r'(?:좋|뛰어나|가려지|커버하|되|돼|않|없|무너지)(?:으면|면)')
+NEUTRAL_WEIGHT = re.compile(
+    r'(?:무겁(?:지도|지는|지|진)\s*(?:않고\s*)?가볍(?:지도|지는|지|진)|'
+    r'가볍(?:지도|지는|지|진)\s*(?:않고\s*)?무겁(?:지도|지는|지|진)|'
+    r'무거운\s*것도\s*가벼운\s*것도|가벼운\s*것도\s*무거운\s*것도)\s*(?:않|아니)')
+THICK_APPLICATION_CONDITION = re.compile(
+    r'두껍게\s*발(?:라도|라\s*도|라보면|라봐도|랐어도|랐다면|리면|린다면)')
+
+
+def lightweight_negative(part, patterns):
+    # Deliberately applying a thick layer is not a claim about heavy texture;
+    # a balanced 'neither heavy nor light' statement is not a negative rating.
+    excluded = [m.span() for rx in (NEUTRAL_WEIGHT, THICK_APPLICATION_CONDITION)
+                for m in rx.finditer(part)]
+    return any(not any(start <= match.end() - 1 < end for start, end in excluded)
+               for pattern in patterns for match in re.finditer(pattern, part))
+
+
+def attribute_negation(part, attr):
+    # A neutral weight judgement must not negate an independent coverage claim.
+    # Keep the original clause unchanged in the evidence shown to the reviewer.
+    neutral = [m.span() for m in NEUTRAL_WEIGHT.finditer(part)] if attr == 'coverage' else []
+    return any(not any(start <= match.start() < end for start, end in neutral)
+               for match in NEGATION.finditer(part))
 
 
 def current_experience(part):
@@ -87,8 +110,9 @@ def extract_attributes(review):
             if not current_experience(part):
                 continue
             pos = any(re.search(p, part) for p in positive_patterns)
-            neg = any(re.search(p, part) for p in negative_patterns)
-            if pos and not NEGATION.search(part) and not CONDITIONAL.search(part):
+            neg = (lightweight_negative(part, negative_patterns) if attr == 'lightweight'
+                   else any(re.search(p, part) for p in negative_patterns))
+            if pos and not attribute_negation(part, attr) and not CONDITIONAL.search(part):
                 positive.append(part[:180])
             if neg and not CONDITIONAL.search(part) and not re.search(r'(?:무겁|답답|무너|부족|아쉬).{0,5}(?:않|없)', part):
                 negative.append(part[:180])
