@@ -101,6 +101,11 @@ class ReviewSummaryTests(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertEqual(summary_source('p1', 'coverage', review('1', text))['excerpts'], [])
 
+    def test_conditional_fixer_advice_is_not_observed_product_longevity(self):
+        source = summary_source('p1', 'longevity', review('1',
+            '픽서미스트등으로 마무리하시면 조금더 오래유지가 됩니다.'))
+        self.assertFalse(source['semantic_verified'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -34,6 +34,7 @@ UNOBSERVED = re.compile(r'기대\s*(?:됩|됨|해|하고|되)|어떨지\s*기대
                         r'(?:전에|이전에|예전에)\s*(?:쓰던|사용하던)|과거\s*사용|'
                         r'일반\s*파우더는|가루\s*타입\s*파우더는|미닉(?:은|이|의)')
 ADVICE = re.compile(r'묻지\s*않게\s*(?:잘)?하|조심하|주의하')
+CONDITIONAL_ADVICE = re.compile(r'(?:하|바르|발라|뿌리|찍|두드리).{0,5}(?:시면|으면|면)')
 PICKUP = re.compile(r'패드에\s*(?:잘\s*)?안\s*묻')
 BACKGROUND = re.compile(r'(?:지성|건성|피부).{0,16}(?:이라|라서|인데|때문)|(?:원래|평소).{0,25}(?:무너|지워|커버)')
 INTENT = re.compile(r'찾고\s*(?:있었|있)|구매.*(?:이유|계기)|구매(?:했|하려|하시려)|구입(?:했|하려)|선물하기')
@@ -86,6 +87,7 @@ def summary_source(product_id, key, review, scope=''):
                 or any(NEGATED_NEGATIVE.search(part) for part in negative)
                 or any(BACKGROUND.search(part) for part in negative)
                 or any(ADVICE.search(part) or INTENT.search(part) for part in positive)
+                or any(CONDITIONAL_ADVICE.search(part) for part in [*positive, *negative])
                 or (key == 'coverage' and '어쉽' in content)
                 or (key == 'coverage' and polarity == 'negative'
                     and re.search(r'자연스럽게.{0,12}커버|커버(?:가|도)?\s*(?:되네|돼요|됩니다)', content)))}

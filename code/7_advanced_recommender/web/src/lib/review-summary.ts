@@ -143,7 +143,7 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
   result.uniqueSampleCount = uniqueSources.length;
   result.insufficient ||= uniqueSources.length < 3;
   if (result.insufficient) return { ...result, status: 'insufficient',
-    message: '명확한 근거가 3건 미만이거나 점수가 정보 부족이어서 요약하지 않았습니다. 확인 가능한 원문은 아래에서 볼 수 있습니다.' };
+    message: '명확한 근거 또는 서로 다른 원문 표본이 3건 미만이거나 점수가 정보 부족이어서 요약하지 않았습니다. 확인 가능한 원문은 아래에서 볼 수 있습니다.' };
   const both = (counts.positive > 0 && counts.negative > 0) || counts.mixed > 0;
   result.sentences = [both
     ? `확인한 ${LABELS[key]} 표본에는 좋았다는 표현과 아쉬웠다는 표현이 함께 있습니다.`
@@ -154,7 +154,8 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
   const order = weights.negative > weights.positive ? ['negative', 'positive'] as const : ['positive', 'negative'] as const;
   const examples = order.map(polarity => uniqueSources.flatMap(source => source.excerpts_by_polarity?.[polarity]
     ?? (source.polarity === polarity ? source.excerpts : []))[0]).filter((text): text is string => !!text);
-  if (!examples.length) return { ...result, sentences: [], status: 'unavailable', message: '문맥을 보존해 인용할 수 있는 원문이 부족해 요약을 표시하지 않습니다. 아래 원문을 확인해 주세요.' };
+  if (!examples.length || (both && new Set(examples).size < 2)) return { ...result, sentences: [], status: 'unavailable',
+    message: '평가의 양쪽 맥락을 보존해 인용할 수 있는 원문이 부족해 요약을 표시하지 않습니다. 아래 원문을 확인해 주세요.' };
   result.sentences.push(`원문 표현 예: ${[...new Set(examples)].map(text => `“${text}”`).join(' / ')}.`);
   return { ...result, status: 'ready', message: `전체 근거 ${total}건 중 펼침 표본 ${found.length}건만 확인한 요약입니다. ${uniqueSources.length < found.length ? '같은 내용은 한 번만 세었습니다. ' : ''}표본의 의견 분포는 전체 리뷰와 다를 수 있습니다.` };
 }

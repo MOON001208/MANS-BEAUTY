@@ -164,3 +164,13 @@ test('uncertain hearsay in original evidence remains available only as raw text'
   assert.match(result.message, /전언/);
   assert.equal(result.reviews.length, 3);
 });
+
+test('mixed opinions cannot leave a ready summary when the safe opposite quotation is missing', async () => {
+  const input = fixture();
+  input.catalog.products.p1.attributes.coverage.sources[1].excerpts = [];
+  const result = await resolveReviewSummary(input);
+  assert.equal(result.status, 'unavailable');
+  assert.deepEqual(result.sentences, []);
+  assert.equal(result.reviews.length, 3);
+  assert.match(result.message, /양쪽 맥락/);
+});
