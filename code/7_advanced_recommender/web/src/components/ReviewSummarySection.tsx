@@ -72,14 +72,15 @@ export function ReviewSummarySection({
   compact = false,
 }: ReviewSummarySectionProps) {
   const sourceLabel = resolveSourceLabel(summary);
-  const { requestedIds, matchedReviews, missingCount } = resolveSampleReviews(
+  const { requestedIds, matchedReviews: fetchedReviews, missingCount } = resolveSampleReviews(
     productId,
     summary.sampleReviewIds,
     evidenceById,
   );
+  const matchedReviews = summary.reviews ?? fetchedReviews;
   const panelId = `evidence-panel-${toggleKey.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
   const isInsufficient = Boolean(summary.insufficient);
-  const hasSentences = !isInsufficient && summary.sentences.length > 0;
+  const hasSentences = !isInsufficient && !summary.loading && !summary.error && missingCount === 0 && summary.sentences.length > 0;
   const sampleCountLabel = summary.loading && requestedIds.length > 0
     ? `표본 ${requestedIds.length}건 확인 중`
     : requestedIds.length > 0
@@ -99,7 +100,7 @@ export function ReviewSummarySection({
         <div className="review-summary-header">
           <div className="review-summary-tags">
             <span
-              className={`review-summary-source${summary.sourceKind === 'ai_generated' ? ' review-summary-source-ai' : ''}`}
+              className="review-summary-source"
             >
               {sourceLabel}
             </span>
@@ -108,12 +109,16 @@ export function ReviewSummarySection({
           <span className="review-summary-counts">
             전체 근거 {summary.totalEvidenceCount.toLocaleString()}건
             {sampleCountLabel ? ` · ${sampleCountLabel}` : ''}
+            {summary.uniqueSampleCount != null && summary.uniqueSampleCount < matchedReviews.length
+              ? ` · 서로 다른 내용 ${summary.uniqueSampleCount}건` : ''}
           </span>
         </div>
 
-        {isInsufficient ? (
+        {summary.loading ? (
+          <p role="status" className="review-summary-empty">요약과 근거 원문의 일치 여부를 확인하고 있습니다.</p>
+        ) : isInsufficient ? (
           <p className="review-summary-empty">
-            정보 부족 · 사용 후 근거가 {MIN_SUMMARY_EVIDENCE_COUNT}건 미만이라 요약하지 않습니다.
+            정보 부족 · {summary.message || `사용 후 근거가 ${MIN_SUMMARY_EVIDENCE_COUNT}건 미만이라 요약하지 않습니다.`}
           </p>
         ) : hasSentences ? (
           <div className="review-summary-sentences">
@@ -125,13 +130,14 @@ export function ReviewSummarySection({
           </div>
         ) : (
           <p className="review-summary-empty">
-            이 항목의 사용 후 리뷰 요약 문장이 아직 연결되지 않았습니다. 아래 근거 리뷰 원문을 직접 확인해 주세요.
+            {summary.message || '요약을 확인할 수 없습니다. 아래 근거 리뷰 원문을 직접 확인해 주세요.'}
           </p>
         )}
 
-        {summary.polarityCounts && (
+        {hasSentences && summary.message && <p className="review-summary-status">{summary.message}</p>}
+        {summary.polarityCounts && !summary.loading && Object.values(summary.polarityCounts).some(count => count > 0) && (
           <p className="review-summary-polarity">
-            긍정 {summary.polarityCounts.positive.toLocaleString()}건 · 부정{' '}
+            확인 표본 · 긍정 {summary.polarityCounts.positive.toLocaleString()}건 · 부정{' '}
             {summary.polarityCounts.negative.toLocaleString()}건 · 리뷰 안 평가 엇갈림{' '}
             {summary.polarityCounts.mixed.toLocaleString()}건
           </p>

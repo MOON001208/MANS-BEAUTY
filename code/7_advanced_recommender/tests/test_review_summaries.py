@@ -78,6 +78,29 @@ class ReviewSummaryTests(unittest.TestCase):
         self.assertEqual(source['polarity'], 'negative')
         self.assertEqual(source['excerpts'], [])
 
+    def test_independent_audit_original_boundaries_fail_closed_without_score_changes(self):
+        fixture = json.loads((Path(__file__).parent / 'fixtures/review_summary_boundaries.json').read_text(encoding='utf-8'))
+        for item in fixture['cases']:
+            with self.subTest(rid=item['id'], key=item['key']):
+                source = summary_source(item['product_id'], item['key'], item)
+                self.assertEqual(source['semantic_verified'], item['semantic_verified'])
+                self.assertTrue(all(text in item['content'] for text in source['excerpts']))
+
+    def test_negated_bad_expressions_cannot_become_negative_summary_claims(self):
+        cases = [('lightweight', '두껍게 발리지 않으며 자연스러운 피부표현 가능합니다.'),
+                 ('lightweight', '두껍게 발리지 않고 좋아요.'),
+                 ('smoothness', '뭉치는 느낌은 거의 없었던 것 같아요.'),
+                 ('smoothness', '들뜨는 느낌도 없어서 딱 좋더라고요.')]
+        for key, text in cases:
+            with self.subTest(key=key, text=text):
+                source = summary_source('p1', key, review('1', text))
+                self.assertFalse(source['semantic_verified'])
+
+    def test_unbalanced_parentheses_and_leading_particles_are_not_quotations(self):
+        for text in ['(커버력이 좋아요.', '까지 커버력이 좋아요.', ')이라서 커버력이 좋아요.']:
+            with self.subTest(text=text):
+                self.assertEqual(summary_source('p1', 'coverage', review('1', text))['excerpts'], [])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,12 +4,8 @@ import { IngredientDetails } from '../components/IngredientDetails';
 import { ReviewSummarySection } from '../components/ReviewSummarySection';
 import {
   buildPolarityMap,
-  buildReviewSummaryView,
-  collectMetadataSummaryReviewIds,
   resolveSampleReviews,
   type CoreSummaryKey,
-  type ReviewSummaryItemKey,
-  type ReviewSummaryResolver,
   type ReviewSummaryView,
   type WearSummaryKey,
 } from '../components/reviewSummaryContract';
@@ -18,6 +14,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
 import { attributeEvidence, FEATURE_CONFIG, bestExplicitShadeOption, bestShadeOption, getCompatScore, hasCurrentProfile, searchProducts, selectRecommendations, shadeLineup } from '@/lib/recommendation';
 import { loadCatalog } from '@/lib/catalog';
+import { loadReviewSummaryCatalog, resolveReviewSummary, reviewSummaryEvidence, type ReviewSummaryCatalog, type ReviewSummaryItemKey } from '@/lib/review-summary';
 import Image from 'next/image';
 
 // ─── 상수 ──────────────────────────────────────────────────────────────────
@@ -377,15 +374,11 @@ function ProductModal({
   skinType,
   userShade,
   onClose,
-  resolveReviewSummary,
-  reviewSummaries,
 }: {
   product: Product;
   skinType: SkinType;
   userShade: ShadeChoice | null;
   onClose: () => void;
-  resolveReviewSummary?: ReviewSummaryResolver;
-  reviewSummaries?: Partial<Record<ReviewSummaryItemKey, Partial<ReviewSummaryView>>>;
 }) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
@@ -397,6 +390,18 @@ function ProductModal({
   }>({ key: '', byId: new Map(), error: '' });
   const [wearScope, setWearScope] = useState('');
   const [openEvidence, setOpenEvidence] = useState<string | null>(null);
+  const [summaryCatalog, setSummaryCatalog] = useState<ReviewSummaryCatalog | null | undefined>(undefined);
+  const [summaryState, setSummaryState] = useState<{
+    key: string; product?: Product; byId?: ReadonlyMap<string, Review>;
+    views: Partial<Record<ReviewSummaryItemKey, ReviewSummaryView>>; error?: string;
+  }>({ key: '', views: {} });
+
+  useEffect(() => {
+    let active = true;
+    loadReviewSummaryCatalog().then(value => { if (active) setSummaryCatalog(value); },
+      () => { if (active) setSummaryCatalog(null); });
+    return () => { active = false; };
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -404,7 +409,7 @@ function ProductModal({
       .eq('product_id', product.id).order('created_at', { ascending: false }).limit(30).abortSignal(controller.signal)
       .then(({ data, error }) => {
         if (controller.signal.aborted) return;
-        setReviews((data || []) as Review[]);
+        setReviews(((data || []) as Review[]).filter(review => review.product_id === product.id));
         setReviewError(error ? '리뷰를 불러오지 못했습니다.' : '');
         setLoadingReviews(false);
       }, () => {
@@ -425,9 +430,7 @@ function ProductModal({
     ...Object.values(meta?.evidence_review_ids ?? {}).flat(),
     ...Object.values(meta?.concern_evidence_ids ?? {}).flat(),
     ...Object.values(scopedWear ?? {}).flatMap(entry => [...entry.positive_review_ids, ...entry.negative_review_ids, ...entry.mixed_review_ids]),
-    ...(currentProfile ? collectMetadataSummaryReviewIds(product, wearScope) : []),
-    ...Object.values(reviewSummaries ?? {}).flatMap(entry => entry?.sampleReviewIds ?? []),
-  ])], [currentProfile, meta, product, reviewSummaries, scopedWear, wearScope]);
+  ])], [meta, scopedWear]);
 
   const evidenceQueryKey = useMemo(
     () => `${product.id}:${wearScope}:${evidenceIds.join(',')}`,
@@ -465,6 +468,36 @@ function ProductModal({
     [evidenceQueryKey, evidenceState],
   );
   const evidenceError = evidenceState.key === evidenceQueryKey ? evidenceState.error : '';
+  const summaryQueryKey = `${evidenceQueryKey}:${meta?.version ?? ''}:${meta?.input_hash ?? ''}`;
+
+  useEffect(() => {
+    if (loadingEvidence || summaryCatalog === undefined) return;
+    let active = true;
+    const keys = ['coverage', 'longevity', 'lightweight', 'naturalness', 'transfer_resistance', 'smoothness'] as const;
+    Promise.all(keys.map(async key => [key, await resolveReviewSummary({
+      product, key, scope: key === 'coverage' || key === 'longevity' || key === 'lightweight' ? '' : wearScope,
+      catalog: summaryCatalog, reviews: evidenceById,
+    })] as const)).then(entries => {
+      if (active) setSummaryState({ key: summaryQueryKey, product, byId: evidenceById, views: Object.fromEntries(entries) });
+    }, () => {
+      if (active) setSummaryState({ key: summaryQueryKey, product, byId: evidenceById, views: {}, error: '요약의 원문 일치 여부를 확인하지 못했습니다.' });
+    });
+    return () => { active = false; };
+  }, [evidenceById, loadingEvidence, product, summaryCatalog, summaryQueryKey, wearScope]);
+
+  const getSummary = (key: ReviewSummaryItemKey): ReviewSummaryView => {
+    const ready = summaryState.key === summaryQueryKey && summaryState.product === product && summaryState.byId === evidenceById;
+    const verified = ready ? summaryState.views[key] : undefined;
+    if (verified) return { ...verified, error: evidenceError || undefined };
+    const scope = key === 'coverage' || key === 'longevity' || key === 'lightweight' ? '' : wearScope;
+    const evidence = reviewSummaryEvidence(product, key, scope);
+    return { sentences: [], sourceLabel: '규칙 기반 리뷰 요약', sourceKind: 'rule_based',
+      totalEvidenceCount: evidence.total, sampleReviewIds: evidence.ids,
+      insufficient: evidence.clearCount < 3 || evidence.score == null,
+      loading: !ready && evidence.ids.length > 0, error: evidenceError || (ready ? summaryState.error : undefined),
+      message: ready && summaryState.error ? '요약을 확인하지 못했습니다. 아래 원문을 확인해 주세요.'
+        : evidence.ids.length ? '요약과 근거 원문의 일치 여부를 확인하고 있습니다.' : '이 항목을 요약할 원문 근거가 부족합니다.' };
+  };
 
   const modalLineup = shadeLineup(product);
   const modalPick = bestShadeOption(product, userShade);
@@ -516,7 +549,7 @@ function ProductModal({
                   <StarRating rating={r.rating} />
                   {r.skin_type && <span className="skin-tag">{r.skin_type}</span>}
                 </div>
-                <p style={{ fontSize: '0.78rem', lineHeight: 1.5, color: 'var(--text-secondary)', overflowWrap: 'anywhere', wordBreak: 'keep-all' }}>{r.content}</p>
+                <p style={{ fontSize: '0.78rem', lineHeight: 1.5, color: 'var(--text-secondary)', whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', wordBreak: 'keep-all' }}>{r.content}</p>
               </div>
             ))}
           </div>
@@ -563,17 +596,7 @@ function ProductModal({
             {evidenceError && <p role="alert" style={{ fontSize: '0.72rem', color: '#f87171', marginBottom: 8 }}>{evidenceError}</p>}
             {([['coverage', '커버력', '#a78bfa', product.coverage_score], ['longevity', '지속력', '#60a5fa', product.longevity_score], ['lightweight', '착용감', '#34d399', product.lightweight_score]] as [CoreSummaryKey, string, string, number | null][]).map(([key, label, color, value]) => {
               const currentScore = currentProfile ? value : null;
-              const summary = buildReviewSummaryView({
-                product,
-                hasCurrentProfile: currentProfile,
-                itemKey: key,
-                score: currentScore,
-                evidenceById,
-                loading: loadingEvidence,
-                error: evidenceError,
-                externalSummary: reviewSummaries?.[key],
-                resolver: resolveReviewSummary,
-              });
+              const summary = getSummary(key);
               return (
                 <div key={key} className="review-score-group">
                   <ScoreBar label={label} value={currentScore} color={color} count={summary.totalEvidenceCount} />
@@ -596,7 +619,7 @@ function ProductModal({
             <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 12 }}>점수와 근거 수는 별개입니다. 명확한 근거가 3건 미만이면 정보 부족이며, 한 리뷰 안에서 평가가 엇갈리면 점수에서 제외합니다.</p>
             <label style={{ display: 'block', fontSize: '0.78rem', marginBottom: 12 }}>
               리뷰 범위
-              <select value={wearScope} onChange={event => setWearScope(event.target.value)} style={{ display: 'block', width: '100%', maxWidth: '100%', minWidth: 0, marginTop: 6, padding: 8, background: '#171725', color: 'var(--text-primary)', border: '1px solid var(--border-color)', borderRadius: 8 }}>
+              <select value={wearScope} onChange={event => { setWearScope(event.target.value); setOpenEvidence(null); }} style={{ display: 'block', width: '100%', maxWidth: '100%', minWidth: 0, marginTop: 6, padding: 8, background: '#171725', color: 'var(--text-primary)', border: '1px solid var(--border-color)', borderRadius: 8 }}>
                 <option value="">상품 전체 리뷰</option>
                 {Object.entries(meta?.option_wear ?? {}).map(([name, group]) => <option key={name} value={name}>{name} · {group.review_count}건</option>)}
               </select>
@@ -606,23 +629,13 @@ function ProductModal({
               const wearKey = feature.key as WearSummaryKey;
               const entry = scopedWear?.[wearKey];
               const scoreValue = entry && entry.evidence_count >= 3 ? entry.score : null;
-              const summary = buildReviewSummaryView({
-                product,
-                hasCurrentProfile: currentProfile,
-                itemKey: wearKey,
-                wearScope,
-                score: scoreValue,
-                evidenceById,
-                loading: loadingEvidence,
-                error: evidenceError,
-                externalSummary: wearScope ? undefined : reviewSummaries?.[wearKey],
-                resolver: resolveReviewSummary,
-              });
+              const summary = getSummary(wearKey);
               const polarityMap = buildPolarityMap(entry);
               const toggleKey = wearScope ? `wear:${wearScope}:${wearKey}` : `wear:${wearKey}`;
               return (
                 <div key={feature.key} className="review-score-group">
                   <ScoreBar label={feature.label} value={scoreValue} count={entry?.evidence_count ?? 0} color={feature.color} />
+                  <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>전체 자동 분류 · 긍정 {entry?.positive_count ?? 0}건 · 부정 {entry?.negative_count ?? 0}건 · 리뷰 안 평가 엇갈림 {entry?.mixed_count ?? 0}건</p>
                   <ReviewSummarySection
                     toggleKey={toggleKey}
                     productId={product.id}
@@ -631,7 +644,7 @@ function ProductModal({
                     evidenceById={evidenceById}
                     open={openEvidence === toggleKey}
                     onToggle={toggleEvidenceKey}
-                    polarityByReviewId={polarityMap}
+                    polarityByReviewId={summary.status === 'ready' || summary.status === 'insufficient' ? polarityMap : undefined}
                     scopeLabel={wearScope || undefined}
                   />
                 </div>
@@ -651,35 +664,12 @@ function ProductModal({
           {product.suitable_concerns && product.suitable_concerns.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>리뷰에서 긍정적으로 언급된 고민</h3>
-              {product.suitable_concerns.map(c => {
-                const concernKey = `concern:${c}` as ReviewSummaryItemKey;
-                const concernLabel = CONCERN_LABEL[c as SkinConcern] ?? c;
-                const summary = buildReviewSummaryView({
-                  product,
-                  hasCurrentProfile: currentProfile,
-                  itemKey: concernKey,
-                  evidenceById,
-                  loading: loadingEvidence,
-                  error: evidenceError,
-                  externalSummary: reviewSummaries?.[concernKey],
-                  resolver: resolveReviewSummary,
-                });
-                return (
-                  <div key={c} style={{ marginBottom: '10px' }}>
-                    <div style={{ marginBottom: '6px' }}><span className="skin-tag">{concernLabel}</span></div>
-                    <ReviewSummarySection
-                      toggleKey={concernKey}
-                      productId={product.id}
-                      itemLabel={`${concernLabel} 고민`}
-                      summary={summary}
-                      evidenceById={evidenceById}
-                      open={openEvidence === concernKey}
-                      onToggle={toggleEvidenceKey}
-                      compact
-                    />
-                  </div>
-                );
-              })}
+              {product.suitable_concerns.map(c => (
+                <div key={c} style={{ marginBottom: '6px' }}>
+                  <div style={{ marginBottom: '4px' }}><span className="skin-tag">{CONCERN_LABEL[c as SkinConcern] ?? c}</span></div>
+                  {renderEvidence('concern:' + c, meta?.concern_evidence_ids?.[c])}
+                </div>
+              ))}
             </div>
           )}
 

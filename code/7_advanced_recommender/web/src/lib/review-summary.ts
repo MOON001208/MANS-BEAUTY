@@ -3,8 +3,9 @@ import { hasCurrentProfile, PROFILE_VERSION } from './recommendation.ts';
 
 export type ReviewSummaryItemKey = 'coverage' | 'longevity' | 'lightweight' | WearAttributeKey;
 type Polarity = 'positive' | 'negative' | 'mixed';
-interface SummarySource { id: string; sha256: string; polarity: Polarity; excerpts: string[]; semantic_verified: boolean }
-interface SummaryEntry { totalEvidenceCount: number; sources: SummarySource[] }
+interface SummarySource { id: string; sha256: string; polarity: Polarity; excerpts: string[]; semantic_verified: boolean;
+  excerpts_by_polarity?: { positive: string[]; negative: string[] } }
+interface SummaryEntry { totalEvidenceCount: number; sources: SummarySource[]; overallPolarityCounts?: Record<Polarity, number> }
 export interface ReviewSummaryCatalog {
   schema_version: 1;
   method: 'rules-extractive-v1';
@@ -24,6 +25,8 @@ export interface ReviewSummaryView {
   sampleReviewIds: string[];
   reviews: Review[];
   polarityCounts: Record<Polarity, number>;
+  overallPolarityCounts?: Record<Polarity, number>;
+  uniqueSampleCount?: number;
   insufficient: boolean;
   status: 'ready' | 'insufficient' | 'unavailable' | 'stale';
   message: string;
@@ -46,7 +49,8 @@ export function reviewSummaryEvidence(product: Product, key: ReviewSummaryItemKe
   const total = clearCount + (isWear(key) ? wear?.mixed_count ?? 0 : 0);
   const score = isWear(key) ? wear?.score : key === 'coverage' ? product.coverage_score
     : key === 'longevity' ? product.longevity_score : product.lightweight_score;
-  return { ids: [...new Set(ids)], total, clearCount, score: meta ? score : null };
+  const overallPolarityCounts = wear ? { positive: wear.positive_count, negative: wear.negative_count, mixed: wear.mixed_count } : undefined;
+  return { ids: [...new Set(ids)], total, clearCount, overallPolarityCounts, score: meta ? score : null };
 }
 
 let catalogPromise: Promise<ReviewSummaryCatalog> | undefined;
@@ -84,7 +88,7 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
   catalog: ReviewSummaryCatalog | null;
   reviews: ReadonlyMap<string, Review>;
 }): Promise<ReviewSummaryView> {
-  const { ids, total, clearCount, score } = reviewSummaryEvidence(product, key, scope);
+  const { ids, total, clearCount, score, overallPolarityCounts } = reviewSummaryEvidence(product, key, scope);
   const found = ids.map(id => reviews.get(id)).filter((review, index): review is Review =>
     !!review && review.id === ids[index] && review.product_id === product.id && typeof review.content === 'string'
     && !!review.content.trim() && (!scope || !isWear(key) || review.option_name === scope));
@@ -92,9 +96,11 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
     sentences: [], sourceLabel: '규칙 기반 리뷰 요약', sourceKind: 'rule_based',
     totalEvidenceCount: total, sampleReviewIds: found.map(review => review.id), reviews: found,
     polarityCounts: { positive: 0, negative: 0, mixed: 0 },
+    overallPolarityCounts,
     insufficient: clearCount < 3 || score == null || found.length < 3,
     status: 'unavailable', message: '요약을 확인할 원문 근거가 없습니다.',
   };
+  if (scope && !isWear(key)) return { ...result, message: '이 항목은 옵션별 요약을 제공하지 않습니다.' };
   if (!ids.length) return { ...result, status: 'insufficient', insufficient: true,
     message: '이 항목을 요약할 원문 근거가 부족합니다.' };
   if (found.length !== ids.length) return { ...result, message: '일부 근거 원문을 확인하지 못해 요약을 표시하지 않습니다.' };
@@ -109,6 +115,8 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
       || entry.sources.some(source => !ids.includes(source.id))) {
     return { ...result, status: 'stale', message: '현재 근거 목록과 요약 자료가 달라 요약을 표시하지 않습니다.' };
   }
+  if (!globalThis.crypto?.subtle) return { ...result,
+    message: '이 접속 환경에서는 원문 일치 여부를 확인할 수 없어 요약을 표시하지 않습니다. 아래 원문을 확인해 주세요.' };
   try {
     const verified = await Promise.all(entry.sources.map(async source => {
       const review = reviews.get(source.id)!;
@@ -116,6 +124,9 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
         && typeof source.sha256 === 'string' && /^[a-f0-9]{64}$/.test(source.sha256)
         && Array.isArray(source.excerpts) && source.excerpts.every(text => typeof text === 'string'
           && !!text.trim() && text.length <= 200 && review.content.includes(text))
+        && (!source.excerpts_by_polarity || ['positive', 'negative'].every(polarity =>
+          Array.isArray(source.excerpts_by_polarity?.[polarity as 'positive' | 'negative'])
+          && source.excerpts_by_polarity![polarity as 'positive' | 'negative'].every(text => source.excerpts.includes(text))))
         && await rawHash(review.content) === source.sha256;
     }));
     if (verified.some(ok => !ok)) throw new Error('Changed source');
@@ -125,23 +136,25 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
   if (entry.sources.some(source => source.semantic_verified !== true)) {
     return { ...result, status: 'unavailable', message: '일부 원문에 전언 등 해석이 불확실한 표현이 있어 요약을 표시하지 않습니다. 아래 원문을 확인해 주세요.' };
   }
+  const uniqueSources = [...new Map(entry.sources.map(source => [source.sha256, source])).values()];
   const counts = { positive: 0, negative: 0, mixed: 0 };
-  entry.sources.forEach(source => { counts[source.polarity]++; });
+  uniqueSources.forEach(source => { counts[source.polarity]++; });
   result.polarityCounts = counts;
+  result.uniqueSampleCount = uniqueSources.length;
+  result.insufficient ||= uniqueSources.length < 3;
   if (result.insufficient) return { ...result, status: 'insufficient',
     message: '명확한 근거가 3건 미만이거나 점수가 정보 부족이어서 요약하지 않았습니다. 확인 가능한 원문은 아래에서 볼 수 있습니다.' };
-  const parts = [counts.positive ? `긍정 표현 ${counts.positive}건` : '',
-    counts.negative ? `부정 표현 ${counts.negative}건` : '',
-    counts.mixed ? `한 리뷰 안 평가 엇갈림 ${counts.mixed}건` : ''].filter(Boolean);
-  result.sentences = [`확인한 ${LABELS[key]} 근거 표본 ${found.length}건에는 ${parts.join(' · ')}이 있습니다.`];
-  // Prefer a negative or mixed example whenever one exists. An excerpt is
-  // quoted verbatim and always belongs to a review in the disclosure below.
-  const examples: string[] = [];
-  for (const polarity of ['mixed', 'negative', 'positive'] as const) {
-    const source = entry.sources.find(item => item.polarity === polarity && item.excerpts.length);
-    if (source) examples.push(...source.excerpts.slice(0, polarity === 'mixed' ? 2 : 1));
-    if (examples.length >= 2) break;
-  }
-  if (examples.length) result.sentences.push(`원문 표현 예: ${examples.slice(0, 2).map(text => `“${text}”`).join(' / ')}.`);
-  return { ...result, status: 'ready', message: '전체 리뷰의 의견 분포가 아니라 아래에서 확인할 수 있는 근거 표본의 요약입니다.' };
+  const both = (counts.positive > 0 && counts.negative > 0) || counts.mixed > 0;
+  result.sentences = [both
+    ? `확인한 ${LABELS[key]} 표본에는 좋았다는 표현과 아쉬웠다는 표현이 함께 있습니다.`
+    : `확인한 ${LABELS[key]} 표본에는 이 항목을 ${counts.positive ? '긍정적으로' : '아쉽게'} 평가한 사용 경험이 있습니다.`];
+  // One example from the larger known group, then the opposite side when
+  // available. Overall wear counts are distinct from these capped samples.
+  const weights = overallPolarityCounts ?? counts;
+  const order = weights.negative > weights.positive ? ['negative', 'positive'] as const : ['positive', 'negative'] as const;
+  const examples = order.map(polarity => uniqueSources.flatMap(source => source.excerpts_by_polarity?.[polarity]
+    ?? (source.polarity === polarity ? source.excerpts : []))[0]).filter((text): text is string => !!text);
+  if (!examples.length) return { ...result, sentences: [], status: 'unavailable', message: '문맥을 보존해 인용할 수 있는 원문이 부족해 요약을 표시하지 않습니다. 아래 원문을 확인해 주세요.' };
+  result.sentences.push(`원문 표현 예: ${[...new Set(examples)].map(text => `“${text}”`).join(' / ')}.`);
+  return { ...result, status: 'ready', message: `전체 근거 ${total}건 중 펼침 표본 ${found.length}건만 확인한 요약입니다. ${uniqueSources.length < found.length ? '같은 내용은 한 번만 세었습니다. ' : ''}표본의 의견 분포는 전체 리뷰와 다를 수 있습니다.` };
 }

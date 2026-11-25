@@ -468,6 +468,7 @@ body::before {
 }
 
 .review-summary-evidence-text {
+  white-space: pre-wrap;
   font-size: 0.78rem;
   line-height: 1.5;
   color: var(--text-secondary);

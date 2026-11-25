@@ -40,8 +40,8 @@ test('sample summary retains negative and uses the same exact reviews as disclos
   assert.equal(result.totalEvidenceCount, 50);
   assert.equal(result.reviews.length, 3);
   assert.deepEqual(result.sampleReviewIds, result.reviews.map(review => review.id));
-  assert.match(result.sentences[0], /표본 3건/);
-  assert.match(result.sentences[0], /부정 표현 1건/);
+  assert.match(result.message, /전체 근거 50건 중 펼침 표본 3건/);
+  assert.deepEqual(result.polarityCounts, { positive: 2, negative: 1, mixed: 0 });
   assert.match(result.sentences[1], /커버력이 아쉬워요/);
   assert.doesNotMatch(result.sentences.join(''), /AI|효능을 만들어내면/);
   assert.equal(result.sourceKind, 'rule_based');
@@ -52,9 +52,52 @@ test('mixed is distinct from positive and negative, including option scope', asy
   assert.equal(result.status, 'ready');
   assert.deepEqual(result.polarityCounts, { positive: 1, negative: 1, mixed: 1 });
   assert.equal(result.totalEvidenceCount, 51);
-  assert.match(result.sentences[0], /한 리뷰 안 평가 엇갈림 1건/);
+  assert.match(result.sentences[0], /좋았다는 표현과 아쉬웠다는 표현/);
   assert.match(result.sentences[1], /자연스러워요/);
   assert.match(result.sentences[1], /화장 티가 많이 나요/);
+});
+
+test('raw CRLF is never normalized and edited line endings invalidate summary', async () => {
+  const input = fixture();
+  const row = input.reviews.get('r1');
+  row.content += '\r\n원래 개행';
+  input.catalog.products.p1.attributes.coverage.sources[0].sha256 = createHash('sha256').update(row.content).digest('hex');
+  const result = await resolveReviewSummary(input);
+  assert.equal(result.status, 'ready');
+  assert.ok(result.reviews[0].content.includes('\r\n'));
+  row.content = row.content.replace('\r\n', '\n');
+  assert.equal((await resolveReviewSummary(input)).status, 'stale');
+});
+
+test('core attributes reject an option scope instead of using overall summary', async () => {
+  const input = fixture(); input.scope = 'A';
+  const result = await resolveReviewSummary(input);
+  assert.equal(result.status, 'unavailable');
+  assert.deepEqual(result.sentences, []);
+  assert.match(result.message, /옵션별 요약/);
+});
+
+test('identical raw text contributes only once and does not inflate three-source threshold', async () => {
+  const input = fixture();
+  const row = input.reviews.get('r3'); row.content = input.reviews.get('r1').content;
+  const source = input.catalog.products.p1.attributes.coverage.sources[2];
+  source.sha256 = createHash('sha256').update(row.content).digest('hex'); source.excerpts = ['커버력이 좋아요'];
+  const result = await resolveReviewSummary(input);
+  assert.equal(result.status, 'insufficient');
+  assert.equal(result.uniqueSampleCount, 2);
+  assert.equal(result.reviews.length, 3);
+  assert.deepEqual(result.polarityCounts, { positive: 1, negative: 1, mixed: 0 });
+});
+
+test('nonsecure context without Web Crypto gets an explicit unavailable state', async () => {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'crypto');
+  Object.defineProperty(globalThis, 'crypto', { configurable: true, value: undefined });
+  try {
+    const result = await resolveReviewSummary(fixture());
+    assert.equal(result.status, 'unavailable');
+    assert.match(result.message, /접속 환경/);
+    assert.deepEqual(result.sentences, []);
+  } finally { Object.defineProperty(globalThis, 'crypto', descriptor); }
 });
 
 test('fewer than three clear reviews or a null score explicitly remains insufficient', async () => {
