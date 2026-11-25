@@ -1,6 +1,18 @@
 'use client';
 
 import { IngredientDetails } from '../components/IngredientDetails';
+import { ReviewSummarySection } from '../components/ReviewSummarySection';
+import {
+  buildPolarityMap,
+  buildReviewSummaryView,
+  collectMetadataSummaryReviewIds,
+  resolveSampleReviews,
+  type CoreSummaryKey,
+  type ReviewSummaryItemKey,
+  type ReviewSummaryResolver,
+  type ReviewSummaryView,
+  type WearSummaryKey,
+} from '../components/reviewSummaryContract';
 
 import { useState, useEffect, useMemo } from 'react';
 import { supabase, Product, Review, SkinType, SkinConcern, ShadeChoice, ApplicationMethod } from '@/lib/supabase';
@@ -61,8 +73,8 @@ function ScoreBar({ label, value, color, count }: { label: string; value: number
   const pct = value == null ? 0 : Math.max(0, Math.min(100, ((value - 1) / 4) * 100));
   return (
     <div style={{ marginBottom: '8px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{label}</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', marginBottom: '4px' }}>
+        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', minWidth: 0, overflowWrap: 'anywhere', wordBreak: 'keep-all' }}>{label}</span>
         <span style={{ fontSize: '0.75rem', fontWeight: 600, color, textAlign: 'right', flexShrink: 0 }}>{value?.toFixed(1) ?? '정보 부족'}{count != null && <small style={{ display: 'block', fontWeight: 400, color: 'var(--text-muted)' }}>근거 {count}건</small>}</span>
       </div>
       <div style={{ height: '6px', borderRadius: '3px', background: 'rgba(255,255,255,0.08)', overflow: 'hidden' }}>
@@ -360,12 +372,29 @@ function SkinQuiz({ onComplete }: { onComplete: (state: QuizState) => void }) {
 }
 
 // ─── 컴포넌트: 모달 ─────────────────────────────────────────────────────────
-function ProductModal({ product, skinType, userShade, onClose }: { product: Product; skinType: SkinType; userShade: ShadeChoice | null; onClose: () => void }) {
+function ProductModal({
+  product,
+  skinType,
+  userShade,
+  onClose,
+  resolveReviewSummary,
+  reviewSummaries,
+}: {
+  product: Product;
+  skinType: SkinType;
+  userShade: ShadeChoice | null;
+  onClose: () => void;
+  resolveReviewSummary?: ReviewSummaryResolver;
+  reviewSummaries?: Partial<Record<ReviewSummaryItemKey, Partial<ReviewSummaryView>>>;
+}) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
   const [reviewError, setReviewError] = useState('');
-  const [evidenceById, setEvidenceById] = useState<Map<string, Review>>(new Map());
-  const [evidenceError, setEvidenceError] = useState('');
+  const [evidenceState, setEvidenceState] = useState<{
+    key: string;
+    byId: Map<string, Review>;
+    error: string;
+  }>({ key: '', byId: new Map(), error: '' });
   const [wearScope, setWearScope] = useState('');
   const [openEvidence, setOpenEvidence] = useState<string | null>(null);
 
@@ -378,19 +407,32 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
         setReviews((data || []) as Review[]);
         setReviewError(error ? '리뷰를 불러오지 못했습니다.' : '');
         setLoadingReviews(false);
+      }, () => {
+        if (controller.signal.aborted) return;
+        setReviews([]);
+        setReviewError('리뷰를 불러오지 못했습니다.');
+        setLoadingReviews(false);
       });
     return () => controller.abort();
   }, [product.id]);
 
   // Reviews that produced each score and concern tag, so a claim can be traced to its source.
-  const meta = hasCurrentProfile(product) ? product.profile_metadata : null;
+  const currentProfile = hasCurrentProfile(product);
+  const meta = currentProfile ? product.profile_metadata : null;
   const scopedWear = useMemo(() => wearScope ? meta?.option_wear?.[wearScope]?.attributes : meta?.wear_attributes, [meta, wearScope]);
   const evidenceIds = useMemo(() => [...new Set([
     ...(meta?.formulation?.evidence_review_ids ?? []),
     ...Object.values(meta?.evidence_review_ids ?? {}).flat(),
     ...Object.values(meta?.concern_evidence_ids ?? {}).flat(),
     ...Object.values(scopedWear ?? {}).flatMap(entry => [...entry.positive_review_ids, ...entry.negative_review_ids, ...entry.mixed_review_ids]),
-  ])], [meta, scopedWear]);
+    ...(currentProfile ? collectMetadataSummaryReviewIds(product, wearScope) : []),
+    ...Object.values(reviewSummaries ?? {}).flatMap(entry => entry?.sampleReviewIds ?? []),
+  ])], [currentProfile, meta, product, reviewSummaries, scopedWear, wearScope]);
+
+  const evidenceQueryKey = useMemo(
+    () => `${product.id}:${wearScope}:${evidenceIds.join(',')}`,
+    [evidenceIds, product.id, wearScope],
+  );
 
   useEffect(() => {
     if (!evidenceIds.length) return;
@@ -399,35 +441,82 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
       .eq('product_id', product.id).in('id', evidenceIds).abortSignal(controller.signal)
       .then(({ data, error }) => {
         if (controller.signal.aborted) return;
-        setEvidenceById(new Map(((data || []) as Review[]).map(r => [r.id, r])));
-        // Silence would be indistinguishable from a product that simply has no evidence.
-        setEvidenceError(error ? '근거 리뷰를 불러오지 못했습니다.' : '');
+        const owned = ((data || []) as Review[]).filter(r => r.product_id === product.id);
+        setEvidenceState({
+          key: evidenceQueryKey,
+          byId: new Map(owned.map(r => [r.id, r])),
+          // Silence would be indistinguishable from a product that simply has no evidence.
+          error: error ? '근거 리뷰를 불러오지 못했습니다.' : '',
+        });
+      }, () => {
+        if (controller.signal.aborted) return;
+        setEvidenceState({
+          key: evidenceQueryKey,
+          byId: new Map(),
+          error: '근거 리뷰를 불러오지 못했습니다.',
+        });
       });
     return () => controller.abort();
-  }, [evidenceIds, product.id]);
+  }, [evidenceIds, evidenceQueryKey, product.id]);
+
+  const loadingEvidence = evidenceIds.length > 0 && evidenceState.key !== evidenceQueryKey;
+  const evidenceById = useMemo(
+    () => (evidenceState.key === evidenceQueryKey ? evidenceState.byId : new Map<string, Review>()),
+    [evidenceQueryKey, evidenceState],
+  );
+  const evidenceError = evidenceState.key === evidenceQueryKey ? evidenceState.error : '';
 
   const modalLineup = shadeLineup(product);
   const modalPick = bestShadeOption(product, userShade);
+  const toggleEvidenceKey = (key: string) => setOpenEvidence(prev => (prev === key ? null : key));
 
+  // Kept dedicated for formulation evidence so it stays distinct from post-use review summaries.
   const renderEvidence = (key: string, ids?: string[]) => {
-    const found = (ids ?? []).map(id => evidenceById.get(id)).filter((r): r is Review => !!r);
-    if (!found.length) return null;
+    const rawIds = ids ?? [];
+    if (!rawIds.length) return null;
+    if (loadingEvidence) {
+      return (
+        <div style={{ marginBottom: '10px' }}>
+          <p role="status" className="review-summary-status">근거 리뷰 {rawIds.length}건을 불러오는 중입니다...</p>
+        </div>
+      );
+    }
+    const { matchedReviews: found, requestedIds, missingCount } = resolveSampleReviews(
+      product.id,
+      rawIds,
+      evidenceById,
+      rawIds.length,
+    );
+    if (!found.length) {
+      return (
+        <div style={{ marginBottom: '10px' }}>
+          <p role="status" className="review-summary-status review-summary-status-warn">
+            {evidenceError || `연결된 근거 리뷰 ${requestedIds.length}건을 현재 상품 원문에서 확인하지 못했습니다.`}
+          </p>
+        </div>
+      );
+    }
     const open = openEvidence === key;
     return (
       <div style={{ marginBottom: '10px' }}>
-        <button onClick={() => setOpenEvidence(open ? null : key)} aria-expanded={open}
+        <button type="button" onClick={() => toggleEvidenceKey(key)} aria-expanded={open}
           style={{ background: 'none', border: 'none', padding: '2px 0', color: '#a5b4fc', fontSize: '0.7rem', cursor: 'pointer' }}>
           {open ? '근거 리뷰 닫기 ▲' : `근거 리뷰 ${found.length}건 보기 ▼`}
         </button>
+        {missingCount > 0 && (
+          <p role="status" className="review-summary-status review-summary-status-warn">
+            연결된 {requestedIds.length}건 중 {missingCount}건은 원문에서 확인되지 않아 {found.length}건만 표시합니다.
+          </p>
+        )}
         {open && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '6px' }}>
             {found.map(r => (
               <div key={r.id} style={{ padding: '8px 10px', borderRadius: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginBottom: '4px' }}>
                   <StarRating rating={r.rating} />
                   {r.skin_type && <span className="skin-tag">{r.skin_type}</span>}
                 </div>
-                <p style={{ fontSize: '0.78rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>{r.content}</p>
+                <p style={{ fontSize: '0.78rem', lineHeight: 1.5, color: 'var(--text-secondary)', overflowWrap: 'anywhere', wordBreak: 'keep-all' }}>{r.content}</p>
               </div>
             ))}
           </div>
@@ -439,23 +528,23 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <div style={{ padding: '24px 28px', borderBottom: '1px solid var(--border-color)' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+        <div className="modal-header">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
                 <p style={{ fontSize: '0.72rem', color: '#a5b4fc', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{product.brand}</p>
-                <IngredientBadge level={hasCurrentProfile(product) ? product.ingredient_level : null} />
+                <IngredientBadge level={currentProfile ? product.ingredient_level : null} />
               </div>
-              <h2 style={{ fontSize: '1.15rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '10px' }}>{product.name}</h2>
+              <h2 style={{ fontSize: '1.15rem', fontWeight: 800, lineHeight: 1.3, marginBottom: '10px', overflowWrap: 'anywhere', wordBreak: 'keep-all' }}>{product.name}</h2>
               <p>{productTypeLabels[product.product_type ?? ''] ?? '제형 미확인'}</p>
               {meta?.formulation?.basis === 'seller_verified' && meta.formulation.source_url?.startsWith('https://image.oliveyoung.co.kr/') && (
-                <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', overflowWrap: 'anywhere' }}>
                   {meta.formulation.verified_fact}{' '}
                   <a href={meta.formulation.source_url} target="_blank" rel="noopener noreferrer">판매자 상품 사진 보기</a>
                 </p>
               )}
               {renderEvidence('formulation', meta?.formulation?.evidence_review_ids)}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
                 <StarRating rating={product.star_rating || 0} />
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>리뷰 {product.review_count?.toLocaleString()}개</span>
                 <span style={{ fontSize: '1.05rem', fontWeight: 800, background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -463,21 +552,43 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
                 </span>
               </div>
             </div>
-            <button onClick={onClose} style={{ width: '34px', height: '34px', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'transparent', color: 'var(--text-muted)', cursor: 'pointer', flexShrink: 0, marginLeft: '16px', fontSize: '1rem' }}>✕</button>
+            <button type="button" onClick={onClose} aria-label="상품 상세 닫기" style={{ width: '34px', height: '34px', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'transparent', color: 'var(--text-muted)', cursor: 'pointer', flexShrink: 0, fontSize: '1rem' }}>✕</button>
           </div>
         </div>
 
-        <div style={{ padding: '20px 28px 28px', overflowY: 'auto', maxHeight: 'calc(90vh - 140px)' }}>
+        <div className="modal-body">
           <div style={{ marginBottom: '20px' }}>
             <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '12px' }}>📊 리뷰 표현 기반 점수</h3>
-            <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: 12 }}>분석 리뷰 {product.profile_metadata?.analyzed_count?.toLocaleString() ?? 0}개 · 점수는 수집된 리뷰의 표현을 요약합니다. 근거가 부족한 항목은 정보 부족으로 표시합니다.</p>
+            <p style={{ fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: 12 }}>분석 리뷰 {product.profile_metadata?.analyzed_count?.toLocaleString() ?? 0}개 · 점수는 수집된 리뷰의 사용 후 표현을 요약합니다. 근거가 부족한 항목은 정보 부족으로 표시합니다.</p>
             {evidenceError && <p role="alert" style={{ fontSize: '0.72rem', color: '#f87171', marginBottom: 8 }}>{evidenceError}</p>}
-            {([['coverage', '커버력', '#a78bfa', product.coverage_score], ['longevity', '지속력', '#60a5fa', product.longevity_score], ['lightweight', '착용감', '#34d399', product.lightweight_score]] as [string, string, string, number | null][]).map(([key, label, color, value]) => (
-              <div key={key}>
-                <ScoreBar label={label} value={hasCurrentProfile(product) ? value : null} color={color} count={meta?.evidence_counts?.[key] ?? 0} />
-                {renderEvidence(key, meta?.evidence_review_ids?.[key])}
-              </div>
-            ))}
+            {([['coverage', '커버력', '#a78bfa', product.coverage_score], ['longevity', '지속력', '#60a5fa', product.longevity_score], ['lightweight', '착용감', '#34d399', product.lightweight_score]] as [CoreSummaryKey, string, string, number | null][]).map(([key, label, color, value]) => {
+              const currentScore = currentProfile ? value : null;
+              const summary = buildReviewSummaryView({
+                product,
+                hasCurrentProfile: currentProfile,
+                itemKey: key,
+                score: currentScore,
+                evidenceById,
+                loading: loadingEvidence,
+                error: evidenceError,
+                externalSummary: reviewSummaries?.[key],
+                resolver: resolveReviewSummary,
+              });
+              return (
+                <div key={key} className="review-score-group">
+                  <ScoreBar label={label} value={currentScore} color={color} count={summary.totalEvidenceCount} />
+                  <ReviewSummarySection
+                    toggleKey={key}
+                    productId={product.id}
+                    itemLabel={label}
+                    summary={summary}
+                    evidenceById={evidenceById}
+                    open={openEvidence === key}
+                    onToggle={toggleEvidenceKey}
+                  />
+                </div>
+              );
+            })}
           </div>
 
           <section aria-label="자연스러움과 사용감 근거" style={{ marginBottom: 20 }}>
@@ -485,19 +596,46 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
             <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: 12 }}>점수와 근거 수는 별개입니다. 명확한 근거가 3건 미만이면 정보 부족이며, 한 리뷰 안에서 평가가 엇갈리면 점수에서 제외합니다.</p>
             <label style={{ display: 'block', fontSize: '0.78rem', marginBottom: 12 }}>
               리뷰 범위
-              <select value={wearScope} onChange={event => setWearScope(event.target.value)} style={{ display: 'block', width: '100%', marginTop: 6, padding: 8, background: '#171725', color: 'var(--text-primary)', border: '1px solid var(--border-color)', borderRadius: 8 }}>
+              <select value={wearScope} onChange={event => setWearScope(event.target.value)} style={{ display: 'block', width: '100%', maxWidth: '100%', minWidth: 0, marginTop: 6, padding: 8, background: '#171725', color: 'var(--text-primary)', border: '1px solid var(--border-color)', borderRadius: 8 }}>
                 <option value="">상품 전체 리뷰</option>
                 {Object.entries(meta?.option_wear ?? {}).map(([name, group]) => <option key={name} value={name}>{name} · {group.review_count}건</option>)}
               </select>
             </label>
             {wearScope && <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: 12 }}>리뷰에 기록된 옵션명 그대로입니다. 과거 옵션이 포함되며 현재 판매 옵션·리뉴얼 전후와의 대응을 확인한 정보는 아닙니다. 추천 순위는 상품 전체 근거를 사용합니다.</p>}
             {FEATURE_CONFIG.slice(0, 3).map(feature => {
-              const entry = scopedWear?.[feature.key as 'naturalness' | 'transfer_resistance' | 'smoothness'];
-              return <div key={feature.key} style={{ marginBottom: 14 }}>
-                <ScoreBar label={feature.label} value={entry && entry.evidence_count >= 3 ? entry.score : null} count={entry?.evidence_count ?? 0} color={feature.color} />
-                <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>긍정 {entry?.positive_count ?? 0}건 · 부정 {entry?.negative_count ?? 0}건 · 리뷰 안 평가 엇갈림 {entry?.mixed_count ?? 0}건</p>
-                {renderEvidence('wear:' + feature.key, [...(entry?.positive_review_ids ?? []), ...(entry?.negative_review_ids ?? []), ...(entry?.mixed_review_ids ?? [])])}
-              </div>;
+              const wearKey = feature.key as WearSummaryKey;
+              const entry = scopedWear?.[wearKey];
+              const scoreValue = entry && entry.evidence_count >= 3 ? entry.score : null;
+              const summary = buildReviewSummaryView({
+                product,
+                hasCurrentProfile: currentProfile,
+                itemKey: wearKey,
+                wearScope,
+                score: scoreValue,
+                evidenceById,
+                loading: loadingEvidence,
+                error: evidenceError,
+                externalSummary: wearScope ? undefined : reviewSummaries?.[wearKey],
+                resolver: resolveReviewSummary,
+              });
+              const polarityMap = buildPolarityMap(entry);
+              const toggleKey = wearScope ? `wear:${wearScope}:${wearKey}` : `wear:${wearKey}`;
+              return (
+                <div key={feature.key} className="review-score-group">
+                  <ScoreBar label={feature.label} value={scoreValue} count={entry?.evidence_count ?? 0} color={feature.color} />
+                  <ReviewSummarySection
+                    toggleKey={toggleKey}
+                    productId={product.id}
+                    itemLabel={feature.label}
+                    summary={summary}
+                    evidenceById={evidenceById}
+                    open={openEvidence === toggleKey}
+                    onToggle={toggleEvidenceKey}
+                    polarityByReviewId={polarityMap}
+                    scopeLabel={wearScope || undefined}
+                  />
+                </div>
+              );
             })}
           </section>
 
@@ -513,12 +651,35 @@ function ProductModal({ product, skinType, userShade, onClose }: { product: Prod
           {product.suitable_concerns && product.suitable_concerns.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '10px' }}>리뷰에서 긍정적으로 언급된 고민</h3>
-              {product.suitable_concerns.map(c => (
-                <div key={c} style={{ marginBottom: '6px' }}>
-                  <div style={{ marginBottom: '4px' }}><span className="skin-tag">{CONCERN_LABEL[c as SkinConcern] ?? c}</span></div>
-                  {renderEvidence('concern:' + c, meta?.concern_evidence_ids?.[c])}
-                </div>
-              ))}
+              {product.suitable_concerns.map(c => {
+                const concernKey = `concern:${c}` as ReviewSummaryItemKey;
+                const concernLabel = CONCERN_LABEL[c as SkinConcern] ?? c;
+                const summary = buildReviewSummaryView({
+                  product,
+                  hasCurrentProfile: currentProfile,
+                  itemKey: concernKey,
+                  evidenceById,
+                  loading: loadingEvidence,
+                  error: evidenceError,
+                  externalSummary: reviewSummaries?.[concernKey],
+                  resolver: resolveReviewSummary,
+                });
+                return (
+                  <div key={c} style={{ marginBottom: '10px' }}>
+                    <div style={{ marginBottom: '6px' }}><span className="skin-tag">{concernLabel}</span></div>
+                    <ReviewSummarySection
+                      toggleKey={concernKey}
+                      productId={product.id}
+                      itemLabel={`${concernLabel} 고민`}
+                      summary={summary}
+                      evidenceById={evidenceById}
+                      open={openEvidence === concernKey}
+                      onToggle={toggleEvidenceKey}
+                      compact
+                    />
+                  </div>
+                );
+              })}
             </div>
           )}
 
