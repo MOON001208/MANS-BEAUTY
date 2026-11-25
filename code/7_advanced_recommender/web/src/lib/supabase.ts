@@ -62,6 +62,7 @@ export interface ProfileMetadata {
   recommendation_eligibility?: { eligible: boolean; exclusion_reason: string | null };
   version?: string;
   metadata_revision?: number;
+  input_hash?: string;
   source_category?: string | null;
   analyzed_count?: number;
   analyzed_at?: string;
