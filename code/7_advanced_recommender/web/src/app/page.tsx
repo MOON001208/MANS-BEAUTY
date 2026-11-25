@@ -493,6 +493,7 @@ function ProductModal({
     const evidence = reviewSummaryEvidence(product, key, scope);
     return { sentences: [], sourceLabel: '규칙 기반 리뷰 요약', sourceKind: 'rule_based',
       totalEvidenceCount: evidence.total, sampleReviewIds: evidence.ids,
+      clearEvidenceCount: evidence.clearCount, mixedEvidenceCount: evidence.total - evidence.clearCount,
       insufficient: evidence.clearCount < 3 || evidence.score == null,
       loading: !ready && evidence.ids.length > 0, error: evidenceError || (ready ? summaryState.error : undefined),
       message: ready && summaryState.error ? '요약을 확인하지 못했습니다. 아래 원문을 확인해 주세요.'

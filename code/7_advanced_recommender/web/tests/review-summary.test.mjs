@@ -52,6 +52,8 @@ test('mixed is distinct from positive and negative, including option scope', asy
   assert.equal(result.status, 'ready');
   assert.deepEqual(result.polarityCounts, { positive: 1, negative: 1, mixed: 1 });
   assert.equal(result.totalEvidenceCount, 51);
+  assert.equal(result.clearEvidenceCount, 50);
+  assert.equal(result.mixedEvidenceCount, 1);
   assert.match(result.sentences[0], /좋았다는 표현과 아쉬웠다는 표현/);
   assert.match(result.sentences[1], /자연스러워요/);
   assert.match(result.sentences[1], /화장 티가 많이 나요/);

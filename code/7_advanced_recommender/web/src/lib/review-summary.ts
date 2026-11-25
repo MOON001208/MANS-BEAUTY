@@ -22,6 +22,8 @@ export interface ReviewSummaryView {
   sourceLabel: string;
   sourceKind: 'rule_based';
   totalEvidenceCount: number;
+  clearEvidenceCount: number;
+  mixedEvidenceCount: number;
   sampleReviewIds: string[];
   reviews: Review[];
   polarityCounts: Record<Polarity, number>;
@@ -95,6 +97,7 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
   const result: ReviewSummaryView = {
     sentences: [], sourceLabel: '규칙 기반 리뷰 요약', sourceKind: 'rule_based',
     totalEvidenceCount: total, sampleReviewIds: found.map(review => review.id), reviews: found,
+    clearEvidenceCount: clearCount, mixedEvidenceCount: total - clearCount,
     polarityCounts: { positive: 0, negative: 0, mixed: 0 },
     overallPolarityCounts,
     insufficient: clearCount < 3 || score == null || found.length < 3,

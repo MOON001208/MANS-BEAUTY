@@ -106,6 +106,47 @@ class ReviewSummaryTests(unittest.TestCase):
             '픽서미스트등으로 마무리하시면 조금더 오래유지가 됩니다.'))
         self.assertFalse(source['semantic_verified'])
 
+    def test_general_conditions_worry_other_owners_and_powder_prep_are_held(self):
+        cases = [
+            ('naturalness', '보통 엄청 진한 색이면 티나서 안쓰게되는데 ㄹㅇ 자연스러워서 자주 쓰게됨'),
+            ('naturalness', '남친도 티안나면 안쓸거같았는데 자연스러워요.'),
+            ('naturalness', '톤 안 맞으면 티 많이 나요.'),
+            ('naturalness', '남친 매번 제껄루 쓰면 너무 티나서 하나 사줬는데 자연스러워요.'),
+            ('transfer_resistance', '바르고 파우더 처리후 휴지를 갖다대면 신기하게 묻어나는게 하나도 없습니다. 마찰이 생길 때는 다 지워지네요.'),
+            ('transfer_resistance', '원래 스틱으로 된 제품을 사용했었습니다. 묻어나는게 좀 있었고 이번 쿠션은 덜 묻어요.'),
+            ('transfer_resistance', '기존 쿠션을 쓰던 때는 마스크에 묻어나요. 이건 안 묻어요.'),
+        ]
+        for key, text in cases:
+            with self.subTest(key=key, text=text):
+                self.assertFalse(summary_source('p1', key, review('1', text))['semantic_verified'])
+        for key, text in [('naturalness', '제가 써보니 자연스러워요.'),
+                          ('naturalness', '바른 뒤 화장 티가 많이 나요.'),
+                          ('transfer_resistance', '마스크에 거의 안 묻어났어요.')]:
+            with self.subTest(direct_control=text):
+                self.assertTrue(summary_source('p1', key, review('1', text))['semantic_verified'])
+
+    def test_context_variants_and_direct_observation_controls(self):
+        cases = [
+            ('lightweight', '두껍게 발린다는 느낌도 안들고 좋아요.', False),
+            ('smoothness', '안 뭉치고 좋대여.', False),
+            ('smoothness', '들뜨거나 그런 건 못 느꼈고요.', False),
+            ('smoothness', '뭉침이 심하지 않고 좋아요.', False),
+            ('longevity', '클렌징 티슈로 쉽게 지워져요.', False),
+            ('transfer_resistance', '묻어나는 것도 생각보다 없고 좋아요.', False),
+            ('transfer_resistance', '용기가 분해되더니 옷에 다 묻어나요.', False),
+            ('lightweight', '가벼운 느낌을 원해서 사 줬는데 좋아요.', False),
+            ('longevity', '금방 무너지는 게 가장 고민이었습니다.', False),
+            ('lightweight', '제형이 무거워요.', True),
+            ('smoothness', '들뜨고 뭉치고 불편해요.', True),
+            ('smoothness', '주름에 끼어요.', True),
+            ('longevity', '금방 지워져요.', True),
+            ('longevity', '하루 종일 유지돼요.', True),
+            ('transfer_resistance', '마스크에 묻어나와서 아쉬워요.', True),
+        ]
+        for key, text, expected in cases:
+            with self.subTest(key=key, text=text):
+                self.assertEqual(summary_source('p1', key, review('1', text))['semantic_verified'], expected)
+
 
 if __name__ == '__main__':
     unittest.main()

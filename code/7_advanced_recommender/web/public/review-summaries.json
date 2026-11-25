@@ -2,7 +2,7 @@
   "schema_version": 1,
   "method": "rules-extractive-v1",
   "profile_version": "rules-ko-v5",
-  "generated_at": "2026-11-25T12:38:59.199776+00:00",
+  "generated_at": "2026-11-25T12:58:50.936657+00:00",
   "products": {
     "A000000011081": {
       "input_hash": "db515c7f1c2079613da77f4179f86538e61ecc3f16db123f9fef78081f82c810",
@@ -1323,7 +1323,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -1519,7 +1519,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13448896",
@@ -1706,7 +1706,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13448896",
@@ -1762,7 +1762,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -1834,7 +1834,7 @@
                   "그래도 손으로 만지면 매트하니 묻어나오는 것 같진 않은데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "11458415",
@@ -1890,7 +1890,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -2130,7 +2130,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -2172,7 +2172,7 @@
                     "그래도 손으로 만지면 매트하니 묻어나오는 것 같진 않은데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "11458415",
@@ -2213,7 +2213,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "5018028",
@@ -2377,7 +2377,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14352902",
@@ -2605,7 +2605,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "63387795",
@@ -2986,7 +2986,7 @@
                   "최고의 제품이라고 생각해요 가끔 씩 너무많이 묻어나오는 점 만 빼면 좋아여"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "11113165",
@@ -3064,7 +3064,7 @@
                   "시간 지나고 유분 조금 올라오면 마스크에 조금 묻는편이에요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14572956",
@@ -3578,7 +3578,7 @@
                     "최고의 제품이라고 생각해요 가끔 씩 너무많이 묻어나오는 점 만 빼면 좋아여"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "11113165",
@@ -3656,7 +3656,7 @@
                     "시간 지나고 유분 조금 올라오면 마스크에 조금 묻는편이에요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14572956",
@@ -4144,7 +4144,7 @@
                   "마스크에 조금 묻어나오는 것만 개선이 된다면 아주 훌륭한 제품이 될 것 같습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "2885963",
@@ -4286,7 +4286,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33102644",
@@ -4399,7 +4399,7 @@
                     "마스크를 쓰고 벗으면 마스크에 잔뜩 묻어서 마스크를 빨아서 쓰는것도 몇번 안지워져서 버렸습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -4562,7 +4562,7 @@
                     "마스크에 조금 묻어나오는 것만 개선이 된다면 아주 훌륭한 제품이 될 것 같습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "2885963",
@@ -4603,7 +4603,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "9837783",
@@ -4700,7 +4700,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "4335238",
@@ -5006,7 +5006,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "24865012",
@@ -5121,7 +5121,7 @@
                   "희마스크 쓰면 안에 묻어요 그게좀 거슬리네요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "9470282",
@@ -5358,7 +5358,7 @@
                   "♧단점: 피부가 유분이 많으면 쉽게 지워질꺼 같더라구요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "50867299",
@@ -5447,7 +5447,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "1809963",
@@ -5594,7 +5594,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "2116723",
@@ -5699,7 +5699,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "1809963",
@@ -5846,7 +5846,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "2116723",
@@ -5955,7 +5955,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65604070",
@@ -6079,7 +6079,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "32935424",
@@ -6129,7 +6129,7 @@
                   "제 생각엔 3~4시간 사이로 알고있고 땀이 나오면 더 빨리 지워지는걸로 알고 있어요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -6179,7 +6179,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "40356641",
@@ -6501,7 +6501,7 @@
                   "끈적이지 않는것 말고는 그냥 그래요 땀나면 하얀물 나오는것 처럼 썬크림 묻어나와요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -6557,7 +6557,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "11650689",
@@ -6602,7 +6602,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "12665176",
@@ -6855,7 +6855,7 @@
                   "마스크 쓰면 엄청 묻어나와요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "11542452",
@@ -6870,7 +6870,7 @@
                   "수분기 다 최고로 사용하고 있습니다 묻어나는 것도 생각보다 없고 화장을 처음 하시는 분들이라면 아마 이 제품이 제일 편하지 않을까 싶은데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "11555175",
@@ -6885,7 +6885,7 @@
                   "엄청 매트하진 않아서 마스크에는 좀 잘 묻어나오는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13045863",
@@ -6902,7 +6902,7 @@
                   "마스크에도 잘 묻어나는거보면 여름철 땀 많이 흘리면 베이지 국물이 나올 것 같아서 우려가 됩니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14310246",
@@ -7138,7 +7138,7 @@
                     "마스크 쓰면 엄청 묻어나와요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14310246",
@@ -7276,7 +7276,7 @@
                     "마스크에도 잘 묻어나는거보면 여름철 땀 많이 흘리면 베이지 국물이 나올 것 같아서 우려가 됩니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18598810",
@@ -7306,7 +7306,7 @@
                     "크림쪽 제형이라서인지 마스크 쓰면 어느정도 묻어나는게 있습니디"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "19514661",
@@ -7321,7 +7321,7 @@
                     "마스크 같은거 쓰면 아주 짙게 묻어납니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -7456,7 +7456,7 @@
                     "수분기 다 최고로 사용하고 있습니다 묻어나는 것도 생각보다 없고 화장을 처음 하시는 분들이라면 아마 이 제품이 제일 편하지 않을까 싶은데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "11555175",
@@ -7471,7 +7471,7 @@
                     "엄청 매트하진 않아서 마스크에는 좀 잘 묻어나오는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "8645994",
@@ -8104,7 +8104,7 @@
                   "마스크 쓰면 바로 번지거나 묻어서 지속력이 좋지 않아요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "32961872",
@@ -8366,7 +8366,7 @@
                   "마스크 쓰면 바로 번지거나 묻어서 지속력이 좋지 않아요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "20961227",
@@ -8758,7 +8758,7 @@
                     "마스크 쓰면 바로 번지거나 묻어서 지속력이 좋지 않아요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "20961227",
@@ -9040,7 +9040,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "15700734",
@@ -9235,7 +9235,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "16257625",
@@ -9250,7 +9250,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "19324769",
@@ -9310,7 +9310,7 @@
                   "톤 안 맞으면 티 많이 나요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "26543424",
@@ -9325,7 +9325,7 @@
                   "좋아요 ㅎㅎ 남친 매번 제껄루 쓰면 너무 티나서 하나 사줬는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "37584391",
@@ -9425,7 +9425,7 @@
                   "가끔 땀을 많이 흘리면 같이 흘러내려서 묻어나오는게 조금 단점입니다 ㅠ"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -9747,7 +9747,7 @@
                     "가끔 땀을 많이 흘리면 같이 흘러내려서 묻어나오는게 조금 단점입니다 ㅠ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -9863,7 +9863,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "16257625",
@@ -9878,7 +9878,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "19324769",
@@ -9908,7 +9908,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "21621687",
@@ -9938,7 +9938,7 @@
                     "톤 안 맞으면 티 많이 나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "26543424",
@@ -9953,7 +9953,7 @@
                     "좋아요 ㅎㅎ 남친 매번 제껄루 쓰면 너무 티나서 하나 사줬는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -10210,7 +10210,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "18421669",
@@ -10332,7 +10332,7 @@
                   "발림성이 좋네요 두껍게 발린다는 느낌도 안들고 톤도 딱 저한테 맞아요~"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28433018",
@@ -10564,7 +10564,7 @@
                   "여전히 아직은 좀 묻어나요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "17026344",
@@ -10967,7 +10967,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "36257497",
@@ -11007,7 +11007,7 @@
                     "여전히 아직은 좀 묻어나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18565972",
@@ -11830,7 +11830,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -13514,7 +13514,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "20863221",
@@ -13635,7 +13635,7 @@
                   "색상톤이 들뜨거나 안맞으면 어쩌나 했는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -13769,7 +13769,7 @@
                     "색상톤이 들뜨거나 안맞으면 어쩌나 했는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -13796,7 +13796,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "21683635",
@@ -13983,7 +13983,7 @@
                   "여드름흉터는 잘 안가려지는거 같아요ㅜㅜ 잡티 커버용으로 쓰면 좋을거같아요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -14235,7 +14235,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "69133232",
@@ -14265,7 +14265,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -14374,7 +14374,7 @@
                   "안 뭉치고 좋대여"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -14471,13 +14471,9 @@
               "id": "25738895",
               "sha256": "a9a66822f6aef757194e9d3652204d678730da1cfddf2936bedd656f897d2941",
               "polarity": "positive",
-              "excerpts": [
-                "생각보다 너무 촉촉하고 미백효과와 커버도 티나지 않고 적당한 수준이라 부담스럽지 않게 사용가능하겠어요"
-              ],
+              "excerpts": [],
               "excerpts_by_polarity": {
-                "positive": [
-                  "생각보다 너무 촉촉하고 미백효과와 커버도 티나지 않고 적당한 수준이라 부담스럽지 않게 사용가능하겠어요"
-                ],
+                "positive": [],
                 "negative": []
               },
               "semantic_verified": true
@@ -14759,7 +14755,7 @@
                   "페이스스틱은 잘못쓰면 날림도 심하고 금방 지워지는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -14983,7 +14979,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "16065669",
@@ -15037,7 +15033,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14944999",
@@ -15132,7 +15128,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "17931728",
@@ -15227,7 +15223,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "16058487",
@@ -15257,20 +15253,16 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "21413947",
               "sha256": "2a7e1bf550e68f11e1b98aa2089ee9be959c6a590fb667955a8fc8c235816e1f",
               "polarity": "negative",
-              "excerpts": [
-                "확률로 뜨고 화장한 티가 많이 나요 어쩔수 없는듯"
-              ],
+              "excerpts": [],
               "excerpts_by_polarity": {
                 "positive": [],
-                "negative": [
-                  "확률로 뜨고 화장한 티가 많이 나요 어쩔수 없는듯"
-                ]
+                "negative": []
               },
               "semantic_verified": true
             },
@@ -15287,7 +15279,7 @@
                   "밝은 곳에서 보면 바른 티가 납니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "25397256",
@@ -15317,22 +15309,18 @@
                   "트러블 있으면 자연스럽지 않기도 하고"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "54895759",
               "sha256": "f70ec8c326e03e9a0c32d9979df2fb03358124df1ab63ec528571726295037d3",
               "polarity": "negative",
-              "excerpts": [
-                "안그러면 자연스럽지 않게 많이 두꺼워져요"
-              ],
+              "excerpts": [],
               "excerpts_by_polarity": {
                 "positive": [],
-                "negative": [
-                  "안그러면 자연스럽지 않게 많이 두꺼워져요"
-                ]
+                "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14784403",
@@ -15350,7 +15338,7 @@
                   "유분이 많은 지성피부라 그라펜 핸섬스틱과 샤넬 파운데이션을 썼을때 시간이 지나면 화장기가 올라와서 부자연스러웠습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "20997585",
@@ -15422,7 +15410,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "23970073",
@@ -15463,7 +15451,7 @@
                   "발림성이 좋아서 그런지 마스크나 손이 살짝만 닿아도 잘 묻어나요ㅜㅜ"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "15417173",
@@ -15521,7 +15509,7 @@
                   "땀나서 휴지로 닦으면 바로 묻어나와요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -15673,7 +15661,7 @@
                   "부드럽게 잘발리고 좋으나 붓으로 잘 펴줘야지 아니면 뭉치네요~ 그래도 자연스럽고 사용하기편해서 좋은거같아요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "46128096",
@@ -16062,7 +16050,7 @@
                     "하나 단점은 마스크 끼면 많이 묻어나네요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -16289,7 +16277,7 @@
                     "밝은 곳에서 보면 바른 티가 납니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "25397256",
@@ -16322,7 +16310,7 @@
                     "유분이 많은 지성피부라 그라펜 핸섬스틱과 샤넬 파운데이션을 썼을때 시간이 지나면 화장기가 올라와서 부자연스러웠습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "20997585",
@@ -16575,7 +16563,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "16058487",
@@ -16605,20 +16593,16 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "21413947",
                 "sha256": "2a7e1bf550e68f11e1b98aa2089ee9be959c6a590fb667955a8fc8c235816e1f",
                 "polarity": "negative",
-                "excerpts": [
-                  "확률로 뜨고 화장한 티가 많이 나요 어쩔수 없는듯"
-                ],
+                "excerpts": [],
                 "excerpts_by_polarity": {
                   "positive": [],
-                  "negative": [
-                    "확률로 뜨고 화장한 티가 많이 나요 어쩔수 없는듯"
-                  ]
+                  "negative": []
                 },
                 "semantic_verified": true
               }
@@ -16660,7 +16644,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "23970073",
@@ -16690,7 +16674,7 @@
                     "발림성이 좋아서 그런지 마스크나 손이 살짝만 닿아도 잘 묻어나요ㅜㅜ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "16473971",
@@ -16716,7 +16700,7 @@
                     "땀나서 휴지로 닦으면 바로 묻어나와요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -16871,7 +16855,7 @@
                     "트러블 있으면 자연스럽지 않기도 하고"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -17167,16 +17151,12 @@
                 "id": "54895759",
                 "sha256": "f70ec8c326e03e9a0c32d9979df2fb03358124df1ab63ec528571726295037d3",
                 "polarity": "negative",
-                "excerpts": [
-                  "안그러면 자연스럽지 않게 많이 두꺼워져요"
-                ],
+                "excerpts": [],
                 "excerpts_by_polarity": {
                   "positive": [],
-                  "negative": [
-                    "안그러면 자연스럽지 않게 많이 두꺼워져요"
-                  ]
+                  "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -17327,7 +17307,7 @@
                     "부드럽게 잘발리고 좋으나 붓으로 잘 펴줘야지 아니면 뭉치네요~ 그래도 자연스럽고 사용하기편해서 좋은거같아요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "35931756",
@@ -17447,7 +17427,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "36392727",
@@ -17517,7 +17497,7 @@
                     "여름에는 파우더 처리해도 묻어남이 심해서 여름에는 못사용할 것 같아요ㅠㅠ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -18422,7 +18402,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "61909051",
@@ -19003,7 +18983,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "61909051",
@@ -19570,7 +19550,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28050874",
@@ -19760,7 +19740,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28367355",
@@ -19807,7 +19787,7 @@
                   "원래 남자가 파운데이션 쓰면 너무 티나서 무슨 남자가 화장이냐~ 하는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29125993",
@@ -19883,7 +19863,7 @@
                   "너무 화장한거마냥 티나서 신랑이 잘 안쓰더라구요~"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "30533665",
@@ -20046,7 +20026,7 @@
                   "휴지 묻어나지도 않고 휴지로 쓱 쓱 닦아줘야 그제서야 묻어나요 ㅋㅋㅋ"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -20183,7 +20163,7 @@
                   "근데 수분감이 너무 없어서 몇시간만 지나면 모공에 끼는게 보이네요 ㅠㅠ 수분크림을 많이 발랐는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29183886",
@@ -20235,7 +20215,7 @@
                   "들뜸 심하고 허옇게 너무 비비바른티가 심해서"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "30899195",
@@ -20250,7 +20230,7 @@
                   "티안나게 커버력이 좋아요 스틱형 파운데이션이라 들뜸있을까봐 걱정이었는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -20311,7 +20291,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28239134",
@@ -20466,7 +20446,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "25396858",
@@ -20526,7 +20506,7 @@
                   "남들 바르는 비비 바르자니 너무 티가 나서 찾다가 남성전용으로 나온게 있더라구요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -21013,7 +20993,7 @@
                     "남들 바르는 비비 바르자니 너무 티가 나서 찾다가 남성전용으로 나온게 있더라구요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -21217,7 +21197,7 @@
                   "커버가 안되는건 둘째치고 로션이라면서 왜 파데처럼 가루가 생기는 건지"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "58697104",
@@ -21613,7 +21593,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "70301774",
@@ -21673,7 +21653,7 @@
                   "밀착력도 별로고 얼굴 잠깐 닦거나 옷에 닿는 경우에 묻어나오는 현상이 너무 심함"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "67784865",
@@ -21703,7 +21683,7 @@
                   "고개 숙이면 티에 묻어요 ㅠ 근데 좋아요 성능은"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -22351,7 +22331,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "67412793",
@@ -22432,7 +22412,7 @@
                     "밀착력도 별로고 얼굴 잠깐 닦거나 옷에 닿는 경우에 묻어나오는 현상이 너무 심함"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "67784865",
@@ -22462,7 +22442,7 @@
                     "고개 숙이면 티에 묻어요 ㅠ 근데 좋아요 성능은"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "69401402",
@@ -22819,7 +22799,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66107429",
@@ -23084,7 +23064,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "56198155",
@@ -23275,7 +23255,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "59929788",
@@ -23454,7 +23434,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "31381590",
@@ -23532,7 +23512,7 @@
                   "보통 엄청 진한 색이면 티나서 안쓰게되는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -23712,7 +23692,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "35598851",
@@ -24152,7 +24132,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "31912006",
@@ -24306,7 +24286,7 @@
                   "화장 티나서 피부 커버 제품 못 바르시던 남자분들"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66814684",
@@ -24540,7 +24520,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "31997692",
@@ -24729,7 +24709,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "31851082",
@@ -24747,7 +24727,7 @@
                     "화장 티나서 피부 커버 제품 못 바르시던 남자분들"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -24855,7 +24835,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "31997692",
@@ -25346,7 +25326,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "53075287",
@@ -25723,7 +25703,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "30694828",
@@ -25738,7 +25718,7 @@
                   "두껍게 발리기 쉬울 수 있어서 잘 덜어서 써야할 것 같았습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -25989,7 +25969,7 @@
                   "유일한 단점은 휴지로 닦으면 피부색처럼 묻는다는거"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -26111,7 +26091,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "43594184",
@@ -26547,7 +26527,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "43594184",
@@ -26840,7 +26820,7 @@
                     "유일한 단점은 휴지로 닦으면 피부색처럼 묻는다는거"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -26895,7 +26875,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30806631",
@@ -27053,13 +27033,9 @@
               "id": "29616167",
               "sha256": "4d0164db53e8c228ef652a219f190755b7737f9d1c7cfd33bb0ee7fe304a1007",
               "polarity": "positive",
-              "excerpts": [
-                "올인원으로 한번에 해결 해주니 편하기도 하고 주름개선과 커버력이 좋아요"
-              ],
+              "excerpts": [],
               "excerpts_by_polarity": {
-                "positive": [
-                  "올인원으로 한번에 해결 해주니 편하기도 하고 주름개선과 커버력이 좋아요"
-                ],
+                "positive": [],
                 "negative": []
               },
               "semantic_verified": true
@@ -27467,7 +27443,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29954606",
@@ -27572,7 +27548,7 @@
                   "그리고 마스크에 묻어나는것도 크지않고"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "30341923",
@@ -27653,7 +27629,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29855775",
@@ -27944,7 +27920,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "29954606",
@@ -28049,7 +28025,7 @@
                     "그리고 마스크에 묻어나는것도 크지않고"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30341923",
@@ -28130,7 +28106,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "29855775",
@@ -28590,7 +28566,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29521703",
@@ -29415,7 +29391,7 @@
                     "휴지로 닦으면 묻어나오긴 하는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "69307854",
@@ -30378,7 +30354,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13414723",
@@ -30389,7 +30365,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13443451",
@@ -30404,7 +30380,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13551710",
@@ -30479,7 +30455,7 @@
                   "전에 1호를 처음 사용했다가 너무 밝게 티가 많이 나서"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33485005",
@@ -30614,7 +30590,7 @@
                   "바르고 마스크쓰고 나가면 마스크에 너무 많이 묻어나고"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14055165",
@@ -30659,7 +30635,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "15100856",
@@ -30780,7 +30756,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "15915324",
@@ -30851,7 +30827,7 @@
                   "근데 가끔 화장하고 좀 지나면 뭉치거나 하는게 보여요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "32870152",
@@ -31453,7 +31429,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "13770887",
@@ -31540,7 +31516,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18429531",
@@ -31555,7 +31531,7 @@
                     "근데 가끔 화장하고 좀 지나면 뭉치거나 하는게 보여요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -31967,7 +31943,7 @@
                     "근데 아쉬운 점이 있다면 처음 사용할때는 살짝만 찍어도 묻어나오지만"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -32337,7 +32313,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "15519877",
@@ -32382,7 +32358,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "13705496",
@@ -32467,7 +32443,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "15435034",
@@ -32561,7 +32537,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14055756",
@@ -32591,7 +32567,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14346066",
@@ -32691,7 +32667,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14210499",
@@ -32792,7 +32768,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -32934,7 +32910,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "13663921",
@@ -33000,7 +32976,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "15180080",
@@ -33090,7 +33066,7 @@
                     "바르고 마스크쓰고 나가면 마스크에 너무 많이 묻어나고"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14312136",
@@ -33190,7 +33166,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "20911086",
@@ -33273,7 +33249,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "13770890",
@@ -33399,7 +33375,7 @@
                     "호수를 잘 골라야하나봐요 잘 보고 고르시고 마스크에 좀 많이 묻어나오네요 그거빼면 자연스러운거같기는 하네요 ㅎㅎ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "14811897",
@@ -34003,7 +33979,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37731208",
@@ -34108,7 +34084,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "33490954",
@@ -34153,7 +34129,7 @@
                     "전에 1호를 처음 사용했다가 너무 밝게 티가 많이 나서"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -34301,7 +34277,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "36153953",
@@ -34331,7 +34307,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "33488296",
@@ -34361,7 +34337,7 @@
                     "남자 쿠션은 너무 하얗게 들뜨거나 번들거리는 게 제일 걱정인데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "59564188",
@@ -34376,7 +34352,7 @@
                     "수정 화장할 때도 들뜸이 심하지 않아서 편하게 사용 중입니다 👍"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "32870152",
@@ -34457,7 +34433,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "33499209",
@@ -34597,7 +34573,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "36974846",
@@ -35835,7 +35811,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "21766089",
@@ -35850,7 +35826,7 @@
                     "마스크나 어디에 닿으면 묻어나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -35875,7 +35851,7 @@
                     "바를땐촉촉한데 점점바싹말라가서 위에바로올리면 들뜨고갈라짐"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -36013,7 +35989,7 @@
                     "붕뜨는 느낌도 없고 그냥 막써도 잘 묻어나와요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "35409445",
@@ -36053,7 +36029,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30408868",
@@ -36068,7 +36044,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30409459",
@@ -36083,7 +36059,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -36629,7 +36605,7 @@
                   "타톤로션 대비 확실히 커버력이 높은 대신에 살짝 티가나서 꾸미고 싶은 날 사용하기 좋고 퍼프로 두들기면 밀착력이 올라가서 궁합 좋아요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -36669,7 +36645,7 @@
                   "세면대에 묻어서 뜨거운물로 뿌려도 안닦아져서 아침부터 청소솔로 세면대 박박 닦아놨습니다~"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "37845453",
@@ -36769,7 +36745,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "36552561",
@@ -36784,7 +36760,7 @@
                   "유지력은 10시쯤에 나가서 7시쯤에 들어와도 딱히 들뜨거나 그런 건 못 느꼈고요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "37851343",
@@ -36799,7 +36775,7 @@
                   "유지력은 10시쯤에 나가서 7시쯤에 들어와도 딱히 들뜨거나 그런 건 못 느꼈고요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -36836,7 +36812,7 @@
                     "세면대에 묻어서 뜨거운물로 뿌려도 안닦아져서 아침부터 청소솔로 세면대 박박 닦아놨습니다~"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -36966,7 +36942,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -37279,7 +37255,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37851343",
@@ -37294,7 +37270,7 @@
                     "타톤로션 대비 확실히 커버력이 높은 대신에 살짝 티가나서 꾸미고 싶은 날 사용하기 좋고 퍼프로 두들기면 밀착력이 올라가서 궁합 좋아요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -37359,7 +37335,7 @@
                     "유지력은 10시쯤에 나가서 7시쯤에 들어와도 딱히 들뜨거나 그런 건 못 느꼈고요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37851343",
@@ -37374,7 +37350,7 @@
                     "유지력은 10시쯤에 나가서 7시쯤에 들어와도 딱히 들뜨거나 그런 건 못 느꼈고요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -38060,7 +38036,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33537322",
@@ -38580,7 +38556,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37950303",
@@ -38716,7 +38692,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37947861",
@@ -38820,7 +38796,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -38952,7 +38928,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "38330730",
@@ -39660,7 +39636,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "34510594",
@@ -39872,7 +39848,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "34510594",
@@ -40004,7 +39980,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "65568563",
@@ -40169,7 +40145,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "64638322",
@@ -40256,7 +40232,7 @@
                   "좀 묻어나는게 흠이라면 흠"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -40429,7 +40405,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "64638322",
@@ -40531,7 +40507,7 @@
                     "좀 묻어나는게 흠이라면 흠"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -40645,7 +40621,7 @@
                   "또한 트루톤로션이 커버 레이어링까지 되는 제품이라 커버력이 부족한 부분은 한번 더 레이어링 해주시면 더 완벽하게 커버하실 수 있어요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "22642475",
@@ -40807,7 +40783,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "29628049",
@@ -41140,7 +41116,7 @@
                   "근데 휴지에 묻어나는 걸 보면 아시겠지만"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -41236,7 +41212,7 @@
                   "혹은 고르게 도포하지 못해 들뜨는 경우도 여전히 많이 보입니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "20721207",
@@ -41418,7 +41394,7 @@
                     "반해 마스크에 묻어나오는게 타제품들 대비 눈에 띄게 적어서 굉장히 만족스럽습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "43551903",
@@ -41488,7 +41464,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "38809665",
@@ -41548,7 +41524,7 @@
                     "약간에 뭉침이 있고 커버가 잘 되는 거 같진 않아요 근데 하나 바를 땐 추천하는게 시간절약"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "48586853",
@@ -41711,7 +41687,7 @@
                     "근데 목부분에 밝은색 셔츠나 티셔츠에 묻으면 티나서 지워야해요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37305360",
@@ -42090,7 +42066,7 @@
                     "근데 휴지에 묻어나는 걸 보면 아시겠지만"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -42186,7 +42162,7 @@
                     "혹은 고르게 도포하지 못해 들뜨는 경우도 여전히 많이 보입니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "20721207",
@@ -42242,7 +42218,7 @@
                     "살짝 매트한 감이 있고 브러쉬나 스펀지 안쓰면 뭉치거나 자국이 남이서 불편하네요ㅜ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -42284,7 +42260,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -42344,7 +42320,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "33466094",
@@ -42607,7 +42583,7 @@
                     "생각보다 스치면 걍 묻어요ㅠ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "23031350",
@@ -42796,7 +42772,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "24255371",
@@ -43013,7 +42989,7 @@
                     "시간 지나면 다크닝도 있는것같고 모공 끼임도 좀 많아보여요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -43102,7 +43078,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -43152,7 +43128,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "38887781",
@@ -43447,7 +43423,7 @@
                   "기껏 기다렸더니 아무리 돌려도 내용물은 안나오고 계속 돌리니깐 분해되더니 옷에 다묻음 심지어 상의는 비싼건데 하… 유튜브는 믿거다 진짜"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "39395586",
@@ -43462,7 +43438,7 @@
                   "지하철 탈때 마스크를 쓰는 편인데 다른 커버로션 제품들 사용했을때보다 묻어나는게 확실히 적습니다(귀에 거는쪽만 묻음)"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "69285215",
@@ -43532,7 +43508,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "38747876",
@@ -43577,7 +43553,7 @@
                   "뜨는거 없이 커버 잘되고 지속력도 엄청 좋아요 비레디는 가까이서 보면 약간 들뜸이 있는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "39231728",
@@ -43856,7 +43832,7 @@
                     "기껏 기다렸더니 아무리 돌려도 내용물은 안나오고 계속 돌리니깐 분해되더니 옷에 다묻음 심지어 상의는 비싼건데 하… 유튜브는 믿거다 진짜"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "39395586",
@@ -43871,7 +43847,7 @@
                     "지하철 탈때 마스크를 쓰는 편인데 다른 커버로션 제품들 사용했을때보다 묻어나는게 확실히 적습니다(귀에 거는쪽만 묻음)"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -44127,7 +44103,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "38782446",
@@ -44202,7 +44178,7 @@
                     "뜨는거 없이 커버 잘되고 지속력도 엄청 좋아요 비레디는 가까이서 보면 약간 들뜸이 있는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "39231728",
@@ -44276,7 +44252,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "58107993",
@@ -44370,7 +44346,7 @@
                     "들뜸이 심하지 않아 데일리 메이크업에 잘 사용하고 있어요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -44537,7 +44513,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65361234",
@@ -45858,7 +45834,7 @@
                   "땀이 많은 편인데 이러면 계속 땀 닦을 때마다 커버색 묻어나서 안쓰게 될것 같다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63211175",
@@ -46344,7 +46320,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "51373495",
@@ -46401,7 +46377,7 @@
                     "피지나 땀 많이 나면 어쩔수 없이 묻어납니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "70542232",
@@ -46688,7 +46664,7 @@
                     "땀이 많은 편인데 이러면 계속 땀 닦을 때마다 커버색 묻어나서 안쓰게 될것 같다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "63211175",
@@ -47385,7 +47361,7 @@
                   "시간이 지나도 들뜸이 심하지 않았습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -48162,7 +48138,7 @@
                     "시간이 지나도 들뜸이 심하지 않았습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -48566,7 +48542,7 @@
                   "오래 쓸 거 같아서 다 쓰고 사도 되겠네여 지우는 것도 클렌징 티슈로 쉽게 지워짐 오래가고 안 묻어요 어딜 가든 여자들이 더 쳐다보는 거 같기도 홓홓"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "24357119",
@@ -48707,7 +48683,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "18971570",
@@ -48724,7 +48700,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "18989969",
@@ -48779,7 +48755,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "19789007",
@@ -48865,7 +48841,7 @@
                   "비비크림을 손으로 바르고 손 닦이도 힘들고 주변에 다 묻어서 걱정했는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "56899831",
@@ -48880,7 +48856,7 @@
                   "바른 뷰분을 만지면 좀 묻어나오네요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -48935,7 +48911,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28250711",
@@ -48965,7 +48941,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "21396480",
@@ -49025,7 +49001,7 @@
                   "단점 기름나오는 피부남성의 경우 저녁되면 들뜸이 있다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -49208,7 +49184,7 @@
                     "단점 기름나오는 피부남성의 경우 저녁되면 들뜸이 있다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -49305,7 +49281,7 @@
                     "바른 뷰분을 만지면 좀 묻어나오네요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -49448,7 +49424,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18971570",
@@ -49465,7 +49441,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18989969",
@@ -49575,7 +49551,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "27258271",
@@ -49681,7 +49657,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -49772,7 +49748,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "28250711",
@@ -50391,7 +50367,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "46942033",
@@ -50930,7 +50906,7 @@
                   "여러 번 덧발라도 뭉침이 심하지 않고 피부에 자연스럽게 밀착되는 점도 마음에 들었습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -51272,7 +51248,7 @@
                     "여러 번 덧발라도 뭉침이 심하지 않고 피부에 자연스럽게 밀착되는 점도 마음에 들었습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -51360,7 +51336,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "46962277",
@@ -51490,7 +51466,7 @@
                     "묻어남 좀 있고 오후쯤되면 조금 벗겨지긴 함"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -51712,7 +51688,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "52391267",
@@ -52195,7 +52171,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "65914984",
@@ -52317,7 +52293,7 @@
                   "1-2회 살살 쓸어주면 적당량이 묻어요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "68241463",
@@ -52387,7 +52363,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "65017963",
@@ -52413,7 +52389,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "65914984",
@@ -52718,7 +52694,7 @@
                     "1-2회 살살 쓸어주면 적당량이 묻어요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "68241463",
@@ -52769,7 +52745,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "67712280",
@@ -52938,7 +52914,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65914984",
@@ -53059,7 +53035,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65017963",
@@ -53085,7 +53061,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65914984",
@@ -53323,7 +53299,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "69815589",
@@ -53494,7 +53470,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "14741717",
@@ -53786,7 +53762,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "46947636",
@@ -53801,7 +53777,7 @@
                   "부자연스러워서 부담될까봐 걱정했는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "58202642",
@@ -53849,16 +53825,12 @@
               "id": "12270897",
               "sha256": "c81f9a49f15e08c72e50ec762e870f6378483125a0e6ca3f59c0079c21da7825",
               "polarity": "positive",
-              "excerpts": [
-                "단점: 바르고 파우더 처리후 휴지를 갖다대면 신기하게 묻어나는게 하나도 없습니다"
-              ],
+              "excerpts": [],
               "excerpts_by_polarity": {
-                "positive": [
-                  "단점: 바르고 파우더 처리후 휴지를 갖다대면 신기하게 묻어나는게 하나도 없습니다"
-                ],
+                "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "20724916",
@@ -54013,7 +53985,7 @@
                   "묻어나는게 좀 있었고"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -54128,7 +54100,7 @@
                   "베이스로 다 깔아버리면 건성한테는 조금 뭉치고 뜰 수 있어서 지성피부한테는 좋은데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33102695",
@@ -54173,7 +54145,7 @@
                   "남편이 이것만 써용 안들뜨고 즇나봐용 색도 자연스러움 히리"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -54316,7 +54288,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "19386273",
@@ -54361,7 +54333,7 @@
                     "부자연스러워서 부담될까봐 걱정했는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -54628,7 +54600,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "18421597",
@@ -54744,7 +54716,7 @@
                     "묻어나는게 좀 있었고"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -54859,7 +54831,7 @@
                     "베이스로 다 깔아버리면 건성한테는 조금 뭉치고 뜰 수 있어서 지성피부한테는 좋은데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "33184234",
@@ -54889,7 +54861,7 @@
                     "남편이 이것만 써용 안들뜨고 즇나봐용 색도 자연스러움 히리"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "50932005",
@@ -54999,16 +54971,12 @@
                 "id": "12270897",
                 "sha256": "c81f9a49f15e08c72e50ec762e870f6378483125a0e6ca3f59c0079c21da7825",
                 "polarity": "positive",
-                "excerpts": [
-                  "단점: 바르고 파우더 처리후 휴지를 갖다대면 신기하게 묻어나는게 하나도 없습니다"
-                ],
+                "excerpts": [],
                 "excerpts_by_polarity": {
-                  "positive": [
-                    "단점: 바르고 파우더 처리후 휴지를 갖다대면 신기하게 묻어나는게 하나도 없습니다"
-                  ],
+                  "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "25385189",
@@ -55169,7 +55137,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66397067",
@@ -55233,7 +55201,7 @@
                     "시간이 지나도 들뜸이 심하지 않아 데일리 메이크업용으로 만족스럽게 사용한 제품이에요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -55354,7 +55322,7 @@
                     "여러 번 덧발라도 뭉침이 심하지 않고 수정화장할 때도 편해요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "68392259",
@@ -55625,7 +55593,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "55905263",
@@ -55735,7 +55703,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -55788,7 +55756,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "55541434",
@@ -56106,7 +56074,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "27860481",
@@ -56376,7 +56344,7 @@
                   "묻어나오면 티 나요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "37477418",
@@ -56818,7 +56786,7 @@
                   "보통 톤업 로션은 시간이 지나면 건조해지거나 들뜨는 경우가 많은데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "51753708",
@@ -57048,7 +57016,7 @@
                     "보통 톤업 로션은 시간이 지나면 건조해지거나 들뜨는 경우가 많은데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "45296615",
@@ -57277,7 +57245,7 @@
                     "제 피부 특성인지 몇시간 지나면 들뜨는거 빼면 더 좋았을거같아요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -57364,7 +57332,7 @@
                     "커버력이 있는건지 쓰면 쓴 게 티가 나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -58302,7 +58270,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "53840438",
@@ -58460,7 +58428,7 @@
                     "묻어나오면 티 나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -58500,7 +58468,7 @@
                     "묻어나오면 티 나요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "36764479",
@@ -58938,7 +58906,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "67413561",
@@ -59139,7 +59107,7 @@
                   "커버를 많이 올리면 살짝 화장한 티가 나서 얇게 여러 번 바르는 걸 추천해요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -59179,7 +59147,7 @@
                   "광고하는거 처럼 커버력이 좋은지 모르겠어요 리뷰만큼 만족도가 높지도 않고 그리고 흰색 옷 입으면 옷에 크림이 묻어 나오는게 별로입니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ],
           "overallPolarityCounts": {
@@ -59309,7 +59277,7 @@
                   "오후쯤 돼도 들뜸이 심하지 않아서 만족합니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "70378789",
@@ -59442,7 +59410,7 @@
                     "커버를 많이 올리면 살짝 화장한 티가 나서 얇게 여러 번 바르는 걸 추천해요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -59467,7 +59435,7 @@
                     "광고하는거 처럼 커버력이 좋은지 모르겠어요 리뷰만큼 만족도가 높지도 않고 그리고 흰색 옷 입으면 옷에 크림이 묻어 나오는게 별로입니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -59734,7 +59702,7 @@
                     "오후쯤 돼도 들뜸이 심하지 않아서 만족합니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "70378789",
@@ -60241,7 +60209,7 @@
                   "여름 출퇴근길에는 땀과 유분 때문에 메이크업이 금방 무너지는 게 가장 고민이었습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "65293084",
@@ -60637,7 +60605,7 @@
                   "가까이서 봐도 파데 쓴 티 잘 안나고 잘 안뭉치고 안뜨더라고요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66426152",
@@ -60667,7 +60635,7 @@
                   "수정 화장할 때도 뭉침이 심하지 않아 편했어요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "70056827",
@@ -61087,7 +61055,7 @@
                     "수정 화장할 때도 뭉침이 심하지 않아 편했어요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "70056827",
@@ -61344,7 +61312,7 @@
                     "가까이서 봐도 파데 쓴 티 잘 안나고 잘 안뭉치고 안뜨더라고요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66426152",
@@ -61756,7 +61724,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63415982",
@@ -61801,7 +61769,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63580452",
@@ -62202,7 +62170,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63448499",
@@ -62253,7 +62221,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63210899",
@@ -62415,7 +62383,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63216043",
@@ -62430,7 +62398,7 @@
                   "외출하는 동안 들뜸이 심하지 않아 만족스러웠습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "63203899",
@@ -62556,7 +62524,7 @@
                   "지속력은 무난한 편인데 땀이나 기타 특수한 상황이 발생한다면 조금 빨리 무너지는 편인거 같아서 참고하세요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "67140541",
@@ -62716,7 +62684,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66708006",
@@ -62731,7 +62699,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66720048",
@@ -62746,7 +62714,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66720129",
@@ -62761,7 +62729,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "66760391",
@@ -62968,7 +62936,7 @@
                   "커버제품 쓰면 늘 고민되던게 티의 목주변에 묻어서 아무리 세탁해도 잘 안지워지는거였는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "70604724",
@@ -63176,7 +63144,7 @@
                   "얇게 여러 번 덧발라도 뭉침이 심하지 않았습니다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "67489052",
@@ -63219,7 +63187,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66760391",
@@ -63659,7 +63627,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66708006",
@@ -63674,7 +63642,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66720129",
@@ -63689,7 +63657,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "66874016",
@@ -63859,7 +63827,7 @@
                     "커버제품 쓰면 늘 고민되던게 티의 목주변에 묻어서 아무리 세탁해도 잘 안지워지는거였는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "70604724",
@@ -64004,7 +63972,7 @@
                     "얇게 여러 번 덧발라도 뭉침이 심하지 않았습니다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "67489052",

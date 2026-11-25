@@ -20,6 +20,7 @@ const rows = Array.from({ length: 13 }, (_, i) => ({ id: `r${i}`, product_id: 'p
 const byId = new Map(rows.map(row => [row.id, row]));
 const summary = { sentences: ['확인한 표본에는 좋았다는 표현과 아쉬웠다는 표현이 함께 있습니다.'],
   totalEvidenceCount: 300, sampleReviewIds: rows.map(row => row.id), reviews: rows,
+  clearEvidenceCount: 297, mixedEvidenceCount: 3,
   polarityCounts: { positive: 5, negative: 5, mixed: 3 }, sourceKind: 'rule_based',
   insufficient: false, status: 'ready', message: '표본의 의견 분포는 전체 리뷰와 다를 수 있습니다.' };
 const render = (view = summary, open = false, reviews = byId) => renderToStaticMarkup(React.createElement(ReviewSummarySection,
@@ -35,6 +36,7 @@ test('closed then open disclosure preserves all thirteen reviews, mixed last IDs
   assert.doesNotMatch(closed, /원문 12/);
   const opened = render(summary, true);
   assert.match(opened, /전체 근거 300건/);
+  assert.match(opened, /점수 기준 297 · 엇갈림 3/);
   assert.match(opened, /표본 13건/);
   assert.match(opened, /확인 표본 · 긍정 5건/);
   assert.match(opened, /평가 엇갈림/);

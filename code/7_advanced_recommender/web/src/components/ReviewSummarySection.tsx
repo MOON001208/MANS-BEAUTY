@@ -108,6 +108,8 @@ export function ReviewSummarySection({
           </div>
           <span className="review-summary-counts">
             전체 근거 {summary.totalEvidenceCount.toLocaleString()}건
+            {(summary.mixedEvidenceCount ?? 0) > 0
+              ? ` (점수 기준 ${summary.clearEvidenceCount} · 엇갈림 ${summary.mixedEvidenceCount})` : ''}
             {sampleCountLabel ? ` · ${sampleCountLabel}` : ''}
             {summary.uniqueSampleCount != null && summary.uniqueSampleCount < matchedReviews.length
               ? ` · 서로 다른 내용 ${summary.uniqueSampleCount}건` : ''}
@@ -135,7 +137,7 @@ export function ReviewSummarySection({
         )}
 
         {hasSentences && summary.message && <p className="review-summary-status">{summary.message}</p>}
-        {summary.polarityCounts && !summary.loading && Object.values(summary.polarityCounts).some(count => count > 0) && (
+        {hasSentences && summary.polarityCounts && Object.values(summary.polarityCounts).some(count => count > 0) && (
           <p className="review-summary-polarity">
             확인 표본 · 긍정 {summary.polarityCounts.positive.toLocaleString()}건 · 부정{' '}
             {summary.polarityCounts.negative.toLocaleString()}건 · 리뷰 안 평가 엇갈림{' '}
