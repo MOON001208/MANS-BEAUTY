@@ -87,8 +87,9 @@ test('committed fallback catalog and summary artifact refer to the same profile 
   assert.match(artifact.snapshot.id, /^[a-f0-9]{64}$/);
 });
 
-test('four independent semantic failures hold the whole frozen entry and preserve every original', async () => {
-  const cases = JSON.parse(readFileSync(new URL('../../tests/fixtures/review_summary_held_samples.json', import.meta.url), 'utf8')).cases;
+test('independently diagnosed semantic and quotation failures hold whole frozen entries and preserve every original', async () => {
+  const cases = ['review_summary_held_samples.json', 'review_summary_context_samples.json', 'review_summary_control_samples.json'].flatMap(name =>
+    JSON.parse(readFileSync(new URL(`../../tests/fixtures/${name}`, import.meta.url), 'utf8')).cases);
   for (const item of cases) {
     const product = item.product;
     const stored = { input_hash: product.profile_metadata.input_hash, attributes: {}, options: {} };
@@ -98,16 +99,17 @@ test('four independent semantic failures hold the whole frozen entry and preserv
       generated_at: '2026-11-26T00:00:00Z', products: { [product.id]: stored } };
     const reviews = new Map(item.reviews.map(row => [row.id, row]));
     const view = await resolveReviewSummary({ product, key: item.key, scope: item.scope, catalog, reviews });
-    assert.equal(view.status, 'unavailable');
+    assert.equal(view.status, item.expected_status ?? 'unavailable');
     assert.equal(view.reviews.length, item.expected_count);
     assert.equal(view.sampleReviewIds.length, item.expected_count);
-    assert.deepEqual(view.sentences, []);
+    if (view.status === 'ready') assert.equal(view.sentences.length, 2);
+    else assert.deepEqual(view.sentences, []);
     const html = renderToStaticMarkup(React.createElement(ReviewSummarySection, {
       toggleKey: item.key, productId: product.id, itemLabel: item.key, summary: view,
       evidenceById: reviews, open: true, onToggle() {},
-      polarityByReviewId: new Map(item.reviews.map(row => [row.id, 'negative'])),
+      polarityByReviewId: new Map(item.entry.sources.map(source => [source.id, source.polarity])),
     }));
-    assert.doesNotMatch(html, /정보 부족 ·|확인 표본 ·|긍정 근거|부정 근거/);
+    if (view.status !== 'ready') assert.doesNotMatch(html, /정보 부족 ·|확인 표본 ·|긍정 근거|부정 근거/);
     for (const row of item.reviews) assert.ok(html.includes(row.content.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;')));
   }
 });

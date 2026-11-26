@@ -1,10 +1,10 @@
 {
-  "captured_at": "2026-11-26T07:52:56.738493+00:00",
+  "captured_at": "2026-11-26T08:21:34.057503+00:00",
   "count": 87,
   "snapshot": {
     "id": "8995141bc5ccdc000f30d3ed8dd815e4853cd6b6409a02e1d0971c3536bf0a4f",
-    "started_at": "2026-11-26T07:52:14.178223+00:00",
-    "confirmed_at": "2026-11-26T07:52:56.738493+00:00",
+    "started_at": "2026-11-26T08:20:38.975187+00:00",
+    "confirmed_at": "2026-11-26T08:21:34.057503+00:00",
     "consistency_method": "double-read-v1",
     "product_count": 87,
     "review_count": 35835,

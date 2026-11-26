@@ -221,13 +221,47 @@ class ReviewSummaryTests(unittest.TestCase):
                     capture_summary_snapshot(products, reviews, count)
 
     def test_frozen_independent_entries_match_current_summary_rules(self):
-        fixture = json.loads((Path(__file__).parent / 'fixtures/review_summary_held_samples.json').read_text(encoding='utf-8'))
-        for item in fixture['cases']:
+        cases = []
+        for name in ['review_summary_held_samples.json', 'review_summary_context_samples.json', 'review_summary_control_samples.json']:
+            cases.extend(json.loads((Path(__file__).parent / 'fixtures' / name).read_text(encoding='utf-8'))['cases'])
+        for item in cases:
             with self.subTest(product=item['product_id'], key=item['key']):
                 actual = build_summary_product(item['product'], item['reviews'])
                 entry = actual['options'][item['scope']][item['key']] if item['scope'] else actual['attributes'][item['key']]
                 self.assertEqual(entry, item['entry'])
-                self.assertTrue(any(not source['semantic_verified'] for source in entry['sources']))
+                if item.get('expected_status') == 'ready':
+                    self.assertTrue(all(source['semantic_verified'] for source in entry['sources']))
+                else:
+                    self.assertTrue(any(not source['semantic_verified'] for source in entry['sources']))
+                self.assertEqual(len(entry['sources']), item['expected_count'])
+
+    def test_context_boundaries_prior_regressions_and_narrow_normal_controls(self):
+        fixture = json.loads((Path(__file__).parent / 'fixtures/review_summary_context_boundaries.json').read_text(encoding='utf-8'))
+        for item in fixture['cases']:
+            with self.subTest(rid=item['id'], key=item['key']):
+                source = summary_source(item['product_id'], item['key'], item, product_type=item['product_type'])
+                self.assertEqual(source['semantic_verified'], item['semantic_verified'])
+                self.assertEqual(source['sha256'], hashlib.sha256(item['content'].encode()).hexdigest())
+                self.assertTrue(all(part in item['content'] for part in source['excerpts']))
+
+    def test_ambiguous_reported_spelling_preserves_explicit_first_person_use(self):
+        for text in ['제가 직접 써보니 커버 잘 되는데요.',
+                     '동생이 샀지만 제가 직접 써보니 커버력이 좋데요.',
+                     '동생이 샀지만 제가 직접 발라봤어요. 커버력이 좋데요.',
+                     '제가 직접 써보니 커버력이 좋아요.']:
+            with self.subTest(direct_use=text):
+                self.assertTrue(summary_source('p1', 'coverage', review('1', text))['semantic_verified'])
+        for text in ['동생이 샀는데 커버력이 좋데요.', '커버력이 좋대요.']:
+            with self.subTest(uncertain_reporting=text):
+                self.assertFalse(summary_source('p1', 'coverage', review('1', text))['semantic_verified'])
+        source = summary_source('p1', 'coverage', review('1', '제가 직접 써보니 커버 잘 되는데요.'))
+        self.assertEqual(source['excerpts_by_polarity']['positive'], ['제가 직접 써보니 커버 잘 되는데요'])
+
+    def test_powder_self_use_exception_keeps_other_powder_preparation_held(self):
+        self.assertTrue(summary_source('p1', 'naturalness', review('1', '파우더 바르고 자연스러워요.'), product_type='powder')['semantic_verified'])
+        for product_type in [None, 'cushion', 'powder']:
+            with self.subTest(other_powder=product_type):
+                self.assertFalse(summary_source('p1', 'naturalness', review('1', '다른 파우더 바르고 자연스러워요.'), product_type=product_type)['semantic_verified'])
 
 
 if __name__ == '__main__':

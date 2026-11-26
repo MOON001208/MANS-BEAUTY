@@ -50,12 +50,12 @@ UNOBSERVED = re.compile(r'기대\s*(?:됩|됨|해|하고|되)|어떨지\s*기대
                         r'남들\s*바르는|비비\s*바르자니|못\s*바르시던')
 ADVICE = re.compile(r'묻지\s*않게\s*(?:잘)?하|조심하|주의하')
 CONDITIONAL_ADVICE = re.compile(r'(?:하|바르|발라|뿌리|찍|두드리).{0,5}(?:시면|으면|면)')
-HYPOTHETICAL_CONTEXT = re.compile(r'이면|라면|다면|으면|경우|같았|걱정|우려|좋겠|원했|바랐|'
+HYPOTHETICAL_CONTEXT = re.compile(r'이면|라면|다면|으면|경우|같았|걱정(?!\s*(?:없이|없어|안|도\s*없))|우려|좋겠|원했|바랐|'
                                   r'(?<!표)면(?=\s|[,;.!?])')
 PAST_PRODUCT_CONTEXT = re.compile(r'(?:원래|기존|예전|이전|전에|작년).{0,80}(?:사용했|썼|쓰던|써왔|쓰고|사용하던)|'
                                   r'제\s*(?:껄|꺼|걸로|것으로)', re.S)
-OTHER_PRODUCT_PREP = re.compile(r'(?:파우더|픽서|미스트|프라이머|다른\s*제품|타사).{0,24}'
-                                r'(?:처리|뿌(?:리|려|렸|린|림)|사용|바르|마무리|한\s*후|후)')
+OTHER_PRODUCT_PREP = re.compile(r'(?P<product>파우더|픽서|미스트|프라이머|선\s*크림|수분\s*크림|다른\s*(?:제품|파우더)|타사).{0,24}'
+                                r'(?:처리|뿌(?:리|려|렸|린|림)|사용|바르|바른|발라|발랐|덧발|마무리|한\s*후|후)')
 COMBINATION_USE = re.compile(r'(?:같이|함께)\s*(?:쓰|써|사용|바르|발라|발랐)|'
                              r'섞(?:어|어서|으니)\s*(?:쓰|써|사용|바르|발라)')
 PICKUP = re.compile(r'패드에\s*(?:잘\s*)?안\s*묻|(?:퍼프|패드|스[펀폰]지|브러[시쉬]).{0,60}잘\s*묻어?나', re.S)
@@ -65,6 +65,49 @@ QUOTE_OFF_TOPIC = re.compile(r'구매|구입|선물|성분|저자극|임상|테�
 FRAGMENT = re.compile(r'^(?:은|는|이|가|을|를|에|도|만|와|과|의|로|으로|에서|까지|부터|처럼|보다|지만|는데|은데|운데)(?:\s|$)|^[)\],\.…]|^(?:안\s*그러면|그러면|확률로|단점\s*:)')
 CLEANSING = re.compile(r'클렌징|세안|지우는\s*것도.{0,18}지워')
 PACKAGING_SPILL = re.compile(r'분해되|파손|깨졌|세면대|싱크대|용기.{0,20}(?:터|새서|새는)')
+PREFERENCE_CONTEXT = re.compile(r'(?:화장(?:하기|하는|하)|꾸민|꾸미).{0,24}(?:싫|부담)|선호합니다')
+REPORTED_EXPERIENCE = re.compile(r'사용한\s*사람.{0,16}(?:후기|말)|(?:후기|말).{0,12}들어\s*보|'
+                                  r'제가\s*(?:쓸|사용할).{0,8}(?:아니라|아니어서)')
+# "좋데요" can be reported speech or a spelling variant. Require explicit
+# first-person use to accept that ambiguous form; ordinary "되는데요" is intact.
+AMBIGUOUS_REPORTED_ENDING = re.compile(r'(?:좋|괜찮|가볍|자연스럽)데(?:요|여)')
+DIRECT_USE = re.compile(r'(?:제가|저는|나는|전)\s*(?:직접\s*)?(?:써\s*보|써봤|사용해\s*보|사용했|발라\s*보|발라봤)')
+VARIABLE_TRANSFER = re.compile(r'(?:언제는|어쩔\s*때|어떤\s*때|가끔).{0,60}묻.{0,60}'
+                                r'(?:언제는|어쩔\s*때|어떤\s*때).{0,24}묻', re.S)
+OTHER_USER_SPECULATION = re.compile(r'(?:분들?|사람들?|남들).{0,40}(?:실\s*듯|실\s*것|으실)', re.S)
+
+
+def _paragraph_context(content, part):
+    """Keep a preceding premise across newlines/commas, without later advice."""
+    for block in re.split(r'\r?\n[ \t]*\r?\n', content):
+        if part in block:
+            return block[:block.index(part) + len(part)]
+    return content
+
+
+def _broken_excerpt(content, part):
+    if any(part.count(left) != part.count(right) for left, right in [('‘', '’'), ('“', '”'), ('「', '」'), ('『', '』')]):
+        return True
+    if part.count('"') % 2 or re.search(r'(?:지만|는데|다면|으면)\s*$', part):
+        return True
+    # Do not turn "마음에\r\n들어요" into a self-contained quoted sentence.
+    offset = content.find(part)
+    return offset > 0 and bool(re.search(r'[가-힣](?:에|을|를|의|와|과|로)\s*\r?\n\s*$', content[:offset])
+                               and re.match(r'(?:들어|들었|듭니|같아|같습|됐|되었)', part))
+
+
+def _original_quote(content, part):
+    # The existing classifier splits at "는데" even inside the sentence ending
+    # "는데요". Include only the immediately adjacent, unchanged original 요.
+    offset = content.find(part)
+    if offset >= 0 and part.endswith('는데') and re.match(r'요(?=\s|[.!?。]|$)', content[offset + len(part):]):
+        return content[offset:offset + len(part) + 1]
+    return part
+
+
+def _other_product_prep(context, product_type):
+    return any(match.group('product') != '파우더' or product_type != 'powder'
+               for match in OTHER_PRODUCT_PREP.finditer(context))
 
 
 def evidence_specs(meta):
@@ -80,7 +123,7 @@ def evidence_specs(meta):
             yield scope, key, list(dict.fromkeys(ids)), entry.get('evidence_count', 0) + entry.get('mixed_count', 0)
 
 
-def summary_source(product_id, key, review, scope=''):
+def summary_source(product_id, key, review, scope='', product_type=None):
     if str(review.get('product_id')) != str(product_id):
         raise ValueError('Cross-product review ID in summary evidence')
     content = review.get('content')
@@ -96,20 +139,27 @@ def summary_source(product_id, key, review, scope=''):
         raise ValueError(f'Unclassified original evidence: {product_id}/{key}/{review["id"]}')
     # The classifiers may normalize whitespace or truncate clauses. Never
     # present that transformed text as a quotation from the original review.
-    candidates = list(dict.fromkeys(part for part in [*negative, *positive]
+    candidates = list(dict.fromkeys(part for part in [_original_quote(content, part) for part in [*negative, *positive]]
                                    if part in content and len(part) <= 100
                                    and not FRAGMENT.search(part)
                                    and not QUOTE_OFF_TOPIC.search(part)
+                                   and not _broken_excerpt(content, part)
                                    and part.count('(') == part.count(')')
                                    and part.count('[') == part.count(']')))
     excerpts = sorted(candidates, key=content.index)[:2]
-    by_polarity = {name: [part for part in excerpts if part in parts]
+    by_polarity = {name: [part for part in excerpts if part in [_original_quote(content, original) for original in parts]]
                    for name, parts in [('positive', positive), ('negative', negative)]}
+    parts = [*positive, *negative]
     return {'id': str(review['id']), 'sha256': hashlib.sha256(content.encode('utf-8')).hexdigest(),
             'polarity': polarity, 'excerpts': excerpts, 'excerpts_by_polarity': by_polarity,
             'semantic_verified': not (UNOBSERVED.search(content)
                 or PAST_PRODUCT_CONTEXT.search(content)
                 or COMBINATION_USE.search(content)
+                or REPORTED_EXPERIENCE.search(content)
+                or any(OTHER_USER_SPECULATION.search(part) for part in parts)
+                or (AMBIGUOUS_REPORTED_ENDING.search(content) and not DIRECT_USE.search(content))
+                or (key == 'transfer_resistance' and VARIABLE_TRANSFER.search(content))
+                or any(_broken_excerpt(content, _original_quote(content, part)) for part in parts)
                 or (key == 'transfer_resistance' and (PICKUP.search(content) or PACKAGING_SPILL.search(content)))
                 or any(ATTRIBUTED_REVIEW.search(part) or PICKUP.search(part) for part in [*positive, *negative])
                 or any(NEGATED_NEGATIVE.search(part) for part in negative)
@@ -117,8 +167,10 @@ def summary_source(product_id, key, review, scope=''):
                 or (key == 'longevity' and any(CLEANSING.search(part) for part in negative))
                 or any(ADVICE.search(part) or INTENT.search(part) for part in positive)
                 or any(CONDITIONAL_ADVICE.search(part) for part in [*positive, *negative])
-                or any(HYPOTHETICAL_CONTEXT.search(part) or OTHER_PRODUCT_PREP.search(part)
-                       for part in [*positive, *negative])
+                or any(HYPOTHETICAL_CONTEXT.search(part) or _other_product_prep(_paragraph_context(content, part), product_type)
+                       for part in parts)
+                or (key == 'naturalness' and any(HYPOTHETICAL_CONTEXT.search(_paragraph_context(content, part))
+                       or PREFERENCE_CONTEXT.search(_paragraph_context(content, part)) for part in negative))
                 or (key == 'coverage' and '어쉽' in content)
                 or (key == 'coverage' and polarity == 'negative'
                     and re.search(r'자연스럽게.{0,12}커버|커버(?:가|도)?\s*(?:되네|돼요|됩니다)', content)))}
@@ -133,7 +185,7 @@ def build_summary_product(product, reviews):
     for scope, key, ids, total in evidence_specs(meta):
         if any(rid not in by_id for rid in ids):
             raise ValueError(f'Missing summary source: {product["id"]}/{key}')
-        sources = [summary_source(product['id'], key, by_id[rid], scope) for rid in ids]
+        sources = [summary_source(product['id'], key, by_id[rid], scope, product.get('product_type')) for rid in ids]
         entry = {'totalEvidenceCount': total, 'sources': sources}
         if key in WEAR_ATTRIBUTES:
             attributes = meta.get('option_wear', {}).get(scope, {}).get('attributes', {}) if scope else meta.get('wear_attributes', {})

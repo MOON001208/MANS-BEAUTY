@@ -77,7 +77,7 @@
               ],
               "negative": []
             },
-            "semantic_verified": true
+            "semantic_verified": false
           },
           {
             "id": "29548690",
@@ -92,7 +92,7 @@
               ],
               "negative": []
             },
-            "semantic_verified": true
+            "semantic_verified": false
           },
           {
             "id": "30461681",
@@ -231,16 +231,12 @@
             "id": "24745296",
             "sha256": "23d6259adfa98d64c3c89f17617ed18668b0220819e3587ed28faa3d79d555da",
             "polarity": "negative",
-            "excerpts": [
-              "발색 좋아요 뭔가 여성 제품보다 많이 묻어나는거 같은 느낌은 있는데"
-            ],
+            "excerpts": [],
             "excerpts_by_polarity": {
               "positive": [],
-              "negative": [
-                "발색 좋아요 뭔가 여성 제품보다 많이 묻어나는거 같은 느낌은 있는데"
-              ]
+              "negative": []
             },
-            "semantic_verified": true
+            "semantic_verified": false
           },
           {
             "id": "29743839",
@@ -500,16 +496,12 @@
             "id": "68785517",
             "sha256": "6da569ac37bf17e123d009b5cecf6c6f7f0e4928c21cd4b6c0f3134dbbb978f5",
             "polarity": "positive",
-            "excerpts": [
-              "트러블이나 잡티 티나지 않게 잘 가려주지만"
-            ],
+            "excerpts": [],
             "excerpts_by_polarity": {
-              "positive": [
-                "트러블이나 잡티 티나지 않게 잘 가려주지만"
-              ],
+              "positive": [],
               "negative": []
             },
-            "semantic_verified": true
+            "semantic_verified": false
           }
         ],
         "overallPolarityCounts": {
