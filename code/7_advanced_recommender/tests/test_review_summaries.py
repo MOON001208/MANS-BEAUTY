@@ -1,12 +1,13 @@
 import hashlib
+from copy import deepcopy
 import json
 import sys
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pipeline.profiles import VERSION
-from pipeline.review_summaries import build_summary_product, evidence_specs, summary_source
+from pipeline.profiles import METADATA_REVISION, VERSION
+from pipeline.review_summaries import build_summary_product, capture_summary_snapshot, evidence_specs, summary_source
 
 
 def review(rid, content, **extra):
@@ -146,6 +147,87 @@ class ReviewSummaryTests(unittest.TestCase):
         for key, text, expected in cases:
             with self.subTest(key=key, text=text):
                 self.assertEqual(summary_source('p1', key, review('1', text))['semantic_verified'], expected)
+
+    def test_postprocessing_reduced_transfer_and_reported_speech_are_held(self):
+        held = [
+            ('longevity', '픽서뿌려주니까 굿 오래가요.'),
+            ('longevity', '픽서를 뿌렸더니 하루 종일 유지돼요.'),
+            ('longevity', '미스트를 뿌린 뒤 오래가요.'),
+            ('transfer_resistance', '마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요.'),
+            ('transfer_resistance', '옷에 묻어나는 정도가 덜해서 좋아요.'),
+            ('naturalness', '색상도 자연스러워서 데일리템으로 사용하기 좋대요!'),
+            ('naturalness', '자연스러워서 좋대여.'),
+            ('naturalness', '자연스러워서 좋다네요.'),
+            ('naturalness', '커버로션이랑 같이 쓰니까 바른 티도 안나고 좋아요.'),
+            ('naturalness', '같은라인 커버로션이랑 같은색이라서 같이쓰니 자연스러워요.'),
+            ('naturalness', '로션과 함께 사용하니 자연스러워요.'),
+        ]
+        for key, text in held:
+            with self.subTest(held=text):
+                self.assertFalse(summary_source('p1', key, review('1', text))['semantic_verified'])
+        for key, text in [
+            ('longevity', '제가 써보니 하루 종일 유지돼요.'),
+            ('transfer_resistance', '마스크에 묻어나서 아쉬워요.'),
+            ('naturalness', '색상이 자연스러워서 데일리로 사용하기 좋아요.'),
+            ('naturalness', '제가 발라보니 화장 티가 많이 나요.'),
+            ('naturalness', '같은 라인 제품인데 제가 단독으로 사용하니 자연스러워요.'),
+        ]:
+            with self.subTest(direct_control=text):
+                self.assertTrue(summary_source('p1', key, review('1', text))['semantic_verified'])
+
+    def test_paired_snapshot_has_identical_confirmed_inputs_and_public_provenance(self):
+        product = deepcopy(self.product)
+        product['profile_metadata']['metadata_revision'] = METADATA_REVISION
+        artifact, fallback, raw = capture_summary_snapshot(
+            lambda: [deepcopy(product)], lambda pid, ids: deepcopy(self.reviews), lambda: 30,
+            clock=lambda: '2026-11-26T00:00:00Z')
+        self.assertEqual(artifact['snapshot'], fallback['snapshot'])
+        self.assertEqual(artifact['generated_at'], fallback['captured_at'])
+        self.assertEqual(artifact['snapshot']['review_count'], 30)
+        self.assertEqual(artifact['snapshot']['metadata_revision'], METADATA_REVISION)
+        self.assertEqual([row['content'] for row in raw['p1']], [row['content'] for row in self.reviews])
+        self.assertNotIn('author', json.dumps(raw))
+        self.assertEqual(artifact['products']['p1']['input_hash'], fallback['products'][0]['profile_metadata']['input_hash'])
+
+    def test_snapshot_refuses_changed_profile_raw_or_review_count_before_returning(self):
+        for changed in ['input_hash', 'public_product', 'content', 'option', 'missing', 'count']:
+            with self.subTest(changed=changed):
+                product = deepcopy(self.product)
+                product['profile_metadata']['metadata_revision'] = METADATA_REVISION
+                calls = {'products': 0, 'reviews': 0, 'count': 0}
+
+                def products():
+                    calls['products'] += 1
+                    result = deepcopy(product)
+                    if calls['products'] > 1:
+                        if changed == 'input_hash': result['profile_metadata']['input_hash'] = 'changed'
+                        if changed == 'public_product': result['name'] = 'changed'
+                    return [result]
+
+                def reviews(pid, ids):
+                    calls['reviews'] += 1
+                    result = deepcopy(self.reviews)
+                    if calls['reviews'] > 1:
+                        if changed == 'content': result[0]['content'] += ' changed'
+                        if changed == 'option': result[0]['option_name'] = 'changed'
+                        if changed == 'missing': result.pop()
+                    return result
+
+                def count():
+                    calls['count'] += 1
+                    return 31 if changed == 'count' and calls['count'] > 1 else 30
+
+                with self.assertRaisesRegex(ValueError, 'changed during snapshot capture'):
+                    capture_summary_snapshot(products, reviews, count)
+
+    def test_frozen_independent_entries_match_current_summary_rules(self):
+        fixture = json.loads((Path(__file__).parent / 'fixtures/review_summary_held_samples.json').read_text(encoding='utf-8'))
+        for item in fixture['cases']:
+            with self.subTest(product=item['product_id'], key=item['key']):
+                actual = build_summary_product(item['product'], item['reviews'])
+                entry = actual['options'][item['scope']][item['key']] if item['scope'] else actual['attributes'][item['key']]
+                self.assertEqual(entry, item['entry'])
+                self.assertTrue(any(not source['semantic_verified'] for source in entry['sources']))
 
 
 if __name__ == '__main__':

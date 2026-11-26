@@ -1,6 +1,16 @@
 {
-  "captured_at": "2026-11-25T12:32:22.284Z",
+  "captured_at": "2026-11-26T07:52:56.738493+00:00",
   "count": 87,
+  "snapshot": {
+    "id": "8995141bc5ccdc000f30d3ed8dd815e4853cd6b6409a02e1d0971c3536bf0a4f",
+    "started_at": "2026-11-26T07:52:14.178223+00:00",
+    "confirmed_at": "2026-11-26T07:52:56.738493+00:00",
+    "consistency_method": "double-read-v1",
+    "product_count": 87,
+    "review_count": 35835,
+    "profile_version": "rules-ko-v5",
+    "metadata_revision": 9
+  },
   "products": [
     {
       "id": "A000000011081",
@@ -10,11 +20,11 @@
       "product_type": "tone_lotion",
       "star_rating": 4.7,
       "review_count": 132,
-      "price": 18400,
-      "original_price": 23000,
+      "price": 18400.0,
+      "original_price": 23000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0001/A00000001108104ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011081",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -163,11 +173,11 @@
       "product_type": "primer",
       "star_rating": 4.5,
       "review_count": 111,
-      "price": 9100,
-      "original_price": 13000,
+      "price": 9100.0,
+      "original_price": 13000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0001/A00000001108205ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011082",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 2.8,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -188,13 +198,13 @@
       "compat_oily": 0.725,
       "compat_dry": null,
       "compat_sensitive": null,
-      "compat_combination": 0.562,
+      "compat_combination": 0.588,
       "ingredients_raw": "화장품 / 화장품법에 따라 기재해야 하는 모든 성분\n■ \n사이클로펜타실록산,디메치콘/비닐디메치콘크로스폴리머,디메치콘,토코페릴아세테이트",
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "ebf9b9485cee5ed109c61bd18b8dd23cc0faea0de28350926fbd54f481bf1171",
-        "analyzed_at": "2026-11-25T11:51:36.466798+00:00",
+        "input_hash": "07ce7796a1e89baaa92140430329313465d9b894e9883b5959cc0b1f2289da2f",
+        "analyzed_at": "2026-11-26T05:50:41.100170+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -203,7 +213,7 @@
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 114,
+        "analyzed_count": 115,
         "evidence_counts": {
           "coverage": 3,
           "longevity": 5,
@@ -262,7 +272,7 @@
           "dry": 0,
           "oily": 5,
           "sensitive": 1,
-          "combination": 11
+          "combination": 12
         },
         "evidence_review_ids": {
           "coverage": [
@@ -312,8 +322,8 @@
       "product_type": "primer",
       "star_rating": 4.8,
       "review_count": 58,
-      "price": 11900,
-      "original_price": 17000,
+      "price": 11900.0,
+      "original_price": 17000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0001/A00000001108304ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000011083",
       "coverage_score": null,
@@ -359,7 +369,7 @@
         "source_category": "프라이머/베이스",
         "wear_attributes": {
           "smoothness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -444,11 +454,11 @@
       "product_type": "tone_lotion",
       "star_rating": 4.6,
       "review_count": 72,
-      "price": 26000,
-      "original_price": 26000,
+      "price": 26000.0,
+      "original_price": 26000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0010/A00000010783807ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000107838",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -575,8 +585,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 110,
-      "price": 14800,
-      "original_price": 18000,
+      "price": 14800.0,
+      "original_price": 18000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0012/A00000012221701ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000122217",
       "coverage_score": 3.6,
@@ -639,7 +649,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 10,
             "negative_count": 0,
@@ -733,8 +743,8 @@
       "product_type": "concealer",
       "star_rating": 4.6,
       "review_count": 139,
-      "price": 10800,
-      "original_price": 12000,
+      "price": 10800.0,
+      "original_price": 12000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0012/A00000012222101ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000122221",
       "coverage_score": 3.12,
@@ -795,7 +805,7 @@
             "positive_review_ids": []
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 11,
             "negative_count": 0,
@@ -900,12 +910,12 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 554,
-      "price": 19000,
-      "original_price": 33900,
+      "price": 19000.0,
+      "original_price": 33900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0012/A00000012914917ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000129149",
       "coverage_score": 3.89,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -939,8 +949,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "b7122e0df52528ef7a164e0816a15dba5c25503a9d541d22fc3f7eae229bc0ad",
-        "analyzed_at": "2026-11-24T16:15:50.774977+00:00",
+        "input_hash": "3e948e4dc17b6fab6689f807811d503a34424cbd308d3deb7428cf14dd8ee4af",
+        "analyzed_at": "2026-11-26T05:50:45.137188+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -1028,7 +1038,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 17,
                 "negative_count": 0,
@@ -1062,7 +1072,7 @@
                 ]
               }
             },
-            "review_count": 280
+            "review_count": 281
           }
         },
         "shade_lineup": {
@@ -1071,19 +1081,19 @@
             {
               "name": "핸섬커버쿠션 1호",
               "label": "핸섬커버쿠션 1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "핸섬커버쿠션 3호",
               "label": "핸섬커버쿠션 3호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 556,
+        "analyzed_count": 557,
         "evidence_counts": {
           "coverage": 56,
           "longevity": 17,
@@ -1218,7 +1228,7 @@
         "positive_concern_counts": {
           "acne": 4,
           "pore": 3,
-          "spots": 13
+          "spots": 14
         },
         "recommendation_eligibility": {
           "detail": null,
@@ -1237,12 +1247,12 @@
       "product_type": "cushion",
       "star_rating": 4.7,
       "review_count": 505,
-      "price": 39000,
-      "original_price": 39000,
+      "price": 39000.0,
+      "original_price": 39000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013079802ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130798",
       "coverage_score": 3.9,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": 2.67,
       "suitable_shades": [],
       "shade_options": {},
@@ -1303,7 +1313,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 9,
                 "negative_count": 0,
@@ -1341,7 +1351,7 @@
           "라끌랑 슈퍼쉴드 옴므쿠션 2호": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 13,
                 "negative_count": 0,
@@ -1357,7 +1367,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 15,
                 "negative_count": 0,
@@ -1438,13 +1448,13 @@
             {
               "name": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
               "label": "라끌랑 슈퍼쉴드 옴므쿠션 1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
               "label": "라끌랑 슈퍼쉴드 옴므쿠션 2호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -1478,7 +1488,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 24,
             "negative_count": 0,
@@ -1602,12 +1612,12 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 455,
-      "price": 31500,
-      "original_price": 35000,
+      "price": 31500.0,
+      "original_price": 35000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013081402ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130814",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": 3.5,
       "suitable_shades": [],
       "shade_options": {},
@@ -1675,7 +1685,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 3,
@@ -1712,7 +1722,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 18,
                 "negative_count": 0,
@@ -1827,13 +1837,13 @@
             {
               "name": "내추럴 커버 옴므쿠션 1호",
               "label": "내추럴 커버 옴므쿠션 1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "내추럴 커버 옴므쿠션 2호",
               "label": "내추럴 커버 옴므쿠션 2호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -1867,7 +1877,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 19,
             "negative_count": 0,
@@ -1993,12 +2003,12 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 413,
-      "price": 23400,
-      "original_price": 26000,
+      "price": 23400.0,
+      "original_price": 26000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013081502ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000130815",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -2023,8 +2033,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "f23d5eb49b44b953b80e09acf12ece14618bdf5afd10accf5e71d06424b78538",
-        "analyzed_at": "2026-11-24T16:15:53.882101+00:00",
+        "input_hash": "c8d2860b28816c1f59304c7a236a83edc0d87dc5d8fc6f666372c3db74026abb",
+        "analyzed_at": "2026-11-26T05:50:48.225143+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -2033,7 +2043,7 @@
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 415,
+        "analyzed_count": 416,
         "evidence_counts": {
           "coverage": 38,
           "longevity": 15,
@@ -2042,7 +2052,7 @@
         "source_category": "BB/CC",
         "wear_attributes": {
           "smoothness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -2056,7 +2066,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 13,
             "negative_count": 0,
@@ -2169,8 +2179,8 @@
       "product_type": "shading",
       "star_rating": 4.7,
       "review_count": 740,
-      "price": 14800,
-      "original_price": 18000,
+      "price": 14800.0,
+      "original_price": 18000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013179908ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000131799",
       "coverage_score": 3.47,
@@ -2206,8 +2216,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "34146766124dbd8720d247d5f76b45a03e033e2e57b498da19237608d0024379",
-        "analyzed_at": "2026-11-24T16:15:54.757017+00:00",
+        "input_hash": "6876241edfd782b0db7e64164eacc7ecdea7d71a9ab33985e292b6eb128b72fd",
+        "analyzed_at": "2026-11-26T05:50:49.342661+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -2283,7 +2293,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -2309,7 +2319,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 125
+            "review_count": 126
           }
         },
         "shade_lineup": {
@@ -2318,19 +2328,19 @@
             {
               "name": "라이트",
               "label": "라이트",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "샌드",
               "label": "샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 375,
+        "analyzed_count": 376,
         "evidence_counts": {
           "coverage": 15,
           "longevity": 5,
@@ -2470,11 +2480,11 @@
       "product_type": "cushion",
       "star_rating": 4.6,
       "review_count": 61,
-      "price": 21000,
-      "original_price": 21000,
+      "price": 21000.0,
+      "original_price": 21000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013180303ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000131803",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -2626,8 +2636,8 @@
       "product_type": "primer",
       "star_rating": 4.7,
       "review_count": 218,
-      "price": 14800,
-      "original_price": 18000,
+      "price": 14800.0,
+      "original_price": 18000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0013/A00000013894903ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000138949",
       "coverage_score": null,
@@ -2687,7 +2697,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 10,
             "negative_count": 0,
@@ -2767,12 +2777,12 @@
       "product_type": "liquid",
       "star_rating": 4.7,
       "review_count": 231,
-      "price": 17600,
-      "original_price": 24000,
+      "price": 17600.0,
+      "original_price": 24000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014217308ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000142173",
       "coverage_score": 3.89,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -2833,7 +2843,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -2872,7 +2882,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -2917,7 +2927,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -2964,7 +2974,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -3057,7 +3067,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 14,
             "negative_count": 0,
@@ -3175,11 +3185,11 @@
       "product_type": "cushion",
       "star_rating": 4.9,
       "review_count": 25,
-      "price": 18000,
-      "original_price": 18000,
+      "price": 18000.0,
+      "original_price": 18000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014316901ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000143169",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": null,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -3297,8 +3307,8 @@
       "product_type": "cushion",
       "star_rating": 4.7,
       "review_count": 10,
-      "price": 30000,
-      "original_price": 30000,
+      "price": 30000.0,
+      "original_price": 30000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014317001ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000143170",
       "coverage_score": null,
@@ -3425,8 +3435,8 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 1066,
-      "price": 34900,
-      "original_price": 34900,
+      "price": 34900.0,
+      "original_price": 34900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016100609ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161006",
       "coverage_score": null,
@@ -3588,7 +3598,7 @@
             {
               "name": "1호 아이보리15g",
               "label": "1호 아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -3600,7 +3610,7 @@
             {
               "name": "3호 샌드15g",
               "label": "3호 샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -3709,13 +3719,13 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 3883,
-      "price": 36800,
-      "original_price": 36800,
+      "price": 36800.0,
+      "original_price": 36800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016101017ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161010",
       "coverage_score": 3.93,
       "longevity_score": 3.89,
-      "lightweight_score": 4,
+      "lightweight_score": 4.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -3781,7 +3791,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -3832,7 +3842,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -3848,7 +3858,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 4,
@@ -3880,7 +3890,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -3915,7 +3925,7 @@
             {
               "name": "[단품] 1호 아이보리13g",
               "label": "1호 아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -3927,7 +3937,7 @@
             {
               "name": "[단품] 3호 샌드 13g",
               "label": "3호 샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -3942,7 +3952,7 @@
         "source_category": "파운데이션",
         "wear_attributes": {
           "smoothness": {
-            "score": 3,
+            "score": 3.0,
             "mixed_count": 0,
             "evidence_count": 4,
             "negative_count": 2,
@@ -3958,7 +3968,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 17,
             "negative_count": 0,
@@ -4076,8 +4086,8 @@
       "product_type": "concealer",
       "star_rating": 4.8,
       "review_count": 768,
-      "price": 13400,
-      "original_price": 14900,
+      "price": 13400.0,
+      "original_price": 14900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016109309ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000161093",
       "coverage_score": 3.89,
@@ -4244,13 +4254,13 @@
             {
               "name": "라이트베이지",
               "label": "라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "미디엄베이지",
               "label": "미디엄베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -4414,11 +4424,11 @@
       "product_type": "liquid",
       "star_rating": 4.8,
       "review_count": 1337,
-      "price": 29000,
-      "original_price": 29000,
+      "price": 29000.0,
+      "original_price": 29000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0017/A00000017809218ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000178092",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 3.82,
       "lightweight_score": 2.5,
       "suitable_shades": [],
@@ -4469,8 +4479,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "97469927bde9c07511a96261607651e15b70045b25d19980f0e546bc69ac23b7",
-        "analyzed_at": "2026-11-25T11:51:51.178500+00:00",
+        "input_hash": "0158b5e2239e04bdb02c47ad1075e936de4290713c9e045d63a979b4a9a776ab",
+        "analyzed_at": "2026-11-26T05:50:57.170100+00:00",
         "formulation": {
           "basis": "reviews",
           "counts": {
@@ -4501,7 +4511,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -4557,9 +4567,9 @@
               "naturalness": {
                 "score": 3.95,
                 "mixed_count": 0,
-                "evidence_count": 37,
+                "evidence_count": 38,
                 "negative_count": 1,
-                "positive_count": 36,
+                "positive_count": 37,
                 "mixed_review_ids": [],
                 "negative_review_ids": [
                   "36257497"
@@ -4573,7 +4583,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 6,
@@ -4589,7 +4599,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 444
+            "review_count": 445
           },
           "3호": {
             "attributes": {
@@ -4614,7 +4624,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 23,
                 "negative_count": 0,
@@ -4690,7 +4700,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 5,
@@ -4756,7 +4766,7 @@
             {
               "name": "1호",
               "label": "1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -4780,13 +4790,13 @@
             {
               "name": "5호",
               "label": "5호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 1326,
+        "analyzed_count": 1327,
         "evidence_counts": {
           "coverage": 80,
           "longevity": 45,
@@ -4819,9 +4829,9 @@
           "naturalness": {
             "score": 3.93,
             "mixed_count": 0,
-            "evidence_count": 83,
+            "evidence_count": 84,
             "negative_count": 3,
-            "positive_count": 80,
+            "positive_count": 81,
             "mixed_review_ids": [],
             "negative_review_ids": [
               "36257497",
@@ -4947,8 +4957,8 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 913,
-      "price": 26800,
-      "original_price": 29000,
+      "price": 26800.0,
+      "original_price": 29000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018229010ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000182290",
       "coverage_score": null,
@@ -5228,12 +5238,12 @@
       "product_type": "cushion",
       "star_rating": 4.9,
       "review_count": 144,
-      "price": 37000,
-      "original_price": 37000,
+      "price": 37000.0,
+      "original_price": 37000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018412703ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184127",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": 3.67,
       "suitable_shades": [],
       "shade_options": {},
@@ -5267,8 +5277,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "09315c876071acc59a8d5cb6e9b6aa3aa2b17ec7780c52911d87fe448959e338",
-        "analyzed_at": "2026-11-24T16:16:03.630794+00:00",
+        "input_hash": "2d90d0ad3715a7842c9a2cddced1d5699fa81739be8c5f03bf3fdaf9480a1cf6",
+        "analyzed_at": "2026-11-26T05:50:58.459034+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -5313,12 +5323,12 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 21
+            "review_count": 22
           },
           "2호": {
             "attributes": {
               "smoothness": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -5334,7 +5344,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -5349,7 +5359,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 4,
@@ -5413,7 +5423,7 @@
             {
               "name": "1호",
               "label": "1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -5425,13 +5435,13 @@
             {
               "name": "3호",
               "label": "3호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 144,
+        "analyzed_count": 145,
         "evidence_counts": {
           "coverage": 11,
           "longevity": 8,
@@ -5440,7 +5450,7 @@
         "source_category": "쿠션",
         "wear_attributes": {
           "smoothness": {
-            "score": 3,
+            "score": 3.0,
             "mixed_count": 0,
             "evidence_count": 4,
             "negative_count": 2,
@@ -5564,12 +5574,12 @@
       "product_type": "powder",
       "star_rating": 4.9,
       "review_count": 138,
-      "price": 13100,
-      "original_price": 15000,
+      "price": 13100.0,
+      "original_price": 15000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018633611ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000186336",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -5628,7 +5638,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -5715,12 +5725,12 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 119,
-      "price": 15900,
-      "original_price": 15900,
+      "price": 15900.0,
+      "original_price": 15900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018741011ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187410",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [
         "23",
@@ -5777,7 +5787,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -5820,7 +5830,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -5872,7 +5882,7 @@
             "positive_review_ids": []
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 8,
             "negative_count": 0,
@@ -5968,8 +5978,8 @@
       "product_type": "concealer",
       "star_rating": 4.3,
       "review_count": 26,
-      "price": 12900,
-      "original_price": 15900,
+      "price": 12900.0,
+      "original_price": 15900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018741307ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187413",
       "coverage_score": null,
@@ -6101,8 +6111,8 @@
       "product_type": "primer",
       "star_rating": 4.7,
       "review_count": 20,
-      "price": 12900,
-      "original_price": 15900,
+      "price": 12900.0,
+      "original_price": 15900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018741507ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000187415",
       "coverage_score": null,
@@ -6224,11 +6234,11 @@
       "product_type": "powder",
       "star_rating": 4.8,
       "review_count": 568,
-      "price": 12000,
-      "original_price": 12000,
+      "price": 12000.0,
+      "original_price": 12000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018905904ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000189059",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 3.64,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -6290,7 +6300,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 5,
             "negative_count": 0,
@@ -6376,8 +6386,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.7,
       "review_count": 102,
-      "price": 22000,
-      "original_price": 23900,
+      "price": 22000.0,
+      "original_price": 23900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019183305ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000191833",
       "coverage_score": null,
@@ -6706,8 +6716,8 @@
       "product_type": "shading",
       "star_rating": 4.8,
       "review_count": 369,
-      "price": 15900,
-      "original_price": 15900,
+      "price": 15900.0,
+      "original_price": 15900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019612204ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000196122",
       "coverage_score": null,
@@ -6770,7 +6780,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 33,
             "negative_count": 0,
@@ -6844,8 +6854,8 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 7921,
-      "price": 36800,
-      "original_price": 36800,
+      "price": 36800.0,
+      "original_price": 36800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019800120ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000198001",
       "coverage_score": 3.93,
@@ -7136,7 +7146,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 9,
                 "negative_count": 0,
@@ -7180,7 +7190,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -7306,7 +7316,7 @@
           "1호 아이보리13g": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -7338,7 +7348,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 3,
@@ -7496,7 +7506,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -7529,7 +7539,7 @@
           "[기획] 1호 (+클렌징폼 50ml)": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 1,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -7579,7 +7589,7 @@
           "[기획] 2호 (+클렌징폼 50ml)": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -7593,7 +7603,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 10,
                 "negative_count": 0,
@@ -7638,7 +7648,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 11,
                 "negative_count": 0,
@@ -7675,13 +7685,13 @@
             {
               "name": "[기획] 1호 (+클렌징폼 50ml)",
               "label": "1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "[단품] 3호",
               "label": "3호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -7872,12 +7882,12 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 286,
-      "price": 27900,
-      "original_price": 33900,
+      "price": 27900.0,
+      "original_price": 33900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020038814ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000200388",
       "coverage_score": 3.82,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -8013,7 +8023,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 7,
                 "negative_count": 0,
@@ -8059,7 +8069,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -8100,7 +8110,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 7,
                 "negative_count": 0,
@@ -8147,7 +8157,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -8182,7 +8192,7 @@
             {
               "name": "1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -8200,7 +8210,7 @@
             {
               "name": "4호 모카",
               "label": "4호 모카",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -8234,7 +8244,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 23,
             "negative_count": 0,
@@ -8343,8 +8353,8 @@
       "original_price": 37000,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0020/A00000020300004ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000203000",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -8456,13 +8466,13 @@
             {
               "name": "1호 밝은피부용(23-25호)",
               "label": "1호 밝은피부용",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "2호 보통피부용(27-29호)",
               "label": "2호 보통피부용",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -8490,7 +8500,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -8581,10 +8591,10 @@
       "brand": "듀이셀",
       "category": "쿠션/파운데이션",
       "product_type": "stick",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 850,
-      "price": 33000,
-      "original_price": 36000,
+      "price": 33000.0,
+      "original_price": 36000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020482506ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204825",
       "coverage_score": 3.97,
@@ -8820,8 +8830,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 496,
-      "price": 23900,
-      "original_price": 25900,
+      "price": 23900.0,
+      "original_price": 25900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020482809ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204828",
       "coverage_score": 3.83,
@@ -8874,7 +8884,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 23,
                 "negative_count": 0,
@@ -9117,7 +9127,7 @@
             ]
           },
           "transfer_resistance": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -9220,13 +9230,13 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 6626,
-      "price": 27900,
-      "original_price": 29800,
+      "price": 27900.0,
+      "original_price": 29800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020497522ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000204975",
       "coverage_score": 3.79,
       "longevity_score": 3.75,
-      "lightweight_score": 3.2,
+      "lightweight_score": 3.27,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -9267,8 +9277,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "d9e36b6efb0e0ae17ae15bac94c3196bf168c425a0f7eb1bbe4b3ffc81a780a0",
-        "analyzed_at": "2026-11-25T11:52:04.268657+00:00",
+        "input_hash": "208feb8fc6261f7bd5fb5641d9da7c799be9951f01e0ba147b0af0dd3322023a",
+        "analyzed_at": "2026-11-26T05:51:10.326719+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -9348,7 +9358,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -9380,7 +9390,7 @@
           "[기획] 커버 로션 에어핏 (지성용)": {
             "attributes": {
               "smoothness": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -9413,7 +9423,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 4,
@@ -9517,6 +9527,41 @@
             },
             "review_count": 101
           },
+          "[2025어워즈]본품(미니어처+폼클렌징)": {
+            "attributes": {
+              "smoothness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              },
+              "naturalness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              },
+              "transfer_resistance": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              }
+            },
+            "review_count": 1
+          },
           "[본품+미니어처]NEW커버 로션(지성용)": {
             "attributes": {
               "smoothness": {
@@ -9534,7 +9579,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -9561,6 +9606,41 @@
               }
             },
             "review_count": 113
+          },
+          "[일반기획]에어핏(+미니어처)(지성용)": {
+            "attributes": {
+              "smoothness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              },
+              "naturalness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              },
+              "transfer_resistance": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              }
+            },
+            "review_count": 1
           },
           "어워즈 한정기획(미니어처+폼클렌징)": {
             "attributes": {
@@ -9652,24 +9732,63 @@
               }
             },
             "review_count": 129
+          },
+          "[일반기획]본품(+미니어처)(중/건성용)": {
+            "attributes": {
+              "smoothness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 1,
+                "negative_count": 0,
+                "positive_count": 1,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": [
+                  "70776045"
+                ]
+              },
+              "naturalness": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 1,
+                "negative_count": 0,
+                "positive_count": 1,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": [
+                  "70779458"
+                ]
+              },
+              "transfer_resistance": {
+                "score": null,
+                "mixed_count": 0,
+                "evidence_count": 0,
+                "negative_count": 0,
+                "positive_count": 0,
+                "mixed_review_ids": [],
+                "negative_review_ids": [],
+                "positive_review_ids": []
+              }
+            },
+            "review_count": 4
           }
         },
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 855,
+        "analyzed_count": 861,
         "evidence_counts": {
           "coverage": 38,
           "longevity": 8,
-          "lightweight": 10
+          "lightweight": 11
         },
         "source_category": "BB/CC",
         "wear_attributes": {
           "smoothness": {
-            "score": 3.49,
+            "score": 3.5,
             "mixed_count": 3,
-            "evidence_count": 35,
+            "evidence_count": 36,
             "negative_count": 9,
-            "positive_count": 26,
+            "positive_count": 27,
             "mixed_review_ids": [
               "61622268",
               "70351165",
@@ -9691,11 +9810,11 @@
             ]
           },
           "naturalness": {
-            "score": 3.85,
+            "score": 3.86,
             "mixed_count": 0,
-            "evidence_count": 55,
+            "evidence_count": 56,
             "negative_count": 4,
-            "positive_count": 51,
+            "positive_count": 52,
             "mixed_review_ids": [],
             "negative_review_ids": [
               "60722321",
@@ -9811,12 +9930,12 @@
       "product_type": "powder",
       "star_rating": 4.8,
       "review_count": 209,
-      "price": 8900,
-      "original_price": 12000,
+      "price": 8900.0,
+      "original_price": 12000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020562404ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205624",
       "coverage_score": null,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -9860,7 +9979,7 @@
         "source_category": "파우더/팩트",
         "wear_attributes": {
           "smoothness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 0,
@@ -9949,8 +10068,8 @@
       "product_type": "shading",
       "star_rating": 4.9,
       "review_count": 159,
-      "price": 15900,
-      "original_price": 15900,
+      "price": 15900.0,
+      "original_price": 15900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020593508ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205935",
       "coverage_score": null,
@@ -10016,7 +10135,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 1,
             "evidence_count": 18,
             "negative_count": 0,
@@ -10085,13 +10204,13 @@
       "product_type": "primer",
       "star_rating": 4.8,
       "review_count": 168,
-      "price": 21000,
-      "original_price": 21000,
+      "price": 21000.0,
+      "original_price": 21000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020596904ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205969",
       "coverage_score": null,
       "longevity_score": null,
-      "lightweight_score": 4,
+      "lightweight_score": 4.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -10134,7 +10253,7 @@
         "source_category": "프라이머/베이스",
         "wear_attributes": {
           "smoothness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 5,
             "negative_count": 0,
@@ -10150,7 +10269,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 12,
             "negative_count": 0,
@@ -10245,13 +10364,13 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 386,
-      "price": 17900,
-      "original_price": 29000,
+      "price": 17900.0,
+      "original_price": 29000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020597009ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000205970",
       "coverage_score": 3.73,
       "longevity_score": 3.5,
-      "lightweight_score": 3,
+      "lightweight_score": 3.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -10294,7 +10413,7 @@
           "03호 샌드베이지": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -10308,7 +10427,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 1,
                 "evidence_count": 14,
                 "negative_count": 0,
@@ -10326,7 +10445,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 1,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -10370,7 +10489,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 1,
                 "evidence_count": 15,
                 "negative_count": 0,
@@ -10418,13 +10537,13 @@
             {
               "name": "02호 뉴트럴베이지",
               "label": "02호 뉴트럴베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "03호 샌드베이지",
               "label": "03호 샌드베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -10460,7 +10579,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 2,
             "evidence_count": 29,
             "negative_count": 0,
@@ -10587,8 +10706,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 312,
-      "price": 28500,
-      "original_price": 38000,
+      "price": 28500.0,
+      "original_price": 38000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020600815ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000206008",
       "coverage_score": null,
@@ -10652,7 +10771,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 5,
             "negative_count": 0,
@@ -10731,10 +10850,10 @@
       "brand": "원오브뎀",
       "category": "쿠션/파운데이션",
       "product_type": "cushion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 1193,
-      "price": 32000,
-      "original_price": 32000,
+      "price": 32000.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020657337ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000206573",
       "coverage_score": 3.95,
@@ -10879,7 +10998,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 96,
                 "negative_count": 0,
@@ -10923,13 +11042,13 @@
             {
               "name": "001",
               "label": "001",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "002",
               "label": "002",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -11113,15 +11232,15 @@
       "brand": "그라펜",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 1279,
-      "price": 28000,
-      "original_price": 28000,
+      "price": 28000.0,
+      "original_price": 28000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020717730ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207177",
       "coverage_score": 3.95,
-      "longevity_score": 4,
-      "lightweight_score": 3,
+      "longevity_score": 4.0,
+      "lightweight_score": 3.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -11561,13 +11680,13 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 1171,
-      "price": 24900,
-      "original_price": 33900,
+      "price": 24900.0,
+      "original_price": 33900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020736930ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207369",
       "coverage_score": 3.8,
       "longevity_score": 3.8,
-      "lightweight_score": 4,
+      "lightweight_score": 4.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -11627,7 +11746,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 68,
                 "negative_count": 0,
@@ -11683,7 +11802,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 26,
                 "negative_count": 0,
@@ -11750,7 +11869,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 94,
             "negative_count": 0,
@@ -11875,8 +11994,8 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 48,
-      "price": 23200,
-      "original_price": 29000,
+      "price": 23200.0,
+      "original_price": 29000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020775901ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207759",
       "coverage_score": null,
@@ -12036,7 +12155,7 @@
             {
               "name": "1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -12048,7 +12167,7 @@
             {
               "name": "3호 베이지",
               "label": "3호 베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -12148,8 +12267,8 @@
       "product_type": "powder",
       "star_rating": 3.7,
       "review_count": 6,
-      "price": 29600,
-      "original_price": 37000,
+      "price": 29600.0,
+      "original_price": 37000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020776201ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000207762",
       "coverage_score": null,
@@ -12266,13 +12385,13 @@
             {
               "name": "1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "2호 내추럴베이지",
               "label": "2호 내추럴베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -12360,8 +12479,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.7,
       "review_count": 19,
-      "price": 31500,
-      "original_price": 45000,
+      "price": 31500.0,
+      "original_price": 45000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020872307ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000208723",
       "coverage_score": null,
@@ -12478,8 +12597,8 @@
       "product_type": "stick",
       "star_rating": 4.9,
       "review_count": 990,
-      "price": 29700,
-      "original_price": 36000,
+      "price": 29700.0,
+      "original_price": 36000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021030706ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000210307",
       "coverage_score": null,
@@ -12608,8 +12727,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.4,
       "review_count": 10,
-      "price": 19000,
-      "original_price": 19000,
+      "price": 19000.0,
+      "original_price": 19000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021092101ko.jpeg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000210921",
       "coverage_score": null,
@@ -12727,8 +12846,8 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 4050,
-      "price": 26900,
-      "original_price": 32900,
+      "price": 26900.0,
+      "original_price": 32900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021206326ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212063",
       "coverage_score": 3.87,
@@ -12833,7 +12952,7 @@
           "2호": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -12847,7 +12966,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 14,
                 "negative_count": 0,
@@ -12863,7 +12982,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -12954,7 +13073,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -13072,7 +13191,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 10,
                 "negative_count": 0,
@@ -13088,7 +13207,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -13124,7 +13243,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -13174,7 +13293,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -13260,7 +13379,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -13320,7 +13439,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 37,
                 "negative_count": 0,
@@ -13384,7 +13503,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 52,
                 "negative_count": 0,
@@ -13660,7 +13779,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 29,
                 "negative_count": 0,
@@ -13836,7 +13955,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 1,
                 "evidence_count": 14,
                 "negative_count": 0,
@@ -13980,7 +14099,7 @@
           "2호 라이언 리필": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -13994,7 +14113,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -14037,7 +14156,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -14081,7 +14200,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -14234,7 +14353,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 7,
                 "negative_count": 0,
@@ -14280,7 +14399,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 8,
                 "negative_count": 0,
@@ -14316,7 +14435,7 @@
           "블루쿠션 2호&내추럴 생기립밤": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -14330,7 +14449,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -14346,7 +14465,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -14377,7 +14496,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -14421,7 +14540,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -14455,7 +14574,7 @@
             {
               "name": "[본품]1호",
               "label": "1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -14479,7 +14598,7 @@
             {
               "name": "[본품]5호",
               "label": "5호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -14670,12 +14789,12 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 331,
-      "price": 23100,
-      "original_price": 30000,
+      "price": 23100.0,
+      "original_price": 30000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021299123ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212991",
       "coverage_score": 3.94,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": 3.2,
       "suitable_shades": [],
       "shade_options": {},
@@ -14774,7 +14893,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -14817,7 +14936,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -14953,7 +15072,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -14987,7 +15106,7 @@
             {
               "name": "[본품] 아이보리",
               "label": "아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -14999,7 +15118,7 @@
             {
               "name": "[본품] 샌드",
               "label": "샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -15158,12 +15277,12 @@
       "product_type": "concealer",
       "star_rating": 4.6,
       "review_count": 139,
-      "price": 17600,
-      "original_price": 22000,
+      "price": 17600.0,
+      "original_price": 22000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021299813ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000212998",
       "coverage_score": 3.78,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -15219,7 +15338,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -15248,7 +15367,7 @@
           "살몬 베이지": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -15315,7 +15434,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 4,
             "negative_count": 0,
@@ -15408,12 +15527,12 @@
       "product_type": "stick",
       "star_rating": 4.9,
       "review_count": 271,
-      "price": 22400,
-      "original_price": 24900,
+      "price": 22400.0,
+      "original_price": 24900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021306601ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000213066",
       "coverage_score": 3.96,
-      "longevity_score": 4,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -15529,7 +15648,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 27,
                 "negative_count": 0,
@@ -15545,7 +15664,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -15568,13 +15687,13 @@
             {
               "name": "1호 베이지",
               "label": "1호 베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "2호 샌드베이지",
               "label": "2호 샌드베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -15626,7 +15745,7 @@
             ]
           },
           "transfer_resistance": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 5,
             "negative_count": 0,
@@ -15722,14 +15841,14 @@
       "brand": "스웨거",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 216,
-      "price": 17900,
-      "original_price": 19900,
+      "price": 17900.0,
+      "original_price": 19900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021306803ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000213068",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": 3.5,
       "suitable_shades": [],
       "shade_options": {},
@@ -15796,7 +15915,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 24,
             "negative_count": 0,
@@ -15909,12 +16028,12 @@
       "product_type": "cushion",
       "star_rating": 4.9,
       "review_count": 39,
-      "price": 36900,
-      "original_price": 36900,
+      "price": 36900.0,
+      "original_price": 36900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021402802ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000214028",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -15995,7 +16114,7 @@
           "01 아이보리": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -16009,7 +16128,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -16043,13 +16162,13 @@
             {
               "name": "01 아이보리",
               "label": "01 아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "02 베이지",
               "label": "02 베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -16064,7 +16183,7 @@
         "source_category": "쿠션",
         "wear_attributes": {
           "smoothness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 4,
             "negative_count": 0,
@@ -16079,7 +16198,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 6,
             "negative_count": 0,
@@ -16188,12 +16307,12 @@
       "product_type": "cushion",
       "star_rating": 4.9,
       "review_count": 2449,
-      "price": 21900,
-      "original_price": 24900,
+      "price": 21900.0,
+      "original_price": 24900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021704213ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000217042",
-      "coverage_score": 3.33,
-      "longevity_score": 4,
+      "coverage_score": 3.5,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -16237,8 +16356,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "9891ba66f5089ed82599c281b828a418bcc45f8820afa5649830d4aa702dd253",
-        "analyzed_at": "2026-11-24T16:16:38.409015+00:00",
+        "input_hash": "791c280b75c68199c0371da8d06d83764cccd02c6496c7c36f2b0139722c16e7",
+        "analyzed_at": "2026-11-26T05:51:26.966679+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -16295,7 +16414,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -16334,7 +16453,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 8,
                 "negative_count": 0,
@@ -16364,7 +16483,7 @@
                 ]
               }
             },
-            "review_count": 51
+            "review_count": 52
           },
           "4호 다미엔 리필": {
             "attributes": {
@@ -16408,7 +16527,7 @@
             {
               "name": "1호 스톤 리필",
               "label": "1호 스톤 리필",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
@@ -16432,15 +16551,15 @@
             {
               "name": "5호 오웬 리필",
               "label": "5호 오웬 리필",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 122,
+        "analyzed_count": 123,
         "evidence_counts": {
-          "coverage": 3,
+          "coverage": 4,
           "longevity": 5,
           "lightweight": 2
         },
@@ -16459,7 +16578,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 11,
             "negative_count": 0,
@@ -16513,7 +16632,8 @@
           "coverage": [
             "59321330",
             "64270611",
-            "65568563"
+            "65568563",
+            "70767292"
           ],
           "longevity": [
             "60019310",
@@ -16555,8 +16675,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.7,
       "review_count": 1717,
-      "price": 37000,
-      "original_price": 37000,
+      "price": 37000.0,
+      "original_price": 37000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0021/A00000021778422ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000217784",
       "coverage_score": 3.83,
@@ -16625,7 +16745,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 16,
                 "negative_count": 0,
@@ -16733,7 +16853,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 3,
@@ -16791,7 +16911,7 @@
           "트루 톤 로션 오리지널": {
             "attributes": {
               "smoothness": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 10,
                 "negative_count": 5,
@@ -16973,7 +17093,7 @@
           "트루 톤 로션 오리지널+10ml 증정기획": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -17005,7 +17125,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 6,
@@ -17262,8 +17382,8 @@
       "product_type": "liquid",
       "star_rating": 4.9,
       "review_count": 701,
-      "price": 22400,
-      "original_price": 32000,
+      "price": 22400.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022282742ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000222827",
       "coverage_score": 3.88,
@@ -17318,8 +17438,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "38721f279cc624fcf8a7cc2c5a23c66ae542e5de13e24b449cd3aac0749a212d",
-        "analyzed_at": "2026-11-24T16:16:42.123831+00:00",
+        "input_hash": "97b936058379f8540e2157baddbc6d4ed3aa6cac3011e640e5996a524c2e4bf1",
+        "analyzed_at": "2026-11-26T05:51:30.863422+00:00",
         "formulation": {
           "basis": "seller_verified",
           "status": "confirmed",
@@ -17480,7 +17600,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 1,
                 "evidence_count": 35,
                 "negative_count": 0,
@@ -17576,7 +17696,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 14,
                 "negative_count": 0,
@@ -17604,7 +17724,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 106
+            "review_count": 107
           }
         },
         "shade_lineup": {
@@ -17613,19 +17733,19 @@
             {
               "name": "[기획/팩클렌저 증정] 팁스케치 21호",
               "label": "팁스케치 21호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "[기획/팩클렌저 증정] 팁스케치 23호",
               "label": "팁스케치 23호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 704,
+        "analyzed_count": 705,
         "evidence_counts": {
           "coverage": 52,
           "longevity": 19,
@@ -17679,7 +17799,7 @@
             ]
           },
           "transfer_resistance": {
-            "score": 2,
+            "score": 2.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 3,
@@ -17787,12 +17907,12 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 1427,
-      "price": 28000,
-      "original_price": 28000,
+      "price": 28000.0,
+      "original_price": 28000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022282908ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000222829",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -18039,7 +18159,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -18114,7 +18234,7 @@
             ]
           },
           "transfer_resistance": {
-            "score": 2,
+            "score": 2.0,
             "mixed_count": 0,
             "evidence_count": 3,
             "negative_count": 3,
@@ -18195,8 +18315,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 955,
-      "price": 22900,
-      "original_price": 30000,
+      "price": 22900.0,
+      "original_price": 30000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022363336ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000223633",
       "coverage_score": 3.83,
@@ -18245,8 +18365,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "65dff752bcf1b2555a1048f92826ad633c01de8ca86a6ce00815dcce44c98e21",
-        "analyzed_at": "2026-11-25T11:52:30.658861+00:00",
+        "input_hash": "68141547a8cb93011a276600453a155e25fece9279bb034dd76f39decb7ee541",
+        "analyzed_at": "2026-11-26T05:51:33.253568+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -18266,7 +18386,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 9,
                 "negative_count": 0,
@@ -18311,7 +18431,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -18360,7 +18480,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 16,
                 "negative_count": 0,
@@ -18389,7 +18509,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 242
+            "review_count": 243
           },
           "[본품+10ml 증정] 02 내추럴베이지": {
             "attributes": {
@@ -18454,7 +18574,7 @@
                 ]
               }
             },
-            "review_count": 487
+            "review_count": 488
           }
         },
         "shade_lineup": {
@@ -18463,19 +18583,19 @@
             {
               "name": "[본품+10ml 증정] 01 라이트베이지",
               "label": "01 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "[본품+10ml 증정] 02 내추럴베이지",
               "label": "02 내추럴베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 867,
+        "analyzed_count": 869,
         "evidence_counts": {
           "coverage": 59,
           "longevity": 14,
@@ -18616,8 +18736,8 @@
         },
         "positive_concern_counts": {
           "acne": 4,
-          "pore": 15,
-          "spots": 18
+          "pore": 16,
+          "spots": 19
         },
         "recommendation_eligibility": {
           "detail": null,
@@ -18636,8 +18756,8 @@
       "product_type": "liquid",
       "star_rating": 4.9,
       "review_count": 701,
-      "price": 990,
-      "original_price": 990,
+      "price": 990.0,
+      "original_price": 990.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022489101ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000224891",
       "coverage_score": null,
@@ -18684,13 +18804,13 @@
             {
               "name": " 21호 (라이트베이지)",
               "label": "21호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "23호 (샌드)",
               "label": "23호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -18776,11 +18896,11 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 303,
-      "price": 43000,
-      "original_price": 43000,
+      "price": 43000.0,
+      "original_price": 43000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022542231ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000225422",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 3.75,
       "lightweight_score": null,
       "suitable_shades": [],
@@ -18834,8 +18954,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "8a34dabc0f35c117e822e60270c74151e25ea319f0f3268781ccebae3b89ee79",
-        "analyzed_at": "2026-11-24T16:16:45.575387+00:00",
+        "input_hash": "e8e57432f29c41bb0a7a95f126ed0b5f233fab4609013bdbf115b5104cb22e32",
+        "analyzed_at": "2026-11-26T05:51:34.378833+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -18940,7 +19060,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -19149,7 +19269,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 15
+            "review_count": 16
           },
           "[본품+리필] 01 아이보리": {
             "attributes": {
@@ -19199,7 +19319,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -19241,7 +19361,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -19312,7 +19432,7 @@
             {
               "name": "[본품+리필] 01 아이보리",
               "label": "01 아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -19324,13 +19444,13 @@
             {
               "name": "[본품+리필] 03 샌드",
               "label": "03 샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 303,
+        "analyzed_count": 304,
         "evidence_counts": {
           "coverage": 14,
           "longevity": 8,
@@ -19470,10 +19590,10 @@
       "brand": "브리올옴므",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 73,
-      "price": 19000,
-      "original_price": 19500,
+      "price": 19000.0,
+      "original_price": 19500.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022721904ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000227219",
       "coverage_score": null,
@@ -19538,7 +19658,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 1,
             "evidence_count": 14,
             "negative_count": 0,
@@ -19616,13 +19736,13 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 913,
-      "price": 26800,
-      "original_price": 29000,
+      "price": 26800.0,
+      "original_price": 29000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022915811ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000229158",
       "coverage_score": 3.96,
       "longevity_score": 3.74,
-      "lightweight_score": 3,
+      "lightweight_score": 3.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -19688,7 +19808,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -19771,7 +19891,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -19857,7 +19977,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 10,
                 "negative_count": 0,
@@ -19909,7 +20029,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 13,
                 "negative_count": 0,
@@ -20061,7 +20181,7 @@
             {
               "name": "파운데이션 1호",
               "label": "파운데이션 1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -20073,7 +20193,7 @@
             {
               "name": "파운데이션 3호",
               "label": "파운데이션 3호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -20109,7 +20229,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 47,
             "negative_count": 0,
@@ -20239,8 +20359,8 @@
       "product_type": "powder",
       "star_rating": 4.8,
       "review_count": 84,
-      "price": 10400,
-      "original_price": 13000,
+      "price": 10400.0,
+      "original_price": 13000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023073918ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000230739",
       "coverage_score": 3.5,
@@ -20267,8 +20387,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "de6687c81e3d0440c34801c0b5234aa9d1f827686f56d9f5148825922336e93d",
-        "analyzed_at": "2026-11-25T11:52:33.208445+00:00",
+        "input_hash": "3f68fd5bfba99fc3908c1b219bb6a31aaba6e1d8df14eda4fc32220ff499622b",
+        "analyzed_at": "2026-11-26T05:51:36.440332+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -20277,7 +20397,7 @@
         "option_wear": {},
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 85,
+        "analyzed_count": 86,
         "evidence_counts": {
           "coverage": 4,
           "longevity": 1,
@@ -20304,7 +20424,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 5,
             "negative_count": 0,
@@ -20384,8 +20504,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 979,
-      "price": 26900,
-      "original_price": 32000,
+      "price": 26900.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023317717ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000233177",
       "coverage_score": null,
@@ -20541,13 +20661,13 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 979,
-      "price": 26900,
-      "original_price": 32000,
+      "price": 26900.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023317851ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000233178",
       "coverage_score": 3.67,
-      "longevity_score": 4,
-      "lightweight_score": 4,
+      "longevity_score": 4.0,
+      "lightweight_score": 4.0,
       "suitable_shades": [],
       "shade_options": {},
       "source_options": [
@@ -20689,7 +20809,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 48,
                 "negative_count": 0,
@@ -20705,7 +20825,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 3,
@@ -20763,7 +20883,7 @@
           "트루 톤 로션 하이드로 기획(+20ml)": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -20779,7 +20899,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 48,
                 "negative_count": 0,
@@ -20845,7 +20965,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 96,
             "negative_count": 0,
@@ -20975,8 +21095,8 @@
       "product_type": "powder",
       "star_rating": 3.7,
       "review_count": 6,
-      "price": 29600,
-      "original_price": 37000,
+      "price": 29600.0,
+      "original_price": 37000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023863101ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000238631",
       "coverage_score": null,
@@ -21089,14 +21209,14 @@
       "brand": "라끄베르",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 80,
-      "price": 17900,
-      "original_price": 26000,
+      "price": 17900.0,
+      "original_price": 26000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024008905ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000240089",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -21153,7 +21273,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 6,
             "negative_count": 0,
@@ -21235,11 +21355,11 @@
       "product_type": "powder",
       "star_rating": 4.5,
       "review_count": 2416,
-      "price": 15900,
-      "original_price": 20000,
+      "price": 15900.0,
+      "original_price": 20000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024660006ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246600",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 3.79,
       "lightweight_score": 2.6,
       "suitable_shades": [],
@@ -21270,8 +21390,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "d57d961b8d22cb9611980d91b7b41179254e5b424c3ad8da0eaebf7ae298daa1",
-        "analyzed_at": "2026-11-25T11:52:37.369574+00:00",
+        "input_hash": "b97afb926e8fdc025caad97b919596dd66d68d947242393972983179e2abb4b6",
+        "analyzed_at": "2026-11-26T05:51:40.377296+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -21303,7 +21423,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -21338,7 +21458,7 @@
                 ]
               }
             },
-            "review_count": 302
+            "review_count": 305
           },
           " [단품] 본품": {
             "attributes": {
@@ -21365,7 +21485,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -21426,7 +21546,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -21457,7 +21577,7 @@
         },
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 785,
+        "analyzed_count": 788,
         "evidence_counts": {
           "coverage": 6,
           "longevity": 19,
@@ -21466,7 +21586,7 @@
         "source_category": "파우더/팩트",
         "wear_attributes": {
           "smoothness": {
-            "score": 3,
+            "score": 3.0,
             "mixed_count": 3,
             "evidence_count": 64,
             "negative_count": 32,
@@ -21492,7 +21612,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 13,
             "negative_count": 0,
@@ -21603,8 +21723,8 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 1623,
-      "price": 34900,
-      "original_price": 34900,
+      "price": 34900.0,
+      "original_price": 34900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024670502ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246705",
       "coverage_score": 3.97,
@@ -21655,8 +21775,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "df3ab9c1d34008191b3c2434511b6ca07c15890bc36ef3400484a721cee2c906",
-        "analyzed_at": "2026-11-25T11:52:39.293052+00:00",
+        "input_hash": "5307a37e35fe95a28649684193374100a41d211ae7c0d1c21161bd7b94e2f235",
+        "analyzed_at": "2026-11-26T05:51:42.680552+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -21739,7 +21859,7 @@
           "3호 샌드15g": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 0,
@@ -21854,7 +21974,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 40,
                 "negative_count": 0,
@@ -21907,7 +22027,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 12,
                 "negative_count": 0,
@@ -22002,7 +22122,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 9,
                 "negative_count": 0,
@@ -22033,7 +22153,7 @@
           "2호 베이지 (22~23호 추천)": {
             "attributes": {
               "smoothness": {
-                "score": 3,
+                "score": 3.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 2,
@@ -22080,7 +22200,7 @@
                 ]
               }
             },
-            "review_count": 191
+            "review_count": 192
           }
         },
         "shade_lineup": {
@@ -22089,7 +22209,7 @@
             {
               "name": "1호 아이보리 (21호 추천)",
               "label": "1호 아이보리",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -22101,13 +22221,13 @@
             {
               "name": "3호 샌드 (24~25호 추천)",
               "label": "3호 샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 1475,
+        "analyzed_count": 1476,
         "evidence_counts": {
           "coverage": 129,
           "longevity": 61,
@@ -22276,14 +22396,14 @@
       "brand": "바우로",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 259,
-      "price": 27900,
-      "original_price": 29700,
+      "price": 27900.0,
+      "original_price": 29700.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024673712ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000246737",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -22354,7 +22474,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 35,
             "negative_count": 0,
@@ -22560,7 +22680,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 19,
                 "negative_count": 0,
@@ -22750,7 +22870,7 @@
           "[본품+미니어처] 커버로션 기획": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 6,
                 "negative_count": 0,
@@ -22766,7 +22886,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 17,
                 "negative_count": 0,
@@ -22832,7 +22952,7 @@
           "어워즈 한정기획(미니어처+폼클렌징)": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 5,
                 "negative_count": 0,
@@ -22848,7 +22968,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 14,
                 "negative_count": 0,
@@ -22864,7 +22984,7 @@
                 ]
               },
               "transfer_resistance": {
-                "score": 2,
+                "score": 2.0,
                 "mixed_count": 0,
                 "evidence_count": 4,
                 "negative_count": 4,
@@ -22884,7 +23004,7 @@
           "[본품+미니어처] 커버로션 어워즈 기획": {
             "attributes": {
               "smoothness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 8,
                 "negative_count": 0,
@@ -23127,8 +23247,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 18084,
-      "price": 39900,
-      "original_price": 41700,
+      "price": 39900.0,
+      "original_price": 41700.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024971302ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249713",
       "coverage_score": null,
@@ -23263,8 +23383,8 @@
       "product_type": "foundation_unknown",
       "star_rating": 4.8,
       "review_count": 6886,
-      "price": 51900,
-      "original_price": 56800,
+      "price": 51900.0,
+      "original_price": 56800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024971402ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249714",
       "coverage_score": null,
@@ -23386,8 +23506,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.8,
       "review_count": 721,
-      "price": 30300,
-      "original_price": 44000,
+      "price": 30300.0,
+      "original_price": 44000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024977401ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249774",
       "coverage_score": null,
@@ -23506,8 +23626,8 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 4593,
-      "price": 32240,
-      "original_price": 41000,
+      "price": 32240.0,
+      "original_price": 41000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0024/A00000024977801ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000249778",
       "coverage_score": null,
@@ -23622,8 +23742,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.9,
       "review_count": 4573,
-      "price": 27900,
-      "original_price": 29800,
+      "price": 27900.0,
+      "original_price": 29800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025022102ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000250221",
       "coverage_score": 3.85,
@@ -23658,8 +23778,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "c593137a3d053b23f696a3770c70a693e237455dc54423d2444689b059251dd7",
-        "analyzed_at": "2026-11-25T11:52:46.430098+00:00",
+        "input_hash": "18f4f20ff0cef4101bbcb5c20163e41969c480dacca239a740ea907eb2639e7f",
+        "analyzed_at": "2026-11-26T05:51:49.647175+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -23739,7 +23859,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 17,
                 "negative_count": 0,
@@ -23767,12 +23887,12 @@
                 ]
               }
             },
-            "review_count": 254
+            "review_count": 255
           }
         },
         "shade_lineup": null,
         "shade_source": "catalog",
-        "analyzed_count": 359,
+        "analyzed_count": 360,
         "evidence_counts": {
           "coverage": 13,
           "longevity": 2,
@@ -23913,8 +24033,8 @@
       "product_type": "concealer",
       "star_rating": 4.7,
       "review_count": 56,
-      "price": 14900,
-      "original_price": 20000,
+      "price": 14900.0,
+      "original_price": 20000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025185316ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000251853",
       "coverage_score": 3.78,
@@ -23967,7 +24087,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -24039,13 +24159,13 @@
             {
               "name": "[단품/밝은 피부] 01호 라이트베이지",
               "label": "01호 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "[단품/보통피부] 02호 내추럴베이지",
               "label": "02호 내추럴베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
@@ -24072,7 +24192,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 4,
             "negative_count": 0,
@@ -24159,11 +24279,11 @@
       "product_type": "stick",
       "star_rating": 4.8,
       "review_count": 8890,
-      "price": 36800,
-      "original_price": 36800,
+      "price": 36800.0,
+      "original_price": 36800.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0025/A00000025828512ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000258285",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": 3.93,
       "lightweight_score": 2.2,
       "suitable_shades": [],
@@ -24219,8 +24339,8 @@
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "5946e97cfacc433505890ddfffb10412f5def986a73ee06f9102067a0adda984",
-        "analyzed_at": "2026-11-25T11:52:48.069956+00:00",
+        "input_hash": "9eaeb3c9da96b943c057bca7df0753863d1190fd1e341071bdbd0f1705bf58f4",
+        "analyzed_at": "2026-11-26T05:51:51.779370+00:00",
         "formulation": {
           "basis": "reviews",
           "counts": {
@@ -24286,7 +24406,7 @@
                 "positive_review_ids": []
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 3,
                 "negative_count": 0,
@@ -24348,7 +24468,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 12
+            "review_count": 13
           },
           "[기획] 프로 1호 (+올인원 30ml)": {
             "attributes": {
@@ -24373,7 +24493,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 12,
                 "negative_count": 0,
@@ -24401,7 +24521,7 @@
                 "positive_review_ids": []
               }
             },
-            "review_count": 245
+            "review_count": 248
           },
           "[기획] 프로 2호 (+올인원 30ml)": {
             "attributes": {
@@ -24428,7 +24548,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 21,
                 "negative_count": 0,
@@ -24459,7 +24579,7 @@
                 ]
               }
             },
-            "review_count": 428
+            "review_count": 431
           },
           "[기획] 프로 3호 (+올인원 30ml)": {
             "attributes": {
@@ -24479,7 +24599,7 @@
                 ]
               },
               "naturalness": {
-                "score": 4,
+                "score": 4.0,
                 "mixed_count": 0,
                 "evidence_count": 15,
                 "negative_count": 0,
@@ -24516,7 +24636,7 @@
             {
               "name": "[기획] 프로 1호 (+올인원 30ml)",
               "label": "프로 1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -24528,16 +24648,16 @@
             {
               "name": "[기획] 프로 3호 (+올인원 30ml)",
               "label": "프로 3호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 883,
+        "analyzed_count": 890,
         "evidence_counts": {
           "coverage": 53,
-          "longevity": 28,
+          "longevity": 30,
           "lightweight": 10
         },
         "source_category": "파운데이션",
@@ -24567,7 +24687,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 53,
             "negative_count": 0,
@@ -24693,13 +24813,13 @@
       "brand": "원오브뎀",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 201,
-      "price": 33000,
-      "original_price": 36000,
+      "price": 33000.0,
+      "original_price": 36000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0026/A00000026143508ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000261435",
-      "coverage_score": 4,
+      "coverage_score": 4.0,
       "longevity_score": null,
       "lightweight_score": 3.33,
       "suitable_shades": [],
@@ -24745,7 +24865,7 @@
         "source_category": "BB/CC",
         "wear_attributes": {
           "smoothness": {
-            "score": 3,
+            "score": 3.0,
             "mixed_count": 2,
             "evidence_count": 14,
             "negative_count": 7,
@@ -24885,14 +25005,14 @@
       "brand": "BOHO",
       "category": "쿠션/파운데이션",
       "product_type": "stick",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 87,
-      "price": 32000,
-      "original_price": 32000,
+      "price": 32000.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0026/A00000026176501ko.jpeg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000261765",
-      "coverage_score": 4,
-      "longevity_score": 4,
+      "coverage_score": 4.0,
+      "longevity_score": 4.0,
       "lightweight_score": null,
       "suitable_shades": [],
       "shade_options": {},
@@ -24957,7 +25077,7 @@
             ]
           },
           "naturalness": {
-            "score": 4,
+            "score": 4.0,
             "mixed_count": 0,
             "evidence_count": 25,
             "negative_count": 0,
@@ -25063,8 +25183,8 @@
       "product_type": "tone_lotion",
       "star_rating": 4.7,
       "review_count": 351,
-      "price": 26900,
-      "original_price": 32000,
+      "price": 26900.0,
+      "original_price": 32000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0026/A00000026799503ko.jpg?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000267995",
       "coverage_score": 3.65,
@@ -25095,13 +25215,13 @@
       "compat_oily": 0.868,
       "compat_dry": 0.729,
       "compat_sensitive": null,
-      "compat_combination": 0.9,
+      "compat_combination": 0.902,
       "ingredients_raw": "화장품 / 화장품법에 따라 기재해야 하는 모든 성분\n정제수, 다이메티콘, 트라이메틸실록시실리케이트, 티타늄디옥사이드, 티타늄디옥사이드 (CI 77891), 부틸렌글라이콜, 폴리메틸메타크릴레이트, 아이소도데케인, 카프릴릴메티콘, 피이지/피피지-18/18다이메티콘, 피이지-10다이메티콘, 스테아릭애씨드, 나일론-12, 폴리메틸실세스퀴옥세인, 나이아신아마이드, 알루미늄하이드록사이드, 황색산화철, 소듐클로라이드, 폴리글리세릴-3다이아이소스테아레이트, 1,2-헥산다이올, 실리카, 다이스테아다이모늄헥토라이트, 라우릴폴리글리세릴-3폴리다이메틸실록시에틸다이메티콘, 펜틸렌글라이콜, 알루미나, 적색산화철, 트라이베헤닌, 카프릴릴글라이콜, 실리카다이메티콘실릴레이트, 트라이에톡시카프릴릴실레인, 흑색산화철, 글리세릴카프릴레이트, 트라이하이드록시스테아린, 잔탄검, 다이소듐이디티에이, 엑토인, 판테놀, 에탄올, 소듐하이알루로네이트, 마데카소사이드, 하이알루로닉애씨드, 토코페롤, 락틱애씨드, 락토바실러스발효용해물, 하이드롤라이즈드식물성단백질, 약모밀추출물, 프로판다이올, 프로필렌글라이콜, 에틸헥실글리세린, 하이드롤라이즈드하이알루로닉애씨드, 병풀꽃/잎/줄기추출물, 소듐하이알루로네이트크로스폴리머, 폴리하이드록시스테아릭애씨드, 카프릴릭/카프릭트라이글리세라이드, 소듐트라이메타포스페이트, 다이소듐스테아로일글루타메이트, 소듐메타포스페이트, 녹차추출물, 소듐아세틸레이티드하이알루로네이트",
       "ingredient_level": "성분 확인",
       "profile_metadata": {
         "version": "rules-ko-v5",
-        "input_hash": "f03ab1e078eb6bdb11f83a6393684c7253ef1d29fbdfd0429db4e4506a04d26f",
-        "analyzed_at": "2026-11-25T11:52:50.116918+00:00",
+        "input_hash": "ab9eed6ed15c622e0d12714eade0654c34ea75dfbf5b44dadb81f2ad8d1d6684",
+        "analyzed_at": "2026-11-26T05:51:54.114350+00:00",
         "formulation": {
           "basis": "source_category",
           "status": "confirmed",
@@ -25174,7 +25294,7 @@
                 ]
               }
             },
-            "review_count": 174
+            "review_count": 176
           },
           "[단품] 커버로션 1호(밝은피부)": {
             "attributes": {
@@ -25214,11 +25334,11 @@
           "[기획/10ml증정] 2호(어두운피부)": {
             "attributes": {
               "smoothness": {
-                "score": 2.92,
+                "score": 3.0,
                 "mixed_count": 0,
-                "evidence_count": 13,
+                "evidence_count": 14,
                 "negative_count": 7,
-                "positive_count": 6,
+                "positive_count": 7,
                 "mixed_review_ids": [],
                 "negative_review_ids": [
                   "67185598",
@@ -25276,7 +25396,7 @@
                 ]
               }
             },
-            "review_count": 184
+            "review_count": 185
           },
           "[단품] 커버로션 2호(어두운피부)": {
             "attributes": {
@@ -25320,19 +25440,19 @@
             {
               "name": "[기획/10ml증정] 1호(밝은피부)",
               "label": "1호",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
               "name": "[기획/10ml증정] 2호(어두운피부)",
               "label": "2호",
-              "position": 1,
+              "position": 1.0,
               "sold_out": false
             }
           ]
         },
         "shade_source": "catalog",
-        "analyzed_count": 360,
+        "analyzed_count": 363,
         "evidence_counts": {
           "coverage": 23,
           "longevity": 13,
@@ -25341,11 +25461,11 @@
         "source_category": "BB/CC",
         "wear_attributes": {
           "smoothness": {
-            "score": 3.04,
+            "score": 3.08,
             "mixed_count": 0,
-            "evidence_count": 23,
+            "evidence_count": 24,
             "negative_count": 11,
-            "positive_count": 12,
+            "positive_count": 13,
             "mixed_review_ids": [],
             "negative_review_ids": [
               "66589141",
@@ -25428,7 +25548,7 @@
           "dry": 7,
           "oily": 14,
           "sensitive": 0,
-          "combination": 45
+          "combination": 46
         },
         "evidence_review_ids": {
           "coverage": [
@@ -25493,8 +25613,8 @@
       "product_type": "cushion",
       "star_rating": 4.8,
       "review_count": 295,
-      "price": 27900,
-      "original_price": 33900,
+      "price": 27900.0,
+      "original_price": 33900.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0026/A00000026842404ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000268424",
       "coverage_score": null,
@@ -25657,7 +25777,7 @@
             {
               "name": "[20~21호] 1호 라이트베이지",
               "label": "1호 라이트베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": false
             },
             {
@@ -25669,7 +25789,7 @@
             {
               "name": "[25~26호] 3호 샌드",
               "label": "3호 샌드",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -25755,10 +25875,10 @@
       "brand": "블랙몬스터",
       "category": "톤 로션/BB",
       "product_type": "tone_lotion",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 28,
-      "price": 19000,
-      "original_price": 19000,
+      "price": 19000.0,
+      "original_price": 19000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/B00000022383801ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223838",
       "coverage_score": null,
@@ -25873,13 +25993,13 @@
             {
               "name": "샌드 베이지",
               "label": "샌드 베이지",
-              "position": 0,
+              "position": 0.0,
               "sold_out": true
             },
             {
               "name": "앰버 베이지",
               "label": "앰버 베이지",
-              "position": 1,
+              "position": 1.0,
               "sold_out": true
             }
           ]
@@ -25963,10 +26083,10 @@
       "brand": "블랙몬스터",
       "category": "쿠션/파운데이션",
       "product_type": "concealer",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 13,
-      "price": 17000,
-      "original_price": 17000,
+      "price": 17000.0,
+      "original_price": 17000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/B00000022386001ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223860",
       "coverage_score": null,
@@ -26125,10 +26245,10 @@
       "brand": "블랙몬스터",
       "category": "쿠션/파운데이션",
       "product_type": "concealer",
-      "star_rating": 5,
+      "star_rating": 5.0,
       "review_count": 9,
-      "price": 15000,
-      "original_price": 15000,
+      "price": 15000.0,
+      "original_price": 15000.0,
       "thumbnail_url": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/B00000022386101ko.png?l=ko",
       "product_url": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=B000000223861",
       "coverage_score": null,

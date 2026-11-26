@@ -2,7 +2,6 @@
   "schema_version": 1,
   "method": "rules-extractive-v1",
   "profile_version": "rules-ko-v5",
-  "generated_at": "2026-11-25T12:58:50.936657+00:00",
   "products": {
     "A000000011081": {
       "input_hash": "db515c7f1c2079613da77f4179f86538e61ecc3f16db123f9fef78081f82c810",
@@ -350,7 +349,7 @@
       "options": {}
     },
     "A000000011082": {
-      "input_hash": "ebf9b9485cee5ed109c61bd18b8dd23cc0faea0de28350926fbd54f481bf1171",
+      "input_hash": "07ce7796a1e89baaa92140430329313465d9b894e9883b5959cc0b1f2289da2f",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 3,
@@ -1054,7 +1053,7 @@
                   "마스크에 엄청 묻어나와서 난감하대요^^"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28641716",
@@ -1378,7 +1377,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "13975523",
@@ -1486,7 +1485,7 @@
       "options": {}
     },
     "A000000129149": {
-      "input_hash": "b7122e0df52528ef7a164e0816a15dba5c25503a9d541d22fc3f7eae229bc0ad",
+      "input_hash": "3e948e4dc17b6fab6689f807811d503a34424cbd308d3deb7428cf14dd8ee4af",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 56,
@@ -1640,7 +1639,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -2539,7 +2538,7 @@
                     "이라는 이름처럼 밀착력이 좋아서 마스크나 옷에 묻어나는 것도 덜했고"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -4786,7 +4785,7 @@
       }
     },
     "A000000130815": {
-      "input_hash": "f23d5eb49b44b953b80e09acf12ece14618bdf5afd10accf5e71d06424b78538",
+      "input_hash": "c8d2860b28816c1f59304c7a236a83edc0d87dc5d8fc6f666372c3db74026abb",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 38,
@@ -5215,7 +5214,7 @@
       "options": {}
     },
     "A000000131799": {
-      "input_hash": "34146766124dbd8720d247d5f76b45a03e033e2e57b498da19237608d0024379",
+      "input_hash": "6876241edfd782b0db7e64164eacc7ecdea7d71a9ab33985e292b6eb128b72fd",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 15,
@@ -8084,7 +8083,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -10166,7 +10165,7 @@
       }
     },
     "A000000178092": {
-      "input_hash": "97469927bde9c07511a96261607651e15b70045b25d19980f0e546bc69ac23b7",
+      "input_hash": "0158b5e2239e04bdb02c47ad1075e936de4290713c9e045d63a979b4a9a776ab",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 80,
@@ -10397,7 +10396,7 @@
           ]
         },
         "naturalness": {
-          "totalEvidenceCount": 83,
+          "totalEvidenceCount": 84,
           "sources": [
             {
               "id": "16897350",
@@ -10513,7 +10512,7 @@
             }
           ],
           "overallPolarityCounts": {
-            "positive": 80,
+            "positive": 81,
             "negative": 3,
             "mixed": 0
           }
@@ -10594,7 +10593,7 @@
                   "색을 어두운거로 잘못 주문해서 밝은거랑 섞어서 쓰고있어서 마스크 묻어남이 심하긴하지만"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "18565972",
@@ -10900,7 +10899,7 @@
         },
         "2호": {
           "naturalness": {
-            "totalEvidenceCount": 37,
+            "totalEvidenceCount": 38,
             "sources": [
               {
                 "id": "17952544",
@@ -10986,7 +10985,7 @@
               }
             ],
             "overallPolarityCounts": {
-              "positive": 36,
+              "positive": 37,
               "negative": 1,
               "mixed": 0
             }
@@ -11338,7 +11337,7 @@
                     "색을 어두운거로 잘못 주문해서 밝은거랑 섞어서 쓰고있어서 마스크 묻어남이 심하긴하지만"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "29242514",
@@ -11438,7 +11437,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "65220362",
@@ -12163,7 +12162,7 @@
       }
     },
     "A000000184127": {
-      "input_hash": "09315c876071acc59a8d5cb6e9b6aa3aa2b17ec7780c52911d87fe448959e338",
+      "input_hash": "2d90d0ad3715a7842c9a2cddced1d5699fa81739be8c5f03bf3fdaf9480a1cf6",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 11,
@@ -12555,7 +12554,7 @@
                   "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "53650563",
@@ -12843,7 +12842,7 @@
                     "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "53650563",
@@ -16751,7 +16750,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -17977,7 +17976,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "62404377",
@@ -19565,7 +19564,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28358892",
@@ -20679,7 +20678,7 @@
                   "여성용 비비크림은 너무 하얗고 들뜸도 있는데"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "28314750",
@@ -21151,7 +21150,7 @@
                     "여성용 비비크림은 너무 하얗고 들뜸도 있는데"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "28314750",
@@ -21179,7 +21178,7 @@
       }
     },
     "A000000204975": {
-      "input_hash": "d9e36b6efb0e0ae17ae15bac94c3196bf168c425a0f7eb1bbe4b3ffc81a780a0",
+      "input_hash": "208feb8fc6261f7bd5fb5641d9da7c799be9951f01e0ba147b0af0dd3322023a",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 38,
@@ -21338,7 +21337,7 @@
           ]
         },
         "lightweight": {
-          "totalEvidenceCount": 10,
+          "totalEvidenceCount": 11,
           "sources": [
             {
               "id": "60803203",
@@ -21418,7 +21417,7 @@
           ]
         },
         "naturalness": {
-          "totalEvidenceCount": 55,
+          "totalEvidenceCount": 56,
           "sources": [
             {
               "id": "57071351",
@@ -21557,7 +21556,7 @@
             }
           ],
           "overallPolarityCounts": {
-            "positive": 51,
+            "positive": 52,
             "negative": 4,
             "mixed": 0
           }
@@ -21693,7 +21692,7 @@
           }
         },
         "smoothness": {
-          "totalEvidenceCount": 38,
+          "totalEvidenceCount": 39,
           "sources": [
             {
               "id": "61458752",
@@ -21894,7 +21893,7 @@
             }
           ],
           "overallPolarityCounts": {
-            "positive": 26,
+            "positive": 27,
             "negative": 9,
             "mixed": 3
           }
@@ -22767,6 +22766,35 @@
             }
           }
         },
+        "[2025어워즈]본품(미니어처+폼클렌징)": {
+          "naturalness": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "transfer_resistance": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "smoothness": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          }
+        },
         "[본품+미니어처]NEW커버 로션(지성용)": {
           "naturalness": {
             "totalEvidenceCount": 6,
@@ -22899,6 +22927,35 @@
             "overallPolarityCounts": {
               "positive": 1,
               "negative": 1,
+              "mixed": 0
+            }
+          }
+        },
+        "[일반기획]에어핏(+미니어처)(지성용)": {
+          "naturalness": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "transfer_resistance": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "smoothness": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
               "mixed": 0
             }
           }
@@ -23181,6 +23238,67 @@
             "overallPolarityCounts": {
               "positive": 5,
               "negative": 1,
+              "mixed": 0
+            }
+          }
+        },
+        "[일반기획]본품(+미니어처)(중/건성용)": {
+          "naturalness": {
+            "totalEvidenceCount": 1,
+            "sources": [
+              {
+                "id": "70779458",
+                "sha256": "5ab419a8f5047f592a89325c7c55c2398203db4afed3c73586b94ae40c9aaf8a",
+                "polarity": "positive",
+                "excerpts": [
+                  "로션이 부드럽게 발리고 커버가 자연스러워서 데일리로 좋아요"
+                ],
+                "excerpts_by_polarity": {
+                  "positive": [
+                    "로션이 부드럽게 발리고 커버가 자연스러워서 데일리로 좋아요"
+                  ],
+                  "negative": []
+                },
+                "semantic_verified": true
+              }
+            ],
+            "overallPolarityCounts": {
+              "positive": 1,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "transfer_resistance": {
+            "totalEvidenceCount": 0,
+            "sources": [],
+            "overallPolarityCounts": {
+              "positive": 0,
+              "negative": 0,
+              "mixed": 0
+            }
+          },
+          "smoothness": {
+            "totalEvidenceCount": 1,
+            "sources": [
+              {
+                "id": "70776045",
+                "sha256": "e8e342d926685133863c0a692e68731ce7bcf5110c89d1d7112fc596a4352a6e",
+                "polarity": "positive",
+                "excerpts": [
+                  "건성인데 들뜸 없이 밀착되고 미니어처가 같이 와서 들고 다니기 편해요"
+                ],
+                "excerpts_by_polarity": {
+                  "positive": [
+                    "건성인데 들뜸 없이 밀착되고 미니어처가 같이 와서 들고 다니기 편해요"
+                  ],
+                  "negative": []
+                },
+                "semantic_verified": true
+              }
+            ],
+            "overallPolarityCounts": {
+              "positive": 1,
+              "negative": 0,
               "mixed": 0
             }
           }
@@ -24385,7 +24503,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "32028529",
@@ -24763,7 +24881,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "32028529",
@@ -25638,7 +25756,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -26649,7 +26767,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30481035",
@@ -27386,7 +27504,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "30141184",
@@ -27863,7 +27981,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "30141184",
@@ -29376,7 +29494,7 @@
                     "묻어남이 좀 있는 편이에요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "60310976",
@@ -30918,7 +31036,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -31558,7 +31676,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -35250,7 +35368,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -38051,7 +38169,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33588223",
@@ -38666,7 +38784,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "37363079",
@@ -39947,10 +40065,10 @@
       }
     },
     "A000000217042": {
-      "input_hash": "9891ba66f5089ed82599c281b828a418bcc45f8820afa5649830d4aa702dd253",
+      "input_hash": "791c280b75c68199c0371da8d06d83764cccd02c6496c7c36f2b0139722c16e7",
       "attributes": {
         "coverage": {
-          "totalEvidenceCount": 3,
+          "totalEvidenceCount": 4,
           "sources": [
             {
               "id": "59321330",
@@ -39994,6 +40112,21 @@
                 "negative": [
                   "발색도 잘 나고 두꺼운 잡티는 커버가 안 되지만"
                 ]
+              },
+              "semantic_verified": true
+            },
+            {
+              "id": "70767292",
+              "sha256": "84bca4989e786755a8b4fbc6628df1dc4d6fdb9139bc234bc3adb37acbc552b3",
+              "polarity": "positive",
+              "excerpts": [
+                "커버력이 좋아서 장점도 있어요"
+              ],
+              "excerpts_by_polarity": {
+                "positive": [
+                  "커버력이 좋아서 장점도 있어요"
+                ],
+                "negative": []
               },
               "semantic_verified": true
             }
@@ -40130,7 +40263,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "64270611",
@@ -40314,7 +40447,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "64744754",
@@ -42685,7 +42818,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -43002,7 +43135,7 @@
       }
     },
     "A000000222827": {
-      "input_hash": "38721f279cc624fcf8a7cc2c5a23c66ae542e5de13e24b449cd3aac0749a212d",
+      "input_hash": "97b936058379f8540e2157baddbc6d4ed3aa6cac3011e640e5996a524c2e4bf1",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 52,
@@ -44418,7 +44551,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "57473406",
@@ -45386,7 +45519,7 @@
       }
     },
     "A000000223633": {
-      "input_hash": "65dff752bcf1b2555a1048f92826ad633c01de8ca86a6ce00815dcce44c98e21",
+      "input_hash": "68141547a8cb93011a276600453a155e25fece9279bb034dd76f39decb7ee541",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 59,
@@ -46893,7 +47026,7 @@
       "options": {}
     },
     "A000000225422": {
-      "input_hash": "8a34dabc0f35c117e822e60270c74151e25ea319f0f3268781ccebae3b89ee79",
+      "input_hash": "e8e57432f29c41bb0a7a95f126ed0b5f233fab4609013bdbf115b5104cb22e32",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 14,
@@ -46926,7 +47059,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "45786732",
@@ -48243,7 +48376,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "44441138",
@@ -48971,7 +49104,7 @@
                   "이것만 발랐을때 2~3시간안에 들뜨는게 보였다"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "33561873",
@@ -49566,7 +49699,7 @@
                     "이것만 발랐을때 2~3시간안에 들뜨는게 보였다"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               }
             ],
             "overallPolarityCounts": {
@@ -49610,7 +49743,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "22771423",
@@ -49973,7 +50106,7 @@
       }
     },
     "A000000230739": {
-      "input_hash": "de6687c81e3d0440c34801c0b5234aa9d1f827686f56d9f5148825922336e93d",
+      "input_hash": "3f68fd5bfba99fc3908c1b219bb6a31aaba6e1d8df14eda4fc32220ff499622b",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 4,
@@ -51880,7 +52013,7 @@
       "options": {}
     },
     "A000000246600": {
-      "input_hash": "d57d961b8d22cb9611980d91b7b41179254e5b424c3ad8da0eaebf7ae298daa1",
+      "input_hash": "b97afb926e8fdc025caad97b919596dd66d68d947242393972983179e2abb4b6",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 6,
@@ -53456,7 +53589,7 @@
       }
     },
     "A000000246705": {
-      "input_hash": "df3ab9c1d34008191b3c2434511b6ca07c15890bc36ef3400484a721cee2c906",
+      "input_hash": "5307a37e35fe95a28649684193374100a41d211ae7c0d1c21161bd7b94e2f235",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 129,
@@ -54514,7 +54647,7 @@
                   "positive": [],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "52715758",
@@ -55228,7 +55361,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "58000765",
@@ -55273,7 +55406,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "58867477",
@@ -55782,7 +55915,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "55651415",
@@ -55834,7 +55967,7 @@
                 "positive": [],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "55752276",
@@ -56651,7 +56784,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "27868995",
@@ -57729,7 +57862,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "27868995",
@@ -58808,7 +58941,7 @@
       "options": {}
     },
     "A000000250221": {
-      "input_hash": "c593137a3d053b23f696a3770c70a693e237455dc54423d2444689b059251dd7",
+      "input_hash": "18f4f20ff0cef4101bbcb5c20163e41969c480dacca239a740ea907eb2639e7f",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 13,
@@ -58886,7 +59019,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             }
           ]
         },
@@ -59867,7 +60000,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "62302268",
@@ -59882,7 +60015,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "68785517",
@@ -59959,7 +60092,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "62302268",
@@ -59974,7 +60107,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "68785517",
@@ -60081,7 +60214,7 @@
       }
     },
     "A000000258285": {
-      "input_hash": "5946e97cfacc433505890ddfffb10412f5def986a73ee06f9102067a0adda984",
+      "input_hash": "9eaeb3c9da96b943c057bca7df0753863d1190fd1e341071bdbd0f1705bf58f4",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 53,
@@ -60164,7 +60297,7 @@
           ]
         },
         "longevity": {
-          "totalEvidenceCount": 28,
+          "totalEvidenceCount": 30,
           "sources": [
             {
               "id": "62506336",
@@ -60543,7 +60676,7 @@
                 ],
                 "negative": []
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "64668775",
@@ -60993,7 +61126,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "64668775",
@@ -61025,7 +61158,7 @@
                   ],
                   "negative": []
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "63222579",
@@ -62422,7 +62555,7 @@
       "options": {}
     },
     "A000000267995": {
-      "input_hash": "f03ab1e078eb6bdb11f83a6393684c7253ef1d29fbdfd0429db4e4506a04d26f",
+      "input_hash": "ab9eed6ed15c622e0d12714eade0654c34ea75dfbf5b44dadb81f2ad8d1d6684",
       "attributes": {
         "coverage": {
           "totalEvidenceCount": 23,
@@ -62759,7 +62892,7 @@
                   "살짝 밝아서 바른티가 좀 나는편이었어요"
                 ]
               },
-              "semantic_verified": true
+              "semantic_verified": false
             },
             {
               "id": "69646819",
@@ -63009,7 +63142,7 @@
           }
         },
         "smoothness": {
-          "totalEvidenceCount": 23,
+          "totalEvidenceCount": 24,
           "sources": [
             {
               "id": "67197767",
@@ -63163,7 +63296,7 @@
             }
           ],
           "overallPolarityCounts": {
-            "positive": 12,
+            "positive": 13,
             "negative": 11,
             "mixed": 0
           }
@@ -63260,7 +63393,7 @@
                     "살짝 밝아서 바른티가 좀 나는편이었어요"
                   ]
                 },
-                "semantic_verified": true
+                "semantic_verified": false
               },
               {
                 "id": "67205119",
@@ -63852,7 +63985,7 @@
             }
           },
           "smoothness": {
-            "totalEvidenceCount": 13,
+            "totalEvidenceCount": 14,
             "sources": [
               {
                 "id": "67284003",
@@ -64006,7 +64139,7 @@
               }
             ],
             "overallPolarityCounts": {
-              "positive": 6,
+              "positive": 7,
               "negative": 7,
               "mixed": 0
             }
@@ -64533,5 +64666,16 @@
         }
       }
     }
+  },
+  "generated_at": "2026-11-26T07:52:56.738493+00:00",
+  "snapshot": {
+    "id": "8995141bc5ccdc000f30d3ed8dd815e4853cd6b6409a02e1d0971c3536bf0a4f",
+    "started_at": "2026-11-26T07:52:14.178223+00:00",
+    "confirmed_at": "2026-11-26T07:52:56.738493+00:00",
+    "consistency_method": "double-read-v1",
+    "product_count": 87,
+    "review_count": 35835,
+    "profile_version": "rules-ko-v5",
+    "metadata_revision": 9
   }
 }

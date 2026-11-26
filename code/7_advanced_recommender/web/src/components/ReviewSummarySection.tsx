@@ -72,15 +72,16 @@ export function ReviewSummarySection({
   compact = false,
 }: ReviewSummarySectionProps) {
   const sourceLabel = resolveSourceLabel(summary);
-  const { requestedIds, matchedReviews: fetchedReviews, missingCount } = resolveSampleReviews(
+  const { requestedIds, matchedReviews, missingCount } = resolveSampleReviews(
     productId,
     summary.sampleReviewIds,
-    evidenceById,
+    summary.reviews ? new Map(summary.reviews.map(review => [review.id, review])) : evidenceById,
   );
-  const matchedReviews = summary.reviews ?? fetchedReviews;
   const panelId = `evidence-panel-${toggleKey.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
-  const isInsufficient = Boolean(summary.insufficient);
-  const hasSentences = !isInsufficient && !summary.loading && !summary.error && missingCount === 0 && summary.sentences.length > 0;
+  const isInsufficient = summary.status === 'insufficient'
+    || (summary.status == null && Boolean(summary.insufficient));
+  const hasSentences = (summary.status == null || summary.status === 'ready')
+    && !isInsufficient && !summary.loading && !summary.error && missingCount === 0 && summary.sentences.length > 0;
   const sampleCountLabel = summary.loading && requestedIds.length > 0
     ? `표본 ${requestedIds.length}건 확인 중`
     : requestedIds.length > 0
@@ -118,6 +119,8 @@ export function ReviewSummarySection({
 
         {summary.loading ? (
           <p role="status" className="review-summary-empty">요약과 근거 원문의 일치 여부를 확인하고 있습니다.</p>
+        ) : summary.error ? (
+          <p role="alert" className="review-summary-status review-summary-status-error">{summary.error}</p>
         ) : isInsufficient ? (
           <p className="review-summary-empty">
             정보 부족 · {summary.message || `사용 후 근거가 ${MIN_SUMMARY_EVIDENCE_COUNT}건 미만이라 요약하지 않습니다.`}
@@ -171,12 +174,6 @@ export function ReviewSummarySection({
               </p>
             )}
 
-            {summary.error && (
-              <p role="alert" className="review-summary-status review-summary-status-error">
-                {summary.error}
-              </p>
-            )}
-
             {open && (
               <div id={panelId} className="review-summary-list">
                 {summary.totalEvidenceCount > matchedReviews.length && (
@@ -186,7 +183,9 @@ export function ReviewSummarySection({
                   </p>
                 )}
                 {matchedReviews.map(review => {
-                  const polarity = polarityByReviewId?.get(review.id);
+                  // Profile polarity is not an independently verified claim.
+                  // Keep raw access, but hide badges when this summary is held.
+                  const polarity = hasSentences ? polarityByReviewId?.get(review.id) : undefined;
                   return (
                     <div key={review.id} className="review-summary-evidence-item">
                       <div className="review-summary-evidence-meta">
@@ -208,10 +207,6 @@ export function ReviewSummarySection({
               </div>
             )}
           </>
-        ) : summary.error ? (
-          <p role="alert" className="review-summary-status review-summary-status-error">
-            {summary.error}
-          </p>
         ) : requestedIds.length > 0 ? (
           <p role="status" className="review-summary-status review-summary-status-warn">
             연결된 표본 근거 {requestedIds.length}건을 현재 상품 원문에서 확인하지 못했습니다.

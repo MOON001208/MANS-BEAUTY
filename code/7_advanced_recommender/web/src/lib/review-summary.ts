@@ -96,11 +96,11 @@ export async function resolveReviewSummary({ product, key, scope = '', catalog, 
     && !!review.content.trim() && (!scope || !isWear(key) || review.option_name === scope));
   const result: ReviewSummaryView = {
     sentences: [], sourceLabel: '규칙 기반 리뷰 요약', sourceKind: 'rule_based',
-    totalEvidenceCount: total, sampleReviewIds: found.map(review => review.id), reviews: found,
+    totalEvidenceCount: total, sampleReviewIds: ids, reviews: found,
     clearEvidenceCount: clearCount, mixedEvidenceCount: total - clearCount,
     polarityCounts: { positive: 0, negative: 0, mixed: 0 },
     overallPolarityCounts,
-    insufficient: clearCount < 3 || score == null || found.length < 3,
+    insufficient: clearCount < 3 || score == null,
     status: 'unavailable', message: '요약을 확인할 원문 근거가 없습니다.',
   };
   if (scope && !isWear(key)) return { ...result, message: '이 항목은 옵션별 요약을 제공하지 않습니다.' };

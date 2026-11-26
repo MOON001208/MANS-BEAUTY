@@ -264,6 +264,46 @@
       "option_name": "트루 톤 로션 에어리 기획(+20ml)",
       "key": "smoothness",
       "semantic_verified": false
+    },
+    {
+      "id": "29743839",
+      "product_id": "A000000184127",
+      "content": "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ",
+      "option_name": "2호",
+      "key": "transfer_resistance",
+      "semantic_verified": false
+    },
+    {
+      "id": "30500314",
+      "product_id": "A000000206573",
+      "content": "이번에 오빠가 친척 결혼식장에서 잘보여야할일이 생겻는데\r\n얼굴에 뭐가 많이나서 못난이라 한번 시켜줫어여\r\n못난인데 미리 생일선물로 사줫거든요 \r\n잘발리거 위에 픽서뿌려주니까 굿 오래가요 \r\n남자가 뭔 화장이야 햇는데 비포 에프터 보니까 \r\n본인도 할말없는지 어디서 삿냐고 묻고 그는 떠낫습니디..\r\n키링은 제가 가질겁니다 ㅋㅋ",
+      "option_name": "002",
+      "key": "longevity",
+      "semantic_verified": false
+    },
+    {
+      "id": "59922441",
+      "product_id": "A000000217042",
+      "content": "매트한 쿠션이고 색상도 자연스러워서 데일리템으로 사용하기 좋대요!",
+      "option_name": "2호 라이언 리필",
+      "key": "naturalness",
+      "semantic_verified": false
+    },
+    {
+      "id": "62302268",
+      "product_id": "A000000251853",
+      "content": "컨실러 첫경험인데 같은라인 커버로션이랑 같은색이라서 같이쓰니 자연스러워요",
+      "option_name": "[단품/보통피부] 02호 내추럴베이지",
+      "key": "naturalness",
+      "semantic_verified": false
+    },
+    {
+      "id": "62083987",
+      "product_id": "A000000251853",
+      "content": "여드름이 많이 나서 가려볼려고 한번 사서 써봤는데 의외로 좋아요 커버로션이랑 같이 쓰니까 바른 티도 안나고 다크서클 잡티 다 잘 잡아주는거 같아요 세안할때도 잘지워지는거 같아요",
+      "option_name": "[단품/보통피부] 02호 내추럴베이지",
+      "key": "naturalness",
+      "semantic_verified": false
     }
   ]
 }

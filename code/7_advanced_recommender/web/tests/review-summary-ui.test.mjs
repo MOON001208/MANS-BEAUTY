@@ -6,6 +6,9 @@ import path from 'node:path';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import ts from 'typescript';
+import { createHash } from 'node:crypto';
+import { resolveReviewSummary } from '../src/lib/review-summary.ts';
+import { PROFILE_VERSION } from '../src/lib/recommendation.ts';
 import { resolveSampleReviews, buildPolarityMap } from '../src/components/reviewSummaryContract.ts';
 
 const componentPath = fileURLToPath(new URL('../src/components/ReviewSummarySection.tsx', import.meta.url));
@@ -68,6 +71,10 @@ test('unavailable and insufficient show exact resolver reason, preserve raw acce
     assert.doesNotMatch(html, /긍정 0건/);
   }
   assert.match(render({ ...summary, sentences: [], loading: true, reviews: undefined }, false, new Map()), /불러오는 중/);
+  for (const status of ['unavailable', 'stale', 'insufficient']) {
+    const html = render({ ...summary, status, insufficient: status === 'insufficient' }, true);
+    assert.doesNotMatch(html, /확인 표본 ·|긍정 5건|부정 5건|리뷰 안 평가 엇갈림 3건|긍정 근거|부정 근거/);
+  }
 });
 
 test('committed fallback catalog and summary artifact refer to the same profile inputs', () => {
@@ -76,4 +83,83 @@ test('committed fallback catalog and summary artifact refer to the same profile 
   assert.equal(Object.keys(artifact.products).length, fallback.products.length);
   for (const product of fallback.products) assert.equal(artifact.products[product.id].input_hash,
     product.profile_metadata.input_hash, product.id);
+  assert.deepEqual(artifact.snapshot, fallback.snapshot);
+  assert.match(artifact.snapshot.id, /^[a-f0-9]{64}$/);
+});
+
+test('four independent semantic failures hold the whole frozen entry and preserve every original', async () => {
+  const cases = JSON.parse(readFileSync(new URL('../../tests/fixtures/review_summary_held_samples.json', import.meta.url), 'utf8')).cases;
+  for (const item of cases) {
+    const product = item.product;
+    const stored = { input_hash: product.profile_metadata.input_hash, attributes: {}, options: {} };
+    if (item.scope) stored.options[item.scope] = { [item.key]: item.entry };
+    else stored.attributes[item.key] = item.entry;
+    const catalog = { schema_version: 1, method: 'rules-extractive-v1', profile_version: PROFILE_VERSION,
+      generated_at: '2026-11-26T00:00:00Z', products: { [product.id]: stored } };
+    const reviews = new Map(item.reviews.map(row => [row.id, row]));
+    const view = await resolveReviewSummary({ product, key: item.key, scope: item.scope, catalog, reviews });
+    assert.equal(view.status, 'unavailable');
+    assert.equal(view.reviews.length, item.expected_count);
+    assert.equal(view.sampleReviewIds.length, item.expected_count);
+    assert.deepEqual(view.sentences, []);
+    const html = renderToStaticMarkup(React.createElement(ReviewSummarySection, {
+      toggleKey: item.key, productId: product.id, itemLabel: item.key, summary: view,
+      evidenceById: reviews, open: true, onToggle() {},
+      polarityByReviewId: new Map(item.reviews.map(row => [row.id, 'negative'])),
+    }));
+    assert.doesNotMatch(html, /정보 부족 ·|확인 표본 ·|긍정 근거|부정 근거/);
+    for (const row of item.reviews) assert.ok(html.includes(row.content.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;')));
+  }
+});
+
+test('resolver to section preserves requested IDs and distinguishes retrieval failure from insufficient data', async () => {
+  const originals = rows.slice(0, 5).map(row => ({ ...row, content: '커버력이 좋아요. ' + row.id }));
+  const ids = originals.map(row => row.id);
+  const product = { id: 'p', coverage_score: 4, profile_metadata: {
+    version: PROFILE_VERSION, input_hash: 'input', evidence_counts: { coverage: 50 },
+    evidence_review_ids: { coverage: ids },
+  } };
+  const entry = { totalEvidenceCount: 50, sources: originals.map(row => ({ id: row.id,
+    sha256: createHash('sha256').update(row.content).digest('hex'), polarity: 'positive',
+    excerpts: ['커버력이 좋아요'], semantic_verified: true })) };
+  const catalog = { schema_version: 1, method: 'rules-extractive-v1', profile_version: PROFILE_VERSION,
+    generated_at: '2026-11-26T00:00:00Z', products: { p: {
+      input_hash: 'input', attributes: { coverage: entry }, options: {},
+    } } };
+  for (const count of [2, 0]) {
+    const map = new Map(originals.slice(0, count).map(row => [row.id, row]));
+    const view = await resolveReviewSummary({ product, key: 'coverage', catalog, reviews: map });
+    assert.equal(view.status, 'unavailable');
+    assert.equal(view.insufficient, false);
+    assert.deepEqual(view.sampleReviewIds, ids);
+    assert.equal(view.reviews.length, count);
+    for (const error of [undefined, '근거 리뷰를 불러오지 못했습니다.']) {
+      const html = render({ ...view, error }, true, map);
+      assert.doesNotMatch(html, /정보 부족 ·|확인 표본 ·|긍정 근거|부정 근거/);
+      assert.match(html, /전체 근거 50건/);
+      if (error) assert.match(html, /role="alert"[^>]*>근거 리뷰를 불러오지 못했습니다/);
+      else assert.match(html, /일부 근거 원문을 확인하지 못해/);
+      if (count) {
+        assert.match(html, /표본 2\/5건/);
+        assert.match(html, /표본 5건 중 3건은/);
+        assert.match(html, /근거 리뷰 닫기/);
+        assert.ok(html.includes(originals[1].content));
+      } else {
+        assert.match(html, /표본 0\/5건/);
+        assert.match(html, /연결된 표본 근거 5건을 현재 상품 원문에서 확인하지 못했습니다/);
+        assert.doesNotMatch(html, /review-summary-evidence-item/);
+      }
+    }
+  }
+  const map = new Map(originals.map(row => [row.id, row]));
+  const ready = await resolveReviewSummary({ product, key: 'coverage', catalog, reviews: map });
+  assert.equal(ready.status, 'ready');
+  const errorHtml = render({ ...ready, error: '원문 조회 오류' }, true, map);
+  assert.match(errorHtml, /role="alert"[^>]*>원문 조회 오류/);
+  assert.doesNotMatch(errorHtml, /확인한 커버력 표본|확인 표본 ·|긍정 근거/);
+  for (const status of ['unavailable', 'stale']) {
+    const html = render({ ...ready, status, insufficient: true, sentences: [], message: '원문 일치 확인 실패' }, true, map);
+    assert.match(html, /원문 일치 확인 실패/);
+    assert.doesNotMatch(html, /정보 부족 ·|긍정 근거/);
+  }
 });

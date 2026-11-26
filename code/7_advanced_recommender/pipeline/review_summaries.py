@@ -8,29 +8,41 @@ before using these classifications. Scores and profile versions are untouched.
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 import re
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pipeline.profiles import ATTRIBUTES, VERSION, extract_attributes
+from pipeline.profiles import ATTRIBUTES, METADATA_REVISION, VERSION, extract_attributes
 from pipeline.wear import WEAR_ATTRIBUTES
-from shared import ROOT, database, read_all, utc_now, write_json
+from shared import CACHE, ROOT, database, read_all, utc_now, write_json
 
 METHOD = 'rules-extractive-v1'
 KEYS = (*ATTRIBUTES, *WEAR_ATTRIBUTES)
+# The same public projection as web/scripts/snapshot-catalog.mjs. Never select
+# arbitrary product columns or any review author field for a public artifact.
+PUBLIC_PRODUCT_FIELDS = (
+    'id,name,brand,category,product_type,star_rating,review_count,price,original_price,'
+    'thumbnail_url,product_url,coverage_score,longevity_score,lightweight_score,'
+    'suitable_shades,shade_options,source_options,suitable_skin_types,suitable_concerns,'
+    'compat_oily,compat_dry,compat_sensitive,compat_combination,ingredients_raw,'
+    'ingredient_level,profile_metadata,last_updated_at'
+)
 # Additional summary-only caution. Existing score rules are deliberately not
 # changed: a quoted review can still be present in the original evidence panel,
 # but must not become this summary's assertion about observed use.
 ATTRIBUTED_REVIEW = re.compile(r'(?:다는|다던|던|다고|라던)\s*(?:리뷰|후기|말|광고|설명)|'
                               r'(?:리뷰|후기).{0,12}(?:많던|많다|많아서|많아|하길래|라길래)|'
-                              r'(?:없|있|좋|안\s*묻)다\s*해서')
+                              r'(?:없|있|좋|안\s*묻)다\s*해서|'
+                              r'[가-힣]+(?:대요|대여|다네요|다더라|다던데)|'
+                              r'[가-힣]+다고\s*(?:해|하|했)')
 NEGATED_NEGATIVE = re.compile(
     r'두껍게\s*발(?:리|라|린).{0,24}(?:않|없|아니|적|안\s*들)|'
     r'안\s*(?:뭉치|들뜨|끼)|'
     r'(?:들뜨|들뜸|뭉치|뭉침|끼|끼임).{0,32}(?:없|않|적|아니|덜|못\s*느)|'
     r'(?:답답|무겁|무거).{0,12}(?:없|않|아니)|짧(?:지|진)\s*않|'
-    r'아쉬운\s*건\s*못|묻어나(?:는|오는)\s*(?:정도|불편함|것도|게|것).{0,16}(?:적|개선|없|않)|'
+    r'아쉬운\s*건\s*못|묻어나(?:는|오는)\s*(?:정도|느낌|불편함|것도|게|것).{0,16}(?:적|개선|없|않|덜)|'
     r'덜\s*티나|안\s*묻어?나')
 UNOBSERVED = re.compile(r'기대\s*(?:됩|됨|해|하고|되)|어떨지\s*기대|줄\s*알았|걱정이\s*있었|'
                         r'(?:전에|이전에|예전에)\s*(?:쓰던|사용하던)|과거\s*사용|'
@@ -43,7 +55,9 @@ HYPOTHETICAL_CONTEXT = re.compile(r'이면|라면|다면|으면|경우|같았|�
 PAST_PRODUCT_CONTEXT = re.compile(r'(?:원래|기존|예전|이전|전에|작년).{0,80}(?:사용했|썼|쓰던|써왔|쓰고|사용하던)|'
                                   r'제\s*(?:껄|꺼|걸로|것으로)', re.S)
 OTHER_PRODUCT_PREP = re.compile(r'(?:파우더|픽서|미스트|프라이머|다른\s*제품|타사).{0,24}'
-                                r'(?:처리|뿌리|사용|바르|마무리|한\s*후|후)')
+                                r'(?:처리|뿌(?:리|려|렸|린|림)|사용|바르|마무리|한\s*후|후)')
+COMBINATION_USE = re.compile(r'(?:같이|함께)\s*(?:쓰|써|사용|바르|발라|발랐)|'
+                             r'섞(?:어|어서|으니)\s*(?:쓰|써|사용|바르|발라)')
 PICKUP = re.compile(r'패드에\s*(?:잘\s*)?안\s*묻|(?:퍼프|패드|스[펀폰]지|브러[시쉬]).{0,60}잘\s*묻어?나', re.S)
 BACKGROUND = re.compile(r'(?:지성|건성|피부).{0,16}(?:이라|라서|인데|때문)|(?:원래|평소).{0,25}(?:무너|지워|커버)|고민이었')
 INTENT = re.compile(r'찾고\s*(?:있었|있)|구매.*(?:이유|계기)|구매(?:했|하려|하시려)|구입(?:했|하려)|선물하기|원해서|사\s*줬')
@@ -95,6 +109,7 @@ def summary_source(product_id, key, review, scope=''):
             'polarity': polarity, 'excerpts': excerpts, 'excerpts_by_polarity': by_polarity,
             'semantic_verified': not (UNOBSERVED.search(content)
                 or PAST_PRODUCT_CONTEXT.search(content)
+                or COMBINATION_USE.search(content)
                 or (key == 'transfer_resistance' and (PICKUP.search(content) or PACKAGING_SPILL.search(content)))
                 or any(ATTRIBUTED_REVIEW.search(part) or PICKUP.search(part) for part in [*positive, *negative])
                 or any(NEGATED_NEGATIVE.search(part) for part in negative)
@@ -132,28 +147,93 @@ def build_summary_product(product, reviews):
     return result
 
 
-def main():
-    db = database()
-    products = list(read_all(db, 'products', 'id,profile_metadata'))
+def _canonical(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+
+
+def _snapshot_rows(rows):
+    return sorted([{key: review.get(key) for key in ('id', 'product_id', 'content', 'option_name')}
+                   for review in rows], key=lambda review: str(review['id']))
+
+
+def capture_summary_snapshot(load_products, load_reviews, load_review_count, clock=utc_now):
+    """Fail before publishing if inputs change across two complete read passes.
+
+    This is a read consistency check, not a database transaction. A later live
+    update is still handled by the browser's profile and raw SHA checks.
+    """
+    started_at, review_count = clock(), load_review_count()
+    if not isinstance(review_count, int) or review_count < 0:
+        raise ValueError('Exact stored review count required')
+    products = sorted(load_products(), key=lambda product: str(product['id']))
+    if not products or len({product['id'] for product in products}) != len(products):
+        raise ValueError('A nonempty, unique public product snapshot is required')
+    for product in products:
+        meta = product.get('profile_metadata') or {}
+        if meta.get('version') != VERSION or meta.get('metadata_revision') != METADATA_REVISION:
+            raise ValueError('Current profile version and metadata revision required')
     artifact = {'schema_version': 1, 'method': METHOD, 'profile_version': VERSION,
-                'generated_at': utc_now(), 'products': {}}
-    review_count = reference_count = 0
+                'products': {}}
+    raw_by_product, requested = {}, {}
     for product in products:
         ids = sorted({rid for _, _, ids, _ in evidence_specs(product.get('profile_metadata') or {}) for rid in ids})
+        requested[product['id']] = ids
+        reviews = _snapshot_rows(load_reviews(product['id'], ids))
+        if [str(review['id']) for review in reviews] != ids:
+            raise ValueError('Missing, duplicate or unexpected snapshot source IDs')
+        raw_by_product[product['id']] = reviews
+        artifact['products'][product['id']] = build_summary_product(product, reviews)
+    for product in products:
+        current = _snapshot_rows(load_reviews(product['id'], requested[product['id']]))
+        if _canonical(current) != _canonical(raw_by_product[product['id']]):
+            raise ValueError('Original review inputs changed during snapshot capture')
+    if _canonical(sorted(load_products(), key=lambda product: str(product['id']))) != _canonical(products):
+        raise ValueError('Product/profile inputs changed during snapshot capture')
+    if load_review_count() != review_count:
+        raise ValueError('Review count changed during snapshot capture')
+    confirmed_at = clock()
+    snapshot_id = hashlib.sha256(_canonical({
+        'products': products, 'raw': raw_by_product, 'review_count': review_count,
+    }).encode()).hexdigest()
+    snapshot = {'id': snapshot_id, 'started_at': started_at, 'confirmed_at': confirmed_at,
+                'consistency_method': 'double-read-v1', 'product_count': len(products),
+                'review_count': review_count, 'profile_version': VERSION, 'metadata_revision': METADATA_REVISION}
+    artifact.update(generated_at=confirmed_at, snapshot=snapshot)
+    fallback = {'captured_at': confirmed_at, 'count': len(products), 'snapshot': snapshot, 'products': products}
+    return artifact, fallback, raw_by_product
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--sync-fallback', action='store_true',
+                        help='Generate both public JSON files from the same confirmed snapshot')
+    args = parser.parse_args()
+    db = database()
+
+    def load_reviews(product_id, ids):
         reviews = []
         for offset in range(0, len(ids), 100):
-            # Explicit public columns only. Do not read author or mutate rows.
-            response = db.table('reviews').select('id,product_id,content,option_name').eq(
-                'product_id', product['id']).in_('id', ids[offset:offset + 100]).execute()
-            reviews.extend(response.data or [])
-        value = build_summary_product(product, reviews)
-        artifact['products'][product['id']] = value
-        review_count += len(reviews)
-        reference_count += sum(len(entry['sources']) for entry in value['attributes'].values())
-        reference_count += sum(len(entry['sources']) for attrs in value['options'].values() for entry in attrs.values())
+            reviews.extend(db.table('reviews').select('id,product_id,content,option_name').eq(
+                'product_id', product_id).in_('id', ids[offset:offset + 100]).execute().data or [])
+        return reviews
+
+    artifact, fallback, raw_by_product = capture_summary_snapshot(
+        lambda: list(read_all(db, 'products', PUBLIC_PRODUCT_FIELDS)), load_reviews,
+        lambda: db.table('reviews').select('id', count='exact').limit(1).execute().count,
+    )
     target = ROOT / 'web/public/review-summaries.json'
     write_json(target, artifact)
-    print(f'{len(products)} products; {review_count} unique product/review sources; {reference_count} attribute references; DB writes 0')
+    if args.sync_fallback:
+        write_json(ROOT / 'web/public/catalog-fallback.json', fallback)
+    write_json(CACHE / 'review-summary-source-snapshot.json', {
+        'snapshot': artifact['snapshot'], 'products': fallback['products'], 'reviews': raw_by_product,
+    })
+    reference_count = sum(len(entry['sources']) for product in artifact['products'].values()
+                          for entries in [product['attributes'], *product['options'].values()] for entry in entries.values())
+    print(f'{len(fallback["products"])} products; {sum(map(len, raw_by_product.values()))} unique product/review sources; '
+          f'{reference_count} attribute references; DB writes 0')
+    print(f'Consistent snapshot {artifact["snapshot"]["id"]}; {artifact["snapshot"]["review_count"]} stored reviews')
     print(target)
 
 

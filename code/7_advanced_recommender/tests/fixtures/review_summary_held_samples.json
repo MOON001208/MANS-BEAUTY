@@ -1,0 +1,523 @@
+{
+  "source": "Frozen a42 profile inputs; current read-only raw originals SHA checked; no author",
+  "cases": [
+    {
+      "product_id": "A000000206573",
+      "key": "longevity",
+      "scope": "",
+      "expected_count": 5,
+      "reviews": [
+        {
+          "id": "30500314",
+          "product_id": "A000000206573",
+          "content": "이번에 오빠가 친척 결혼식장에서 잘보여야할일이 생겻는데\r\n얼굴에 뭐가 많이나서 못난이라 한번 시켜줫어여\r\n못난인데 미리 생일선물로 사줫거든요 \r\n잘발리거 위에 픽서뿌려주니까 굿 오래가요 \r\n남자가 뭔 화장이야 햇는데 비포 에프터 보니까 \r\n본인도 할말없는지 어디서 삿냐고 묻고 그는 떠낫습니디..\r\n키링은 제가 가질겁니다 ㅋㅋ",
+          "option_name": "002"
+        },
+        {
+          "id": "30471355",
+          "product_id": "A000000206573",
+          "content": "일단 구성부터가 혜자입니다\r\n쿠션에 퍼프가 기본퍼프 포함 총 세개나 들어있어요\r\n거기다 귀여운 키링까지!!\r\n발색이나 발림성은 왜 남자 쿠션 중 가장 인기가 많은 제품인가 단번에 알 정도로 인정입니다\r\n\r\n텍스쳐도 굉장히 쫀쫀해서 잘 밀착됩니다\r\n쿠션 사용이 아직은 어색한 저같은 사람도\r\n양조절만 잘 해서 그냥 슥슥 펴바르면\r\n매끈해질 정도로 너무 좋네요\r\n\r\nSPF가 50인점도 너무 마음에 들고요\r\n지속력도 좋아요\r\n조금 욕심을 내보자면\r\n저처럼 남자치고 조금 하얀 사람들을 위해서\r\n색상이 하나 더 있었으면 좋겠네요",
+          "option_name": "001"
+        },
+        {
+          "id": "30461681",
+          "product_id": "A000000206573",
+          "content": "남편이 사용해보니 피부에 자연스럽게 발라지면서 자외선 차단까지 되서 너무 좋아하네요.\r\n밀착력도 좋고 지속력도 좋아요.\r\n커버력도 너무 만족해요.",
+          "option_name": "001"
+        },
+        {
+          "id": "29548690",
+          "product_id": "A000000206573",
+          "content": "평소 여자친구 비비크림이나 쿠션바르면 제 피부가 회색처럼 보이고, 동동 뜨는 느낌이었는데 이건 피부가 까무잡잡한 저도 잘 어울리는 색입니다. 자연스럽게 톤업이 돼서 피부가 한결 덜 까매보이고, 피부결도 좋아보여요. 따로 선크림 바르지 않아도 돼서 편하고, 모공도 잘 가려주네요. 여자친구가 저 화장하는거 싫어하는데 이건 자연스러워서 바르고 다녀도 된대요. 땀이 많은 편인데 지속력도 좋습니다!",
+          "option_name": "002"
+        },
+        {
+          "id": "29519037",
+          "product_id": "A000000206573",
+          "content": "얼굴이 많이 검은편인대 다른제품은 발라도 둥둥 뜬다는 느낌이 컸는대 자연스럽게 발리고 잡티가리고 피부가 깔끔해보여요 티안나게 원래 피부좋은것같은 표현이 되고 지속력이 좋네요",
+          "option_name": "002"
+        }
+      ],
+      "product": {
+        "id": "A000000206573",
+        "coverage_score": 3.95,
+        "longevity_score": 3.74,
+        "lightweight_score": 2.69,
+        "profile_metadata": {
+          "version": "rules-ko-v5",
+          "metadata_revision": 9,
+          "input_hash": "845c01dd29472a22a000a590899571c189fbad27c53f677f064b3fefbef8af36",
+          "evidence_counts": {
+            "longevity": 68
+          },
+          "evidence_review_ids": {
+            "longevity": [
+              "29519037",
+              "29548690",
+              "30461681",
+              "30471355",
+              "30500314"
+            ]
+          }
+        }
+      },
+      "entry": {
+        "totalEvidenceCount": 68,
+        "sources": [
+          {
+            "id": "29519037",
+            "sha256": "3ea90f9cb8de3194cb4cd50487b51066594c96b41e8046f57661400cf00fbc37",
+            "polarity": "positive",
+            "excerpts": [
+              "얼굴이 많이 검은편인대 다른제품은 발라도 둥둥 뜬다는 느낌이 컸는대 자연스럽게 발리고 잡티가리고 피부가 깔끔해보여요 티안나게 원래 피부좋은것같은 표현이 되고 지속력이 좋네요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "얼굴이 많이 검은편인대 다른제품은 발라도 둥둥 뜬다는 느낌이 컸는대 자연스럽게 발리고 잡티가리고 피부가 깔끔해보여요 티안나게 원래 피부좋은것같은 표현이 되고 지속력이 좋네요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "29548690",
+            "sha256": "c7daa7d54ce0651af05ac73e76c01d942a5630560f8cfb592a53395077c1ba90",
+            "polarity": "positive",
+            "excerpts": [
+              "땀이 많은 편인데 지속력도 좋습니다"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "땀이 많은 편인데 지속력도 좋습니다"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "30461681",
+            "sha256": "56c49ca271e4aa9c823c2e1cff0d7a6bbd281d7a922089766570afe28e88b02e",
+            "polarity": "positive",
+            "excerpts": [
+              "밀착력도 좋고 지속력도 좋아요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "밀착력도 좋고 지속력도 좋아요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "30471355",
+            "sha256": "b371a407c73b240357410e142d2b2dfac7074c14ba712303b8041a24f60e42b2",
+            "polarity": "positive",
+            "excerpts": [
+              "지속력도 좋아요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "지속력도 좋아요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "30500314",
+            "sha256": "ac4a40b0e1785e49efb5fb86b1f5f78f1e759e49741f8d4e6fd937c0276fb0f4",
+            "polarity": "positive",
+            "excerpts": [
+              "잘발리거 위에 픽서뿌려주니까 굿 오래가요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "잘발리거 위에 픽서뿌려주니까 굿 오래가요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": false
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "A000000184127",
+      "key": "transfer_resistance",
+      "scope": "",
+      "expected_count": 5,
+      "reviews": [
+        {
+          "id": "62191242",
+          "product_id": "A000000184127",
+          "content": "커버력이랑 지속력 좋고 트러블도 안 나고 좋음, 지성피부는 마스크에도 잘 묻어요",
+          "option_name": "2호"
+        },
+        {
+          "id": "53650563",
+          "product_id": "A000000184127",
+          "content": "지속력과 밀착력 정말 좋고요. 상품소개처럼 마스크에 안 묻지는 않아요. 다 묻어요.",
+          "option_name": "2호"
+        },
+        {
+          "id": "35542094",
+          "product_id": "A000000184127",
+          "content": "쿠션이 정말 가벼운 제형이라, 덧발라도 두껍지 않고 자연스러운 피부 표현을 할 수 있어요. 또한, 파운데이션처럼 묻어나지 않아서 자주 마스크를 쓰는 날에도 유용했습니다. 지속력도 우수해 하루 종일 수정할 필요 없이 완벽한 상태를 유지했어요.",
+          "option_name": "3호"
+        },
+        {
+          "id": "29743839",
+          "product_id": "A000000184127",
+          "content": "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ",
+          "option_name": "2호"
+        },
+        {
+          "id": "24745296",
+          "product_id": "A000000184127",
+          "content": "발색 좋아요 뭔가 여성 제품보다 많이 묻어나는거 같은 느낌은 있는데, 조심하면 되지요ㅎㅎ 시간 지나면 예쁘게 무너져 남자친구 얼굴이 아주 반들반들하네요ㅎㅎ",
+          "option_name": "2호"
+        }
+      ],
+      "product": {
+        "id": "A000000184127",
+        "coverage_score": 4,
+        "longevity_score": 4,
+        "lightweight_score": 3.67,
+        "profile_metadata": {
+          "version": "rules-ko-v5",
+          "metadata_revision": 9,
+          "input_hash": "09315c876071acc59a8d5cb6e9b6aa3aa2b17ec7780c52911d87fe448959e338",
+          "wear_attributes": {
+            "transfer_resistance": {
+              "score": 2.4,
+              "mixed_count": 0,
+              "evidence_count": 5,
+              "negative_count": 4,
+              "positive_count": 1,
+              "mixed_review_ids": [],
+              "negative_review_ids": [
+                "24745296",
+                "29743839",
+                "53650563",
+                "62191242"
+              ],
+              "positive_review_ids": [
+                "35542094"
+              ]
+            }
+          }
+        }
+      },
+      "entry": {
+        "totalEvidenceCount": 5,
+        "sources": [
+          {
+            "id": "35542094",
+            "sha256": "56d5fb042006c6f1a7f96b069933b52b23bd8e27e03723480e3bd5451271c98c",
+            "polarity": "positive",
+            "excerpts": [
+              "파운데이션처럼 묻어나지 않아서 자주 마스크를 쓰는 날에도 유용했습니다"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "파운데이션처럼 묻어나지 않아서 자주 마스크를 쓰는 날에도 유용했습니다"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "24745296",
+            "sha256": "23d6259adfa98d64c3c89f17617ed18668b0220819e3587ed28faa3d79d555da",
+            "polarity": "negative",
+            "excerpts": [
+              "발색 좋아요 뭔가 여성 제품보다 많이 묻어나는거 같은 느낌은 있는데"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [],
+              "negative": [
+                "발색 좋아요 뭔가 여성 제품보다 많이 묻어나는거 같은 느낌은 있는데"
+              ]
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "29743839",
+            "sha256": "9d4d65daefe7abb97e6c42d5e115e5bd4a8dbac8c07fe6f581d1b9939098afa2",
+            "polarity": "negative",
+            "excerpts": [
+              "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [],
+              "negative": [
+                "자연스럽게 피부에 잘 발리고 마스크 등에 묻어나는 느낌도 덜해서 좋은 것 같아요 ㅎㅎ"
+              ]
+            },
+            "semantic_verified": false
+          },
+          {
+            "id": "53650563",
+            "sha256": "a47420dd3f3285a4e0fb063f10db19ba14fdbb8c299d3a33eed6d87a7ae9b209",
+            "polarity": "negative",
+            "excerpts": [
+              "다 묻어요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [],
+              "negative": [
+                "다 묻어요"
+              ]
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "62191242",
+            "sha256": "93758e765d4e1fe1e81b080146d27988c80e94b40597e2e67424a41a2c271648",
+            "polarity": "negative",
+            "excerpts": [
+              "지성피부는 마스크에도 잘 묻어요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [],
+              "negative": [
+                "지성피부는 마스크에도 잘 묻어요"
+              ]
+            },
+            "semantic_verified": true
+          }
+        ],
+        "overallPolarityCounts": {
+          "positive": 1,
+          "negative": 4,
+          "mixed": 0
+        }
+      }
+    },
+    {
+      "product_id": "A000000217042",
+      "key": "naturalness",
+      "scope": "2호 라이언 리필",
+      "expected_count": 3,
+      "reviews": [
+        {
+          "id": "65490048",
+          "product_id": "A000000217042",
+          "content": "제품 발색이 자연스러워서 좋은것 같아요 추천드려요~! 강추",
+          "option_name": "2호 라이언 리필"
+        },
+        {
+          "id": "64744754",
+          "product_id": "A000000217042",
+          "content": "촉촉하고 색도 자연스러워서 약간 나 조금 하얗다! 하면 이정도색 쓰면 될거같음 굿",
+          "option_name": "2호 라이언 리필"
+        },
+        {
+          "id": "59922441",
+          "product_id": "A000000217042",
+          "content": "매트한 쿠션이고 색상도 자연스러워서 데일리템으로 사용하기 좋대요!",
+          "option_name": "2호 라이언 리필"
+        }
+      ],
+      "product": {
+        "id": "A000000217042",
+        "coverage_score": 3.33,
+        "longevity_score": 4,
+        "lightweight_score": null,
+        "profile_metadata": {
+          "version": "rules-ko-v5",
+          "metadata_revision": 9,
+          "input_hash": "9891ba66f5089ed82599c281b828a418bcc45f8820afa5649830d4aa702dd253",
+          "option_wear": {
+            "2호 라이언 리필": {
+              "attributes": {
+                "naturalness": {
+                  "score": 4,
+                  "mixed_count": 0,
+                  "evidence_count": 3,
+                  "negative_count": 0,
+                  "positive_count": 3,
+                  "mixed_review_ids": [],
+                  "negative_review_ids": [],
+                  "positive_review_ids": [
+                    "59922441",
+                    "64744754",
+                    "65490048"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "entry": {
+        "totalEvidenceCount": 3,
+        "sources": [
+          {
+            "id": "59922441",
+            "sha256": "e083de5b0b0fd3d889073af47fec4a44ae0d8e1549dce1bff3df6a0b5b1bccae",
+            "polarity": "positive",
+            "excerpts": [
+              "매트한 쿠션이고 색상도 자연스러워서 데일리템으로 사용하기 좋대요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "매트한 쿠션이고 색상도 자연스러워서 데일리템으로 사용하기 좋대요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": false
+          },
+          {
+            "id": "64744754",
+            "sha256": "a9fcba43fab41365662880672e87726e9fa5f69eda9ee15a4fad4695805934d9",
+            "polarity": "positive",
+            "excerpts": [
+              "촉촉하고 색도 자연스러워서 약간 나 조금 하얗다"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "촉촉하고 색도 자연스러워서 약간 나 조금 하얗다"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          },
+          {
+            "id": "65490048",
+            "sha256": "696b81bf49c7700608f21acbd3dea389cfb6e10ccc0d5502e3cdbd3cd37f45b5",
+            "polarity": "positive",
+            "excerpts": [
+              "제품 발색이 자연스러워서 좋은것 같아요 추천드려요~"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "제품 발색이 자연스러워서 좋은것 같아요 추천드려요~"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          }
+        ],
+        "overallPolarityCounts": {
+          "positive": 3,
+          "negative": 0,
+          "mixed": 0
+        }
+      }
+    },
+    {
+      "product_id": "A000000251853",
+      "key": "naturalness",
+      "scope": "[단품/보통피부] 02호 내추럴베이지",
+      "expected_count": 3,
+      "reviews": [
+        {
+          "id": "68785517",
+          "product_id": "A000000251853",
+          "content": "트러블이나 잡티 티나지 않게 잘 가려주지만 민감성 피부인데 한 번 늦게 지웠다가 피부가 가로막혀서 트러블 한 번 났었어요!",
+          "option_name": "[단품/보통피부] 02호 내추럴베이지"
+        },
+        {
+          "id": "62302268",
+          "product_id": "A000000251853",
+          "content": "컨실러 첫경험인데 같은라인 커버로션이랑 같은색이라서 같이쓰니 자연스러워요",
+          "option_name": "[단품/보통피부] 02호 내추럴베이지"
+        },
+        {
+          "id": "62083987",
+          "product_id": "A000000251853",
+          "content": "여드름이 많이 나서 가려볼려고 한번 사서 써봤는데 의외로 좋아요 커버로션이랑 같이 쓰니까 바른 티도 안나고 다크서클 잡티 다 잘 잡아주는거 같아요 세안할때도 잘지워지는거 같아요",
+          "option_name": "[단품/보통피부] 02호 내추럴베이지"
+        }
+      ],
+      "product": {
+        "id": "A000000251853",
+        "coverage_score": 3.78,
+        "longevity_score": null,
+        "lightweight_score": null,
+        "profile_metadata": {
+          "version": "rules-ko-v5",
+          "metadata_revision": 9,
+          "input_hash": "3e4fdb99929391df98f4f38e95d5632f69b311604f0e113657a95ef56b22e386",
+          "option_wear": {
+            "[단품/보통피부] 02호 내추럴베이지": {
+              "attributes": {
+                "naturalness": {
+                  "score": 4,
+                  "mixed_count": 0,
+                  "evidence_count": 3,
+                  "negative_count": 0,
+                  "positive_count": 3,
+                  "mixed_review_ids": [],
+                  "negative_review_ids": [],
+                  "positive_review_ids": [
+                    "62083987",
+                    "62302268",
+                    "68785517"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "entry": {
+        "totalEvidenceCount": 3,
+        "sources": [
+          {
+            "id": "62083987",
+            "sha256": "b6a0d6fcfee5d7979201a197b564f9650bbc7607f7f06cd56057b0775d157fd4",
+            "polarity": "positive",
+            "excerpts": [
+              "의외로 좋아요 커버로션이랑 같이 쓰니까 바른 티도 안나고 다크서클 잡티 다 잘 잡아주는거 같아요 세안할때도 잘지워지는거 같아요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "의외로 좋아요 커버로션이랑 같이 쓰니까 바른 티도 안나고 다크서클 잡티 다 잘 잡아주는거 같아요 세안할때도 잘지워지는거 같아요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": false
+          },
+          {
+            "id": "62302268",
+            "sha256": "8e268c86dd863e2780cc869ccb77d426462d939885dee90c3cf3d62f33be4816",
+            "polarity": "positive",
+            "excerpts": [
+              "컨실러 첫경험인데 같은라인 커버로션이랑 같은색이라서 같이쓰니 자연스러워요"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "컨실러 첫경험인데 같은라인 커버로션이랑 같은색이라서 같이쓰니 자연스러워요"
+              ],
+              "negative": []
+            },
+            "semantic_verified": false
+          },
+          {
+            "id": "68785517",
+            "sha256": "6da569ac37bf17e123d009b5cecf6c6f7f0e4928c21cd4b6c0f3134dbbb978f5",
+            "polarity": "positive",
+            "excerpts": [
+              "트러블이나 잡티 티나지 않게 잘 가려주지만"
+            ],
+            "excerpts_by_polarity": {
+              "positive": [
+                "트러블이나 잡티 티나지 않게 잘 가려주지만"
+              ],
+              "negative": []
+            },
+            "semantic_verified": true
+          }
+        ],
+        "overallPolarityCounts": {
+          "positive": 3,
+          "negative": 0,
+          "mixed": 0
+        }
+      }
+    }
+  ]
+}

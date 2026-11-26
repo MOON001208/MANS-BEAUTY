@@ -126,6 +126,8 @@ test('missing, foreign, empty or wrongly keyed original cannot support a summary
     assert.deepEqual(result.sentences, []);
     assert.ok(result.reviews.every(row => row.product_id === 'p1'));
     assert.equal(result.reviews.length, 2);
+    assert.deepEqual(result.sampleReviewIds, ['r1', 'r2', 'r3']);
+    assert.equal(result.insufficient, false);
   }
 });
 
